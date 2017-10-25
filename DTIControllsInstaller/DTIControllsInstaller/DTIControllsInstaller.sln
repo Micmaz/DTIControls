@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD0EE7DA-18D2-4459-96A4-42D5BB55796B}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InstallAction", "..\InstallAction\InstallAction\InstallAction.vbproj", "{5CD6BA03-3E56-422B-A7AF-F5B0D7CA3978}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DTIControllsInstaller", "DTIControllsInstaller.vdproj", "{96F8C96F-0D93-4D53-8B89-67995FAE18FB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CD6BA03-3E56-422B-A7AF-F5B0D7CA3978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD6BA03-3E56-422B-A7AF-F5B0D7CA3978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD6BA03-3E56-422B-A7AF-F5B0D7CA3978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD6BA03-3E56-422B-A7AF-F5B0D7CA3978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F8C96F-0D93-4D53-8B89-67995FAE18FB}.Debug|Any CPU.ActiveCfg = Debug
+		{96F8C96F-0D93-4D53-8B89-67995FAE18FB}.Debug|Any CPU.Build.0 = Debug
+		{96F8C96F-0D93-4D53-8B89-67995FAE18FB}.Release|Any CPU.ActiveCfg = Release
+		{96F8C96F-0D93-4D53-8B89-67995FAE18FB}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

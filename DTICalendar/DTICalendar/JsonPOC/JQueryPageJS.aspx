@@ -1,0 +1,1 @@
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="JQueryPageJS.aspx.vb" Inherits="DTICalendar.JQueryPageJS" %>

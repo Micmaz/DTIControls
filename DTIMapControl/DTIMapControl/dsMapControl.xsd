@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMapControl" targetNamespace="http://tempuri.org/dsMapControl.xsd" xmlns:mstns="http://tempuri.org/dsMapControl.xsd" xmlns="http://tempuri.org/dsMapControl.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMapControl" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMapControl" msprop:Generator_DataSetName="dsMapControl">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIMapControl" msprop:Generator_UserTableName="DTIMapControl" msprop:Generator_RowDeletedName="DTIMapControlRowDeleted" msprop:Generator_RowChangedName="DTIMapControlRowChanged" msprop:Generator_RowClassName="DTIMapControlRow" msprop:Generator_RowChangingName="DTIMapControlRowChanging" msprop:Generator_RowEvArgName="DTIMapControlRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIMapControlRowChangeEventHandler" msprop:Generator_TableClassName="DTIMapControlDataTable" msprop:Generator_TableVarName="tableDTIMapControl" msprop:Generator_RowDeletingName="DTIMapControlRowDeleting" msprop:Generator_TablePropName="DTIMapControl">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="MainId" msprop:Generator_UserColumnName="MainId" msprop:Generator_ColumnVarNameInTable="columnMainId" msprop:Generator_ColumnPropNameInRow="MainId" msprop:Generator_ColumnPropNameInTable="MainIdColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_UserColumnName="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="contentType" msprop:Generator_UserColumnName="contentType" msprop:Generator_ColumnVarNameInTable="columncontentType" msprop:Generator_ColumnPropNameInRow="contentType" msprop:Generator_ColumnPropNameInTable="contentTypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTIGoogleMapKey" msprop:Generator_UserTableName="DTIGoogleMapKey" msprop:Generator_RowDeletedName="DTIGoogleMapKeyRowDeleted" msprop:Generator_TableClassName="DTIGoogleMapKeyDataTable" msprop:Generator_RowChangedName="DTIGoogleMapKeyRowChanged" msprop:Generator_RowClassName="DTIGoogleMapKeyRow" msprop:Generator_RowChangingName="DTIGoogleMapKeyRowChanging" msprop:Generator_RowEvArgName="DTIGoogleMapKeyRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIGoogleMapKeyRowChangeEventHandler" msprop:Generator_TablePropName="DTIGoogleMapKey" msprop:Generator_TableVarName="tableDTIGoogleMapKey" msprop:Generator_RowDeletingName="DTIGoogleMapKeyRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="MainId" msprop:Generator_UserColumnName="MainId" msprop:Generator_ColumnPropNameInRow="MainId" msprop:Generator_ColumnVarNameInTable="columnMainId" msprop:Generator_ColumnPropNameInTable="MainIdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Google_Key" msprop:Generator_UserColumnName="Google_Key" msprop:Generator_ColumnPropNameInRow="Google_Key" msprop:Generator_ColumnVarNameInTable="columnGoogle_Key" msprop:Generator_ColumnPropNameInTable="Google_KeyColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIMapControl" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTIGoogleMapKey_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIGoogleMapKey" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

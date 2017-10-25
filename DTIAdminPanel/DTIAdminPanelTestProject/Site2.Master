@@ -1,0 +1,42 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site2.master.vb" Inherits="DTIAdminPanelTestProject.Site2" %>
+<%@ Register Assembly="DTIAdminPanel" Namespace="DTIAdminPanel" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <style type="text/css">
+        .selectedli{color:red;}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+     <cc1:DTIAdminPanel  ID="loggedinControl1" runat="server" />
+    <cc1:Menu runat="server" ID="menu1" selectedCss="selectedli"  SelectParentPage="true">
+    test<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <cc1:DefaultMenuItem ID="item1" runat="server" Name="test">
+                                <ul >
+                                    <cc1:MenuItem ID="menuitem0" runat="server">
+                                    <li><a href='##link##'>Crap##Name##</a>
+                                        <ul><cc1:MenuItem ID="menuitem1" runat="server"><li><a class='submenu ##Name##' href='##link##'>##Name##</a></li></cc1:MenuItem></ul>
+                                    </li>
+                                    </cc1:MenuItem>
+                                </ul>
+        </cc1:DefaultMenuItem>
+        <ul>
+            <cc1:MenuItem ID="menuitem5" runat="server">
+                <li><a href="##link##">##Name##</a>
+                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></li>					
+            </cc1:MenuItem>
+        </ul>
+    </cc1:Menu>
+   <%-- <cc1:Menu Template="VerticalMenu" runat="server" ID="menu2" selectedCss="selectedli"  />--%>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTITagManager
+</name>
+</assembly>
+<members>
+<member name="T:DTITagManager.dsTagger">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DTITagManager.dsTagger.DTI_Content_TagsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTITagManager.dsTagger.DTI_Content_Tag_PivotDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTITagManager.dsTagger.DTI_Content_TagsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTITagManager.dsTagger.DTI_Content_Tag_PivotRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTITagManager.dsTagger.DTI_Content_TagsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTITagManager.dsTagger.DTI_Content_Tag_PivotRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTITagManager.TagManager">
+ <summary>
+ Control for associating string tags with a particular data row
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

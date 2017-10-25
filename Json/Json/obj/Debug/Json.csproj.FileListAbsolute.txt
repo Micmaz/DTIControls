@@ -1,0 +1,8 @@
+C:\components\Json\Json\bin\Debug\Net20\Json.xml
+C:\components\Json\Json\bin\Debug\Net20\Json.dll
+C:\components\Json\Json\bin\Debug\Net20\Json.pdb
+C:\components\Json\Json\bin\Debug\Net20\Json.dll.CodeAnalysisLog.xml
+C:\components\Json\Json\bin\Debug\Net20\Json.dll.lastcodeanalysissucceeded
+C:\components\Json\Json\obj\Debug\Json.csprojResolveAssemblyReference.cache
+C:\components\Json\Json\obj\Debug\Json.dll
+C:\components\Json\Json\obj\Debug\Json.pdb

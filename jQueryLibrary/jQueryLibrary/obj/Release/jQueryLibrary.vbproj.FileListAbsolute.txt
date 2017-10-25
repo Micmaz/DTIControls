@@ -1,0 +1,10 @@
+C:\components\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.dll
+C:\components\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.pdb
+C:\components\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.xml
+C:\components\jQueryLibrary\jQueryLibrary\bin\BaseClasses.dll
+C:\components\jQueryLibrary\jQueryLibrary\bin\BaseClasses.pdb
+C:\components\jQueryLibrary\jQueryLibrary\bin\BaseClasses.xml
+C:\components\jQueryLibrary\jQueryLibrary\obj\Release\jQueryLibrary.vbprojResolveAssemblyReference.cache
+C:\components\jQueryLibrary\jQueryLibrary\obj\Release\jQueryLibrary.dll
+C:\components\jQueryLibrary\jQueryLibrary\obj\Release\jQueryLibrary.xml
+C:\components\jQueryLibrary\jQueryLibrary\obj\Release\jQueryLibrary.pdb

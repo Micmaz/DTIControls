@@ -1,0 +1,1 @@
+make sure you make the files embedded resources too.

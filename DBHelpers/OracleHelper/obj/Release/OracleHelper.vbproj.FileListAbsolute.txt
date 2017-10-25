@@ -1,0 +1,9 @@
+C:\components\_Output\DBHelpers\OracleHelper.dll
+C:\components\_Output\DBHelpers\OracleHelper.pdb
+C:\components\_Output\DBHelpers\OracleHelper.xml
+C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.vbprojResolveAssemblyReference.cache
+C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.Resources.resources
+C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.vbproj.GenerateResource.Cache
+C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.dll
+C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.xml
+C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.pdb

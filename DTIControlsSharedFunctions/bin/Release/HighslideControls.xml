@@ -1,0 +1,1771 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HighslideControls
+</name>
+</assembly>
+<members>
+<member name="T:HighslideControls.HighslideHeaderControl">
+ <summary>
+ Control for inserting and managing Highslide javascript on a web page
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.registrationString">
+ <summary>
+ A unique string javascript comment that relays lisensing information for Highslide
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.HighslideVariables">
+ <summary>
+ Hashtable containing global highslide variables, see http://highslide.com/ref/
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.HighslideVariablesString">
+ <summary>
+ This is used to statically set global Highslide variables (http://highslide.com/ref/).  Write in the format, "key: 'StringValue', key: NumericalValue, key: BooleanValue".  These values are tagged onto the end of the hashtable values
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.isInnerFrame">
+ <summary>
+ Set this property to true if the page is contained within an iframe.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.isOuterFrame">
+ <summary>
+ Set this property to true if the page contains iframe's with highslide elements
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HighslideControls.HighslideHeaderControl.addToPage(System.Web.UI.Page@)">
+ <summary>
+ Add a HighslideHeaderControl to the page given as an argument if there is not one already present.  Returns the resulting control.
+ </summary>
+ <param name="page"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HighslideControls.HighslideHeaderControl.registerOverlay(HighslideControls.HighslideOverlay@)">
+ <summary>
+ 
+ </summary>
+ <param name="overlay"></param>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.align">
+ <summary>
+ Position of the full image in the client, either 'auto' or 'center'.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.allowHeightReduction">
+ <summary>
+ Allow HTML popups to shrink to fit the width of the browser windoww.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.allowMultipleInstances">
+ <summary>
+ Allow more than one popup expander to be open at the same time.
+ </summary>
+ <value>
+ Default value:	true
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.allowSimultaneousLoading">
+ <summary>
+ Allow multiple popups to be opened at the same time
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.allowSizeReduction">
+ <summary>
+ Allow the image to shrink to fit a small viewport.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.allowWidthReduction">
+ <summary>
+ Allow HTML popups to shrink to fit the width of the browser windoww.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.anchor">
+ <summary>
+ Which corner or side of the thumbnail the popup should be anchored to.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.autoplay">
+ <summary>
+ Inline option to start running a slideshow from a thumbnail.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.blockRightClick">
+ <summary>
+ Block right clicking and context menu on the full size image.
+ </summary>
+ <value>
+ Default value:	false
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.cacheAjax">
+ <summary>
+ Cache the contents of AJAX popup for instant display.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.captionEval">
+ <summary>
+ An expression to be evaluated into the caption text.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.captionId">
+ <summary>
+ The id of the element to be cloned to an image caption.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.captionOverlay">
+ <summary>
+ Overlay options for the caption, as listed under hs.registerOverlay.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.captionText">
+ <summary>
+ A text to use in the caption.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.contentId">
+ <summary>
+ The id of the HTML element containing the content for HTML popups.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.creditsHref">
+ <summary>
+ The hyperlink reference for the credits label.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.creditsPosition">
+ <summary>
+ The position of the credits relative to the popup.
+ </summary>
+ <value>
+ Default value: 	top left
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.creditsTarget">
+ <summary>
+ The target of the credits link
+ </summary>
+ <value>
+ Default value: 	_self
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.dimmingDuration">
+ <summary>
+ The duration in milliseconds of the fading in and out of the background dimming effect.
+ </summary>
+ <value>
+ Default value: 	50
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.dimmingGeckoFix">
+ <summary>
+ Fix Gecko/Mac bug that causes problems with dimming and Flash.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.dimmingOpacity">
+ <summary>
+ A float between 0 and 1 defining the opacity of a dimmed page background
+ </summary>
+ <value>
+ Default value: 	0
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.dragByHeading">
+ <summary>
+ Allow the image or HTML popup to be dragged by it's heading.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.dragSensitivity">
+ <summary>
+ How many pixels to drag the full image before it starts moving.
+ </summary>
+ <value>
+ Default value: 	5
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.dynamicallyUpdateAnchors">
+ <summary>
+ Allow Highslide to update the anchors collection automatically after the DOM has changed.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.easing">
+ <summary>
+ Sets the style of the expand/contract effect.
+ </summary>
+ <value>
+ Default value: 	easeInQuad
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.easingClose">
+ <summary>
+ The easing when closing the expander. See hs.easing.
+ </summary>
+ <value>
+ Default value: 	inherited from hs.easing
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.enableKeyListener">
+ <summary>
+ Listen for keystrokes like left and right arrow to control Highslide.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.expandCursor">
+ <summary>
+ The filename of the cursor that indicates zoom in on the thumbnails.
+ </summary>
+ <value>
+ Default value: 	'zoomin.cur'
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.expandDuration">
+ <summary>
+ Defines in milliseconds how long the zoom in effect should take.
+ </summary>
+ <value>
+ Default value: 	250
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.fadeInOut">
+ <summary>
+ Add a fading effect to the regular expand/contract effect.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.flushImgSize">
+ <summary>
+ Flush IE's cashed image width and height after an image is physically resized.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.forceAjaxReload">
+ <summary>
+ IE-specific option to force Ajax-loaded content to be reloaded from the server on each popup opening
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.fullExpandOpacity">
+ <summary>
+ A float between 0 and 1 giving the opacity of the full expand label
+ </summary>
+ <value>
+ Default value: 	1
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.fullExpandPosition">
+ <summary>
+ The position of the full expand label relative to the image.
+ </summary>
+ <value>
+ Default value: 	bottom right
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.graphicsDir">
+ <summary>
+ The path to the directory where your graphics are.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.headingEval">
+ <summary>
+ An expression to be evaluated into the heading text.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.headingId">
+ <summary>
+ The id of the element to be cloned to an image heading.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.headingOverlay">
+ <summary>
+ Overlay options for the heading, as listed under hs.registerOverlay.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.headingText">
+ <summary>
+ A text to use in the heading.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.height">
+ <summary>
+ Sets the pixel height of the HTML expander.
+ </summary>
+ <value>
+ Default value: 	undefined
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.lang">
+ <summary>
+ The object containing language strings for localisation.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.loadingOpacity">
+ <summary>
+ The opacity of the loading label.
+ </summary>
+ <value>
+ Default value: 	0.75
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.maincontentEval">
+ <summary>
+ An expression to be evaluated into the main content while using self rendering content wrapper.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.maincontentId">
+ <summary>
+ The id of an element to open in a HTML expander using self rendering content wrapper.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.maincontentText">
+ <summary>
+ A text to use in a HTML popup when using self rendering content wrapper.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.marginBottom">
+ <summary>
+ The expanded image or HTML content never exceeds this bottom margin on the page.
+ </summary>
+ <value>
+ Default value: 	15
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.marginLeft">
+ <summary>
+ The expanded image or HTML content never exceeds this left margin on the page.
+ </summary>
+ <value>
+ Default value: 	15
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.marginRight">
+ <summary>
+ The expanded image or HTML content never exceeds this right margin on the page.
+ </summary>
+ <value>
+ Default value: 	15
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.marginTop">
+ <summary>
+ The expanded image or HTML content never exceeds this top margin on the page.
+ </summary>
+ <value>
+ Default value: 	15
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.maxHeight">
+ <summary>
+ Pixel value for the maximum height of the expanded content, see hs.maxWidth.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.maxWidth">
+ <summary>
+ Pixel width for the maximum width of the expanded image.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.minHeight">
+ <summary>
+ Pixel value for the minimum height of the expanded content, see hs.minWidth.
+ </summary>
+ <value>
+ Default value: 	200
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.minWidth">
+ <summary>
+ Pixel value for the minimum width of the expanded image.
+ </summary>
+ <value>
+ Default value: 	200
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.numberOfImagesToPreload">
+ <summary>
+ Highslide by default preloads the first 5 images in your page.
+ </summary>
+ <value>
+ Default value: 	5
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.numberPosition">
+ <summary>
+ Where to inject a text showing the number of the current image in a sequence.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.objectHeight">
+ <summary>
+ Specifies the height of an included iframe or Flash movie.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.objectLoadTime">
+ <summary>
+ Display an iframe or Flash object before or after the animation.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.objectType">
+ <summary>
+ One of 'ajax', 'iframe' or 'swf'. Defines how you want to display the link target.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.objectWidth">
+ <summary>
+ The width of extended content like Flash.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.openerTagNames">
+ <summary>
+ Which elements should Highslide iterate to look for thumbnail openers.
+ </summary>
+ <value>
+ Default value: 	["a"]
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.outlinesDir">
+ <summary>
+ The directory within the hs.graphicsDir where the outline pngs are found.
+ </summary>
+ <value>
+ Default value: 	outlines/
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.outlineStartOffset">
+ <summary>
+ When hs.outlineWhileAnimating is true, this defines the starting pixel offset.
+ </summary>
+ <value>
+ Default value: 	3
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.outlineType">
+ <summary>
+ Defines a graphic outline to display around the expanded content.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.outlineWhileAnimating">
+ <summary>
+ Show the graphic outline during the expansion and contraction of the popup.
+ </summary>
+ <value>
+ Default value: 	2
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.overrides_hsVariable">
+ <summary>
+ Defines which settings of the hs object that will be inherited by the single hs.Expander.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.padToMinWidth">
+ <summary>
+ On narrow images, pad the width of the expander to the minWidth to make room for the caption.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.preserveContent">
+ <summary>
+ Preserve changes made to the content and position of HTML content.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.restoreCursor">
+ <summary>
+ The filename of the cursor that indicates zoom out on the expanded image.
+ </summary>
+ <value>
+ Default value: 	'zoomout.cur'
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.restoreDuration">
+ <summary>
+ Equivalent to hs.expandDuration but applies to the closing of the expander.
+ </summary>
+ <value>
+ Default value: 	250
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.showCredits">
+ <summary>
+ Whether to show a "Powered by..." label in the upper left corner. 
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.skin">
+ <summary>
+ A collection of HTML to be inserted automatically.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.slideshowGroup">
+ <summary>
+ Places your popups into groups for Next and Previous navigation.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.src">
+ <summary>
+ An alternative way to define the URL of the image or HTML content.
+ </summary>
+ <value>
+ Default value: 	undefined
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.swfOptions">
+ <summary>
+ Advanced options when showing Flash content using hs.contentType = "swf".
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.targetX">
+ <summary>
+ Positions the expanded image or HTML content exactly above a given element on your page.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.targetY">
+ <summary>
+ Positions the expanded image or HTML content exactly above a given element on your page.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.thumbnailId">
+ <summary>
+ Defines the id of a graphic to expand the image from
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.transitionDuration">
+ <summary>
+ Defines in milliseconds how long the transition effect should take.
+ </summary>
+ <value>
+ Default value: 	500
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.transitions">
+ <summary>
+ Define transitions other than the default zoom in and out
+ </summary>
+ <value>
+ Default value: 	[]
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.useBox">
+ <summary>
+ Use a constraining box so that the borders, captions etc. don't change size from image to image.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.width">
+ <summary>
+ Sets the pixel width of the HTML expander, or the width of the constraining box for images.
+ </summary>
+ <value>
+ Default value: 	undefined
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.wrapperClassName">
+ <summary>
+ A specific CSS class for the wrapping div to enhance CSS control.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.HighslideHeaderControl.zIndexCounter">
+ <summary>
+ Adjust the z-index to other elements on your page.
+ </summary>
+ <value>
+ Default value: 	1001
+ </value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:HighslideControls.HighslideOverlay">
+ <summary>
+ control for displaying a Highslide overly on a Highslide dialog element
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.className">
+ <summary>
+ Apply a class name for styling the overlay.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.fade">
+ <summary>
+ Whether the overlay should fade in and out. Possible values 0/false, 1/true, 2. 
+ Fading in and out is problematic in IE if you put alphatransparent PNGs in the overlay, 
+ either through AlphaImageLoader or not. In this case, set the fade to 2 to skip fading in IE only. 
+ An example can be seen at example-no-border.html. hideOnMouseOut (bool) Defines whether the overlay 
+ should be hidden when the mouse leaves the full-size image. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.overlayId">
+ <summary>
+ The id of the overlay div defined in your page's source code.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.offsetX">
+ <summary>
+ The number of pixels to offset the overlay in the horizontal
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.offsetY">
+ <summary>
+ The number of pixels to offset the overlay in the vertical
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.opacity">
+ <summary>
+ Can be a float number between 0 and 1 (fully opaque).
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.position">
+ <summary>
+ Specifies where the overlay will appear related to the full-size image. 
+ The first word specifies the vertical position and can be above, top, middle, bottom or below, 
+ and the second word can be left, center, right. In addition, the position can be the single word 
+ positions leftpanel or rightpanel. If you want to put some air between the overlay and the edge 
+ of the image, you use regular CSS margins on the overlay div. You can also offset the overlay 
+ by using position:relative in it's CSS.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.relativeTo">
+ <summary>
+ Can be 'viewport' or 'expander'. Overlays in most positions can be rendered relative to 
+ the viewport rather than the default, which is relative to the expander. When relative to 
+ the viewport, the overlays stay fixed on scrolling. This option requires that the 
+ 'Viewport overlays' component be activated in the Configurator.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.slideshowGroup">
+ <summary>
+ Refers to a hs.slideshowGroup that will use this overlay.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.thumbnailId">
+ <summary>
+ Either a string specifying the id of the thumbnail, or you can set it to null to apply 
+ the overlay on all thumbnails.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.width">
+ <summary>
+ The width of the overlay can be specified either as a pixel value or as a percentage, 
+ like 100px or 100%. However, overlays in the leftpanel or rightpanel positions require 
+ a fixed pixel width, or they will fall back to the default 200px width.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.HighslideOverlay.useOnHtml">
+ <summary>
+ By defalut overlays are not added to HTML content. Set useOnHtml to true to allow this. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:HighslideControls.Highslider">
+ <summary>
+ Control to display a Highslide dialog element
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.myHeader">
+ <summary>
+ Header
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.HighslideVariables">
+ <summary>
+ Hashtable containing overriding highslide variables, see http://highslide.com/ref/
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.DisplayText">
+ <summary>
+ The anchor text displayed to the user.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.ExpandURL">
+ <summary>
+ In image mode, the URL of the fullsize image.  In iframe mode, the URL of the expanded iframe.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.ThumbURL">
+ <summary>
+ The URL of the thumbnail image
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.ThumbWidth">
+ <summary>
+ Thumbnail width
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.isFixed">
+ <summary>
+ Set this property to true to make HS frames fixed on a page
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.ThumbHeight">
+ <summary>
+ Thumbnail height
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.Caption">
+ <summary>
+ Caption
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.CaptionControls">
+ <summary>
+ Caption Control Collection
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.ContentControls">
+ <summary>
+ Content Control Collection for HTML mode
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.Outline_Scheme">
+ <summary>
+ Outline Scheme
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.HighslideDisplayMode">
+ <summary>
+ Display mode 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.HighslideVariablesString">
+ <summary>
+ This is used to statically set overriding Highslide variables (http://highslide.com/ref/).  Write in the format, "key: 'StringValue', key: NumericalValue, key: BooleanValue".  These values are tagged onto the end of the hashtable values
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.Title">
+ <summary>
+ The text displayed in a tooltip onmouseover
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.outputValue">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.openJSFunction">
+ <summary>
+ Open JS Function
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:HighslideControls.Highslider.align">
+ <summary>
+ Position of the full image in the client, either 'auto' or 'center'.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.allowHeightReduction">
+ <summary>
+ Allow HTML popups to shrink to fit the width of the browser windoww.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.allowSizeReduction">
+ <summary>
+ Allow the image to shrink to fit a small viewport.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.allowWidthReduction">
+ <summary>
+ Allow HTML popups to shrink to fit the width of the browser windoww.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.anchor">
+ <summary>
+ Which corner or side of the thumbnail the popup should be anchored to.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.autoplay">
+ <summary>
+ Inline option to start running a slideshow from a thumbnail.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.cacheAjax">
+ <summary>
+ Cache the contents of AJAX popup for instant display.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.captionEval">
+ <summary>
+ An expression to be evaluated into the caption text.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.captionId">
+ <summary>
+ The id of the element to be cloned to an image caption.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.captionOverlay">
+ <summary>
+ Overlay options for the caption, as listed under hs.registerOverlay.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.contentId">
+ <summary>
+ The id of the HTML element containing the content for HTML popups.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.creditsPosition">
+ <summary>
+ The position of the credits relative to the popup.
+ </summary>
+ <value>
+ Default value: 	top left
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.dimmingOpacity">
+ <summary>
+ A float between 0 and 1 defining the opacity of a dimmed page background
+ </summary>
+ <value>
+ Default value: 	0
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.dragByHeading">
+ <summary>
+ Allow the image or HTML popup to be dragged by it's heading.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.easing">
+ <summary>
+ Sets the style of the expand/contract effect.
+ </summary>
+ <value>
+ Default value: 	easeInQuad
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.easingClose">
+ <summary>
+ The easing when closing the expander. See hs.easing.
+ </summary>
+ <value>
+ Default value: 	inherited from hs.easing
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.fadeInOut">
+ <summary>
+ Add a fading effect to the regular expand/contract effect.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.headingEval">
+ <summary>
+ An expression to be evaluated into the heading text.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.headingId">
+ <summary>
+ The id of the element to be cloned to an image heading.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.headingOverlay">
+ <summary>
+ Overlay options for the heading, as listed under hs.registerOverlay.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.headingText">
+ <summary>
+ A text to use in the heading.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.height">
+ <summary>
+ Sets the pixel height of the HTML expander.
+ </summary>
+ <value>
+ Default value: 	undefined
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.maincontentEval">
+ <summary>
+ An expression to be evaluated into the main content while using self rendering content wrapper.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.maincontentId">
+ <summary>
+ The id of an element to open in a HTML expander using self rendering content wrapper.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.maincontentText">
+ <summary>
+ A text to use in a HTML popup when using self rendering content wrapper.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.maxHeight">
+ <summary>
+ Pixel value for the maximum height of the expanded content, see hs.maxWidth.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.maxWidth">
+ <summary>
+ Pixel width for the maximum width of the expanded image.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.minHeight">
+ <summary>
+ Pixel value for the minimum height of the expanded content, see hs.minWidth.
+ </summary>
+ <value>
+ Default value: 	200
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.minWidth">
+ <summary>
+ Pixel value for the minimum width of the expanded image.
+ </summary>
+ <value>
+ Default value: 	200
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.numberPosition">
+ <summary>
+ Where to inject a text showing the number of the current image in a sequence.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.objectHeight">
+ <summary>
+ Specifies the height of an included iframe or Flash movie.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.objectLoadTime">
+ <summary>
+ Display an iframe or Flash object before or after the animation.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.objectType">
+ <summary>
+ One of 'ajax', 'iframe' or 'swf'. Defines how you want to display the link target.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.objectWidth">
+ <summary>
+ The width of extended content like Flash.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.outlineType">
+ <summary>
+ Defines a graphic outline to display around the expanded content.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.outlineWhileAnimating">
+ <summary>
+ Show the graphic outline during the expansion and contraction of the popup.
+ </summary>
+ <value>
+ Default value: 	2
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.preserveContent">
+ <summary>
+ Preserve changes made to the content and position of HTML content.
+ </summary>
+ <value>
+ Default value: 	true
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.slideshowGroup">
+ <summary>
+ Places your popups into groups for Next and Previous navigation.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.src">
+ <summary>
+ An alternative way to define the URL of the image or HTML content.
+ </summary>
+ <value>
+ Default value: 	undefined
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.swfOptions">
+ <summary>
+ Advanced options when showing Flash content using hs.contentType = "swf".
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.targetX">
+ <summary>
+ Positions the expanded image or HTML content exactly above a given element on your page.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.targetY">
+ <summary>
+ Positions the expanded image or HTML content exactly above a given element on your page.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.transitions">
+ <summary>
+ Define transitions other than the default zoom in and out
+ </summary>
+ <value>
+ Default value: 	[]
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.useBox">
+ <summary>
+ Use a constraining box so that the borders, captions etc. don't change size from image to image.
+ </summary>
+ <value>
+ Default value: 	false
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.width">
+ <summary>
+ Sets the pixel width of the HTML expander, or the width of the constraining box for images.
+ </summary>
+ <value>
+ Default value: 	undefined
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="P:HighslideControls.Highslider.wrapperClassName">
+ <summary>
+ A specific CSS class for the wrapping div to enhance CSS control.
+ </summary>
+ <value>
+ Default value: 	null
+ </value>
+ <returns></returns>
+ <remarks>
+ Overrideable inline
+ </remarks>
+</member>
+<member name="M:HighslideControls.Highslider.registerOverlay(HighslideControls.HighslideOverlay@)">
+ <summary>
+ 
+ </summary>
+ <param name="overlay"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

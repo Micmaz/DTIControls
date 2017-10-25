@@ -1,0 +1,51 @@
+img:hover {
+	opacity: .9;
+	filter: alpha(opacity = 90);
+}
+
+
+/* Style a bit the inline editables. */
+.cke_editable.cke_editable_inline
+{
+	cursor: pointer;
+}
+
+/* Once an editable element gets focused, the "cke_focus" class is
+   added to it, so we can style it differently. */
+.cke_focus
+{
+	box-shadow: inset 0px 0px 20px 3px #ddd, inset 0 0 1px #000;
+	outline: none;
+	background-image:url('~/res/BaseClasses/Scripts.aspx?d=&f=ckEditor/50percent.png');background-repeat: repeat;
+	cursor: text;
+}
+
+.cke_dialog_page_contents {
+height: 100% !important;
+}
+
+/* Avoid pre-formatted overflows inline editable. */
+.cke_editable_inline pre
+{
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+/*.cke_toolbox {-moz-border-radius:5px;-webkit-border-radius:5px;background-color:#F5F5F5;border: .5px solid #EBEBEB;position:fixed;_position:absolute;top:0px;left:-5px;_top:expression(eval(document.body.scrollTop+0));padding:0px;width:100%;z-index:10001;}.cke_top{height:0px;}a.cke_toolbox_collapser_min{display:none;}*/
+
+.btnarea 
+{
+background-color: #F2F2F2;
+height: 23px;
+z-index: 99999;
+display: block;
+font-size: 12px;
+}
+
+.dtiCKEButton
+{
+    position:relative;
+    display:none;
+}
+.dtiCKEButton.Cancel {float:right;}
+    
+.dtiCKEButton.Save {float:left;}    

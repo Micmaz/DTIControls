@@ -1,0 +1,729 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIContentManagement
+</name>
+</assembly>
+<members>
+<member name="F:DTIContentManagement.History._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.History._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.History._pnlRedirectPg">
+<summary>
+pnlRedirectPg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.History._DropDownList1">
+<summary>
+DropDownList1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.History._Literal1">
+<summary>
+Literal1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.dsCreatedTables">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsCreatedTables.DTIContentManagerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsCreatedTables.DTIContentManagerHistoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsCreatedTables.DTIContentManagerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsCreatedTables.DTIContentManagerHistoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsCreatedTables.DTIContentManagerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsCreatedTables.DTIContentManagerHistoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTIContentManagerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTIContentManagerHistoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTINewsManagerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTINewsManagerHistoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.vw_PageHeiarchy_DynamicPageDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTIContentManagerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTIContentManagerHistoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTINewsManagerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTINewsManagerHistoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.vw_PageHeiarchy_DynamicPageRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTIContentManagerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTIContentManagerHistoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTINewsManagerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.DTINewsManagerHistoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIContentManagement.dsEditPanel.vw_PageHeiarchy_DynamicPageRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIContentManagement.EditPanel">
+ <summary>
+ The edit panel user control, adds editable content areas to any page.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:DTIContentManagement.EditPanel.textSet">
+ <summary>
+ The text value of the control has been set.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:DTIContentManagement.EditPanel.SaveClicked">
+ <summary>
+ The save button on the html editor has been clicked.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:DTIContentManagement.EditPanel.CancelClicked">
+ <summary>
+ The cancel button on the html editor has been clicked.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIContentManagement.EditPanel.Menu_Icon_Url">
+ <summary>
+ Icon of the control int the layout toolbar.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIContentManagement.EditPanel.ToolbarMode">
+ <summary>
+ Determines weather the toolbar is rendered over the editor or at the top of the screen.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIContentManagement.EditPanel.Text">
+ <summary>
+ The text contained in the html editor.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIContentManagement.EditPanel.ShowCancelButton">
+ <summary>
+ Show save and cancel buttons.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIContentManagement.EditPanel.contentTable">
+ <summary>
+ Readonly property with the contents data table for all editors on this page.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIContentManagement.EditPanel.ContentRow">
+ <summary>
+ DataRow for the current content.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.saveAllInstances">
+ <summary>
+ Saves the current instance and makes all other editors obn the page to be saved on pre-render.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.saveInstance">
+ <summary>
+ Saves just the current instance of the editor
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.htmlEdit">
+ <summary>
+ The html editor instance. 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.addSQLCall">
+ <summary>
+ SQL call information
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.setContentRow(System.Boolean)">
+ <summary>
+ Sets the contents row of the data objects.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.setText">
+ <summary>
+ Sets the text of the datarow to the text value of the control.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.saveContent">
+ <summary>
+ Saves the contents of the control.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIContentManagement.EditPanel.replaceimg(System.String)">
+ <summary>
+ Changes the sizes of any dynamic images in the string to the size on the html page so the image size is the same as it appears to the client. 
+ </summary>
+ <param name="instring"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:DTIContentManagement.ucImage._lbDelete">
+<summary>
+lbDelete control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImage._divImg">
+<summary>
+divImg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImage._lkImage">
+<summary>
+lkImage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImage._LazyImgLoad1">
+<summary>
+LazyImgLoad1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImage._litButtons">
+<summary>
+litButtons control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._litVimeoThumbScript">
+<summary>
+litVimeoThumbScript control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._FileUpload1">
+<summary>
+FileUpload1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._btnUpload">
+<summary>
+btnUpload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._tbLink">
+<summary>
+tbLink control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._btnEmbed">
+<summary>
+btnEmbed control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._divUploadLink">
+<summary>
+divUploadLink control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._Tabs1">
+<summary>
+Tabs1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._btnSelect">
+<summary>
+btnSelect control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucImageSelector._HiddenField1">
+<summary>
+HiddenField1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucVideo._lbDelete">
+<summary>
+lbDelete control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucVideo._divImg">
+<summary>
+divImg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucVideo._lkImage">
+<summary>
+lkImage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucVideo._LazyImgLoad1">
+<summary>
+LazyImgLoad1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ucVideo._litButtons">
+<summary>
+litButtons control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.ImageInsertOptions">
+<summary>
+ImageInsertOptions class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ImageInsertOptions._hlInsertImage">
+<summary>
+hlInsertImage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ImageInsertOptions._hlInsertImageThumb">
+<summary>
+hlInsertImageThumb control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ImageInsertOptions._btnDeleteImage">
+<summary>
+btnDeleteImage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.ImageInsertOptions._hsEdit">
+<summary>
+hsEdit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.MediaList">
+<summary>
+MediaList class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.MediaList._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.MediaList._mediaGall">
+<summary>
+mediaGall control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.PreviewFiles">
+<summary>
+PreviewFiles class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.PreviewFiles._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.PreviewFiles._phFilePreview">
+<summary>
+phFilePreview control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.PreviewFiles._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.UploadMedia">
+<summary>
+UploadMedia class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.UploadMedia._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.UploadMedia._MediaUploader1">
+<summary>
+MediaUploader1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.VideoInsertOptions">
+<summary>
+VideoInsertOptions class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.VideoInsertOptions._hlInsertVideo">
+<summary>
+hlInsertVideo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.VideoInsertOptions._hlInsertVideoThumb">
+<summary>
+hlInsertVideoThumb control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.VideoInsertOptions._hlDeleteVideo">
+<summary>
+hlDeleteVideo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.VideoInsertOptions._hsEdit">
+<summary>
+hsEdit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.PageSummary">
+ <summary>
+ Control to display dynamic page information.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIContentManagement.SearchControl">
+ <summary>
+ Control to provide simple site searches of pages
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIContentManagement.SearchResultGallery">
+ <summary>
+ Gallery control dedicated to displaying search results
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIContentManagement.SearchResultGallery.SearchGalleryAjaxWorker">
+ <summary>
+ The ajax worker class that dynamically loads the search results.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIContentManagement.SearchResultsUserControl">
+<summary>
+SearchResultsUserControl class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.SearchResultsUserControl._btnPages">
+<summary>
+btnPages control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.SearchResultsUserControl._btnMedia">
+<summary>
+btnMedia control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.SearchResultsUserControl._gallPages">
+<summary>
+gallPages control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.SearchResultsUserControl._gallMedia">
+<summary>
+gallMedia control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIContentManagement.SearchUserControl">
+<summary>
+SearchUserControl class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.SearchUserControl._tbSearch">
+<summary>
+tbSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIContentManagement.SearchUserControl._hsSearch">
+<summary>
+hsSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

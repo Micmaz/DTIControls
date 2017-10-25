@@ -1,0 +1,15 @@
+c:\components\treelist\treelist\bin\TreeList.dll
+c:\components\treelist\treelist\bin\TreeList.pdb
+c:\components\treelist\treelist\bin\TreeList.xml
+c:\components\treelist\treelist\bin\DTIControls.dll
+c:\components\treelist\treelist\bin\System.Data.SQLite.dll
+c:\components\treelist\treelist\bin\DTIControls.pdb
+c:\components\treelist\treelist\bin\DTIControls.xml
+c:\components\treelist\treelist\bin\System.Data.SQLite.xml
+c:\components\treelist\treelist\obj\Release\ResolveAssemblyReference.cache
+c:\components\treelist\treelist\obj\Release\TreeList.Resources.resources
+c:\components\treelist\treelist\obj\Release\GenerateResource-ResGen.read.1.tlog
+c:\components\treelist\treelist\obj\Release\GenerateResource-ResGen.write.1.tlog
+c:\components\treelist\treelist\obj\Release\TreeList.dll
+c:\components\treelist\treelist\obj\Release\TreeList.xml
+c:\components\treelist\treelist\obj\Release\TreeList.pdb

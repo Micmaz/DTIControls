@@ -1,0 +1,711 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MiniTests
+</name>
+</assembly>
+<members>
+<member name="F:MiniTests.HighlightEditor.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.HighlightEditor.HighlighedEditor1">
+	<summary>
+HighlighedEditor1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.HighlightEditor.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.Index.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.Index">
+	<summary>
+Index class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.GenericSortableTest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.GenericSortableTest.cbEdit">
+	<summary>
+cbEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.GenericSortableTest.Sortable1">
+	<summary>
+Sortable1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.GenericSortableTest.sortable2">
+	<summary>
+sortable2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.GenericSortableTest.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.GenericSortableTest.Sortable3">
+	<summary>
+Sortable3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.GenericSortableTest">
+	<summary>
+GenericSortableTest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="P:MiniTests.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:MiniTests.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:MiniTests.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:MiniTests.ToolTipTest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.ToolTipTest.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.ToolTipTest.ToolTip7">
+	<summary>
+ToolTip7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.ToolTipTest.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.ToolTipTest">
+	<summary>
+ToolTipTest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.Socialists.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.Socialists.StarRater1">
+	<summary>
+StarRater1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.Socialists.AddThisControl1">
+	<summary>
+AddThisControl1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.Socialists.b1">
+	<summary>
+b1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.Socialists">
+	<summary>
+Socialists class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="T:MiniTests.dsTest.NamesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:MiniTests.dsTest.Names2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:MiniTests.dsTest.NamesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:MiniTests.dsTest.Names2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:MiniTests.dsTest.NamesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:MiniTests.dsTest.Names2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:MiniTests.dsTest">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="F:MiniTests.TagsTest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TagsTest.Tagger1">
+	<summary>
+Tagger1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TagsTest.Tagger2">
+	<summary>
+Tagger2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.TagsTest">
+	<summary>
+TagsTest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.ImageCropper.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.ImageCropper.ImageCropper1">
+	<summary>
+ImageCropper1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.ImageCropper.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.ImageCropper">
+	<summary>
+ImageCropper class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.TabSliderTest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TabSliderTest.tabslider1">
+	<summary>
+tabslider1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TabSliderTest.hf1">
+	<summary>
+hf1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.TabSliderTest">
+	<summary>
+TabSliderTest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.TreeControl.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TreeControl.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TreeControl.TreeList1">
+	<summary>
+TreeList1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TreeControl.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.TreeControl.TreeList2">
+	<summary>
+TreeList2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.TreeControl">
+	<summary>
+TreeControl class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.autoCompleteTest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.autoCompleteTest.AutocompleteDropDown1">
+	<summary>
+AutocompleteDropDown1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.autoCompleteTest.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.autoCompleteTest.AutocompleteDropDown2">
+	<summary>
+AutocompleteDropDown2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.autoCompleteTest">
+	<summary>
+autoCompleteTest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests._Default.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.HighlighedEditor1">
+	<summary>
+HighlighedEditor1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.lblHLEditor">
+	<summary>
+lblHLEditor control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.Button2">
+	<summary>
+Button2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.HighlighedEditor2">
+	<summary>
+HighlighedEditor2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.CheckBox1">
+	<summary>
+CheckBox1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.RollOverImage1">
+	<summary>
+RollOverImage1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.TextBoxEncoded1">
+	<summary>
+TextBoxEncoded1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.btnEncode">
+	<summary>
+btnEncode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.lblEncoded">
+	<summary>
+lblEncoded control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.HiddenFieldEncoded1">
+	<summary>
+HiddenFieldEncoded1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.lblHidEncoded">
+	<summary>
+lblHidEncoded control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.EditLabel1">
+	<summary>
+EditLabel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.ScriptBlock1">
+	<summary>
+ScriptBlock1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.btnPostbackFreezeExample">
+	<summary>
+btnPostbackFreezeExample control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.btnAjaxFreezeExample">
+	<summary>
+btnAjaxFreezeExample control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.FreezeScreen1">
+	<summary>
+FreezeScreen1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests._Default.FreezeScreen2">
+	<summary>
+FreezeScreen2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.DivRotatorTest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.DivRotatorTest.Panel2">
+	<summary>
+Panel2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.DivRotatorTest.DivRotator2">
+	<summary>
+DivRotator2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.DivRotatorTest.Panel1">
+	<summary>
+Panel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.DivRotatorTest.DivRotator1">
+	<summary>
+DivRotator1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.DivRotatorTest">
+	<summary>
+DivRotatorTest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.strtest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.strtest.Panel1">
+	<summary>
+Panel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.strtest">
+	<summary>
+strtest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.iframed.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.iframed.FreezeScreen1">
+	<summary>
+FreezeScreen1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.iframed.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.iframed.Button2">
+	<summary>
+Button2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.iframed.btnAjaxFreezeExample">
+	<summary>
+btnAjaxFreezeExample control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.iframed">
+	<summary>
+iframed class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member><member name="F:MiniTests.PagerTest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.PagerTest.pager1">
+	<summary>
+pager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.PagerTest.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MiniTests.PagerTest.LinkButton1">
+	<summary>
+LinkButton1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:MiniTests.PagerTest">
+	<summary>
+PagerTest class.
+</summary>
+	<remarks>
+Auto-generated class.
+</remarks>
+</member>
+</members>
+</doc>

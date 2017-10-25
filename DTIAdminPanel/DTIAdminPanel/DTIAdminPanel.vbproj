@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74009BBF-5539-4A38-8532-D9D5880D273D}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <MyType>Empty</MyType>
+    <RootNamespace>DTIAdminPanel</RootNamespace>
+    <AssemblyName>DTIAdminPanel</AssemblyName>
+    <MyType>Empty</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIAdminPanel.xml</DocumentationFile>
+    <AdditionalParameters />
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIAdminPanel.xml</DocumentationFile>
+    <AdditionalParameters />
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imgs\admin.png" />
+    <EmbeddedResource Include="css\DTIAdminPanel.css" />
+    <EmbeddedResource Include="css\iframe-default.css" />
+    <EmbeddedResource Include="EditItem.aspx" />
+    <EmbeddedResource Include="Page.aspx" />
+    <EmbeddedResource Include="Imgs\RecycleBin.png" />
+    <EmbeddedResource Include="Imgs\Toolbox.png" />
+    <EmbeddedResource Include="PageList.aspx" />
+    <EmbeddedResource Include="MenuTemplates\ChromeMenu.ascx" />
+    <EmbeddedResource Include="MenuTemplates\FlatMenu.ascx" />
+    <EmbeddedResource Include="PageEditControl.ascx" />
+    <EmbeddedResource Include="DTISiteMap\DTISiteMapEditor.ascx" />
+    <EmbeddedResource Include="DTISiteMap\SiteMapIcon.png" />
+    <EmbeddedResource Include="MenuTemplates\Simple.ascx" />
+    <EmbeddedResource Include="js\Chrome.js" />
+    <EmbeddedResource Include="Imgs\add.png" />
+    <EmbeddedResource Include="Imgs\textbubble.png" />
+    <EmbeddedResource Include="Imgs\doc_cancel.png" />
+    <EmbeddedResource Include="Imgs\copy.png" />
+    <EmbeddedResource Include="Imgs\doc_next.png" />
+    <EmbeddedResource Include="Imgs\edit.png" />
+    <EmbeddedResource Include="Imgs\folder_add.png" />
+    <EmbeddedResource Include="Imgs\remove.png" />
+    <EmbeddedResource Include="Imgs\HPage.png" />
+    <EmbeddedResource Include="Imgs\Page.png" />
+    <EmbeddedResource Include="js\jquery.dtimenu.js" />
+    <EmbeddedResource Include="js\jquery.hoverIntent.js" />
+    <EmbeddedResource Include="js\pagelist.js" />
+    <EmbeddedResource Include="MenuTemplates\VerticalMenu.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultMenuItem.vb" />
+    <Compile Include="dsDTIAdminPanel.Designer.vb">
+      <DependentUpon>dsDTIAdminPanel.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="dsDTIAdminPanel.vb">
+      <DependentUpon>dsDTIAdminPanel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTIAdminPanel.vb" />
+    <Compile Include="DTISiteMap\DTISiteMap.vb" />
+    <Compile Include="DTISiteMap\DTISiteMapEditor.ascx.designer.vb">
+      <DependentUpon>DTISiteMapEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DTISiteMap\DTISiteMapEditor.ascx.vb">
+      <DependentUpon>DTISiteMapEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditItem.aspx.designer.vb">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditItem.aspx.vb">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginControl\ChangePassword.vb" />
+    <Compile Include="LoginControl\ChangePasswordControl.ascx.designer.vb">
+      <DependentUpon>ChangePasswordControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl\ChangePasswordControl.ascx.vb">
+      <DependentUpon>ChangePasswordControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginControl\ForgotPassword.vb" />
+    <Compile Include="LoginControl\ForgotPasswordControl.ascx.designer.vb">
+      <DependentUpon>ForgotPasswordControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl\ForgotPasswordControl.ascx.vb">
+      <DependentUpon>ForgotPasswordControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginControl\LoginControl.vb" />
+    <Compile Include="LoginControl\LoginUserControl.ascx.designer.vb">
+      <DependentUpon>LoginUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl\LoginUserControl.ascx.vb">
+      <DependentUpon>LoginUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuTemplates\ChromeMenu.ascx.designer.vb">
+      <DependentUpon>ChromeMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTemplates\ChromeMenu.ascx.vb">
+      <DependentUpon>ChromeMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.vb" />
+    <Compile Include="MenuItem.vb" />
+    <Compile Include="MenuTemplates\JqueryUI.ascx.designer.vb">
+      <DependentUpon>JqueryUI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTemplates\JqueryUI.ascx.vb">
+      <DependentUpon>JqueryUI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuTemplates\Simple.ascx.designer.vb">
+      <DependentUpon>Simple.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTemplates\Simple.ascx.vb">
+      <DependentUpon>Simple.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuTemplates\VerticalMenu.ascx.designer.vb">
+      <DependentUpon>VerticalMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTemplates\VerticalMenu.ascx.vb">
+      <DependentUpon>VerticalMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="OverrideItem.vb" />
+    <Compile Include="Page.aspx.designer.vb">
+      <DependentUpon>Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page.aspx.vb">
+      <DependentUpon>Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageEditControl.ascx.designer.vb">
+      <DependentUpon>PageEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageEditControl.ascx.vb">
+      <DependentUpon>PageEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageList.aspx.designer.vb">
+      <DependentUpon>PageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageList.aspx.vb">
+      <DependentUpon>PageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuTemplates\FlatMenu.ascx.designer.vb">
+      <DependentUpon>FlatMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTemplates\FlatMenu.ascx.vb">
+      <DependentUpon>FlatMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginControl\PasswordStrength.vb" />
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Site1.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imgs\Gradiant1.jpg" />
+    <EmbeddedResource Include="Imgs\Gradiant2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imgs\DTIAdminPanel.bmp" />
+    <EmbeddedResource Include="Imgs\Menu.bmp" />
+    <EmbeddedResource Include="Imgs\MenuItem.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imgs\LoginControl.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imgs\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.chronoStrength.js" />
+    <EmbeddedResource Include="LoginControl\LoginUserControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\Validation.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="css\jquery.ui.potato.menu.css" />
+    <EmbeddedResource Include="js\jquery.ui.potato.menu.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MenuTemplates\JqueryUI.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="dsDTIAdminPanel.xsc">
+      <DependentUpon>dsDTIAdminPanel.xsd</DependentUpon>
+    </None>
+    <None Include="dsDTIAdminPanel.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDTIAdminPanel.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsDTIAdminPanel.xss">
+      <DependentUpon>dsDTIAdminPanel.xsd</DependentUpon>
+    </None>
+    <Content Include="packages.config" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoginControl\ChangePasswordControl.ascx" />
+    <EmbeddedResource Include="LoginControl\ForgotPasswordControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIContentManagement\DTIContentManagement\DTIContentManagement.vbproj">
+      <Project>{45be892a-4e37-47f1-9fd1-54cdeb8ddc6b}</Project>
+      <Name>DTIContentManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIContentManagement\DTIMediaManager\DTIMediaManager.vbproj">
+      <Project>{82f81992-98b3-435b-bf07-e3aad8eff929}</Project>
+      <Name>DTIMediaManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
+      <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
+      <Name>DTIMiniControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIServerControl\DTIServerControls.vbproj">
+      <Project>{48529821-dd5a-47e2-8444-a91143140ea6}</Project>
+      <Name>DTIServerControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTISortable\DTISortable\DTISortable.vbproj">
+      <Project>{453d33ff-37ba-4eec-b7da-b117d85041ad}</Project>
+      <Name>DTISortable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTITagManager\DTITagManager.vbproj">
+      <Project>{610fb933-5858-486d-b2c8-6b7132754e06}</Project>
+      <Name>DTITagManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HighslideControls\HighslideControls\HighslideControls.vbproj">
+      <Project>{f26e8251-f511-4889-a31d-384d1f497a2b}</Project>
+      <Name>HighslideControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JqueryUIControls\JqueryUIControls\JqueryUIControls.vbproj">
+      <Project>{cc9f78d0-b8da-4945-9b59-96bc05762f56}</Project>
+      <Name>JqueryUIControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4691</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+</Project>

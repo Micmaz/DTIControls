@@ -1,0 +1,645 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIVideoManager
+</name>
+</assembly>
+<members>
+<member name="T:DTIVideoManager.dsDTIVideo.DTIVideoManagerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIVideoManager.dsDTIVideo.DTIVideoManagerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIVideoManager.dsDTIVideo.DTIVideoManagerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIVideoManager.EditVideoControl">
+ <summary>
+ control to preview and edit title screenshot of an uploaded video
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.EditVideoControl.myEditor">
+ <summary>
+ The video preview control for this editor.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.EditVideoControl.VideoOutline">
+ <summary>
+ highslide scheme for the video pop-up (if used)
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.EditVideoControl.myVideoRow">
+ <summary>
+ Datarow of this video 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.ffmpegHelper">
+ <summary>
+ helper class to convert uploaded videos to Flash. Handles saving options, bitrates etc.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:DTIVideoManager.ffmpegHelper.conversionDone">
+ <summary>
+ Event raised once the video conversio is finished.
+ </summary>
+ <param name="video_id"></param>
+ <param name="conversionTime"></param>
+ <param name="errorLog"></param>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.ffmpegHelper.VideoToolExecuteType">
+ <summary>
+ The internal executable that is used to convert the video file.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.OutputFileNamingConvention">
+ <summary>
+ The start of the saved output file. default is "dtivid_"
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.SaveVideoInDataBase">
+ <summary>
+ Save the video in the database vs the file system. this defaults to false.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.OutputPath">
+ <summary>
+ The output path the video file is saved in.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.ffmpegExePath">
+ <summary>
+ the path to the ffmpeg executable. By default it is extracted from the controll dll and saved to the temp path.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.Flvtool2ExePath">
+ <summary>
+ the path to the Flvtool2 executable. By default it is extracted from the controll dll and saved to the temp path.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.sqlhelper">
+ <summary>
+ the SQL helper used by this object. Set automatically if not specified.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.videoSaveTable">
+ <summary>
+ The datatable Object that the video info is saved to. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.User_Id">
+ <summary>
+ A userID field. Optional.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.bitrate">
+ <summary>
+ The bitrate the video is saved at.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.ffmpegHelper.otherArgs">
+ <summary>
+ Additional args of sent to the ffmpeg converter executable.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.ffmpegHelper.convertToFLV(System.Web.HttpPostedFile,System.String,System.String)">
+ <summary>
+ Converts the video to a FLV file for streaming playback.
+ </summary>
+ <param name="myFile"></param>
+ <param name="title"></param>
+ <param name="description"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.ffmpegHelper.convertToFLV(System.String,System.String,System.String)">
+ <summary>
+ Converts the video to a FLV file for streaming playback.
+ </summary>
+ <param name="inputPath"></param>
+ <param name="title"></param>
+ <param name="description"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.ffmpegHelper.executeFfmpegCommand(System.String,System.Boolean,DTIVideoManager.ffmpegHelper.VideoToolExecuteType)">
+ <summary>
+ Executes a convertion command
+ </summary>
+ <param name="cmd"></param>
+ <param name="grabVals"></param>
+ <param name="exePath"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.ffmpegHelper.deleteVideo(System.Int32)">
+ <summary>
+ Deletes a video from the database.
+ </summary>
+ <param name="id"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.ffmpegHelper.updateScreenShot(System.Int32,System.Int32)">
+ <summary>
+ Updates the screenshot of a video row.
+ </summary>
+ <param name="id"></param>
+ <param name="secondOffset"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.ffmpegHelper.updateScreenShot(DTIVideoManager.dsDTIVideo.DTIVideoManagerRow,System.Int32)">
+ <summary>
+ Updates the screenshot of a video row.
+ </summary>
+ <param name="videoRow"></param>
+ <param name="secondOffset"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.ffmpegHelper.getByteArrayFromFile(System.String)">
+ <summary>
+ Gets the byte array of the input file
+ </summary>
+ <param name="path"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.VideoBase">
+ <summary>
+ Base control for all video controls.  Contains info on how videos are stored
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoBase.MyFlashWrapper">
+ <summary>
+ Video conversion helper class, handles video file saving, converting etc. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.VideoPreview">
+<summary>
+VideoPreview class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._JsonSeverConrol1">
+<summary>
+JsonSeverConrol1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._checkConversionScript">
+<summary>
+checkConversionScript control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblRawFile">
+<summary>
+lblRawFile control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblRawFileValue">
+<summary>
+lblRawFileValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblTime">
+<summary>
+lblTime control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblTimeValue">
+<summary>
+lblTimeValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblDimensions">
+<summary>
+lblDimensions control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblDimensionsValue">
+<summary>
+lblDimensionsValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblStatus">
+<summary>
+lblStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblStatusValue">
+<summary>
+lblStatusValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._imgStatus">
+<summary>
+imgStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._pnlScreenshot">
+<summary>
+pnlScreenshot control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._imgScreenshot">
+<summary>
+imgScreenshot control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._videoHolder">
+<summary>
+videoHolder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._VideoThumb1">
+<summary>
+VideoThumb1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._pnlScreenShotEditor">
+<summary>
+pnlScreenShotEditor control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._changeThumbNailDiv">
+<summary>
+changeThumbNailDiv control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblZero">
+<summary>
+lblZero control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._lblMax">
+<summary>
+lblMax control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoPreview._videoSlider">
+<summary>
+videoSlider control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIVideoManager.VideoPreviewHelper">
+ <summary>
+ AJAX worker class to assist the video preview control in determining if the Flash conversion completed,
+  or the title screenshot has changed
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.VideoPreviewHelper.resetThumbnail(System.Collections.Hashtable)">
+ <summary>
+ Fetches a new screenshot from the file.
+ </summary>
+ <param name="inputHash"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIVideoManager.VideoPreviewHelper.checkConversion(System.String)">
+ <summary>
+ Check if video file was converted to flash.
+ </summary>
+ <param name="vid_id"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.VideoThumb">
+ <summary>
+ simple control that shows a clickable title screenshot of a video to expand and watch the movie
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.VideoId">
+ <summary>
+ id of the data row associated with the video file
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.ExpandURL">
+ <summary>
+ Inherited property, cannot be set directly.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.MaxThumbWidth">
+ <summary>
+ The maximum width of the thumbnail in pixels. If set it will keep the original aspect ratio.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.MaxThumbHeight">
+ <summary>
+ The maximum height of the thumbnail in pixels. If set it will keep the original aspect ratio.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.RefreshImage">
+ <summary>
+ Reload the image; Usefull after the thumbnail has changed.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.ThumbSize">
+ <summary>
+ The default max height and width in pixels.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.ThumbURL">
+ <summary>
+ Url of the thumbnail. This property can't be set manually.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.HighslideDisplayMode">
+ <summary>
+ Overrides hislide display modes
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.VideoWidth">
+ <summary>
+ The playback width in pixels of the playback pop-up.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoThumb.VideoHeight">
+ <summary>
+ The playback height in pixels of the playback pop-up.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.VideoUploader">
+<summary>
+VideoUploader class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoUploader._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoUploader._VideoUploaderControl1">
+<summary>
+VideoUploaderControl1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIVideoManager.VideoUploaderControl">
+ <summary>
+ control to upload videos to DTI-managed media library
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoUploaderControl.MyFlashWrapper">
+ <summary>
+ Video conversion helper class, handles video file saving, converting etc. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.VideoViewer">
+<summary>
+VideoViewer class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoViewer._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.VideoViewer._VideoViewerControl1">
+<summary>
+VideoViewerControl1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIVideoManager.VideoViewerControl">
+ <summary>
+ Control to render a streamable video and a playback controls to a page.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoViewerControl.videoPath">
+ <summary>
+ Path to the flash video file. 
+ If not set it first defaults to: 
+ 1) the query string "vidFile" 
+ 2) the videoRow data. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIVideoManager.VideoViewerControl.screenShotPath">
+ <summary>
+ Path to the flash video screenshot file. 
+ If not set it first defaults to: 
+ 1) the query string "vidscreenfile" 
+ 2) the videoRow data. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.ViewMovie">
+ <summary>
+ HTTP handler for Flash movies for pseudo streaming
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIVideoManager.ViewVideoScreenShot">
+<summary>
+ViewVideoScreenShot class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIVideoManager.ViewVideoScreenShot._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

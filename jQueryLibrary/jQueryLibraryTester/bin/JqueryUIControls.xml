@@ -1,0 +1,1743 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+JqueryUIControls
+</name>
+</assembly>
+<members>
+<member name="P:JqueryUIControls.ToolTip.Text">
+	<summary>
+ Text inside the html element the causes the tootip to show
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Title">
+	<summary>
+  displayed in the top of the tooltip
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.TargetControlID">
+	<summary>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.href">
+	<summary>
+ if content is local this will make the link usable as well as displaying a 
+ tooltip.  If it is an iframe (ie not local) it contains the page to display
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Sticky">
+	<summary>
+ keep visible until manually closed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.ZIndexToolTip">
+	<summary>
+ Sets the z-index style property of the clueTip
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.PositionTooltip">
+	<summary>
+ Sets the type of positioning.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>
+ Available options are 'auto', 'mouse', 'bottomTop', 'fixed'. 
+ Change to 'mouse' if you want to override positioning by element and position the 
+ clueTip based on where the mouse is instead. Change to 'bottomTop' if you want 
+ positioning to begin below the mouse when there is room or above if not -- rather than 
+ right or left of the elemnent and flush with element's top Change to 'fixed' if you 
+ want the clueTip to appear in exactly the same location relative to the linked element no 
+ matter where it appears on the page. Use 'fixed' at your own risk.
+ </remarks>
+</member><member name="P:JqueryUIControls.ToolTip.TopOffset">
+	<summary>
+ Number of px to offset clueTip from top of invoking element.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>
+ For positionBy "auto", "mouse", and "bottomTop", the number will be added to the 
+ clueTip's "top" value if the clueTip appears below the invoking element and subtracted 
+ from it if the clueTip appears above. For positionBy "fixed", the number will always be 
+ added to the "top" value, offsetting the clueTip from the top of the invoking element.
+ </remarks>
+</member><member name="P:JqueryUIControls.ToolTip.LeftOffset">
+	<summary>
+ Number of px to offset clueTip from left of invoking element.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>
+ For positionBy "auto", "mouse", and "bottomTop", the number will be added to 
+ clueTip's "left" value if the clueTip appears to the right of the invoking element 
+ and subtracted if the clueTip appears to the left. For positionBy "fixed", the number 
+ will always be added to the "left" value of the clueTip, offsetting it from the right 
+ side of the invoking element.
+ </remarks>
+</member><member name="P:JqueryUIControls.ToolTip.MouseOutClose">
+	<summary>
+ close when clueTip is moused out
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.ClickThrough">
+	<summary>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Local">
+	<summary>
+ Whether to use content from the same page for the clueTip's body or it is an iframe
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.HideLocal">
+	<summary>
+ If local option is set to true, this determines whether local content
+ to be shown in clueTip should be hidden at its original location
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.ShowTitle">
+	<summary>
+ show title bar of the clueTip, even if title attribute not set
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Width">
+	<summary>
+ The width of the clueTip only uses its value
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Height">
+	<summary>
+ he height of the clueTip only uses its value
+ Setting a specific height also sets the tootip to "overflow:auto"
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.HtmlTag">
+	<summary>
+ type of tag the invoking element is
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.ClosePosition">
+	<summary>
+ location of close text for sticky cluetips; can be 'top' or 'bottom' or 'title'
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.CloseText">
+	<summary>
+ text (or HTML) to to be clicked to close sticky clueTips
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.CssTheme">
+	<summary>
+ class added to outermost clueTip div in the form of 'cluetip-' + clueTipClass.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>
+ this is also used for a "directional" class on the same div, depending on where 
+ the clueTip is in relation to the invoking element. The class appears in the form 
+ of 'cluetip-' + direction + cluetipClass. this allows you to create your own clueTip 
+ theme in a separate CSS file or use one of the three pre-packaged 
+ themes: default, jtip, or rounded.
+ </remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Arrows">
+	<summary>
+ if true, displays arrow on appropriate side of clueTip.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>
+ this option displays a div containing an arrow background image. Arrow images are set 
+ using the background-image property in the CSS. The direction of the arrow changes depending 
+ on which side of the invoking element the clueTip appears. The arrows option sets the 
+ background-position of the cluetip div so that the arrow will accurately point to the invoking 
+ element, regardless of where it appears in relation to it.
+ </remarks>
+</member><member name="P:JqueryUIControls.ToolTip.DropShadow">
+	<summary>
+ set to false if you don't want the drop-shadow effect on the clueTip
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.DropShadowSteps">
+	<summary>
+ adjusts the size of the drop shadow
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Activation">
+	<summary>
+ set to 'click' to force user to click to show clueTip
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.DelayedClose">
+	<summary>
+ close clueTip on a timed delay (experimental)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.Truncate">
+	<summary>
+ number of characters to truncate clueTip's contents. if 0, no truncation occurs
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.OpenEffect">
+	<summary>
+ can be 'show' or 'slideDown' or 'fadeIn'
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.OpenSpeed">
+	<summary>
+ how fast the tootip opens in ms
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.HoverClass">
+	<summary>
+ class applied to the invoking element onmouseover and removed onmouseout
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.MouseTracking">
+	<summary>
+ if true, clueTip will track mouse movement (experimental)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.onActivate">
+	<summary>
+ function to run just before clueTip is shown.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ToolTip.onShow">
+	<summary>
+ function to run just after clueTip is shown.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.ToolTip.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.Clock24Hour">
+	<summary>
+ Shows time in 24 hour format
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.TimeFormat">
+	<summary>
+ Change the display format of the time
+ h - Hour with no leading 0
+ hh - Hour with leading 0
+ m - Minute with no leading 0
+ mm - Minute with leading 0
+ s - Second with no leading 0
+ ss - Second with leading 0
+ t - a or p for AM/PM
+ T - A or P for AM/PM
+ tt - am or pm for AM/PM
+ TT - AM or PM for AM/PM
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.Separator">
+	<summary>
+ Place holder between date and time, default=" "
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ShowHour">
+	<summary>
+ Show the Hour
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ShowMinute">
+	<summary>
+ Show the minute
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ShowSecond">
+	<summary>
+ Show the Second
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.StepHour">
+	<summary>
+ Increments the hours move by
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.StepMinute">
+	<summary>
+ Increments the minutes move by
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.StepSecond">
+	<summary>
+ Increments the seconds move by
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.HourGrid">
+	<summary>
+ Increments for the Hours to display at the bottom of the slider
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.MinuteGrid">
+	<summary>
+ Increments for the minutes to display at the bottom of the slider
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ChangeMonth">
+	<summary>
+ Allows you to change the month by selecting from a drop-down list. 
+ You can enable this feature by setting the attribute to true.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ChangeYear">
+	<summary>
+ Allows you to change the year by selecting from a drop-down list. You can enable this 
+ feature by setting the attribute to true. Use the yearRange option to control which 
+ years are made available for selection
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.MinDate">
+	<summary>
+ Set a minimum selectable date via a Date object or as a string in the current 
+ dateFormat, or a number of days from today (e.g. +7) or a string of values and 
+ periods ('y' for years, 'm' for months, 'w' for weeks, 'd' 
+ for days, e.g. '-1y -1m'), or null for no limit.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.MaxDate">
+	<summary>
+Set a maximum selectable date via a Date object or as a string in the current 
+ dateFormat, or a number of days from today (e.g. +7) or a string of values and 
+ periods ('y' for years, 'm' for months, 'w' for weeks, 'd' 
+ for days, e.g. '+1m +1w'), or null for no limit.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ButtonImage">
+	<summary>
+ The URL for the popup button image. If set, buttonText becomes the alt value 
+ and is not directly displayed.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ButtonText">
+	<summary>
+ The text to display on the trigger button. Use in conjunction 
+ with showOn equal to 'button' or 'both'.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ButtonImageOnly">
+	<summary>
+ Set to true to place an image after the field to use as the trigger 
+ without it appearing on a button.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ShowOn">
+	<summary>
+ Have the datepicker appear automatically when the field receives focus ('textbox'), 
+ appear only when a button is clicked ('button'), or appear when either event takes 
+ place ('both').
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ShowAnimation">
+	<summary>
+ Set the name of the animation used to show/hide the datepicker. 
+ Use 'show' (the default), 'slideDown', 'fadeIn', any of the show/hide 
+ jQuery UI effects, or '' for no animation.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ShowOtherMonths">
+	<summary>
+ Display dates in other months (non-selectable) at the start or end of the 
+ current month. To make these days selectable use selectOtherMonths.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.SelectOtherMonths">
+	<summary>
+ When true days in other months shown before or after the current 
+ month are selectable. This only applies if showOtherMonths is also true.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.YearRange">
+	<summary>
+ Control the range of years displayed in the year drop-down: either relative 
+ to today's year (-nn:+nn), relative to the currently selected year (c-nn:c+nn), 
+ absolute (nnnn:nnnn), or combinations of these formats (nnnn:-nn). Note that 
+ this option only affects what appears in the drop-down, to restrict which dates 
+ may be selected use the minDate and/or maxDate options.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.ShowButtonPanel">
+	<summary>
+ Whether to show the button panel.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.TimePicker.CloseText">
+	<summary>
+ The text to display for the close link. 
+ Use the showButtonPanel to display this button.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.TimePicker.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.SelectedTabIndex">
+	<summary>
+ Index of the currently selected tab.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.SelectedTab">
+	<summary>
+ The currently selected tab.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.AutoPostBack">
+	<summary>
+ Trigger a post back event when the selected tab is changed (on tab click).  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.Tabs">
+	<summary>
+ Collection of Tab objects within Tabs
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.onSelectCallback">
+	<summary>
+ triggered when clicking a tab.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.onCreateCallback">
+	<summary>
+ triggered when tabs is created.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.onAddCallback">
+	<summary>
+ triggered when a tab is added.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tabs.onShowCallback">
+	<summary>
+ triggered when a tab is shown.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Tabs.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tab.Title">
+	<summary>
+ Name of the tab
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Tab.TargetURL">
+	<summary>
+ Url for iframe within tab
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.ProgressBar.Value">
+	<summary>
+ Percentage out of 100 of bar that is filled
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.ProgressBar.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Dialog.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ChangeMonth">
+	<summary>
+ Allows you to change the month by selecting from a drop-down list. 
+ You can enable this feature by setting the attribute to true.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ChangeYear">
+	<summary>
+ Allows you to change the year by selecting from a drop-down list. You can enable this 
+ feature by setting the attribute to true. Use the yearRange option to control which 
+ years are made available for selection
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.MinDate">
+	<summary>
+ Set a minimum selectable date via a Date object or as a string in the current 
+ dateFormat, or a number of days from today (e.g. +7) or a string of values and 
+ periods ('y' for years, 'm' for months, 'w' for weeks, 'd' 
+ for days, e.g. '-1y -1m'), or null for no limit.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.MaxDate">
+	<summary>
+Set a maximum selectable date via a Date object or as a string in the current 
+ dateFormat, or a number of days from today (e.g. +7) or a string of values and 
+ periods ('y' for years, 'm' for months, 'w' for weeks, 'd' 
+ for days, e.g. '+1m +1w'), or null for no limit.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ButtonImage">
+	<summary>
+ The URL for the popup button image. If set, buttonText becomes the alt value 
+ and is not directly displayed.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ShowDefaultButtonImage">
+	<summary>
+ Shows the default Calendar icon and allows both the textbox and the icon to open the 
+ calendar control
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ButtonText">
+	<summary>
+ The text to display on the trigger button. Use in conjunction 
+ with showOn equal to 'button' or 'both'.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ButtonImageOnly">
+	<summary>
+ Set to true to place an image after the field to use as the trigger 
+ without it appearing on a button.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ShowOn">
+	<summary>
+ Have the datepicker appear automatically when the field receives focus ('textbox'), 
+ appear only when a button is clicked ('button'), or appear when either event takes 
+ place ('both').
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ShowAnimation">
+	<summary>
+ Set the name of the animation used to show/hide the datepicker. 
+ Use 'show' (the default), 'slideDown', 'fadeIn', any of the show/hide 
+ jQuery UI effects, or '' for no animation.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ShowOtherMonths">
+	<summary>
+ Display dates in other months (non-selectable) at the start or end of the 
+ current month. To make these days selectable use selectOtherMonths.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.SelectOtherMonths">
+	<summary>
+ When true days in other months shown before or after the current 
+ month are selectable. This only applies if showOtherMonths is also true.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.YearRange">
+	<summary>
+ Control the range of years displayed in the year drop-down: either relative 
+ to today's year (-nn:+nn), relative to the currently selected year (c-nn:c+nn), 
+ absolute (nnnn:nnnn), or combinations of these formats (nnnn:-nn). Note that 
+ this option only affects what appears in the drop-down, to restrict which dates 
+ may be selected use the minDate and/or maxDate options.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.ShowButtonPanel">
+	<summary>
+ Whether to show the button panel.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.DatePicker.CloseText">
+	<summary>
+ The text to display for the close link. 
+ Use the showButtonPanel to display this button.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.DatePicker.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.PollChart.DataSource">
+	<summary>
+ Gets or sets the data source that the PollChart is displaying data for.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.PollChart.DataMember">
+	<summary>
+ Gets or sets the name of the list or table in the data source for which the PollChart is displaying data.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.PollChart.VoteString">
+	<summary>
+ Display Text of type of data
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.PollChart.DataTextField">
+	<summary>
+ Gets or sets the field of the data source that provides the text of each Poll item.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.PollChart.DataValueField">
+	<summary>
+ Gets or sets the field of the data source that provides the value of each Poll item.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.ThemePicker.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.RenderTag">
+	<summary>
+ Change the html tag used for this sortable (div, ul, p, etc.)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.AppendTo">
+	<summary>
+ Defines where the helper that moves with the mouse is being appended to during the drag (for example, to resolve overlap/zIndex issues).
+ Multiple types supported:
+   jQuery: A jQuery object containing the element to append the helper to.
+   Element: The element to append the helper to.
+    Selector: A selector specifying which element to append the helper to.
+    String: The string "parent" will cause the helper to be a sibling of the sortable item.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Axis">
+	<summary>
+ If defined, the items can be dragged only horizontally or vertically.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Cancel">
+	<summary>
+ Prevents sorting if you start on elements matching the selector.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.ConnectWith">
+	<summary>
+ A selector of other sortable elements that the items from this list should be connected to. 
+ This is a one-way relationship, if you want the items to be connected in both directions, 
+ the connectWith option must be set on both sortable elements.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Containment">
+	<summary>
+ Defines a bounding box that the sortable items are contrained to while dragging.
+ Note: The element specified for containment must have a calculated width and height 
+ (though it need not be explicit). For example, if you have float: left sortable children and 
+ specify containment: "parent" be sure to have float: left on the sortable/parent 
+ container as well or it will have height: 0, causing undefined behavior.
+ 
+ Multiple types supported:
+      Element: An element to use as the container.
+      Selector: A selector specifying an element to use as the container.
+      String: A string identifying an element to use as the container. Possible values: "parent", "document", "window".
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Cursor">
+	<summary>
+ Defines the cursor that is being shown while sorting.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:JqueryUIControls.Sortable.CursorAt">
+	<summary>
+ Moves the sorting element or helper so the 
+ cursor always appears to drag from the same position. 
+ Coordinates can be given as a hash using a combination of one or two keys
+ </summary>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Delay">
+	<summary>
+ Time in milliseconds to define when the sorting should start. 
+ Adding a delay helps preventing unwanted drags when clicking on an element.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Distance">
+	<summary>
+ Tolerance, in pixels, for when sorting should start. If specified, 
+ sorting will not start until after mouse is dragged beyond distance. 
+ Can be used to allow for clicks on elements within a handle.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.DropOnEmpty">
+	<summary>
+ If false, items from this sortable can't be dropped on an empty 
+ connect sortable (see the connectWith option.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.ForceHelperSize">
+	<summary>
+ If true, forces the placeholder to have a size.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.ForcePlaceholderSize">
+	<summary>
+ If true, forces the placeholder to have a size.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:JqueryUIControls.Sortable.Grid">
+	<summary>
+ Snaps the sorting element or helper to a grid, every x and y pixels. Array values: [ x, y ].
+ </summary>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Handle">
+	<summary>
+ Restricts sort start click to the specified element.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Helper">
+	<summary>
+ Allows for a helper element to be used for dragging display.
+ 
+ Multiple types supported:
+      String: If set to "clone", then the element will be cloned and the clone will be dragged.
+      Function: A function that will return a DOMElement to use while dragging. The function receives the event and the element being sorted.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.ItemsSelector">
+	<summary>
+ Specifies which items inside the element should be sortable.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Opacity">
+	<summary>
+ Defines the opacity of the helper while sorting. From 0.01 to 1.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.PlaceHolder">
+	<summary>
+ A class name that gets applied to the otherwise white space.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Revert">
+	<summary>
+ The duration, in milliseconds, of sortable items reverting to their new positions using a smooth animation.
+ -1 to disable, 0 for default
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Scroll">
+	<summary>
+ If set to true, the page scrolls when coming to an edge.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.ScrollSensitivity">
+	<summary>
+ Defines how near the mouse must be to an edge to start scrolling.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.ScrollSpeed">
+	<summary>
+ The speed at which the window should scroll once the mouse pointer gets within the scrollSensitivity distance.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:JqueryUIControls.Sortable.ToleranceMode.intersect">
+	<summary>
+ The item overlaps the other item by at least 50%.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:JqueryUIControls.Sortable.ToleranceMode.pointer">
+	<summary>
+ The mouse pointer overlaps the other item.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.Tolerance">
+	<summary>
+ Specifies which mode to use for testing whether the item being moved is hovering over another item. Possible values:
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.zIndex">
+	<summary>
+ Z-index for element/helper while being sorted.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onActivateCallback">
+	<summary>
+ This event is triggered when using connected lists, 
+ every connected list on drag start receives it.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onBeforeStopCallback">
+	<summary>
+ This event is triggered when sorting stops, but when the placeholder/helper is still available.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onChangeCallback">
+	<summary>
+ This event is triggered during sorting, but only when the DOM position has changed.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onCreateCallback">
+	<summary>
+ Triggered when the sortable is created.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onDeactivateCallback">
+	<summary>
+ his event is triggered when sorting was stopped, is propagated to all possible connected lists.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onOutCallback">
+	<summary>
+ This event is triggered when a sortable item is moved away from a connected list.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onOverCallback">
+	<summary>
+ This event is triggered when a sortable item is moved into a connected list.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onReceiveCallback">
+	<summary>
+ This event is triggered when a connected sortable list has received an item from another list.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onRemoveCallback">
+	<summary>
+ This event is triggered when a sortable item has been dragged out from the list and into another.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onSortCallback">
+	<summary>
+ This event is triggered during sorting.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onstartCallback">
+	<summary>
+ This event is triggered when sorting starts.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onStopCallback">
+	<summary>
+ This event is triggered when sorting has stopped.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Sortable.onUpdateCallback">
+	<summary>
+ This event is triggered when the user stopped sorting and the DOM position has changed.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Sortable.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Max">
+	<summary>
+ The maximum value of the slider.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Min">
+	<summary>
+ The minimum value of the slider.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Orientation">
+	<summary>
+ This option determines whether the slider has the min at the left, 
+ the max at the right or the min at the bottom, the max at the top. 
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Range">
+	<summary>
+ If set to true, the slider will detect if you have two handles and create a stylable range 
+ element between these two. Two other possible values are 'min' and 'max'. 
+ A min range goes from the slider min to one handle. 
+ A max range goes from one handle to the slider max
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Step">
+	<summary>
+ Determines the size or amount of each interval or step the slider takes between min and max. 
+ The full specified value range of the slider (max - min) needs to be evenly divisible by 
+ the step
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Value">
+	<summary>
+ Determines the value of the slider, if there's only one handle. 
+ If there is more than one handle, determines the value of the first handle
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Values">
+	<summary>
+ This option can be used to specify multiple handles. If range is set to true, 
+ the count of 'values' should be 2.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.Animate">
+	<summary>
+ Whether to slide handle smoothly when user click outside handle on the bar. 
+ Will also accept one of the three predefined speeds ("slow", "normal", or "fast") 
+ or the number of milliseconds to run the animation (e.g. 1000)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.UpdateControl">
+	<summary>
+ Updates value of control as slider is slid.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.CreateCallback">
+	<summary>
+ This event is triggered when slider is created.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.ChangeCallback">
+	<summary>
+ This event is triggered on slide stop, or if the value is changed programmatically 
+ (by the value method). Takes arguments event and ui. Use event.orginalEvent to detect 
+ whether the value changed by mouse, keyboard, or programmatically. Use ui.value 
+ (single-handled sliders) to obtain the value of the current handle, 
+ $(this).slider('values', index) to get another handle's value.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.StartCallback">
+	<summary>
+ This event is triggered when the user starts sliding.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.StopCallback">
+	<summary>
+ This event is triggered when the user stops sliding.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Slider.SlideCallback">
+	<summary>
+ This event is triggered on every mouse move during slide. Use ui.value 
+ (single-handled sliders) to obtain the value of the current handle, 
+ $(..).slider('value', index) to get another handles' value.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Slider.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="T:JqueryUIControls.Slider">
+	<summary>
+ The jQuery UI Slider plugin makes selected elements into sliders. 
+ There are various options such as multiple handles, and ranges. 
+ The handle can be moved with the mouse or the arrow keys.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Scroller.Top">
+	<summary>
+ Height from top of page where the scroller will become static.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Scroller.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify_SiteWide.NotifyKey">
+	<summary>
+ This property must be set befor or durring page init.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.text">
+	<summary>
+ The text body of the notification
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.title">
+	<summary>
+ Title of the notification
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.expires">
+	<summary>
+ The amount of time in ms the notification will stay visable
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.sticky">
+	<summary>
+ Helper to make alert stay on the page untill closed. Sets expire to 0 if set to true.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.speed">
+	<summary>
+ The animation speed in ms
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.stack">
+	<summary>
+ The direction new notifications stack in relation to this one.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.theme">
+	<summary>
+ Style the notify message
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.checkInterval">
+	<summary>
+ The interval the server is checked for a new notification
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.showOnLoad">
+	<summary>
+ Show the notification on page load
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.alignV">
+	<summary>
+ Verticle alignment
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Notify.alignH">
+	<summary>
+ Horizontal alignment
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Notify.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.maskedTextbox.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.PreLoadImage">
+	<summary>
+ Specifies the image that will be loaded until the actual image can be loaded.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.Effect">
+	<summary>
+ Effect used to show the image
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.Threshold">
+	<summary>
+ By default images are loaded when they appear on the screen. 
+ If you want images to load earlier you can set threshold parameter. 
+ Setting threshold to 200 causes image to load 200 pixels before it is visible.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.triggerEvent">
+	<summary>
+ any jQuery event such as click or mouseover. 
+ You can also use your own custom events such as sporty or foobar by
+ selecting custom and defining the CustomTriggerEvent Property. 
+ Default is to wait until user scrolls down and image appears on the window.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.CustomTriggerEvent">
+	<summary>
+ Custom event to trigger when a image is shown
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.FailureLimit">
+	<summary>
+ After scrolling page Lazy Load loops though unloaded images. 
+ In loop it checks if image has become visible. By default loop is stopped 
+ when first image below the fold (not visible) is found. This is based
+  on following assumption. Order of images on page is same as order of 
+ images in HTML code. With some layouts assumption this might be wrong. 
+ You can control loading behaviour with failure_limit option.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.SkipInvisible">
+	<summary>
+ There are cases when you have invisible images. For example when using 
+ plugin in together with a large filterable list of items that can have 
+ their visibility state changed dynamically. To improve performance 
+ Lazy Load ignores hidden images by default. If you want to load hidden 
+ images set skip_invisible to false.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.LazyImgLoad.BorderWidth">
+	<summary>
+ Gets or sets the border width of the Web server control.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.LazyImgLoad.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.jsPlumb.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.InfoDiv.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.ColorPicker.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Calendar.eventClick">
+	<summary>
+ js function name for when an event is clicked.
+ function should be in the format:
+ functionName( event, jsEvent, view ) { }
+ property string is just the function name.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Calendar.dayClick">
+	<summary>
+ js function name for when a day is clicked.
+ function should be in the format:
+ functionName( date, allDay, jsEvent, view ) { }
+ property string is just the function name.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Calendar.eventMouseover">
+	<summary>
+ js function name for when an event is moused over.
+ function should be in the format:
+ functionName( event, jsEvent, view ) { }
+ property string is just the function name.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Calendar.eventMouseout">
+	<summary>
+ js function name for when an event is moused out.
+ function should be in the format:
+ functionName( event, jsEvent, view ) { }
+ property string is just the function name.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Calendar.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.Delay">
+	<summary>
+ The delay in milliseconds the Autocomplete waits after a keystroke to activate itself. 
+ A zero-delay makes sense for local data (more responsive), but can produce a lot of 
+ load for remote data, while being less responsive
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.MinLength">
+	<summary>
+ The minimum number of characters a user has to type before the Autocomplete activates. 
+ Zero is useful for local data with just a few items. Should be increased when there are 
+ a lot of items, where a single character would match a few thousand items
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.AutoFocus">
+	<summary>
+ If set to true the first item will be automatically focused
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.Position">
+	<summary>
+ Identifies the position of the Autocomplete widget in relation to the associated input 
+ element. The "of" option defaults to the input element, but you can specify another 
+ element to position against.
+ <see>http://docs.jquery.com/UI/Position</see>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.returnedParms">
+	<summary>
+ Stores values from other controls for the search event
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.Value">
+	<summary>
+ Gets the value of the selected item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.SearchCallback">
+	<summary>
+ Before a request (source-option) is started, after minLength and delay are met. 
+ Can be canceled (return false), then no request will be started and no items suggested.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.OpenCallback">
+	<summary>
+ Triggered when the suggestion menu is opened.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.FocusCallback">
+	<summary>
+ Before focus is moved to an item (not selecting), ui.item refers to the focused item. 
+ The default action of focus is to replace the text field's value with the value of 
+ the focused item, though only if the focus event was triggered by a keyboard interaction. 
+ Canceling this event prevents the value from being updated, but does not prevent the menu 
+ item from being focused
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.SelectCallback">
+	<summary>
+ Triggered when an item is selected from the menu; ui.item refers to the selected item. 
+ The default action of select is to replace the text field's value with the value of 
+ the selected item. Canceling this event prevents the value from being updated, but does 
+ not prevent the menu from closing
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.ChangeCallback">
+	<summary>
+ After an item was selected; ui.item refers to the selected item. Always triggered
+  after the close event.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Autocomplete.CloseCallback">
+	<summary>
+ When the list is hidden - doesn't have to occur together with a change.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.respond(System.Data.DataTable,System.String,System.String)">
+	<summary>
+ Text to display matching the users current query
+ </summary>
+	<param name="dt"></param>
+	<param name="nameColumn"></param>
+	<param name="valuecolumn"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.respond(System.Data.DataView,System.String,System.String)">
+	<summary>
+ Text to display matching the users current query
+ </summary>
+	<param name="dv"></param>
+	<param name="nameColumn"></param>
+	<param name="valuecolumn"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.respond(System.Data.DataTable)">
+	<summary>
+ Text to display matching the users current query
+ </summary>
+	<param name="dt"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.respond(System.Data.DataView)">
+	<summary>
+ Text to display matching the users current query
+ </summary>
+	<param name="dv"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.respond(System.String@)">
+	<summary>
+ Text to display matching the users current query
+ </summary>
+	<param name="JSONDataString"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.setDistinctAutocomplete(System.String,System.String,System.Int32,System.String,System.Data.Common.DbConnection)">
+	<summary>
+ Sets the autocomplete to display the distinct text from the column provided.
+ </summary>
+	<param name="tableName"></param>
+	<param name="columnName"></param>
+	<param name="numberReturned"></param>
+	<param name="searchParmFormat"></param>
+	<param name="connection"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.setAutocompleteConnection(System.Data.Common.DbConnection)">
+	<summary>
+ Sets the connection for setDistinctAutocomplete and setSelectAutocomplete. 
+ </summary>
+	<param name="connection"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Autocomplete.setSelectAutocomplete(System.String,System.String,System.String,System.String,System.Data.Common.DbConnection)">
+	<summary>
+ Sets the autocomplete to display results from the provided select statement.
+ </summary>
+	<param name="SelectStmt">A select statement with a single query parameter.</param>
+	<param name="Displaycolumn">Column to display in the autocomplete</param>
+	<param name="valueColumn">Value to return once clicked (autopostback must = true)</param>
+	<param name="searchParmFormat">{0}%</param>
+	<param name="connection"></param>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.AjaxCall.returnedParms">
+	<summary>
+ Stores values from other controls for the search event
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.AjaxCall.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.AjaxCall.decodeFromURL(System.String)">
+	<summary>
+ Decodes a given string from URL encoding 
+ </summary>
+	<param name="value">
+ String to be decoded
+ </param>
+	<returns>
+ Decoded string
+ </returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.AjaxCall.respond(System.String@,System.String)">
+	<summary>
+ Text to display matching the users current query
+ </summary>
+	<param name="returnValue"></param>
+	<remarks></remarks>
+</member><member name="T:JqueryUIControls.AjaxCall">
+	<summary>
+ An ajax call back to current page. Page is terminated after init. Elements can be cahnged on the page but must be added to the watched control list. The call can be made from javascript by calling the control id
+ ex:   ajaxcall(StringData);
+ The event is raised on the server as the event "callback(ByVal sender As JqueryUIControls.AjaxCall, ByVal query As String)" 
+ The js return method recieves data back via sender.respond("ok")
+ ex:   function jsReturn(dataFromServer){ alert(dataFromServer); }
+ 
+ </summary>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.Animated">
+	<summary>
+ Choose your favorite animation, or disable them (set to none).
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.AutoHeight">
+	<summary>
+ If set, the highest content part is used as height reference for all other parts. 
+ Provides more consistent animations
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.ClearStyle">
+	<summary>
+ If set, clears height and overflow styles after finishing animations. 
+ This enables accordions to work with dynamic content. Won't work together 
+ with autoHeight.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.Collapsible">
+	<summary>
+ Whether all the sections can be closed at once. Allows collapsing the 
+ active section by the triggering event (click is the default)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.Event">
+	<summary>
+ The event on which to trigger the accordion
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.FillSpace">
+	<summary>
+ If set, the accordion completely fills the height of the parent element. Overrides autoheight
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.Icons">
+	<summary>
+ Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', 
+ and we recommend using the icons native to the jQuery UI CSS Framework 
+ manipulated by jQuery UI ThemeRoller
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>{ 'header': 'ui-icon-triangle-1-e', 'headerSelected': 'ui-icon-triangle-1-s' }</remarks>
+</member><member name="P:JqueryUIControls.Accordion.ActivePaneIndex">
+	<summary>
+ Index of the currently selected pane.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.ActivePane">
+	<summary>
+ The currently selected pane.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.CreateCallback">
+	<summary>
+ This event is triggered when accordion is created.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.ChangeCallback">
+	<summary>
+ This event is triggered every time the accordion changes. If the accordion is 
+ animated, the event will be triggered upon completion of the animation; 
+ otherwise, it is triggered immediately
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:JqueryUIControls.Accordion.ChangeStartCallback">
+	<summary>
+ This event is triggered every time the accordion starts to change
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:JqueryUIControls.Accordion.registerControl(System.Web.UI.Page)">
+	<summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

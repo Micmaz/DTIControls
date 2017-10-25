@@ -1,0 +1,369 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+jQueryLibrary
+</name>
+</assembly>
+<members>
+<member name="M:jQueryLibrary.ThemeAdder.AddCustomTheme(System.Web.UI.Page@,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="themepath"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.getThemeAdder(System.Web.UI.Page)">
+	<summary>
+ Gets the themeAdder object for the specified page.
+ </summary>
+	<param name="page"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes,System.Boolean)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes,System.Boolean,System.Boolean)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes,System.Boolean,System.Boolean,System.Boolean)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddTheme(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.Boolean)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.ThemeAdder.AddThemeToIframe(System.Web.UI.Page@,System.Boolean)">
+	<summary>
+ Adds a theme to the page.
+ </summary>
+	<param name="page"></param>
+	<remarks></remarks>
+</member><member name="T:jQueryLibrary.ThemeAdder">
+	<summary>
+ Adds a jquery theme to the page.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.Plugins.TimePicker.Register(System.Web.UI.Page@,System.Int32,System.Boolean)">
+	<summary>
+ Registers a script on a given page
+ </summary>
+	<param name="page">
+ The page to register the script to
+ </param>
+	<param name="addAtPosition">
+ Position the script will be added at
+ </param>
+	<param name="asWebResource">
+ Boolean to identify as a webresource
+ </param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.Plugins.TimePicker.#ctor(System.String,System.String,System.Boolean)">
+	<summary>
+ Constructor for the TimePicker class
+ </summary>
+	<param name="type">
+ Type of script
+ </param>
+	<param name="filename">
+ Filename for script
+ </param>
+	<param name="noscripts"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.Plugins.query.Register(System.Web.UI.Page@,System.Int32,System.Boolean)">
+	<summary>
+ Registers a script on a given page
+ </summary>
+	<param name="page">
+ The page to register the script to
+ </param>
+	<param name="addAtPosition">
+ Position the script will be added at
+ </param>
+	<param name="asWebResource">
+ Boolean to identify as a webresource
+ </param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.Plugins.query.#ctor(System.String,System.String,System.Boolean)">
+	<summary>
+ Constructor for query class
+ </summary>
+	<param name="type">
+ Type of script
+ </param>
+	<param name="filename">
+ Filename of script
+ </param>
+	<param name="noscripts"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.Plugins.ContextMenu.Register(System.Web.UI.Page@,System.Int32,System.Boolean)">
+	<summary>
+	</summary>
+	<param name="page"></param>
+	<param name="addAtPosition"></param>
+	<param name="asWebResource"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.Plugins.ContextMenu.#ctor(System.String,System.String,System.Boolean)">
+	<summary>
+ Constructor for ContextMenu class
+ </summary>
+	<param name="type">
+ Type of script
+ </param>
+	<param name="filename">
+ Filename of script
+ </param>
+	<param name="noscripts"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.Plugins.Center.#ctor(System.String,System.String,System.Boolean)">
+	<summary>
+ Constructor for the Center class
+ </summary>
+	<param name="type">
+ Type of script
+ </param>
+	<param name="filename">
+ Filename of the script
+ </param>
+	<param name="noscripts">
+	</param>
+	<remarks></remarks>
+</member><member name="F:jQueryLibrary.jQueryInclude.isinitial">
+	<summary>
+ determines if the include has been added already.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:jQueryLibrary.jQueryInclude.ctrlList">
+	<summary>
+ Lists all controls in the page head
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addScriptBlock(System.Web.UI.Page,System.String,System.Boolean,System.String,System.String)">
+	<summary>
+ Adds the jQuery script block to the page.
+ </summary>
+	<param name="page">
+ The page that the script block will be added to.
+ </param>
+	<param name="script">
+ The script to be added
+ </param>
+	<param name="minify"></param>
+	<param name="type"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addStyleBlock(System.Web.UI.Page,System.String,System.String)">
+	<summary>
+ Adds a style block to the page.
+ </summary>
+	<param name="page">The page that the script block will be added to.</param>
+	<param name="style">The Style to be Added</param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(System.Web.UI.Page,System.String,System.Boolean,System.String)">
+	<summary>
+ Adds the jQuery script block that executes after page load.
+ </summary>
+	<param name="page">
+ The page that the script block will be added to.
+ </param>
+	<param name="script">
+ The script to be added
+ </param>
+	<param name="minify"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addScriptFile(System.Web.UI.Page,System.String,System.String,System.Boolean,System.Boolean,System.String)">
+	<summary>
+	</summary>
+	<param name="page"></param>
+	<param name="scriptLocation"></param>
+	<param name="type"></param>
+	<param name="disableMinimize"></param>
+	<param name="useFullPath"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.deleteScriptFile(System.Web.UI.Page,System.String)">
+	<summary>
+ removes a script file from the page.
+ </summary>
+	<param name="page"></param>
+	<param name="scriptLocation"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.getInitialInclude(System.Web.UI.Page)">
+	<summary>
+ Gets the jQuery include on a given page
+ </summary>
+	<param name="page">
+ The Page to get the include from
+ </param>
+	<returns>
+ Returns the jQuery include as a jQueryInclude type
+ </returns>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.RegisterJQueryUI(System.Web.UI.Page@,System.String)">
+	<summary>
+  Adds the jQueryUI include header to a given page
+ </summary>
+	<param name="page">
+ The page to add the header to
+ </param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.RegisterJQueryUIThemed(System.Web.UI.Page@,jQueryLibrary.ThemeAdder.themes,System.String,System.Boolean)">
+	<summary>
+  Adds the jQueryUI include header to a given page
+ </summary>
+	<param name="page">
+ The page to add the header to
+ </param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.RegisterJQueryUIThemed(System.Web.UI.Page@)">
+	<summary>
+  Adds the jQueryUI include header to a given page
+ </summary>
+	<param name="page">
+ The page to add the header to
+ </param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.RegisterJQuery(System.Web.UI.Page@,System.String,System.Boolean)">
+	<summary>
+  Adds the jQuery include header to a given page
+ </summary>
+	<param name="page">
+ The page to add the header to
+ </param>
+	<param name="version"></param>
+	<param name="asWebResource"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.#ctor(System.String,System.String)">
+	<summary>
+ jQueryInclude constructor, sets jqtype and src
+ </summary>
+	<param name="type"></param>
+	<param name="src"></param>
+	<remarks></remarks>
+</member><member name="P:jQueryLibrary.jQueryInclude.jqueryIncludeList">
+	<summary>
+ jQuery Include List read only property
+ </summary>
+	<value></value>
+	<returns>
+ jQuery Include List
+ </returns>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addJQueryToHead(System.Web.UI.Page,jQueryLibrary.jQueryInclude)">
+	<summary>
+ Adds the JQueryIncludeHeader to the head tag
+ </summary>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addInclude(jQueryLibrary.jQueryInclude.ScriptFile)">
+	<summary>
+ Adds a script file to the jQuery include list
+ </summary>
+	<param name="sf">
+ Script file to be included
+ </param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addInclude(System.String,System.String,System.Boolean,System.Boolean,System.String)">
+	<summary>
+ Creates an instance of ScriptFile in order to add it to the jQuery include list
+ </summary>
+	<param name="filename">
+ Name of file to be added to ScriptFile instance
+ </param>
+	<param name="type">Type of script</param>
+	<param name="suppressRes"></param>
+	<param name="disableMinimize"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.deleteInclude(System.String)">
+	<summary>
+ Removes filename
+ </summary>
+	<param name="filename"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.deleteIncludeByID(System.String)">
+	<summary>
+ Removes an id
+ </summary>
+	<param name="id"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.replaceIncludeByID(System.String,System.String)">
+	<summary>
+ Replaces an id
+ </summary>
+	<param name="id"></param>
+	<param name="newcontents"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.ScriptFile.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.String)">
+	<summary>
+ Constructor for ScriptFile class
+ </summary>
+	<param name="src"></param>
+	<param name="type">
+ Type of script
+ </param>
+	<param name="suppressRes"></param>
+	<param name="disableMinimize"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.addControlToHeader(System.Web.UI.Page,System.Web.UI.Control)">
+	<summary>
+ Adds a control to the page header.
+ </summary>
+	<param name="page"></param>
+	<param name="ctrl"></param>
+	<remarks></remarks>
+</member><member name="M:jQueryLibrary.jQueryInclude.getEnumName(System.Object)">
+	<summary>
+ helper method to get the name of an eumeration object.
+ </summary>
+	<param name="enumeration"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:jQueryLibrary.jQueryInclude">
+	<summary>
+ Automatically adds jquery dependancy to a page. Accessed via static calls.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

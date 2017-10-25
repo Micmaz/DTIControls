@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DTIGoogleCalendar", "DTIGoogleCalendar.vbproj", "{0AEA4AD2-5997-4485-A867-CEF26C8A3780}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DTIGoogleCalendarTester", "DTIGoogleCalendarTester\DTIGoogleCalendarTester.vbproj", "{F091E7A4-5A5A-494A-8A4E-E43D012F3FBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AEA4AD2-5997-4485-A867-CEF26C8A3780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEA4AD2-5997-4485-A867-CEF26C8A3780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEA4AD2-5997-4485-A867-CEF26C8A3780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEA4AD2-5997-4485-A867-CEF26C8A3780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F091E7A4-5A5A-494A-8A4E-E43D012F3FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F091E7A4-5A5A-494A-8A4E-E43D012F3FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F091E7A4-5A5A-494A-8A4E-E43D012F3FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F091E7A4-5A5A-494A-8A4E-E43D012F3FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

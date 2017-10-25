@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDTIControls" targetNamespace="http://tempuri.org/dsDTIControls.xsd" xmlns:mstns="http://tempuri.org/dsDTIControls.xsd" xmlns="http://tempuri.org/dsDTIControls.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDTIControls" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsDTIControls" msprop:Generator_DataSetName="dsDTIControls">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIControl" msprop:Generator_UserTableName="DTIControl" msprop:Generator_RowDeletedName="DTIControlRowDeleted" msprop:Generator_RowChangedName="DTIControlRowChanged" msprop:Generator_RowClassName="DTIControlRow" msprop:Generator_RowChangingName="DTIControlRowChanging" msprop:Generator_RowEvArgName="DTIControlRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIControlRowChangeEventHandler" msprop:Generator_TableClassName="DTIControlDataTable" msprop:Generator_TableVarName="tableDTIControl" msprop:Generator_RowDeletingName="DTIControlRowDeleting" msprop:Generator_TablePropName="DTIControl">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Component_type" msdata:Caption="UserName" msprop:Generator_UserColumnName="Component_type" msprop:Generator_ColumnPropNameInRow="Component_type" msprop:Generator_ColumnVarNameInTable="columnComponent_type" msprop:Generator_ColumnPropNameInTable="Component_typeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Content_Type" msdata:Caption="Password" msprop:Generator_UserColumnName="Content_Type" msprop:Generator_ColumnPropNameInRow="Content_Type" msprop:Generator_ColumnVarNameInTable="columnContent_Type" msprop:Generator_ColumnPropNameInTable="Content_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MainId" msprop:Generator_UserColumnName="MainId" msprop:Generator_ColumnPropNameInRow="MainId" msprop:Generator_ColumnVarNameInTable="columnMainId" msprop:Generator_ColumnPropNameInTable="MainIdColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTIControlProperty" msprop:Generator_UserTableName="DTIControlProperty" msprop:Generator_RowDeletedName="DTIControlPropertyRowDeleted" msprop:Generator_RowChangedName="DTIControlPropertyRowChanged" msprop:Generator_RowClassName="DTIControlPropertyRow" msprop:Generator_RowChangingName="DTIControlPropertyRowChanging" msprop:Generator_RowEvArgName="DTIControlPropertyRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIControlPropertyRowChangeEventHandler" msprop:Generator_TableClassName="DTIControlPropertyDataTable" msprop:Generator_TableVarName="tableDTIControlProperty" msprop:Generator_RowDeletingName="DTIControlPropertyRowDeleting" msprop:Generator_TablePropName="DTIControlProperty">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" />
+              <xs:element name="PropertyValue" msprop:Generator_UserColumnName="PropertyValue" msprop:Generator_ColumnPropNameInRow="PropertyValue" msprop:Generator_ColumnVarNameInTable="columnPropertyValue" msprop:Generator_ColumnPropNameInTable="PropertyValueColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PropertyType" msprop:Generator_UserColumnName="PropertyType" msprop:Generator_ColumnPropNameInRow="PropertyType" msprop:Generator_ColumnVarNameInTable="columnPropertyType" msprop:Generator_ColumnPropNameInTable="PropertyTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PropertyPath" msprop:Generator_UserColumnName="PropertyPath" msprop:Generator_ColumnVarNameInTable="columnPropertyPath" msprop:Generator_ColumnPropNameInRow="PropertyPath" msprop:Generator_ColumnPropNameInTable="PropertyPathColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTIControlID" msprop:Generator_UserColumnName="DTIControlID" msprop:Generator_ColumnVarNameInTable="columnDTIControlID" msprop:Generator_ColumnPropNameInRow="DTIControlID" msprop:Generator_ColumnPropNameInTable="DTIControlIDColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIControl" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTIControlProperty_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIControlProperty" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="DTIControl_DTIControlProperty" msdata:parent="DTIControl" msdata:child="DTIControlProperty" msdata:parentkey="Id" msdata:childkey="DTIControlID" msprop:Generator_UserRelationName="DTIControl_DTIControlProperty" msprop:Generator_RelationVarName="relationDTIControl_DTIControlProperty" msprop:Generator_UserChildTable="DTIControlProperty" msprop:Generator_UserParentTable="DTIControl" msprop:Generator_ParentPropName="DTIControlRow" msprop:Generator_ChildPropName="GetDTIControlPropertyRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

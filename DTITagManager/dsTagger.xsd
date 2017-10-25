@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTagger" targetNamespace="http://tempuri.org/dsTagger.xsd" xmlns:mstns="http://tempuri.org/dsTagger.xsd" xmlns="http://tempuri.org/dsTagger.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTagger" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTagger" msprop:Generator_DataSetName="dsTagger">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTI_Content_Tags" msprop:Generator_UserTableName="DTI_Content_Tags" msprop:Generator_RowDeletedName="DTI_Content_TagsRowDeleted" msprop:Generator_TableClassName="DTI_Content_TagsDataTable" msprop:Generator_RowChangedName="DTI_Content_TagsRowChanged" msprop:Generator_RowClassName="DTI_Content_TagsRow" msprop:Generator_RowChangingName="DTI_Content_TagsRowChanging" msprop:Generator_RowEvArgName="DTI_Content_TagsRowChangeEvent" msprop:Generator_RowEvHandlerName="DTI_Content_TagsRowChangeEventHandler" msprop:Generator_TablePropName="DTI_Content_Tags" msprop:Generator_TableVarName="tableDTI_Content_Tags" msprop:Generator_RowDeletingName="DTI_Content_TagsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Tag_Name" msprop:Generator_UserColumnName="Tag_Name" msprop:Generator_ColumnPropNameInRow="Tag_Name" msprop:Generator_ColumnVarNameInTable="columnTag_Name" msprop:Generator_ColumnPropNameInTable="Tag_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Main_Id" msprop:Generator_UserColumnName="Main_Id" msprop:Generator_ColumnPropNameInRow="Main_Id" msprop:Generator_ColumnVarNameInTable="columnMain_Id" msprop:Generator_ColumnPropNameInTable="Main_IdColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTI_Content_Tag_Pivot" msprop:Generator_UserTableName="DTI_Content_Tag_Pivot" msprop:Generator_RowDeletedName="DTI_Content_Tag_PivotRowDeleted" msprop:Generator_TableClassName="DTI_Content_Tag_PivotDataTable" msprop:Generator_RowChangedName="DTI_Content_Tag_PivotRowChanged" msprop:Generator_RowClassName="DTI_Content_Tag_PivotRow" msprop:Generator_RowChangingName="DTI_Content_Tag_PivotRowChanging" msprop:Generator_RowEvArgName="DTI_Content_Tag_PivotRowChangeEvent" msprop:Generator_RowEvHandlerName="DTI_Content_Tag_PivotRowChangeEventHandler" msprop:Generator_TablePropName="DTI_Content_Tag_Pivot" msprop:Generator_TableVarName="tableDTI_Content_Tag_Pivot" msprop:Generator_RowDeletingName="DTI_Content_Tag_PivotRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Component_Type" msprop:Generator_UserColumnName="Component_Type" msprop:Generator_ColumnPropNameInRow="Component_Type" msprop:Generator_ColumnVarNameInTable="columnComponent_Type" msprop:Generator_ColumnPropNameInTable="Component_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Content_Id" msprop:Generator_UserColumnName="Content_Id" msprop:Generator_ColumnPropNameInRow="Content_Id" msprop:Generator_ColumnVarNameInTable="columnContent_Id" msprop:Generator_ColumnPropNameInTable="Content_IdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Tag_Id" msprop:Generator_UserColumnName="Tag_Id" msprop:Generator_ColumnPropNameInRow="Tag_Id" msprop:Generator_ColumnVarNameInTable="columnTag_Id" msprop:Generator_ColumnPropNameInTable="Tag_IdColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTI_Content_Tags" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTI_Content_Tag_Pivot_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTI_Content_Tag_Pivot" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

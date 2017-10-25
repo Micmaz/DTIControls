@@ -1,0 +1,3 @@
+C:\components\DTIContentManagement\DTIContentManagementTester\obj\Debug\ZDTIContentManagementTester.vbprojResolveAssemblyReference.cache
+C:\components\DTIContentManagement\DTIContentManagementTester\obj\Debug\DTIContentManagementTester.Resources.resources
+C:\components\DTIContentManagement\DTIContentManagementTester\obj\Debug\ZDTIContentManagementTester.vbproj.GenerateResource.Cache

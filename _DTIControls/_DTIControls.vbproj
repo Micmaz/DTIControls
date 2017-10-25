@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.props" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13BDEFD8-8A9A-4FA9-9E76-420D45237F85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DTIControls</RootNamespace>
+    <AssemblyName>DTIControls</AssemblyName>
+    <MyType>Empty</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\_Output\</OutputPath>
+    <DocumentationFile>DTIControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\_Output\</OutputPath>
+    <DocumentationFile>DTIControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ILMerge.props" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Binding\Binding\Binding.vbproj">
+      <Project>{e606e1df-3f67-406a-a1cf-b691143763d8}</Project>
+      <Name>Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIAdminPanel\DTIAdminPanel\DTIAdminPanel.vbproj">
+      <Project>{74009bbf-5539-4a38-8532-d9d5880d273d}</Project>
+      <Name>DTIAdminPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIAjax\DTIAjax\DTIAjax.vbproj">
+      <Project>{ad7d65c9-79da-4c04-9bbf-36fd51de19f2}</Project>
+      <Name>DTIAjax</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIContentManagement\DTIContentManagement\DTIContentManagement.vbproj">
+      <Project>{45be892a-4e37-47f1-9fd1-54cdeb8ddc6b}</Project>
+      <Name>DTIContentManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIContentManagement\DTIGalleryControl\DTIGalleryControl\DTIGallery.vbproj">
+      <Project>{434854f6-331d-41e1-bb5e-d23fb44098ec}</Project>
+      <Name>DTIGallery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIContentManagement\DTIImageManager\DTIImageManager.vbproj">
+      <Project>{f7332f7e-7883-4da9-a8bd-97e5f7266321}</Project>
+      <Name>DTIImageManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIContentManagement\DTIMediaManager\DTIMediaManager.vbproj">
+      <Project>{82f81992-98b3-435b-bf07-e3aad8eff929}</Project>
+      <Name>DTIMediaManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIContentManagement\DTIUploader\DTIUploader.vbproj">
+      <Project>{09114331-3f81-47b3-819f-ed110f2be7ec}</Project>
+      <Name>DTIUploader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIContentManagement\DTIVideoManager\DTIVideoManager.vbproj">
+      <Project>{723064cc-6c30-422b-8927-19fe9592901c}</Project>
+      <Name>DTIVideoManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIControlsSharedFunctions\DTIControlsSharedFunctions.vbproj">
+      <Project>{e1fb0ede-26fc-4b16-97f8-c7bb2cf193ec}</Project>
+      <Name>DTIControlsSharedFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIGoogleCalendar\DTIGoogleCalendar.vbproj">
+      <Project>{0aea4ad2-5997-4485-a867-cef26c8a3780}</Project>
+      <Name>DTIGoogleCalendar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIMapControl\DTIMapControl\DTIMapControl.vbproj">
+      <Project>{988af3b8-05f5-4091-826b-f0e6ca0cf765}</Project>
+      <Name>DTIMapControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
+      <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
+      <Name>DTIMiniControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIServerControl\DTIServerControls.vbproj">
+      <Project>{48529821-dd5a-47e2-8444-a91143140ea6}</Project>
+      <Name>DTIServerControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTISortable\DTISortable\DTISortable.vbproj">
+      <Project>{453d33ff-37ba-4eec-b7da-b117d85041ad}</Project>
+      <Name>DTISortable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTITagManager\DTITagManager.vbproj">
+      <Project>{610fb933-5858-486d-b2c8-6b7132754e06}</Project>
+      <Name>DTITagManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HighslideControls\HighslideControls\HighslideControls.vbproj">
+      <Project>{f26e8251-f511-4889-a31d-384d1f497a2b}</Project>
+      <Name>HighslideControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JqueryUIControls\JqueryUIControls\JqueryUIControls.vbproj">
+      <Project>{cc9f78d0-b8da-4945-9b59-96bc05762f56}</Project>
+      <Name>JqueryUIControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Json\Json\Json.csproj">
+      <Project>{a9ae40ff-1a21-414a-9fe7-3be13644cc6d}</Project>
+      <Name>Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rotator\Rotator\Rotator\Rotator.vbproj">
+      <Project>{78831507-0930-4ed0-adda-79bfd1057c3c}</Project>
+      <Name>Rotator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SummerNote\SummerNote\SummerNote.vbproj">
+      <Project>{4f287f0b-022d-43da-9941-291a957e0e7f}</Project>
+      <Name>SummerNote</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoPanel\VideoPanel\VideoPanel\VideoPanel.vbproj">
+      <Project>{a820b67a-d404-4db1-aa99-18adb90678f7}</Project>
+      <Name>VideoPanel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ILMergeOrder.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.props'))" />
+    <Error Condition="!Exists('..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets'))" />
+  </Target>
+  <Import Project="..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

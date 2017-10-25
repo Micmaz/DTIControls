@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMedia" targetNamespace="http://tempuri.org/dsMedia.xsd" xmlns:mstns="http://tempuri.org/dsMedia.xsd" xmlns="http://tempuri.org/dsMedia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMedia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMedia" msprop:Generator_DataSetName="dsMedia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIMediaManager" msprop:Generator_UserTableName="DTIMediaManager" msprop:Generator_RowDeletedName="DTIMediaManagerRowDeleted" msprop:Generator_RowChangedName="DTIMediaManagerRowChanged" msprop:Generator_RowClassName="DTIMediaManagerRow" msprop:Generator_RowChangingName="DTIMediaManagerRowChanging" msprop:Generator_RowEvArgName="DTIMediaManagerRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIMediaManagerRowChangeEventHandler" msprop:Generator_TableClassName="DTIMediaManagerDataTable" msprop:Generator_TableVarName="tableDTIMediaManager" msprop:Generator_RowDeletingName="DTIMediaManagerRowDeleting" msprop:Generator_TablePropName="DTIMediaManager">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Content_Type" msdata:Caption="Component_Type" msprop:Generator_UserColumnName="Content_Type" msprop:Generator_ColumnVarNameInTable="columnContent_Type" msprop:Generator_ColumnPropNameInRow="Content_Type" msprop:Generator_ColumnPropNameInTable="Content_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Content_Id" msdata:Caption="Component_Id" msprop:Generator_UserColumnName="Content_Id" msprop:Generator_ColumnVarNameInTable="columnContent_Id" msprop:Generator_ColumnPropNameInRow="Content_Id" msprop:Generator_ColumnPropNameInTable="Content_IdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Published" msprop:Generator_UserColumnName="Published" msprop:Generator_ColumnVarNameInTable="columnPublished" msprop:Generator_ColumnPropNameInRow="Published" msprop:Generator_ColumnPropNameInTable="PublishedColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Removed" msprop:Generator_UserColumnName="Removed" msprop:Generator_ColumnVarNameInTable="columnRemoved" msprop:Generator_ColumnPropNameInRow="Removed" msprop:Generator_ColumnPropNameInTable="RemovedColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Highslide_Variable_String" msprop:Generator_UserColumnName="Highslide_Variable_String" msprop:Generator_ColumnVarNameInTable="columnHighslide_Variable_String" msprop:Generator_ColumnPropNameInRow="Highslide_Variable_String" msprop:Generator_ColumnPropNameInTable="Highslide_Variable_StringColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Rating" msprop:Generator_UserColumnName="Rating" msprop:Generator_ColumnVarNameInTable="columnRating" msprop:Generator_ColumnPropNameInRow="Rating" msprop:Generator_ColumnPropNameInTable="RatingColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="User_Id" msprop:Generator_UserColumnName="User_Id" msprop:Generator_ColumnVarNameInTable="columnUser_Id" msprop:Generator_ColumnPropNameInRow="User_Id" msprop:Generator_ColumnPropNameInTable="User_IdColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_UserColumnName="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Component_Type" msprop:Generator_UserColumnName="Component_Type" msprop:Generator_ColumnVarNameInTable="columnComponent_Type" msprop:Generator_ColumnPropNameInRow="Component_Type" msprop:Generator_ColumnPropNameInTable="Component_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Date_Added" msprop:Generator_UserColumnName="Date_Added" msprop:Generator_ColumnVarNameInTable="columnDate_Added" msprop:Generator_ColumnPropNameInRow="Date_Added" msprop:Generator_ColumnPropNameInTable="Date_AddedColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Permanent_URL" msprop:Generator_UserColumnName="Permanent_URL" msprop:Generator_ColumnVarNameInTable="columnPermanent_URL" msprop:Generator_ColumnPropNameInRow="Permanent_URL" msprop:Generator_ColumnPropNameInTable="Permanent_URLColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Rating_Count" msprop:Generator_UserColumnName="Rating_Count" msprop:Generator_ColumnPropNameInRow="Rating_Count" msprop:Generator_ColumnVarNameInTable="columnRating_Count" msprop:Generator_ColumnPropNameInTable="Rating_CountColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="Rating_Sum" msprop:Generator_UserColumnName="Rating_Sum" msprop:Generator_ColumnPropNameInRow="Rating_Sum" msprop:Generator_ColumnVarNameInTable="columnRating_Sum" msprop:Generator_ColumnPropNameInTable="Rating_SumColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTIMediaTypes" msprop:Generator_UserTableName="DTIMediaTypes" msprop:Generator_RowDeletedName="DTIMediaTypesRowDeleted" msprop:Generator_RowChangedName="DTIMediaTypesRowChanged" msprop:Generator_RowClassName="DTIMediaTypesRow" msprop:Generator_RowChangingName="DTIMediaTypesRowChanging" msprop:Generator_RowEvArgName="DTIMediaTypesRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIMediaTypesRowChangeEventHandler" msprop:Generator_TableClassName="DTIMediaTypesDataTable" msprop:Generator_TableVarName="tableDTIMediaTypes" msprop:Generator_RowDeletingName="DTIMediaTypesRowDeleting" msprop:Generator_TablePropName="DTIMediaTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="ThumbURL" msprop:Generator_UserColumnName="ThumbURL" msprop:Generator_ColumnVarNameInTable="columnThumbURL" msprop:Generator_ColumnPropNameInRow="ThumbURL" msprop:Generator_ColumnPropNameInTable="ThumbURLColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ExpandURL" msprop:Generator_UserColumnName="ExpandURL" msprop:Generator_ColumnVarNameInTable="columnExpandURL" msprop:Generator_ColumnPropNameInRow="ExpandURL" msprop:Generator_ColumnPropNameInTable="ExpandURLColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Content_Name" msdata:Caption="Component_Name" msprop:Generator_UserColumnName="Content_Name" msprop:Generator_ColumnVarNameInTable="columnContent_Name" msprop:Generator_ColumnPropNameInRow="Content_Name" msprop:Generator_ColumnPropNameInTable="Content_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Highslide_Type" msprop:Generator_UserColumnName="Highslide_Type" msprop:Generator_ColumnVarNameInTable="columnHighslide_Type" msprop:Generator_ColumnPropNameInRow="Highslide_Type" msprop:Generator_ColumnPropNameInTable="Highslide_TypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIMediaManager" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTIMediaTypes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIMediaTypes" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

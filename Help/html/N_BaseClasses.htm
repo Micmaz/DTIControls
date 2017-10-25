@@ -1,0 +1,367 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>BaseClasses Namespace</title>
+    <link rel="stylesheet" type="text/css" href="../styles/Presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Dx/DxRuntime/DxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/LanguageFilter.js"> </script>
+    <script type="text/javascript" src="../scripts/DataStore.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/MemberFilter.js"> </script>
+    <meta name="guid" content="N_BaseClasses" />
+    <xml>
+      <MSHelp:TOCTitle Title="BaseClasses Namespace" />
+      <MSHelp:RLTitle Title="BaseClasses Namespace ()" />
+      <MSHelp:Attr Name="AssetID" Value="N:BaseClasses" />
+      <MSHelp:Keyword Index="A" Term="N:BaseClasses" />
+      <MSHelp:Keyword Index="A" Term="frlrfBaseClasses" />
+      <MSHelp:Keyword Index="A" Term="frlrf" />
+      <MSHelp:Keyword Index="K" Term="BaseClasses namespace" />
+      <MSHelp:Keyword Index="F" Term="BaseClasses" />
+      <MSHelp:Attr Name="HelpPriority" Value="1" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="DevLang" Value="C++" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="Abstract" Value="Base classes for most needed objects adding a data access layer and virtual path management to existing objects." />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collall.gif" alt="CollapseAll image" title="CollapseAll image" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expall.gif" alt="ExpandAll image" title="ExpandAll image" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/twirl_unselected.gif" alt="DropDown image" title="DropDown image" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/twirl_unselected_hover.gif" alt="DropDownHover image" title="DropDownHover image" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+    <img id="checkBoxSelectImage" style="display:none; height:0; width:0;" src="../icons/ch_selected.gif" />
+    <img id="checkBoxUnSelectImage" style="display:none; height:0; width:0;" src="../icons/ch_unselected.gif" />
+    <img id="checkBoxSelectHoverImage" style="display:none; height:0; width:0;" src="../icons/ch_selected_hover.gif" />
+    <img id="checkBoxUnSelectHoverImage" style="display:none; height:0; width:0;" src="../icons/ch_unselected_hover.gif" />
+    <img id="radioSelectImage" style="display:none; height:0; width:0;" src="../icons/r_select.gif" />
+    <img id="radioUnSelectImage" style="display:none; height:0; width:0;" src="../icons/r_unselect.gif" />
+    <img id="radioSelectHoverImage" style="display:none; height:0; width:0;" src="../icons/r_select_hover.gif" />
+    <img id="radioUnSelectHoverImage" style="display:none; height:0; width:0;" src="../icons/r_unselect_hover.gif" />
+    <img id="curvedLeftSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_sel_lft_cnr.gif" />
+    <img id="curvedRightSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_sel_rt_cnr.gif" />
+    <img id="curvedLeftUnSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_unsel_lft_cnr.gif" />
+    <img id="curvedRightUnSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_unsel_rt_cnr.gif" />
+    <img id="gradLeftSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_sel_lft_grad.gif" />
+    <img id="gradRightSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_sel_rt_grad.gif" />
+    <img id="gradLeftUnSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_unsel_lft_grad.gif" />
+    <img id="gradRightUnSelectImage" style="display:none; height:0; width:0;" src="../icons/tab_unsel_rt_grad.gif" />
+    <img id="twirlSelectImage" style="display:none; height:0; width:0;" src="../icons/twirl_selected.gif" />
+    <img id="twirlUnSelectImage" style="display:none; height:0; width:0;" src="../icons/twirl_unselected.gif" />
+    <img id="twirlSelectHoverImage" style="display:none; height:0; width:0;" src="../icons/twirl_selected_hover.gif" />
+    <img id="twirlUnSelectHoverImage" style="display:none; height:0; width:0;" src="../icons/twirl_unselected_hover.gif" />
+    <img id="NSRBottomImage" style="display:none; height:0; width:0;" src="../icons/NSRbottomgrad.gif" />
+    <div id="header">
+      <table id="topTable">
+        <tr>
+          <td rowspan="4" align="center" style="width: 1px; padding: 0px">
+            <img src="../icons/templatemo_logo.png" />
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collall.gif" alt="CollapseAll image" title="CollapseAll image" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span> | <span id="languageFilterToolTip" style="cursor:default;" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0"><img id="languageFilterImage" src="../icons/twirl_unselected.gif" alt="DropDown image" title="DropDown image" /><label id="CSharpLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label><label id="VisualBasicLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label><label id="ManagedCPlusPlusLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual C++</label></span><div id="languageSpan"><div id="CSharp" onclick="changeLanguage(data, 'CSharp', 'cs');"><img id="CSharpImage" onmouseover="mouseOverCheck(CSharpImage,radioSelectImage,radioUnSelectImage,radioSelectHoverImage,radioUnSelectHoverImage)" onmouseout="mouseOutCheck(CSharpImage,radioSelectImage,radioUnSelectImage,radioSelectHoverImage,radioUnSelectHoverImage)" src="../icons/r_unselect.gif" /> C#</div><br /><div id="VisualBasic" onclick="changeLanguage(data, 'VisualBasic', 'vb');"><img id="VisualBasicImage" onmouseover="mouseOverCheck(VisualBasicImage,radioSelectImage,radioUnSelectImage,radioSelectHoverImage,radioUnSelectHoverImage)" onmouseout="mouseOutCheck(VisualBasicImage,radioSelectImage,radioUnSelectImage,radioSelectHoverImage,radioUnSelectHoverImage)" src="../icons/r_unselect.gif" /> Visual Basic</div><br /><div id="ManagedCPlusPlus" onclick="changeLanguage(data, 'ManagedCPlusPlus', 'cpp');"><img id="ManagedCPlusPlusImage" onmouseover="mouseOverCheck(ManagedCPlusPlusImage,radioSelectImage,radioUnSelectImage,radioSelectHoverImage,radioUnSelectHoverImage)" onmouseout="mouseOutCheck(ManagedCPlusPlusImage,radioSelectImage,radioUnSelectImage,radioSelectHoverImage,radioUnSelectHoverImage)" src="../icons/r_unselect.gif" /> Visual C++</div><br /></div></td>
+        </tr>
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Kukulis Documentation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">BaseClasses Namespace</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="nsrBottom" colspan="2" background="../icons/NSRbottomgrad.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <span style="color: DarkGray">DTIControls Documentation </span>
+        <div class="summary">Base classes for most needed objects adding a data access layer and virtual path management to existing objects.</div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(typesToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(typesToggle, event)" tabindex="0">
+            <img id="typesToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Types</span>
+        </h1>
+        <div id="typesSection" class="section" name="collapseableSection" style="">
+          <div id="typeSection">
+            <table class="filter" cellspacing="0" cellpadding="0">
+              <tr id="curvedTypeTabs">
+                <td class="leftTab" value="all"> </td>
+                <td class="middleTab" value="all"> </td>
+                <td class="rightTab" value="all"> </td>
+                <td class="leftTab" value="class"> </td>
+                <td class="middleTab" value="class"> </td>
+                <td class="rightTab" value="class"> </td>
+                <td class="leftTab" value="enumeration"> </td>
+                <td class="middleTab" value="enumeration"> </td>
+                <td class="rightTab" value="enumeration"> </td>
+              </tr>
+              <tr class="tabs" id="typeFilter">
+                <td class="leftGrad" value="all"> </td>
+                <td class="tab" value="all" onclick="toggleClass('typeFilter','value','all','activeTab','tab'); curvedToggleClass('curvedTypeTabs','value','all');processSubgroup('all', 'type'); process('typeList','filterElement','type');">All Types</td>
+                <td class="rightGrad" value="all"> </td>
+                <td class="leftGrad" value="class"> </td>
+                <td class="tab" value="class" onclick="toggleClass('typeFilter','value','class','activeTab','tab'); curvedToggleClass('curvedTypeTabs','value','class'); processSubgroup('class', 'type'); process('typeList','filterElement','type');">Classes <img src="../icons/pubclass.gif" title="Public class" /></td>
+                <td class="rightGrad" value="class"> </td>
+                <td class="leftGrad" value="enumeration"> </td>
+                <td class="tab" value="enumeration" onclick="toggleClass('typeFilter','value','enumeration','activeTab','tab'); curvedToggleClass('curvedTypeTabs','value','enumeration'); processSubgroup('enumeration','type'); process('typeList','filterElement','type');">Enumerations<img src="../icons/pubenum.gif" title="Public enumeration" /></td>
+                <td class="rightGrad" value="enumeration"> </td>
+              </tr>
+            </table>
+            <div class="memberSection">
+              <table id="typeList" class="members" cellspacing="0">
+                <tr>
+                  <th class="iconColumn"> </th>
+                  <th class="nameColumn">Name</th>
+                  <th class="descriptionColumn">Description</th>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_BaseHelper.htm">BaseHelper</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ A generic data access layer. This is subclassed for different database types. MSSql and SQLLite included in the base dll. 
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_BaseSecurityPage.htm">BaseSecurityPage</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Base class for System.Web.UI.Page class, adding data accessors, error handeling and basic security. 
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_BaseSecurityUserControl.htm">BaseSecurityUserControl</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Base class for System.Web.UI.UserControl class, adding data accessors, error handeling and basic security. 
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_BaseVirtualPathProvider.htm">BaseVirtualPathProvider</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Allows embedded resources to be loaded as direct web calls. Format is http://localhost/res/[AssemblyName]/[Embedded_Resource]
+ a web.config change is needed for files not normally handeled by .NET. By default *.aspx  and *.ascx files are handeled automatically. 
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_BaseWebService.htm">BaseWebService</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Base class for System.Web.Services.WebService class, adding data accessors and error handeling.
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_DataBase.htm">DataBase</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Data accessor object. This class is subclassed and used to store data access and application-wide functions. 
+ It is cached in the session and exists on a per-session bassis.
+ </div>
+                  </td>
+                </tr>
+                <tr data="enumeration; public">
+                  <td>
+                    <img src="../icons/pubenumeration.gif" title="Public enumeration" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_BaseSecurityPage_enableSSlMail.htm">BaseSecurityPage<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>enableSSlMail</a>
+                  </td>
+                  <td />
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_EncryptionHelper.htm">EncryptionHelper</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ A helper class to simplify string encryption calls
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_ErrorHandlerBase.htm">ErrorHandlerBase</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Generic error handler class. Can be overridden to handel errors from all classes derived from a baseclass type.
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_MasterBase.htm">MasterBase</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Base class for System.Web.UI.MasterPage class, adding data accessors, error handeling and basic security. 
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_MimeDecoder.htm">MimeDecoder</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Utility class to map a file extension to the apropriate mime type
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_PageTracker.htm">PageTracker</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Tracks where a user has been on a web application. Usefull for adding a breadcrumb or other navigation stack to an application.
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_ParallelDataHelper.htm">ParallelDataHelper</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Data layer class used to execute multiple sql statements in once command. Usefull for component systems where many components execute a select independant of one another.
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_QueryStringChanger.htm">QueryStringChanger</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ reads the query string, as well as setting it's values. Then forwards the responce to an apropriate query string url.
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_Scripts.htm">Scripts</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ A helper page to load any images or javascript files from the virtual path provider.  Removes the need to alter a web config to view images and js files as embedded resources. 
+ Also Fixes path problems in css files as well as add client side caching.
+ Format is: http://localhost/res/Baseclasses/Scripts.aspx?f=baseclasses.TestResource.jpg
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_Spider.htm">Spider</a>
+                  </td>
+                  <td>
+                    <div class="summary">
+ Used to search a page or cotrol for contents. Spiders all sub controls in most cases.
+ </div>
+                  </td>
+                </tr>
+                <tr data="class; public">
+                  <td>
+                    <img src="../icons/pubclass.gif" title="Public class" />
+                  </td>
+                  <td>
+                    <a href="T_BaseClasses_SQLHelper.htm">SQLHelper</a>
+                  </td>
+                  <td />
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <div class="footerLine">
+            <img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" />
+          </div>Copyright 2010 DTIControls </div>
+      </div>
+    </div>
+  </body>
+</html>

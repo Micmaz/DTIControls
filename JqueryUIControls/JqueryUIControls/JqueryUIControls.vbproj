@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <RootNamespace>JqueryUIControls</RootNamespace>
+    <AssemblyName>JqueryUIControls</AssemblyName>
+    <MyType>Empty</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OutputPath>bin\</OutputPath>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <ProjectGuid>{CC9F78D0-B8DA-4945-9B59-96BC05762F56}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>JqueryUIControls.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>JqueryUIControls.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\DatePicker\calendar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accordion.vb" />
+    <Compile Include="AjaxCall.vb" />
+    <Compile Include="Autocomplete.vb" />
+    <Compile Include="Calendar.vb" />
+    <Compile Include="ColorPicker.vb" />
+    <Compile Include="ComboBox.vb" />
+    <Compile Include="EffectsEnum.vb" />
+    <Compile Include="InfoDiv.vb" />
+    <Compile Include="jqueryUploader\Uploader.vb" />
+    <Compile Include="jsPlumb.vb" />
+    <Compile Include="LazyImgLoad.vb" />
+    <Compile Include="maskedTextbox.vb" />
+    <Compile Include="Notify.vb" />
+    <Compile Include="Notify_SiteWide.vb" />
+    <Compile Include="Scroller.vb" />
+    <Compile Include="Share.vb" />
+    <Compile Include="Slider.vb" />
+    <Compile Include="Sortable.vb" />
+    <Compile Include="ThemePicker.vb" />
+    <Compile Include="PollChart.vb" />
+    <Compile Include="DatePicker.vb" />
+    <Compile Include="Dialog.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="ProgressBar.vb" />
+    <Compile Include="Tabs.vb" />
+    <Compile Include="TimePicker.vb" />
+    <Compile Include="ToolTip.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.autoheight.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.cluetip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="css\jqueryCluetip.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowdown.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowleft.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowright.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowup.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.bl.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.br.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowdown.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowleft.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowright.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowup.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowdown.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowleft.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowright.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowup.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.tl.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.tr1.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.wait.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\themeswitchertool.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Themeroller\base.png" />
+    <EmbeddedResource Include="Images\Themeroller\buttonbg.png" />
+    <EmbeddedResource Include="Images\Themeroller\icon_color_arrow.gif" />
+    <EmbeddedResource Include="Images\Themeroller\menuhoverbg.png" />
+    <EmbeddedResource Include="Images\Themeroller\black_matte.png" />
+    <EmbeddedResource Include="Images\Themeroller\black_tie.png" />
+    <EmbeddedResource Include="Images\Themeroller\blitzer.png" />
+    <EmbeddedResource Include="Images\Themeroller\cupertino.png" />
+    <EmbeddedResource Include="Images\Themeroller\dark_hive.png" />
+    <EmbeddedResource Include="Images\Themeroller\dot_luv.png" />
+    <EmbeddedResource Include="Images\Themeroller\eggplant.png" />
+    <EmbeddedResource Include="Images\Themeroller\excite_bike.png" />
+    <EmbeddedResource Include="Images\Themeroller\flick.png" />
+    <EmbeddedResource Include="Images\Themeroller\hot_sneaks.png" />
+    <EmbeddedResource Include="Images\Themeroller\humanity.png" />
+    <EmbeddedResource Include="Images\Themeroller\le_frog.png" />
+    <EmbeddedResource Include="Images\Themeroller\mint_choc.png" />
+    <EmbeddedResource Include="Images\Themeroller\overcast.png" />
+    <EmbeddedResource Include="Images\Themeroller\pepper_grinder.png" />
+    <EmbeddedResource Include="Images\Themeroller\redmond.png" />
+    <EmbeddedResource Include="Images\Themeroller\smoothness.png" />
+    <EmbeddedResource Include="Images\Themeroller\south_street.png" />
+    <EmbeddedResource Include="Images\Themeroller\start.png" />
+    <EmbeddedResource Include="Images\Themeroller\sunny.png" />
+    <EmbeddedResource Include="Images\Themeroller\swanky_purse.png" />
+    <EmbeddedResource Include="Images\Themeroller\trontastic.png" />
+    <EmbeddedResource Include="Images\Themeroller\ui_darkness.png" />
+    <EmbeddedResource Include="Images\Themeroller\ui_lightness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="css\jqueryTimepicker.css" />
+    <EmbeddedResource Include="js\jquery.timepicker.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.autoCompleteHelper.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.dialogHelper.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Themeroller\aristo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.dialogextend.pack.js" />
+    <EmbeddedResource Include="js\jquery.jsPlumb-1.3.3-all-min.js" />
+    <EmbeddedResource Include="js\jquery.maskedinput-1.3.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\colorpicker.js" />
+    <EmbeddedResource Include="js\FreezeIt.js" />
+    <EmbeddedResource Include="js\fullcalendar.min.js" />
+    <EmbeddedResource Include="js\fullcalendar.viewmore.js" />
+    <EmbeddedResource Include="js\jquery.notify.min.js" />
+    <EmbeddedResource Include="js\jquery.topzindex.min.js" />
+    <EmbeddedResource Include="js\jquery.ui.tooltip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\alert.png" />
+    <EmbeddedResource Include="Images\Calander\close_button.png" />
+    <EmbeddedResource Include="Images\Calander\form-bubble-pointer-top.png" />
+    <EmbeddedResource Include="Images\Calander\formbubblepointer-right.png" />
+    <EmbeddedResource Include="Images\Calander\formbubblepointer.png" />
+    <EmbeddedResource Include="Images\colorpicker\blank.gif" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_background.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_background_min.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_hex.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_hsb_b.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_hsb_h.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_hsb_s.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_indic.gif" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_overlay.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_rgb_b.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_rgb_g.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_rgb_r.png" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_select.gif" />
+    <EmbeddedResource Include="Images\colorpicker\colorpicker_submit.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_background.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_hex.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_hsb_b.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_hsb_h.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_hsb_s.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_indic.gif" />
+    <EmbeddedResource Include="Images\colorpicker\custom_rgb_b.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_rgb_g.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_rgb_r.png" />
+    <EmbeddedResource Include="Images\colorpicker\custom_submit.png" />
+    <EmbeddedResource Include="Images\colorpicker\select.png" />
+    <EmbeddedResource Include="Images\colorpicker\select2.png" />
+    <EmbeddedResource Include="Images\colorpicker\slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="css\colorpicker.css" />
+    <EmbeddedResource Include="css\fullcalendar.css" />
+    <EmbeddedResource Include="css\fullcalendar.print.css" />
+    <EmbeddedResource Include="css\ui.notify.css" />
+    <EmbeddedResource Include="css\viewmore.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Themeroller\vader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.lazyload.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\LazyImgLoad\transparent.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Themeroller\bootstrap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\jquery.combobox.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="css\combobox.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Themeroller\united.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Themeroller\absolution.png" />
+    <EmbeddedResource Include="Images\Themeroller\delta.png" />
+    <EmbeddedResource Include="Images\Themeroller\metro.png" />
+    <EmbeddedResource Include="Images\Themeroller\selene.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="jqueryUploader\border-image.png" />
+    <EmbeddedResource Include="jqueryUploader\icons.png" />
+    <EmbeddedResource Include="jqueryUploader\jquery.fileupload.js" />
+    <EmbeddedResource Include="jqueryUploader\jquery.iframe-transport.js" />
+    <EmbeddedResource Include="jqueryUploader\jquery.knob.js" />
+    <EmbeddedResource Include="jqueryUploader\UploaderScript.js" />
+    <EmbeddedResource Include="jqueryUploader\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

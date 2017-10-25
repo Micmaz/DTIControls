@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+vistaDBHelper
+</name>
+</assembly>
+<members>
+<member name="M:vistaDBHelper.vistaDBHelper.getCreateTableString(System.Data.DataTable)">
+	<summary>
+ Builds a create script for a table in the database based on the schema of the datatable passed in.
+ </summary>
+	<param name="dt">The datatable that is usedto build the create String. Only schema is used, data is ignored.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

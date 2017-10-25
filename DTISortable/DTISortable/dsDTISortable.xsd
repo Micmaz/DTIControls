@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDTISortable" targetNamespace="http://tempuri.org/dsDTISortable.xsd" xmlns:mstns="http://tempuri.org/dsDTISortable.xsd" xmlns="http://tempuri.org/dsDTISortable.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDTISortable" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsDTISortable" msprop:Generator_DataSetName="dsDTISortable">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTISortable" msprop:Generator_UserTableName="DTISortable" msprop:Generator_RowDeletedName="DTISortableRowDeleted" msprop:Generator_RowChangedName="DTISortableRowChanged" msprop:Generator_RowClassName="DTISortableRow" msprop:Generator_RowChangingName="DTISortableRowChanging" msprop:Generator_RowEvArgName="DTISortableRowChangeEvent" msprop:Generator_RowEvHandlerName="DTISortableRowChangeEventHandler" msprop:Generator_TableClassName="DTISortableDataTable" msprop:Generator_TableVarName="tableDTISortable" msprop:Generator_RowDeletingName="DTISortableRowDeleting" msprop:Generator_TablePropName="DTISortable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Main_Id" msprop:Generator_UserColumnName="Main_Id" msprop:Generator_ColumnPropNameInRow="Main_Id" msprop:Generator_ColumnVarNameInTable="columnMain_Id" msprop:Generator_ColumnPropNameInTable="Main_IdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Content_Id" msprop:Generator_UserColumnName="Content_Id" msprop:Generator_ColumnPropNameInRow="Content_Id" msprop:Generator_ColumnVarNameInTable="columnContent_Id" msprop:Generator_ColumnPropNameInTable="Content_IdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Width" msprop:Generator_UserColumnName="Width" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInTable="WidthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Content_Type" msprop:Generator_UserColumnName="Content_Type" msprop:Generator_ColumnPropNameInRow="Content_Type" msprop:Generator_ColumnVarNameInTable="columnContent_Type" msprop:Generator_ColumnPropNameInTable="Content_TypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTISortableItem" msprop:Generator_UserTableName="DTISortableItem" msprop:Generator_RowDeletedName="DTISortableItemRowDeleted" msprop:Generator_RowChangedName="DTISortableItemRowChanged" msprop:Generator_RowClassName="DTISortableItemRow" msprop:Generator_RowChangingName="DTISortableItemRowChanging" msprop:Generator_RowEvArgName="DTISortableItemRowChangeEvent" msprop:Generator_RowEvHandlerName="DTISortableItemRowChangeEventHandler" msprop:Generator_TableClassName="DTISortableItemDataTable" msprop:Generator_TableVarName="tableDTISortableItem" msprop:Generator_RowDeletingName="DTISortableItemRowDeleting" msprop:Generator_TablePropName="DTISortableItem">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Content_Type" msprop:Generator_UserColumnName="Content_Type" msprop:Generator_ColumnPropNameInRow="Content_Type" msprop:Generator_ColumnVarNameInTable="columnContent_Type" msprop:Generator_ColumnPropNameInTable="Content_TypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sort_Order" msprop:Generator_UserColumnName="Sort_Order" msprop:Generator_ColumnPropNameInRow="Sort_Order" msprop:Generator_ColumnVarNameInTable="columnSort_Order" msprop:Generator_ColumnPropNameInTable="Sort_OrderColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DTISortable_Id" msprop:Generator_UserColumnName="DTISortable_Id" msprop:Generator_ColumnPropNameInRow="DTISortable_Id" msprop:Generator_ColumnVarNameInTable="columnDTISortable_Id" msprop:Generator_ColumnPropNameInTable="DTISortable_IdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Assembly_Name" msprop:Generator_UserColumnName="Assembly_Name" msprop:Generator_ColumnVarNameInTable="columnAssembly_Name" msprop:Generator_ColumnPropNameInRow="Assembly_Name" msprop:Generator_ColumnPropNameInTable="Assembly_NameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isDeleted" msprop:Generator_UserColumnName="isDeleted" msprop:Generator_ColumnVarNameInTable="columnisDeleted" msprop:Generator_ColumnPropNameInRow="isDeleted" msprop:Generator_ColumnPropNameInTable="isDeletedColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DeleteDate" msprop:Generator_UserColumnName="DeleteDate" msprop:Generator_ColumnVarNameInTable="columnDeleteDate" msprop:Generator_ColumnPropNameInRow="DeleteDate" msprop:Generator_ColumnPropNameInTable="DeleteDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Page_Id" msprop:Generator_UserColumnName="Page_Id" msprop:Generator_ColumnVarNameInTable="columnPage_Id" msprop:Generator_ColumnPropNameInRow="Page_Id" msprop:Generator_ColumnPropNameInTable="Page_IdColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WidgetMenuTemp" msprop:Generator_UserTableName="WidgetMenuTemp" msprop:Generator_RowDeletedName="WidgetMenuTempRowDeleted" msprop:Generator_RowChangedName="WidgetMenuTempRowChanged" msprop:Generator_RowClassName="WidgetMenuTempRow" msprop:Generator_RowChangingName="WidgetMenuTempRowChanging" msprop:Generator_RowEvArgName="WidgetMenuTempRowChangeEvent" msprop:Generator_RowEvHandlerName="WidgetMenuTempRowChangeEventHandler" msprop:Generator_TableClassName="WidgetMenuTempDataTable" msprop:Generator_TableVarName="tableWidgetMenuTemp" msprop:Generator_RowDeletingName="WidgetMenuTempRowDeleting" msprop:Generator_TablePropName="WidgetMenuTemp">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="_x005B_Assembly_x005D_" msprop:Generator_UserColumnName="[Assembly]" msprop:Generator_ColumnVarNameInTable="_column_Assembly_" msprop:Generator_ColumnPropNameInRow="[Assembly]" msprop:Generator_ColumnPropNameInTable="__Assembly_Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Typename" msprop:Generator_UserColumnName="Typename" msprop:Generator_ColumnPropNameInRow="Typename" msprop:Generator_ColumnVarNameInTable="columnTypename" msprop:Generator_ColumnPropNameInTable="TypenameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Icon_url" msprop:Generator_UserColumnName="Icon_url" msprop:Generator_ColumnPropNameInRow="Icon_url" msprop:Generator_ColumnVarNameInTable="columnIcon_url" msprop:Generator_ColumnPropNameInTable="Icon_urlColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="SortableKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTISortable" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTISortableItem_SortableKey1" msdata:ConstraintName="SortableKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTISortableItem" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="WidgetMenuTempKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WidgetMenuTemp" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

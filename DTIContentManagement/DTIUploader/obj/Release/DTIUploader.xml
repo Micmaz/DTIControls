@@ -1,0 +1,193 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIUploader
+</name>
+</assembly>
+<members>
+<member name="T:DTIUploader.DTIUploaderControl">
+ <summary>
+ A control to handle file uploads.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIUploader.DTIUploaderUserControl">
+<summary>
+DTIUploaderUserControl class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIUploader.DTIUploaderUserControl._fileSizeWarning">
+<summary>
+fileSizeWarning control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.DTIUploaderUserControl._lblFileSizeWarning">
+<summary>
+lblFileSizeWarning control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.DTIUploaderUserControl._FileSizeLimit">
+<summary>
+FileSizeLimit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.DTIUploaderUserControl._errorMessage">
+<summary>
+errorMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.DTIUploaderUserControl._pnlUploaderHolder">
+<summary>
+pnlUploaderHolder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.DTIUploaderUserControl._btnWeb">
+<summary>
+btnWeb control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.DTIUploaderUserControl._btnToggleMode">
+<summary>
+btnToggleMode control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIUploader.JavaFileUploader">
+<summary>
+JavaFileUploader class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="T:DTIUploader.JSFileUploader">
+<summary>
+JSFileUploader class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIUploader.JSFileUploader._uploaderContainer">
+<summary>
+uploaderContainer control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.JSFileUploader._uploaderOverlay">
+<summary>
+uploaderOverlay control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.JSFileUploader._selectFilesLink">
+<summary>
+selectFilesLink control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.JSFileUploader._selectLink">
+<summary>
+selectLink control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.JSFileUploader._dataTableContainer">
+<summary>
+dataTableContainer control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.JSFileUploader._uploadLink">
+<summary>
+uploadLink control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.JSFileUploader._clearLink">
+<summary>
+clearLink control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.WebFileUploader._pnlFilesHolder">
+<summary>
+pnlFilesHolder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.WebFileUploader._Tagger1">
+<summary>
+Tagger1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIUploader.WebFileUploader._btnUpload">
+<summary>
+btnUpload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

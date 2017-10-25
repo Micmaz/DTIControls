@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DTIMapControl", "DTIMapControl\DTIMapControl.vbproj", "{988AF3B8-05F5-4091-826B-F0E6CA0CF765}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DTIMapControlTester", "DTIMapControlTester\DTIMapControlTester.vbproj", "{412CA759-72C9-4C6F-AA42-0D645232CA43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{988AF3B8-05F5-4091-826B-F0E6CA0CF765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988AF3B8-05F5-4091-826B-F0E6CA0CF765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988AF3B8-05F5-4091-826B-F0E6CA0CF765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988AF3B8-05F5-4091-826B-F0E6CA0CF765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412CA759-72C9-4C6F-AA42-0D645232CA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412CA759-72C9-4C6F-AA42-0D645232CA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412CA759-72C9-4C6F-AA42-0D645232CA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412CA759-72C9-4C6F-AA42-0D645232CA43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

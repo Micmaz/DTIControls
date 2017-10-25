@@ -1,0 +1,15 @@
+C:\components\JqueryUIControls\JqueryUIControls\bin\JqueryUIControls.dll
+C:\components\JqueryUIControls\JqueryUIControls\bin\JqueryUIControls.pdb
+C:\components\JqueryUIControls\JqueryUIControls\bin\JqueryUIControls.xml
+C:\components\JqueryUIControls\JqueryUIControls\bin\br\JqueryUIControls.resources.dll
+C:\components\JqueryUIControls\JqueryUIControls\bin\BaseClasses.dll
+C:\components\JqueryUIControls\JqueryUIControls\bin\jQueryLibrary.dll
+C:\components\JqueryUIControls\JqueryUIControls\bin\BaseClasses.pdb
+C:\components\JqueryUIControls\JqueryUIControls\bin\BaseClasses.xml
+C:\components\JqueryUIControls\JqueryUIControls\bin\jQueryLibrary.pdb
+C:\components\JqueryUIControls\JqueryUIControls\bin\jQueryLibrary.xml
+C:\components\JqueryUIControls\JqueryUIControls\obj\Release\JqueryUIControls.vbprojResolveAssemblyReference.cache
+C:\components\JqueryUIControls\JqueryUIControls\obj\Release\br\JqueryUIControls.resources.dll
+C:\components\JqueryUIControls\JqueryUIControls\obj\Release\JqueryUIControls.dll
+C:\components\JqueryUIControls\JqueryUIControls\obj\Release\JqueryUIControls.xml
+C:\components\JqueryUIControls\JqueryUIControls\obj\Release\JqueryUIControls.pdb

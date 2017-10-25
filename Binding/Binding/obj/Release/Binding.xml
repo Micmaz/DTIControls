@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Binding
+</name>
+</assembly>
+<members>
+<member name="M:Binding.Extensions.setText(System.Web.UI.Control,System.Web.UI.WebControls.DropDownList,System.Data.DataRow,System.String[])">
+ <summary>
+ If the value is not in the item list it is added automatically to the top of the list. The string "NULL" will set the db value to null.
+ </summary>
+ <param name="c"></param>
+ <param name="dd"></param>
+ <param name="row"></param>
+ <param name="columns"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

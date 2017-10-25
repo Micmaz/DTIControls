@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGoogleCal" targetNamespace="http://tempuri.org/dsGoogleCal.xsd" xmlns:mstns="http://tempuri.org/dsGoogleCal.xsd" xmlns="http://tempuri.org/dsGoogleCal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGoogleCal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGoogleCal" msprop:Generator_DataSetName="dsGoogleCal">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIGoogleCalendar" msprop:Generator_UserTableName="DTIGoogleCalendar" msprop:Generator_RowDeletedName="DTIGoogleCalendarRowDeleted" msprop:Generator_RowChangedName="DTIGoogleCalendarRowChanged" msprop:Generator_RowClassName="DTIGoogleCalendarRow" msprop:Generator_RowChangingName="DTIGoogleCalendarRowChanging" msprop:Generator_RowEvArgName="DTIGoogleCalendarRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIGoogleCalendarRowChangeEventHandler" msprop:Generator_TableClassName="DTIGoogleCalendarDataTable" msprop:Generator_TableVarName="tableDTIGoogleCalendar" msprop:Generator_RowDeletingName="DTIGoogleCalendarRowDeleting" msprop:Generator_TablePropName="DTIGoogleCalendar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Main_Id" msprop:Generator_UserColumnName="Main_Id" msprop:Generator_ColumnVarNameInTable="columnMain_Id" msprop:Generator_ColumnPropNameInRow="Main_Id" msprop:Generator_ColumnPropNameInTable="Main_IdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Content_Type" msprop:Generator_UserColumnName="Content_Type" msprop:Generator_ColumnVarNameInTable="columnContent_Type" msprop:Generator_ColumnPropNameInRow="Content_Type" msprop:Generator_ColumnPropNameInTable="Content_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Iframe_Source" msprop:Generator_UserColumnName="Iframe_Source" msprop:Generator_ColumnVarNameInTable="columnIframe_Source" msprop:Generator_ColumnPropNameInRow="Iframe_Source" msprop:Generator_ColumnPropNameInTable="Iframe_SourceColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Width" msprop:Generator_UserColumnName="Width" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInTable="WidthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Height" msprop:Generator_UserColumnName="Height" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInTable="HeightColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIGoogleCalendar" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

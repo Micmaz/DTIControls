@@ -1,0 +1,1 @@
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="jsonpg.aspx.vb" Inherits="DTIAjax.jsonpg" %>

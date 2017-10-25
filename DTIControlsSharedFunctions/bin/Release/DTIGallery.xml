@@ -1,0 +1,912 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIGallery
+</name>
+</assembly>
+<members>
+<member name="T:DTIGallery.dsGallery.DTIGalleryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIGallery.dsGallery.DTIGalleryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIGallery.dsGallery.DTIGalleryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIGallery.DTIGalleryControl">
+ <summary>
+ base gallery control
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.WaitingImageURL">
+ <summary>
+ URL of Image displayed while the gallery is loaded.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.GalleryWidth">
+ <summary>
+ Width or the gallery.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.GalleryHeight">
+ <summary>
+ Height of the gallery.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.MyGallery">
+ <summary>
+ The gallery user control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.searchPanel">
+ <summary>
+ The search panel control
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.ShowSearching">
+ <summary>
+ Show the search control in a gallery.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.jsonControl">
+ <summary>
+ The ajax helper control used to load and page the gallery.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.ShowPaging">
+ <summary>
+ Show the pages at the bottom of the gallery.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.ShowFirstAndLastButtons">
+ <summary>
+ Show the first and last page shortcuts at the bottom of the gallery.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.CSS_file">
+ <summary>
+ The css file applied across the gallery
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.ShowUpload">
+ <summary>
+ Show the upload button on the gallery.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.TotalPages">
+ <summary>
+ The number of pages in the gallery. Setting this only alters the label display.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.CurrentPage">
+ <summary>
+ The current page displayed.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Back_Button_CSSClass">
+ <summary>
+ The css class of the back button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Forward_Button_CSSClass">
+ <summary>
+ The css class of the forward button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.First_Button_CSSClass">
+ <summary>
+ The css class of the first button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Last_Button_CSSClass">
+ <summary>
+ The css class of the last button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Page_Button_CSSClass">
+ <summary>
+ The css class of the page button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Page_Textbox_CSSClass">
+ <summary>
+ The css class of the page textbox.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Pages_Label_CSSClass">
+ <summary>
+ The css class of the page label.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Back_Button_Image_URL">
+ <summary>
+ Back button image url
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Forward_Button_Image_URL">
+ <summary>
+ Forward button image url
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.First_Button_Image_URL">
+ <summary>
+ First button image url
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Last_Button_Image_URL">
+ <summary>
+ Last button image url
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.Page_Button_Image_URL">
+ <summary>
+ Page button image url
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGalleryControl.PageHolder">
+ <summary>
+ The place holder containing the gallery control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGallery.DTIGalleryControl.addUploadLink(System.String,System.String)">
+ <summary>
+ Sets the upload lik to a specific url and text value
+ </summary>
+ <param name="_displayText"></param>
+ <param name="_expandURL"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGallery.DTIGalleryControl.clearUploads">
+ <summary>
+ Clears pending uploads.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTIGalleryControl.GalleryWorkerBase">
+ <summary>
+ Ajax worker class
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIGallerySharedVariables.dsGall">
+ <summary>
+ Gallery information cached on a session level.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTIGallerySharedVariables.GalleryDataHelper">
+ <summary>
+  a helper class to load gallery information from a database.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTIImageGallery">
+ <summary>
+ Gallery of only images.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTIMediaGallery">
+ <summary>
+ base gallery control for browsing and displaying DTI-managed media objects
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTIMediaGallery.ReturnResultsOnEmptySearch">
+ <summary>
+ Return results if 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTIMediaGallery.GalleryOptionObject">
+ <summary>
+ Gallery Options 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTIMediaGallery.MediaGalleryAjaxWorker">
+ <summary>
+ Ajax worker class
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTISlideGallery">
+ <summary>
+ base media gallery with built-in support for Highslide dialogs
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTISlideGallery.IsInnerFrame">
+ <summary>
+ Sets to true if the gallery is in a highslide frame.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGallery.DTISlideGallery.IsOuterFrame">
+ <summary>
+ Sets to true if the gallery has a highslide frame in it.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTISlideGallery.SlideGalleryAjaxWorker">
+ <summary>
+ Ajax worker class
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTISocialGallery">
+ <summary>
+ media gallery with built-in editor for changing settings in-place. Available in DTIControls toolbox.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIGallery.DTIVideoGallery">
+ <summary>
+ A gallery of only videos.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:DTIGallery.Gallery._AjaxSeverConrol1">
+<summary>
+AjaxSeverConrol1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._pnlGalleryHolder">
+<summary>
+pnlGalleryHolder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._pnlSearch">
+<summary>
+pnlSearch control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._freezePanel">
+<summary>
+freezePanel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._imgWait">
+<summary>
+imgWait control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._pnlThumbHolder">
+<summary>
+pnlThumbHolder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._pnlUploadLinks">
+<summary>
+pnlUploadLinks control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._Gallery_Button_Div">
+<summary>
+Gallery_Button_Div control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._btnGalleryFirst">
+<summary>
+btnGalleryFirst control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._btnGalleryBack">
+<summary>
+btnGalleryBack control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._tbGalleryPage">
+<summary>
+tbGalleryPage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._lblSlash">
+<summary>
+lblSlash control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._lblGalleryTotalPages">
+<summary>
+lblGalleryTotalPages control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._btnGalleryPage">
+<summary>
+btnGalleryPage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._btnGalleryFwd">
+<summary>
+btnGalleryFwd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.Gallery._btnGalleryLast">
+<summary>
+btnGalleryLast control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbItemsPerPage">
+<summary>
+tbItemsPerPage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbGalleryWidth">
+<summary>
+tbGalleryWidth control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label5">
+<summary>
+Label5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbGalleryHeight">
+<summary>
+tbGalleryHeight control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label3">
+<summary>
+Label3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbThumbWidth">
+<summary>
+tbThumbWidth control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label4">
+<summary>
+Label4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbThumbHeight">
+<summary>
+tbThumbHeight control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label8">
+<summary>
+Label8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbSpanWidth">
+<summary>
+tbSpanWidth control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label9">
+<summary>
+Label9 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbSpanHeight">
+<summary>
+tbSpanHeight control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label10">
+<summary>
+Label10 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbFirstAndLast">
+<summary>
+cbFirstAndLast control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label11">
+<summary>
+Label11 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbPaging">
+<summary>
+cbPaging control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label12">
+<summary>
+Label12 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbSearching">
+<summary>
+cbSearching control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label13">
+<summary>
+Label13 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbUpload">
+<summary>
+cbUpload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label14">
+<summary>
+Label14 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowThumbInfo">
+<summary>
+cbShowThumbInfo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label15">
+<summary>
+Label15 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowPubDateOnThumbnail">
+<summary>
+cbShowPubDateOnThumbnail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label16">
+<summary>
+Label16 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowAuthorOnThumbnail">
+<summary>
+cbShowAuthorOnThumbnail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label17">
+<summary>
+Label17 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowRatingOnThumbnail">
+<summary>
+cbShowRatingOnThumbnail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label18">
+<summary>
+Label18 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowPubDateOnCaption">
+<summary>
+cbShowPubDateOnCaption control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label19">
+<summary>
+Label19 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowAuthorOnCaption">
+<summary>
+cbShowAuthorOnCaption control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label20">
+<summary>
+Label20 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowRatingOnCaption">
+<summary>
+cbShowRatingOnCaption control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label21">
+<summary>
+Label21 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._cbShowSharingOnCaption">
+<summary>
+cbShowSharingOnCaption control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label6">
+<summary>
+Label6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._Label7">
+<summary>
+Label7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._tbCompType">
+<summary>
+tbCompType control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._hsUpload">
+<summary>
+hsUpload control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.GalleryEditControl._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.ThumbControl._lblThumb">
+<summary>
+lblThumb control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.ThumbControl._phThumbControls">
+<summary>
+phThumbControls control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.UploadMedia._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIGallery.UploadMedia._MediaUploader1">
+<summary>
+MediaUploader1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

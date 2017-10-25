@@ -1,0 +1,9 @@
+C:\Components\DBHelpers\mySQLHelper\bin\mySQLHelper.dll
+C:\Components\DBHelpers\mySQLHelper\bin\mySQLHelper.pdb
+C:\Components\DBHelpers\mySQLHelper\bin\BaseClasses.dll
+C:\Components\DBHelpers\mySQLHelper\bin\MySql.Data.dll
+C:\Components\DBHelpers\mySQLHelper\bin\BaseClasses.pdb
+C:\Components\DBHelpers\mySQLHelper\bin\BaseClasses.xml
+C:\Components\DBHelpers\mySQLHelper\obj\x86\Release\mySQLHelper.vbprojResolveAssemblyReference.cache
+C:\Components\DBHelpers\mySQLHelper\obj\x86\Release\mySQLHelper.dll
+C:\Components\DBHelpers\mySQLHelper\obj\x86\Release\mySQLHelper.pdb

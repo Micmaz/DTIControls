@@ -1,0 +1,11 @@
+C:\Components\HighslideControls\HighslideControls\bin\HighslideControls.dll
+C:\Components\HighslideControls\HighslideControls\bin\HighslideControls.pdb
+C:\Components\HighslideControls\HighslideControls\bin\BaseClasses.dll
+C:\Components\HighslideControls\HighslideControls\bin\jQueryLibrary.dll
+C:\Components\HighslideControls\HighslideControls\bin\BaseClasses.pdb
+C:\Components\HighslideControls\HighslideControls\bin\BaseClasses.xml
+C:\Components\HighslideControls\HighslideControls\bin\jQueryLibrary.pdb
+C:\Components\HighslideControls\HighslideControls\bin\jQueryLibrary.xml
+C:\Components\HighslideControls\HighslideControls\obj\x86\Release\HighslideControls.vbprojResolveAssemblyReference.cache
+C:\Components\HighslideControls\HighslideControls\obj\x86\Release\HighslideControls.dll
+C:\Components\HighslideControls\HighslideControls\obj\x86\Release\HighslideControls.pdb

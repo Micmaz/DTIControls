@@ -1,0 +1,1 @@
+C:\Components\DBHelpers\vistaDBHelper\obj\x86\Release\vistaDBHelper.vbprojResolveAssemblyReference.cache

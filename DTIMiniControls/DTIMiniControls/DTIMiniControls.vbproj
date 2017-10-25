@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99A7012D-CE00-4F37-B578-7AF15C5A3D1C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <MyType>Empty</MyType>
+    <RootNamespace>DTIMiniControls</RootNamespace>
+    <AssemblyName>DTIMiniControls</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIMiniControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIMiniControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="js\oodomimagerollover.js" />
+    <EmbeddedResource Include="js\EditLabelScript.js" />
+    <EmbeddedResource Include="js\DTITagManagement.js" />
+    <EmbeddedResource Include="js\jquery.Jcrop.min.js" />
+    <EmbeddedResource Include="css\Jcrop.gif" />
+    <EmbeddedResource Include="css\jquery.Jcrop.css" />
+    <EmbeddedResource Include="js\FreezeScreen.js" />
+    <EmbeddedResource Include="js\jquery.centerdiv.js" />
+    <EmbeddedResource Include="iframed.aspx" />
+    <EmbeddedResource Include="css\jqueryCluetip.css" />
+    <EmbeddedResource Include="css\jqueryStar.css" />
+    <EmbeddedResource Include="css\delete.gif" />
+    <EmbeddedResource Include="css\star.gif" />
+    <EmbeddedResource Include="js\jquery.rating.js" />
+    <EmbeddedResource Include="js\jquery.cycle.all.min.js" />
+    <EmbeddedResource Include="js\jquery.tabSlideOut.v1.3.js" />
+    <EmbeddedResource Include="js\jquery.tree.checkbox.js" />
+    <EmbeddedResource Include="js\jquery.tree.contextmenu.js" />
+    <EmbeddedResource Include="js\jquery.tree.js" />
+    <EmbeddedResource Include="js\FreezeIt.js" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowdown.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowleft.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowright.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.arrowup.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.bl.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.br.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowdown.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowleft.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowright.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.darrowup.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowdown.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowleft.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowright.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.rarrowup.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.tl.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.wait.gif" />
+    <EmbeddedResource Include="Images\ToolTip\images.tooltip.tr1.gif" />
+    <EmbeddedResource Include="js\jquery.MetaData.js" />
+    <EmbeddedResource Include="js\jquery.base64.js" />
+    <EmbeddedResource Include="js\jquery.form.js" />
+    <EmbeddedResource Include="TagsUC.ascx" />
+    <EmbeddedResource Include="TreeList\themes\checkbox\themes.checkbox.dot_for_ie.gif" />
+    <EmbeddedResource Include="TreeList\themes\checkbox\themes.checkbox.icons.png" />
+    <EmbeddedResource Include="TreeList\themes\checkbox\themes.checkbox.style.css" />
+    <EmbeddedResource Include="TreeList\themes\checkbox\themes.checkbox.throbber.gif" />
+    <EmbeddedResource Include="TreeList\themes\default\themes.default.dot_for_ie.gif" />
+    <EmbeddedResource Include="TreeList\themes\default\themes.default.icons.png" />
+    <EmbeddedResource Include="TreeList\themes\default\themes.default.style.css" />
+    <EmbeddedResource Include="TreeList\themes\default\themes.default.throbber.gif" />
+    <EmbeddedResource Include="js\jquery.urlencode.js" />
+    <Content Include="autoComplete\autocomplete_docs.txt" />
+    <EmbeddedResource Include="autoComplete\js\jquery.indicator.gif" />
+    <EmbeddedResource Include="autoComplete\js\jquery.autocomplete.css" />
+    <EmbeddedResource Include="autoComplete\js\jquery.autocomplete.js" />
+    <EmbeddedResource Include="autoComplete\postback.aspx" />
+    <EmbeddedResource Include="js\jquery.cluetip.js" />
+    <EmbeddedResource Include="HighlighedEditor\lib\codemirror.css" />
+    <EmbeddedResource Include="HighlighedEditor\lib\codemirror.js" />
+    <EmbeddedResource Include="HighlighedEditor\lib\overlay.js" />
+    <EmbeddedResource Include="HighlighedEditor\lib\runmode.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\clike.js" />
+    <EmbeddedResource Include="HighlighedEditor\lib\complete.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\css.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\diff.css" />
+    <EmbeddedResource Include="HighlighedEditor\mode\diff.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\haskell.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\htmlmixedmode.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\javascript.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\lua.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\php.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\plsql.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\python.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\rst.css" />
+    <EmbeddedResource Include="HighlighedEditor\mode\rst.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\scheme.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\smalltalk.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\sparql.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\stex.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\xml.js" />
+    <EmbeddedResource Include="HighlighedEditor\mode\yaml.js" />
+    <EmbeddedResource Include="HighlighedEditor\theme\default.css" />
+    <EmbeddedResource Include="HighlighedEditor\theme\elegant.css" />
+    <EmbeddedResource Include="HighlighedEditor\theme\neat.css" />
+    <EmbeddedResource Include="HighlighedEditor\theme\night.css" />
+    <EmbeddedResource Include="HighlighedEditor\lib\autoGrow.css" />
+    <EmbeddedResource Include="HighlighedEditor\mode\html.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddThisControl.vb" />
+    <Compile Include="autoComplete\AutocompleteDropDown.vb" />
+    <Compile Include="autoComplete\postback.aspx.designer.vb">
+      <DependentUpon>postback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="autoComplete\postback.aspx.vb">
+      <DependentUpon>postback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientButton.vb" />
+    <Compile Include="DivRotator.vb" />
+    <Compile Include="FreezeIt.vb" />
+    <Compile Include="HiddenFieldEncoded.vb" />
+    <Compile Include="EditLabel.vb">
+    </Compile>
+    <Compile Include="FreezeScreen.vb" />
+    <Compile Include="HighlighedEditor\HighlighedEditor.vb" />
+    <Compile Include="HTMLList.vb" />
+    <Compile Include="iframed.aspx.designer.vb">
+      <DependentUpon>iframed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iframed.aspx.vb">
+      <DependentUpon>iframed.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ImageCropper.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="ObfuscateEmail.vb" />
+    <Compile Include="Pager.vb" />
+    <Compile Include="RollOverImage.vb" />
+    <Compile Include="ScriptBlock.vb" />
+    <Compile Include="Sortable.vb" />
+    <Compile Include="StarRater.vb" />
+    <Compile Include="TabSlider.vb" />
+    <Compile Include="Tagger.vb" />
+    <Compile Include="TagsUC.ascx.designer.vb">
+      <DependentUpon>TagsUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TagsUC.ascx.vb">
+      <DependentUpon>TagsUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TextBoxEncoded.vb" />
+    <Compile Include="ToolTip.vb" />
+    <Compile Include="TreeList\NodeImageIcon.vb" />
+    <Compile Include="TreeList\TreeList.vb" />
+    <Compile Include="TreeList\TreeListItem.vb" />
+    <Compile Include="TreeList\TreeListUL.vb" />
+    <Compile Include="TreeList\TreeNodeType.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2364</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+</Project>

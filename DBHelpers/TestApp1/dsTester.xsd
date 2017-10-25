@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTester" targetNamespace="http://tempuri.org/dsTester.xsd" xmlns:mstns="http://tempuri.org/dsTester.xsd" xmlns="http://tempuri.org/dsTester.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DSSClientsConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="DSSClientsConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DSSClientsConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Demographics" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Demographics (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Demographics.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTester" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTester" msprop:Generator_DataSetName="dsTester" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Case_Info" msprop:Generator_UserTableName="Case_Info" msprop:Generator_RowDeletedName="Case_InfoRowDeleted" msprop:Generator_RowChangedName="Case_InfoRowChanged" msprop:Generator_RowClassName="Case_InfoRow" msprop:Generator_RowChangingName="Case_InfoRowChanging" msprop:Generator_RowEvArgName="Case_InfoRowChangeEvent" msprop:Generator_RowEvHandlerName="Case_InfoRowChangeEventHandler" msprop:Generator_TableClassName="Case_InfoDataTable" msprop:Generator_TableVarName="tableCase_Info" msprop:Generator_RowDeletingName="Case_InfoRowDeleting" msprop:Generator_TablePropName="Case_Info">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Case_InfoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Case_InfoID" msprop:Generator_ColumnVarNameInTable="columnCase_InfoID" msprop:Generator_ColumnPropNameInRow="Case_InfoID" msprop:Generator_ColumnPropNameInTable="Case_InfoIDColumn" type="xs:int" />
+              <xs:element name="ClientID" msprop:Generator_UserColumnName="ClientID" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" type="xs:int" />
+              <xs:element name="Case_Number" msprop:Generator_UserColumnName="Case_Number" msprop:Generator_ColumnVarNameInTable="columnCase_Number" msprop:Generator_ColumnPropNameInRow="Case_Number" msprop:Generator_ColumnPropNameInTable="Case_NumberColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Client_Number" msprop:Generator_UserColumnName="Client_Number" msprop:Generator_ColumnVarNameInTable="columnClient_Number" msprop:Generator_ColumnPropNameInRow="Client_Number" msprop:Generator_ColumnPropNameInTable="Client_NumberColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Arrival_Date" msprop:Generator_UserColumnName="Arrival_Date" msprop:Generator_ColumnVarNameInTable="columnArrival_Date" msprop:Generator_ColumnPropNameInRow="Arrival_Date" msprop:Generator_ColumnPropNameInTable="Arrival_DateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Client_TypeID" msprop:Generator_UserColumnName="Client_TypeID" msprop:Generator_ColumnVarNameInTable="columnClient_TypeID" msprop:Generator_ColumnPropNameInRow="Client_TypeID" msprop:Generator_ColumnPropNameInTable="Client_TypeIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="District" msprop:Generator_UserColumnName="District" msprop:Generator_ColumnVarNameInTable="columnDistrict" msprop:Generator_ColumnPropNameInRow="District" msprop:Generator_ColumnPropNameInTable="DistrictColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status_CodeID" msprop:Generator_UserColumnName="Status_CodeID" msprop:Generator_ColumnVarNameInTable="columnStatus_CodeID" msprop:Generator_ColumnPropNameInRow="Status_CodeID" msprop:Generator_ColumnPropNameInTable="Status_CodeIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Suspend_From_View" msprop:Generator_UserColumnName="Suspend_From_View" msprop:Generator_ColumnVarNameInTable="columnSuspend_From_View" msprop:Generator_ColumnPropNameInRow="Suspend_From_View" msprop:Generator_ColumnPropNameInTable="Suspend_From_ViewColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Last_Update_User" msprop:Generator_UserColumnName="Last_Update_User" msprop:Generator_ColumnVarNameInTable="columnLast_Update_User" msprop:Generator_ColumnPropNameInRow="Last_Update_User" msprop:Generator_ColumnPropNameInTable="Last_Update_UserColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Last_Update_Date" msprop:Generator_UserColumnName="Last_Update_Date" msprop:Generator_ColumnVarNameInTable="columnLast_Update_Date" msprop:Generator_ColumnPropNameInRow="Last_Update_Date" msprop:Generator_ColumnPropNameInTable="Last_Update_DateColumn" type="xs:dateTime" />
+              <xs:element name="Last_Update_Program" msprop:Generator_UserColumnName="Last_Update_Program" msprop:Generator_ColumnVarNameInTable="columnLast_Update_Program" msprop:Generator_ColumnPropNameInRow="Last_Update_Program" msprop:Generator_ColumnPropNameInTable="Last_Update_ProgramColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Client_Image" msprop:Generator_UserTableName="Client_Image" msprop:Generator_RowDeletedName="Client_ImageRowDeleted" msprop:Generator_TableClassName="Client_ImageDataTable" msprop:Generator_RowChangedName="Client_ImageRowChanged" msprop:Generator_RowClassName="Client_ImageRow" msprop:Generator_RowChangingName="Client_ImageRowChanging" msprop:Generator_RowEvArgName="Client_ImageRowChangeEvent" msprop:Generator_RowEvHandlerName="Client_ImageRowChangeEventHandler" msprop:Generator_TablePropName="Client_Image" msprop:Generator_TableVarName="tableClient_Image" msprop:Generator_RowDeletingName="Client_ImageRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Client_ImageID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Client_ImageID" msprop:Generator_ColumnPropNameInRow="Client_ImageID" msprop:Generator_ColumnVarNameInTable="columnClient_ImageID" msprop:Generator_ColumnPropNameInTable="Client_ImageIDColumn" type="xs:int" />
+              <xs:element name="ClientID" msprop:Generator_UserColumnName="ClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Image" msprop:Generator_UserColumnName="Image" msprop:Generator_ColumnPropNameInRow="Image" msprop:Generator_ColumnVarNameInTable="columnImage" msprop:Generator_ColumnPropNameInTable="ImageColumn" type="xs:base64Binary" />
+              <xs:element name="Original_Filename" msprop:Generator_UserColumnName="Original_Filename" msprop:Generator_ColumnPropNameInRow="Original_Filename" msprop:Generator_ColumnVarNameInTable="columnOriginal_Filename" msprop:Generator_ColumnPropNameInTable="Original_FilenameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="contentType" msprop:Generator_UserColumnName="contentType" msprop:Generator_ColumnPropNameInRow="contentType" msprop:Generator_ColumnVarNameInTable="columncontentType" msprop:Generator_ColumnPropNameInTable="contentTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="width" msprop:Generator_UserColumnName="width" msprop:Generator_ColumnPropNameInRow="width" msprop:Generator_ColumnVarNameInTable="columnwidth" msprop:Generator_ColumnPropNameInTable="widthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="height" msprop:Generator_UserColumnName="height" msprop:Generator_ColumnPropNameInRow="height" msprop:Generator_ColumnVarNameInTable="columnheight" msprop:Generator_ColumnPropNameInTable="heightColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Case_Info" />
+      <xs:field xpath="mstns:Case_InfoID" />
+    </xs:unique>
+    <xs:unique name="Client_Image_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Client_Image" />
+      <xs:field xpath="mstns:Client_ImageID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

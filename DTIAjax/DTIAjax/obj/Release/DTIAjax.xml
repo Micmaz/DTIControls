@@ -1,0 +1,34 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIAjax
+</name>
+</assembly>
+<members>
+<member name="T:DTIAjax.DTIupdatepanel">
+ <summary>
+ Simplified Ajax enbaled panel
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIAjax.jsonSeverConrol">
+ <summary>
+ A json enabled we control
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIAjax.jsonObject">
+ <summary>
+ json return object
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIAjax.jsonWorker">
+ <summary>
+ The worker class recieving data from a json call.
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

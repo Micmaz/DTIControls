@@ -1,0 +1,92 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="DTIContentManagementTester.Site1" %>
+<%@ Register Assembly="DTIAdminPanel" Namespace="DTIAdminPanel" TagPrefix="cc1" %>
+<%@ Register Assembly="DTISortable" Namespace="DTISortable" TagPrefix="cc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Test</title>
+    <link href="ModernEleganceColors/css/brown.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+         
+          .SortablePlaceHolder { 
+	            height: 2em; 
+	            line-height: 1.5em;
+	            background-color:#EEEEEE;
+            }
+            .OuterRecyclebin{
+                border: dotted thin red;
+            }
+            .DTISortableItemHandle, .DTIRecycledItemHandle, .WidgetMenuItemHandle {
+                background-color:#052A3A;
+                color:white;
+                padding:4px;
+                height: 15px;
+            }
+            .WidgetMenuOuter, .RecycleBinOuter, .DTILoggedInDiv {
+                background-color: #eeeeee;
+                border: 5px solid black;
+            }   
+            .someClass {
+                color: white;
+            }               
+      </style>
+        
+
+</head>
+<body>
+    <form id="form1" runat="server">
+     <cc1:DTIAdminPanel  ID="loggedinControl1" runat="server" />
+    <div id="navigation">
+	<div class="shell">
+	<h1 id="logo"><p style="padding-left:15px;">
+		<br />Feel free to report bugs <a style="text-decoration:underline;" target="_blank" href="http://spreadsheets.google.com/ccc?key=0AmV6NJZO8XdodFpzZzkwclZqMzNtNG5BMmhWbkxwN1E&amp;hl=en">here</a>
+<br /><asp:Button ID="Button1" runat="server" Text="Log In" />
+		</p></h1>
+		<div class="cl">&nbsp;</div>
+
+		<cc1:Menu runat="server" ID="menu1" Template="ChromeMenu" />
+	
+		<div class="cl">&nbsp;</div>
+	</div>
+</div>
+	
+<div class="shell">
+	<div id="content">
+		<div class="cl">&nbsp;</div>
+        <div class="main" style="background:url(ModernEleganceColors/brown/replaceableImage.gif) no-repeat 0 0;background-position:right top">
+			<div class="featured">
+				<div class="box">
+					<cc2:DTISortable cssclass="someClass" ID="SortableServer1" runat="server" contentType="RotatingArticles" HandleText="Drag Me" ZIndex="10000000">
+					
+					</cc2:DTISortable>
+				</div>
+			</div>
+		
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        </div>
+        <cc2:DTISortable ID="DTISortable3" CssClass="sidebar" runat="server" contentType="Hours" HandleText="Drag Me" ZIndex="10000000">
+			
+		
+		<asp:Panel ID="HoursOperation" runat="server" CssClass="hours">
+			
+			<h1>Hours of Operation</h1>
+				<span style="color:White;">hours</span>
+		</asp:Panel>
+			</cc2:DTISortable>
+		<div class="cl">&nbsp;</div>
+		<br /><br />
+			<div id="footer">
+							<cc2:DTISortable ID="DTISortable1" runat="server" contentType="footerblah" >
+				
+				<p><a href="#">Privacy Policy</a><span>|</span><a href="#">Legal Terms</a><br />Copyright © 2008 Vetstreet</p>
+</cc2:DTISortable>
+			</div>
+
+	</div>
+</div>
+
+</form>
+</body>
+</html>

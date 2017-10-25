@@ -1,0 +1,135 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="DTIAdminPanelTestProject.Site1" %>
+<%@ Register Assembly="DTIAdminPanel" Namespace="DTIAdminPanel" TagPrefix="cc1" %>
+<%@ Register Assembly="DTISortable" Namespace="DTISortable" TagPrefix="cc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Test</title>
+    <link href="ModernEleganceColors/css/brown.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <cc1:DTIAdminPanel  ID="loggedinControl1" runat="server" />
+    <div id="navigation">
+	<div class="shell">
+	<h1 id="logo"><p>
+	<asp:Button ID="Button1" runat="server" Text="Log In" />
+
+		</p></h1>
+		<div class="cl">&nbsp;</div>
+	<%--	<cc1:Menu Template="ChromeMenu" runat="server" ID="menu1" selectedCss="selectedli"/>--%>
+	
+		<div class="cl">&nbsp;</div>
+	</div>
+</div>
+<div class="shell">
+	<div id="content">
+		<div class="cl">&nbsp;</div>
+        <div class="main" style="background:url(ModernEleganceColors/brown/replaceableImage.gif) no-repeat 0 0;background-position:right top">
+			<div class="featured">
+				<div class="box">
+					<%--<cc2:DTISortable ID="SortableServer1" runat="server" contentType="RotatingArticles" HandleText="Drag Me" ZIndex="10000000">
+					
+					</cc2:DTISortable>--%>
+				</div>
+			</div>
+
+<%--menu0		<cc1:Menu Template="FlatMenu" runat="server" FixedDepth="0" ID="menu5" DepthOfMenu="1" selectedCss="selectedli"   />
+menu1		<cc1:Menu Template="FlatMenu" runat="server" FixedDepth="1" ID="menu2"  DepthOfMenu="1" selectedCss="selectedli"   />
+--%>menu2		<cc1:Menu Template="Simple" runat="server" FixedDepth="2" ID="menu3" DepthOfMenu="1" selectedCss="selectedli" >
+                                <ul >
+                                    <cc1:MenuItem ID="menuitem0" runat="server">
+                                    <li><a href="##link##">site1##Name##</a>
+                                        <ul><cc1:MenuItem ID="menuitem1" runat="server"><li><a class='submenu ##Name##' href='##link##'>##Name##</a></li></cc1:MenuItem></ul>
+                                    </li>
+                                    </cc1:MenuItem>
+                                </ul>
+</cc1:Menu>
+<br /><br />
+<%--menu3:selector		<cc1:Menu Template="FlatMenu" runat="server" FixedDepth="1" FixedDepthtravel="-1" ID="menu4" DepthOfMenu="1" selectedCss="selectedli"   />
+       --%><asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+
+        </div>
+       <%-- <cc2:DTISortable ID="DTISortable3" CssClass="sidebar" runat="server" 
+                    contentType="Hours" HandleText="Drag Me" ZIndex="10000000"
+                    OuterStyle="border:thin dashed green">
+			
+		
+		<asp:Panel ID="HoursOperation" runat="server" CssClass="hours">
+			
+			<h1>Hours of Operation</h1>
+				hours
+			
+				</asp:Panel>
+			
+			
+			
+		<asp:Panel ID="Panel1" runat="server" CssClass="search">
+			<span>Search Our Site:</span>
+<table>
+    <tbody>
+        <tr>
+            <td><!--Search--></td>
+        </tr>
+        <tr>
+            <td colspan="2"><select name="search1$ddCategories" id="search1_ddCategories" style="width: 128px;">
+            <option selected="selected" value="All Categories">All Categories</option>
+            <option value="Article Name">Article Name</option>
+            <option value="144">Dog Care</option>
+            <option value="146">Cat Care</option>
+            <option value="148">Diseases</option>
+            <option value="149">Symptoms</option>
+            <option value="150">Drug Library</option>
+            <option value="151">Tests</option>
+            <option value="152">Procedures</option>
+            <option value="176">FAQ's</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td colspan="2"><select name="search1$ddType" id="search1_ddType" style="width: 128px;">
+            <option selected="selected" value="Phrase">By Phrase</option>
+            <option value="All">By All Words</option>
+            <option value="Any">By Any Word</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td style="width: 50px;"><input name="search1$tbQuery" id="search1_tbQuery" style="width: 96px;" type="text" /></td>
+            <td align="right"><input name="search1$btnGo" id="search1_btnGo" style="border-right-width: 0px; width: 25px; border-top-width: 0px; border-bottom-width: 0px; height: 25px; border-left-width: 0px;" type="text" value="go" /> /></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+    </tbody>
+</table>
+			</asp:Panel>
+			 
+				
+			
+			<asp:Panel ID="Panel2" runat="server" CssClass="banners">
+			
+				 
+			teasers
+</asp:Panel>
+			
+		
+		
+		
+			</cc2:DTISortable>--%>
+		<div class="cl">&nbsp;</div>
+		<br /><br />
+			<div id="footer">
+			
+				<p><a href="#">Privacy Policy</a><span>|</span><a href="#">Legal Terms</a><br />Copyright © 2008 Vetstreet</p>
+
+			</div>
+
+	</div>
+</div>
+
+</form>
+</body>
+</html>

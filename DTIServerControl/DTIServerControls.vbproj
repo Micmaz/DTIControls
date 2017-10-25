@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{48529821-DD5A-47E2-8444-A91143140EA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DTIServerControls</RootNamespace>
+    <AssemblyName>DTIServerControls</AssemblyName>
+    <MyType>Empty</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DTIServerControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DTIServerControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Data" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Management" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTIServerBaseDesigner.vb" />
+    <Compile Include="DTIServerControlBasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicProperties\Comparator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynamicProperties\dsDTIControls.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDTIControls.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTIServerBase.vb" />
+    <Compile Include="DTIServerControl.vb" />
+    <Compile Include="DTISettingsControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DTISharedVariables.vb" />
+    <Compile Include="DynamicProperties\dsDTIControls.vb">
+      <DependentUpon>dsDTIControls.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="DynamicProperties\PropertyCreator.vb" />
+    <Compile Include="SettingsEditorPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TmpControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynamicProperties\dsDTIControls.xsc">
+      <DependentUpon>dsDTIControls.xsd</DependentUpon>
+    </None>
+    <None Include="DynamicProperties\dsDTIControls.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDTIControls.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DynamicProperties\dsDTIControls.xss">
+      <DependentUpon>dsDTIControls.xsd</DependentUpon>
+    </None>
+    <None Include="DynamicProperties\dsDTIControls.xsx">
+      <DependentUpon>dsDTIControls.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="settingTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="default.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="setParent.js" />
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="TmpControl.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
+      <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
+      <Name>DTIMiniControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HighslideControls\HighslideControls\HighslideControls.vbproj">
+      <Project>{f26e8251-f511-4889-a31d-384d1f497a2b}</Project>
+      <Name>HighslideControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

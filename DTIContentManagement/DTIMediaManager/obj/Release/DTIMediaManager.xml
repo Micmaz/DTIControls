@@ -1,0 +1,236 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIMediaManager
+</name>
+</assembly>
+<members>
+<member name="T:DTIMediaManager.dsMedia.DTIMediaManagerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIMediaManager.dsMedia.DTIMediaTypesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIMediaManager.dsMedia.DTIMediaManagerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIMediaManager.dsMedia.DTIMediaTypesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIMediaManager.dsMedia.DTIMediaManagerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIMediaManager.dsMedia.DTIMediaTypesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIMediaManager.DTIBasePage">
+ <summary>
+ Page object with DTI-managed media meta data
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIMediaManager.EditMediaControl">
+ <summary>
+ control to edit meta data of media objects
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaItem._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaItem._EditMediaControl1">
+<summary>
+EditMediaControl1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaItem._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._lblDateAdded">
+<summary>
+lblDateAdded control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._lblDateAddedValue">
+<summary>
+lblDateAddedValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._tdTitle">
+<summary>
+tdTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._lblTitle">
+<summary>
+lblTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._tbTitle">
+<summary>
+tbTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._phContentEditor">
+<summary>
+phContentEditor control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._lblDescription">
+<summary>
+lblDescription control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._tbDesc">
+<summary>
+tbDesc control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.EditMediaUserControl._tagger">
+<summary>
+tagger control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIMediaManager.MediaInfo">
+ <summary>
+ simple control to display meta data of media objects
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIMediaManager.MediaRater">
+ <summary>
+ star rating control to rate DTI-managed media objects
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIMediaManager.MediaSearcher">
+ <summary>
+ control to navigate search of DTI-managed media objects.  Sorted by relevancy, submitted, or rating
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIMediaManager.MediaUploader">
+ <summary>
+ control to upload DTI-managed media objects
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:DTIMediaManager.PreviewFiles">
+<summary>
+PreviewFiles class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.PreviewFiles._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.PreviewFiles._phFilePreview">
+<summary>
+phFilePreview control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMediaManager.PreviewFiles._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIMediaManager.RatingHandler">
+<summary>
+RatingHandler class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+</members>
+</doc>

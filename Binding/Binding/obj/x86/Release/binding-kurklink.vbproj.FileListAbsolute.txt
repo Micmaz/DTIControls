@@ -1,0 +1,7 @@
+c:\components\binding\binding\bin\Binding.dll
+c:\components\binding\binding\bin\Binding.pdb
+c:\components\binding\binding\bin\DTIControls.dll
+c:\components\binding\binding\bin\DTIControls.pdb
+c:\components\binding\binding\obj\x86\Release\binding-kurklink.vbprojResolveAssemblyReference.cache
+c:\components\binding\binding\obj\x86\Release\Binding.dll
+c:\components\binding\binding\obj\x86\Release\Binding.pdb

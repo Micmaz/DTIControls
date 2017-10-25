@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+<script type="text/javascript" src="../other/jquery-3.2.1.min.js" language="javascript"></script>
+<script type="text/javascript" src="../other/DTIprototypes.js" language="javascript"></script>
+<link rel="stylesheet" type="text/css" href="../other/bootstrap-iso.css" />
+<link rel="stylesheet" type="text/css" href="../dist/summernote.css" />
+<script type="text/javascript" src="../other/bootstrap.js" language="javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.js"></script>
+
+
+<script type="text/javascript" src="../dist/summernote.min.js" language="javascript"></script>
+<script type="text/javascript" src="../dist-plugins/summernote-video-attributes.js" language="javascript"></script>
+<script type="text/javascript" src="../dist-plugins/summernote-ext-dialogHelper.js" language="javascript"></script>
+<script type="text/javascript" src="../dist-plugins/summernote-image-attributes.js" language="javascript"></script>
+<script type="text/javascript" src="../other/sumernoteInit.js" language="javascript"></script>
+<link rel="stylesheet" href="../other/summernoteAddl.css">
+<script>
+  $(function(){
+    setOptions($("#item1"),{toolbar: [['style', ['style', 'bold', 'italic', 'underline', 'clear',]]]});
+    addTools($("#item1"),[['fontname', ['fontname']]]);
+    addTools($("#item1"),[['codeview', ['codeview']]]);
+    
+    addIframeDialogButton($("#item1"),'<i class="note-icon-save"/>','Save','iframe.html');
+    //addButton($("#item1"),'<i class="note-icon-save"/>','Save',function(){alert('Hi!');});
+
+    $(document).keydown(function (e) {
+                if (e.which == 27) {
+                    endEdit();
+                }
+    });
+  })
+</script>`
+
+<!--  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+  <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0-rc.2/themes/smoothness/jquery-ui.css" />
+
+
+  <link rel="stylesheet" href="//formden.com/static/assets/demos/bootstrap-iso/bootstrap-iso/bootstrap-iso.css" />
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="../dist/summernote.css">
+  <script type="text/javascript" src="../dist/summernote.min.js"></script>
+  <script src="../dist-plugins/summernote-video-attributes.js"></script>
+  <script src="../dist-plugins/summernote-ext-dialogHelper.js"></script>
+  <script src="../dist-plugins/summernote-image-attributes.js"></script>
+  <script type="text/javascript" src="../other/sumernoteInit.js" language="javascript"></script>
+  <link rel="stylesheet" href="../other/summernoteAddl.css">
+-->
+
+
+
+<title>
+  Test
+</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+</head>
+
+
+<body style="background-color:Silver">
+    <form name="form1" method="post" action="default2.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTgyMTkyMzU3OA9kFgICAw9kFgYCAQ9kFgICAQ8PZBYCHg9jb250ZW50ZWRpdGFibGUFBHRydWUWAmYPFgIeBFRleHQFE0luc2VydCBDb250ZW50IEhlcmVkAgMPZBYCAgEPD2QWAh8ABQR0cnVlFgJmDxYCHwEFE0luc2VydCBDb250ZW50IEhlcmVkAgUPZBYCZg9kFgJmDw9kFgIfAAUEdHJ1ZWRk31vl1s2nWywD1VT2UxlfvXXxIgk=" />
+</div>
+
+<div>
+
+  <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="09394A33" />
+  <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCgKtwLWTAgLA+KH6CwKa/ptfAuPfmz8C+7qFaALVwP/MBQKeov+sBQKXmcvcAgKkm8CeCQLkqICXDdUbjV1gFcIRgFTSLVF4LSkdmPwc" />
+</div>
+
+
+<div id="item1" class="dtiContentEdit">
+                <h1 class="o-hero__header__headline">Where Work Happens</h1>
+                <p class="o-hero__header__copy u-margin-left--flush">When your team needs to kick off a project, hire a new employee, deploy some code, review a sales contract, finalize next year's budget, measure an A/B test, plan your next office opening, and more, Slack has you covered.</p>
+                <div class="o-hero__header__cta c-cta c-cta--signup">
+
+
+            <div class="c-form__container">
+                  <input type="hidden" name="crumb" value="s-1506025037-895ba12288-☃">
+              <input type="hidden" name="done" value="1">
+
+                  
+              <div class="c-tooltip c-form__input_wrapper v--manual" tabindex="-1">
+                
+
+                <span class="c-form__feedback u-margin-top--small"></span>
+
+                      <div class="c-tooltip__content v--north v--border-red"></div>
+              </div>
+
+
+            </div>
+
+                    <p class="u-margin-bottom--flush u-margin-top--medium display-as-mini">
+              
+              Already using Slack? <a href="https://slack.com/signin" data-clog-click="" data-clog-ui-element="link_sign_in_cta" data-clog-ui-step="page_home" data-gtm-click="optout_signin" data-qa="cta_sign_in">Sign in</a>.  </p>
+
+
+
+           
+                      </div>
+</div>
+</div>
+  asdasd
+asd<br/>sadasdads
+  asdasd
+asd<br/>sadasdads
+  asdasd
+asd<br/><a href="#" onclick="endEdit()">End edit</a>
+asd</div>
+
+<div class="dtiContentEdit">
+<p>In <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, <b>functional programming</b> is a <a href="http://en.wikipedia.org/wiki/Programming_paradigm" title="Programming paradigm">programming paradigm</a>, a style of building the structure and elements of computer programs, that treats <a href="http://en.wikipedia.org/wiki/Computation" title="Computation">computation</a> as the evaluation of <a href="http://en.wikipedia.org/wiki/Function_(mathematics)" title="Function (mathematics)">mathematical functions</a> and avoids <a href="http://en.wikipedia.org/wiki/Program_state" title="Program state" class="mw-redirect">state</a> and <a href="http://en.wikipedia.org/wiki/Immutable_object" title="Immutable object">mutable</a> data. Functional programming emphasizes <a href="http://en.wikipedia.org/wiki/Function_(computer_science)" title="Function (computer science)" class="mw-redirect">functions</a> that produce results that depend only on their inputs and not on the program state—i.e. <a href="http://en.wikipedia.org/wiki/Pure_function" title="Pure function">pure</a> <a href="http://en.wikipedia.org/wiki/Function_(mathematics)" title="Function (mathematics)">mathematical functions</a>. It is a <a href="http://en.wikipedia.org/wiki/Declarative_programming" title="Declarative programming">declarative programming</a> paradigm, which means programming is done with <a href="http://en.wikipedia.org/wiki/Expression_(computer_science)" title="Expression (computer science)">expressions</a>. In functional code, the output value of a function depends only on the arguments that are input to the function, so calling a function <i>f</i> twice with the same value for an argument <i>x</i> will produce the same result <i>f(x)</i> both times. Eliminating <a href="http://en.wikipedia.org/wiki/Side_effect_(computer_science)" title="Side effect (computer science)">side effects</a>, i.e. changes in state that do not depend on the function inputs, can make it much easier to understand and predict the behavior of a program, which is one of the key motivations for the development of functional programming.</p>
+</div>
+
+
+<div style="width:600px;background-color:Yellow;">
+    <br /><br />
+    before
+        <div id="SummerNote1">
+  A TEST HERE!
+        <div id="SummerNote1_HTML" class=" dtiContentEdit" contenteditable="true">
+    Insert Content Here
+  </div><input type="hidden" name="SummerNote1_Hidden" id="SummerNote1_Hidden" value="Insert+Content+Here" /><input type="submit" name="SummerNote1_Save" value="Save" onclick="setHtmlEditorValue(SummerNote.instances[$(this).parent().parent().find('.dtiContentEdit').attr('id')]);" id="SummerNote1_Save" class=" dtiCKEButton Save" style="display:none;" /><input type="submit" name="SummerNote1_Cancel" value="Cancel" id="SummerNote1_Cancel" class=" dtiCKEButton Cancel" style="display:none;" />
+</div>
+    after
+    <br />
+</div>
+        <div id="SummerNote2" DivCssClass="divClass" style="height:300px;width:500px;">
+  
+        <div id="SummerNote2_HTML" class=" dtiContentEdit" SummerNote.config.Height="300" SummerNote.config.width="500" contenteditable="true">
+    Insert Content Here
+  </div><input type="hidden" name="SummerNote2_Hidden" id="SummerNote2_Hidden" value="Insert+Content+Here" /><input type="submit" name="SummerNote2_Save" value="Save" onclick="setHtmlEditorValue(SummerNote.instances[$(this).parent().parent().find('.dtiContentEdit').attr('id')]);" id="SummerNote2_Save" class=" dtiCKEButton Save" style="display:none;" /><input type="submit" name="SummerNote2_Cancel" value="Cancel" id="SummerNote2_Cancel" class=" dtiCKEButton Cancel" style="display:none;" />
+</div>
+
+<div id="ctl04">
+  <div id="ctl04_HTML" class=" dtiContentEdit" contenteditable="true">
+    dynamically added
+  </div><input type="hidden" name="ctl04_Hidden" id="ctl04_Hidden" value="dynamically+added" /><input type="submit" name="ctl04_Save" value="Save" onclick="setHtmlEditorValue(SummerNote.instances[$(this).parent().parent().find('.dtiContentEdit').attr('id')]);" id="ctl04_Save" class=" dtiCKEButton Save" style="display:none;" /><input type="submit" name="ctl04_Cancel" value="Cancel" id="ctl04_Cancel" class=" dtiCKEButton Cancel" style="display:none;" />
+</div>
+
+    </form>
+
+
+</body>
+</html>

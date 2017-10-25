@@ -1,0 +1,73 @@
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ContentFrame.aspx.vb" Inherits="JqueryUIControlsTest.ContentFrame"  %>
+<%@ Register Assembly="JqueryUIControls" Namespace="JqueryUIControls" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+   <script type="text/javascript">
+       $(function() {
+
+           // Bind the event.
+           window.onhashchange = function() {
+               // Alerts every time the hash changes!
+               alert(location.hash);
+           }
+
+           // Trigger the event (useful on page load).
+           // $(window).hashchange();
+           /*
+           setTimeout(" \
+           addButtonsFromFrame({ \
+           '#Button1': function() { alert('hi'); return true; }, \
+           'test': function() { alert('hi'); return true; } \
+           });           \
+           ", 500);
+           */
+           addbtn();
+       });
+
+       function addbtn() {
+           addButtonsFromFrame({
+               '#Button1': function() { alert('hi'); return true; },
+               'test': function() { alert('hi'); return false; }
+           });       
+       }
+
+
+</script> 
+</head>
+<body>
+<div style="width:100%;background-color:red;height:20px;"></div>
+    <form id="form1" runat="server">
+        <asp:Button ID="Button1" runat="server" Text="Button" />
+        <a href="javascript:void(0)" onclick="addbtn();">Add</a>
+        <a href="ContentFrame2.aspx">back</a><br />
+        <cc1:Dialog ID="dlg1" showEffect="highlight" Title="test" url="contentframe.aspx" runat="server" openerText="openme"></cc1:Dialog>
+                <a href="" onclick="createDialogURL('SliderTest.aspx',500,500,'test1aaaa','testTitle');return false;">dynamic</a>&nbsp;
+
+    <div><p>Nibh ante adipiscing. Ut sodales nonummy. Enim ipsum penatibus. Et curabitur bibendum. 
+    Placerat tortor tristique amet mauris blandit. Fermentum et ac fusce sapien amet nulla nibh donec erat 
+    sapien lacus velit quis est. Enim wisi vitae vitae suspendisse porttitor enim egestas ligula blandit ut 
+    wisi ac urna nulla. Suspendisse risus odio. Nulla suscipit curabitur vel wisi mattis. Pellentesque 
+    maecenas vivamus.</p><p>Eu auctor in. Sodales ridiculus enim. Vitae turpis eu. Pede faucibus id 
+    varius eget amet mauris justo tristique. Laoreet phasellus tristique. Sit orci neque libero et risus. 
+    Massa habitasse lectus cum semper consequat. Nulla a suspendisse. Commodo arcu a. Volutpat ac gravida. 
+    Vestibulum id quisque ultrices duis risus lobortis at nonummy. Pulvinar at donec in non libero. 
+    Quis ultrices integer. Euismod suspendisse odio. Egestas duis cras suspendisse wisi blandit ac sem 
+    dis lectus nulla metus orci sem pede pellentesque odio dolor libero gravida ipsum bibendum quam enim 
+    nisl massa blandit. Tempor sit aut. Velit morbi consequat ultricies id viverra. Elit phasellus justo 
+    curabitur elit tempor. Mauris risus quis curabitur ipsum justo. Auctor nam ut feugiat erat nonummy 
+    laoreet vestibulum taciti.</p><p>Ipsum velit et vivamus curabitur facilisis accumsan tincidunt pede 
+    augue faucibus ut eu vestibulum nullam sem curabitur pede. Diam sed erat. Risus pede neque non urna 
+    sem in donec fermentum vestibulum pellentesque dui wisi sociis duis. Molestie nec elit quis et velit. 
+    Morbi elit ornare. Urna risus molestie vestibulum per tellus nibh vel integer commodo quisque cras sed 
+    fringilla dolor. Euismod quis elementum. Enim adipiscing aliquam. Sit convallis lobortis commodo nec ac. 
+    Erat erat morbi. Habitasse mattis a. Ligula integer vestibulum. Eget elementum est venenatis suspendisse 
+    laoreet. Nibh mi nulla taciti fringilla egestas. Consectetuer ipsum diam. Volutpat vivamus in. 
+    Nulla vestibulum pede nec vitae lacus eget vehicula quam. In mattis a. Pellentesque dui wisi. 
+    Mollis nullam orci tellus ut turpis.</p>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="OverrideTest.master.vb" Inherits="DTIAdminPanelTestProject.OverrideTest" %>
+<%@ Register Assembly="DTIAdminPanel" Namespace="DTIAdminPanel" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <cc1:Menu runat="server" Template="simple" ID="menu1" selectedCss="selectedli"  SelectParentPage="true">
+       <cc1:OverrideItem ID="OverrideItem1" runat="server" Name="test3">  
+                <li>yay<a href="##link##">##Name##<hasChildren> +</hasChildren></a></li>  
+                <hasChildren>
+                    <ul>
+                        <cc1:MenuItem ID="menuitem5" runat="server">
+                            <li><a href="##link##">##Name##</a></li>					
+                        </cc1:MenuItem>
+                    </ul>
+                </hasChildren>		    
+        </cc1:OverrideItem>
+    </cc1:Menu>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

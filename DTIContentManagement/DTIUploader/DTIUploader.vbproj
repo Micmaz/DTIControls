@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <MyType>Empty</MyType>
+    <RootNamespace>DTIUploader</RootNamespace>
+    <AssemblyName>DTIUploader</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <ProjectGuid>{09114331-3F81-47B3-819F-ED110F2BE7EC}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIUploader.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIUploader.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>DTIUploader.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>DTIUploader.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>DTIUploader.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>DTIUploader.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="assets\interfacestyle.css" />
+    <EmbeddedResource Include="assets\wjhk.jupload.jar" />
+    <EmbeddedResource Include="assets\YahooUploader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTIUploaderControl.vb" />
+    <Compile Include="DTIUploaderUserControl.ascx.designer.vb">
+      <DependentUpon>DTIUploaderUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DTIUploaderUserControl.ascx.vb">
+      <DependentUpon>DTIUploaderUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JavaFileUploader.ascx.designer.vb">
+      <DependentUpon>JavaFileUploader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JavaFileUploader.ascx.vb">
+      <DependentUpon>JavaFileUploader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JSFileUploader.ascx.designer.vb">
+      <DependentUpon>JSFileUploader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JSFileUploader.ascx.vb">
+      <DependentUpon>JSFileUploader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="WebFileUploader.ascx.designer.vb">
+      <DependentUpon>WebFileUploader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFileUploader.ascx.vb">
+      <DependentUpon>WebFileUploader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="assets\datasource-min.js" />
+    <EmbeddedResource Include="assets\datatable-min.js" />
+    <EmbeddedResource Include="assets\datatable.css" />
+    <EmbeddedResource Include="assets\element-min.js" />
+    <EmbeddedResource Include="assets\fonts-min.css" />
+    <EmbeddedResource Include="assets\yahoo-dom-event.js" />
+    <EmbeddedResource Include="WebFileUploader.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="assets\ffmpeg.exe" />
+    <EmbeddedResource Include="assets\flvtool2.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="assets\uploader.swf" />
+    <EmbeddedResource Include="assets\WorkInProgress.gif" />
+    <EmbeddedResource Include="DTIUploaderUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JavaFileUploader.ascx" />
+    <EmbeddedResource Include="JSFileUploader.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="assets\uploader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
+      <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
+      <Name>DTIMiniControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIServerControl\DTIServerControls.vbproj">
+      <Project>{48529821-dd5a-47e2-8444-a91143140ea6}</Project>
+      <Name>DTIServerControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HighslideControls\HighslideControls\HighslideControls.vbproj">
+      <Project>{f26e8251-f511-4889-a31d-384d1f497a2b}</Project>
+      <Name>HighslideControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

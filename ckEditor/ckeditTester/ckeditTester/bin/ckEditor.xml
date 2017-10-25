@@ -1,0 +1,337 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ckEditor
+</name>
+</assembly>
+<members>
+<member name="T:ckEditor.ckEditor">
+ <summary>
+ WYSIWYG html editor.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:ckEditor.ckEditor.Save_Clicked">
+ <summary>
+ The save button on the html editor is clicked.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="E:ckEditor.ckEditor.Cancel_Clicked">
+ <summary>
+ the cancelbutton o the html editor is clicked.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.ID">
+ <summary>
+ Control id.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.attribute(System.String)">
+ <summary>
+ Client side attributes added to control.
+ </summary>
+ <param name="key"></param>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.Width">
+ <summary>
+ Edit area width.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.Height">
+ <summary>
+ Edit area Height.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.Entermode">
+ <summary>
+ The tag added to the htmlcode when enter is pressed.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:ckEditor.ckEditor.entermodetag">
+ <summary>
+ Enumeration of tag added to the htmlcode when enter is pressed.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.DisableButtons">
+ <summary>
+ Disables the cancel and save buttons and removes them from the editor.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.DisableCancel">
+ <summary>
+ Disables the cancel button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.DisableSave">
+ <summary>
+ Disables the save button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.DefaultHTML">
+ <summary>
+ The contents of the editor if the text property is empty. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.Text">
+ <summary>
+ The html text contents of the editor.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.BeforeReady">
+ <summary>
+ Javascript function that is called before the editor is created.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.ClientReady">
+ <summary>
+ Javascript function that is called once the editor is created
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.BeforeClientDestroyed">
+ <summary>
+ Javascript function that is called once before the editor is destroyed.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.ClientDestroyed">
+ <summary>
+ Javascript function that is called after the client after the editor is destroyed.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.Toolbar">
+ <summary>
+ The toolbar and buttns for this editor.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:ckEditor.ckEditor.ToolbarModes">
+ <summary>
+ Enum of toolbar locations.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.Toolbarlayout">
+ <summary>
+ Pre-made layout of toolbar tools and groups. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.ToolbarMode">
+ <summary>
+ Determines weather the toolbar is rendered over the editor or at the top of the screen.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditor.myManager">
+ <summary>
+ The editorManager that is automatically added to the page for multiple editors.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:ckEditor.ckEditor.ResetToolbar">
+ <summary>
+ set toolbar to the default full toolbar.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:ckEditor.ckEditor.addIframeDialog(ckEditor.IframeDialog@,System.Boolean)">
+ <summary>
+ Add a dialogue toolbar to the editor and optionaly open it with the button defined in the iframeDialogue object.
+ </summary>
+ <param name="dlg"></param>
+ <param name="addButtonToToolbar"></param>
+ <remarks></remarks>
+</member>
+<member name="M:ckEditor.ckEditor.addIframeDialog(System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ Add a dialogue to the editor and bind it to a button in the editor.
+ </summary>
+ <param name="name"></param>
+ <param name="iconpath"></param>
+ <param name="dialogtitle"></param>
+ <param name="height"></param>
+ <param name="width"></param>
+ <param name="tooltip"></param>
+ <param name="url"></param>
+ <remarks></remarks>
+</member>
+<member name="T:ckEditor.ckEditorManager">
+ <summary>
+ manager class for keeping multiple ckEditor instances on one page.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditorManager.lastActiveEditor">
+ <summary>
+ The last editor activated on the page.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.ckEditorManager.ActiveEditor">
+ <summary>
+ The id of the editor that is currently active on the page.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:ckEditor.ckEditorManager.Render(System.Web.UI.HtmlTextWriter)">
+ <summary>
+ Overrides the render function of the panel.
+ </summary>
+ <param name="writer"></param>
+ <remarks></remarks>
+</member>
+<member name="T:ckEditor.IframeDialog">
+ <summary>
+ Dialogue for custom tools in the editor.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.IframeDialog.Name">
+ <summary>
+ The name of this dialogue. Also how it's accessed via the toolbar.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.IframeDialog.DialogTitle">
+ <summary>
+ The title of the dialogue.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.IframeDialog.IconPath">
+ <summary>
+ The icon for the toolbar button.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.IframeDialog.IframeURL">
+ <summary>
+ The url of the dialogue iframe.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.IframeDialog.DialogHeight">
+ <summary>
+ The height of the open dialogue in px.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.IframeDialog.DialogWidth">
+ <summary>
+ The width of the open dialogue in px.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:ckEditor.IframeDialog.DialogAction">
+ <summary>
+ Javascript command run when the dialogue opens.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:ckEditor.sourceView._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:ckEditor.sourceView._repcontent">
+<summary>
+repcontent control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:ckEditor.Toolbar">
+ <summary>
+ A seperate toolar class.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:ckEditor.ToolbarGroup">
+ <summary>
+ Handles tool groups within a toolbar.
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

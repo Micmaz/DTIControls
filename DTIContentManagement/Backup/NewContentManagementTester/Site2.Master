@@ -1,0 +1,21 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site2.master.vb" Inherits="NewContentManagementTester.Site2" %>
+<%@ Register Assembly="DTIContentManagement" Namespace="DTIContentManagement" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <cc1:EditPanel runat="server" UniquePerPage="true" id="editPanel1"></cc1:EditPanel>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <cc1:EditPanel runat="server" UniquePerPage="true" contentType="footer" id="footer"></cc1:EditPanel>
+        <cc1:EditPanel runat="server" contentType="footer2"></cc1:EditPanel>
+    </div>
+    </form>
+</body>
+</html>

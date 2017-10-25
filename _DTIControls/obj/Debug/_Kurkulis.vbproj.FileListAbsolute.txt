@@ -1,0 +1,8 @@
+C:\components\DTIControlsVars\obj\Debug\_DTIControls.vbprojResolveAssemblyReference.cache
+C:\components\DTIControlsVars\obj\Debug\DTIControls.dll
+C:\components\DTIControlsVars\obj\Debug\DTIControls.xml
+C:\components\DTIControlsVars\obj\Debug\DTIControls.pdb
+C:\components\_DTIControls\obj\Debug\_DTIControls.vbprojResolveAssemblyReference.cache
+C:\components\_DTIControls\obj\Debug\DTIControls.dll
+C:\components\_DTIControls\obj\Debug\DTIControls.xml
+C:\components\_DTIControls\obj\Debug\DTIControls.pdb

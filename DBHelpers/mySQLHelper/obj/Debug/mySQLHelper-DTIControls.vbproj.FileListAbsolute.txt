@@ -1,0 +1,4 @@
+C:\components\DBHelpers\mySQLHelper\obj\Debug\ResolveAssemblyReference.cache
+C:\components\DBHelpers\mySQLHelper\obj\Debug\mySQLHelper.dll
+C:\components\DBHelpers\mySQLHelper\obj\Debug\mySQLHelper.xml
+C:\components\DBHelpers\mySQLHelper\obj\Debug\mySQLHelper.pdb

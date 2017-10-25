@@ -1,0 +1,8 @@
+c:\components\dbhelpers\mysqlhelper\bin\mySQLHelper.dll
+c:\components\dbhelpers\mysqlhelper\bin\mySQLHelper.pdb
+c:\components\dbhelpers\mysqlhelper\bin\DTIControls.dll
+c:\components\dbhelpers\mysqlhelper\bin\MySql.Data.dll
+c:\components\dbhelpers\mysqlhelper\bin\DTIControls.pdb
+c:\components\dbhelpers\mysqlhelper\obj\x86\Release\mysqlhelper-kurklink.vbprojResolveAssemblyReference.cache
+c:\components\dbhelpers\mysqlhelper\obj\x86\Release\mySQLHelper.dll
+c:\components\dbhelpers\mysqlhelper\obj\x86\Release\mySQLHelper.pdb

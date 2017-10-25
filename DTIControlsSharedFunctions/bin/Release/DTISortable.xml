@@ -1,0 +1,334 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTISortable
+</name>
+</assembly>
+<members>
+<member name="T:DTISortable.DTIRecycleBin">
+ <summary>
+ Contained in the admin panel, this displays deleted elements from a page. 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTIRecycleBin.LayoutOnAll">
+ <summary>
+ Enables Layout mode for all sortables, Menu's and recyclebins
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTIRecycleBin.LayoutOn">
+ <summary>
+ Enables Sortable Mode for this sortable
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTISortable.DTIRecycleBin.Save(System.Boolean,System.Boolean)">
+ <summary>
+ Saves the Order of the Current List's Items
+ </summary>
+ <param name="forceRedirect">Forces redirect on Pre-render</param>
+ <param name="SaveData">Push Data Changes to Database on Pre-render</param>
+ <remarks></remarks>
+</member>
+<member name="T:DTISortable.DTIWidgetMenu">
+ <summary>
+ Menu used in admin panel to add dynamic elements to sortable.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTIWidgetMenu.LayoutOnAll">
+ <summary>
+ Enables Layout mode for all sortables, Menu's and recyclebins
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTIWidgetMenu.LayoutOn">
+ <summary>
+ Enables Sortable Mode for this sortable
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTISortable.DTIWidgetMenu.save(System.Web.UI.Page@)">
+ <summary>
+ 
+ </summary>
+ <param name="pg"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:DTISortable.dsDTISortable">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.DTISortableDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.DTISortableItemDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.WidgetMenuTempDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.DTISortableRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.DTISortableItemRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.WidgetMenuTempRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.DTISortableRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.DTISortableItemRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTISortable.dsDTISortable.WidgetMenuTempRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTISortable.DTISortable">
+ <summary>
+ A data-drive sortable panel. Data is saved in the database and dynamic elements are addable from an admin panel.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.sotableServerTempList">
+ <summary>
+ Hashtable that Holds Sortables added directly to the page
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.sotableServerTempList2">
+ <summary>
+ Holds Sortables added directly to the page
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.isRecyclable">
+ <summary>
+ Enables Layout mode for all sortables, Menu's and recyclebins
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.LayoutOnAll">
+ <summary>
+ Enables sortable mode for all sortables, Menu's and recyclebins
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.LayoutOn">
+ <summary>
+ Enables Sortable Mode for this sortable
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.AxisRestriction">
+ <summary>
+ Restricts the axis to one particular direction x or y
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.ConnectByClass">
+ <summary>
+ Enables drag and drop to sortables with the same class name
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.ConnectedCSS">
+ <summary>
+ Class name by which multible sortables are connected
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.ConnectToID">
+ <summary>
+ Connects one sortable to another specificed by its id
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.PlaceHolderClass">
+ <summary>
+ Class name for the Placeholder (Shows were sortable item can be dropped)
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.CursorType">
+ <summary>
+ Type of curser when moving sortable
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.CursorPosition">
+ <summary>
+ Changes where the cursor is located on a sortable item when it is being moved
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.CursorPositionValue">
+ <summary>
+ Offset of the cursor position
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.NoDragOnEmpty">
+ <summary>
+ Disables dragging to an empty list
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.HelperType">
+ <summary>
+ Original if the item is to be moved and clone if it is to be coppied when moving
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.HandleText">
+ <summary>
+ Text that goes into the handle of the sortable
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.HandleSelector">
+ <summary>
+ Class name, id, or html tag of the handle
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.ZIndex">
+ <summary>
+ specifies the stack order of an item
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.cssTheme">
+ <summary>
+ Changes the css name so they can be overridden
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.DeleteText">
+ <summary>
+ Display text to delete any sortable
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.OuterStyle">
+ <summary>
+ Out line style of the sortable when in sorting mode
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.AutoAddEditPanel">
+ <summary>
+ Determines if an EditPanel is automatically added to an empty sortable.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.AutoWrapInEditPanel">
+ <summary>
+ If sortable contains only literal controls They will be wrapped in a single edit panel otherwise
+ they are wrapped in ASP panels objects
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTISortable.DTISortable.ItemsClassName">
+ <summary>
+ Adds a class name to each item within a sortable
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTISortable.DTISortable.Save(System.Boolean,System.Boolean)">
+ <summary>
+ Saves the Order of the Current List's Items
+ </summary>
+ <param name="forceRedirect">Forces redirect on Pre-render</param>
+ <param name="SaveData">Push Data Changes to Database on Pre-render</param>
+ <remarks></remarks>
+</member>
+<member name="M:DTISortable.DTISortable.saveAll(System.Web.UI.Page@)">
+ <summary>
+ Spider's page for all DTISortableControls and calls their respective save method
+ </summary>
+ <param name="pg">Page to Spider</param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

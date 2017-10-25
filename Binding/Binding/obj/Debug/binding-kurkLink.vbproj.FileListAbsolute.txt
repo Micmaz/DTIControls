@@ -1,0 +1,13 @@
+C:\components\Binding\Binding\obj\Debug\ResolveAssemblyReference.cache
+C:\components\Binding\Binding\obj\Debug\Binding.dll
+C:\components\Binding\Binding\obj\Debug\Binding.xml
+C:\components\Binding\Binding\obj\Debug\Binding.pdb
+C:\components\Binding\Binding\bin\Debug\Binding.dll
+C:\components\Binding\Binding\bin\Debug\Binding.pdb
+C:\components\Binding\Binding\bin\Debug\Binding.xml
+C:\components\Binding\Binding\bin\Debug\DTIControls.dll
+C:\components\Binding\Binding\bin\Debug\System.Data.SQLite.dll
+C:\components\Binding\Binding\bin\Debug\DTIControls.pdb
+C:\components\Binding\Binding\bin\Debug\DTIControls.xml
+C:\components\Binding\Binding\bin\Debug\System.Data.SQLite.pdb
+C:\components\Binding\Binding\bin\Debug\System.Data.SQLite.xml

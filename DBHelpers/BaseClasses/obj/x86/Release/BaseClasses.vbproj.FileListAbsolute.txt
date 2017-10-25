@@ -1,0 +1,8 @@
+C:\Components\DBHelpers\BaseClasses\bin\BaseClasses.dll
+C:\Components\DBHelpers\BaseClasses\bin\BaseClasses.pdb
+C:\Components\DBHelpers\BaseClasses\obj\x86\Release\BaseClasses.vbprojResolveAssemblyReference.cache
+C:\Components\DBHelpers\BaseClasses\obj\x86\Release\BaseClasses.DataBase.resources
+C:\Components\DBHelpers\BaseClasses\obj\x86\Release\BaseClasses.SQLHelper.resources
+C:\Components\DBHelpers\BaseClasses\obj\x86\Release\BaseClasses.vbproj.GenerateResource.Cache
+C:\Components\DBHelpers\BaseClasses\obj\x86\Release\BaseClasses.dll
+C:\Components\DBHelpers\BaseClasses\obj\x86\Release\BaseClasses.pdb

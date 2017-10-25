@@ -1,0 +1,13 @@
+c:\components\binding\binding\bin\Release\Binding.dll
+c:\components\binding\binding\bin\Release\Binding.pdb
+c:\components\binding\binding\bin\Release\Binding.xml
+c:\components\binding\binding\bin\Release\DTIControls.dll
+c:\components\binding\binding\bin\Release\System.Data.SQLite.dll
+c:\components\binding\binding\bin\Release\DTIControls.pdb
+c:\components\binding\binding\bin\Release\DTIControls.xml
+c:\components\binding\binding\bin\Release\System.Data.SQLite.pdb
+c:\components\binding\binding\bin\Release\System.Data.SQLite.xml
+c:\components\binding\binding\obj\Release\binding-kurkLink.vbprojResolveAssemblyReference.cache
+c:\components\binding\binding\obj\Release\Binding.dll
+c:\components\binding\binding\obj\Release\Binding.xml
+c:\components\binding\binding\obj\Release\Binding.pdb

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mySQLHelper", "mySQLHelper.vbproj", "{220797E1-E2A4-4023-A374-FCB2DAC540F3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BaseClassesv2.0", "..\BaseClasses\BaseClassesv2.0.vbproj", "{23B1E7AF-2E58-477E-A15A-862090201B21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B1E7AF-2E58-477E-A15A-862090201B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B1E7AF-2E58-477E-A15A-862090201B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B1E7AF-2E58-477E-A15A-862090201B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B1E7AF-2E58-477E-A15A-862090201B21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

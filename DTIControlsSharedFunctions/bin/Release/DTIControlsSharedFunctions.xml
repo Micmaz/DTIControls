@@ -1,0 +1,158 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIControlsSharedFunctions
+</name>
+</assembly>
+<members>
+<member name="T:DTIControls.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DTIControls.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DTIControls.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:DTIControls.Share">
+ <summary>
+ Shared helper module for easy access to utility methods
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.Session">
+ <summary>
+ A generic session object. Handles design mode as well as runtime. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.MainId">
+ <summary>
+ This is the secondary identifier of the current session. 
+ This propery can be overridden by any DTIControl, but changing this property here will make all editpanels and sortables use a different default value.
+ This is for display purposes. All rendered controls without a set mainID will use this site wide one.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.LanguageId">
+ <summary>
+ A language seperator. usable for multilingual sites. This is the current LanguageId visable for the site.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.EditModeOn">
+ <summary>
+ If set to true, this will turn edit mode on for the current session.
+ You will need to set logged in to true if you have not already.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.AdminPanelOn">
+ <summary>
+ If set to true, this will log the current session in and turn edit mode on.
+ This causes a responce.redirect to occure so no code after this property is set will be run. 
+ The redirect only occures if the state changes.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.siteEditMainID">
+ <summary>
+ The mainID that the current administrator has edit access to.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.LayoutOn">
+ <summary>
+ If set to true, this will turn layout mode on for the current session.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.LoggedIn">
+ <summary>
+ If set to true, this will set the user as logged in for the current session.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.UploadFolderDefault">
+ <summary>
+ Default upload folder. The webserver must have write access to this folder. 
+ </summary>
+ <value>"/uploads/"</value>
+ <returns>The currently selected upload folder.</returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.sqlHelper">
+ <summary>
+ A convience helper for getting the current baseHelper
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.defaultConnection">
+ <summary>
+ The default connection for the entire application. This will effect all logged in users.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIControls.Share.defaultConnectionSessionWide">
+ <summary>
+ The default connection for the current session state only.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIControls.Share.initializePathProvider">
+ <summary>
+ Call this at application.init()
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIControls.Share.getDefaultValue(System.String,System.String)">
+ <summary>
+ Returns a default value if the item is not an app property in the application config.
+ Usefull for overideable propertys EX:
+ Public Property redirectURL As String = vmDbOperations.getDefaultValue("redirectURL", "www.google.com")
+ </summary>
+ <param name="configName">The name of the key in the app.config or web.config</param>
+ <param name="defaultValue">Default value if the key is not found</param>
+ <remarks></remarks>
+</member>
+<member name="M:DTIControls.Share.add_UserControl_to_Menu(System.String,System.String,System.String)">
+ <summary>
+ Adds a user control to the admin panel tool menu. Appears in layout mode.
+ </summary>
+ <param name="Path_to_ascx_Control"></param>
+ <param name="Menu_Item_title"></param>
+ <param name="iconUrl"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

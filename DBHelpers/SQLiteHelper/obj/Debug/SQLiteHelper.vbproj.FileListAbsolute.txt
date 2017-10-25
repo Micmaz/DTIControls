@@ -1,0 +1,8 @@
+C:\components\DBHelpers\SQLiteHelper\bin\Debug\SQLiteHelper.dll
+C:\components\DBHelpers\SQLiteHelper\bin\Debug\SQLiteHelper.pdb
+C:\components\DBHelpers\SQLiteHelper\bin\Debug\SQLiteHelper.xml
+C:\components\DBHelpers\SQLiteHelper\bin\Debug\System.Data.SQLite.dll
+C:\components\DBHelpers\SQLiteHelper\obj\Debug\SQLiteHelper.vbprojResolveAssemblyReference.cache
+C:\components\DBHelpers\SQLiteHelper\obj\Debug\SQLiteHelper.dll
+C:\components\DBHelpers\SQLiteHelper\obj\Debug\SQLiteHelper.xml
+C:\components\DBHelpers\SQLiteHelper\obj\Debug\SQLiteHelper.pdb

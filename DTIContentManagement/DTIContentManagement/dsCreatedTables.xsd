@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCreatedTables" targetNamespace="http://tempuri.org/dsCreatedTables.xsd" xmlns:mstns="http://tempuri.org/dsCreatedTables.xsd" xmlns="http://tempuri.org/dsCreatedTables.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCreatedTables" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCreatedTables" msprop:Generator_UserDSName="dsCreatedTables">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIContentManager" msprop:Generator_TableClassName="DTIContentManagerDataTable" msprop:Generator_TableVarName="tableDTIContentManager" msprop:Generator_TablePropName="DTIContentManager" msprop:Generator_RowDeletingName="DTIContentManagerRowDeleting" msprop:Generator_RowChangingName="DTIContentManagerRowChanging" msprop:Generator_RowEvHandlerName="DTIContentManagerRowChangeEventHandler" msprop:Generator_RowDeletedName="DTIContentManagerRowDeleted" msprop:Generator_UserTableName="DTIContentManager" msprop:Generator_RowChangedName="DTIContentManagerRowChanged" msprop:Generator_RowEvArgName="DTIContentManagerRowChangeEvent" msprop:Generator_RowClassName="DTIContentManagerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="content" msprop:Generator_ColumnVarNameInTable="columncontent" msprop:Generator_ColumnPropNameInRow="content" msprop:Generator_ColumnPropNameInTable="contentColumn" msprop:Generator_UserColumnName="content" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" msprop:Generator_UserColumnName="MainID" type="xs:int" minOccurs="0" />
+              <xs:element name="areaName" msprop:Generator_ColumnVarNameInTable="columnareaName" msprop:Generator_ColumnPropNameInRow="areaName" msprop:Generator_ColumnPropNameInTable="areaNameColumn" msprop:Generator_UserColumnName="areaName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateModified" msprop:Generator_ColumnVarNameInTable="columnDateModified" msprop:Generator_ColumnPropNameInRow="DateModified" msprop:Generator_ColumnPropNameInTable="DateModifiedColumn" msprop:Generator_UserColumnName="DateModified" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTIContentManagerHistory" msprop:Generator_TableClassName="DTIContentManagerHistoryDataTable" msprop:Generator_TableVarName="tableDTIContentManagerHistory" msprop:Generator_TablePropName="DTIContentManagerHistory" msprop:Generator_RowDeletingName="DTIContentManagerHistoryRowDeleting" msprop:Generator_RowChangingName="DTIContentManagerHistoryRowChanging" msprop:Generator_RowEvHandlerName="DTIContentManagerHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="DTIContentManagerHistoryRowDeleted" msprop:Generator_UserTableName="DTIContentManagerHistory" msprop:Generator_RowChangedName="DTIContentManagerHistoryRowChanged" msprop:Generator_RowEvArgName="DTIContentManagerHistoryRowChangeEvent" msprop:Generator_RowClassName="DTIContentManagerHistoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="DTIContentManagerID" msprop:Generator_ColumnVarNameInTable="columnDTIContentManagerID" msprop:Generator_ColumnPropNameInRow="DTIContentManagerID" msprop:Generator_ColumnPropNameInTable="DTIContentManagerIDColumn" msprop:Generator_UserColumnName="DTIContentManagerID" type="xs:int" minOccurs="0" />
+              <xs:element name="content" msprop:Generator_ColumnVarNameInTable="columncontent" msprop:Generator_ColumnPropNameInRow="content" msprop:Generator_ColumnPropNameInTable="contentColumn" msprop:Generator_UserColumnName="content" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" msprop:Generator_UserColumnName="MainID" type="xs:long" minOccurs="0" />
+              <xs:element name="areaName" msprop:Generator_ColumnVarNameInTable="columnareaName" msprop:Generator_ColumnPropNameInRow="areaName" msprop:Generator_ColumnPropNameInTable="areaNameColumn" msprop:Generator_UserColumnName="areaName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateModified" msprop:Generator_ColumnVarNameInTable="columnDateModified" msprop:Generator_ColumnPropNameInRow="DateModified" msprop:Generator_ColumnPropNameInTable="DateModifiedColumn" msprop:Generator_UserColumnName="DateModified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="isPublished" msprop:Generator_ColumnVarNameInTable="columnisPublished" msprop:Generator_ColumnPropNameInRow="isPublished" msprop:Generator_ColumnPropNameInTable="isPublishedColumn" msprop:Generator_UserColumnName="isPublished" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIContentManager" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="DTIContentManagerHistory_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIContentManagerHistory" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="DTIContentManager_DTIContentManagerHistory" msdata:parent="DTIContentManager" msdata:child="DTIContentManagerHistory" msdata:parentkey="id" msdata:childkey="DTIContentManagerID" msprop:Generator_UserChildTable="DTIContentManagerHistory" msprop:Generator_ChildPropName="GetDTIContentManagerHistoryRows" msprop:Generator_UserRelationName="DTIContentManager_DTIContentManagerHistory" msprop:Generator_ParentPropName="DTIContentManagerRow" msprop:Generator_RelationVarName="relationDTIContentManager_DTIContentManagerHistory" msprop:Generator_UserParentTable="DTIContentManager" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

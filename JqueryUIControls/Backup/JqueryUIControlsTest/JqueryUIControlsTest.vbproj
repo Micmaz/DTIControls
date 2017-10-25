@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D48425C5-F49D-4640-ABAB-599C35E4829A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>JqueryUIControlsTest</RootNamespace>
+    <AssemblyName>JqueryUIControlsTest</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>JqueryUIControlsTest.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>JqueryUIControlsTest.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseClasses, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BetaDLLs\BaseClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccordionTest.aspx" />
+    <Content Include="ajaxtester.aspx" />
+    <Content Include="AutoCompleteTest.aspx" />
+    <Content Include="BarChartTest.aspx" />
+    <Content Include="CalanderTest.aspx" />
+    <Content Include="ComboBoxTest.aspx" />
+    <Content Include="ContentFrame.aspx" />
+    <Content Include="ContentFrame2.aspx" />
+    <Content Include="currentTime.ascx" />
+    <Content Include="DatePickerTest.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="jquery-ui-1.8.22.custom.css" />
+    <Content Include="jqueryUpload\base.html" />
+    <Content Include="jqueryUpload\UploadTester2.aspx" />
+    <Content Include="jqueryUpload\cors\postmessage.html" />
+    <Content Include="jqueryUpload\cors\result.html" />
+    <Content Include="jqueryUpload\css\bootstrap.min.css" />
+    <Content Include="jqueryUpload\css\demo-ie8.css" />
+    <Content Include="jqueryUpload\css\demo.css" />
+    <Content Include="jqueryUpload\css\jquery.fileupload-noscript.css" />
+    <Content Include="jqueryUpload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="jqueryUpload\css\jquery.fileupload-ui.css" />
+    <Content Include="jqueryUpload\css\jquery.fileupload.css" />
+    <Content Include="jqueryUpload\css\style.css" />
+    <Content Include="jqueryUpload\img\loading.gif" />
+    <Content Include="jqueryUpload\img\progressbar.gif" />
+    <Content Include="jqueryUpload\jquery-ui.html" />
+    <Content Include="jqueryUpload\js\app.js" />
+    <Content Include="jqueryUpload\js\bootstrap.min.js" />
+    <Content Include="jqueryUpload\js\canvas-to-blob.min.js" />
+    <Content Include="jqueryUpload\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="jqueryUpload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="jqueryUpload\js\jquery.blueimp-gallery.min.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-angular.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-audio.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-image.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-jquery-ui.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-process.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-ui.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-validate.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload-video.js" />
+    <Content Include="jqueryUpload\js\jquery.fileupload.js" />
+    <Content Include="jqueryUpload\js\jquery.iframe-transport.js" />
+    <Content Include="jqueryUpload\js\jquery.min.js" />
+    <Content Include="jqueryUpload\js\load-image.min.js" />
+    <Content Include="jqueryUpload\js\main.js" />
+    <Content Include="jqueryUpload\js\tmpl.min.js" />
+    <Content Include="jqueryUpload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="LazyImgLoadTest.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="ProgressBarTest.aspx" />
+    <Content Include="SliderTest.aspx" />
+    <Content Include="SortableTest.aspx" />
+    <Content Include="TabsTest.aspx" />
+    <Content Include="TimerPickerTest.aspx" />
+    <Content Include="ToolTipTest.aspx" />
+    <Content Include="UploaderTest.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccordionTest.aspx.designer.vb">
+      <DependentUpon>AccordionTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccordionTest.aspx.vb">
+      <DependentUpon>AccordionTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajaxtester.aspx.designer.vb">
+      <DependentUpon>ajaxtester.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ajaxtester.aspx.vb">
+      <DependentUpon>ajaxtester.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteTest.aspx.designer.vb">
+      <DependentUpon>AutoCompleteTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoCompleteTest.aspx.vb">
+      <DependentUpon>AutoCompleteTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChartTest.aspx.designer.vb">
+      <DependentUpon>BarChartTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BarChartTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>BarChartTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="basepage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalanderTest.aspx.designer.vb">
+      <DependentUpon>CalanderTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalanderTest.aspx.vb">
+      <DependentUpon>CalanderTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBoxTest.aspx.designer.vb">
+      <DependentUpon>ComboBoxTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxTest.aspx.vb">
+      <DependentUpon>ComboBoxTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ContentFrame.aspx.designer.vb">
+      <DependentUpon>ContentFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentFrame.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>ContentFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentFrame2.aspx.designer.vb">
+      <DependentUpon>ContentFrame2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentFrame2.aspx.vb">
+      <DependentUpon>ContentFrame2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="currentTime.ascx.designer.vb">
+      <DependentUpon>currentTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="currentTime.ascx.vb">
+      <DependentUpon>currentTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatePickerTest.aspx.designer.vb">
+      <DependentUpon>DatePickerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatePickerTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>DatePickerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IjqueryControl.vb" />
+    <Compile Include="LazyImgLoadTest.aspx.designer.vb">
+      <DependentUpon>LazyImgLoadTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LazyImgLoadTest.aspx.vb">
+      <DependentUpon>LazyImgLoadTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="plumb.aspx.designer.vb">
+      <DependentUpon>plumb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="plumb.aspx.vb">
+      <DependentUpon>plumb.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProgressBarTest.aspx.designer.vb">
+      <DependentUpon>ProgressBarTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>ProgressBarTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollerTest.aspx.designer.vb">
+      <DependentUpon>ScrollerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollerTest.aspx.vb">
+      <DependentUpon>ScrollerTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SliderTest.aspx.designer.vb">
+      <DependentUpon>SliderTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SliderTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>SliderTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SortableTest.aspx.designer.vb">
+      <DependentUpon>SortableTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SortableTest.aspx.vb">
+      <DependentUpon>SortableTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="TabsTest.aspx.designer.vb">
+      <DependentUpon>TabsTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TabsTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>TabsTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testPage.aspx.designer.vb">
+      <DependentUpon>testPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testPage.aspx.vb">
+      <DependentUpon>testPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimerPickerTest.aspx.designer.vb">
+      <DependentUpon>TimerPickerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimerPickerTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>TimerPickerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTipTest.aspx.designer.vb">
+      <DependentUpon>ToolTipTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTipTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>ToolTipTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploaderTest.aspx.designer.vb">
+      <DependentUpon>UploaderTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploaderTest.aspx.vb">
+      <DependentUpon>UploaderTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="plumb.aspx" />
+    <Content Include="ScrollerTest.aspx" />
+    <Content Include="testPage.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29AB90A7-F4EB-4619-BD62-05ACEBD19FEC}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JqueryUIControls\JqueryUIControls.vbproj">
+      <Project>{CC9F78D0-B8DA-4945-9B59-96BC05762F56}</Project>
+      <Name>JqueryUIControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" /> -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52432</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+</Project>

@@ -1,0 +1,13 @@
+C:\Components\DTIMiniControls\DTIMiniControls\bin\DTIMiniControls.dll
+C:\Components\DTIMiniControls\DTIMiniControls\bin\DTIMiniControls.pdb
+C:\Components\DTIMiniControls\DTIMiniControls\bin\br\DTIMiniControls.resources.dll
+C:\Components\DTIMiniControls\DTIMiniControls\bin\BaseClasses.dll
+C:\Components\DTIMiniControls\DTIMiniControls\bin\jQueryLibrary.dll
+C:\Components\DTIMiniControls\DTIMiniControls\bin\BaseClasses.pdb
+C:\Components\DTIMiniControls\DTIMiniControls\bin\BaseClasses.xml
+C:\Components\DTIMiniControls\DTIMiniControls\bin\jQueryLibrary.pdb
+C:\Components\DTIMiniControls\DTIMiniControls\bin\jQueryLibrary.xml
+C:\Components\DTIMiniControls\DTIMiniControls\obj\x86\Release\DTIMiniControls.vbprojResolveAssemblyReference.cache
+C:\Components\DTIMiniControls\DTIMiniControls\obj\x86\Release\br\DTIMiniControls.resources.dll
+C:\Components\DTIMiniControls\DTIMiniControls\obj\x86\Release\DTIMiniControls.dll
+C:\Components\DTIMiniControls\DTIMiniControls\obj\x86\Release\DTIMiniControls.pdb

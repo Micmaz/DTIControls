@@ -1,0 +1,130 @@
+﻿/****************************************************
+Class name for each element just append -themename to your class name and set the cssTheme property to 
+your themename
+
+LoggedIn
+	DTIAdminPanelSlideOut
+	DTIMenuSlideOut
+	DTIRecycSlideOut
+ ********************************************************************/
+.DTIMenuSlideOut-default, .DTIRecyceSlideOut-default
+{
+	background-color: #eeeeee;
+	border: 2px solid black;
+}
+
+.DTIMenuItem-default
+{
+	border: solid thin black;
+	margin-top: 5px;
+	cursor: move;
+	background-image:url("background.png");
+	background-repeat:repeat-y;	
+}
+
+.DTIAdminPanelSlideOut-default
+{
+	background-color: #eeeeee;
+	border-bottom: 2px solid black;
+	width:100%;
+	overflow: visible !important;
+}
+
+
+.DTISitemapRoot-default
+{
+	margin-left: 20px;
+}
+
+.DTISitemapNested-default 
+{
+	margin-left: 20px;
+}
+
+.DTIAdminRadioButtonList-default
+{
+	color: #000000;
+}
+
+.highslide
+{
+	color: #000000;
+}
+
+.left { float: left; display: inline; }
+.right { float: right; display: inline; }
+
+
+/*CHROME MENU*/
+.chromestyle ul li
+{
+	display: inline;
+} 
+
+.dropmenudiv
+{
+	position:absolute;
+	top: 0;
+	border: 1px solid #BBB; /*THEME CHANGE HERE*/
+	border-bottom-width: 0;
+	font:normal 12px Verdana;
+	line-height:18px;
+	z-index:100;
+	background-color: white;
+	text-align: left;
+	width: 200px;
+	visibility: hidden;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#CACACA,direction=135,strength=4); /*Add Shadow in IE. Remove if desired*/
+}
+
+.dropmenudiv a
+{
+	width: auto;
+	display: block;
+	text-indent: 3px;
+	border-bottom: 1px solid #BBB; /*THEME CHANGE HERE*/
+	padding: 2px 0;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
+* html .dropmenudiv a
+{ /*IE only hack*/
+	width: 100%;
+}
+
+.dropmenudiv a:hover
+{ 
+	background-color: #F0F0F0; /*THEME CHANGE HERE*/
+}
+
+/*VERTICAL MENU */
+.verticalmenu ul {
+	width: 197px;
+	list-style: none;
+}
+
+.verticalmenu ul li {
+	position: relative;
+}
+
+.verticalSubMenu {
+	position: absolute;
+	width: 170px; /*Sub Menu Items width */
+	top: 0;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #BBB !important;
+	background: white none !important;
+	display: none;
+}
+
+.verticalSubMenu li a 
+{
+	text-decoration: none;
+}
+
+/* Holly Hack for IE \*/
+* html .verticalmenu ul li { float: left; height: 1%; }
+* html .verticalmenu ul li a { height: 1%; }

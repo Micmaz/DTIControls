@@ -1,0 +1,47 @@
+﻿.editrotatornav input
+{
+	cursor: pointer;
+	height:32px;
+	width:32px;
+}
+
+.editrotatorfirst
+{
+	background-position: 0 -64px !important;
+}
+.editrotatorprev
+{
+	background-position: 0px -96px !important;
+}
+.editrotatorswapleft
+{
+	background-position: 0px 0px !important;
+}
+.editrotatorswapright
+{
+	background-position: -32px 0px !important;
+}
+.editrotatornext
+{
+	background-position: -32px -96px !important;
+}
+.editrotatorlast
+{
+	background-position: -32px -64px !important;
+}
+.editrotatoradd
+{
+	background-position: 0px -128px !important;
+}
+.editrotatordel
+{
+	background-position: -32px -128px !important;
+}
+.editrotatorsave
+{
+	background-position: -32px -32px !important;
+}
+.editrotatorcancel
+{
+	background-position: 0px -32px !important;
+}

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{385AD5C0-0E6F-4109-923F-08FFEE1DC16A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ckeditTester</RootNamespace>
+    <AssemblyName>ckeditTester</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ckeditTester.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ckeditTester.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseClasses, Version=1.1.3742.31611, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\BetaDLLs\BaseClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="DTIMiniControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\BetaDLLs\DTIMiniControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="ModernEleganceColors\brown\content.gif" />
+    <Content Include="ModernEleganceColors\brown\contentReplaceableImage.gif" />
+    <Content Include="ModernEleganceColors\brown\footer.gif" />
+    <Content Include="ModernEleganceColors\brown\form.gif" />
+    <Content Include="ModernEleganceColors\brown\logo.png" />
+    <Content Include="ModernEleganceColors\brown\news.jpg" />
+    <Content Include="ModernEleganceColors\brown\replaceableImage.gif" />
+    <Content Include="ModernEleganceColors\css\brown.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModernEleganceColors\.svn\all-wcprops" />
+    <None Include="ModernEleganceColors\.svn\entries" />
+    <None Include="ModernEleganceColors\brown\.svn\all-wcprops" />
+    <None Include="ModernEleganceColors\brown\.svn\entries" />
+    <None Include="ModernEleganceColors\brown\.svn\prop-base\content.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\prop-base\contentReplaceableImage.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\prop-base\footer.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\prop-base\form.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\prop-base\logo.png.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\prop-base\news.jpg.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\prop-base\replaceableImage.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\text-base\content.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\text-base\contentReplaceableImage.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\text-base\footer.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\text-base\form.gif.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\text-base\logo.png.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\text-base\news.jpg.svn-base" />
+    <None Include="ModernEleganceColors\brown\.svn\text-base\replaceableImage.gif.svn-base" />
+    <None Include="ModernEleganceColors\css\.svn\all-wcprops" />
+    <None Include="ModernEleganceColors\css\.svn\entries" />
+    <None Include="ModernEleganceColors\css\.svn\text-base\brown.css.svn-base" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Default2.aspx" />
+    <Content Include="dialog\icon.png" />
+    <Content Include="dialog\upload.html" />
+    <Content Include="Site1.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ckEditor\ckEditor.vbproj">
+      <Project>{A1849358-24DC-41D1-BB5A-4A41E5363D8D}</Project>
+      <Name>ckEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ModernEleganceColors\.svn\prop-base\" />
+    <Folder Include="ModernEleganceColors\.svn\props\" />
+    <Folder Include="ModernEleganceColors\.svn\text-base\" />
+    <Folder Include="ModernEleganceColors\.svn\tmp\prop-base\" />
+    <Folder Include="ModernEleganceColors\.svn\tmp\props\" />
+    <Folder Include="ModernEleganceColors\.svn\tmp\text-base\" />
+    <Folder Include="ModernEleganceColors\brown\.svn\props\" />
+    <Folder Include="ModernEleganceColors\brown\.svn\tmp\prop-base\" />
+    <Folder Include="ModernEleganceColors\brown\.svn\tmp\props\" />
+    <Folder Include="ModernEleganceColors\brown\.svn\tmp\text-base\" />
+    <Folder Include="ModernEleganceColors\css\.svn\prop-base\" />
+    <Folder Include="ModernEleganceColors\css\.svn\props\" />
+    <Folder Include="ModernEleganceColors\css\.svn\tmp\prop-base\" />
+    <Folder Include="ModernEleganceColors\css\.svn\tmp\props\" />
+    <Folder Include="ModernEleganceColors\css\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3957</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDTIAdminPanel" targetNamespace="http://tempuri.org/dsDTIAdminPanel.xsd" xmlns:mstns="http://tempuri.org/dsDTIAdminPanel.xsd" xmlns="http://tempuri.org/dsDTIAdminPanel.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="tempdbConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="tempdbConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.tempdbConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDTIAdminPanel" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsDTIAdminPanel" msprop:Generator_UserDSName="dsDTIAdminPanel">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIDynamicPage" msprop:Generator_UserTableName="DTIDynamicPage" msprop:Generator_RowEvArgName="DTIDynamicPageRowChangeEvent" msprop:Generator_TableVarName="tableDTIDynamicPage" msprop:Generator_TablePropName="DTIDynamicPage" msprop:Generator_RowDeletingName="DTIDynamicPageRowDeleting" msprop:Generator_RowChangingName="DTIDynamicPageRowChanging" msprop:Generator_RowDeletedName="DTIDynamicPageRowDeleted" msprop:Generator_RowEvHandlerName="DTIDynamicPageRowChangeEventHandler" msprop:Generator_TableClassName="DTIDynamicPageDataTable" msprop:Generator_RowChangedName="DTIDynamicPageRowChanged" msprop:Generator_RowClassName="DTIDynamicPageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="PageName" msprop:Generator_ColumnVarNameInTable="columnPageName" msprop:Generator_ColumnPropNameInRow="PageName" msprop:Generator_ColumnPropNameInTable="PageNameColumn" msprop:Generator_UserColumnName="PageName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTIContentManagerID" msprop:Generator_ColumnVarNameInTable="columnDTIContentManagerID" msprop:Generator_ColumnPropNameInRow="DTIContentManagerID" msprop:Generator_ColumnPropNameInTable="DTIContentManagerIDColumn" msprop:Generator_UserColumnName="DTIContentManagerID" type="xs:int" minOccurs="0" />
+              <xs:element name="MasterPage" msprop:Generator_ColumnVarNameInTable="columnMasterPage" msprop:Generator_ColumnPropNameInRow="MasterPage" msprop:Generator_ColumnPropNameInTable="MasterPageColumn" msprop:Generator_UserColumnName="MasterPage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" msprop:Generator_UserColumnName="MainID" type="xs:long" minOccurs="0" />
+              <xs:element name="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdminOnly" msprop:Generator_ColumnVarNameInTable="columnAdminOnly" msprop:Generator_ColumnPropNameInRow="AdminOnly" msprop:Generator_ColumnPropNameInTable="AdminOnlyColumn" msprop:Generator_UserColumnName="AdminOnly" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UsersOnly" msprop:Generator_ColumnVarNameInTable="columnUsersOnly" msprop:Generator_ColumnPropNameInRow="UsersOnly" msprop:Generator_ColumnPropNameInTable="UsersOnlyColumn" msprop:Generator_UserColumnName="UsersOnly" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ParentID" msprop:Generator_ColumnVarNameInTable="columnParentID" msprop:Generator_ColumnPropNameInRow="ParentID" msprop:Generator_ColumnPropNameInTable="ParentIDColumn" msprop:Generator_UserColumnName="ParentID" type="xs:int" minOccurs="0" />
+              <xs:element name="SortOrder" msprop:Generator_ColumnVarNameInTable="columnSortOrder" msprop:Generator_ColumnPropNameInRow="SortOrder" msprop:Generator_ColumnPropNameInTable="SortOrderColumn" msprop:Generator_UserColumnName="SortOrder" type="xs:int" minOccurs="0" />
+              <xs:element name="Template" msprop:Generator_ColumnVarNameInTable="columnTemplate" msprop:Generator_ColumnPropNameInRow="Template" msprop:Generator_ColumnPropNameInTable="TemplateColumn" msprop:Generator_UserColumnName="Template" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTIPageHeiarchy" msprop:Generator_UserTableName="DTIPageHeiarchy" msprop:Generator_RowEvArgName="DTIPageHeiarchyRowChangeEvent" msprop:Generator_TableVarName="tableDTIPageHeiarchy" msprop:Generator_TablePropName="DTIPageHeiarchy" msprop:Generator_RowDeletingName="DTIPageHeiarchyRowDeleting" msprop:Generator_RowChangingName="DTIPageHeiarchyRowChanging" msprop:Generator_RowDeletedName="DTIPageHeiarchyRowDeleted" msprop:Generator_RowEvHandlerName="DTIPageHeiarchyRowChangeEventHandler" msprop:Generator_TableClassName="DTIPageHeiarchyDataTable" msprop:Generator_RowChangedName="DTIPageHeiarchyRowChanged" msprop:Generator_RowClassName="DTIPageHeiarchyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTIDynamicPage" msprop:Generator_ColumnVarNameInTable="columnDTIDynamicPage" msprop:Generator_ColumnPropNameInRow="DTIDynamicPage" msprop:Generator_ColumnPropNameInTable="DTIDynamicPageColumn" msprop:Generator_UserColumnName="DTIDynamicPage" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentID" msprop:Generator_ColumnVarNameInTable="columnparentID" msprop:Generator_ColumnPropNameInRow="parentID" msprop:Generator_ColumnPropNameInTable="parentIDColumn" msprop:Generator_UserColumnName="ParentID" type="xs:int" minOccurs="0" />
+              <xs:element name="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" msprop:Generator_UserColumnName="MainID" type="xs:long" minOccurs="0" />
+              <xs:element name="isHidden" msprop:Generator_ColumnVarNameInTable="columnisHidden" msprop:Generator_ColumnPropNameInRow="isHidden" msprop:Generator_ColumnPropNameInTable="isHiddenColumn" msprop:Generator_UserColumnName="isHidden" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SortOrder" msprop:Generator_ColumnVarNameInTable="columnSortOrder" msprop:Generator_ColumnPropNameInRow="SortOrder" msprop:Generator_ColumnPropNameInTable="SortOrderColumn" msprop:Generator_UserColumnName="SortOrder" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MenuItem" msprop:Generator_UserTableName="MenuItem" msprop:Generator_RowEvArgName="MenuItemRowChangeEvent" msprop:Generator_TableVarName="tableMenuItem" msprop:Generator_TablePropName="MenuItem" msprop:Generator_RowDeletingName="MenuItemRowDeleting" msprop:Generator_RowChangingName="MenuItemRowChanging" msprop:Generator_RowDeletedName="MenuItemRowDeleted" msprop:Generator_RowEvHandlerName="MenuItemRowChangeEventHandler" msprop:Generator_TableClassName="MenuItemDataTable" msprop:Generator_RowChangedName="MenuItemRowChanged" msprop:Generator_RowClassName="MenuItemRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTIDynamicPage" msprop:Generator_ColumnVarNameInTable="columnDTIDynamicPage" msprop:Generator_ColumnPropNameInRow="DTIDynamicPage" msprop:Generator_ColumnPropNameInTable="DTIDynamicPageColumn" msprop:Generator_UserColumnName="DTIDynamicPage" type="xs:int" minOccurs="0" />
+              <xs:element name="parentID" msprop:Generator_ColumnVarNameInTable="columnparentID" msprop:Generator_ColumnPropNameInRow="parentID" msprop:Generator_ColumnPropNameInTable="parentIDColumn" msprop:Generator_UserColumnName="parentID" type="xs:int" minOccurs="0" />
+              <xs:element name="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" msprop:Generator_UserColumnName="MainID" type="xs:long" minOccurs="0" />
+              <xs:element name="allowEdit" msprop:Generator_ColumnVarNameInTable="columnallowEdit" msprop:Generator_ColumnPropNameInRow="allowEdit" msprop:Generator_ColumnPropNameInTable="allowEditColumn" msprop:Generator_UserColumnName="allowEdit" type="xs:int" minOccurs="0" />
+              <xs:element name="PageName" msprop:Generator_ColumnVarNameInTable="columnPageName" msprop:Generator_ColumnPropNameInRow="PageName" msprop:Generator_ColumnPropNameInTable="PageNameColumn" msprop:Generator_UserColumnName="PageName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdminOnly" msprop:Generator_ColumnVarNameInTable="columnAdminOnly" msprop:Generator_ColumnPropNameInRow="AdminOnly" msprop:Generator_ColumnPropNameInTable="AdminOnlyColumn" msprop:Generator_UserColumnName="AdminOnly" type="xs:boolean" minOccurs="0" />
+              <xs:element name="MasterPage" msprop:Generator_ColumnVarNameInTable="columnMasterPage" msprop:Generator_ColumnPropNameInRow="MasterPage" msprop:Generator_ColumnPropNameInTable="MasterPageColumn" msprop:Generator_UserColumnName="MasterPage" type="xs:string" minOccurs="0" />
+              <xs:element name="Template" msprop:Generator_ColumnVarNameInTable="columnTemplate" msprop:Generator_ColumnPropNameInRow="Template" msprop:Generator_ColumnPropNameInTable="TemplateColumn" msprop:Generator_UserColumnName="Template" type="xs:string" minOccurs="0" />
+              <xs:element name="Visible" msprop:Generator_ColumnVarNameInTable="columnVisible" msprop:Generator_ColumnPropNameInRow="Visible" msprop:Generator_ColumnPropNameInTable="VisibleColumn" msprop:Generator_UserColumnName="Visible" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTISiteMap" msprop:Generator_UserTableName="DTISiteMap" msprop:Generator_RowEvArgName="DTISiteMapRowChangeEvent" msprop:Generator_TableVarName="tableDTISiteMap" msprop:Generator_TablePropName="DTISiteMap" msprop:Generator_RowDeletingName="DTISiteMapRowDeleting" msprop:Generator_RowChangingName="DTISiteMapRowChanging" msprop:Generator_RowDeletedName="DTISiteMapRowDeleted" msprop:Generator_RowEvHandlerName="DTISiteMapRowChangeEventHandler" msprop:Generator_TableClassName="DTISiteMapDataTable" msprop:Generator_RowChangedName="DTISiteMapRowChanged" msprop:Generator_RowClassName="DTISiteMapRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName" type="xs:string" minOccurs="0" />
+              <xs:element name="DTIDynamicPage" msprop:Generator_ColumnVarNameInTable="columnDTIDynamicPage" msprop:Generator_ColumnPropNameInRow="DTIDynamicPage" msprop:Generator_ColumnPropNameInTable="DTIDynamicPageColumn" msprop:Generator_UserColumnName="DTIDynamicPage" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentID" msprop:Generator_ColumnVarNameInTable="columnParentID" msprop:Generator_ColumnPropNameInRow="ParentID" msprop:Generator_ColumnPropNameInTable="ParentIDColumn" msprop:Generator_UserColumnName="ParentID" type="xs:int" minOccurs="0" />
+              <xs:element name="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" msprop:Generator_UserColumnName="MainID" type="xs:long" minOccurs="0" />
+              <xs:element name="ContentType" msprop:Generator_ColumnVarNameInTable="columnContentType" msprop:Generator_ColumnPropNameInRow="ContentType" msprop:Generator_ColumnPropNameInTable="ContentTypeColumn" msprop:Generator_UserColumnName="ContentType" type="xs:string" minOccurs="0" />
+              <xs:element name="SortOrder" msprop:Generator_ColumnVarNameInTable="columnSortOrder" msprop:Generator_ColumnPropNameInRow="SortOrder" msprop:Generator_ColumnPropNameInTable="SortOrderColumn" msprop:Generator_UserColumnName="SortOrder" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTIUsers" msprop:Generator_UserTableName="DTIUsers" msprop:Generator_RowEvArgName="DTIUsersRowChangeEvent" msprop:Generator_TableVarName="tableDTIUsers" msprop:Generator_TablePropName="DTIUsers" msprop:Generator_RowDeletingName="DTIUsersRowDeleting" msprop:Generator_RowChangingName="DTIUsersRowChanging" msprop:Generator_RowDeletedName="DTIUsersRowDeleted" msprop:Generator_RowEvHandlerName="DTIUsersRowChangeEventHandler" msprop:Generator_TableClassName="DTIUsersDataTable" msprop:Generator_RowChangedName="DTIUsersRowChanged" msprop:Generator_RowClassName="DTIUsersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Salt" msprop:Generator_ColumnVarNameInTable="columnSalt" msprop:Generator_ColumnPropNameInRow="Salt" msprop:Generator_ColumnPropNameInTable="SaltColumn" msprop:Generator_UserColumnName="Salt">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" msprop:Generator_UserColumnName="MainID" type="xs:long" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Guid" msprop:Generator_ColumnVarNameInTable="columnGuid" msprop:Generator_ColumnPropNameInRow="Guid" msprop:Generator_ColumnPropNameInTable="GuidColumn" msprop:Generator_UserColumnName="Guid">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isAdmin" msprop:Generator_ColumnVarNameInTable="columnisAdmin" msprop:Generator_ColumnPropNameInRow="isAdmin" msprop:Generator_ColumnPropNameInTable="isAdminColumn" msprop:Generator_UserColumnName="isAdmin" type="xs:boolean" />
+              <xs:element name="IpAddress" msprop:Generator_ColumnVarNameInTable="columnIpAddress" msprop:Generator_ColumnPropNameInRow="IpAddress" msprop:Generator_ColumnPropNameInTable="IpAddressColumn" msprop:Generator_UserColumnName="IpAddress" type="xs:string" />
+              <xs:element name="LastIpAddress" msprop:Generator_ColumnVarNameInTable="columnLastIpAddress" msprop:Generator_ColumnPropNameInRow="LastIpAddress" msprop:Generator_ColumnPropNameInTable="LastIpAddressColumn" msprop:Generator_UserColumnName="LastIpAddress" type="xs:string" />
+              <xs:element name="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_UserColumnName="isActive" type="xs:boolean" />
+              <xs:element name="DateAdded" msprop:Generator_ColumnVarNameInTable="columnDateAdded" msprop:Generator_ColumnPropNameInRow="DateAdded" msprop:Generator_ColumnPropNameInTable="DateAddedColumn" msprop:Generator_UserColumnName="DateAdded" type="xs:dateTime" />
+              <xs:element name="LoginDate" msprop:Generator_ColumnVarNameInTable="columnLoginDate" msprop:Generator_ColumnPropNameInRow="LoginDate" msprop:Generator_ColumnPropNameInTable="LoginDateColumn" msprop:Generator_UserColumnName="LoginDate" type="xs:dateTime" />
+              <xs:element name="LastLoginDate" msprop:Generator_ColumnVarNameInTable="columnLastLoginDate" msprop:Generator_ColumnPropNameInRow="LastLoginDate" msprop:Generator_ColumnPropNameInTable="LastLoginDateColumn" msprop:Generator_UserColumnName="LastLoginDate" type="xs:dateTime" />
+              <xs:element name="PasswordChange" msprop:Generator_ColumnVarNameInTable="columnPasswordChange" msprop:Generator_ColumnPropNameInRow="PasswordChange" msprop:Generator_ColumnPropNameInTable="PasswordChangeColumn" msprop:Generator_UserColumnName="PasswordChange" type="xs:boolean" />
+              <xs:element name="PasswordChangeDate" msprop:Generator_ColumnVarNameInTable="columnPasswordChangeDate" msprop:Generator_ColumnPropNameInRow="PasswordChangeDate" msprop:Generator_ColumnPropNameInTable="PasswordChangeDateColumn" msprop:Generator_UserColumnName="PasswordChangeDate" type="xs:dateTime" />
+              <xs:element name="LockoutDateTime" msprop:Generator_ColumnVarNameInTable="columnLockoutDateTime" msprop:Generator_ColumnPropNameInRow="LockoutDateTime" msprop:Generator_ColumnPropNameInTable="LockoutDateTimeColumn" msprop:Generator_UserColumnName="LockoutDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LoginFailureCount" msprop:Generator_ColumnVarNameInTable="columnLoginFailureCount" msprop:Generator_ColumnPropNameInRow="LoginFailureCount" msprop:Generator_ColumnPropNameInTable="LoginFailureCountColumn" msprop:Generator_UserColumnName="LoginFailureCount" type="xs:int" default="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIDynamicPage" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTIPageHeiarchy_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIPageHeiarchy" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="MenuItem_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MenuItem" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="DTISiteMapKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTISiteMap" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTIUsersKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIUsers" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="DTIUsers_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:DTIUsers" />
+      <xs:field xpath="mstns:Username" />
+    </xs:unique>
+    <xs:unique name="Constraint3">
+      <xs:selector xpath=".//mstns:DTIUsers" />
+      <xs:field xpath="mstns:Guid" />
+    </xs:unique>
+    <xs:keyref name="FK_DTISiteMap_DTISiteMap" refer="DTISiteMapKey1" msdata:ConstraintOnly="true" msdata:DeleteRule="SetNull">
+      <xs:selector xpath=".//mstns:DTISiteMap" />
+      <xs:field xpath="mstns:ParentID" />
+    </xs:keyref>
+    <xs:keyref name="FK_DTIPageHeiarchy_DTIPageHeiarchy" refer="DTIPageHeiarchy_Constraint1" msdata:ConstraintOnly="true" msdata:DeleteRule="SetNull">
+      <xs:selector xpath=".//mstns:DTIPageHeiarchy" />
+      <xs:field xpath="mstns:ParentID" />
+    </xs:keyref>
+    <xs:keyref name="FK_DTIDynamicPage_DTIDynamicPage" refer="Constraint1" msdata:ConstraintOnly="true" msdata:DeleteRule="SetNull">
+      <xs:selector xpath=".//mstns:DTIDynamicPage" />
+      <xs:field xpath="mstns:ParentID" />
+    </xs:keyref>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="vw_DTIPageHeiarchy_DTIDynamicPage_vw_DTIPageHeiarchy_DTIDynamicPage" msdata:parent="MenuItem" msdata:child="MenuItem" msdata:parentkey="id" msdata:childkey="parentID" msprop:Generator_UserChildTable="MenuItem" msprop:Generator_ChildPropName="GetMenuItemRows" msprop:Generator_UserRelationName="vw_DTIPageHeiarchy_DTIDynamicPage_vw_DTIPageHeiarchy_DTIDynamicPage" msprop:Generator_ParentPropName="MenuItemRowParent" msprop:Generator_RelationVarName="relationvw_DTIPageHeiarchy_DTIDynamicPage_vw_DTIPageHeiarchy_DTIDynamicPage" msprop:Generator_UserParentTable="MenuItem" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

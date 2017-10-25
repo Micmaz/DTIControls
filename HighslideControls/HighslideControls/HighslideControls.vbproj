@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F26E8251-F511-4889-A31D-384D1F497A2B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HighslideControls</RootNamespace>
+    <AssemblyName>HighslideControls</AssemblyName>
+    <MyType>Empty</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HighslideControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HighslideControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HighslideHeaderControl.vb" />
+    <Compile Include="HighslideOverlay.vb" />
+    <Compile Include="Highslider.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="SharedHighslideVariables.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="highslide\graphics\outlines\Outlines.psd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\close1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\closeX.dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\closeX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-black-border.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-glossy-dark-hover.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-glossy-dark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-no-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-text-buttons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-white-small.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar-white.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar4-hover.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar5-hover.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\controlbar5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\cursors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\drop-shadow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\fullexpand.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\geckodimmer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\gradient.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\header-background-blur.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\header-background-right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\header-background.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\loader.big.black.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\loader.big.white.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\loader.black.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\loader.white.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\outlines\outlines.beveled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\graphics\outlines\outlines.drop-shadow.png" />
+    <EmbeddedResource Include="highslide\highslide-full.js" />
+    <EmbeddedResource Include="highslide\highslide.css" />
+    <EmbeddedResource Include="highslide\graphics\zoomout.cur" />
+    <EmbeddedResource Include="highslide\graphics\zoomin.cur" />
+    <EmbeddedResource Include="highslide\graphics\zoom.png" />
+    <EmbeddedResource Include="highslide\graphics\scrollarrows.png" />
+    <EmbeddedResource Include="highslide\graphics\resize.gif" />
+    <EmbeddedResource Include="highslide\graphics\play-vista.png" />
+    <EmbeddedResource Include="highslide\graphics\play-black.gif" />
+    <EmbeddedResource Include="highslide\graphics\outlines\outlines.rounded-white.png" />
+    <EmbeddedResource Include="highslide\graphics\outlines\outlines.rounded-black.png" />
+    <EmbeddedResource Include="highslide\graphics\outlines\outlines.outer-glow.png" />
+    <EmbeddedResource Include="highslide\graphics\outlines\outlines.glossy-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\hsinnerframe.js" />
+    <EmbeddedResource Include="highslide\hsouterframe.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\hsFixed.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\hsFixedInner.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="highslide\highslide-full.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62534</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+</Project>

@@ -1,0 +1,701 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Reporting
+</name>
+</assembly>
+<members>
+<member name="M:Reporting.BaseProperty.ApplyValueInternal(System.Object)">
+ <summary>
+ ApplyValueInternal is an abstract method to transfer the value from pInstance into the control
+ </summary>
+</member>
+<member name="T:Reporting.ComparatorDS">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Reporting.ComparatorDS.DTIPropDifferencesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Reporting.ComparatorDS.DTIPropDifferencesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Reporting.ComparatorDS.DTIPropDifferencesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Reporting.PropertiesEditorDesigner">
+ <remarks>
+ PropertiesEditorDesigner is the ControlDesigner for PropertiesEditor.
+ It assigns xInstance to an instance of ChildDesignerData. That class
+ was designed to show a variety of properties that will show or hide 
+ based on the properties of PropertiesEditor.
+ </remarks>
+</member>
+<member name="P:Reporting.PropertiesGrid.xShowNonPublicB">
+ <summary>
+ xShowNonPublicB determines if non-public properties are shown.
+ When true, show public and non public properties.
+ When false, show public.
+ Default is false.
+ </summary>
+</member>
+<member name="P:Reporting.PropertiesGrid.xCacheMinutes">
+ <summary>
+ xCacheMinutes determines how long to cache the property lists associated with each class.
+ PropertyEditor caches every property list for speed since they don't change often.
+ If you are frequently changing your classes, you may want to turn this off.
+ Set to 0 to turn off. It will clear any cached classes when this is 0.
+ Otherwise, specify the number of minutes to maintain in a cache.
+ </summary>
+</member>
+<member name="P:Reporting.PropertiesGrid.xNameFilter">
+ <summary>
+ xNameFilter identifies the names of any properties that you want to omit.
+ Names do not include the parent names (so no periods in the name list). 
+ Names must be delimited with spaces. Matches are case insensitive.
+ <example>"BackColor Page AccessKey"</example>
+ </summary>
+</member>
+<member name="P:Reporting.PropertiesGrid.xTypeFilter">
+ <summary>
+ xTypeFilter identifies the types of any properties that you want to omit.
+ Do not use the fully qualified names. 
+ Types must be delimited with spaces. Matches are case insensitive.
+ <example>"Control ISite FontUnit"</example>
+ </summary>
+</member>
+<member name="P:Reporting.PropertiesGrid.xShowTypeColumnB">
+ <summary>
+ xShowTypeColumnB shows a third column with the type name when true.
+ Default is true.
+ </summary>
+</member>
+<member name="P:Reporting.PropertiesGrid.xHideAncestorPropsB">
+ <summary>
+ xHideAncestorPropsB omits properties defined on ancestors of xInstance's class.
+ Use this to focus the viewer on properties introduced in xInstance's class.
+ When true, ancestor properties are hidden.
+ When false, they are shown.
+ Default is false.
+ </summary>
+</member>
+<member name="P:Reporting.PropertiesGrid.xBrowsableAttributeMode">
+ <summary>
+ BrowsableAttributeMode  determines if properties with BrowsableAttribute(false) are shown.
+ Here are the settings:
+ * VisualStudio - emulate Visual Studio by hiding those that Browsable(false)
+ * Templates - BrowsableAttribute(true) plus all ITemplates. ITemplates are a feature supported in
+   our interface better than in VS.NET. Thus users who hid templates to keep them out
+   of VS.NET can still show them here.
+ * Ignore - ignores the attribute
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.ConvertControlIDToInstance">
+ <summary>
+ ConvertControlIDToInstance initializes xInstance with the object associated
+ with xControlToView.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.ApplyInstance(System.Object,System.Collections.Generic.List{Reporting.PropertyTableRow},Reporting.ApplyInstanceType)">
+ <summary>
+ ApplyInstance transfers data from pInstance to the controls.
+ It is called on DataBind and OnLoad during Post back.
+ Iterates through the properties on pInstance by going through table rows associated
+ with pInstance. It goes in sequential order. When it hits a row with an ObjectProperty,
+ it calls itself recursively to do the same on that property's instance.
+ When it hits a row with an IListProperty, it goes through its item list and calls
+ itself recursively for each instance in that list.
+ It updates visible or invisible rows depending on pType.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.ApplyInstanceToRow(Reporting.PropertyTableRow,System.Object,System.Collections.Generic.List{Reporting.PropertyTableRow},Reporting.ApplyInstanceType)">
+ <summary>
+ ApplyInstanceToRow is the heart of ApplyInstance. It takes one PropertyTableRow
+ and handles its ApplyValueToControl needs. For BaseObjectProperty subclasses,
+ it handles them by calling ApplyInstance on their children.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.UpdateInstance">
+ <summary>
+ UpdateInstance assigns data from all edit fields to xInstance's properties.
+ Call it from your page's Submit event handler. You can connect your OnClick
+ event handler to Click_Submit as an alternative.
+ It does nothing when xViewOnlyB is true.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.UpdateOneInstance(System.Object,System.Collections.Generic.List{Reporting.PropertyTableRow}@)">
+ <summary>
+ UpdateOneInstance iterates through the properties on pInstance by going through table rows associated
+ with pInstance. It goes in sequential order. When it hits a row with an ObjectProperty,
+ it calls itself recursively to do the same on that property's instance.
+ When it hits a row with an IListProperty, it goes through its Items list.
+ Any invisible rows are have no data transferred because they are not written to the client. 
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.UpdateOneTableRow(Reporting.PropertyTableRow,System.Object,System.Collections.Generic.List{Reporting.PropertyTableRow}@)">
+ <summary>
+ UpdateOneTableRow is the heart of UpdateOneInstance. It transfer data from the pTableRow
+ to pInstance. For BaseObjectProperty subclasses, it calls UpdateOneInstance recursively to
+ handle their children.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.FilterOut(System.Type,System.Reflection.PropertyInfo)">
+ <summary>
+ FilterOut determines if the property should be shown or not.
+ It returns true when the property should be hidden.
+ There are numerous rules:
+ 1. Write Only.
+ 2. Read Only (various cases)
+ 3. Arrays
+ 4. Apply xHideAncestorPropsB and xBrowsableAttributeMode properties
+ 5. Apply the filters by Name and Type
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.GetPropertyInfoList(System.Type)">
+ <summary>
+ It builds and returns a SortedList of both public and non-public properties for this class type. 
+ Each element of the list has a name and value.
+ The name is the PropertyInfo.Name and this sorts the list.
+ The value is the PropertyInfo.
+ There are two sources for this list.
+ It looks in Cache["PE."+Type.Name]. If not there, it creates it from data in the Reflection system for pClassType.
+ Caching can be disabled by setting xCacheMinutes to 0.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.CreateChildControls">
+ <summary>
+ CreateChildControls follows the standards for Data Bound templated controls
+ by building the control hierarchy only on post back.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.CreateObjectRowChildren1(System.Object,System.Type,System.String,System.Boolean,System.String,Reporting.BaseObjectProperty,Reporting.PropertyTableRow,System.Int32)">
+ <summary>
+ CreateObjectRowChildren installs the properties of the instance associated with an ObjectProperty.
+ pNewInstance will be null on post back. pPropertyType must always reflect the class type.
+ </summary>
+</member>
+<member name="M:Reporting.PropertiesGrid.CreateIListRowChildren(System.Object,System.Reflection.PropertyInfo,System.String,System.Boolean,Reporting.ListProperty,Reporting.PropertyTableRow,System.Int32)">
+ <summary>
+ CreateIListRowChildren installs the IListItemProperties for the items of an indexer.
+ If pInstance != null, create them from the instance. Otherwise, use ViewState information
+ to determine how many IListItemProperties and which classes they represent.
+ </summary>
+</member>
+<member name="T:Reporting.ApplyInstanceType">
+ <remarks>
+ ApplyInstanceType assists the ApplyInstance method as it updates the values assigned to controls.
+ Each row in the table may be visible or invisible. When visible, post back code assigns
+ values. When invisible, it does not.
+ This determines which rows get updated based on visibility.
+ </remarks>
+</member>
+<member name="T:Reporting.BrowsableAttributeMode">
+ <remarks>
+ BrowsableAttributeMode works with the PropertiesEditor.xBrowsableAttributeMode property. It determines
+ if properties with BrowsableAttribute(false) are shown.
+ * VisualStudio - emulate Visual Studio by hiding those that Browsable(false)
+ * Ignore - ignores the attribute
+ * Templates - BrowsableAttribute(true) plus all ITemplates. ITemplates are a feature supported in
+   our interface better than in VS.NET. Thus users who hid templates to keep them out
+   of VS.NET can still show them here.
+ </remarks>
+</member>
+<member name="M:Reporting.PropertyCreator.GetTargetType(System.Type,System.String)">
+ <summary> 
+ Gets the Type of the given property of the given targetType. 
+ The targetType and propertyName parameters can't be null. 
+ </summary> 
+ <param name="targetType">the target type which contains the property</param> 
+ <param name="propertyName">the property to get, can be a property on a nested object (eg. "Child.Name")</param>
+</member>
+<member name="M:Reporting.PropertyCreator.GetValue(System.Object,System.String)">
+ <summary> 
+ Gets the value of the given property of the given target. 
+ If objects within the property hierarchy are null references, null will be returned. 
+ The target and propertyName parameters can't be null. 
+ </summary> 
+ <param name="target">the target object to get the value from</param> 
+ <param name="propertyName">the property to get, can be a property on a nested object (eg. "Child.Name")</param>
+</member>
+<member name="M:Reporting.PropertyCreator.SetValue(System.Object,System.String,System.Object)">
+ <summary> 
+ Sets the value of the given property on the given target to the given value. 
+ If objects within the property hierarchy are null references, an attempt will be 
+ made to construct a new instance through a parameterless constructor. 
+ The target and propertyName parameters can't be null. 
+ </summary> 
+ <param name="target">the target object to set the value on</param> 
+ <param name="propertyName">the property to set, can be a property on a nested object (eg. "Child.Name")</param>
+ <param name="value">the new value of the property</param>
+</member>
+<member name="M:Reporting.PropertyCreator.GetPropertyNameString(System.String[],System.Int32)">
+ <summary> 
+ Returns a string containing the properties in the propertyList up to the given 
+ level, separated by dots. 
+ For the propertyList { "Zero", "One", "Two" } and level 1, the string 
+ "Zero.One" will be returned. 
+ </summary> 
+ <param name="propertyList">the array containing the properties in the corect order</param> 
+ <param name="level">the level up to wich to include the properties in the returned string</param> 
+ <returns>a dot-separated string containing the properties up to the given level</returns>
+</member>
+<member name="M:Reporting.PropertyCreator.GetTypeImpl(System.Type,System.String)">
+ <summary> 
+ Returns the type of the given property on the target instance. 
+ The type and propertyName parameters can't be null. 
+ </summary> 
+ <param name="targetType">the type of the target instance</param> 
+ <param name="propertyName">the property to retrieve the type for</param> 
+ <returns>the typr of the given property on the target type</returns>
+</member>
+<member name="M:Reporting.PropertyCreator.GetValueImpl(System.Object,System.String)">
+ <summary> 
+ Returns the value of the given property on the target instance. 
+ The target instance and propertyName parameters can't be null. 
+ </summary> 
+ <param name="target">the instance on which to get the value</param> 
+ <param name="propertyName">the property for which to get the value</param> 
+ <returns>the value of the given property on the target instance</returns>
+</member>
+<member name="M:Reporting.PropertyCreator.SetValueImpl(System.Object,System.String,System.Object)">
+ <summary> 
+ Sets the given property of the target instance to the given value. 
+ Type mismatches in the parameters of these methods will result in an exception. 
+ Also, the target instance and propertyName parameters can't be null. 
+ </summary> 
+ <param name="target">the instance to set the value on</param> 
+ <param name="propertyName">the property to set the value on</param> 
+ <param name="value">the value to set on the target</param>
+</member>
+<member name="M:Reporting.PropertyCreator.GetPropertyInfo(System.Type,System.String)">
+ <summary> 
+ Obtains the PropertyInfo for the given propertyName of the given type from the cache. 
+ If it is not already in the cache, the PropertyInfo will be looked up and added to 
+ the cache. 
+ </summary> 
+ <param name="type">the type to resolve the property on</param> 
+ <param name="propertyName">the name of the property to return the PropertyInfo for</param> 
+ <returns></returns>
+</member>
+<member name="M:Reporting.PropertyCreator.GetBestMatchingProperty(System.String,System.Type)">
+ <summary> 
+ Gets the best matching property info for the given name on the given type if the same property is defined on 
+ multiple levels in the object hierarchy. 
+ </summary>
+</member>
+<member name="M:Reporting.PropertyCreator.CalculateDistance(System.Type,System.Type)">
+ <summary> 
+ Calculates the hierarchy levels between two classes. 
+ If the targetObjectType is the same as the baseType, the returned distance will be 0. 
+ If the two types do not belong to the same hierarchy, -1 will be returned. 
+ </summary>
+</member>
+<member name="M:Reporting.PropertyCreator.GetPropertyInfoCache(System.Type)">
+ <summary> 
+ Returns the PropertyInfoCache for the given type. 
+ If there isn't one available already, a new one will be created. 
+ </summary> 
+ <param name="type">the type to retrieve the PropertyInfoCache for</param> 
+ <returns>the PropertyInfoCache for the given type</returns>
+</member>
+<member name="M:Reporting.PropertyCreator.Construct(System.Type)">
+ <summary> 
+ Creates a new object of the given type, provided that the type has a default (parameterless) 
+ constructor. If it does not have such a constructor, an exception will be thrown. 
+ </summary> 
+ <param name="type">the type of the object to construct</param> 
+ <returns>a new instance of the given type</returns>
+</member>
+<member name="T:Reporting.PropertyInfoCache">
+ <summary> 
+ Keeps a mapping between a string and a PropertyInfo instance. 
+ Simply wraps an IDictionary and exposes the relevant operations. 
+ Putting all this in a separate class makes the calling code more 
+ readable. 
+ </summary> 
+</member>
+<member name="T:Reporting.PropertyTableRow">
+ <remarks>
+ PropertyTableRow is an extension to the TableRow class that includes references
+ to key controls in the row: the Label in column 1, the BaseProperty subclass, and the error label.
+ In this sense, it is specialized to work with other classes here.
+ </remarks>
+</member>
+<member name="F:Reporting.QueryBuilder._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.tableData._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.SummaryTableGraph._groupedTbl">
+<summary>
+groupedTbl control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.GraphTester._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.GraphTester._ListBox1">
+<summary>
+ListBox1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.GraphTester._tbSqlStmt">
+<summary>
+tbSqlStmt control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.GraphTester._tabs">
+<summary>
+tabs control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.GraphTester._btnRun">
+<summary>
+btnRun control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.GraphTester._ddTheme">
+<summary>
+ddTheme control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:Reporting.FullTableGridGraph">
+<summary>
+FullTableGridGraph class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:Reporting.FullTableGridGraph._PlaceHolder1">
+<summary>
+PlaceHolder1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:Reporting.ExcellExport">
+<summary>
+ExcellExport class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:Reporting.ExcellExport._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.FusionGraph._Chart1">
+<summary>
+Chart1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:Reporting.dsReports">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphTypesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIReportsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphParmsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphTypesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIReportsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphParmsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphTypesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIReportsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Reporting.dsReports.DTIGraphParmsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Reporting.GridGraph">
+<summary>
+GridGraph class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:Reporting.GridGraph._DTIGrid1">
+<summary>
+DTIGrid1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.GroupedTableGraph._groupedTbl">
+<summary>
+groupedTbl control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportGraphs._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportGraphs._hidReportID">
+<summary>
+hidReportID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportGraphs._tbReportName">
+<summary>
+tbReportName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportGraphs._btnAdd">
+<summary>
+btnAdd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportGraphs._repeater1">
+<summary>
+repeater1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportGraphs._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportParms._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportParms._hidReportID">
+<summary>
+hidReportID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportParms._tbReportName">
+<summary>
+tbReportName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportParms._btnAdd">
+<summary>
+btnAdd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportParms._btnRegen">
+<summary>
+btnRegen control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportParms._repeater1">
+<summary>
+repeater1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportParms._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportsEdit._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportsEdit._btnAdd">
+<summary>
+btnAdd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportsEdit._repeater1">
+<summary>
+repeater1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Reporting.ReportsEdit._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

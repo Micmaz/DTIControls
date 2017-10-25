@@ -1,0 +1,17 @@
+C:\components\DTIContentManagement\NewContentManagementTester\bin\NewContentManagementTester.dll.config
+C:\components\DTIContentManagement\NewContentManagementTester\bin\NewContentManagementTester.dll
+C:\components\DTIContentManagement\NewContentManagementTester\bin\NewContentManagementTester.pdb
+C:\components\DTIContentManagement\NewContentManagementTester\bin\NewContentManagementTester.xml
+C:\components\DTIContentManagement\NewContentManagementTester\bin\SQLiteHelper.dll
+C:\components\DTIContentManagement\NewContentManagementTester\bin\System.Data.SQLite.dll
+C:\components\DTIContentManagement\NewContentManagementTester\bin\SQLiteHelper.pdb
+C:\components\DTIContentManagement\NewContentManagementTester\bin\SQLiteHelper.xml
+C:\components\DTIContentManagement\NewContentManagementTester\bin\SQLiteHelper.dll.config
+C:\components\DTIContentManagement\NewContentManagementTester\bin\System.Data.SQLite.xml
+C:\components\DTIContentManagement\NewContentManagementTester\bin\System.Data.SQLite.dll.config
+C:\components\DTIContentManagement\NewContentManagementTester\obj\Debug\ZNewContentManagementTester.vbprojResolveAssemblyReference.cache
+C:\components\DTIContentManagement\NewContentManagementTester\obj\Debug\NewContentManagementTester.dll
+C:\components\DTIContentManagement\NewContentManagementTester\obj\Debug\NewContentManagementTester.xml
+C:\components\DTIContentManagement\NewContentManagementTester\obj\Debug\NewContentManagementTester.pdb
+C:\components\DTIContentManagement\NewContentManagementTester\bin\DTIControls.dll
+C:\components\DTIContentManagement\NewContentManagementTester\bin\DTIControls.pdb

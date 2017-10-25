@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23B1E7AF-2E58-477E-A15A-862090201B21}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>BaseClasses</AssemblyName>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <MyType>Empty</MyType>
+    <RootNamespace>BaseClasses</RootNamespace>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BaseClasses.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BaseClasses.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyLoader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseHelper.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseSecurityPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseSecurityUserControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseWebService.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBase.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseVirtualPathProvider.vb" />
+    <Compile Include="dsBaseClasses.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBaseClasses.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsBaseClasses.vb">
+      <DependentUpon>dsBaseClasses.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EncryptionHelper.vb" />
+    <Compile Include="ErrorHandlerBase.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalBase.vb" />
+    <Compile Include="Hashing.vb" />
+    <Compile Include="JsMinimizer.vb" />
+    <Compile Include="ListResources.aspx.designer.vb">
+      <DependentUpon>ListResources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListResources.aspx.vb">
+      <DependentUpon>ListResources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterBase.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MimeDecoder.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="PageTracker.vb" />
+    <Compile Include="ParallelDataHelper.Designer.vb">
+      <DependentUpon>ParallelDataHelper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParallelDataHelper.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Platform.vb" />
+    <Compile Include="QueryStringChanger.vb" />
+    <Compile Include="Scripts.aspx.designer.vb">
+      <DependentUpon>Scripts.aspx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Spider.vb" />
+    <Compile Include="SQLHelper.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="ListResources.aspx">
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestResource.jpg" />
+    <EmbeddedResource Include="DataBase.resx">
+      <DependentUpon>DataBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLHelper.resx">
+      <DependentUpon>SQLHelper.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dsBaseClasses.xsc">
+      <DependentUpon>dsBaseClasses.xsd</DependentUpon>
+    </None>
+    <None Include="dsBaseClasses.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBaseClasses.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsBaseClasses.xss">
+      <DependentUpon>dsBaseClasses.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

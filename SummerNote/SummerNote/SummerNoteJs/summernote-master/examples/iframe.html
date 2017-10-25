@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>summernote</title>
+  <!-- include jquery -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- include libraries BS -->
+
+  <script type="text/javascript">
+    function frameFunction(context,range){
+      if(!range) return;
+      context.invoke('editor.insertText',$(".myText").val());
+      //range.sc.parentNode.append($(".myText").val());
+      }
+  </script>
+
+</head>
+<body>
+<textarea class="myText">"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"</textarea>
+long text<br/>
+<div style="background-color: red;width: 50px;height: 800px;">AA</div>
+aaaaYYYYYyyyyy
+</body>
+</html>

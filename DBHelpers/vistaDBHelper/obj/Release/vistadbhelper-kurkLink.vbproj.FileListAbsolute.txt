@@ -1,0 +1,15 @@
+c:\components\dbhelpers\vistadbhelper\bin\Release\vistaDBHelper.dll
+c:\components\dbhelpers\vistadbhelper\bin\Release\vistaDBHelper.pdb
+c:\components\dbhelpers\vistadbhelper\bin\Release\vistaDBHelper.xml
+c:\components\dbhelpers\vistadbhelper\bin\Release\DTIControls.dll
+c:\components\dbhelpers\vistadbhelper\bin\Release\VistaDB.NET20.dll
+c:\components\dbhelpers\vistadbhelper\bin\Release\System.Data.SQLite.dll
+c:\components\dbhelpers\vistadbhelper\bin\Release\VistaDB.NET20.xml
+c:\components\dbhelpers\vistadbhelper\bin\Release\System.Data.SQLite.pdb
+c:\components\dbhelpers\vistadbhelper\bin\Release\System.Data.SQLite.xml
+c:\components\dbhelpers\vistadbhelper\bin\Release\DTIControls.pdb
+c:\components\dbhelpers\vistadbhelper\bin\Release\DTIControls.xml
+c:\components\dbhelpers\vistadbhelper\obj\Release\ResolveAssemblyReference.cache
+c:\components\dbhelpers\vistadbhelper\obj\Release\vistaDBHelper.dll
+c:\components\dbhelpers\vistadbhelper\obj\Release\vistaDBHelper.xml
+c:\components\dbhelpers\vistadbhelper\obj\Release\vistaDBHelper.pdb

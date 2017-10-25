@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <MyType>Empty</MyType>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DTIContentManagement</RootNamespace>
+    <AssemblyName>DTIContentManagement</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <ProjectGuid>{45BE892A-4E37-47F1-9FD1-54CDEB8DDC6B}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIContentManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIContentManagement.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>DTIContentManagement.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>DTIContentManagement.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>DTIContentManagement.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>DTIContentManagement.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ContentHistory\History.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="additionalResources\EditorArea.css" />
+    <EmbeddedResource Include="additionalResources\graphics\beveled.png" />
+    <EmbeddedResource Include="additionalResources\graphics\close.png" />
+    <EmbeddedResource Include="additionalResources\graphics\controlbar2.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\controlbar3.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\controlbar4-hover.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\controlbar4.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\drop-shadow.png" />
+    <EmbeddedResource Include="additionalResources\graphics\fullexpand.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\geckodimmer.png" />
+    <EmbeddedResource Include="additionalResources\graphics\glossy-dark.png" />
+    <EmbeddedResource Include="additionalResources\graphics\loader.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\loader.white.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\outer-glow.png" />
+    <EmbeddedResource Include="additionalResources\graphics\outlines.beveled.png" />
+    <EmbeddedResource Include="additionalResources\graphics\outlines.drop-shadow.png" />
+    <EmbeddedResource Include="additionalResources\graphics\outlines.glossy-dark.png" />
+    <EmbeddedResource Include="additionalResources\graphics\outlines.outer-glow.png" />
+    <EmbeddedResource Include="additionalResources\graphics\outlines.rounded-black.png" />
+    <EmbeddedResource Include="additionalResources\graphics\outlines.rounded-white.png" />
+    <EmbeddedResource Include="additionalResources\graphics\raster.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\raster_add.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\reload.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\resize.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\rounded-black.png" />
+    <EmbeddedResource Include="additionalResources\graphics\rounded-white.png" />
+    <EmbeddedResource Include="additionalResources\graphics\video_icon.gif" />
+    <EmbeddedResource Include="additionalResources\graphics\zoomin.cur" />
+    <EmbeddedResource Include="additionalResources\graphics\zoomout.cur" />
+    <EmbeddedResource Include="additionalResources\imageframe.js" />
+    <EmbeddedResource Include="additionalResources\StyleSheet1.css" />
+    <EmbeddedResource Include="additionalResources\tab.css" />
+    <EmbeddedResource Include="additionalResources\tab.js" />
+    <EmbeddedResource Include="additionalResources\test.gif" />
+    <EmbeddedResource Include="additionalResources\ToolsFile.xml" />
+    <EmbeddedResource Include="additionalResources\whiteround.css" />
+    <EmbeddedResource Include="additionalResources\icon.png" />
+    <EmbeddedResource Include="Media\ImageInsertOptions.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Media\MediaList.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Media\UploadMedia.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="additionalResources\graphics\editPanelIcon.png" />
+    <EmbeddedResource Include="Media\VideoInsertOptions.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Media\DeleteMedia.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Searching\SearchUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="additionalResources\zoom.png" />
+    <EmbeddedResource Include="additionalResources\searchIcon.png" />
+    <EmbeddedResource Include="Searching\SearchResultsUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContentHistory\History.aspx.designer.vb">
+      <DependentUpon>History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentHistory\History.aspx.vb">
+      <DependentUpon>History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dsCreatedTables.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCreatedTables.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEditPanel.Designer.vb">
+      <DependentUpon>dsEditPanel.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dsEditPanel.vb">
+      <DependentUpon>dsEditPanel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EditPanel.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImageSelector\BaseControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageSelector\ImageSelectorDlg.aspx.vb">
+      <DependentUpon>ImageSelectorDlg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageSelector\ucImage.ascx.designer.vb">
+      <DependentUpon>ucImage.ascx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSelector\ucImage.ascx.vb">
+      <DependentUpon>ucImage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageSelector\ucImageSelector.ascx.designer.vb">
+      <DependentUpon>ucImageSelector.ascx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSelector\ucImageSelector.ascx.vb">
+      <DependentUpon>ucImageSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageSelector\ucVideo.ascx.designer.vb">
+      <DependentUpon>ucVideo.ascx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSelector\ucVideo.ascx.vb">
+      <DependentUpon>ucVideo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Media\Uploader.aspx.designer.vb">
+      <DependentUpon>Uploader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Media\Uploader.aspx.vb">
+      <DependentUpon>Uploader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Media\DeleteMedia.aspx.designer.vb">
+      <DependentUpon>DeleteMedia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Media\DeleteMedia.aspx.vb">
+      <DependentUpon>DeleteMedia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Media\ImageInsertOptions.ascx.designer.vb">
+      <DependentUpon>ImageInsertOptions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Media\ImageInsertOptions.ascx.vb">
+      <DependentUpon>ImageInsertOptions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Media\MediaList.aspx.designer.vb">
+      <DependentUpon>MediaList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Media\MediaList.aspx.vb">
+      <DependentUpon>MediaList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Media\PreviewFiles.aspx.designer.vb">
+      <DependentUpon>PreviewFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Media\PreviewFiles.aspx.vb">
+      <DependentUpon>PreviewFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Media\UploadMedia.aspx.designer.vb">
+      <DependentUpon>UploadMedia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Media\UploadMedia.aspx.vb">
+      <DependentUpon>UploadMedia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Media\VideoInsertOptions.ascx.designer.vb">
+      <DependentUpon>VideoInsertOptions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Media\VideoInsertOptions.ascx.vb">
+      <DependentUpon>VideoInsertOptions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Searching\PageSummary.vb" />
+    <Compile Include="Searching\SearchControl.vb" />
+    <Compile Include="Searching\SearchResultGallery.vb" />
+    <Compile Include="Searching\SearchResultsUserControl.ascx.designer.vb">
+      <DependentUpon>SearchResultsUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Searching\SearchResultsUserControl.ascx.vb">
+      <DependentUpon>SearchResultsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Searching\SearchUserControl.ascx.designer.vb">
+      <DependentUpon>SearchUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Searching\SearchUserControl.ascx.vb">
+      <DependentUpon>SearchUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dsCreatedTables.xsc">
+      <DependentUpon>dsCreatedTables.xsd</DependentUpon>
+    </None>
+    <None Include="dsCreatedTables.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCreatedTables.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsCreatedTables.xss">
+      <DependentUpon>dsCreatedTables.xsd</DependentUpon>
+    </None>
+    <None Include="dsEditPanel.xsc">
+      <DependentUpon>dsEditPanel.xsd</DependentUpon>
+    </None>
+    <None Include="dsEditPanel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEditPanel.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsEditPanel.xss">
+      <DependentUpon>dsEditPanel.xsd</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Media\Uploader.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSelector\ImageSelectorDlg.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSelector\ucImage.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSelector\ucImageSelector.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSelector\ucVideo.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSelector\magsm.png" />
+    <EmbeddedResource Include="ImageSelector\jquery.lightbox-0.5.min.js" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Media\PreviewFiles.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EditPanel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ImageSelector\editsm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIAjax\DTIAjax\DTIAjax.vbproj">
+      <Project>{ad7d65c9-79da-4c04-9bbf-36fd51de19f2}</Project>
+      <Name>DTIAjax</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
+      <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
+      <Name>DTIMiniControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIServerControl\DTIServerControls.vbproj">
+      <Project>{48529821-dd5a-47e2-8444-a91143140ea6}</Project>
+      <Name>DTIServerControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HighslideControls\HighslideControls\HighslideControls.vbproj">
+      <Project>{f26e8251-f511-4889-a31d-384d1f497a2b}</Project>
+      <Name>HighslideControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JqueryUIControls\JqueryUIControls\JqueryUIControls.vbproj">
+      <Project>{cc9f78d0-b8da-4945-9b59-96bc05762f56}</Project>
+      <Name>JqueryUIControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SummerNote\SummerNote\SummerNote.vbproj">
+      <Project>{4f287f0b-022d-43da-9941-291a957e0e7f}</Project>
+      <Name>SummerNote</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIGalleryControl\DTIGalleryControl\DTIGallery.vbproj">
+      <Project>{434854f6-331d-41e1-bb5e-d23fb44098ec}</Project>
+      <Name>DTIGallery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIImageManager\DTIImageManager.vbproj">
+      <Project>{f7332f7e-7883-4da9-a8bd-97e5f7266321}</Project>
+      <Name>DTIImageManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIMediaManager\DTIMediaManager.vbproj">
+      <Project>{82f81992-98b3-435b-bf07-e3aad8eff929}</Project>
+      <Name>DTIMediaManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIUploader\DTIUploader.vbproj">
+      <Project>{09114331-3f81-47b3-819f-ed110f2be7ec}</Project>
+      <Name>DTIUploader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIVideoManager\DTIVideoManager.vbproj">
+      <Project>{723064cc-6c30-422b-8927-19fe9592901c}</Project>
+      <Name>DTIVideoManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

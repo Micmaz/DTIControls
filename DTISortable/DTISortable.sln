@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DTISortable", "DTISortable\DTISortable.vbproj", "{453D33FF-37BA-4EEC-B7DA-B117D85041AD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DTISortableTestProject", "DTISortableTestProject\DTISortableTestProject.vbproj", "{E6A29045-70CC-449B-975F-2E2A50D03011}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{453D33FF-37BA-4EEC-B7DA-B117D85041AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453D33FF-37BA-4EEC-B7DA-B117D85041AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453D33FF-37BA-4EEC-B7DA-B117D85041AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453D33FF-37BA-4EEC-B7DA-B117D85041AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A29045-70CC-449B-975F-2E2A50D03011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A29045-70CC-449B-975F-2E2A50D03011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A29045-70CC-449B-975F-2E2A50D03011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A29045-70CC-449B-975F-2E2A50D03011}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

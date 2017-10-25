@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F287F0B-022D-43DA-9941-291A957E0E7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SummerNote</RootNamespace>
+    <AssemblyName>SummerNote</AssemblyName>
+    <MyType>Empty</MyType>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SummerNote.xml</DocumentationFile>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SummerNote.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>SummerNote.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>SummerNote.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>SummerNote.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>SummerNote.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SummerNote.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="keepAlive.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="SummerNoteJs\font.summernote.ttf" />
+    <EmbeddedResource Include="SummerNoteJs\font.summernote.woff" />
+    <EmbeddedResource Include="SummerNoteJs\font-awesome\css.fonts.fontawesome-webfont.eot" />
+    <EmbeddedResource Include="SummerNoteJs\font-awesome\css.fonts.fontawesome-webfont.ttf" />
+    <EmbeddedResource Include="SummerNoteJs\font-awesome\css.fonts.fontawesome-webfont.woff" />
+    <EmbeddedResource Include="SummerNoteJs\font-awesome\css.fonts.fontawesome-webfont.woff2" />
+    <EmbeddedResource Include="SummerNoteJs\font-awesome\css.fonts.FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
+      <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
+      <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
+      <Name>DTIMiniControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
+      <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
+      <Name>jQueryLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="bootstrap-iso.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="bootstrap.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="sumernoteInit.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ar-AR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ar-AR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-bg-BG.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-bg-BG.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ca-ES.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ca-ES.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-cs-CZ.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-cs-CZ.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-da-DK.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-da-DK.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-de-DE.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-de-DE.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-el-GR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-el-GR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-es-ES.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-es-ES.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-es-EU.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-es-EU.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-fa-IR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-fa-IR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-fi-FI.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-fi-FI.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-fr-FR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-fr-FR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-gl-ES.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-gl-ES.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-he-IL.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-he-IL.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-hr-HR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-hr-HR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-hu-HU.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-hu-HU.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-id-ID.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-id-ID.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-it-IT.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-it-IT.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ja-JP.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ja-JP.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ko-KR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ko-KR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-lt-LT.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-lt-LT.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-lt-LV.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-lt-LV.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-mn-MN.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-mn-MN.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-nb-NO.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-nb-NO.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-nl-NL.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-nl-NL.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-pl-PL.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-pl-PL.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-pt-BR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-pt-BR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-pt-PT.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-pt-PT.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ro-RO.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ro-RO.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ru-RU.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ru-RU.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sk-SK.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sk-SK.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sl-SI.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sl-SI.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sr-RS-Latin.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sr-RS-Latin.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sr-RS.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sr-RS.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sv-SE.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-sv-SE.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ta-IN.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-ta-IN.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-th-TH.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-th-TH.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-tr-TR.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-tr-TR.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-uk-UA.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-uk-UA.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-vi-VN.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-vi-VN.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-zh-CN.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-zh-CN.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-zh-TW.js" />
+    <EmbeddedResource Include="SummerNoteJs\lang\lang._summernote-zh-TW.min.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-ext-addclass.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-ext-dialogHelper.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-ext-highlight.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-ext-minidiag.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-fontawesome.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-image-attributes.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-map-plugin.js" />
+    <EmbeddedResource Include="SummerNoteJs\plugins.summernote-video-attributes.js" />
+    <EmbeddedResource Include="SummerNoteJs\summernote.css" />
+    <EmbeddedResource Include="SummerNoteJs\summernote.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SummernoteAddl.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SummerNoteJs\Codemirror\codemirror.css" />
+    <EmbeddedResource Include="SummerNoteJs\Codemirror\codemirror.js" />
+    <EmbeddedResource Include="SummerNoteJs\Codemirror\formatting.js" />
+    <EmbeddedResource Include="SummerNoteJs\Codemirror\monokai.css" />
+    <EmbeddedResource Include="SummerNoteJs\Codemirror\xml.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SummerNoteJs\font-awesome\css.font-awesome.min.css" />
+    <EmbeddedResource Include="SummerNoteJs\font-awesome\css.fonts.fontawesome-webfont.svg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,213 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIMapControl
+</name>
+</assembly>
+<members>
+<member name="T:DTIMapControl.dsMapControl">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DTIMapControl.dsMapControl.DTIMapControlDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIMapControl.dsMapControl.DTIGoogleMapKeyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTIMapControl.dsMapControl.DTIMapControlRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIMapControl.dsMapControl.DTIGoogleMapKeyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTIMapControl.dsMapControl.DTIMapControlRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIMapControl.dsMapControl.DTIGoogleMapKeyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTIMapControl.DTIMapEditUserControl">
+<summary>
+DTIMapEditUserControl class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapEditUserControl._lblTitle">
+<summary>
+lblTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapEditUserControl._tbTitle">
+<summary>
+tbTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapEditUserControl._lblAddress">
+<summary>
+lblAddress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapEditUserControl._tbAddress">
+<summary>
+tbAddress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapEditUserControl._lblGoogleKey">
+<summary>
+lblGoogleKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapEditUserControl._tbGoogleKey">
+<summary>
+tbGoogleKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapEditUserControl._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIMapControl.DTIMapUserControl">
+<summary>
+DTIMapUserControl class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapUserControl._lblMap">
+<summary>
+lblMap control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.DTIMapUserControl._lblDirection">
+<summary>
+lblDirection control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIMapControl.settingsForm">
+<summary>
+settingsForm class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIMapControl.settingsForm._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.settingsForm._lblTitle">
+<summary>
+lblTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.settingsForm._tbTitle">
+<summary>
+tbTitle control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.settingsForm._lblAddress">
+<summary>
+lblAddress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.settingsForm._tbAddress">
+<summary>
+tbAddress control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.settingsForm._lblGoogleKey">
+<summary>
+lblGoogleKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIMapControl.settingsForm._tbGoogleKey">
+<summary>
+tbGoogleKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

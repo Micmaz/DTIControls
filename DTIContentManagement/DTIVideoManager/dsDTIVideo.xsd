@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDTIVideo" targetNamespace="http://tempuri.org/dsDTIVideo.xsd" xmlns:mstns="http://tempuri.org/dsDTIVideo.xsd" xmlns="http://tempuri.org/dsDTIVideo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDTIVideo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsDTIVideo" msprop:Generator_DataSetName="dsDTIVideo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIVideoManager" msprop:Generator_UserTableName="DTIVideoManager" msprop:Generator_RowDeletedName="DTIVideoManagerRowDeleted" msprop:Generator_RowChangedName="DTIVideoManagerRowChanged" msprop:Generator_RowClassName="DTIVideoManagerRow" msprop:Generator_RowChangingName="DTIVideoManagerRowChanging" msprop:Generator_RowEvArgName="DTIVideoManagerRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIVideoManagerRowChangeEventHandler" msprop:Generator_TableClassName="DTIVideoManagerDataTable" msprop:Generator_TableVarName="tableDTIVideoManager" msprop:Generator_RowDeletingName="DTIVideoManagerRowDeleting" msprop:Generator_TablePropName="DTIVideoManager">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="Video" msprop:Generator_UserColumnName="Video" msprop:Generator_ColumnVarNameInTable="columnVideo" msprop:Generator_ColumnPropNameInRow="Video" msprop:Generator_ColumnPropNameInTable="VideoColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="ScreenShot" msprop:Generator_UserColumnName="ScreenShot" msprop:Generator_ColumnVarNameInTable="columnScreenShot" msprop:Generator_ColumnPropNameInRow="ScreenShot" msprop:Generator_ColumnPropNameInTable="ScreenShotColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="width" msprop:Generator_UserColumnName="width" msprop:Generator_ColumnPropNameInRow="width" msprop:Generator_ColumnVarNameInTable="columnwidth" msprop:Generator_ColumnPropNameInTable="widthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="height" msprop:Generator_UserColumnName="height" msprop:Generator_ColumnPropNameInRow="height" msprop:Generator_ColumnVarNameInTable="columnheight" msprop:Generator_ColumnPropNameInTable="heightColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Length" msprop:Generator_UserColumnName="Length" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInTable="LengthColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="Duration" msprop:Generator_UserColumnName="Duration" msprop:Generator_ColumnPropNameInRow="Duration" msprop:Generator_ColumnVarNameInTable="columnDuration" msprop:Generator_ColumnPropNameInTable="DurationColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Converted" msprop:Generator_UserColumnName="Converted" msprop:Generator_ColumnVarNameInTable="columnConverted" msprop:Generator_ColumnPropNameInRow="Converted" msprop:Generator_ColumnPropNameInTable="ConvertedColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="OriginalFileName" msprop:Generator_UserColumnName="OriginalFileName" msprop:Generator_ColumnVarNameInTable="columnOriginalFileName" msprop:Generator_ColumnPropNameInRow="OriginalFileName" msprop:Generator_ColumnPropNameInTable="OriginalFileNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ScreenShotSecondMark" msprop:Generator_UserColumnName="ScreenShotSecondMark" msprop:Generator_ColumnPropNameInRow="ScreenShotSecondMark" msprop:Generator_ColumnVarNameInTable="columnScreenShotSecondMark" msprop:Generator_ColumnPropNameInTable="ScreenShotSecondMarkColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIVideoManager" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

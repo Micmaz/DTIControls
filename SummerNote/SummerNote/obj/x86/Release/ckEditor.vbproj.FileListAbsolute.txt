@@ -1,0 +1,16 @@
+C:\Components\SummerNote\SummerNote\bin\SummerNote.dll
+C:\Components\SummerNote\SummerNote\bin\SummerNote.pdb
+C:\Components\SummerNote\SummerNote\bin\SummerNote.xml
+C:\Components\SummerNote\SummerNote\bin\BaseClasses.dll
+C:\Components\SummerNote\SummerNote\bin\DTIMiniControls.dll
+C:\Components\SummerNote\SummerNote\bin\jQueryLibrary.dll
+C:\Components\SummerNote\SummerNote\bin\BaseClasses.pdb
+C:\Components\SummerNote\SummerNote\bin\BaseClasses.xml
+C:\Components\SummerNote\SummerNote\bin\DTIMiniControls.pdb
+C:\Components\SummerNote\SummerNote\bin\DTIMiniControls.xml
+C:\Components\SummerNote\SummerNote\bin\jQueryLibrary.pdb
+C:\Components\SummerNote\SummerNote\bin\jQueryLibrary.xml
+C:\Components\SummerNote\SummerNote\obj\x86\Release\SummerNote.vbprojResolveAssemblyReference.cache
+C:\Components\SummerNote\SummerNote\obj\x86\Release\SummerNote.dll
+C:\Components\SummerNote\SummerNote\obj\x86\Release\SummerNote.xml
+C:\Components\SummerNote\SummerNote\obj\x86\Release\SummerNote.pdb

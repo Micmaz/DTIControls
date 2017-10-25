@@ -1,0 +1,17 @@
+C:\components\DBHelpers\SQLiteHelper\bin\Release\SQLiteHelper.dll.config
+C:\components\DBHelpers\SQLiteHelper\bin\Release\SQLiteHelper.dll
+C:\components\DBHelpers\SQLiteHelper\bin\Release\SQLiteHelper.pdb
+C:\components\DBHelpers\SQLiteHelper\bin\Release\SQLiteHelper.xml
+C:\components\DBHelpers\SQLiteHelper\bin\Release\System.Data.SQLite.dll
+C:\components\DBHelpers\SQLiteHelper\bin\Release\System.Data.SQLite.xml
+C:\components\DBHelpers\SQLiteHelper\bin\Release\System.Data.SQLite.dll.config
+C:\components\DBHelpers\SQLiteHelper\obj\Release\SQLiteHelper.dll
+C:\components\DBHelpers\SQLiteHelper\obj\Release\SQLiteHelper.xml
+C:\components\DBHelpers\SQLiteHelper\obj\Release\SQLiteHelper.pdb
+C:\components\DBHelpers\SQLiteHelper\bin\Release\DTIControls.dll
+C:\components\DBHelpers\SQLiteHelper\bin\Release\DTIControls.pdb
+C:\components\DBHelpers\SQLiteHelper\obj\Release\sqlitehelper-Merged.vbprojResolveAssemblyReference.cache
+C:\components\_Output\SQLiteHelper.dll.config
+C:\components\_Output\SQLiteHelper.dll
+C:\components\_Output\SQLiteHelper.pdb
+C:\components\_Output\SQLiteHelper.xml

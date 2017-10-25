@@ -1,0 +1,505 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIGrid
+</name>
+</assembly>
+<members>
+<member name="P:DTIGrid.DTIDataGrid.DataTableName">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIDataGrid.DataTableKey">
+ <summary>
+ When setting DataSource to a Table Name or a Query that Tables Primary Key will need to be
+ defined.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIDataGrid.DataTableParamArray">
+ <summary>
+ When Setting DataSource to a Table name or a query and addition params object can be passed
+ for safe filtering
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIDataGrid.CustomEditEvents">
+ <summary>
+ 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIDataGrid.EnableAdding">
+ <summary>
+ Determines if Rows can be added when EnableEditing is true
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIDataGrid.DataSource">
+ <summary>
+ Gets or Sets the DataSource of the DTIDataGrid object.  Can be either a DataTable, a 
+ name of a datatable, or a query for a dataTable (set DataTableKey if the datasource is 
+ one of the latter two).  Editing will not work on a table that
+ cannnot be mapped to the database.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIDataGrid.isSaveButtonClicked">
+ <summary>
+ Determines if a built in save was clicked within the DTIDataGrid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.DataBound">
+ <summary>
+ Occurs after the server control binds to a data source.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.RowAdded">
+ <summary>
+ Occurs when a row is created in a GridView control.
+ </summary>
+ <param name="row"></param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.RowDataBound">
+ <summary>
+ Occurs when a data row is bound to data in a GridView control.
+ </summary>
+ <param name="row">DTIGridRow being bound</param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.RowUpdated">
+ <summary>
+ Occurs on postback after the GridView control updates the row.
+ </summary>
+ <param name="row">Updated Row</param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.RowDeleted">
+ <summary>
+ Occurs on postback after the GridView control deletes the row.
+ </summary>
+ <param name="row">Delted Row</param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.ColumnCreated">
+ <summary>
+ Occurs after a new DTIGridColumn has be created.
+ </summary>
+ <param name="col">DTIGridColumn that has been created.</param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.Sorting">
+ <summary>
+ Occurs when a column is clicked only when sorting is enabled.
+ </summary>
+ <param name="SortColumn">Column clicked for sorting</param>
+ <param name="SortDirection">Direction column is to be sorted Asc or Desc</param>
+ <param name="SearchColumn">Column Searched on if applicable</param>
+ <param name="SearchValue">Value Searched for is applicable</param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.Searching">
+ <summary>
+ Occurs when a the search button is clicked on when searching is enabled.
+ </summary>
+ <param name="SearchColumn">Column to be searched</param>
+ <param name="SearchValue">Value to be searched for</param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.UpdatesComplete">
+ <summary>
+ Occurs after all rows have been processed
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.Click">
+ <summary>
+ Occurs when Autopostback is set to true and a row has been clicked.
+ </summary>
+ <param name="row">Rows Selected</param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.PageChanged">
+ <summary>
+ Fired whenever the page changes
+ </summary>
+ <param name="index"></param>
+ <remarks></remarks>
+</member>
+<member name="E:DTIGrid.DTIGrid.Databinding">
+ <summary>
+ Occurs before the server control binds to a data source.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:DTIGrid.DTIGrid.ButtonPlaceHolder">
+ <summary>
+ PlaceHolder directly next to the paging buttons for adding controls in inherited class
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.DataSource">
+ <summary>
+ Gets or sets the data source that the DTIGrid is displaying data for.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.visibleColumns">
+ <summary>
+ Comma delimited list of columns that are visible. By default all are visable unless this property is set. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.hiddenColumns">
+ <summary>
+ Comma delimited list of columns to hide. Overides visibleColumns. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.DataMember">
+ <summary>
+ Gets or sets the name of the list or table in the data source for which the DTIGrid is displaying data.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.Columns">
+ <summary>
+ Gets a collection that contains all the columns in the control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.ColumnTitles">
+ <summary>
+ Comma delimited list of column titles.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.ColumnWidths">
+ <summary>
+ Comma delimited list of column widths
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.Rows">
+ <summary>
+ Gets a collection that contains all the rows in the DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.SelectedRows">
+ <summary>
+ Gets the collection of rows selected by the user.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.UpdatedRows">
+ <summary>
+ Gets a collection that contains all the updated rows in the DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.DeletedRows">
+ <summary>
+ Gets a collection that contains all the deleted rows in the DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.AddedRows">
+ <summary>
+ Gets a collection that contains all the added rows in the DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.Title">
+ <summary>
+ Gets or sets the Title associated with the DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.SortOrder">
+ <summary>
+ Gets a value indicating whether the items in the DTIGrid control are 
+ sorted in ascending or descending order, or are not sorted.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.SortColumn">
+ <summary>
+ Gets the column by which the DTIGrid contents are currently sorted.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.MultiSelect">
+ <summary>
+ Gets or sets a value indicating whether the user is allowed to select more 
+ than one cell, row, or column of the DTIGrid at a time.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.OnClientRowSelect">
+ <summary>
+ Gets or sets the client-side script that executes when a row is selected.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.AutoPostBack">
+ <summary>
+ Gets or sets a value indicating whether a postback to the server automatically 
+ occurs when the user changes the row selection.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.EnableSorting">
+ <summary>
+ Gets or sets a value indicating whether a column can be sorted
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.ReadOnlyMode">
+ <summary>
+ Gets or sets a value indicating whether the user can edit the cells of the DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.EnableEditing">
+ <summary>
+ Gets or sets a value indicating whether the user can edit the cells of the DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.EnableSearching">
+ <summary>
+ Gets or sets a value indicating whether the search box is displayed
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.PageSize">
+ <summary>
+ Gets or sets the number of rows to display on a page in a DTIGrid control.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.PageIndex">
+ <summary>
+ Gets or sets the index of the currently displayed page.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.PageCount">
+ <summary>
+ Gets or Sets the total number of pages in the DTIGrid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.ShowDateAndTime">
+ <summary>
+ Puts a Date and time picker on columns whos datatypes are dates and makes the column
+ display both date and time.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.isPageChangeClicked">
+ <summary>
+ Determines if page was changed within the DTIGrid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.isSearchClicked">
+ <summary>
+ Determines if a built in search was clicked within the DTIGrid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.isSortClicked">
+ <summary>
+ Determines if a sort was made on the DTIGrid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.isGridClick">
+ <summary>
+ Determines if DTIGrid is performing an AutoPostBack
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.isGridButtonClicked">
+ <summary>
+ Determines if a button (Sort, Search, Paging, AutoPostBack) was clicked
+ within the DTIGrid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.EnableAltRows">
+ <summary>
+ Set a zebra-striped grid
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.AltRowsCssClass">
+ <summary>
+ The class that is used for alternate rows. Default is ui-priority-secondary
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:DTIGrid.DTIGrid.ShrinkToFit">
+ <summary>
+ This option describes the type of calculation of the initial width of each column 
+ against with the width of the grid. If the value is true and the value in width 
+ option is set then: Every column width is scaled according to the defined option 
+ width. Example: if we define two columns with a width of 80 and 120 pixels, but 
+ want the grid to have a 300 pixels - then the columns are recalculated as follow: 
+ 1- column = 300(new width)/200(sum of all width)*80(column width) = 120 and 2 
+ column = 300/200*120 = 180. The grid width is 300px. If the value is false and the 
+ value in width option is set then: The width of the grid is the width set in option. 
+ The column width are not recalculated and have the values defined in colModel. 
+ If integer is set, the width is calculated according to it.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGrid.DTIGrid.DataBind">
+ <summary>
+ Binds a data source to the invoked server control and all its child controls.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGrid.DTIGrid.ToString">
+ <summary>
+ Returns a string that represents the current object.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGrid.DTIGrid.pageDatatable(System.Data.DataTable@,System.Int32,System.Int32@,System.Int32@,System.String)">
+ <summary>
+ Takes a Datatable and returns selection of the given table based on the number of rows to display
+ per page.
+ </summary>
+ <param name="dt">Datatable to be paged</param>
+ <param name="PageSize">Number of Rows per page</param>
+ <param name="PageCount">Variable to store total number of pages</param>
+ <param name="PageIndex">Index of selected page</param>
+ <returns>a datatable with only a currentpages worth of data</returns>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGrid.DTIGridColumn.addItemToSelectList(System.Object,System.String)">
+ <summary>
+ Sets the column to a select list type and adds an item to that list. 
+ </summary>
+ <param name="value"></param>
+ <param name="DisplayString"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGrid.DTIGridColumn.setSelectTable(System.Data.DataTable,System.String,System.String)">
+ <summary>
+ Sets the column to a select list type and sets a datatable as the select item list.
+ </summary>
+ <param name="table"></param>
+ <param name="valueColumn"></param>
+ <param name="textColumn"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DTIGrid.DTIGridRow.setLink(System.String,System.String,System.String,System.Boolean,System.String,System.Int32,System.Int32,System.Boolean)">
+ <summary>
+ Add a link as a non-editable column to the grid. ColumnName need not exist before the call. 
+ This should happen after databind.
+ </summary>
+ <param name="ColumnName"></param>
+ <param name="linkText"></param>
+ <param name="linkURL"></param>
+ <param name="asDialog"></param>
+ <param name="dialogTitle"></param>
+ <param name="dialogHeight"></param>
+ <param name="dialogWidth"></param>
+ <param name="dialogModal"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

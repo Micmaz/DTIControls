@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="BaseClasses">
+</Property><Property Name="Solution File" Value="C:\components\DBHelpers\BaseClasses\BaseClasses.sln">
+</Property><Property Name="User Options File" Value="C:\components\DBHelpers\BaseClasses\BaseClasses.suo">
+</Property><Property Name="Date" Value="Sunday, August 07, 2016">
+</Property><Property Name="Time" Value="16:39 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="BaseClasses.sln" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseClasses.sln">
+</Event><Event ErrorLevel="0" Project="" Source="BaseClasses.suo" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseClasses.suo">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseClasses.vbproj" Description="Project file successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseClasses.vbproj">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseClasses.vbproj.user" Description="Project user file successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseClasses.vbproj.user">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="AssemblyLoader.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\AssemblyLoader.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseHelper.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseHelper.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseSecurityPage.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseSecurityPage.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseSecurityUserControl.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseSecurityUserControl.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseWebService.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseWebService.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="DataBase.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\DataBase.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseVirtualPathProvider.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\BaseVirtualPathProvider.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="dsBaseClasses.Designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\dsBaseClasses.Designer.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="dsBaseClasses.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\dsBaseClasses.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="EncryptionHelper.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\EncryptionHelper.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="ErrorHandlerBase.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\ErrorHandlerBase.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="GlobalBase.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\GlobalBase.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="Hashing.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\Hashing.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="JsMinimizer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\JsMinimizer.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="ListResources.aspx.designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\ListResources.aspx.designer.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="ListResources.aspx.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\ListResources.aspx.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="MasterBase.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\MasterBase.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="MimeDecoder.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\MimeDecoder.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="My Project\AssemblyInfo.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\My Project\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="PageTracker.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\PageTracker.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="ParallelDataHelper.Designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\ParallelDataHelper.Designer.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="ParallelDataHelper.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\ParallelDataHelper.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="Platform.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\Platform.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="QueryStringChanger.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\QueryStringChanger.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="Scripts.aspx.designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\Scripts.aspx.designer.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="Scripts.aspx.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\Scripts.aspx.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="Spider.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\Spider.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="SQLHelper.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\SQLHelper.vb">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="dsBaseClasses.xsc" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\dsBaseClasses.xsc">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="dsBaseClasses.xsd" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\dsBaseClasses.xsd">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="dsBaseClasses.xss" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\dsBaseClasses.xss">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="ListResources.aspx" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\ListResources.aspx">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="TestResource.jpg" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestResource.jpg">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="DataBase.resx" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\DataBase.resx">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="SQLHelper.resx" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\SQLHelper.resx">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="Scripts.aspx" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\Scripts.aspx">
+</Event><Event ErrorLevel="0" Project="BaseClasses" Source="BaseClasses.vbproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="BaseClasses" Source="BaseClasses.vbproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="1" Project="SQLiteHelper" Source="..\SQLiteHelper\SQLiteHelper.vbproj" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="SQLiteHelper" Source="..\SQLiteHelper\SQLiteHelper.vbproj" Description="Project file successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\SQLiteHelper\SQLiteHelper.vbproj">
+</Event><Event ErrorLevel="0" Project="SQLiteHelper" Source="..\SQLiteHelper\SQLiteHelper.vbproj.user" Description="Project user file successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\SQLiteHelper\SQLiteHelper.vbproj.user">
+</Event><Event ErrorLevel="0" Project="SQLiteHelper" Source="..\SQLiteHelper\SQLiteHelper.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\SQLiteHelper\SQLiteHelper.vb">
+</Event><Event ErrorLevel="0" Project="SQLiteHelper" Source="..\SQLiteHelper\My Project\AssemblyInfo.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\SQLiteHelper\My Project\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="SQLiteHelper" Source="..\SQLiteHelper\SQLiteHelper.vbproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="SQLiteHelper" Source="..\SQLiteHelper\SQLiteHelper.vbproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="1" Project="TestApp1" Source="..\TestApp1\TestApp1.vbproj" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\TestApp1.vbproj" Description="Project file successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\TestApp1.vbproj">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\TestApp1.vbproj.user" Description="Project user file successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\TestApp1.vbproj.user">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\DataSet1.Designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\DataSet1.Designer.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\DataSet1.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\DataSet1.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\Default.aspx.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\Default.aspx.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\Default.aspx.designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\Default.aspx.designer.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\My Project\AssemblyInfo.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\My Project\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\My Project\Application.Designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\My Project\Application.Designer.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\My Project\Resources.Designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\My Project\Resources.Designer.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\My Project\Settings.Designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\My Project\Settings.Designer.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\NorthWind.Designer.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\NorthWind.Designer.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\SomeSillyTestClass.vb" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\SomeSillyTestClass.vb">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\DataSet1.xsc" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\DataSet1.xsc">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\DataSet1.xsd" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\DataSet1.xsd">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\DataSet1.xss" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\DataSet1.xss">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\My Project\Application.myapp" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\My Project\Application.myapp">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\My Project\Settings.settings" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\My Project\Settings.settings">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\NorthWind.xsc" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\NorthWind.xsc">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\NorthWind.xsd" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\NorthWind.xsd">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\NorthWind.xss" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\NorthWind.xss">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\Default.aspx" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\Default.aspx">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\Web.config" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\Web.config">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\Test_Resource.jpg" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\Test_Resource.jpg">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\My Project\Resources.resx" Description="File successfully backed up as C:\components\DBHelpers\BaseClasses\Backup\TestApp1\My Project\Resources.resx">
+</Event><Event ErrorLevel="0" Project="TestApp1" Source="..\TestApp1\TestApp1.vbproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="TestApp1" Source="..\TestApp1\TestApp1.vbproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="BaseClasses.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="BaseClasses.sln" Description="Converted">
+</Event></UpgradeLog>

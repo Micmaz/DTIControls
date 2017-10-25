@@ -1,0 +1,16 @@
+C:\Components\ckEditor\ckEditor\bin\ckEditor.dll
+C:\Components\ckEditor\ckEditor\bin\ckEditor.pdb
+C:\Components\ckEditor\ckEditor\bin\ckEditor.xml
+C:\Components\ckEditor\ckEditor\bin\BaseClasses.dll
+C:\Components\ckEditor\ckEditor\bin\DTIMiniControls.dll
+C:\Components\ckEditor\ckEditor\bin\jQueryLibrary.dll
+C:\Components\ckEditor\ckEditor\bin\BaseClasses.pdb
+C:\Components\ckEditor\ckEditor\bin\BaseClasses.xml
+C:\Components\ckEditor\ckEditor\bin\DTIMiniControls.pdb
+C:\Components\ckEditor\ckEditor\bin\DTIMiniControls.xml
+C:\Components\ckEditor\ckEditor\bin\jQueryLibrary.pdb
+C:\Components\ckEditor\ckEditor\bin\jQueryLibrary.xml
+C:\Components\ckEditor\ckEditor\obj\x86\Release\ckEditor.vbprojResolveAssemblyReference.cache
+C:\Components\ckEditor\ckEditor\obj\x86\Release\ckEditor.dll
+C:\Components\ckEditor\ckEditor\obj\x86\Release\ckEditor.xml
+C:\Components\ckEditor\ckEditor\obj\x86\Release\ckEditor.pdb

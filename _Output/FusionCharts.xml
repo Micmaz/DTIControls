@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FusionCharts
+</name>
+</assembly>
+<members>
+<member name="M:FusionCharts.ChartBase.registerControl(System.Web.UI.Page)">
+ <summary>
+ Registers all necessary javascript and css files for this control to function on the page.
+ </summary>
+ <param name="page"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

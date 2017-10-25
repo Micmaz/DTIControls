@@ -1,0 +1,2 @@
+also add the thumbnail to the themepicker in jqueryUIControls
+Edit the themepicker.js to show the theme in the drop down

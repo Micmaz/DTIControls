@@ -1,0 +1,1381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="4443eda9-c7eb-4089-9bf1-38990aa0ebcb" Title="DTIControls" Url="html/R_Project.htm">
+    <HelpTOCNode Id="3a39d848-4e27-40f6-ae2f-1fffe1c0dba6" Title="BaseClasses Namespace" Url="html/N_BaseClasses.htm">
+      <HelpTOCNode Id="d9279b7e-815c-4145-918e-1dba845604cf" Title="BaseHelper Class" Url="html/T_BaseClasses_BaseHelper.htm">
+        <HelpTOCNode Title="BaseHelper Constructor " Url="html/M_BaseClasses_BaseHelper__ctor.htm" />
+        <HelpTOCNode Id="86c4f992-66fd-44aa-b4fd-ff243ab1575e" Title="BaseHelper Fields" Url="html/Fields_T_BaseClasses_BaseHelper.htm">
+          <HelpTOCNode Title="tableFromSelect Field" Url="html/F_BaseClasses_BaseHelper_tableFromSelect.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="64b95b1b-816e-489e-9057-fe8e98efd85d" Title="BaseHelper Methods " Url="html/Methods_T_BaseClasses_BaseHelper.htm">
+          <HelpTOCNode Title="checkAndCreateAllTables Method " Url="html/M_BaseClasses_BaseHelper_checkAndCreateAllTables.htm" />
+          <HelpTOCNode Title="checkAndCreateTable Method " Url="html/M_BaseClasses_BaseHelper_checkAndCreateTable.htm" />
+          <HelpTOCNode Title="checkDBObjectExists Method " Url="html/M_BaseClasses_BaseHelper_checkDBObjectExists.htm" />
+          <HelpTOCNode Id="c755460c-e62d-403b-89a5-346d599d3d86" Title="ColumnFilterFillDataTable Method " Url="html/Overload_BaseClasses_BaseHelper_ColumnFilterFillDataTable.htm">
+            <HelpTOCNode Title="ColumnFilterFillDataTable Method (String, DataTable, Collection, DbConnection)" Url="html/M_BaseClasses_BaseHelper_ColumnFilterFillDataTable_1.htm" />
+            <HelpTOCNode Title="ColumnFilterFillDataTable Method (String, DataTable, Collection, Collection, String, DbConnection)" Url="html/M_BaseClasses_BaseHelper_ColumnFilterFillDataTable.htm" />
+            <HelpTOCNode Title="ColumnFilterFillDataTable Method (String, DataTable, String[], Object[], String, DbConnection)" Url="html/M_BaseClasses_BaseHelper_ColumnFilterFillDataTable_2.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="createAdaptor Method " Url="html/M_BaseClasses_BaseHelper_createAdaptor.htm" />
+          <HelpTOCNode Title="createCommand Method " Url="html/M_BaseClasses_BaseHelper_createCommand.htm" />
+          <HelpTOCNode Title="createCommandBuilder Method " Url="html/M_BaseClasses_BaseHelper_createCommandBuilder.htm" />
+          <HelpTOCNode Title="createConnection Method " Url="html/M_BaseClasses_BaseHelper_createConnection.htm" />
+          <HelpTOCNode Title="createConnectionFromConfig Method " Url="html/M_BaseClasses_BaseHelper_createConnectionFromConfig.htm" />
+          <HelpTOCNode Title="createGetSortedPage Method " Url="html/M_BaseClasses_BaseHelper_createGetSortedPage.htm" />
+          <HelpTOCNode Id="1a312341-bf7b-4595-b654-1bf89241fb04" Title="createParameter Method " Url="html/Overload_BaseClasses_BaseHelper_createParameter.htm">
+            <HelpTOCNode Title="createParameter Method (DbParameter)" Url="html/M_BaseClasses_BaseHelper_createParameter.htm" />
+            <HelpTOCNode Title="createParameter Method (String, Object)" Url="html/M_BaseClasses_BaseHelper_createParameter_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="createTable Method " Url="html/M_BaseClasses_BaseHelper_createTable.htm" />
+          <HelpTOCNode Title="ExecuteNonQuery Method " Url="html/M_BaseClasses_BaseHelper_ExecuteNonQuery.htm" />
+          <HelpTOCNode Title="ExecuteSproc Method " Url="html/M_BaseClasses_BaseHelper_ExecuteSproc.htm" />
+          <HelpTOCNode Title="FetchSingleValue Method " Url="html/M_BaseClasses_BaseHelper_FetchSingleValue.htm" />
+          <HelpTOCNode Title="FillDataSet Method " Url="html/M_BaseClasses_BaseHelper_FillDataSet.htm" />
+          <HelpTOCNode Title="FillDataSetMultiSelect Method " Url="html/M_BaseClasses_BaseHelper_FillDataSetMultiSelect.htm" />
+          <HelpTOCNode Id="d47f725d-1a18-47af-8e58-544c622ce4b7" Title="FillDataTable Method " Url="html/Overload_BaseClasses_BaseHelper_FillDataTable.htm">
+            <HelpTOCNode Title="FillDataTable Method (String, Object[])" Url="html/M_BaseClasses_BaseHelper_FillDataTable_2.htm" />
+            <HelpTOCNode Title="FillDataTable Method (String, DataTable, DbConnection)" Url="html/M_BaseClasses_BaseHelper_FillDataTable.htm" />
+            <HelpTOCNode Title="FillDataTable Method (String, DataTable, Object[])" Url="html/M_BaseClasses_BaseHelper_FillDataTable_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="getHelper Method " Url="html/M_BaseClasses_BaseHelper_getHelper.htm" />
+          <HelpTOCNode Title="getSQLStatement Method " Url="html/M_BaseClasses_BaseHelper_getSQLStatement.htm" />
+          <HelpTOCNode Title="parseID Method " Url="html/M_BaseClasses_BaseHelper_parseID.htm" />
+          <HelpTOCNode Title="prepareAdaptor Method " Url="html/M_BaseClasses_BaseHelper_prepareAdaptor.htm" />
+          <HelpTOCNode Title="prepareSafeFillAdaptor Method " Url="html/M_BaseClasses_BaseHelper_prepareSafeFillAdaptor.htm" />
+          <HelpTOCNode Title="SafeExecuteNonQuery Method " Url="html/M_BaseClasses_BaseHelper_SafeExecuteNonQuery.htm" />
+          <HelpTOCNode Title="SafeFetchSingleValue Method " Url="html/M_BaseClasses_BaseHelper_SafeFetchSingleValue.htm" />
+          <HelpTOCNode Title="SafeFillDataSet Method " Url="html/M_BaseClasses_BaseHelper_SafeFillDataSet.htm" />
+          <HelpTOCNode Title="SafeFillDataSetMultiSelect Method " Url="html/M_BaseClasses_BaseHelper_SafeFillDataSetMultiSelect.htm" />
+          <HelpTOCNode Title="SafeFillTable Method " Url="html/M_BaseClasses_BaseHelper_SafeFillTable.htm" />
+          <HelpTOCNode Title="SafeGetSortedPage Method " Url="html/M_BaseClasses_BaseHelper_SafeGetSortedPage.htm" />
+          <HelpTOCNode Title="SafeGetSortedPageWrapper Method " Url="html/M_BaseClasses_BaseHelper_SafeGetSortedPageWrapper.htm" />
+          <HelpTOCNode Title="setDefaultConnectionString Method " Url="html/M_BaseClasses_BaseHelper_setDefaultConnectionString.htm" />
+          <HelpTOCNode Title="Update Method " Url="html/M_BaseClasses_BaseHelper_Update.htm" />
+          <HelpTOCNode Title="UpdateCreateDB Method " Url="html/M_BaseClasses_BaseHelper_UpdateCreateDB.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7b7da166-0cdc-44bf-9877-0126bb49ac19" Title="BaseHelper Properties " Url="html/Properties_T_BaseClasses_BaseHelper.htm">
+          <HelpTOCNode Title="Adaptor Property " Url="html/P_BaseClasses_BaseHelper_Adaptor.htm" />
+          <HelpTOCNode Title="defaultConnection Property " Url="html/P_BaseClasses_BaseHelper_defaultConnection.htm" />
+          <HelpTOCNode Title="enforceConstraints Property " Url="html/P_BaseClasses_BaseHelper_enforceConstraints.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a6354dbd-2ff8-49ba-a124-14e451164d0e" Title="BaseHelper Events" Url="html/Events_T_BaseClasses_BaseHelper.htm">
+          <HelpTOCNode Title="constraintError Event" Url="html/E_BaseClasses_BaseHelper_constraintError.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="1a279ad9-a499-4eb4-832f-5422a572a535" Title="BaseSecurityPage Class" Url="html/T_BaseClasses_BaseSecurityPage.htm">
+        <HelpTOCNode Id="ca57245a-08e7-4572-b240-8ca4429c5dd8" Title="BaseSecurityPage Methods " Url="html/Methods_T_BaseClasses_BaseSecurityPage.htm">
+          <HelpTOCNode Title="DecryptText Method " Url="html/M_BaseClasses_BaseSecurityPage_DecryptText.htm" />
+          <HelpTOCNode Title="EncryptText Method " Url="html/M_BaseClasses_BaseSecurityPage_EncryptText.htm" />
+          <HelpTOCNode Title="FillDataSet Method " Url="html/M_BaseClasses_BaseSecurityPage_FillDataSet.htm" />
+          <HelpTOCNode Title="FillDataTable Method " Url="html/M_BaseClasses_BaseSecurityPage_FillDataTable.htm" />
+          <HelpTOCNode Title="getQueryString Method " Url="html/M_BaseClasses_BaseSecurityPage_getQueryString.htm" />
+          <HelpTOCNode Title="getString Method " Url="html/M_BaseClasses_BaseSecurityPage_getString.htm" />
+          <HelpTOCNode Title="GetUrlPath Method " Url="html/M_BaseClasses_BaseSecurityPage_GetUrlPath.htm" />
+          <HelpTOCNode Title="getValue Method " Url="html/M_BaseClasses_BaseSecurityPage_getValue.htm" />
+          <HelpTOCNode Title="isNull Method " Url="html/M_BaseClasses_BaseSecurityPage_isNull.htm" />
+          <HelpTOCNode Title="JavaScriptEncode Method " Url="html/M_BaseClasses_BaseSecurityPage_JavaScriptEncode.htm" />
+          <HelpTOCNode Title="JavaScriptUnencode Method " Url="html/M_BaseClasses_BaseSecurityPage_JavaScriptUnencode.htm" />
+          <HelpTOCNode Title="logEvent Method " Url="html/M_BaseClasses_BaseSecurityPage_logEvent.htm" />
+          <HelpTOCNode Title="mailhandler Method " Url="html/M_BaseClasses_BaseSecurityPage_mailhandler.htm" />
+          <HelpTOCNode Title="makeTableFromCSV Method " Url="html/M_BaseClasses_BaseSecurityPage_makeTableFromCSV.htm" />
+          <HelpTOCNode Title="ValidCookieName Method " Url="html/M_BaseClasses_BaseSecurityPage_ValidCookieName.htm" />
+          <HelpTOCNode Title="ValidCookieValue Method " Url="html/M_BaseClasses_BaseSecurityPage_ValidCookieValue.htm" />
+          <HelpTOCNode Title="writeCSV Method " Url="html/M_BaseClasses_BaseSecurityPage_writeCSV.htm" />
+          <HelpTOCNode Title="writeexcel Method " Url="html/M_BaseClasses_BaseSecurityPage_writeexcel.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="73f4892c-ffed-42e2-8a4e-43527916c888" Title="BaseSecurityPage Properties " Url="html/Properties_T_BaseClasses_BaseSecurityPage.htm">
+          <HelpTOCNode Title="Data Property " Url="html/P_BaseClasses_BaseSecurityPage_Data.htm" />
+          <HelpTOCNode Title="defaultConnection Property " Url="html/P_BaseClasses_BaseSecurityPage_defaultConnection.htm" />
+          <HelpTOCNode Title="EnablePageTracking Property " Url="html/P_BaseClasses_BaseSecurityPage_EnablePageTracking.htm" />
+          <HelpTOCNode Title="erroremail Property " Url="html/P_BaseClasses_BaseSecurityPage_erroremail.htm" />
+          <HelpTOCNode Title="errorHandler Property " Url="html/P_BaseClasses_BaseSecurityPage_errorHandler.htm" />
+          <HelpTOCNode Title="parallelDataHelper Property " Url="html/P_BaseClasses_BaseSecurityPage_parallelDataHelper.htm" />
+          <HelpTOCNode Title="SecurePage Property " Url="html/P_BaseClasses_BaseSecurityPage_SecurePage.htm" />
+          <HelpTOCNode Title="securityFailedPage Property " Url="html/P_BaseClasses_BaseSecurityPage_securityFailedPage.htm" />
+          <HelpTOCNode Title="sqlHelper Property " Url="html/P_BaseClasses_BaseSecurityPage_sqlHelper.htm" />
+          <HelpTOCNode Title="UserName Property " Url="html/P_BaseClasses_BaseSecurityPage_UserName.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="053dce85-a964-45da-80ec-8f41f67201b7" Title="BaseSecurityPage Events" Url="html/Events_T_BaseClasses_BaseSecurityPage.htm">
+          <HelpTOCNode Title="DataReady Event" Url="html/E_BaseClasses_BaseSecurityPage_DataReady.htm" />
+          <HelpTOCNode Title="LoadNoPostBack Event" Url="html/E_BaseClasses_BaseSecurityPage_LoadNoPostBack.htm" />
+          <HelpTOCNode Title="pageTracked Event" Url="html/E_BaseClasses_BaseSecurityPage_pageTracked.htm" />
+          <HelpTOCNode Title="PostBack Event" Url="html/E_BaseClasses_BaseSecurityPage_PostBack.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="BaseSecurityPage.enableSSlMail Enumeration" Url="html/T_BaseClasses_BaseSecurityPage_enableSSlMail.htm" />
+      <HelpTOCNode Id="55635b8f-4c10-4728-9673-72ffb8d4de3a" Title="BaseSecurityUserControl Class" Url="html/T_BaseClasses_BaseSecurityUserControl.htm">
+        <HelpTOCNode Id="56a06876-9dab-42d9-9e58-207d63281d5b" Title="BaseSecurityUserControl Methods " Url="html/Methods_T_BaseClasses_BaseSecurityUserControl.htm">
+          <HelpTOCNode Title="FillDataSet Method " Url="html/M_BaseClasses_BaseSecurityUserControl_FillDataSet.htm" />
+          <HelpTOCNode Title="FillDataTable Method " Url="html/M_BaseClasses_BaseSecurityUserControl_FillDataTable.htm" />
+          <HelpTOCNode Title="getQueryString Method " Url="html/M_BaseClasses_BaseSecurityUserControl_getQueryString.htm" />
+          <HelpTOCNode Title="getString Method " Url="html/M_BaseClasses_BaseSecurityUserControl_getString.htm" />
+          <HelpTOCNode Title="GetUrlPath Method " Url="html/M_BaseClasses_BaseSecurityUserControl_GetUrlPath.htm" />
+          <HelpTOCNode Title="getValue Method " Url="html/M_BaseClasses_BaseSecurityUserControl_getValue.htm" />
+          <HelpTOCNode Title="isNull Method " Url="html/M_BaseClasses_BaseSecurityUserControl_isNull.htm" />
+          <HelpTOCNode Title="JavaScriptEncode Method " Url="html/M_BaseClasses_BaseSecurityUserControl_JavaScriptEncode.htm" />
+          <HelpTOCNode Title="JavaScriptUnencode Method " Url="html/M_BaseClasses_BaseSecurityUserControl_JavaScriptUnencode.htm" />
+          <HelpTOCNode Title="makeTableFromCSV Method " Url="html/M_BaseClasses_BaseSecurityUserControl_makeTableFromCSV.htm" />
+          <HelpTOCNode Title="ValidCookieName Method " Url="html/M_BaseClasses_BaseSecurityUserControl_ValidCookieName.htm" />
+          <HelpTOCNode Title="ValidCookieValue Method " Url="html/M_BaseClasses_BaseSecurityUserControl_ValidCookieValue.htm" />
+          <HelpTOCNode Title="writeCSV Method " Url="html/M_BaseClasses_BaseSecurityUserControl_writeCSV.htm" />
+          <HelpTOCNode Title="writeexcel Method " Url="html/M_BaseClasses_BaseSecurityUserControl_writeexcel.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1c5bd0e9-c61b-45d5-a38c-e8515b60aefb" Title="BaseSecurityUserControl Properties " Url="html/Properties_T_BaseClasses_BaseSecurityUserControl.htm">
+          <HelpTOCNode Title="Data Property " Url="html/P_BaseClasses_BaseSecurityUserControl_Data.htm" />
+          <HelpTOCNode Title="defaultConnection Property " Url="html/P_BaseClasses_BaseSecurityUserControl_defaultConnection.htm" />
+          <HelpTOCNode Title="errorHandler Property " Url="html/P_BaseClasses_BaseSecurityUserControl_errorHandler.htm" />
+          <HelpTOCNode Title="parallelDataHelper Property " Url="html/P_BaseClasses_BaseSecurityUserControl_parallelDataHelper.htm" />
+          <HelpTOCNode Title="sqlHelper Property " Url="html/P_BaseClasses_BaseSecurityUserControl_sqlHelper.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8e237f26-9f04-4010-9387-dc0d750fd7a2" Title="BaseSecurityUserControl Events" Url="html/Events_T_BaseClasses_BaseSecurityUserControl.htm">
+          <HelpTOCNode Title="DataReady Event" Url="html/E_BaseClasses_BaseSecurityUserControl_DataReady.htm" />
+          <HelpTOCNode Title="LoadNoPostBack Event" Url="html/E_BaseClasses_BaseSecurityUserControl_LoadNoPostBack.htm" />
+          <HelpTOCNode Title="PostBack Event" Url="html/E_BaseClasses_BaseSecurityUserControl_PostBack.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="555c1d51-cd89-4d0f-b44a-12dabd2d2c57" Title="BaseVirtualPathProvider Class" Url="html/T_BaseClasses_BaseVirtualPathProvider.htm">
+        <HelpTOCNode Id="988e1ff8-6775-4caa-beb8-239e69818b8f" Title="BaseVirtualPathProvider Fields" Url="html/Fields_T_BaseClasses_BaseVirtualPathProvider.htm">
+          <HelpTOCNode Title="lastrebuild Field" Url="html/F_BaseClasses_BaseVirtualPathProvider_lastrebuild.htm" />
+          <HelpTOCNode Title="rebuildWait Field" Url="html/F_BaseClasses_BaseVirtualPathProvider_rebuildWait.htm" />
+          <HelpTOCNode Title="resources Field" Url="html/F_BaseClasses_BaseVirtualPathProvider_resources.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="24e2f468-1ce3-48e3-8a5e-9ede88ac5745" Title="BaseVirtualPathProvider Methods " Url="html/Methods_T_BaseClasses_BaseVirtualPathProvider.htm">
+          <HelpTOCNode Title="buildLocalResources Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_buildLocalResources.htm" />
+          <HelpTOCNode Title="ClearResources Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_ClearResources.htm" />
+          <HelpTOCNode Title="FileExists Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_FileExists.htm" />
+          <HelpTOCNode Title="GetCacheDependency Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_GetCacheDependency.htm" />
+          <HelpTOCNode Title="GetFile Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_GetFile.htm" />
+          <HelpTOCNode Title="getResourcesName Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_getResourcesName.htm" />
+          <HelpTOCNode Title="getResourceStream Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_getResourceStream.htm" />
+          <HelpTOCNode Title="initialized Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_initialized.htm" />
+          <HelpTOCNode Title="registerVirtualPathProvider Method " Url="html/M_BaseClasses_BaseVirtualPathProvider_registerVirtualPathProvider.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2f7b4849-e2ee-4ec3-825a-ab449f32670f" Title="BaseVirtualPathProvider Properties " Url="html/Properties_T_BaseClasses_BaseVirtualPathProvider.htm">
+          <HelpTOCNode Title="assemblies Property " Url="html/P_BaseClasses_BaseVirtualPathProvider_assemblies.htm" />
+          <HelpTOCNode Title="assemblyClassHash Property " Url="html/P_BaseClasses_BaseVirtualPathProvider_assemblyClassHash.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f5ebe7a3-0ac3-4e86-95d1-2a09efc89791" Title="BaseWebService Class" Url="html/T_BaseClasses_BaseWebService.htm">
+        <HelpTOCNode Id="3d71042c-64b3-4d71-a789-695424f62b9f" Title="BaseWebService Methods " Url="html/Methods_T_BaseClasses_BaseWebService.htm">
+          <HelpTOCNode Title="FillDataSet Method " Url="html/M_BaseClasses_BaseWebService_FillDataSet.htm" />
+          <HelpTOCNode Title="FillDataTable Method " Url="html/M_BaseClasses_BaseWebService_FillDataTable.htm" />
+          <HelpTOCNode Title="getString Method " Url="html/M_BaseClasses_BaseWebService_getString.htm" />
+          <HelpTOCNode Title="getValue Method " Url="html/M_BaseClasses_BaseWebService_getValue.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="65d33704-1db0-4a94-999a-8561657b0bd4" Title="BaseWebService Properties " Url="html/Properties_T_BaseClasses_BaseWebService.htm">
+          <HelpTOCNode Title="Data Property " Url="html/P_BaseClasses_BaseWebService_Data.htm" />
+          <HelpTOCNode Title="defaultConnection Property " Url="html/P_BaseClasses_BaseWebService_defaultConnection.htm" />
+          <HelpTOCNode Title="errorHandler Property " Url="html/P_BaseClasses_BaseWebService_errorHandler.htm" />
+          <HelpTOCNode Title="sqlHelper Property " Url="html/P_BaseClasses_BaseWebService_sqlHelper.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b22bcabf-5c75-4696-8af6-da7f7f62e28b" Title="DataBase Class" Url="html/T_BaseClasses_DataBase.htm">
+        <HelpTOCNode Id="9e3ebf65-97ae-4466-8322-6021f8e6f2db" Title="DataBase Methods " Url="html/Methods_T_BaseClasses_DataBase.htm">
+          <HelpTOCNode Title="createSession Method " Url="html/M_BaseClasses_DataBase_createSession.htm" />
+          <HelpTOCNode Title="getBaseClassType Method " Url="html/M_BaseClasses_DataBase_getBaseClassType.htm" />
+          <HelpTOCNode Title="getBaseDataType Method " Url="html/M_BaseClasses_DataBase_getBaseDataType.htm" />
+          <HelpTOCNode Title="getDataObj Method " Url="html/M_BaseClasses_DataBase_getDataObj.htm" />
+          <HelpTOCNode Title="getHelper Method " Url="html/M_BaseClasses_DataBase_getHelper.htm" />
+          <HelpTOCNode Title="GetWebAppPath Method " Url="html/M_BaseClasses_DataBase_GetWebAppPath.htm" />
+          <HelpTOCNode Title="parseID Method " Url="html/M_BaseClasses_DataBase_parseID.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7a86b8f3-9118-48f9-b35c-a293167c89f4" Title="DataBase Properties " Url="html/Properties_T_BaseClasses_DataBase.htm">
+          <HelpTOCNode Title="defaultConnection Property " Url="html/P_BaseClasses_DataBase_defaultConnection.htm" />
+          <HelpTOCNode Title="defaultConnectionAppWide Property " Url="html/P_BaseClasses_DataBase_defaultConnectionAppWide.htm" />
+          <HelpTOCNode Title="defaultConnectionSessionWide Property " Url="html/P_BaseClasses_DataBase_defaultConnectionSessionWide.htm" />
+          <HelpTOCNode Title="defaultConnectionString Property " Url="html/P_BaseClasses_DataBase_defaultConnectionString.htm" />
+          <HelpTOCNode Title="httpSession Property " Url="html/P_BaseClasses_DataBase_httpSession.htm" />
+          <HelpTOCNode Title="parallelDataHelper Property " Url="html/P_BaseClasses_DataBase_parallelDataHelper.htm" />
+          <HelpTOCNode Title="session Property " Url="html/P_BaseClasses_DataBase_session.htm" />
+          <HelpTOCNode Title="sqlHelper Property " Url="html/P_BaseClasses_DataBase_sqlHelper.htm" />
+          <HelpTOCNode Title="username Property " Url="html/P_BaseClasses_DataBase_username.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="aafab2c6-5c04-45b9-85f7-4ea5c203d114" Title="DataBase Events" Url="html/Events_T_BaseClasses_DataBase.htm">
+          <HelpTOCNode Title="defaultConnectionChanged Event" Url="html/E_BaseClasses_DataBase_defaultConnectionChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9148facc-f925-45ae-ae74-3655456acf27" Title="EncryptionHelper Class" Url="html/T_BaseClasses_EncryptionHelper.htm">
+        <HelpTOCNode Id="d3f1020a-efa1-4e0f-8090-ffa175bf4680" Title="EncryptionHelper Methods " Url="html/Methods_T_BaseClasses_EncryptionHelper.htm">
+          <HelpTOCNode Title="Decrypt Method " Url="html/M_BaseClasses_EncryptionHelper_Decrypt.htm" />
+          <HelpTOCNode Title="Encrypt Method " Url="html/M_BaseClasses_EncryptionHelper_Encrypt.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b864d097-5dbe-4b6f-938d-057d8ad18325" Title="ErrorHandlerBase Class" Url="html/T_BaseClasses_ErrorHandlerBase.htm">
+        <HelpTOCNode Id="41a875e4-a957-4712-acfc-4d115fa3e0f0" Title="ErrorHandlerBase Properties " Url="html/Properties_T_BaseClasses_ErrorHandlerBase.htm">
+          <HelpTOCNode Title="application Property " Url="html/P_BaseClasses_ErrorHandlerBase_application.htm" />
+          <HelpTOCNode Title="erroremail Property " Url="html/P_BaseClasses_ErrorHandlerBase_erroremail.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8fa2139b-a289-4fa3-b9b2-5d85246d2c9a" Title="MasterBase Class" Url="html/T_BaseClasses_MasterBase.htm">
+        <HelpTOCNode Id="c18ba84d-6c75-4a8a-a525-d58b3ee34af7" Title="MasterBase Methods " Url="html/Methods_T_BaseClasses_MasterBase.htm">
+          <HelpTOCNode Title="FillDataSet Method " Url="html/M_BaseClasses_MasterBase_FillDataSet.htm" />
+          <HelpTOCNode Title="FillDataTable Method " Url="html/M_BaseClasses_MasterBase_FillDataTable.htm" />
+          <HelpTOCNode Title="getQueryString Method " Url="html/M_BaseClasses_MasterBase_getQueryString.htm" />
+          <HelpTOCNode Title="getString Method " Url="html/M_BaseClasses_MasterBase_getString.htm" />
+          <HelpTOCNode Title="GetUrlPath Method " Url="html/M_BaseClasses_MasterBase_GetUrlPath.htm" />
+          <HelpTOCNode Title="getValue Method " Url="html/M_BaseClasses_MasterBase_getValue.htm" />
+          <HelpTOCNode Title="isNull Method " Url="html/M_BaseClasses_MasterBase_isNull.htm" />
+          <HelpTOCNode Title="JavaScriptEncode Method " Url="html/M_BaseClasses_MasterBase_JavaScriptEncode.htm" />
+          <HelpTOCNode Title="JavaScriptUnencode Method " Url="html/M_BaseClasses_MasterBase_JavaScriptUnencode.htm" />
+          <HelpTOCNode Title="makeTableFromCSV Method " Url="html/M_BaseClasses_MasterBase_makeTableFromCSV.htm" />
+          <HelpTOCNode Title="ValidCookieName Method " Url="html/M_BaseClasses_MasterBase_ValidCookieName.htm" />
+          <HelpTOCNode Title="ValidCookieValue Method " Url="html/M_BaseClasses_MasterBase_ValidCookieValue.htm" />
+          <HelpTOCNode Title="writeCSV Method " Url="html/M_BaseClasses_MasterBase_writeCSV.htm" />
+          <HelpTOCNode Title="writeexcel Method " Url="html/M_BaseClasses_MasterBase_writeexcel.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="08ad53e6-b7b6-47e6-a0f7-892feb512b3e" Title="MasterBase Properties " Url="html/Properties_T_BaseClasses_MasterBase.htm">
+          <HelpTOCNode Title="Data Property " Url="html/P_BaseClasses_MasterBase_Data.htm" />
+          <HelpTOCNode Title="defaultConnection Property " Url="html/P_BaseClasses_MasterBase_defaultConnection.htm" />
+          <HelpTOCNode Title="errorHandler Property " Url="html/P_BaseClasses_MasterBase_errorHandler.htm" />
+          <HelpTOCNode Title="parallelDataHelper Property " Url="html/P_BaseClasses_MasterBase_parallelDataHelper.htm" />
+          <HelpTOCNode Title="SecurePage Property " Url="html/P_BaseClasses_MasterBase_SecurePage.htm" />
+          <HelpTOCNode Title="securityFailedPage Property " Url="html/P_BaseClasses_MasterBase_securityFailedPage.htm" />
+          <HelpTOCNode Title="sqlHelper Property " Url="html/P_BaseClasses_MasterBase_sqlHelper.htm" />
+          <HelpTOCNode Title="UserName Property " Url="html/P_BaseClasses_MasterBase_UserName.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1dc17822-e047-468e-899d-6968ba79a620" Title="MasterBase Events" Url="html/Events_T_BaseClasses_MasterBase.htm">
+          <HelpTOCNode Title="DataReady Event" Url="html/E_BaseClasses_MasterBase_DataReady.htm" />
+          <HelpTOCNode Title="LoadNoPostBack Event" Url="html/E_BaseClasses_MasterBase_LoadNoPostBack.htm" />
+          <HelpTOCNode Title="PostBack Event" Url="html/E_BaseClasses_MasterBase_PostBack.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="dae89842-b53c-4eca-8d14-e8e2ff67b663" Title="MimeDecoder Class" Url="html/T_BaseClasses_MimeDecoder.htm">
+        <HelpTOCNode Id="331b6438-50c2-49dd-ba7b-b9d17e7591d9" Title="MimeDecoder Methods " Url="html/Methods_T_BaseClasses_MimeDecoder.htm">
+          <HelpTOCNode Title="MimeType Method " Url="html/M_BaseClasses_MimeDecoder_MimeType.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="99f8a59b-6ba7-4d45-b897-e74a933bbdc3" Title="PageTracker Class" Url="html/T_BaseClasses_PageTracker.htm">
+        <HelpTOCNode Id="040b28ed-b248-4cda-9f7b-29891136d5a7" Title="PageTracker Methods " Url="html/Methods_T_BaseClasses_PageTracker.htm">
+          <HelpTOCNode Title="trackPage Method " Url="html/M_BaseClasses_PageTracker_trackPage.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="316222cc-0f16-49e5-a9b7-1b7011f53c23" Title="PageTracker Properties " Url="html/Properties_T_BaseClasses_PageTracker.htm">
+          <HelpTOCNode Title="DefaultConnection Property " Url="html/P_BaseClasses_PageTracker_DefaultConnection.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="31f25feb-bbf7-46f1-8cb2-42202a2f94bd" Title="PageTracker Events" Url="html/Events_T_BaseClasses_PageTracker.htm">
+          <HelpTOCNode Title="PageTracked Event" Url="html/E_BaseClasses_PageTracker_PageTracked.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="480587a3-60b6-4a80-8a03-bfe28eb504b7" Title="ParallelDataHelper Class" Url="html/T_BaseClasses_ParallelDataHelper.htm">
+        <HelpTOCNode Id="46518a30-66ba-49db-8bce-0c405bfa878f" Title="ParallelDataHelper Fields" Url="html/Fields_T_BaseClasses_ParallelDataHelper.htm">
+          <HelpTOCNode Title="paramCount Field" Url="html/F_BaseClasses_ParallelDataHelper_paramCount.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f48e318a-fef0-4d1b-96c4-2742e464f2b0" Title="ParallelDataHelper Methods " Url="html/Methods_T_BaseClasses_ParallelDataHelper.htm">
+          <HelpTOCNode Title="addExecuteNonQuery Method " Url="html/M_BaseClasses_ParallelDataHelper_addExecuteNonQuery.htm" />
+          <HelpTOCNode Title="addFetchSingleValue Method " Url="html/M_BaseClasses_ParallelDataHelper_addFetchSingleValue.htm" />
+          <HelpTOCNode Title="addFillDataTable Method " Url="html/M_BaseClasses_ParallelDataHelper_addFillDataTable.htm" />
+          <HelpTOCNode Title="addGetSortedPage Method " Url="html/M_BaseClasses_ParallelDataHelper_addGetSortedPage.htm" />
+          <HelpTOCNode Title="executeParallelDBCall Method " Url="html/M_BaseClasses_ParallelDataHelper_executeParallelDBCall.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8ccaeaba-8b47-423e-87fb-36df82dc0789" Title="ParallelDataHelper Properties " Url="html/Properties_T_BaseClasses_ParallelDataHelper.htm">
+          <HelpTOCNode Title="DataFetched Property " Url="html/P_BaseClasses_ParallelDataHelper_DataFetched.htm" />
+          <HelpTOCNode Title="sqlHelper Property " Url="html/P_BaseClasses_ParallelDataHelper_sqlHelper.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7e6a88a6-bc3c-4a4a-bbf6-ca7af49fd08e" Title="ParallelDataHelper Events" Url="html/Events_T_BaseClasses_ParallelDataHelper.htm">
+          <HelpTOCNode Title="DataReady Event" Url="html/E_BaseClasses_ParallelDataHelper_DataReady.htm" />
+          <HelpTOCNode Title="handleInvalidObject Event" Url="html/E_BaseClasses_ParallelDataHelper_handleInvalidObject.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9e3be3ec-20bb-4b11-a87b-10f288237a6b" Title="QueryStringChanger Class" Url="html/T_BaseClasses_QueryStringChanger.htm">
+        <HelpTOCNode Id="75df666d-4d57-4dfa-9df9-e1d489b5a34e" Title="QueryStringChanger Methods " Url="html/Methods_T_BaseClasses_QueryStringChanger.htm">
+          <HelpTOCNode Title="Add Method " Url="html/M_BaseClasses_QueryStringChanger_Add.htm" />
+          <HelpTOCNode Title="redirectToMyUrl Method " Url="html/M_BaseClasses_QueryStringChanger_redirectToMyUrl.htm" />
+          <HelpTOCNode Title="Remove Method " Url="html/M_BaseClasses_QueryStringChanger_Remove.htm" />
+          <HelpTOCNode Title="ReplaceQuery Method " Url="html/M_BaseClasses_QueryStringChanger_ReplaceQuery.htm" />
+          <HelpTOCNode Title="ReturnReplaceQuery Method " Url="html/M_BaseClasses_QueryStringChanger_ReturnReplaceQuery.htm" />
+          <HelpTOCNode Title="ToString Method " Url="html/M_BaseClasses_QueryStringChanger_ToString.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="65538c2b-c9ea-41a8-a353-34522ae4e0c1" Title="QueryStringChanger Properties " Url="html/Properties_T_BaseClasses_QueryStringChanger.htm">
+          <HelpTOCNode Title="FullUrl Property " Url="html/P_BaseClasses_QueryStringChanger_FullUrl.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9fb8dc41-a2da-4432-a3a5-d1941ba6bc52" Title="Scripts Class" Url="html/T_BaseClasses_Scripts.htm">
+        <HelpTOCNode Id="c381d9a1-d4fe-46fd-ae36-68b6b2f7fca8" Title="Scripts Methods " Url="html/Methods_T_BaseClasses_Scripts.htm">
+          <HelpTOCNode Title="GenerateHash Method " Url="html/M_BaseClasses_Scripts_GenerateHash.htm" />
+          <HelpTOCNode Title="GZipSupported Method " Url="html/M_BaseClasses_Scripts_GZipSupported.htm" />
+          <HelpTOCNode Title="isModified Method " Url="html/M_BaseClasses_Scripts_isModified.htm" />
+          <HelpTOCNode Title="ScriptsURL Method " Url="html/M_BaseClasses_Scripts_ScriptsURL.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="024e5a0c-c590-4df2-b4f9-870f80ff4cfb" Title="Scripts Properties " Url="html/Properties_T_BaseClasses_Scripts.htm">
+          <HelpTOCNode Title="etag Property " Url="html/P_BaseClasses_Scripts_etag.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="17a56091-669c-4410-b908-0dc90cb72fc3" Title="Spider Class" Url="html/T_BaseClasses_Spider.htm">
+        <HelpTOCNode Id="2c0ee56e-4f0e-4b77-89ba-59dccb549f9b" Title="Spider Methods " Url="html/Methods_T_BaseClasses_Spider.htm">
+          <HelpTOCNode Title="spidercontrolforAllOfType Method " Url="html/M_BaseClasses_Spider_spidercontrolforAllOfType.htm" />
+          <HelpTOCNode Title="spidercontrolforType Method " Url="html/M_BaseClasses_Spider_spidercontrolforType.htm" />
+          <HelpTOCNode Title="spidercontrolforTypeArray Method " Url="html/M_BaseClasses_Spider_spidercontrolforTypeArray.htm" />
+          <HelpTOCNode Title="spiderPageforAllOfType Method " Url="html/M_BaseClasses_Spider_spiderPageforAllOfType.htm" />
+          <HelpTOCNode Title="spiderPageforType Method " Url="html/M_BaseClasses_Spider_spiderPageforType.htm" />
+          <HelpTOCNode Title="spiderPageforTypeArray Method " Url="html/M_BaseClasses_Spider_spiderPageforTypeArray.htm" />
+          <HelpTOCNode Id="24443aaf-822a-40f9-9179-0d03ecf97192" Title="spiderRemoveLiterals Method " Url="html/Overload_BaseClasses_Spider_spiderRemoveLiterals.htm">
+            <HelpTOCNode Title="spiderRemoveLiterals Method (Control)" Url="html/M_BaseClasses_Spider_spiderRemoveLiterals.htm" />
+            <HelpTOCNode Title="spiderRemoveLiterals Method (Page)" Url="html/M_BaseClasses_Spider_spiderRemoveLiterals_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="spiderStrictControlSetPresence Method " Url="html/M_BaseClasses_Spider_spiderStrictControlSetPresence.htm" />
+          <HelpTOCNode Title="spiderUpforType Method " Url="html/M_BaseClasses_Spider_spiderUpforType.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f987f75c-9894-419a-8cb1-0f4429661b82" Title="SQLHelper Class" Url="html/T_BaseClasses_SQLHelper.htm">
+        <HelpTOCNode Id="3efab778-aa36-475b-a3ec-3e84ca8bde30" Title="SQLHelper Methods " Url="html/Methods_T_BaseClasses_SQLHelper.htm">
+          <HelpTOCNode Title="checkDBObjectExists Method " Url="html/M_BaseClasses_SQLHelper_checkDBObjectExists.htm" />
+          <HelpTOCNode Title="createAdaptor Method " Url="html/M_BaseClasses_SQLHelper_createAdaptor.htm" />
+          <HelpTOCNode Title="createCommand Method " Url="html/M_BaseClasses_SQLHelper_createCommand.htm" />
+          <HelpTOCNode Title="createCommandBuilder Method " Url="html/M_BaseClasses_SQLHelper_createCommandBuilder.htm" />
+          <HelpTOCNode Title="createConnection Method " Url="html/M_BaseClasses_SQLHelper_createConnection.htm" />
+          <HelpTOCNode Title="createGetSortedPage Method " Url="html/M_BaseClasses_SQLHelper_createGetSortedPage.htm" />
+          <HelpTOCNode Id="2f478f5e-30cc-41ae-a121-4b42b2ec71ca" Title="createParameter Method " Url="html/Overload_BaseClasses_SQLHelper_createParameter.htm">
+            <HelpTOCNode Title="createParameter Method (DbParameter)" Url="html/M_BaseClasses_SQLHelper_createParameter.htm" />
+            <HelpTOCNode Title="createParameter Method (String, Object)" Url="html/M_BaseClasses_SQLHelper_createParameter_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="createTable Method " Url="html/M_BaseClasses_SQLHelper_createTable.htm" />
+          <HelpTOCNode Title="SafeGetSortedPageWrapper Method " Url="html/M_BaseClasses_SQLHelper_SafeGetSortedPageWrapper.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="85224b91-3519-4c3a-b969-757a29313858" Title="ckEditor Namespace" Url="html/N_ckEditor.htm">
+      <HelpTOCNode Id="b020c471-808f-4788-ad74-2957eea9bd85" Title="ckEditor Class" Url="html/T_ckEditor_ckEditor.htm">
+        <HelpTOCNode Id="1e947fca-ca94-44cc-8321-ef657c090639" Title="ckEditor Methods " Url="html/Methods_T_ckEditor_ckEditor.htm">
+          <HelpTOCNode Id="971a4d15-b77b-4881-ac30-71bd82d87cc4" Title="addIframeDialog Method " Url="html/Overload_ckEditor_ckEditor_addIframeDialog.htm">
+            <HelpTOCNode Title="addIframeDialog Method (IframeDialog, Boolean)" Url="html/M_ckEditor_ckEditor_addIframeDialog.htm" />
+            <HelpTOCNode Title="addIframeDialog Method (String, String, String, Int32, Int32, String, String)" Url="html/M_ckEditor_ckEditor_addIframeDialog_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="ResetToolbar Method " Url="html/M_ckEditor_ckEditor_ResetToolbar.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9332a181-1d20-46f3-9049-9a32452476ce" Title="ckEditor Properties " Url="html/Properties_T_ckEditor_ckEditor.htm">
+          <HelpTOCNode Title="attribute Property " Url="html/P_ckEditor_ckEditor_attribute.htm" />
+          <HelpTOCNode Title="BeforeClientDestroyed Property " Url="html/P_ckEditor_ckEditor_BeforeClientDestroyed.htm" />
+          <HelpTOCNode Title="BeforeReady Property " Url="html/P_ckEditor_ckEditor_BeforeReady.htm" />
+          <HelpTOCNode Title="ClientDestroyed Property " Url="html/P_ckEditor_ckEditor_ClientDestroyed.htm" />
+          <HelpTOCNode Title="ClientReady Property " Url="html/P_ckEditor_ckEditor_ClientReady.htm" />
+          <HelpTOCNode Title="DefaultHTML Property " Url="html/P_ckEditor_ckEditor_DefaultHTML.htm" />
+          <HelpTOCNode Title="DisableButtons Property " Url="html/P_ckEditor_ckEditor_DisableButtons.htm" />
+          <HelpTOCNode Title="DisableCancel Property " Url="html/P_ckEditor_ckEditor_DisableCancel.htm" />
+          <HelpTOCNode Title="DisableSave Property " Url="html/P_ckEditor_ckEditor_DisableSave.htm" />
+          <HelpTOCNode Title="Entermode Property " Url="html/P_ckEditor_ckEditor_Entermode.htm" />
+          <HelpTOCNode Title="Height Property " Url="html/P_ckEditor_ckEditor_Height.htm" />
+          <HelpTOCNode Title="ID Property " Url="html/P_ckEditor_ckEditor_ID.htm" />
+          <HelpTOCNode Title="myManager Property " Url="html/P_ckEditor_ckEditor_myManager.htm" />
+          <HelpTOCNode Title="Text Property " Url="html/P_ckEditor_ckEditor_Text.htm" />
+          <HelpTOCNode Title="Toolbar Property " Url="html/P_ckEditor_ckEditor_Toolbar.htm" />
+          <HelpTOCNode Title="Toolbarlayout Property " Url="html/P_ckEditor_ckEditor_Toolbarlayout.htm" />
+          <HelpTOCNode Title="ToolbarMode Property " Url="html/P_ckEditor_ckEditor_ToolbarMode.htm" />
+          <HelpTOCNode Title="Width Property " Url="html/P_ckEditor_ckEditor_Width.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9a1a44dd-803d-45f5-904e-891cc8134182" Title="ckEditor Events" Url="html/Events_T_ckEditor_ckEditor.htm">
+          <HelpTOCNode Title="Cancel_Clicked Event" Url="html/E_ckEditor_ckEditor_Cancel_Clicked.htm" />
+          <HelpTOCNode Title="Save_Clicked Event" Url="html/E_ckEditor_ckEditor_Save_Clicked.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="ckEditor.entermodetag Enumeration" Url="html/T_ckEditor_ckEditor_entermodetag.htm" />
+      <HelpTOCNode Title="ckEditor.ToolbarModes Enumeration" Url="html/T_ckEditor_ckEditor_ToolbarModes.htm" />
+      <HelpTOCNode Id="ac9ce35c-c342-4e9e-966b-82fdd8cd276c" Title="ckEditorManager Class" Url="html/T_ckEditor_ckEditorManager.htm">
+        <HelpTOCNode Id="dfad1a8c-a89a-4858-aff9-7fcbd52facf2" Title="ckEditorManager Properties " Url="html/Properties_T_ckEditor_ckEditorManager.htm">
+          <HelpTOCNode Title="ActiveEditor Property " Url="html/P_ckEditor_ckEditorManager_ActiveEditor.htm" />
+          <HelpTOCNode Title="lastActiveEditor Property " Url="html/P_ckEditor_ckEditorManager_lastActiveEditor.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f51232a8-172e-40b0-ae41-0101b56c5fd9" Title="IframeDialog Class" Url="html/T_ckEditor_IframeDialog.htm">
+        <HelpTOCNode Id="04e909a3-a97d-4a06-8ccd-4c924162fc94" Title="IframeDialog Properties " Url="html/Properties_T_ckEditor_IframeDialog.htm">
+          <HelpTOCNode Title="DialogAction Property " Url="html/P_ckEditor_IframeDialog_DialogAction.htm" />
+          <HelpTOCNode Title="DialogHeight Property " Url="html/P_ckEditor_IframeDialog_DialogHeight.htm" />
+          <HelpTOCNode Title="DialogTitle Property " Url="html/P_ckEditor_IframeDialog_DialogTitle.htm" />
+          <HelpTOCNode Title="DialogWidth Property " Url="html/P_ckEditor_IframeDialog_DialogWidth.htm" />
+          <HelpTOCNode Title="IconPath Property " Url="html/P_ckEditor_IframeDialog_IconPath.htm" />
+          <HelpTOCNode Title="IframeURL Property " Url="html/P_ckEditor_IframeDialog_IframeURL.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_ckEditor_IframeDialog_Name.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="289444fe-c086-44ce-8487-bf093426c604" Title="DTIAdminPanel Namespace" Url="html/N_DTIAdminPanel.htm">
+      <HelpTOCNode Id="224422ae-2186-43f7-9c82-304bdcf42e61" Title="dsDTIAdminPanel Class" Url="html/T_DTIAdminPanel_dsDTIAdminPanel.htm">
+        <HelpTOCNode Id="b21baf99-0f1a-488f-a586-4fbbc9b9742b" Title="dsDTIAdminPanel Properties " Url="html/Properties_T_DTIAdminPanel_dsDTIAdminPanel.htm">
+          <HelpTOCNode Title="DTIDynamicPage Property " Url="html/P_DTIAdminPanel_dsDTIAdminPanel_DTIDynamicPage.htm" />
+          <HelpTOCNode Title="DTIPageHeiarchy Property " Url="html/P_DTIAdminPanel_dsDTIAdminPanel_DTIPageHeiarchy.htm" />
+          <HelpTOCNode Title="DTISiteMap Property " Url="html/P_DTIAdminPanel_dsDTIAdminPanel_DTISiteMap.htm" />
+          <HelpTOCNode Title="DTIUsers Property " Url="html/P_DTIAdminPanel_dsDTIAdminPanel_DTIUsers.htm" />
+          <HelpTOCNode Title="MenuItem Property " Url="html/P_DTIAdminPanel_dsDTIAdminPanel_MenuItem.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c5d2a2b6-d116-43d6-9895-af56fa80b3b7" Title="DTIAdminPanel Class" Url="html/T_DTIAdminPanel_DTIAdminPanel.htm">
+        <HelpTOCNode Id="b8e2d02f-1ddc-45e9-9ea4-8af90d276523" Title="DTIAdminPanel Properties " Url="html/Properties_T_DTIAdminPanel_DTIAdminPanel.htm">
+          <HelpTOCNode Title="adminImageHeight Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_adminImageHeight.htm" />
+          <HelpTOCNode Title="adminImageUrl Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_adminImageUrl.htm" />
+          <HelpTOCNode Title="adminImageWidth Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_adminImageWidth.htm" />
+          <HelpTOCNode Title="CssTheme Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_CssTheme.htm" />
+          <HelpTOCNode Title="EditOn Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_EditOn.htm" />
+          <HelpTOCNode Title="FixedScrollPosition Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_FixedScrollPosition.htm" />
+          <HelpTOCNode Title="LayoutOn Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_LayoutOn.htm" />
+          <HelpTOCNode Title="LoggedIn Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_LoggedIn.htm" />
+          <HelpTOCNode Title="menuImageHeight Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_menuImageHeight.htm" />
+          <HelpTOCNode Title="menuImageUrl Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_menuImageUrl.htm" />
+          <HelpTOCNode Title="menuImageWidth Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_menuImageWidth.htm" />
+          <HelpTOCNode Title="recycImageHeight Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_recycImageHeight.htm" />
+          <HelpTOCNode Title="recycImageUrl Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_recycImageUrl.htm" />
+          <HelpTOCNode Title="recycImageWidth Property " Url="html/P_DTIAdminPanel_DTIAdminPanel_recycImageWidth.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="b5985a74-5a78-4352-a150-7cdabb41e5fa" Title="LoginControl Class" Url="html/T_DTIAdminPanel_LoginControl.htm">
+        <HelpTOCNode Id="4e21a8c0-e3a1-464b-b357-b5b3e5ae0662" Title="LoginControl Methods " Url="html/Methods_T_DTIAdminPanel_LoginControl.htm">
+          <HelpTOCNode Title="CreateMD5Hash Method " Url="html/M_DTIAdminPanel_LoginControl_CreateMD5Hash.htm" />
+          <HelpTOCNode Title="Failed Method " Url="html/M_DTIAdminPanel_LoginControl_Failed.htm" />
+          <HelpTOCNode Title="isHashedValue Method " Url="html/M_DTIAdminPanel_LoginControl_isHashedValue.htm" />
+          <HelpTOCNode Title="Login Method " Url="html/M_DTIAdminPanel_LoginControl_Login.htm" />
+          <HelpTOCNode Title="Logout Method " Url="html/M_DTIAdminPanel_LoginControl_Logout.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7cd94410-d1ed-43e5-bc84-b3c0f870c69c" Title="LoginControl Properties " Url="html/Properties_T_DTIAdminPanel_LoginControl.htm">
+          <HelpTOCNode Title="AutoRedirect Property " Url="html/P_DTIAdminPanel_LoginControl_AutoRedirect.htm" />
+          <HelpTOCNode Title="CheckLoginManually Property " Url="html/P_DTIAdminPanel_LoginControl_CheckLoginManually.htm" />
+          <HelpTOCNode Title="EnablePasswordStrength Property " Url="html/P_DTIAdminPanel_LoginControl_EnablePasswordStrength.htm" />
+          <HelpTOCNode Title="EncryptPassword Property " Url="html/P_DTIAdminPanel_LoginControl_EncryptPassword.htm" />
+          <HelpTOCNode Title="isLoggedIn Property " Url="html/P_DTIAdminPanel_LoginControl_isLoggedIn.htm" />
+          <HelpTOCNode Title="LoginAndEditOn Property " Url="html/P_DTIAdminPanel_LoginControl_LoginAndEditOn.htm" />
+          <HelpTOCNode Title="LoginMode Property " Url="html/P_DTIAdminPanel_LoginControl_LoginMode.htm" />
+          <HelpTOCNode Title="Username Property " Url="html/P_DTIAdminPanel_LoginControl_Username.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0b2a89f7-99fa-452e-a771-13cc1251824d" Title="LoginControl Events" Url="html/Events_T_DTIAdminPanel_LoginControl.htm">
+          <HelpTOCNode Title="attemptLogin Event" Url="html/E_DTIAdminPanel_LoginControl_attemptLogin.htm" />
+          <HelpTOCNode Title="LoggedIn Event" Url="html/E_DTIAdminPanel_LoginControl_LoggedIn.htm" />
+          <HelpTOCNode Title="LoggedOut Event" Url="html/E_DTIAdminPanel_LoginControl_LoggedOut.htm" />
+          <HelpTOCNode Title="LoginFailed Event" Url="html/E_DTIAdminPanel_LoginControl_LoginFailed.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="74e461c9-f2d3-4403-b57b-0a42231fc049" Title="Menu Class" Url="html/T_DTIAdminPanel_Menu.htm">
+        <HelpTOCNode Id="1795cdaf-aa57-4669-9d5e-e2e590bad9dc" Title="Menu Properties " Url="html/Properties_T_DTIAdminPanel_Menu.htm">
+          <HelpTOCNode Title="DepthOfMenu Property " Url="html/P_DTIAdminPanel_Menu_DepthOfMenu.htm" />
+          <HelpTOCNode Title="FixedDepthtravel Property " Url="html/P_DTIAdminPanel_Menu_FixedDepthtravel.htm" />
+          <HelpTOCNode Title="MenuItem Property " Url="html/P_DTIAdminPanel_Menu_MenuItem.htm" />
+          <HelpTOCNode Title="MenuItems Property " Url="html/P_DTIAdminPanel_Menu_MenuItems.htm" />
+          <HelpTOCNode Title="SelectedCss Property " Url="html/P_DTIAdminPanel_Menu_SelectedCss.htm" />
+          <HelpTOCNode Title="SelectParentPage Property " Url="html/P_DTIAdminPanel_Menu_SelectParentPage.htm" />
+          <HelpTOCNode Title="StartDepth Property " Url="html/P_DTIAdminPanel_Menu_StartDepth.htm" />
+          <HelpTOCNode Title="Template Property " Url="html/P_DTIAdminPanel_Menu_Template.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="6f4c2128-6d89-4ee6-913a-6927cd6735d6" Title="MenuItem Class" Url="html/T_DTIAdminPanel_MenuItem.htm">
+        <HelpTOCNode Id="eb95031d-75be-4c7f-ad4b-26a783cc091d" Title="MenuItem Methods " Url="html/Methods_T_DTIAdminPanel_MenuItem.htm">
+          <HelpTOCNode Title="RenderMenuItem Method " Url="html/M_DTIAdminPanel_MenuItem_RenderMenuItem.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5bf0597a-3c74-4866-ac4e-f19ed1a207d3" Title="MenuItem Properties " Url="html/Properties_T_DTIAdminPanel_MenuItem.htm">
+          <HelpTOCNode Title="DepthOfMenu Property " Url="html/P_DTIAdminPanel_MenuItem_DepthOfMenu.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c24eb938-ff5f-4dc6-bd5f-e2838bc7faaa" Title="DTIContentManagement Namespace" Url="html/N_DTIContentManagement.htm">
+      <HelpTOCNode Id="0bedd4ac-b531-4601-a2d4-d09a58b39380" Title="dsEditPanel Class" Url="html/T_DTIContentManagement_dsEditPanel.htm">
+        <HelpTOCNode Id="0a99cc19-1334-4017-8576-c609f31404dc" Title="dsEditPanel Properties " Url="html/Properties_T_DTIContentManagement_dsEditPanel.htm">
+          <HelpTOCNode Title="DTIContentManager Property " Url="html/P_DTIContentManagement_dsEditPanel_DTIContentManager.htm" />
+          <HelpTOCNode Title="DTIContentManagerHistory Property " Url="html/P_DTIContentManagement_dsEditPanel_DTIContentManagerHistory.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d1b350e6-577d-4200-9dfe-a097ef55a354" Title="EditPanel Class" Url="html/T_DTIContentManagement_EditPanel.htm">
+        <HelpTOCNode Id="2b772af0-03c1-46d1-84d3-777fa5cc4234" Title="EditPanel Fields" Url="html/Fields_T_DTIContentManagement_EditPanel.htm">
+          <HelpTOCNode Title="defaultText Field" Url="html/F_DTIContentManagement_EditPanel_defaultText.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8cbbbbb8-a699-45d8-8005-925d174c6c7f" Title="EditPanel Methods " Url="html/Methods_T_DTIContentManagement_EditPanel.htm">
+          <HelpTOCNode Title="setText Method " Url="html/M_DTIContentManagement_EditPanel_setText.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="35970d36-d8cb-4eb3-9f72-4b42c9584054" Title="EditPanel Properties " Url="html/Properties_T_DTIContentManagement_EditPanel.htm">
+          <HelpTOCNode Title="htmlEdit Property " Url="html/P_DTIContentManagement_EditPanel_htmlEdit.htm" />
+          <HelpTOCNode Title="MediaRow Property " Url="html/P_DTIContentManagement_EditPanel_MediaRow.htm" />
+          <HelpTOCNode Title="Menu_Icon_Url Property " Url="html/P_DTIContentManagement_EditPanel_Menu_Icon_Url.htm" />
+          <HelpTOCNode Title="SaveMediaRow Property " Url="html/P_DTIContentManagement_EditPanel_SaveMediaRow.htm" />
+          <HelpTOCNode Title="ShowBorder Property " Url="html/P_DTIContentManagement_EditPanel_ShowBorder.htm" />
+          <HelpTOCNode Title="ShowCancelButton Property " Url="html/P_DTIContentManagement_EditPanel_ShowCancelButton.htm" />
+          <HelpTOCNode Title="Text Property " Url="html/P_DTIContentManagement_EditPanel_Text.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="95ae55b8-5efa-4ffc-80bf-d877d22737c5" Title="EditPanel Events" Url="html/Events_T_DTIContentManagement_EditPanel.htm">
+          <HelpTOCNode Title="CancelClicked Event" Url="html/E_DTIContentManagement_EditPanel_CancelClicked.htm" />
+          <HelpTOCNode Title="SaveClicked Event" Url="html/E_DTIContentManagement_EditPanel_SaveClicked.htm" />
+          <HelpTOCNode Title="textSet Event" Url="html/E_DTIContentManagement_EditPanel_textSet.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="48c3398d-e27f-4884-a308-f20fda59bcc2" Title="PageSummary Class" Url="html/T_DTIContentManagement_PageSummary.htm">
+        <HelpTOCNode Title="PageSummary Constructor " Url="html/M_DTIContentManagement_PageSummary__ctor.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="62e1b950-d658-413c-aa8d-2ad04c427978" Title="DTIGallery Namespace" Url="html/N_DTIGallery.htm">
+      <HelpTOCNode Id="fe671ae9-ba23-417e-86f2-9d7d892b003a" Title="dsGallery Class" Url="html/T_DTIGallery_dsGallery.htm">
+        <HelpTOCNode Id="e524368b-8def-46a4-b945-5cb2da4e9869" Title="dsGallery Properties " Url="html/Properties_T_DTIGallery_dsGallery.htm">
+          <HelpTOCNode Title="DTIGallery Property " Url="html/P_DTIGallery_dsGallery_DTIGallery.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="cc5dd0fe-beac-43f8-9712-a29f99956d86" Title="DTIGalleryControl Class" Url="html/T_DTIGallery_DTIGalleryControl.htm">
+        <HelpTOCNode Id="dbb5682f-128a-4766-9f5d-ef72ad172aea" Title="DTIGalleryControl Methods " Url="html/Methods_T_DTIGallery_DTIGalleryControl.htm">
+          <HelpTOCNode Title="addUploadLink Method " Url="html/M_DTIGallery_DTIGalleryControl_addUploadLink.htm" />
+          <HelpTOCNode Title="clearUploads Method " Url="html/M_DTIGallery_DTIGalleryControl_clearUploads.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5173bdb6-1e78-48ca-81f8-9e38b67138a0" Title="DTIGalleryControl Properties " Url="html/Properties_T_DTIGallery_DTIGalleryControl.htm">
+          <HelpTOCNode Title="Back_Button_CSSClass Property " Url="html/P_DTIGallery_DTIGalleryControl_Back_Button_CSSClass.htm" />
+          <HelpTOCNode Title="Back_Button_Image_URL Property " Url="html/P_DTIGallery_DTIGalleryControl_Back_Button_Image_URL.htm" />
+          <HelpTOCNode Title="CSS_file Property " Url="html/P_DTIGallery_DTIGalleryControl_CSS_file.htm" />
+          <HelpTOCNode Title="CurrentPage Property " Url="html/P_DTIGallery_DTIGalleryControl_CurrentPage.htm" />
+          <HelpTOCNode Title="First_Button_CSSClass Property " Url="html/P_DTIGallery_DTIGalleryControl_First_Button_CSSClass.htm" />
+          <HelpTOCNode Title="First_Button_Image_URL Property " Url="html/P_DTIGallery_DTIGalleryControl_First_Button_Image_URL.htm" />
+          <HelpTOCNode Title="Forward_Button_CSSClass Property " Url="html/P_DTIGallery_DTIGalleryControl_Forward_Button_CSSClass.htm" />
+          <HelpTOCNode Title="Forward_Button_Image_URL Property " Url="html/P_DTIGallery_DTIGalleryControl_Forward_Button_Image_URL.htm" />
+          <HelpTOCNode Title="GalleryHeight Property " Url="html/P_DTIGallery_DTIGalleryControl_GalleryHeight.htm" />
+          <HelpTOCNode Title="GalleryWidth Property " Url="html/P_DTIGallery_DTIGalleryControl_GalleryWidth.htm" />
+          <HelpTOCNode Title="jsonControl Property " Url="html/P_DTIGallery_DTIGalleryControl_jsonControl.htm" />
+          <HelpTOCNode Title="Last_Button_CSSClass Property " Url="html/P_DTIGallery_DTIGalleryControl_Last_Button_CSSClass.htm" />
+          <HelpTOCNode Title="Last_Button_Image_URL Property " Url="html/P_DTIGallery_DTIGalleryControl_Last_Button_Image_URL.htm" />
+          <HelpTOCNode Title="Page_Button_CSSClass Property " Url="html/P_DTIGallery_DTIGalleryControl_Page_Button_CSSClass.htm" />
+          <HelpTOCNode Title="Page_Button_Image_URL Property " Url="html/P_DTIGallery_DTIGalleryControl_Page_Button_Image_URL.htm" />
+          <HelpTOCNode Title="Page_Textbox_CSSClass Property " Url="html/P_DTIGallery_DTIGalleryControl_Page_Textbox_CSSClass.htm" />
+          <HelpTOCNode Title="PageHolder Property " Url="html/P_DTIGallery_DTIGalleryControl_PageHolder.htm" />
+          <HelpTOCNode Title="Pages_Label_CSSClass Property " Url="html/P_DTIGallery_DTIGalleryControl_Pages_Label_CSSClass.htm" />
+          <HelpTOCNode Title="ShowFirstAndLastButtons Property " Url="html/P_DTIGallery_DTIGalleryControl_ShowFirstAndLastButtons.htm" />
+          <HelpTOCNode Title="ShowPaging Property " Url="html/P_DTIGallery_DTIGalleryControl_ShowPaging.htm" />
+          <HelpTOCNode Title="ShowSearching Property " Url="html/P_DTIGallery_DTIGalleryControl_ShowSearching.htm" />
+          <HelpTOCNode Title="ShowUpload Property " Url="html/P_DTIGallery_DTIGalleryControl_ShowUpload.htm" />
+          <HelpTOCNode Title="TotalPages Property " Url="html/P_DTIGallery_DTIGalleryControl_TotalPages.htm" />
+          <HelpTOCNode Title="WaitingImageURL Property " Url="html/P_DTIGallery_DTIGalleryControl_WaitingImageURL.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e485c49d-3900-4357-b3a1-fb34c3e9aecf" Title="DTIGallerySharedVariables Class" Url="html/T_DTIGallery_DTIGallerySharedVariables.htm">
+        <HelpTOCNode Id="72b30e80-e54a-463b-be72-0bd3f87590b7" Title="DTIGallerySharedVariables Properties " Url="html/Properties_T_DTIGallery_DTIGallerySharedVariables.htm">
+          <HelpTOCNode Title="dsGall Property " Url="html/P_DTIGallery_DTIGallerySharedVariables_dsGall.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7a1cdf4d-2d7b-4767-b65c-b1bb18a288d6" Title="DTIImageGallery Class" Url="html/T_DTIGallery_DTIImageGallery.htm">
+        <HelpTOCNode Title="DTIImageGallery Constructor " Url="html/M_DTIGallery_DTIImageGallery__ctor.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bc1ca5d3-647f-4285-9920-edace7e442fe" Title="DTIMediaGallery Class" Url="html/T_DTIGallery_DTIMediaGallery.htm">
+        <HelpTOCNode Id="09995d5f-620b-45df-9272-451da79b4c73" Title="DTIMediaGallery Fields" Url="html/Fields_T_DTIGallery_DTIMediaGallery.htm">
+          <HelpTOCNode Title="callbacks Field" Url="html/F_DTIGallery_DTIMediaGallery_callbacks.htm" />
+          <HelpTOCNode Title="options Field" Url="html/F_DTIGallery_DTIMediaGallery_options.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4d6468c7-838f-4998-a767-697efc35483d" Title="DTIMediaGallery Properties " Url="html/Properties_T_DTIGallery_DTIMediaGallery.htm">
+          <HelpTOCNode Title="mediaSearcher Property " Url="html/P_DTIGallery_DTIMediaGallery_mediaSearcher.htm" />
+          <HelpTOCNode Title="ReturnResultsOnEmptySearch Property " Url="html/P_DTIGallery_DTIMediaGallery_ReturnResultsOnEmptySearch.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="6224d5f7-64e8-4579-b75a-8a8d39de1e00" Title="DTISocialGallery Class" Url="html/T_DTIGallery_DTISocialGallery.htm">
+        <HelpTOCNode Id="4e74e3db-5651-4dcd-9b9e-f435f5769809" Title="DTISocialGallery Fields" Url="html/Fields_T_DTIGallery_DTISocialGallery.htm">
+          <HelpTOCNode Title="DataFetched Field" Url="html/F_DTIGallery_DTISocialGallery_DataFetched.htm" />
+          <HelpTOCNode Title="dataHelper Field" Url="html/F_DTIGallery_DTISocialGallery_dataHelper.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="777aa9f1-8110-41b0-8a5e-50876d45d172" Title="DTISocialGallery Properties " Url="html/Properties_T_DTIGallery_DTISocialGallery.htm">
+          <HelpTOCNode Title="GalleryEdit Property " Url="html/P_DTIGallery_DTISocialGallery_GalleryEdit.htm" />
+          <HelpTOCNode Title="Menu_Icon_Url Property " Url="html/P_DTIGallery_DTISocialGallery_Menu_Icon_Url.htm" />
+          <HelpTOCNode Title="ShowRatingOnCaption Property " Url="html/P_DTIGallery_DTISocialGallery_ShowRatingOnCaption.htm" />
+          <HelpTOCNode Title="ShowRatingOnThumbnail Property " Url="html/P_DTIGallery_DTISocialGallery_ShowRatingOnThumbnail.htm" />
+          <HelpTOCNode Title="ShowSharingOnCaption Property " Url="html/P_DTIGallery_DTISocialGallery_ShowSharingOnCaption.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d3612cf3-d1cf-45e8-82f2-675412d25f9e" Title="DTIVideoGallery Class" Url="html/T_DTIGallery_DTIVideoGallery.htm">
+        <HelpTOCNode Title="DTIVideoGallery Constructor " Url="html/M_DTIGallery_DTIVideoGallery__ctor.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1423d746-d371-44a2-93cf-46e94a24413c" Title="DTIGoogleCalendar Namespace" Url="html/N_DTIGoogleCalendar.htm">
+      <HelpTOCNode Id="254f1dec-5863-4f99-8f2f-6f339706541c" Title="dsGoogleCal Class" Url="html/T_DTIGoogleCalendar_dsGoogleCal.htm">
+        <HelpTOCNode Id="15346b1f-ce90-4ea5-af42-7a2630f51349" Title="dsGoogleCal Properties " Url="html/Properties_T_DTIGoogleCalendar_dsGoogleCal.htm">
+          <HelpTOCNode Title="DTIGoogleCalendar Property " Url="html/P_DTIGoogleCalendar_dsGoogleCal_DTIGoogleCalendar.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="1a806d6b-6763-4b12-944c-9c27434944c4" Title="DTIGoogleCal Class" Url="html/T_DTIGoogleCalendar_DTIGoogleCal.htm">
+        <HelpTOCNode Id="21d3acee-5f7e-4efc-b85b-f628013c7057" Title="DTIGoogleCal Fields" Url="html/Fields_T_DTIGoogleCalendar_DTIGoogleCal.htm">
+          <HelpTOCNode Title="DataFetched Field" Url="html/F_DTIGoogleCalendar_DTIGoogleCal_DataFetched.htm" />
+          <HelpTOCNode Title="FrameHeight Field" Url="html/F_DTIGoogleCalendar_DTIGoogleCal_FrameHeight.htm" />
+          <HelpTOCNode Title="FrameWidth Field" Url="html/F_DTIGoogleCalendar_DTIGoogleCal_FrameWidth.htm" />
+          <HelpTOCNode Title="googleCalEditControl Field" Url="html/F_DTIGoogleCalendar_DTIGoogleCal_googleCalEditControl.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f1907065-731c-4432-bfc8-1db14be2e057" Title="DTIGoogleCal Methods " Url="html/Methods_T_DTIGoogleCalendar_DTIGoogleCal.htm">
+          <HelpTOCNode Title="setCalendar Method " Url="html/M_DTIGoogleCalendar_DTIGoogleCal_setCalendar.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e717a0a9-517b-4ab7-b410-50441535c3d0" Title="DTIGoogleCal Properties " Url="html/Properties_T_DTIGoogleCalendar_DTIGoogleCal.htm">
+          <HelpTOCNode Title="Menu_Icon_Url Property " Url="html/P_DTIGoogleCalendar_DTIGoogleCal_Menu_Icon_Url.htm" />
+          <HelpTOCNode Title="src Property " Url="html/P_DTIGoogleCalendar_DTIGoogleCal_src.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="02243236-314f-4399-bcc9-343236d34c68" Title="DTIImageManager Namespace" Url="html/N_DTIImageManager.htm">
+      <HelpTOCNode Id="1acf1e12-4feb-4bfd-8624-82dd494e367e" Title="dsImageManager Class" Url="html/T_DTIImageManager_dsImageManager.htm">
+        <HelpTOCNode Id="c39c92c2-c1bb-49b7-b08f-0dd3a1f64d83" Title="dsImageManager Properties " Url="html/Properties_T_DTIImageManager_dsImageManager.htm">
+          <HelpTOCNode Title="DTIImageManager Property " Url="html/P_DTIImageManager_dsImageManager_DTIImageManager.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8f8efa97-dbf2-4a13-a402-eabcebe5baba" Title="ImageEditorControl Class" Url="html/T_DTIImageManager_ImageEditorControl.htm">
+        <HelpTOCNode Id="584fd4f0-2e6a-48e7-a469-c79ae6ee5dcd" Title="ImageEditorControl Methods " Url="html/Methods_T_DTIImageManager_ImageEditorControl.htm">
+          <HelpTOCNode Title="save Method " Url="html/M_DTIImageManager_ImageEditorControl_save.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e820e632-9dd9-4558-a00a-17a39e741e81" Title="ImageEditorControl Properties " Url="html/Properties_T_DTIImageManager_ImageEditorControl.htm">
+          <HelpTOCNode Title="ImageRow Property " Url="html/P_DTIImageManager_ImageEditorControl_ImageRow.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="4df97a4f-ca0e-4efd-956b-e29682a72d3c" Title="ImageManipulator Class" Url="html/T_DTIImageManager_ImageManipulator.htm">
+        <HelpTOCNode Id="f1cae8d1-4ab5-458e-b912-7c1c5d9653b3" Title="ImageManipulator Fields" Url="html/Fields_T_DTIImageManager_ImageManipulator.htm">
+          <HelpTOCNode Title="imageChanged Field" Url="html/F_DTIImageManager_ImageManipulator_imageChanged.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="731050c2-6ad3-43d6-8dc9-293d09681254" Title="ImageManipulator Methods " Url="html/Methods_T_DTIImageManager_ImageManipulator.htm">
+          <HelpTOCNode Title="RotateImage Method " Url="html/M_DTIImageManager_ImageManipulator_RotateImage.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7a4b3430-989e-49e5-b9a9-878af8828379" Title="ImageManipulator Properties " Url="html/Properties_T_DTIImageManager_ImageManipulator.htm">
+          <HelpTOCNode Title="imageRow Property " Url="html/P_DTIImageManager_ImageManipulator_imageRow.htm" />
+          <HelpTOCNode Title="IsIframe Property " Url="html/P_DTIImageManager_ImageManipulator_IsIframe.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7c9e94ac-b522-4958-bbb5-6292ce2dc9ab" Title="ImageThumb Class" Url="html/T_DTIImageManager_ImageThumb.htm">
+        <HelpTOCNode Id="69c608f7-96a6-43fe-ad23-21adea002d04" Title="ImageThumb Properties " Url="html/Properties_T_DTIImageManager_ImageThumb.htm">
+          <HelpTOCNode Title="ExpandURL Property " Url="html/P_DTIImageManager_ImageThumb_ExpandURL.htm" />
+          <HelpTOCNode Title="HighslideDisplayMode Property " Url="html/P_DTIImageManager_ImageThumb_HighslideDisplayMode.htm" />
+          <HelpTOCNode Title="ImageId Property " Url="html/P_DTIImageManager_ImageThumb_ImageId.htm" />
+          <HelpTOCNode Title="MaxThumbHeight Property " Url="html/P_DTIImageManager_ImageThumb_MaxThumbHeight.htm" />
+          <HelpTOCNode Title="MaxThumbWidth Property " Url="html/P_DTIImageManager_ImageThumb_MaxThumbWidth.htm" />
+          <HelpTOCNode Title="RefreshImage Property " Url="html/P_DTIImageManager_ImageThumb_RefreshImage.htm" />
+          <HelpTOCNode Title="ThumbSize Property " Url="html/P_DTIImageManager_ImageThumb_ThumbSize.htm" />
+          <HelpTOCNode Title="ThumbURL Property " Url="html/P_DTIImageManager_ImageThumb_ThumbURL.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="61e479b1-058f-419a-aa14-5e592813f662" Title="ImageUploaderControl Class" Url="html/T_DTIImageManager_ImageUploaderControl.htm">
+        <HelpTOCNode Id="d432f476-03f4-4244-8e88-b639e1f21b60" Title="ImageUploaderControl Methods " Url="html/Methods_T_DTIImageManager_ImageUploaderControl.htm">
+          <HelpTOCNode Id="000fa626-7734-4107-a04c-a11b0911e6cc" Title="pushImage Method " Url="html/Overload_DTIImageManager_ImageUploaderControl_pushImage.htm">
+            <HelpTOCNode Title="pushImage Method (String, dsImageManager., Int32)" Url="html/M_DTIImageManager_ImageUploaderControl_pushImage.htm" />
+            <HelpTOCNode Title="pushImage Method (HttpPostedFile, dsImageManager., Int32)" Url="html/M_DTIImageManager_ImageUploaderControl_pushImage_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="db6c0635-8dd6-44a6-a04f-9f5902c9ed22" Title="ImageUploaderControl Properties " Url="html/Properties_T_DTIImageManager_ImageUploaderControl.htm">
+          <HelpTOCNode Title="User_Id Property " Url="html/P_DTIImageManager_ImageUploaderControl_User_Id.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="77b3cfeb-c0a5-48de-84c0-ce61e7cd72ce" Title="SharedImageVariables Class" Url="html/T_DTIImageManager_SharedImageVariables.htm">
+        <HelpTOCNode Id="da3c7cf5-2f12-4249-9728-755826212ec2" Title="SharedImageVariables Properties " Url="html/Properties_T_DTIImageManager_SharedImageVariables.htm">
+          <HelpTOCNode Title="myImages Property " Url="html/P_DTIImageManager_SharedImageVariables_myImages.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="698c812a-a5ca-43a7-8399-dfaee0767dae" Title="ViewImage Class" Url="html/T_DTIImageManager_ViewImage.htm">
+        <HelpTOCNode Id="51804d34-45f9-4d36-a5a4-76275695188c" Title="ViewImage Fields" Url="html/Fields_T_DTIImageManager_ViewImage.htm">
+          <HelpTOCNode Title="LastModified Field" Url="html/F_DTIImageManager_ViewImage_LastModified.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="fd3ff818-ea59-42b9-9e3b-b871b8a7af8e" Title="ViewImage Methods " Url="html/Methods_T_DTIImageManager_ViewImage.htm">
+          <HelpTOCNode Title="GenerateHash Method " Url="html/M_DTIImageManager_ViewImage_GenerateHash.htm" />
+          <HelpTOCNode Title="getDimention Method " Url="html/M_DTIImageManager_ViewImage_getDimention.htm" />
+          <HelpTOCNode Title="getHeightWidth Method " Url="html/M_DTIImageManager_ViewImage_getHeightWidth.htm" />
+          <HelpTOCNode Title="getZoomableThmb Method " Url="html/M_DTIImageManager_ViewImage_getZoomableThmb.htm" />
+          <HelpTOCNode Title="GZipSupported Method " Url="html/M_DTIImageManager_ViewImage_GZipSupported.htm" />
+          <HelpTOCNode Title="isModified Method " Url="html/M_DTIImageManager_ViewImage_isModified.htm" />
+          <HelpTOCNode Title="processImageArr Method " Url="html/M_DTIImageManager_ViewImage_processImageArr.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e44ac119-3fd6-4785-9184-69910f4f8851" Title="ViewImage Properties " Url="html/Properties_T_DTIImageManager_ViewImage.htm">
+          <HelpTOCNode Title="etag Property " Url="html/P_DTIImageManager_ViewImage_etag.htm" />
+          <HelpTOCNode Title="img_id Property " Url="html/P_DTIImageManager_ViewImage_img_id.htm" />
+          <HelpTOCNode Title="maxHeight Property " Url="html/P_DTIImageManager_ViewImage_maxHeight.htm" />
+          <HelpTOCNode Title="maxWidth Property " Url="html/P_DTIImageManager_ViewImage_maxWidth.htm" />
+          <HelpTOCNode Title="reqheight Property " Url="html/P_DTIImageManager_ViewImage_reqheight.htm" />
+          <HelpTOCNode Title="reqwidth Property " Url="html/P_DTIImageManager_ViewImage_reqwidth.htm" />
+          <HelpTOCNode Title="sizeHeight Property " Url="html/P_DTIImageManager_ViewImage_sizeHeight.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="685b4e8f-ffd4-438d-bae2-b33a81626d38" Title="DTIMapControl Namespace" Url="html/N_DTIMapControl.htm">
+      <HelpTOCNode Id="bb536e91-d2d7-4b4c-9949-d9a3285b88ba" Title="dsMapControl Class" Url="html/T_DTIMapControl_dsMapControl.htm">
+        <HelpTOCNode Id="e775ce4e-dbf7-405d-9797-8b60858afb9a" Title="dsMapControl Properties " Url="html/Properties_T_DTIMapControl_dsMapControl.htm">
+          <HelpTOCNode Title="DTIGoogleMapKey Property " Url="html/P_DTIMapControl_dsMapControl_DTIGoogleMapKey.htm" />
+          <HelpTOCNode Title="DTIMapControl Property " Url="html/P_DTIMapControl_dsMapControl_DTIMapControl.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e9a58bd9-d2d1-41b2-af95-f92db84af21a" Title="DTIMapServerControl Class" Url="html/T_DTIMapControl_DTIMapServerControl.htm">
+        <HelpTOCNode Id="3aa9d4f4-897b-4636-a077-ab6fc65b4d40" Title="DTIMapServerControl Fields" Url="html/Fields_T_DTIMapControl_DTIMapServerControl.htm">
+          <HelpTOCNode Title="DataFetched Field" Url="html/F_DTIMapControl_DTIMapServerControl_DataFetched.htm" />
+          <HelpTOCNode Title="DirectionHeight Field" Url="html/F_DTIMapControl_DTIMapServerControl_DirectionHeight.htm" />
+          <HelpTOCNode Title="DirectionWidth Field" Url="html/F_DTIMapControl_DTIMapServerControl_DirectionWidth.htm" />
+          <HelpTOCNode Title="mapEditControl Field" Url="html/F_DTIMapControl_DTIMapServerControl_mapEditControl.htm" />
+          <HelpTOCNode Title="mapViewControl Field" Url="html/F_DTIMapControl_DTIMapServerControl_mapViewControl.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="c50b4826-bda4-4051-8419-54775d28d05d" Title="DTIMapServerControl Methods " Url="html/Methods_T_DTIMapControl_DTIMapServerControl.htm">
+          <HelpTOCNode Title="saveAddress Method " Url="html/M_DTIMapControl_DTIMapServerControl_saveAddress.htm" />
+          <HelpTOCNode Title="saveGoogleKey Method " Url="html/M_DTIMapControl_DTIMapServerControl_saveGoogleKey.htm" />
+          <HelpTOCNode Title="setAddress Method " Url="html/M_DTIMapControl_DTIMapServerControl_setAddress.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="cfebcec2-d193-4ba8-b95f-df9a2f848af9" Title="DTIMapServerControl Properties " Url="html/Properties_T_DTIMapControl_DTIMapServerControl.htm">
+          <HelpTOCNode Title="Address Property " Url="html/P_DTIMapControl_DTIMapServerControl_Address.htm" />
+          <HelpTOCNode Title="AddressTitle Property " Url="html/P_DTIMapControl_DTIMapServerControl_AddressTitle.htm" />
+          <HelpTOCNode Title="GoogleKey Property " Url="html/P_DTIMapControl_DTIMapServerControl_GoogleKey.htm" />
+          <HelpTOCNode Title="Menu_Icon_Url Property " Url="html/P_DTIMapControl_DTIMapServerControl_Menu_Icon_Url.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ef0d39e4-2380-4038-9f70-1a62872f6cf0" Title="DTIMapServerControl Events" Url="html/Events_T_DTIMapControl_DTIMapServerControl.htm">
+          <HelpTOCNode Title="AddressSet Event" Url="html/E_DTIMapControl_DTIMapServerControl_AddressSet.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="6e9038c6-34ec-4e17-b562-ea87cb903390" Title="SharedMapVariables Class" Url="html/T_DTIMapControl_SharedMapVariables.htm">
+        <HelpTOCNode Title="SharedMapVariables Constructor " Url="html/M_DTIMapControl_SharedMapVariables__ctor.htm" />
+        <HelpTOCNode Id="b10ce539-513e-4d02-8167-2d64b6d65687" Title="SharedMapVariables Properties " Url="html/Properties_T_DTIMapControl_SharedMapVariables.htm">
+          <HelpTOCNode Title="addressTable Property " Url="html/P_DTIMapControl_SharedMapVariables_addressTable.htm" />
+          <HelpTOCNode Title="dsMaps Property " Url="html/P_DTIMapControl_SharedMapVariables_dsMaps.htm" />
+          <HelpTOCNode Title="googleKeyTable Property " Url="html/P_DTIMapControl_SharedMapVariables_googleKeyTable.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="19b3c576-6b83-46d5-9bb9-0926b18da698" Title="DTIMediaManager Namespace" Url="html/N_DTIMediaManager.htm">
+      <HelpTOCNode Id="9f8d3962-bb6d-429b-8fa9-0ff67465bd71" Title="dsMedia Class" Url="html/T_DTIMediaManager_dsMedia.htm">
+        <HelpTOCNode Id="c13d74b2-a8c4-41b9-893c-79ccaba2e33c" Title="dsMedia Properties " Url="html/Properties_T_DTIMediaManager_dsMedia.htm">
+          <HelpTOCNode Title="DTIMediaManager Property " Url="html/P_DTIMediaManager_dsMedia_DTIMediaManager.htm" />
+          <HelpTOCNode Title="DTIMediaTypes Property " Url="html/P_DTIMediaManager_dsMedia_DTIMediaTypes.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="57deef7c-1261-4748-b405-af97c37fa8f3" Title="EditMediaControl Class" Url="html/T_DTIMediaManager_EditMediaControl.htm">
+        <HelpTOCNode Id="41fe9c9f-f761-495b-9ba8-aa1fe0c44e19" Title="EditMediaControl Methods " Url="html/Methods_T_DTIMediaManager_EditMediaControl.htm">
+          <HelpTOCNode Title="saveTags Method " Url="html/M_DTIMediaManager_EditMediaControl_saveTags.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="d8fc6cbe-3079-45ae-957e-c2c6f53be5f1" Title="EditMediaControl Properties " Url="html/Properties_T_DTIMediaManager_EditMediaControl.htm">
+          <HelpTOCNode Title="Description Property " Url="html/P_DTIMediaManager_EditMediaControl_Description.htm" />
+          <HelpTOCNode Title="myControlHolder Property " Url="html/P_DTIMediaManager_EditMediaControl_myControlHolder.htm" />
+          <HelpTOCNode Title="MyMediaRow Property " Url="html/P_DTIMediaManager_EditMediaControl_MyMediaRow.htm" />
+          <HelpTOCNode Title="Title Property " Url="html/P_DTIMediaManager_EditMediaControl_Title.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d770ed89-ed79-42f7-af94-c8e785bae698" Title="MediaInfo Class" Url="html/T_DTIMediaManager_MediaInfo.htm">
+        <HelpTOCNode Id="4f7ca959-0318-44ca-a248-fd9976b31293" Title="MediaInfo Properties " Url="html/Properties_T_DTIMediaManager_MediaInfo.htm">
+          <HelpTOCNode Title="CommentControls Property " Url="html/P_DTIMediaManager_MediaInfo_CommentControls.htm" />
+          <HelpTOCNode Title="ContentControls Property " Url="html/P_DTIMediaManager_MediaInfo_ContentControls.htm" />
+          <HelpTOCNode Title="DescriptionLength Property " Url="html/P_DTIMediaManager_MediaInfo_DescriptionLength.htm" />
+          <HelpTOCNode Title="HighlightedWords Property " Url="html/P_DTIMediaManager_MediaInfo_HighlightedWords.htm" />
+          <HelpTOCNode Title="MediaRow Property " Url="html/P_DTIMediaManager_MediaInfo_MediaRow.htm" />
+          <HelpTOCNode Title="MyInfoControl Property " Url="html/P_DTIMediaManager_MediaInfo_MyInfoControl.htm" />
+          <HelpTOCNode Title="ShowDescription Property " Url="html/P_DTIMediaManager_MediaInfo_ShowDescription.htm" />
+          <HelpTOCNode Title="ShowPubAuthor Property " Url="html/P_DTIMediaManager_MediaInfo_ShowPubAuthor.htm" />
+          <HelpTOCNode Title="ShowPubDate Property " Url="html/P_DTIMediaManager_MediaInfo_ShowPubDate.htm" />
+          <HelpTOCNode Title="ShowPubInfo Property " Url="html/P_DTIMediaManager_MediaInfo_ShowPubInfo.htm" />
+          <HelpTOCNode Title="ShowRating Property " Url="html/P_DTIMediaManager_MediaInfo_ShowRating.htm" />
+          <HelpTOCNode Title="ShowSharing Property " Url="html/P_DTIMediaManager_MediaInfo_ShowSharing.htm" />
+          <HelpTOCNode Title="ShowSocialControls Property " Url="html/P_DTIMediaManager_MediaInfo_ShowSocialControls.htm" />
+          <HelpTOCNode Title="SocialUtilitiesControls Property " Url="html/P_DTIMediaManager_MediaInfo_SocialUtilitiesControls.htm" />
+          <HelpTOCNode Title="TitleIsLink Property " Url="html/P_DTIMediaManager_MediaInfo_TitleIsLink.htm" />
+          <HelpTOCNode Title="ValuesPerStar Property " Url="html/P_DTIMediaManager_MediaInfo_ValuesPerStar.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d09295cd-310c-4de4-9280-a7eea64b991e" Title="MediaRater Class" Url="html/T_DTIMediaManager_MediaRater.htm">
+        <HelpTOCNode Id="415763f2-733a-4038-9246-6cb0936212f0" Title="MediaRater Properties " Url="html/Properties_T_DTIMediaManager_MediaRater.htm">
+          <HelpTOCNode Title="MediaRow Property " Url="html/P_DTIMediaManager_MediaRater_MediaRow.htm" />
+          <HelpTOCNode Title="ValuesPerStar Property " Url="html/P_DTIMediaManager_MediaRater_ValuesPerStar.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="250fb0bc-5816-4fb2-92e7-c111b0986131" Title="MediaSearcher Class" Url="html/T_DTIMediaManager_MediaSearcher.htm">
+        <HelpTOCNode Id="3f34ff37-1442-417c-a756-678683220f92" Title="MediaSearcher Fields" Url="html/Fields_T_DTIMediaManager_MediaSearcher.htm">
+          <HelpTOCNode Title="btnNewest Field" Url="html/F_DTIMediaManager_MediaSearcher_btnNewest.htm" />
+          <HelpTOCNode Title="btnOldest Field" Url="html/F_DTIMediaManager_MediaSearcher_btnOldest.htm" />
+          <HelpTOCNode Title="btnRating Field" Url="html/F_DTIMediaManager_MediaSearcher_btnRating.htm" />
+          <HelpTOCNode Title="btnSearch Field" Url="html/F_DTIMediaManager_MediaSearcher_btnSearch.htm" />
+          <HelpTOCNode Title="commonWords Field" Url="html/F_DTIMediaManager_MediaSearcher_commonWords.htm" />
+          <HelpTOCNode Title="commonWordsList Field" Url="html/F_DTIMediaManager_MediaSearcher_commonWordsList.htm" />
+          <HelpTOCNode Title="mediaSearchTableEntries Field" Url="html/F_DTIMediaManager_MediaSearcher_mediaSearchTableEntries.htm" />
+          <HelpTOCNode Title="tbSearch Field" Url="html/F_DTIMediaManager_MediaSearcher_tbSearch.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="d4ecc6e3-e1e5-45cd-831c-3e2fbdcb03e6" Title="MediaSearcher Methods " Url="html/Methods_T_DTIMediaManager_MediaSearcher.htm">
+          <HelpTOCNode Title="createSqlFunctions Method " Url="html/M_DTIMediaManager_MediaSearcher_createSqlFunctions.htm" />
+          <HelpTOCNode Title="getCreateSqlFunctionsScript Method " Url="html/M_DTIMediaManager_MediaSearcher_getCreateSqlFunctionsScript.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="83b5ece8-4317-47ea-a6fc-a7040ce38b6f" Title="MediaSearcher Properties " Url="html/Properties_T_DTIMediaManager_MediaSearcher.htm">
+          <HelpTOCNode Title="AdditionalQuery Property " Url="html/P_DTIMediaManager_MediaSearcher_AdditionalQuery.htm" />
+          <HelpTOCNode Title="comp_string Property " Url="html/P_DTIMediaManager_MediaSearcher_comp_string.htm" />
+          <HelpTOCNode Title="Content_Types Property " Url="html/P_DTIMediaManager_MediaSearcher_Content_Types.htm" />
+          <HelpTOCNode Title="QueryFilter Property " Url="html/P_DTIMediaManager_MediaSearcher_QueryFilter.htm" />
+          <HelpTOCNode Title="SearchColumns Property " Url="html/P_DTIMediaManager_MediaSearcher_SearchColumns.htm" />
+          <HelpTOCNode Title="SearchOnClick Property " Url="html/P_DTIMediaManager_MediaSearcher_SearchOnClick.htm" />
+          <HelpTOCNode Title="SearchSelectStatement Property " Url="html/P_DTIMediaManager_MediaSearcher_SearchSelectStatement.htm" />
+          <HelpTOCNode Title="SearchText Property " Url="html/P_DTIMediaManager_MediaSearcher_SearchText.htm" />
+          <HelpTOCNode Title="SearchWords Property " Url="html/P_DTIMediaManager_MediaSearcher_SearchWords.htm" />
+          <HelpTOCNode Title="ShowNewestOldestSortButtons Property " Url="html/P_DTIMediaManager_MediaSearcher_ShowNewestOldestSortButtons.htm" />
+          <HelpTOCNode Title="ShowRatingSortButton Property " Url="html/P_DTIMediaManager_MediaSearcher_ShowRatingSortButton.htm" />
+          <HelpTOCNode Title="Sort Property " Url="html/P_DTIMediaManager_MediaSearcher_Sort.htm" />
+          <HelpTOCNode Title="SortButtons Property " Url="html/P_DTIMediaManager_MediaSearcher_SortButtons.htm" />
+          <HelpTOCNode Title="UseSearchRank Property " Url="html/P_DTIMediaManager_MediaSearcher_UseSearchRank.htm" />
+          <HelpTOCNode Title="UseSortButtons Property " Url="html/P_DTIMediaManager_MediaSearcher_UseSortButtons.htm" />
+          <HelpTOCNode Title="WordSoup Property " Url="html/P_DTIMediaManager_MediaSearcher_WordSoup.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="2d5143bc-cd72-4ef8-8186-97e026c9bc07" Title="MediaUploader Class" Url="html/T_DTIMediaManager_MediaUploader.htm">
+        <HelpTOCNode Id="093e38bd-c074-41b5-8fde-df61d7a90c95" Title="MediaUploader Properties " Url="html/Properties_T_DTIMediaManager_MediaUploader.htm">
+          <HelpTOCNode Title="MyFlashWrapper Property " Url="html/P_DTIMediaManager_MediaUploader_MyFlashWrapper.htm" />
+          <HelpTOCNode Title="myImages Property " Url="html/P_DTIMediaManager_MediaUploader_myImages.htm" />
+          <HelpTOCNode Title="myMediaTable Property " Url="html/P_DTIMediaManager_MediaUploader_myMediaTable.htm" />
+          <HelpTOCNode Title="myVideos Property " Url="html/P_DTIMediaManager_MediaUploader_myVideos.htm" />
+          <HelpTOCNode Title="PreviewList Property " Url="html/P_DTIMediaManager_MediaUploader_PreviewList.htm" />
+          <HelpTOCNode Title="SaveVideoInDataBase Property " Url="html/P_DTIMediaManager_MediaUploader_SaveVideoInDataBase.htm" />
+          <HelpTOCNode Title="User_Id Property " Url="html/P_DTIMediaManager_MediaUploader_User_Id.htm" />
+          <HelpTOCNode Title="VideoOutputFileNamingConvention Property " Url="html/P_DTIMediaManager_MediaUploader_VideoOutputFileNamingConvention.htm" />
+          <HelpTOCNode Title="VideoOutputPath Property " Url="html/P_DTIMediaManager_MediaUploader_VideoOutputPath.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0564c913-d8af-4b8b-a456-ca982ad14a8e" Title="MediaUploader Events" Url="html/Events_T_DTIMediaManager_MediaUploader.htm">
+          <HelpTOCNode Title="ImageSaved Event" Url="html/E_DTIMediaManager_MediaUploader_ImageSaved.htm" />
+          <HelpTOCNode Title="VideoSaved Event" Url="html/E_DTIMediaManager_MediaUploader_VideoSaved.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7c1287f5-1906-420f-8f87-370ef91fd729" Title="SharedMediaVariables Class" Url="html/T_DTIMediaManager_SharedMediaVariables.htm">
+        <HelpTOCNode Id="667ef42b-a6db-4f96-bb49-e09cac1b73e2" Title="SharedMediaVariables Methods " Url="html/Methods_T_DTIMediaManager_SharedMediaVariables.htm">
+          <HelpTOCNode Title="initDTIMediaTypes Method " Url="html/M_DTIMediaManager_SharedMediaVariables_initDTIMediaTypes.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b7947180-093d-4777-857e-68fd2d450eeb" Title="SharedMediaVariables Properties " Url="html/Properties_T_DTIMediaManager_SharedMediaVariables.htm">
+          <HelpTOCNode Title="dsMedia Property " Url="html/P_DTIMediaManager_SharedMediaVariables_dsMedia.htm" />
+          <HelpTOCNode Title="myDTIMediaTypes Property " Url="html/P_DTIMediaManager_SharedMediaVariables_myDTIMediaTypes.htm" />
+          <HelpTOCNode Title="MyFlashWrapper Property " Url="html/P_DTIMediaManager_SharedMediaVariables_MyFlashWrapper.htm" />
+          <HelpTOCNode Title="myImages Property " Url="html/P_DTIMediaManager_SharedMediaVariables_myImages.htm" />
+          <HelpTOCNode Title="myMediaTable Property " Url="html/P_DTIMediaManager_SharedMediaVariables_myMediaTable.htm" />
+          <HelpTOCNode Title="myVideos Property " Url="html/P_DTIMediaManager_SharedMediaVariables_myVideos.htm" />
+          <HelpTOCNode Title="PreviewList Property " Url="html/P_DTIMediaManager_SharedMediaVariables_PreviewList.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c4795704-43aa-45d9-a97a-de12b32feb01" Title="DTIMiniControls Namespace" Url="html/N_DTIMiniControls.htm">
+      <HelpTOCNode Id="188092bb-6f4b-4a79-a799-abe5f67c2c1e" Title="FreezeIt Class" Url="html/T_DTIMiniControls_FreezeIt.htm">
+        <HelpTOCNode Id="b83fecfd-7338-475e-95af-eddbe2bedce9" Title="FreezeIt Properties " Url="html/Properties_T_DTIMiniControls_FreezeIt.htm">
+          <HelpTOCNode Title="BackgroundColor Property " Url="html/P_DTIMiniControls_FreezeIt_BackgroundColor.htm" />
+          <HelpTOCNode Title="BackgroundOpacity Property " Url="html/P_DTIMiniControls_FreezeIt_BackgroundOpacity.htm" />
+          <HelpTOCNode Title="DisplayOnAnyPostback Property " Url="html/P_DTIMiniControls_FreezeIt_DisplayOnAnyPostback.htm" />
+          <HelpTOCNode Title="FreezeId Property " Url="html/P_DTIMiniControls_FreezeIt_FreezeId.htm" />
+          <HelpTOCNode Title="IsFrozen Property " Url="html/P_DTIMiniControls_FreezeIt_IsFrozen.htm" />
+          <HelpTOCNode Title="UseCentering Property " Url="html/P_DTIMiniControls_FreezeIt_UseCentering.htm" />
+          <HelpTOCNode Title="UseInnerWidthAndHeight Property " Url="html/P_DTIMiniControls_FreezeIt_UseInnerWidthAndHeight.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="fbac5198-d069-475b-a125-80d66196e517" Title="ImageCropper Class" Url="html/T_DTIMiniControls_ImageCropper.htm">
+        <HelpTOCNode Id="623514dd-83d3-4161-a810-028727f20283" Title="ImageCropper Properties " Url="html/Properties_T_DTIMiniControls_ImageCropper.htm">
+          <HelpTOCNode Title="aspectRatio Property " Url="html/P_DTIMiniControls_ImageCropper_aspectRatio.htm" />
+          <HelpTOCNode Title="bgColor Property " Url="html/P_DTIMiniControls_ImageCropper_bgColor.htm" />
+          <HelpTOCNode Title="bgOpacity Property " Url="html/P_DTIMiniControls_ImageCropper_bgOpacity.htm" />
+          <HelpTOCNode Title="CroppedCoordinatesString Property " Url="html/P_DTIMiniControls_ImageCropper_CroppedCoordinatesString.htm" />
+          <HelpTOCNode Title="CroppedHeight Property " Url="html/P_DTIMiniControls_ImageCropper_CroppedHeight.htm" />
+          <HelpTOCNode Title="CroppedWidth Property " Url="html/P_DTIMiniControls_ImageCropper_CroppedWidth.htm" />
+          <HelpTOCNode Title="CroppedX1 Property " Url="html/P_DTIMiniControls_ImageCropper_CroppedX1.htm" />
+          <HelpTOCNode Title="CroppedX2 Property " Url="html/P_DTIMiniControls_ImageCropper_CroppedX2.htm" />
+          <HelpTOCNode Title="CroppedY1 Property " Url="html/P_DTIMiniControls_ImageCropper_CroppedY1.htm" />
+          <HelpTOCNode Title="CroppedY2 Property " Url="html/P_DTIMiniControls_ImageCropper_CroppedY2.htm" />
+          <HelpTOCNode Title="maxSize Property " Url="html/P_DTIMiniControls_ImageCropper_maxSize.htm" />
+          <HelpTOCNode Title="minSize Property " Url="html/P_DTIMiniControls_ImageCropper_minSize.htm" />
+          <HelpTOCNode Title="OnSelectFunctionName Property " Url="html/P_DTIMiniControls_ImageCropper_OnSelectFunctionName.htm" />
+          <HelpTOCNode Title="setSelect Property " Url="html/P_DTIMiniControls_ImageCropper_setSelect.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="1dba8b46-f1cf-4a3e-b68e-9219bc00052c" Title="ImageCropper Events" Url="html/Events_T_DTIMiniControls_ImageCropper.htm">
+          <HelpTOCNode Title="ImageCropped Event" Url="html/E_DTIMiniControls_ImageCropper_ImageCropped.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="7ccf081d-764c-4229-b988-df381484f156" Title="Pager Class" Url="html/T_DTIMiniControls_Pager.htm">
+        <HelpTOCNode Id="f033097f-c634-4e81-ad24-734cf660902a" Title="Pager Properties " Url="html/Properties_T_DTIMiniControls_Pager.htm">
+          <HelpTOCNode Title="CurrentPage Property " Url="html/P_DTIMiniControls_Pager_CurrentPage.htm" />
+          <HelpTOCNode Title="PageCount Property " Url="html/P_DTIMiniControls_Pager_PageCount.htm" />
+          <HelpTOCNode Title="PagesToDisplay Property " Url="html/P_DTIMiniControls_Pager_PagesToDisplay.htm" />
+          <HelpTOCNode Title="PagesToSkip Property " Url="html/P_DTIMiniControls_Pager_PagesToSkip.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="ecb1b5a5-1179-4e98-b960-f99ce8ec4675" Title="Sortable Class" Url="html/T_DTIMiniControls_Sortable.htm">
+        <HelpTOCNode Id="0d606410-94ab-4f57-87a1-48f6cafedada" Title="Sortable Methods " Url="html/Methods_T_DTIMiniControls_Sortable.htm">
+          <HelpTOCNode Id="0b0a58fd-e6af-4dea-b98f-567f0cbb851a" Title="addSortableItem Method " Url="html/Overload_DTIMiniControls_Sortable_addSortableItem.htm">
+            <HelpTOCNode Title="addSortableItem Method ()" Url="html/M_DTIMiniControls_Sortable_addSortableItem.htm" />
+            <HelpTOCNode Title="addSortableItem Method (String)" Url="html/M_DTIMiniControls_Sortable_addSortableItem_1.htm" />
+            <HelpTOCNode Title="addSortableItem Method (Control)" Url="html/M_DTIMiniControls_Sortable_addSortableItem_3.htm" />
+            <HelpTOCNode Title="addSortableItem Method (String, String)" Url="html/M_DTIMiniControls_Sortable_addSortableItem_2.htm" />
+            <HelpTOCNode Title="addSortableItem Method (Control, String)" Url="html/M_DTIMiniControls_Sortable_addSortableItem_4.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="DataBind Method " Url="html/M_DTIMiniControls_Sortable_DataBind.htm" />
+          <HelpTOCNode Title="getNewOrderList Method " Url="html/M_DTIMiniControls_Sortable_getNewOrderList.htm" />
+          <HelpTOCNode Title="getOriginalOrderList Method " Url="html/M_DTIMiniControls_Sortable_getOriginalOrderList.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f8890314-b390-4971-a352-e8d29b14b3d0" Title="Sortable Properties " Url="html/Properties_T_DTIMiniControls_Sortable.htm">
+          <HelpTOCNode Title="AdminOn Property " Url="html/P_DTIMiniControls_Sortable_AdminOn.htm" />
+          <HelpTOCNode Title="AutoPostBack Property " Url="html/P_DTIMiniControls_Sortable_AutoPostBack.htm" />
+          <HelpTOCNode Title="AxisRestriction Property " Url="html/P_DTIMiniControls_Sortable_AxisRestriction.htm" />
+          <HelpTOCNode Title="ConnectByClass Property " Url="html/P_DTIMiniControls_Sortable_ConnectByClass.htm" />
+          <HelpTOCNode Title="ConnectToID Property " Url="html/P_DTIMiniControls_Sortable_ConnectToID.htm" />
+          <HelpTOCNode Title="CursorPosition Property " Url="html/P_DTIMiniControls_Sortable_CursorPosition.htm" />
+          <HelpTOCNode Title="CursorPositionValue Property " Url="html/P_DTIMiniControls_Sortable_CursorPositionValue.htm" />
+          <HelpTOCNode Title="CursorType Property " Url="html/P_DTIMiniControls_Sortable_CursorType.htm" />
+          <HelpTOCNode Title="DataSortField Property " Url="html/P_DTIMiniControls_Sortable_DataSortField.htm" />
+          <HelpTOCNode Title="DataSource Property " Url="html/P_DTIMiniControls_Sortable_DataSource.htm" />
+          <HelpTOCNode Title="DataTextField Property " Url="html/P_DTIMiniControls_Sortable_DataTextField.htm" />
+          <HelpTOCNode Title="DataValueField Property " Url="html/P_DTIMiniControls_Sortable_DataValueField.htm" />
+          <HelpTOCNode Title="DragOnEmpty Property " Url="html/P_DTIMiniControls_Sortable_DragOnEmpty.htm" />
+          <HelpTOCNode Title="HelperType Property " Url="html/P_DTIMiniControls_Sortable_HelperType.htm" />
+          <HelpTOCNode Title="isOrderChanged Property " Url="html/P_DTIMiniControls_Sortable_isOrderChanged.htm" />
+          <HelpTOCNode Title="PlaceHolderClass Property " Url="html/P_DTIMiniControls_Sortable_PlaceHolderClass.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="12476433-0e70-484f-965a-0c2ff279e42c" Title="Sortable Events" Url="html/Events_T_DTIMiniControls_Sortable.htm">
+          <HelpTOCNode Title="DataBound Event" Url="html/E_DTIMiniControls_Sortable_DataBound.htm" />
+          <HelpTOCNode Title="ItemReOrdered Event" Url="html/E_DTIMiniControls_Sortable_ItemReOrdered.htm" />
+          <HelpTOCNode Title="OrderChanged Event" Url="html/E_DTIMiniControls_Sortable_OrderChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="cc88e6e1-5795-430e-bc5f-09ec63a3d6c5" Title="ToolTip Class" Url="html/T_DTIMiniControls_ToolTip.htm">
+        <HelpTOCNode Id="5933731c-842c-4db7-825b-1e61f81ed4e6" Title="ToolTip Properties " Url="html/Properties_T_DTIMiniControls_ToolTip.htm">
+          <HelpTOCNode Title="Activation Property " Url="html/P_DTIMiniControls_ToolTip_Activation.htm" />
+          <HelpTOCNode Title="Arrows Property " Url="html/P_DTIMiniControls_ToolTip_Arrows.htm" />
+          <HelpTOCNode Title="ClosePosition Property " Url="html/P_DTIMiniControls_ToolTip_ClosePosition.htm" />
+          <HelpTOCNode Title="CloseText Property " Url="html/P_DTIMiniControls_ToolTip_CloseText.htm" />
+          <HelpTOCNode Title="CssTheme Property " Url="html/P_DTIMiniControls_ToolTip_CssTheme.htm" />
+          <HelpTOCNode Title="DelayedClose Property " Url="html/P_DTIMiniControls_ToolTip_DelayedClose.htm" />
+          <HelpTOCNode Title="DropShadow Property " Url="html/P_DTIMiniControls_ToolTip_DropShadow.htm" />
+          <HelpTOCNode Title="DropShadowSteps Property " Url="html/P_DTIMiniControls_ToolTip_DropShadowSteps.htm" />
+          <HelpTOCNode Title="Height Property " Url="html/P_DTIMiniControls_ToolTip_Height.htm" />
+          <HelpTOCNode Title="HideLocal Property " Url="html/P_DTIMiniControls_ToolTip_HideLocal.htm" />
+          <HelpTOCNode Title="HoverClass Property " Url="html/P_DTIMiniControls_ToolTip_HoverClass.htm" />
+          <HelpTOCNode Title="href Property " Url="html/P_DTIMiniControls_ToolTip_href.htm" />
+          <HelpTOCNode Title="HtmlTag Property " Url="html/P_DTIMiniControls_ToolTip_HtmlTag.htm" />
+          <HelpTOCNode Title="LeftOffset Property " Url="html/P_DTIMiniControls_ToolTip_LeftOffset.htm" />
+          <HelpTOCNode Title="Local Property " Url="html/P_DTIMiniControls_ToolTip_Local.htm" />
+          <HelpTOCNode Title="MouseOutClose Property " Url="html/P_DTIMiniControls_ToolTip_MouseOutClose.htm" />
+          <HelpTOCNode Title="MouseTracking Property " Url="html/P_DTIMiniControls_ToolTip_MouseTracking.htm" />
+          <HelpTOCNode Title="onActivate Property " Url="html/P_DTIMiniControls_ToolTip_onActivate.htm" />
+          <HelpTOCNode Title="onShow Property " Url="html/P_DTIMiniControls_ToolTip_onShow.htm" />
+          <HelpTOCNode Title="OpenEffect Property " Url="html/P_DTIMiniControls_ToolTip_OpenEffect.htm" />
+          <HelpTOCNode Title="OpenSpeed Property " Url="html/P_DTIMiniControls_ToolTip_OpenSpeed.htm" />
+          <HelpTOCNode Title="PositionTooltip Property " Url="html/P_DTIMiniControls_ToolTip_PositionTooltip.htm" />
+          <HelpTOCNode Title="ShowTitle Property " Url="html/P_DTIMiniControls_ToolTip_ShowTitle.htm" />
+          <HelpTOCNode Title="Sticky Property " Url="html/P_DTIMiniControls_ToolTip_Sticky.htm" />
+          <HelpTOCNode Title="TargetControlID Property " Url="html/P_DTIMiniControls_ToolTip_TargetControlID.htm" />
+          <HelpTOCNode Title="Text Property " Url="html/P_DTIMiniControls_ToolTip_Text.htm" />
+          <HelpTOCNode Title="Title Property " Url="html/P_DTIMiniControls_ToolTip_Title.htm" />
+          <HelpTOCNode Title="TopOffset Property " Url="html/P_DTIMiniControls_ToolTip_TopOffset.htm" />
+          <HelpTOCNode Title="Truncate Property " Url="html/P_DTIMiniControls_ToolTip_Truncate.htm" />
+          <HelpTOCNode Title="Width Property " Url="html/P_DTIMiniControls_ToolTip_Width.htm" />
+          <HelpTOCNode Title="ZIndexToolTip Property " Url="html/P_DTIMiniControls_ToolTip_ZIndexToolTip.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="426da5f4-19cf-4496-9ad9-2012efe2b569" Title="TreeList Class" Url="html/T_DTIMiniControls_TreeList.htm">
+        <HelpTOCNode Id="da5194e8-98b1-4c46-9fd2-cfda6841b2f0" Title="TreeList Fields" Url="html/Fields_T_DTIMiniControls_TreeList.htm">
+          <HelpTOCNode Title="dt Field" Url="html/F_DTIMiniControls_TreeList_dt.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b20bbc1e-d470-4f06-a342-d4594b47729b" Title="TreeList Methods " Url="html/Methods_T_DTIMiniControls_TreeList.htm">
+          <HelpTOCNode Title="addCustomContextMenu Method " Url="html/M_DTIMiniControls_TreeList_addCustomContextMenu.htm" />
+          <HelpTOCNode Title="addListItem Method " Url="html/M_DTIMiniControls_TreeList_addListItem.htm" />
+          <HelpTOCNode Title="addListItemRoot Method " Url="html/M_DTIMiniControls_TreeList_addListItemRoot.htm" />
+          <HelpTOCNode Title="addOpenNodeId Method " Url="html/M_DTIMiniControls_TreeList_addOpenNodeId.htm" />
+          <HelpTOCNode Title="DataBind Method " Url="html/M_DTIMiniControls_TreeList_DataBind.htm" />
+          <HelpTOCNode Title="GetMyCheckedNodes Method " Url="html/M_DTIMiniControls_TreeList_GetMyCheckedNodes.htm" />
+          <HelpTOCNode Title="GetMyNodes Method " Url="html/M_DTIMiniControls_TreeList_GetMyNodes.htm" />
+          <HelpTOCNode Title="GetMySelectedNodes Method " Url="html/M_DTIMiniControls_TreeList_GetMySelectedNodes.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ee1b358f-7655-464b-b33f-39b6404bd12e" Title="TreeList Properties " Url="html/Properties_T_DTIMiniControls_TreeList.htm">
+          <HelpTOCNode Title="AutoInsertOnDrop Property " Url="html/P_DTIMiniControls_TreeList_AutoInsertOnDrop.htm" />
+          <HelpTOCNode Title="BeforeCreateCallBack Property " Url="html/P_DTIMiniControls_TreeList_BeforeCreateCallBack.htm" />
+          <HelpTOCNode Title="BeforeMoveCallBack Property " Url="html/P_DTIMiniControls_TreeList_BeforeMoveCallBack.htm" />
+          <HelpTOCNode Title="CheckChildren Property " Url="html/P_DTIMiniControls_TreeList_CheckChildren.htm" />
+          <HelpTOCNode Title="CheckedNodes Property " Url="html/P_DTIMiniControls_TreeList_CheckedNodes.htm" />
+          <HelpTOCNode Title="CheckStyle Property " Url="html/P_DTIMiniControls_TreeList_CheckStyle.htm" />
+          <HelpTOCNode Title="CheckStyleString Property " Url="html/P_DTIMiniControls_TreeList_CheckStyleString.htm" />
+          <HelpTOCNode Title="CreateMenuText Property " Url="html/P_DTIMiniControls_TreeList_CreateMenuText.htm" />
+          <HelpTOCNode Title="DeleteMenuText Property " Url="html/P_DTIMiniControls_TreeList_DeleteMenuText.htm" />
+          <HelpTOCNode Title="Drag_Copy Property " Url="html/P_DTIMiniControls_TreeList_Drag_Copy.htm" />
+          <HelpTOCNode Title="dv Property " Url="html/P_DTIMiniControls_TreeList_dv.htm" />
+          <HelpTOCNode Title="EmbeddedThemePath Property " Url="html/P_DTIMiniControls_TreeList_EmbeddedThemePath.htm" />
+          <HelpTOCNode Title="EmptyNodeText Property " Url="html/P_DTIMiniControls_TreeList_EmptyNodeText.htm" />
+          <HelpTOCNode Title="IdColumnName Property " Url="html/P_DTIMiniControls_TreeList_IdColumnName.htm" />
+          <HelpTOCNode Title="ItemCount Property " Url="html/P_DTIMiniControls_TreeList_ItemCount.htm" />
+          <HelpTOCNode Title="MaxChildDepth Property " Url="html/P_DTIMiniControls_TreeList_MaxChildDepth.htm" />
+          <HelpTOCNode Title="MaxChildDepthDefaultType Property " Url="html/P_DTIMiniControls_TreeList_MaxChildDepthDefaultType.htm" />
+          <HelpTOCNode Title="MaxDepth Property " Url="html/P_DTIMiniControls_TreeList_MaxDepth.htm" />
+          <HelpTOCNode Title="MaxDepthDefaultType Property " Url="html/P_DTIMiniControls_TreeList_MaxDepthDefaultType.htm" />
+          <HelpTOCNode Title="MultiSelection Property " Url="html/P_DTIMiniControls_TreeList_MultiSelection.htm" />
+          <HelpTOCNode Title="MultiStyleString Property " Url="html/P_DTIMiniControls_TreeList_MultiStyleString.htm" />
+          <HelpTOCNode Title="MultiTreeEnabled Property " Url="html/P_DTIMiniControls_TreeList_MultiTreeEnabled.htm" />
+          <HelpTOCNode Title="MultiTreeString Property " Url="html/P_DTIMiniControls_TreeList_MultiTreeString.htm" />
+          <HelpTOCNode Title="MyFirstUL Property " Url="html/P_DTIMiniControls_TreeList_MyFirstUL.htm" />
+          <HelpTOCNode Title="NewNodeText Property " Url="html/P_DTIMiniControls_TreeList_NewNodeText.htm" />
+          <HelpTOCNode Title="No_Int_Copy Property " Url="html/P_DTIMiniControls_TreeList_No_Int_Copy.htm" />
+          <HelpTOCNode Title="Nodes Property " Url="html/P_DTIMiniControls_TreeList_Nodes.htm" />
+          <HelpTOCNode Title="NodeTypeColumnName Property " Url="html/P_DTIMiniControls_TreeList_NodeTypeColumnName.htm" />
+          <HelpTOCNode Title="NodeTypes Property " Url="html/P_DTIMiniControls_TreeList_NodeTypes.htm" />
+          <HelpTOCNode Title="OnCopyCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnCopyCallBack.htm" />
+          <HelpTOCNode Title="OnCreateCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnCreateCallBack.htm" />
+          <HelpTOCNode Title="OnDropCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnDropCallBack.htm" />
+          <HelpTOCNode Title="OnLoadCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnLoadCallBack.htm" />
+          <HelpTOCNode Title="OnMoveCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnMoveCallBack.htm" />
+          <HelpTOCNode Title="OnRenameCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnRenameCallBack.htm" />
+          <HelpTOCNode Title="OnSearchCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnSearchCallBack.htm" />
+          <HelpTOCNode Title="OnSelectCallBack Property " Url="html/P_DTIMiniControls_TreeList_OnSelectCallBack.htm" />
+          <HelpTOCNode Title="ParentIdColumnName Property " Url="html/P_DTIMiniControls_TreeList_ParentIdColumnName.htm" />
+          <HelpTOCNode Title="ReadModeOnly Property " Url="html/P_DTIMiniControls_TreeList_ReadModeOnly.htm" />
+          <HelpTOCNode Title="RenameMenuText Property " Url="html/P_DTIMiniControls_TreeList_RenameMenuText.htm" />
+          <HelpTOCNode Title="SelectedNodes Property " Url="html/P_DTIMiniControls_TreeList_SelectedNodes.htm" />
+          <HelpTOCNode Title="ShowContextMenu Property " Url="html/P_DTIMiniControls_TreeList_ShowContextMenu.htm" />
+          <HelpTOCNode Title="SortColumnName Property " Url="html/P_DTIMiniControls_TreeList_SortColumnName.htm" />
+          <HelpTOCNode Title="TextColumnName Property " Url="html/P_DTIMiniControls_TreeList_TextColumnName.htm" />
+          <HelpTOCNode Title="ThemeName Property " Url="html/P_DTIMiniControls_TreeList_ThemeName.htm" />
+          <HelpTOCNode Title="ThemePath Property " Url="html/P_DTIMiniControls_TreeList_ThemePath.htm" />
+          <HelpTOCNode Title="ValidChildren Property " Url="html/P_DTIMiniControls_TreeList_ValidChildren.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ab7074c4-d3dd-458a-8874-d57eaa91d5d5" Title="TreeList Events" Url="html/Events_T_DTIMiniControls_TreeList.htm">
+          <HelpTOCNode Title="NodeBound Event" Url="html/E_DTIMiniControls_TreeList_NodeBound.htm" />
+          <HelpTOCNode Title="NodeChildrenReOrdered Event" Url="html/E_DTIMiniControls_TreeList_NodeChildrenReOrdered.htm" />
+          <HelpTOCNode Title="NodeDeleted Event" Url="html/E_DTIMiniControls_TreeList_NodeDeleted.htm" />
+          <HelpTOCNode Title="NodeDropped Event" Url="html/E_DTIMiniControls_TreeList_NodeDropped.htm" />
+          <HelpTOCNode Title="NodeInserted Event" Url="html/E_DTIMiniControls_TreeList_NodeInserted.htm" />
+          <HelpTOCNode Title="NodeTypeChanged Event" Url="html/E_DTIMiniControls_TreeList_NodeTypeChanged.htm" />
+          <HelpTOCNode Title="NodeUpdated Event" Url="html/E_DTIMiniControls_TreeList_NodeUpdated.htm" />
+          <HelpTOCNode Title="TreeReOrdered Event" Url="html/E_DTIMiniControls_TreeList_TreeReOrdered.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="ced53bcc-4afe-4dbd-983d-08318851ccfa" Title="TreeListItem Class" Url="html/T_DTIMiniControls_TreeListItem.htm">
+        <HelpTOCNode Id="5e0e2549-31b5-4f79-8227-4cc497179430" Title="TreeListItem Methods " Url="html/Methods_T_DTIMiniControls_TreeListItem.htm">
+          <HelpTOCNode Title="addItem Method " Url="html/M_DTIMiniControls_TreeListItem_addItem.htm" />
+          <HelpTOCNode Title="addItems Method " Url="html/M_DTIMiniControls_TreeListItem_addItems.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="cfe2e929-3726-406f-adec-c2b4e8e2728f" Title="TreeListItem Properties " Url="html/Properties_T_DTIMiniControls_TreeListItem.htm">
+          <HelpTOCNode Title="CheckStyle Property " Url="html/P_DTIMiniControls_TreeListItem_CheckStyle.htm" />
+          <HelpTOCNode Title="Dropped Property " Url="html/P_DTIMiniControls_TreeListItem_Dropped.htm" />
+          <HelpTOCNode Title="Expanded Property " Url="html/P_DTIMiniControls_TreeListItem_Expanded.htm" />
+          <HelpTOCNode Title="ID Property " Url="html/P_DTIMiniControls_TreeListItem_ID.htm" />
+          <HelpTOCNode Title="NodeType Property " Url="html/P_DTIMiniControls_TreeListItem_NodeType.htm" />
+          <HelpTOCNode Title="ParentNode Property " Url="html/P_DTIMiniControls_TreeListItem_ParentNode.htm" />
+          <HelpTOCNode Title="Selected Property " Url="html/P_DTIMiniControls_TreeListItem_Selected.htm" />
+          <HelpTOCNode Title="Text Property " Url="html/P_DTIMiniControls_TreeListItem_Text.htm" />
+          <HelpTOCNode Title="Value Property " Url="html/P_DTIMiniControls_TreeListItem_Value.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="14464533-fb04-423a-a998-d6beb979e2cb" Title="DTIServerControls Namespace" Url="html/N_DTIServerControls.htm">
+      <HelpTOCNode Id="8054b2b0-76ad-41f7-8edd-d4e3aed2b012" Title="dsDTIControls Class" Url="html/T_DTIServerControls_dsDTIControls.htm">
+        <HelpTOCNode Id="013713ff-c739-4814-98ae-33b2b0665eed" Title="dsDTIControls Properties " Url="html/Properties_T_DTIServerControls_dsDTIControls.htm">
+          <HelpTOCNode Title="DTIControl Property " Url="html/P_DTIServerControls_dsDTIControls_DTIControl.htm" />
+          <HelpTOCNode Title="DTIControlProperty Property " Url="html/P_DTIServerControls_dsDTIControls_DTIControlProperty.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="27188aef-ddeb-4f44-8dff-5222af245ff8" Title="DTIServerBase Class" Url="html/T_DTIServerControls_DTIServerBase.htm">
+        <HelpTOCNode Id="b37cac51-4685-49f4-91f6-35a424b3c16b" Title="DTIServerBase Methods " Url="html/Methods_T_DTIServerControls_DTIServerBase.htm">
+          <HelpTOCNode Title="disableFreezing Method " Url="html/M_DTIServerControls_DTIServerBase_disableFreezing.htm" />
+          <HelpTOCNode Title="enableFreezing Method " Url="html/M_DTIServerControls_DTIServerBase_enableFreezing.htm" />
+          <HelpTOCNode Title="getDesignTimeHtml Method " Url="html/M_DTIServerControls_DTIServerBase_getDesignTimeHtml.htm" />
+          <HelpTOCNode Title="initExternalType Method " Url="html/M_DTIServerControls_DTIServerBase_initExternalType.htm" />
+          <HelpTOCNode Title="moveIt Method " Url="html/M_DTIServerControls_DTIServerBase_moveIt.htm" />
+          <HelpTOCNode Title="registerClientScriptBlock Method " Url="html/M_DTIServerControls_DTIServerBase_registerClientScriptBlock.htm" />
+          <HelpTOCNode Title="registerClientScriptFile Method " Url="html/M_DTIServerControls_DTIServerBase_registerClientScriptFile.htm" />
+          <HelpTOCNode Title="registerClientStartupScriptBlock Method " Url="html/M_DTIServerControls_DTIServerBase_registerClientStartupScriptBlock.htm" />
+          <HelpTOCNode Title="registerHighslide Method " Url="html/M_DTIServerControls_DTIServerBase_registerHighslide.htm" />
+          <HelpTOCNode Title="truncateMe Method " Url="html/M_DTIServerControls_DTIServerBase_truncateMe.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="206cef2e-d0ed-43ed-8367-d0fac30441ed" Title="DTIServerBase Properties " Url="html/Properties_T_DTIServerControls_DTIServerBase.htm">
+          <HelpTOCNode Title="AdminOn Property " Url="html/P_DTIServerControls_DTIServerBase_AdminOn.htm" />
+          <HelpTOCNode Title="Component_Type Property " Url="html/P_DTIServerControls_DTIServerBase_Component_Type.htm" />
+          <HelpTOCNode Title="contentType Property " Url="html/P_DTIServerControls_DTIServerBase_contentType.htm" />
+          <HelpTOCNode Title="DataSource Property " Url="html/P_DTIServerControls_DTIServerBase_DataSource.htm" />
+          <HelpTOCNode Title="Freezer Property " Url="html/P_DTIServerControls_DTIServerBase_Freezer.htm" />
+          <HelpTOCNode Title="identifierString Property " Url="html/P_DTIServerControls_DTIServerBase_identifierString.htm" />
+          <HelpTOCNode Title="LanguageID Property " Url="html/P_DTIServerControls_DTIServerBase_LanguageID.htm" />
+          <HelpTOCNode Title="MainID Property " Url="html/P_DTIServerControls_DTIServerBase_MainID.htm" />
+          <HelpTOCNode Title="MasterLanguageId Property " Url="html/P_DTIServerControls_DTIServerBase_MasterLanguageId.htm" />
+          <HelpTOCNode Title="MasterMainId Property " Url="html/P_DTIServerControls_DTIServerBase_MasterMainId.htm" />
+          <HelpTOCNode Title="MyHighslideHeader Property " Url="html/P_DTIServerControls_DTIServerBase_MyHighslideHeader.htm" />
+          <HelpTOCNode Title="RenderMode Property " Url="html/P_DTIServerControls_DTIServerBase_RenderMode.htm" />
+          <HelpTOCNode Title="SetupHighslide Property " Url="html/P_DTIServerControls_DTIServerBase_SetupHighslide.htm" />
+          <HelpTOCNode Title="uniqueIdentifier Property " Url="html/P_DTIServerControls_DTIServerBase_uniqueIdentifier.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4c7ab37e-0cd8-4393-b465-a725f0ea8a99" Title="DTIServerBase Events" Url="html/Events_T_DTIServerControls_DTIServerBase.htm">
+          <HelpTOCNode Title="DataReady Event" Url="html/E_DTIServerControls_DTIServerBase_DataReady.htm" />
+          <HelpTOCNode Title="typeFirstInitialized Event" Url="html/E_DTIServerControls_DTIServerBase_typeFirstInitialized.htm" />
+          <HelpTOCNode Title="typeInitThisRequest Event" Url="html/E_DTIServerControls_DTIServerBase_typeInitThisRequest.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d6792707-ae4d-4a62-8f55-2e322366905c" Title="DTIServerControl Class" Url="html/T_DTIServerControls_DTIServerControl.htm">
+        <HelpTOCNode Id="0fa87139-a5ff-4e43-8c9d-efc59ce26f49" Title="DTIServerControl Properties " Url="html/Properties_T_DTIServerControls_DTIServerControl.htm">
+          <HelpTOCNode Title="FreezingEnabledOnEdit Property " Url="html/P_DTIServerControls_DTIServerControl_FreezingEnabledOnEdit.htm" />
+          <HelpTOCNode Title="Menu_Icon_Url Property " Url="html/P_DTIServerControls_DTIServerControl_Menu_Icon_Url.htm" />
+          <HelpTOCNode Title="Mode Property " Url="html/P_DTIServerControls_DTIServerControl_Mode.htm" />
+          <HelpTOCNode Title="setupControlList Property " Url="html/P_DTIServerControls_DTIServerControl_setupControlList.htm" />
+          <HelpTOCNode Title="ShowBorder Property " Url="html/P_DTIServerControls_DTIServerControl_ShowBorder.htm" />
+          <HelpTOCNode Title="SortableItemId Property " Url="html/P_DTIServerControls_DTIServerControl_SortableItemId.htm" />
+          <HelpTOCNode Title="StaticMode Property " Url="html/P_DTIServerControls_DTIServerControl_StaticMode.htm" />
+          <HelpTOCNode Title="Visible Property " Url="html/P_DTIServerControls_DTIServerControl_Visible.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ab89ceec-9678-4559-a8b7-76d8afaf82a2" Title="DTIServerControl Events" Url="html/Events_T_DTIServerControls_DTIServerControl.htm">
+          <HelpTOCNode Title="LoadControls Event" Url="html/E_DTIServerControls_DTIServerControl_LoadControls.htm" />
+          <HelpTOCNode Title="ModeChanged Event" Url="html/E_DTIServerControls_DTIServerControl_ModeChanged.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="4f666ea2-69b1-42d7-b455-89891ba75ea9" Title="SettingsEditorPage Class" Url="html/T_DTIServerControls_SettingsEditorPage.htm">
+        <HelpTOCNode Id="1ef5f968-52b4-4cc3-91c2-0a237f00b67a" Title="SettingsEditorPage Methods " Url="html/Methods_T_DTIServerControls_SettingsEditorPage.htm">
+          <HelpTOCNode Title="RenderServerControl Method " Url="html/M_DTIServerControls_SettingsEditorPage_RenderServerControl.htm" />
+          <HelpTOCNode Title="saveControl Method " Url="html/M_DTIServerControls_SettingsEditorPage_saveControl.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="39ec7b47-9faf-4400-b894-fa4c85cda2ae" Title="SettingsEditorPage Properties " Url="html/Properties_T_DTIServerControls_SettingsEditorPage.htm">
+          <HelpTOCNode Title="DTISeverControlTarget Property " Url="html/P_DTIServerControls_SettingsEditorPage_DTISeverControlTarget.htm" />
+          <HelpTOCNode Title="excludeProperties Property " Url="html/P_DTIServerControls_SettingsEditorPage_excludeProperties.htm" />
+          <HelpTOCNode Title="maxPropertySearchDepth Property " Url="html/P_DTIServerControls_SettingsEditorPage_maxPropertySearchDepth.htm" />
+          <HelpTOCNode Title="SharedSession Property " Url="html/P_DTIServerControls_SettingsEditorPage_SharedSession.htm" />
+          <HelpTOCNode Title="sharedSqlHelper Property " Url="html/P_DTIServerControls_SettingsEditorPage_sharedSqlHelper.htm" />
+          <HelpTOCNode Title="supressWritingToHiddenDiv Property " Url="html/P_DTIServerControls_SettingsEditorPage_supressWritingToHiddenDiv.htm" />
+          <HelpTOCNode Title="uniqueIdentifier Property " Url="html/P_DTIServerControls_SettingsEditorPage_uniqueIdentifier.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e563a671-8da6-4f2b-b162-c51fb42fa4cf" Title="SettingsEditorPage Events" Url="html/Events_T_DTIServerControls_SettingsEditorPage.htm">
+          <HelpTOCNode Title="saveClicked Event" Url="html/E_DTIServerControls_SettingsEditorPage_saveClicked.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9f9e7d05-8984-455c-bd52-5f6768534f86" Title="DTISortable Namespace" Url="html/N_DTISortable.htm">
+      <HelpTOCNode Id="5acd304d-3192-42bd-801e-50724f9881ad" Title="dsDTISortable Class" Url="html/T_DTISortable_dsDTISortable.htm">
+        <HelpTOCNode Id="06ba077e-ba20-44a8-bd68-1666e3d2a720" Title="dsDTISortable Properties " Url="html/Properties_T_DTISortable_dsDTISortable.htm">
+          <HelpTOCNode Title="DTISortable Property " Url="html/P_DTISortable_dsDTISortable_DTISortable.htm" />
+          <HelpTOCNode Title="DTISortableItem Property " Url="html/P_DTISortable_dsDTISortable_DTISortableItem.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9f199d6e-5b1a-473c-b8d6-b05e2dbddfb7" Title="DTISortable Class" Url="html/T_DTISortable_DTISortable.htm">
+        <HelpTOCNode Id="e3c46479-7832-4a90-a2f7-94267bd26c14" Title="DTISortable Methods " Url="html/Methods_T_DTISortable_DTISortable.htm">
+          <HelpTOCNode Title="getEnumName Method " Url="html/M_DTISortable_DTISortable_getEnumName.htm" />
+          <HelpTOCNode Title="Save Method " Url="html/M_DTISortable_DTISortable_Save.htm" />
+          <HelpTOCNode Title="saveAll Method " Url="html/M_DTISortable_DTISortable_saveAll.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="53918782-a871-427c-bbda-06e5a0a9afb5" Title="DTISortable Properties " Url="html/Properties_T_DTISortable_DTISortable.htm">
+          <HelpTOCNode Title="AutoAddEditPanel Property " Url="html/P_DTISortable_DTISortable_AutoAddEditPanel.htm" />
+          <HelpTOCNode Title="AutoWrapInEditPanel Property " Url="html/P_DTISortable_DTISortable_AutoWrapInEditPanel.htm" />
+          <HelpTOCNode Title="AxisRestriction Property " Url="html/P_DTISortable_DTISortable_AxisRestriction.htm" />
+          <HelpTOCNode Title="ConnectByClass Property " Url="html/P_DTISortable_DTISortable_ConnectByClass.htm" />
+          <HelpTOCNode Title="ConnectedCSS Property " Url="html/P_DTISortable_DTISortable_ConnectedCSS.htm" />
+          <HelpTOCNode Title="ConnectToID Property " Url="html/P_DTISortable_DTISortable_ConnectToID.htm" />
+          <HelpTOCNode Title="cssTheme Property " Url="html/P_DTISortable_DTISortable_cssTheme.htm" />
+          <HelpTOCNode Title="CursorPosition Property " Url="html/P_DTISortable_DTISortable_CursorPosition.htm" />
+          <HelpTOCNode Title="CursorPositionValue Property " Url="html/P_DTISortable_DTISortable_CursorPositionValue.htm" />
+          <HelpTOCNode Title="CursorType Property " Url="html/P_DTISortable_DTISortable_CursorType.htm" />
+          <HelpTOCNode Title="DeleteText Property " Url="html/P_DTISortable_DTISortable_DeleteText.htm" />
+          <HelpTOCNode Title="HandleSelector Property " Url="html/P_DTISortable_DTISortable_HandleSelector.htm" />
+          <HelpTOCNode Title="HandleText Property " Url="html/P_DTISortable_DTISortable_HandleText.htm" />
+          <HelpTOCNode Title="HelperType Property " Url="html/P_DTISortable_DTISortable_HelperType.htm" />
+          <HelpTOCNode Title="isRecyclable Property " Url="html/P_DTISortable_DTISortable_isRecyclable.htm" />
+          <HelpTOCNode Title="ItemsClassName Property " Url="html/P_DTISortable_DTISortable_ItemsClassName.htm" />
+          <HelpTOCNode Title="LayoutOn Property " Url="html/P_DTISortable_DTISortable_LayoutOn.htm" />
+          <HelpTOCNode Title="LayoutOnAll Property " Url="html/P_DTISortable_DTISortable_LayoutOnAll.htm" />
+          <HelpTOCNode Title="NoDragOnEmpty Property " Url="html/P_DTISortable_DTISortable_NoDragOnEmpty.htm" />
+          <HelpTOCNode Title="OuterStyle Property " Url="html/P_DTISortable_DTISortable_OuterStyle.htm" />
+          <HelpTOCNode Title="PlaceHolderClass Property " Url="html/P_DTISortable_DTISortable_PlaceHolderClass.htm" />
+          <HelpTOCNode Title="ZIndex Property " Url="html/P_DTISortable_DTISortable_ZIndex.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="370b9acd-c412-413d-9df6-4578507c8730" Title="DTIWidgetMenu Class" Url="html/T_DTISortable_DTIWidgetMenu.htm">
+        <HelpTOCNode Id="209df42e-ed8b-445e-8fde-01f9de9bb036" Title="DTIWidgetMenu Methods " Url="html/Methods_T_DTISortable_DTIWidgetMenu.htm">
+          <HelpTOCNode Title="addUserControlToMenu Method " Url="html/M_DTISortable_DTIWidgetMenu_addUserControlToMenu.htm" />
+          <HelpTOCNode Title="save Method " Url="html/M_DTISortable_DTIWidgetMenu_save.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="69bc8d17-003c-4d79-bda3-e40dda42db5d" Title="DTIWidgetMenu Properties " Url="html/Properties_T_DTISortable_DTIWidgetMenu.htm">
+          <HelpTOCNode Title="AxisRestriction Property " Url="html/P_DTISortable_DTIWidgetMenu_AxisRestriction.htm" />
+          <HelpTOCNode Title="Class Property " Url="html/P_DTISortable_DTIWidgetMenu_Class.htm" />
+          <HelpTOCNode Title="ConnectByClass Property " Url="html/P_DTISortable_DTIWidgetMenu_ConnectByClass.htm" />
+          <HelpTOCNode Title="ConnectToID Property " Url="html/P_DTISortable_DTIWidgetMenu_ConnectToID.htm" />
+          <HelpTOCNode Title="ControlList Property " Url="html/P_DTISortable_DTIWidgetMenu_ControlList.htm" />
+          <HelpTOCNode Title="CssTheme Property " Url="html/P_DTISortable_DTIWidgetMenu_CssTheme.htm" />
+          <HelpTOCNode Title="CursorPosition Property " Url="html/P_DTISortable_DTIWidgetMenu_CursorPosition.htm" />
+          <HelpTOCNode Title="CursorPositionValue Property " Url="html/P_DTISortable_DTIWidgetMenu_CursorPositionValue.htm" />
+          <HelpTOCNode Title="CursorType Property " Url="html/P_DTISortable_DTIWidgetMenu_CursorType.htm" />
+          <HelpTOCNode Title="DragOnEmpty Property " Url="html/P_DTISortable_DTIWidgetMenu_DragOnEmpty.htm" />
+          <HelpTOCNode Title="HandleText Property " Url="html/P_DTISortable_DTIWidgetMenu_HandleText.htm" />
+          <HelpTOCNode Title="HelperType Property " Url="html/P_DTISortable_DTIWidgetMenu_HelperType.htm" />
+          <HelpTOCNode Title="isMenu Property " Url="html/P_DTISortable_DTIWidgetMenu_isMenu.htm" />
+          <HelpTOCNode Title="LayoutOn Property " Url="html/P_DTISortable_DTIWidgetMenu_LayoutOn.htm" />
+          <HelpTOCNode Title="LayoutOnAll Property " Url="html/P_DTISortable_DTIWidgetMenu_LayoutOnAll.htm" />
+          <HelpTOCNode Title="MenuText Property " Url="html/P_DTISortable_DTIWidgetMenu_MenuText.htm" />
+          <HelpTOCNode Title="PlaceHolderClass Property " Url="html/P_DTISortable_DTIWidgetMenu_PlaceHolderClass.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e7f4620b-8336-490b-81b1-4b18ed93d053" Title="DTITagManager Namespace" Url="html/N_DTITagManager.htm">
+      <HelpTOCNode Id="a423e00c-5d4d-4995-b939-d1f7894f6b0f" Title="dsTagger Class" Url="html/T_DTITagManager_dsTagger.htm">
+        <HelpTOCNode Id="cc2f236f-b9eb-4134-9df2-51dbade49eca" Title="dsTagger Properties " Url="html/Properties_T_DTITagManager_dsTagger.htm">
+          <HelpTOCNode Title="DTI_Content_Tag_Pivot Property " Url="html/P_DTITagManager_dsTagger_DTI_Content_Tag_Pivot.htm" />
+          <HelpTOCNode Title="DTI_Content_Tags Property " Url="html/P_DTITagManager_dsTagger_DTI_Content_Tags.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8beea49d-f3f0-40c0-aaf2-81f79cef15ee" Title="TagManager Class" Url="html/T_DTITagManager_TagManager.htm">
+        <HelpTOCNode Id="5738c287-669c-436f-9889-53720692aacc" Title="TagManager Fields" Url="html/Fields_T_DTITagManager_TagManager.htm">
+          <HelpTOCNode Title="DataFetched Field" Url="html/F_DTITagManager_TagManager_DataFetched.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="85325ac2-6175-4200-8644-44968caa69e0" Title="TagManager Methods " Url="html/Methods_T_DTITagManager_TagManager.htm">
+          <HelpTOCNode Title="saveTags Method " Url="html/M_DTITagManager_TagManager_saveTags.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2ab0a941-3b59-49bb-8735-9e85a9cb3d5b" Title="TagManager Properties " Url="html/Properties_T_DTITagManager_TagManager.htm">
+          <HelpTOCNode Title="AddTagText Property " Url="html/P_DTITagManager_TagManager_AddTagText.htm" />
+          <HelpTOCNode Title="Content_Id Property " Url="html/P_DTITagManager_TagManager_Content_Id.htm" />
+          <HelpTOCNode Title="currentTagsList Property " Url="html/P_DTITagManager_TagManager_currentTagsList.htm" />
+          <HelpTOCNode Title="CurrentTagText Property " Url="html/P_DTITagManager_TagManager_CurrentTagText.htm" />
+          <HelpTOCNode Title="MaxPopularCount Property " Url="html/P_DTITagManager_TagManager_MaxPopularCount.htm" />
+          <HelpTOCNode Title="popularTagsSet Property " Url="html/P_DTITagManager_TagManager_popularTagsSet.htm" />
+          <HelpTOCNode Title="SeparatorCharacter Property " Url="html/P_DTITagManager_TagManager_SeparatorCharacter.htm" />
+          <HelpTOCNode Title="ShowPopularTags Property " Url="html/P_DTITagManager_TagManager_ShowPopularTags.htm" />
+          <HelpTOCNode Title="ShowSubmit Property " Url="html/P_DTITagManager_TagManager_ShowSubmit.htm" />
+          <HelpTOCNode Title="ValidateOnFormSubmit Property " Url="html/P_DTITagManager_TagManager_ValidateOnFormSubmit.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="969e20bd-6c63-48c2-ba8d-561ad49a93e1" Title="DTIUploader Namespace" Url="html/N_DTIUploader.htm">
+      <HelpTOCNode Id="1cbe6b82-ab3c-4619-86c0-093cb72c8dbb" Title="DTIUploaderControl Class" Url="html/T_DTIUploader_DTIUploaderControl.htm">
+        <HelpTOCNode Id="dac90f25-147b-4dd6-8a61-e102363bc3fa" Title="DTIUploaderControl Methods " Url="html/Methods_T_DTIUploader_DTIUploaderControl.htm">
+          <HelpTOCNode Title="correctCookie Method " Url="html/M_DTIUploader_DTIUploaderControl_correctCookie.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="aa5b345b-3545-4d9b-a8d4-e4de54ffabe6" Title="DTIUploaderControl Properties " Url="html/Properties_T_DTIUploader_DTIUploaderControl.htm">
+          <HelpTOCNode Title="AllowUploadsOver2Gigs Property " Url="html/P_DTIUploader_DTIUploaderControl_AllowUploadsOver2Gigs.htm" />
+          <HelpTOCNode Title="clearFilesButtonCssClass Property " Url="html/P_DTIUploader_DTIUploaderControl_clearFilesButtonCssClass.htm" />
+          <HelpTOCNode Title="CssFile Property " Url="html/P_DTIUploader_DTIUploaderControl_CssFile.htm" />
+          <HelpTOCNode Title="FileFilter Property " Url="html/P_DTIUploader_DTIUploaderControl_FileFilter.htm" />
+          <HelpTOCNode Title="fileSizeWarningCssClass Property " Url="html/P_DTIUploader_DTIUploaderControl_fileSizeWarningCssClass.htm" />
+          <HelpTOCNode Title="RedirectURL Property " Url="html/P_DTIUploader_DTIUploaderControl_RedirectURL.htm" />
+          <HelpTOCNode Title="selectFilesButtonCssClass Property " Url="html/P_DTIUploader_DTIUploaderControl_selectFilesButtonCssClass.htm" />
+          <HelpTOCNode Title="selectFilesDivCssClass Property " Url="html/P_DTIUploader_DTIUploaderControl_selectFilesDivCssClass.htm" />
+          <HelpTOCNode Title="uploadFilesButtonCssClass Property " Url="html/P_DTIUploader_DTIUploaderControl_uploadFilesButtonCssClass.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="c0eaa759-5e0a-4fe4-8d67-510301bf22c3" Title="DTIUploaderControl Events" Url="html/Events_T_DTIUploader_DTIUploaderControl.htm">
+          <HelpTOCNode Title="handleFile Event" Url="html/E_DTIUploader_DTIUploaderControl_handleFile.htm" />
+          <HelpTOCNode Title="handleWebFile Event" Url="html/E_DTIUploader_DTIUploaderControl_handleWebFile.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d87c274b-a79b-4ace-ac13-2f751143c5ab" Title="DTIVideoManager Namespace" Url="html/N_DTIVideoManager.htm">
+      <HelpTOCNode Id="1e371baf-e119-4af7-81f8-01ebb4ac8f68" Title="dsDTIVideo Class" Url="html/T_DTIVideoManager_dsDTIVideo.htm">
+        <HelpTOCNode Id="9f1b47c0-6a7d-4b93-b902-ba7a6a706450" Title="dsDTIVideo Properties " Url="html/Properties_T_DTIVideoManager_dsDTIVideo.htm">
+          <HelpTOCNode Title="DTIVideoManager Property " Url="html/P_DTIVideoManager_dsDTIVideo_DTIVideoManager.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a100c776-c1a8-4f10-a723-4905f61d1c6c" Title="EditVideoControl Class" Url="html/T_DTIVideoManager_EditVideoControl.htm">
+        <HelpTOCNode Id="325b5816-8999-4ae1-a5d8-137ff997eba0" Title="EditVideoControl Properties " Url="html/Properties_T_DTIVideoManager_EditVideoControl.htm">
+          <HelpTOCNode Title="myVideoRow Property " Url="html/P_DTIVideoManager_EditVideoControl_myVideoRow.htm" />
+          <HelpTOCNode Title="VideoOutline Property " Url="html/P_DTIVideoManager_EditVideoControl_VideoOutline.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="cd7ec9d9-326a-4c6a-9417-91916d8d6b54" Title="ffmpegHelper Class" Url="html/T_DTIVideoManager_ffmpegHelper.htm">
+        <HelpTOCNode Id="8482cc56-a416-4341-ace6-6d515124fe99" Title="ffmpegHelper Methods " Url="html/Methods_T_DTIVideoManager_ffmpegHelper.htm">
+          <HelpTOCNode Id="c0946826-147a-4d7b-a9fa-81d2045bef24" Title="convertToFLV Method " Url="html/Overload_DTIVideoManager_ffmpegHelper_convertToFLV.htm">
+            <HelpTOCNode Title="convertToFLV Method (String, String, String)" Url="html/M_DTIVideoManager_ffmpegHelper_convertToFLV.htm" />
+            <HelpTOCNode Title="convertToFLV Method (HttpPostedFile, String, String)" Url="html/M_DTIVideoManager_ffmpegHelper_convertToFLV_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="deleteVideo Method " Url="html/M_DTIVideoManager_ffmpegHelper_deleteVideo.htm" />
+          <HelpTOCNode Id="9a985943-1fcb-48c1-aa8b-6a7b8b912f1b" Title="updateScreenShot Method " Url="html/Overload_DTIVideoManager_ffmpegHelper_updateScreenShot.htm">
+            <HelpTOCNode Title="updateScreenShot Method (Int32, Int32)" Url="html/M_DTIVideoManager_ffmpegHelper_updateScreenShot_1.htm" />
+            <HelpTOCNode Title="updateScreenShot Method (dsDTIVideo., Int32)" Url="html/M_DTIVideoManager_ffmpegHelper_updateScreenShot.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="dfd2bb80-73f4-4b7a-be5c-68966758e411" Title="ffmpegHelper Properties " Url="html/Properties_T_DTIVideoManager_ffmpegHelper.htm">
+          <HelpTOCNode Title="bitrate Property " Url="html/P_DTIVideoManager_ffmpegHelper_bitrate.htm" />
+          <HelpTOCNode Title="ffmpegExePath Property " Url="html/P_DTIVideoManager_ffmpegHelper_ffmpegExePath.htm" />
+          <HelpTOCNode Title="Flvtool2ExePath Property " Url="html/P_DTIVideoManager_ffmpegHelper_Flvtool2ExePath.htm" />
+          <HelpTOCNode Title="otherArgs Property " Url="html/P_DTIVideoManager_ffmpegHelper_otherArgs.htm" />
+          <HelpTOCNode Title="OutputFileNamingConvention Property " Url="html/P_DTIVideoManager_ffmpegHelper_OutputFileNamingConvention.htm" />
+          <HelpTOCNode Title="OutputPath Property " Url="html/P_DTIVideoManager_ffmpegHelper_OutputPath.htm" />
+          <HelpTOCNode Title="SaveVideoInDataBase Property " Url="html/P_DTIVideoManager_ffmpegHelper_SaveVideoInDataBase.htm" />
+          <HelpTOCNode Title="sqlhelper Property " Url="html/P_DTIVideoManager_ffmpegHelper_sqlhelper.htm" />
+          <HelpTOCNode Title="User_Id Property " Url="html/P_DTIVideoManager_ffmpegHelper_User_Id.htm" />
+          <HelpTOCNode Title="videoSaveTable Property " Url="html/P_DTIVideoManager_ffmpegHelper_videoSaveTable.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="55633a3a-be38-4e87-892d-559608c229eb" Title="ffmpegHelper Events" Url="html/Events_T_DTIVideoManager_ffmpegHelper.htm">
+          <HelpTOCNode Title="conversionDone Event" Url="html/E_DTIVideoManager_ffmpegHelper_conversionDone.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="3d58e443-c08a-4689-a1da-1b1071d71bd0" Title="VideoBase Class" Url="html/T_DTIVideoManager_VideoBase.htm">
+        <HelpTOCNode Id="74325e19-427f-44e6-83f7-86c647f1c36c" Title="VideoBase Properties " Url="html/Properties_T_DTIVideoManager_VideoBase.htm">
+          <HelpTOCNode Title="MyFlashWrapper Property " Url="html/P_DTIVideoManager_VideoBase_MyFlashWrapper.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f322b492-1ce4-441d-9105-83b26cd3645e" Title="VideoThumb Class" Url="html/T_DTIVideoManager_VideoThumb.htm">
+        <HelpTOCNode Id="eb05d93e-7a5a-4270-9546-c2e85424b63b" Title="VideoThumb Properties " Url="html/Properties_T_DTIVideoManager_VideoThumb.htm">
+          <HelpTOCNode Title="ExpandURL Property " Url="html/P_DTIVideoManager_VideoThumb_ExpandURL.htm" />
+          <HelpTOCNode Title="HighslideDisplayMode Property " Url="html/P_DTIVideoManager_VideoThumb_HighslideDisplayMode.htm" />
+          <HelpTOCNode Title="MaxThumbHeight Property " Url="html/P_DTIVideoManager_VideoThumb_MaxThumbHeight.htm" />
+          <HelpTOCNode Title="MaxThumbWidth Property " Url="html/P_DTIVideoManager_VideoThumb_MaxThumbWidth.htm" />
+          <HelpTOCNode Title="RefreshImage Property " Url="html/P_DTIVideoManager_VideoThumb_RefreshImage.htm" />
+          <HelpTOCNode Title="ThumbSize Property " Url="html/P_DTIVideoManager_VideoThumb_ThumbSize.htm" />
+          <HelpTOCNode Title="ThumbURL Property " Url="html/P_DTIVideoManager_VideoThumb_ThumbURL.htm" />
+          <HelpTOCNode Title="VideoHeight Property " Url="html/P_DTIVideoManager_VideoThumb_VideoHeight.htm" />
+          <HelpTOCNode Title="VideoId Property " Url="html/P_DTIVideoManager_VideoThumb_VideoId.htm" />
+          <HelpTOCNode Title="VideoWidth Property " Url="html/P_DTIVideoManager_VideoThumb_VideoWidth.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="c0e1eed9-ca4c-4b58-a76e-97c983498ab5" Title="VideoUploaderControl Class" Url="html/T_DTIVideoManager_VideoUploaderControl.htm">
+        <HelpTOCNode Id="4f56fc1f-7d01-4606-a270-736e93402a5a" Title="VideoUploaderControl Properties " Url="html/Properties_T_DTIVideoManager_VideoUploaderControl.htm">
+          <HelpTOCNode Title="MyFlashWrapper Property " Url="html/P_DTIVideoManager_VideoUploaderControl_MyFlashWrapper.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="be612618-fd5b-4b59-8035-8323911f4d91" Title="VideoViewerControl Class" Url="html/T_DTIVideoManager_VideoViewerControl.htm">
+        <HelpTOCNode Id="b114ca0a-8c8d-4aeb-a881-327316b05ae3" Title="VideoViewerControl Methods " Url="html/Methods_T_DTIVideoManager_VideoViewerControl.htm">
+          <HelpTOCNode Title="registerInitScript Method " Url="html/M_DTIVideoManager_VideoViewerControl_registerInitScript.htm" />
+          <HelpTOCNode Title="registerSWFJSFile Method " Url="html/M_DTIVideoManager_VideoViewerControl_registerSWFJSFile.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="fca1a827-be0d-4b2a-a3a9-5ba0f7484b44" Title="VideoViewerControl Properties " Url="html/Properties_T_DTIVideoManager_VideoViewerControl.htm">
+          <HelpTOCNode Title="AutoPlay Property " Url="html/P_DTIVideoManager_VideoViewerControl_AutoPlay.htm" />
+          <HelpTOCNode Title="MovieHeight Property " Url="html/P_DTIVideoManager_VideoViewerControl_MovieHeight.htm" />
+          <HelpTOCNode Title="MovieWidth Property " Url="html/P_DTIVideoManager_VideoViewerControl_MovieWidth.htm" />
+          <HelpTOCNode Title="screenShotPath Property " Url="html/P_DTIVideoManager_VideoViewerControl_screenShotPath.htm" />
+          <HelpTOCNode Title="VideoId Property " Url="html/P_DTIVideoManager_VideoViewerControl_VideoId.htm" />
+          <HelpTOCNode Title="videoPath Property " Url="html/P_DTIVideoManager_VideoViewerControl_videoPath.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="98f202c0-1998-478d-a9a0-a2d0e91e40bc" Title="jQueryLibrary Namespace" Url="html/N_jQueryLibrary.htm">
+      <HelpTOCNode Id="59d4f158-b62f-4ae9-94c3-37f9bfe90536" Title="jQueryInclude Class" Url="html/T_jQueryLibrary_jQueryInclude.htm">
+        <HelpTOCNode Title="jQueryInclude Constructor " Url="html/M_jQueryLibrary_jQueryInclude__ctor.htm" />
+        <HelpTOCNode Id="a6819a39-b07c-482f-acc1-7103b88f5b7d" Title="jQueryInclude Fields" Url="html/Fields_T_jQueryLibrary_jQueryInclude.htm">
+          <HelpTOCNode Title="isinitial Field" Url="html/F_jQueryLibrary_jQueryInclude_isinitial.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="6afd378a-d98e-4930-a19e-e33ea4c5d1d5" Title="jQueryInclude Methods " Url="html/Methods_T_jQueryLibrary_jQueryInclude.htm">
+          <HelpTOCNode Title="addControlToHeader Method " Url="html/M_jQueryLibrary_jQueryInclude_addControlToHeader.htm" />
+          <HelpTOCNode Id="43b1c873-125b-403f-a6f6-aba888ab41fb" Title="addInclude Method " Url="html/Overload_jQueryLibrary_jQueryInclude_addInclude.htm">
+            <HelpTOCNode Title="addInclude Method (jQueryInclude.ScriptFile)" Url="html/M_jQueryLibrary_jQueryInclude_addInclude.htm" />
+            <HelpTOCNode Title="addInclude Method (String, String, Boolean, Boolean, String)" Url="html/M_jQueryLibrary_jQueryInclude_addInclude_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="addScriptBlock Method " Url="html/M_jQueryLibrary_jQueryInclude_addScriptBlock.htm" />
+          <HelpTOCNode Title="addScriptBlockPageLoad Method " Url="html/M_jQueryLibrary_jQueryInclude_addScriptBlockPageLoad.htm" />
+          <HelpTOCNode Title="addScriptFile Method " Url="html/M_jQueryLibrary_jQueryInclude_addScriptFile.htm" />
+          <HelpTOCNode Title="addStyleBlock Method " Url="html/M_jQueryLibrary_jQueryInclude_addStyleBlock.htm" />
+          <HelpTOCNode Title="deleteInclude Method " Url="html/M_jQueryLibrary_jQueryInclude_deleteInclude.htm" />
+          <HelpTOCNode Title="deleteScriptFile Method " Url="html/M_jQueryLibrary_jQueryInclude_deleteScriptFile.htm" />
+          <HelpTOCNode Title="getEnumName Method " Url="html/M_jQueryLibrary_jQueryInclude_getEnumName.htm" />
+          <HelpTOCNode Title="getInitialInclude Method " Url="html/M_jQueryLibrary_jQueryInclude_getInitialInclude.htm" />
+          <HelpTOCNode Title="RegisterJQuery Method " Url="html/M_jQueryLibrary_jQueryInclude_RegisterJQuery.htm" />
+          <HelpTOCNode Title="RegisterJQueryUI Method " Url="html/M_jQueryLibrary_jQueryInclude_RegisterJQueryUI.htm" />
+          <HelpTOCNode Title="RegisterJQueryUIThemed Method " Url="html/M_jQueryLibrary_jQueryInclude_RegisterJQueryUIThemed.htm" />
+          <HelpTOCNode Title="RenderControlToString Method " Url="html/M_jQueryLibrary_jQueryInclude_RenderControlToString.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="3822a43b-d6d9-4b03-90f2-852f0a9cf3fc" Title="jQueryInclude Properties " Url="html/Properties_T_jQueryLibrary_jQueryInclude.htm">
+          <HelpTOCNode Title="ctrlList Property " Url="html/P_jQueryLibrary_jQueryInclude_ctrlList.htm" />
+          <HelpTOCNode Title="jqueryIncludeList Property " Url="html/P_jQueryLibrary_jQueryInclude_jqueryIncludeList.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="2378e6b3-0e16-450c-b6aa-ce9742a1da57" Title="jQueryInclude.ScriptFile Class" Url="html/T_jQueryLibrary_jQueryInclude_ScriptFile.htm">
+        <HelpTOCNode Title="jQueryInclude.ScriptFile Constructor " Url="html/M_jQueryLibrary_jQueryInclude_ScriptFile__ctor.htm" />
+        <HelpTOCNode Id="7c2fb469-67bc-4288-bef4-4c2f4f1a4b1e" Title="ScriptFile Fields" Url="html/Fields_T_jQueryLibrary_jQueryInclude_ScriptFile.htm">
+          <HelpTOCNode Title="id Field" Url="html/F_jQueryLibrary_jQueryInclude_ScriptFile_id.htm" />
+          <HelpTOCNode Title="isRawScript Field" Url="html/F_jQueryLibrary_jQueryInclude_ScriptFile_isRawScript.htm" />
+          <HelpTOCNode Title="src Field" Url="html/F_jQueryLibrary_jQueryInclude_ScriptFile_src.htm" />
+          <HelpTOCNode Title="type Field" Url="html/F_jQueryLibrary_jQueryInclude_ScriptFile_type.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="147f8e61-6093-47c9-ac4c-c822dc5396c3" Title="ThemeAdder Class" Url="html/T_jQueryLibrary_ThemeAdder.htm">
+        <HelpTOCNode Title="ThemeAdder Constructor " Url="html/M_jQueryLibrary_ThemeAdder__ctor.htm" />
+        <HelpTOCNode Id="5312c9c1-60cc-446e-b13a-8cae87a0f741" Title="ThemeAdder Methods " Url="html/Methods_T_jQueryLibrary_ThemeAdder.htm">
+          <HelpTOCNode Title="AddTheme Method " Url="html/M_jQueryLibrary_ThemeAdder_AddTheme.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ca49e109-3c79-4b01-8353-e30bc0cbc3b1" Title="Rotator Namespace" Url="html/N_Rotator.htm">
+      <HelpTOCNode Id="2361e11c-0ea9-4b4e-a3a1-8a9169832e1d" Title="Rotator Class" Url="html/T_Rotator_Rotator.htm">
+        <HelpTOCNode Title="Rotator Constructor " Url="html/M_Rotator_Rotator__ctor.htm" />
+        <HelpTOCNode Id="31da8904-73be-45cb-aca4-c2173b06c4fe" Title="Rotator Properties " Url="html/Properties_T_Rotator_Rotator.htm">
+          <HelpTOCNode Title="Easing Property " Url="html/P_Rotator_Rotator_Easing.htm" />
+          <HelpTOCNode Title="Menu_Icon_Url Property " Url="html/P_Rotator_Rotator_Menu_Icon_Url.htm" />
+          <HelpTOCNode Title="Pause Property " Url="html/P_Rotator_Rotator_Pause.htm" />
+          <HelpTOCNode Title="Randomize Property " Url="html/P_Rotator_Rotator_Randomize.htm" />
+          <HelpTOCNode Title="Transition Property " Url="html/P_Rotator_Rotator_Transition.htm" />
+          <HelpTOCNode Title="TransitionSpeed Property " Url="html/P_Rotator_Rotator_TransitionSpeed.htm" />
+          <HelpTOCNode Title="waitTime Property " Url="html/P_Rotator_Rotator_waitTime.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9b618424-e317-4c91-ab56-ebf62637bb42" Title="SQLiteHelper Namespace" Url="html/N_SQLiteHelper.htm">
+      <HelpTOCNode Id="f65a1474-0b54-4f0b-a2a9-975c8d4db7e1" Title="SQLiteHelper Class" Url="html/T_SQLiteHelper_SQLiteHelper.htm">
+        <HelpTOCNode Id="44510c9b-c111-445e-bc46-821dcfcf1e68" Title="SQLiteHelper Methods " Url="html/Methods_T_SQLiteHelper_SQLiteHelper.htm">
+          <HelpTOCNode Title="checkDBObjectExists Method " Url="html/M_SQLiteHelper_SQLiteHelper_checkDBObjectExists.htm" />
+          <HelpTOCNode Title="createAdaptor Method " Url="html/M_SQLiteHelper_SQLiteHelper_createAdaptor.htm" />
+          <HelpTOCNode Title="createCommand Method " Url="html/M_SQLiteHelper_SQLiteHelper_createCommand.htm" />
+          <HelpTOCNode Title="createCommandBuilder Method " Url="html/M_SQLiteHelper_SQLiteHelper_createCommandBuilder.htm" />
+          <HelpTOCNode Title="createConnection Method " Url="html/M_SQLiteHelper_SQLiteHelper_createConnection.htm" />
+          <HelpTOCNode Id="140b3ff3-2473-4725-bf7e-05c9c9c50e1a" Title="createParameter Method " Url="html/Overload_SQLiteHelper_SQLiteHelper_createParameter.htm">
+            <HelpTOCNode Title="createParameter Method (DbParameter)" Url="html/M_SQLiteHelper_SQLiteHelper_createParameter.htm" />
+            <HelpTOCNode Title="createParameter Method (String, Object)" Url="html/M_SQLiteHelper_SQLiteHelper_createParameter_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="createTable Method " Url="html/M_SQLiteHelper_SQLiteHelper_createTable.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="346db4d2-0bf9-4504-a642-3357dd05bc93" Title="VideoPanel Namespace" Url="html/N_VideoPanel.htm">
+      <HelpTOCNode Id="5e21754c-8945-4c60-9f1f-c8b393cb8584" Title="VideoPanel Class" Url="html/T_VideoPanel_VideoPanel.htm">
+        <HelpTOCNode Id="29126a95-83d2-4546-81dd-30bb67bbd5b8" Title="VideoPanel Properties " Url="html/Properties_T_VideoPanel_VideoPanel.htm">
+          <HelpTOCNode Title="autoplay Property " Url="html/P_VideoPanel_VideoPanel_autoplay.htm" />
+          <HelpTOCNode Title="Menu_Icon_Url Property " Url="html/P_VideoPanel_VideoPanel_Menu_Icon_Url.htm" />
+          <HelpTOCNode Title="popupVideo Property " Url="html/P_VideoPanel_VideoPanel_popupVideo.htm" />
+          <HelpTOCNode Title="videoID Property " Url="html/P_VideoPanel_VideoPanel_videoID.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

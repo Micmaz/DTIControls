@@ -1,0 +1,100 @@
+<root>
+	<modules>
+	</modules>
+
+	<tools enabled="true">
+		<tool name="Cut" />
+		<tool name="Copy" />
+		<tool name="Paste" shortcut="CTRL+!"/>
+		<tool separator="true"/>
+		<tool name="PastePlainText" />
+		<tool name="PasteAsHtml"  />
+		<tool separator="true"/>
+		<tool name="Undo" />
+		<tool name="Redo" />
+		<tool name="AjaxSpellCheck" />
+		<tool name="InsertDate" />
+		<tool name="InsertTime" />
+		<tool separator="true"/>
+		<tool name="InsertOrderedList" />
+		<tool name="InsertUnorderedList"/>
+		<tool name="InsertGroupbox" />
+		<tool name="InsertParagraph" />
+		<tool name="InsertHorizontalRule" />
+		<tool separator="true"/>
+	</tools>
+	<tools name="InsertToolbar" dockable="true" enabled="true" >
+
+		<tool name="ImageManager" shortcut="CTRL+M"/>
+		<tool name="FlashManager" />
+		<tool name="MediaManager" />
+		<tool separator="true"/>
+		<tool name="InsertTable" />
+	</tools>
+
+
+
+	<tools enabled="true" dockable="true">
+		<tool name="Bold" />
+		<tool name="Italic" />
+		<tool name="Underline" />
+		<tool name="StrikeThrough" />
+		<tool separator="true"/>
+		<tool name="JustifyLeft" />
+		<tool name="JustifyCenter" />
+		<tool name="JustifyRight" />
+		<tool name="JustifyFull" />
+		<tool name="JustifyNone" />
+
+		<tool separator="true"/>
+		<tool name="Superscript" />
+		<tool name="Subscript" />
+
+		<tool name="Indent" />
+		<tool name="Outdent" />
+		<tool name="InsertOrderedList" />
+		<tool name="InsertUnorderedList"/>
+
+		<tool name="AbsolutePosition" />
+		<tool name="LinkManager" />
+		<tool name="Unlink" />
+		<tool name="ToggleTableBorder" />
+		<tool name="ToggleScreenMode" />
+	</tools>
+
+	<tools name="DropdownToolbar" dockable="true" >
+		<tool name="ForeColor" />
+		<tool name="BackColor"/>
+		<tool separator="true"/>
+		<tool name="FontName"/>
+		<tool name="FontSize"/>
+		<tool name="RealFontSize"/>
+		<tool name="FormatBlock"/>
+		<tool name="Zoom" />
+	</tools>
+
+
+	<snippets>
+	</snippets>
+
+	<symbols>
+
+	</symbols>
+	<fontNames>
+	</fontNames>
+	<fontSizes>
+	</fontSizes>
+
+	<colors>
+	</colors>
+	<classes>
+	</classes>
+
+	<paragraphs>
+	</paragraphs>
+
+	<dialogParameters>
+	</dialogParameters>
+	<languages>
+	</languages>
+</root>

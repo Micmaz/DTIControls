@@ -1,0 +1,4 @@
+C:\components\_DTIControls\obj\Release\_DTIControls.vbprojResolveAssemblyReference.cache
+C:\components\_DTIControls\obj\Release\DTIControls.dll
+C:\components\_DTIControls\obj\Release\DTIControls.xml
+C:\components\_DTIControls\obj\Release\DTIControls.pdb

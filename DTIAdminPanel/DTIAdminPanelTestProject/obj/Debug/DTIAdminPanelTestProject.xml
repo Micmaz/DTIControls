@@ -1,0 +1,786 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DTIAdminPanelTestProject
+</name>
+</assembly>
+<members>
+<member name="T:DTIAdminPanelTestProject.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DTIAdminPanelTestProject.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DTIAdminPanelTestProject.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:DTIAdminPanelTestProject._default">
+<summary>
+_default class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject._default._loginControl1">
+<summary>
+loginControl1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject._default._btnlogin">
+<summary>
+btnlogin control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject._default._btnlogout">
+<summary>
+btnlogout control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject._default._btnediton">
+<summary>
+btnediton control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject._default._btnlayouton">
+<summary>
+btnlayouton control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.Homepage">
+<summary>
+Homepage class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Homepage._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Homepage._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Homepage._Menu1">
+<summary>
+Menu1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.OverrideTest">
+<summary>
+OverrideTest class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.OverrideTest._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.OverrideTest._menu1">
+<summary>
+menu1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.OverrideTest._OverrideItem1">
+<summary>
+OverrideItem1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.OverrideTest._menuitem5">
+<summary>
+menuitem5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.OverrideTest._ContentPlaceHolder1">
+<summary>
+ContentPlaceHolder1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.DTIMenu">
+<summary>
+DTIMenu class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.DTIMenu._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.DTIMenu._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.DTIMenu._Menu1">
+<summary>
+Menu1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.PasswordStrengthTest">
+<summary>
+PasswordStrengthTest class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.PasswordStrengthTest._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.PasswordStrengthTest._TextBox1">
+<summary>
+TextBox1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.PasswordStrengthTest._PasswordStrength1">
+<summary>
+PasswordStrength1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.PasswordStrengthTest._LoginUser1">
+<summary>
+LoginUser1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.Puzzled">
+<summary>
+Puzzled class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._AdminPanel">
+<summary>
+AdminPanel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._EditPanel1">
+<summary>
+EditPanel1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._Menu1">
+<summary>
+Menu1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._EditPanel2">
+<summary>
+EditPanel2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._ContentPlaceHolder1">
+<summary>
+ContentPlaceHolder1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._ContentPlaceHolder2">
+<summary>
+ContentPlaceHolder2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._DTISortable1">
+<summary>
+DTISortable1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._WebUserControl1_1">
+<summary>
+WebUserControl1_1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Puzzled._EditPanel3">
+<summary>
+EditPanel3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._loggedinControl1">
+<summary>
+loggedinControl1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._Button1">
+<summary>
+Button1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._menu3">
+<summary>
+menu3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._menuitem0">
+<summary>
+menuitem0 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._menuitem1">
+<summary>
+menuitem1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._ContentPlaceHolder1">
+<summary>
+ContentPlaceHolder1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site1._ContentPlaceHolder2">
+<summary>
+ContentPlaceHolder2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.Stargazer">
+<summary>
+Stargazer class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Stargazer._Form1">
+<summary>
+Form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Stargazer._AdminPanel">
+<summary>
+AdminPanel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Stargazer._header1">
+<summary>
+header1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Stargazer._Menu1">
+<summary>
+Menu1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Stargazer._ContentPlaceHolder1">
+<summary>
+ContentPlaceHolder1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Stargazer._ContentPlaceHolder2">
+<summary>
+ContentPlaceHolder2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Stargazer._footer1">
+<summary>
+footer1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.test">
+<summary>
+test class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.test._Menu3">
+<summary>
+Menu3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.test._sortable2">
+<summary>
+sortable2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.Site2">
+<summary>
+Site2 class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._loggedinControl1">
+<summary>
+loggedinControl1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._menu1">
+<summary>
+menu1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._item1">
+<summary>
+item1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._DefaultMenuItem1">
+<summary>
+DefaultMenuItem1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._DefaultMenuItem2">
+<summary>
+DefaultMenuItem2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._menuitem5">
+<summary>
+menuitem5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Site2._ContentPlaceHolder1">
+<summary>
+ContentPlaceHolder1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.DTIAdminPanelTestProject.Test2">
+<summary>
+Test2 class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.Test3">
+<summary>
+Test3 class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._Sortable">
+<summary>
+Sortable control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._EditPanel2">
+<summary>
+EditPanel2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._panTemplate">
+<summary>
+panTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._ddlTemplate">
+<summary>
+ddlTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._EditPanel1">
+<summary>
+EditPanel1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._DTISortable1">
+<summary>
+DTISortable1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._EditPanel3">
+<summary>
+EditPanel3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._EditPanel4">
+<summary>
+EditPanel4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.Test3._EditPanel5">
+<summary>
+EditPanel5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.teset">
+<summary>
+teset class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.TestNoSortables">
+<summary>
+TestNoSortables class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="T:DTIAdminPanelTestProject.WebUserControl1">
+<summary>
+WebUserControl1 class.
+</summary>
+<remarks>
+Auto-generated class.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.WebUserControl1._tb1">
+<summary>
+tb1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.WebUserControl1._tb2">
+<summary>
+tb2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.WebUserControl1._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DTIAdminPanelTestProject.WebUserControl1._Button1">
+<summary>
+Button1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

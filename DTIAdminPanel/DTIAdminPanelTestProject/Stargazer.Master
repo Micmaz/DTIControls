@@ -1,0 +1,57 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Stargazer.Master.vb" Inherits="DTIAdminPanelTestProject.Stargazer" %>
+<%@ Register Assembly="DTIContentManagement" Namespace="DTIContentManagement" TagPrefix="cc2" %>
+<%@ Register Assembly="DTIAdminPanel" Namespace="DTIAdminPanel" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : StarGazer
+Description: Fixed-width, two-column design suitable for small sites and blogs.
+Version    : 1.0
+Released   : 20071222
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>StarGazer by Free CSS Templates</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link runat="server" href="/css/Stargazer/Stargazer.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<form id="Form1" runat="server">
+    <cc1:DTIAdminPanel ID="AdminPanel" runat="server">
+    </cc1:DTIAdminPanel>
+<div id="header">
+        <cc2:EditPanel ID="header1" runat="server">
+	<h1><a href="#">StarGazer</a></h1>
+	<h2>By Free CSS Templates</h2>
+	    </cc2:EditPanel>
+</div>
+<cc1:Menu ID="Menu1" runat="server" CssClass="menu" SelectedCss="selected" Template="Simple">
+</cc1:Menu>
+<div id="page">
+	<div id="content">
+	<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+	</asp:ContentPlaceHolder>
+	</div>
+	<!-- end #content -->
+	<div id="sidebar">
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+		<div style="clear: both; height: 40px;">&nbsp;</div>
+	</div>
+	<!-- end #sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end #page -->
+<hr />
+<cc2:EditPanel ID="footer1" runat="server" CssClass="footer">
+	<p>(c) 2007 Sitename.com. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+</cc2:EditPanel>
+</form>
+</body>
+</html>

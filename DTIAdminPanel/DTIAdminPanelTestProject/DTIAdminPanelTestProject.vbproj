@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E63BA704-4791-4CED-895C-ECD954DE8A6D}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DTIAdminPanelTestProject</RootNamespace>
+    <AssemblyName>DTIAdminPanelTestProject</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIAdminPanelTestProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <AdditionalParameters />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DTIAdminPanelTestProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <AdditionalParameters />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="BaseClasses">
+      <HintPath>..\..\..\BetaDLLs\BaseClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="DTIContentManagement">
+      <HintPath>..\..\..\BetaDLLs\DTIContentManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="DTIServerControls">
+      <HintPath>..\..\..\BetaDLLs\DTIServerControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLiteHelper">
+      <HintPath>..\..\..\BetaDLLs\SQLiteHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseMaster.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.aspx.designer.vb">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.aspx.vb">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OverrideTemplateTest.aspx.designer.vb">
+      <DependentUpon>OverrideTemplateTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OverrideTemplateTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>OverrideTemplateTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OverrideTest.Master.designer.vb">
+      <DependentUpon>OverrideTest.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OverrideTest.Master.vb">
+      <DependentUpon>OverrideTest.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="page\DTIMenu.aspx.designer.vb">
+      <DependentUpon>DTIMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="page\DTIMenu.aspx.vb">
+      <DependentUpon>DTIMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordStrengthTest.aspx.designer.vb">
+      <DependentUpon>PasswordStrengthTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordStrengthTest.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>PasswordStrengthTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Puzzled.Master.designer.vb">
+      <DependentUpon>Puzzled.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Puzzled.Master.vb">
+      <DependentUpon>Puzzled.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stargazer.Master.designer.vb">
+      <DependentUpon>Stargazer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Stargazer.Master.vb">
+      <DependentUpon>Stargazer.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.vb">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Site2.Master.designer.vb">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.vb">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test2.aspx.designer.vb">
+      <DependentUpon>Test2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test2.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>Test2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test3.aspx.designer.vb">
+      <DependentUpon>Test3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test3.aspx.vb">
+      <DependentUpon>Test3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testfolder\teset.aspx.designer.vb">
+      <DependentUpon>teset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testfolder\teset.aspx.vb">
+      <SubType>ASPXCodebehind</SubType>
+      <DependentUpon>teset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestNoSortables.aspx.designer.vb">
+      <DependentUpon>TestNoSortables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestNoSortables.aspx.vb">
+      <DependentUpon>TestNoSortables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.designer.vb">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.vb">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="adminJs.js" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="OverrideTemplateTest.aspx" />
+    <Content Include="OverrideTest.Master" />
+    <Content Include="css\Stargazer\Images\img01.gif" />
+    <Content Include="css\Stargazer\Images\img02.jpg" />
+    <Content Include="css\Stargazer\Images\img03.jpg" />
+    <Content Include="css\Stargazer\Images\img04.jpg" />
+    <Content Include="css\Stargazer\Images\img05.gif" />
+    <Content Include="css\Stargazer\Images\img06.gif" />
+    <Content Include="css\Stargazer\Images\img07.gif" />
+    <Content Include="css\Stargazer\Stargazer.css" />
+    <Content Include="PasswordStrengthTest.aspx" />
+    <Content Include="Stargazer.Master" />
+    <Content Include="css\Puzzled\Images\img01.jpg" />
+    <Content Include="css\Puzzled\Images\img02.jpg" />
+    <Content Include="css\Puzzled\Images\img03.jpg" />
+    <Content Include="css\Puzzled\Images\img04.jpg" />
+    <Content Include="css\Puzzled\Images\img05.jpg" />
+    <Content Include="css\Puzzled\Images\img06.jpg" />
+    <Content Include="css\Puzzled\Images\img07.gif" />
+    <Content Include="css\Puzzled\Images\img08.gif" />
+    <Content Include="css\Puzzled\Images\img08.jpg" />
+    <Content Include="css\Puzzled\Images\img11.gif" />
+    <Content Include="css\Puzzled\Images\img12.gif" />
+    <Content Include="css\Puzzled\Images\img13.gif" />
+    <Content Include="css\Puzzled\Images\img14.gif" />
+    <Content Include="css\Puzzled\Images\spacer.gif" />
+    <Content Include="css\Puzzled\puzzled.css" />
+    <Content Include="Puzzled.Master" />
+    <Content Include="Site1.Master" />
+    <Content Include="default.aspx" />
+    <Content Include="Homepage.aspx" />
+    <Content Include="page\DTIMenu.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="ModernEleganceColors\brown\content.gif" />
+    <Content Include="ModernEleganceColors\brown\contentReplaceableImage.gif" />
+    <Content Include="ModernEleganceColors\brown\footer.gif" />
+    <Content Include="ModernEleganceColors\brown\form.gif" />
+    <Content Include="ModernEleganceColors\brown\logo.png" />
+    <Content Include="ModernEleganceColors\brown\news.jpg" />
+    <Content Include="ModernEleganceColors\brown\replaceableImage.gif" />
+    <Content Include="ModernEleganceColors\css\brown.css" />
+    <Content Include="Site2.Master" />
+    <Content Include="Test2.aspx" />
+    <Content Include="Test3.aspx" />
+    <Content Include="testfolder\teset.aspx" />
+    <Content Include="TestNoSortables.aspx" />
+    <Content Include="WebUserControl1.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DTISortable\DTISortable\DTISortable.vbproj">
+      <Project>{453D33FF-37BA-4EEC-B7DA-B117D85041AD}</Project>
+      <Name>DTISortable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIAdminPanel\DTIAdminPanel.vbproj">
+      <Project>{74009BBF-5539-4A38-8532-D9D5880D273D}</Project>
+      <Name>DTIAdminPanel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1422</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

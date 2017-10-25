@@ -1,0 +1,1 @@
+C:\Components\Json\Json\obj\x86\Release\Json.csprojResolveAssemblyReference.cache

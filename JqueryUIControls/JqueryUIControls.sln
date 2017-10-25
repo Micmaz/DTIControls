@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "JqueryUIControls", "JqueryUIControls\JqueryUIControls.vbproj", "{CC9F78D0-B8DA-4945-9B59-96BC05762F56}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "JqueryUIControlsTest", "JqueryUIControlsTest\JqueryUIControlsTest.vbproj", "{D48425C5-F49D-4640-ABAB-599C35E4829A}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "jQueryLibrary", "..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj", "{29AB90A7-F4EB-4619-BD62-05ACEBD19FEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC9F78D0-B8DA-4945-9B59-96BC05762F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9F78D0-B8DA-4945-9B59-96BC05762F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9F78D0-B8DA-4945-9B59-96BC05762F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9F78D0-B8DA-4945-9B59-96BC05762F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D48425C5-F49D-4640-ABAB-599C35E4829A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D48425C5-F49D-4640-ABAB-599C35E4829A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D48425C5-F49D-4640-ABAB-599C35E4829A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D48425C5-F49D-4640-ABAB-599C35E4829A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AB90A7-F4EB-4619-BD62-05ACEBD19FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AB90A7-F4EB-4619-BD62-05ACEBD19FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AB90A7-F4EB-4619-BD62-05ACEBD19FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AB90A7-F4EB-4619-BD62-05ACEBD19FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGallery" targetNamespace="http://tempuri.org/dsGallery.xsd" xmlns:mstns="http://tempuri.org/dsGallery.xsd" xmlns="http://tempuri.org/dsGallery.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGallery" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsGallery" msprop:Generator_DataSetName="dsGallery">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTIGallery" msprop:Generator_UserTableName="DTIGallery" msprop:Generator_RowDeletedName="DTIGalleryRowDeleted" msprop:Generator_RowChangedName="DTIGalleryRowChanged" msprop:Generator_RowClassName="DTIGalleryRow" msprop:Generator_RowChangingName="DTIGalleryRowChanging" msprop:Generator_RowEvArgName="DTIGalleryRowChangeEvent" msprop:Generator_RowEvHandlerName="DTIGalleryRowChangeEventHandler" msprop:Generator_TableClassName="DTIGalleryDataTable" msprop:Generator_TableVarName="tableDTIGallery" msprop:Generator_RowDeletingName="DTIGalleryRowDeleting" msprop:Generator_TablePropName="DTIGallery">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:int" />
+              <xs:element name="MainId" msprop:Generator_UserColumnName="MainId" msprop:Generator_ColumnVarNameInTable="columnMainId" msprop:Generator_ColumnPropNameInRow="MainId" msprop:Generator_ColumnPropNameInTable="MainIdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Content_Type" msprop:Generator_UserColumnName="Content_Type" msprop:Generator_ColumnPropNameInRow="Content_Type" msprop:Generator_ColumnVarNameInTable="columnContent_Type" msprop:Generator_ColumnPropNameInTable="Content_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Component_Type" msprop:Generator_UserColumnName="Component_Type" msprop:Generator_ColumnPropNameInRow="Component_Type" msprop:Generator_ColumnVarNameInTable="columnComponent_Type" msprop:Generator_ColumnPropNameInTable="Component_TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Gallery_Width" msprop:Generator_UserColumnName="Gallery_Width" msprop:Generator_ColumnPropNameInRow="Gallery_Width" msprop:Generator_ColumnVarNameInTable="columnGallery_Width" msprop:Generator_ColumnPropNameInTable="Gallery_WidthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Gallery_Height" msprop:Generator_UserColumnName="Gallery_Height" msprop:Generator_ColumnVarNameInTable="columnGallery_Height" msprop:Generator_ColumnPropNameInRow="Gallery_Height" msprop:Generator_ColumnPropNameInTable="Gallery_HeightColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Thumb_Width" msprop:Generator_UserColumnName="Thumb_Width" msprop:Generator_ColumnPropNameInRow="Thumb_Width" msprop:Generator_ColumnVarNameInTable="columnThumb_Width" msprop:Generator_ColumnPropNameInTable="Thumb_WidthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Thumb_Height" msprop:Generator_UserColumnName="Thumb_Height" msprop:Generator_ColumnPropNameInRow="Thumb_Height" msprop:Generator_ColumnVarNameInTable="columnThumb_Height" msprop:Generator_ColumnPropNameInTable="Thumb_HeightColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Items_Per_Page" msprop:Generator_UserColumnName="Items_Per_Page" msprop:Generator_ColumnPropNameInRow="Items_Per_Page" msprop:Generator_ColumnVarNameInTable="columnItems_Per_Page" msprop:Generator_ColumnPropNameInTable="Items_Per_PageColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Span_Width" msprop:Generator_UserColumnName="Span_Width" msprop:Generator_ColumnVarNameInTable="columnSpan_Width" msprop:Generator_ColumnPropNameInRow="Span_Width" msprop:Generator_ColumnPropNameInTable="Span_WidthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Span_Height" msprop:Generator_UserColumnName="Span_Height" msprop:Generator_ColumnVarNameInTable="columnSpan_Height" msprop:Generator_ColumnPropNameInRow="Span_Height" msprop:Generator_ColumnPropNameInTable="Span_HeightColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Show_First_And_Last" msprop:Generator_UserColumnName="Show_First_And_Last" msprop:Generator_ColumnPropNameInRow="Show_First_And_Last" msprop:Generator_ColumnVarNameInTable="columnShow_First_And_Last" msprop:Generator_ColumnPropNameInTable="Show_First_And_LastColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Paging" msprop:Generator_UserColumnName="Show_Paging" msprop:Generator_ColumnPropNameInRow="Show_Paging" msprop:Generator_ColumnVarNameInTable="columnShow_Paging" msprop:Generator_ColumnPropNameInTable="Show_PagingColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Searching" msprop:Generator_UserColumnName="Show_Searching" msprop:Generator_ColumnPropNameInRow="Show_Searching" msprop:Generator_ColumnVarNameInTable="columnShow_Searching" msprop:Generator_ColumnPropNameInTable="Show_SearchingColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Upload" msprop:Generator_UserColumnName="Show_Upload" msprop:Generator_ColumnPropNameInRow="Show_Upload" msprop:Generator_ColumnVarNameInTable="columnShow_Upload" msprop:Generator_ColumnPropNameInTable="Show_UploadColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Author_Thumb" msprop:Generator_UserColumnName="Show_Author_Thumb" msprop:Generator_ColumnVarNameInTable="columnShow_Author_Thumb" msprop:Generator_ColumnPropNameInRow="Show_Author_Thumb" msprop:Generator_ColumnPropNameInTable="Show_Author_ThumbColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Publish_Date_Thumb" msprop:Generator_UserColumnName="Show_Publish_Date_Thumb" msprop:Generator_ColumnVarNameInTable="columnShow_Publish_Date_Thumb" msprop:Generator_ColumnPropNameInRow="Show_Publish_Date_Thumb" msprop:Generator_ColumnPropNameInTable="Show_Publish_Date_ThumbColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Rating_Thumb" msprop:Generator_UserColumnName="Show_Rating_Thumb" msprop:Generator_ColumnVarNameInTable="columnShow_Rating_Thumb" msprop:Generator_ColumnPropNameInRow="Show_Rating_Thumb" msprop:Generator_ColumnPropNameInTable="Show_Rating_ThumbColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Author_Caption" msprop:Generator_UserColumnName="Show_Author_Caption" msprop:Generator_ColumnVarNameInTable="columnShow_Author_Caption" msprop:Generator_ColumnPropNameInRow="Show_Author_Caption" msprop:Generator_ColumnPropNameInTable="Show_Author_CaptionColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Publish_Date_Caption" msprop:Generator_UserColumnName="Show_Publish_Date_Caption" msprop:Generator_ColumnVarNameInTable="columnShow_Publish_Date_Caption" msprop:Generator_ColumnPropNameInRow="Show_Publish_Date_Caption" msprop:Generator_ColumnPropNameInTable="Show_Publish_Date_CaptionColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Rating_Caption" msprop:Generator_UserColumnName="Show_Rating_Caption" msprop:Generator_ColumnVarNameInTable="columnShow_Rating_Caption" msprop:Generator_ColumnPropNameInRow="Show_Rating_Caption" msprop:Generator_ColumnPropNameInTable="Show_Rating_CaptionColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Sharing_Caption" msprop:Generator_UserColumnName="Show_Sharing_Caption" msprop:Generator_ColumnVarNameInTable="columnShow_Sharing_Caption" msprop:Generator_ColumnPropNameInRow="Show_Sharing_Caption" msprop:Generator_ColumnPropNameInTable="Show_Sharing_CaptionColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Show_Thumb_Info" msprop:Generator_UserColumnName="Show_Thumb_Info" msprop:Generator_ColumnVarNameInTable="columnShow_Thumb_Info" msprop:Generator_ColumnPropNameInRow="Show_Thumb_Info" msprop:Generator_ColumnPropNameInTable="Show_Thumb_InfoColumn" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTIGallery" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
