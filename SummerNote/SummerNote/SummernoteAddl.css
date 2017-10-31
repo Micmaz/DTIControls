@@ -20,7 +20,7 @@ button.note-btn.btn.btn-default.btn-sm.note-current-color-button {
 
 	.note-toolbar.panel-heading:hover, .DTIServerControlEdit:hover {
 		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-		border: 1px solid;
+		/*border: 1px solid;*/
 	}
 
 .rotate {
@@ -36,4 +36,8 @@ button.note-btn.btn.btn-default.btn-sm.note-current-color-button {
 }
 .bootstrap-iso .btn-sm, .bootstrap-iso .btn-group-sm > .btn {
 	height: 31px;
-} 
+}
+
+.bootstrap-iso .show > .dropdown-menu {
+	display: block;
+}

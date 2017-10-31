@@ -41,7 +41,7 @@
 
 						ui.onDialogShown($dialog, function () {
 							context.triggerEvent('dialog.shown');
-
+							if (!$("#toggleToolbar").find("i").hasClass("down")) { $("#toggleToolbar").click(); } //hide toolbar
 							$dialogBtn
 								.click(function (event) {
 									event.preventDefault();
@@ -53,11 +53,13 @@
 						});
 
 						ui.onDialogHidden($dialog, function () {
+							if ($("#toggleToolbar").find("i").hasClass("down")) { $("#toggleToolbar").click(); }	//show toolbar
 							$dialogBtn.off('click');
 							if (deferred.state() === 'pending') {
 								deferred.reject();
 							}
 							$dialog.remove();
+
 						});
 						ui.showDialog($dialog);
 					});
@@ -74,7 +76,7 @@
 			};
 
 			var createIframeDialog = function (title, iframeLocation, dialogButtonText) {
-				var diagID = 'diag' + Math.round(Math.random() * 1000000);
+				var diagID = 'diag' + iframeLocation;// Math.round(Math.random() * 1000000);
 				var body = '<div class="form-group row-fluid">' +
 					'<iframe id="' + diagID + '" src="' + iframeLocation + '" scrolling="no" width="100%" border="0" style="border: 0;overflow: hidden;width:100%;" />' +
 					'</div>';

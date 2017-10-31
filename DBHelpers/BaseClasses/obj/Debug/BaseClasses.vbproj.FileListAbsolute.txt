@@ -8,3 +8,13 @@ C:\components\DBHelpers\BaseClasses\obj\Debug\BaseClasses.vbproj.GenerateResourc
 C:\components\DBHelpers\BaseClasses\obj\Debug\BaseClasses.dll
 C:\components\DBHelpers\BaseClasses\obj\Debug\BaseClasses.xml
 C:\components\DBHelpers\BaseClasses\obj\Debug\BaseClasses.pdb
+C:\tester\DTIControls\DBHelpers\BaseClasses\bin\BaseClasses.dll
+C:\tester\DTIControls\DBHelpers\BaseClasses\bin\BaseClasses.pdb
+C:\tester\DTIControls\DBHelpers\BaseClasses\bin\BaseClasses.xml
+C:\tester\DTIControls\DBHelpers\BaseClasses\obj\Debug\BaseClasses.vbprojResolveAssemblyReference.cache
+C:\tester\DTIControls\DBHelpers\BaseClasses\obj\Debug\BaseClasses.DataBase.resources
+C:\tester\DTIControls\DBHelpers\BaseClasses\obj\Debug\BaseClasses.SQLHelper.resources
+C:\tester\DTIControls\DBHelpers\BaseClasses\obj\Debug\BaseClasses.vbproj.GenerateResource.Cache
+C:\tester\DTIControls\DBHelpers\BaseClasses\obj\Debug\BaseClasses.dll
+C:\tester\DTIControls\DBHelpers\BaseClasses\obj\Debug\BaseClasses.xml
+C:\tester\DTIControls\DBHelpers\BaseClasses\obj\Debug\BaseClasses.pdb

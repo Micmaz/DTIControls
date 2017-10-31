@@ -519,9 +519,18 @@ Public Class SummerNote
 		If HttpContext.Current.Response.Headers("X-XSS-Protection") Is Nothing Then
 			HttpContext.Current.Response.AddHeader("X-XSS-Protection", 0)
 		End If
-		hfHTML.Value = System.Web.HttpUtility.UrlEncode(litHTML.Text)
+		hfHTML.Value = Base64Encode(litHTML.Text.ToCharArray())  'System.Web.HttpUtility.UrlEncode(litHTML.Text)
 	End Sub
 
+	Public Shared Function Base64Encode(plainText As String) As String
+		Dim plainTextBytes As Byte() = System.Text.Encoding.UTF8.GetBytes(plainText)
+		Return System.Convert.ToBase64String(plainTextBytes)
+	End Function
+
+	Public Shared Function Base64Decode(base64EncodedData As String) As String
+		Dim plainTextBytes As Byte() = System.Convert.FromBase64String(base64EncodedData)
+		Return System.Text.Encoding.UTF8.GetString(plainTextBytes)
+	End Function
 
 	Private Sub changeInnerControlIds()
 		If String.IsNullOrEmpty(Me.ID) Then
@@ -563,7 +572,7 @@ Public Class SummerNote
 	End Function
 
 	Public Sub setTextFromPage()
-		litHTML.Text = System.Web.HttpUtility.UrlDecode(hfHTML.Value)
+		litHTML.Text = Base64Decode(hfHTML.Value)
 	End Sub
 
 	Private Sub save_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles save.Click

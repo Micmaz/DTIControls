@@ -2,3 +2,7 @@ C:\components\_DTIControls\obj\Debug\_DTIControls.vbprojResolveAssemblyReference
 C:\components\_DTIControls\obj\Debug\DTIControls.dll
 C:\components\_DTIControls\obj\Debug\DTIControls.xml
 C:\components\_DTIControls\obj\Debug\DTIControls.pdb
+C:\tester\DTIControls\_DTIControls\obj\Debug\_DTIControls.vbprojResolveAssemblyReference.cache
+C:\tester\DTIControls\_DTIControls\obj\Debug\DTIControls.dll
+C:\tester\DTIControls\_DTIControls\obj\Debug\DTIControls.xml
+C:\tester\DTIControls\_DTIControls\obj\Debug\DTIControls.pdb

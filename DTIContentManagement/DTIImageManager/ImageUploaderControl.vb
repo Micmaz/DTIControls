@@ -68,8 +68,8 @@ Public Class ImageUploaderControl
 
 	Private Shared checkImageTable = False
 	Private Shared checkImageCatTable = False
-	Public Shared Function saveImage(filename As String, Optional catagory As String = "", Optional siteID As Integer = 0, Optional deletefile As Boolean = True) As DTIImageManagerRow
-        Dim sqlhelper As BaseClasses.BaseHelper = BaseClasses.DataBase.getHelper()
+	Public Shared Function saveImage(filename As String, Optional catagory As String = "", Optional siteID As Integer = 0, Optional deletefile As Boolean = True, Optional addToMediaManager As Boolean = True) As DTIImageManagerRow
+		Dim sqlhelper As BaseClasses.BaseHelper = BaseClasses.DataBase.getHelper()
 		Dim images As New DTIImageManagerDataTable
 
 		If Not checkImageTable Then
@@ -78,9 +78,15 @@ Public Class ImageUploaderControl
 		End If
 
 		Dim imgrow As DTIImageManagerRow = images.NewDTIImageManagerRow()
-        pushImage(filename, imgrow, siteID, deletefile)
-        images.AddDTIImageManagerRow(imgrow)
-        sqlhelper.Update(images)
+		pushImage(filename, imgrow, siteID, deletefile)
+		images.AddDTIImageManagerRow(imgrow)
+		sqlhelper.Update(images)
+
+		If addToMediaManager Then
+			Dim dtImgMan As New DTIImageManager.dsMedaManagerTbl.DTIMediaManagerDataTable
+			dtImgMan.AddDTIMediaManagerRow("Image", imgrow.Id, True, False, "", 0, 0, "", "", "ContentManagement", Date.Now, "DTIImageManager/ViewImage.aspx?Id=" & imgrow.Id, 0, 0)
+			sqlhelper.Update(dtImgMan)
+		End If
 
 		If catagory <> "" Then
 			If Not checkImageCatTable Then
@@ -94,9 +100,9 @@ Public Class ImageUploaderControl
 		End If
 
 		Return imgrow
-    End Function
+	End Function
 
-    Public Shared Sub pushImage(ByVal path As String, ByRef imgRow As DTIImageManagerRow, ByVal user_id As Integer, Optional deletefile As Boolean = True)
+	Public Shared Sub pushImage(ByVal path As String, ByRef imgRow As DTIImageManagerRow, ByVal user_id As Integer, Optional deletefile As Boolean = True)
         Dim oFile As System.IO.FileInfo
         oFile = New System.IO.FileInfo(path)
 
@@ -169,6 +175,8 @@ Public Class ImageUploaderControl
 						maxHeight = 2048
 					End Try
 				End If
+				If maxHeight = 0 Then maxHeight = 2048
+				If maxWidth = 0 Then maxWidth = 2048
 				ViewImage.getDimention(imgRow.Height, imgRow.Width, imgRow.Height, imgRow.Width, 0, 0, maxHeight, maxWidth)
 				imgRow.Image = ViewImage.processImageArr(_image, imgRow.Image_Content_Type, imgRow.Height, imgRow.Width)
 			End If

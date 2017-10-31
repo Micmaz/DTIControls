@@ -1,17 +1,28 @@
 ﻿// Highslide fixed popup mod. Requires the "Events" component.
 if (!hs.ie || hs.uaVersion > 6) hs.extend ( hs.Expander.prototype, {
-	fix: function(on) {
+	fix: function (on) {
+		var index_highest = 0;
+		if (index_highest == 0) {
+			$("*").each(function () {
+				// always use a radix when using parseInt
+				var index_current = parseInt($(this).css("zIndex"), 10);
+				if (index_current > index_highest) {
+					index_highest = index_current;
+				}
+			});
+		}
+		$(".highslide-container").css("z-index", index_highest + 1);
 	if(this.custom) if (this.custom.Fixed) { 
 		var sign = on ? -1 : 1,
 			stl = this.wrapper.style;
-
 		if (!on) hs.getPageSize(); // recalculate scroll positions
 
 		hs.setStyles (this.wrapper, {
 			position: on ? 'fixed' : 'absolute',
 			zoom: 1, // IE7 hasLayout bug,
 			left: (parseInt(stl.left) + sign * hs.page.scrollLeft) +'px',
-			top: (parseInt(stl.top) + sign * hs.page.scrollTop) +'px'
+			top: (parseInt(stl.top) + sign * hs.page.scrollTop) + 'px',
+			zindex: index_highest
 		});
 
 		if (this.outline) {

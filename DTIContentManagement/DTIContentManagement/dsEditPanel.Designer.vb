@@ -615,6 +615,8 @@ Partial Public Class dsEditPanel
             MyBase.Columns.Add(Me.columnDateModified)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
+            Me.columnid.AutoIncrementSeed = -1
+            Me.columnid.AutoIncrementStep = -1
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columncontent.MaxLength = 100000
@@ -967,6 +969,8 @@ Partial Public Class dsEditPanel
             MyBase.Columns.Add(Me.columnisPublished)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
+            Me.columnid.AutoIncrementSeed = -1
+            Me.columnid.AutoIncrementStep = -1
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columncontent.MaxLength = 100000

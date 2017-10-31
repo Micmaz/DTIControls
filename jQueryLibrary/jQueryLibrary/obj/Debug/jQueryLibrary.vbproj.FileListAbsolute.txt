@@ -8,3 +8,13 @@ C:\components\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.vbprojResolveA
 C:\components\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.dll
 C:\components\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.xml
 C:\components\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.pdb
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.dll
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.pdb
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.xml
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\bin\BaseClasses.dll
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\bin\BaseClasses.pdb
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\bin\BaseClasses.xml
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.vbprojResolveAssemblyReference.cache
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.dll
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.xml
+C:\tester\DTIControls\jQueryLibrary\jQueryLibrary\obj\Debug\jQueryLibrary.pdb

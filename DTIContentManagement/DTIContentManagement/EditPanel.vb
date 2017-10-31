@@ -334,8 +334,9 @@ Public Class EditPanel
 		setText()
 		setMode()
 		If Mode = modes.Write Then
-			setuphtmleditor()
+
 		Else
+
 			litText.Text = litText.Text.Replace("<protected>", "").Replace("</protected>", "")
 		End If
 	End Sub
@@ -393,7 +394,7 @@ Public Class EditPanel
 	End Sub
 
 	Public Sub setTextFromPage()
-		_text = DTIMiniControls.TextBoxEncoded.decodeFromURL(Page.Request.Form(Me.htmlEditUniqueID & "_Hidden"))
+		_text = SummerNote.SummerNote.Base64Decode(Page.Request.Form(Me.htmlEditUniqueID & "_Hidden"))
 	End Sub
 
 #End Region
@@ -612,13 +613,21 @@ Public Class EditPanel
 
 			If _text <> defaultText Then htmlEdit.Text = _text
 			Page.Response.Cache.SetCacheability(HttpCacheability.NoCache)
+			setuphtmleditor()
+			If litText IsNot Nothing Then litText.Visible = False
+
 		Else
 			'ShowBorder = False
 
 			registerVideos()
-
+			litText.Visible = True
 			litText.Text = Text
+			If litText.Parent Is Nothing Then
+				Me.Controls.Add(litText)
+			End If
 
+
+			If htmlEdit() IsNot Nothing Then htmlEdit.Visible = False
 		End If
 
 	End Sub

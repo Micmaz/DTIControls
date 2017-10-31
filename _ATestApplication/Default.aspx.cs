@@ -10,12 +10,12 @@ namespace _ATestApplication
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			
 		}
 
 		protected void btnTurnEditOn_Click(object sender, EventArgs e)
 		{
-			
+			DTIControls.Share.EditModeOn = !DTIControls.Share.EditModeOn;
 		}
+
 	}
 }
