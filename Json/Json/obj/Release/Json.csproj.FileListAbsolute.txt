@@ -1,8 +1,0 @@
-C:\components\Json\Json\bin\Json.xml
-C:\components\Json\Json\bin\Json.dll
-C:\components\Json\Json\bin\Json.pdb
-C:\components\Json\Json\bin\Json.dll.CodeAnalysisLog.xml
-C:\components\Json\Json\bin\Json.dll.lastcodeanalysissucceeded
-C:\components\Json\Json\obj\Release\Json.csprojResolveAssemblyReference.cache
-C:\components\Json\Json\obj\Release\Json.dll
-C:\components\Json\Json\obj\Release\Json.pdb

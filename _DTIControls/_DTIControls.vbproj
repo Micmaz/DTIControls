@@ -53,7 +53,6 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
-    <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -144,10 +143,6 @@
     <ProjectReference Include="..\JqueryUIControls\JqueryUIControls\JqueryUIControls.vbproj">
       <Project>{cc9f78d0-b8da-4945-9b59-96bc05762f56}</Project>
       <Name>JqueryUIControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Json\Json\Json.csproj">
-      <Project>{a9ae40ff-1a21-414a-9fe7-3be13644cc6d}</Project>
-      <Name>Json</Name>
     </ProjectReference>
     <ProjectReference Include="..\Rotator\Rotator\Rotator\Rotator.vbproj">
       <Project>{78831507-0930-4ed0-adda-79bfd1057c3c}</Project>

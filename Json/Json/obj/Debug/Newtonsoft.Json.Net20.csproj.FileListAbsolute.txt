@@ -1,6 +1,0 @@
-C:\Documents and Settings\mmazarick\Desktop\Newtonsoft.Json-master\Src\Newtonsoft.Json\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\mmazarick\Desktop\Newtonsoft.Json-master\Src\Newtonsoft.Json\bin\Debug\Net20\Json.xml
-C:\Documents and Settings\mmazarick\Desktop\Newtonsoft.Json-master\Src\Newtonsoft.Json\bin\Debug\Net20\Json.dll
-C:\Documents and Settings\mmazarick\Desktop\Newtonsoft.Json-master\Src\Newtonsoft.Json\bin\Debug\Net20\Json.pdb
-C:\Documents and Settings\mmazarick\Desktop\Newtonsoft.Json-master\Src\Newtonsoft.Json\obj\Debug\Json.dll
-C:\Documents and Settings\mmazarick\Desktop\Newtonsoft.Json-master\Src\Newtonsoft.Json\obj\Debug\Json.pdb

@@ -1,6 +1,0 @@
-C:\Components\Json\Json\bin\Release\Net20\Json.xml
-C:\Components\Json\Json\bin\Release\Net20\Json.dll
-C:\Components\Json\Json\bin\Release\Net20\Json.pdb
-C:\Components\Json\Json\obj\Release\ResolveAssemblyReference.cache
-C:\Components\Json\Json\obj\Release\Json.dll
-C:\Components\Json\Json\obj\Release\Json.pdb

@@ -8,7 +8,7 @@ Imports System.Web.UI.WebControls
 Imports BaseClasses
 
 ''' <summary>
-''' A json enabled we control
+''' A json enabled web control
 ''' </summary>
 ''' <remarks></remarks>
 #If DEBUG Then

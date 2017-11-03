@@ -76,7 +76,7 @@
 			};
 
 			var createIframeDialog = function (title, iframeLocation, dialogButtonText) {
-				var diagID = 'diag' + iframeLocation;// Math.round(Math.random() * 1000000);
+				var diagID = 'diag' + Math.round(Math.random() * 1000000);
 				var body = '<div class="form-group row-fluid">' +
 					'<iframe id="' + diagID + '" src="' + iframeLocation + '" scrolling="no" width="100%" border="0" style="border: 0;overflow: hidden;width:100%;" />' +
 					'</div>';

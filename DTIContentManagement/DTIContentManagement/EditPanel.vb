@@ -679,6 +679,7 @@ Public Class EditPanel
 	End Sub
 
 	Private Sub setuphtmleditor()
+		htmlEdit.dialogList.Clear()
 		Dim dlg2 As New SummerNote.SummerNote.IframeDialog()
 		dlg2.buttonClass = "fa fahistory"
 		dlg2.title = "History Tool"
@@ -715,24 +716,24 @@ Public Class EditPanel
 		'    htmlEdit.Attributes.Add("onmouseout", "style.borderColor='#777777'")
 		'End If
 		htmlEdit.Attributes("style") &= "cursor:hand"
-        'htmlEdit.Attributes("style") &= "cursor:pointer;cursor:hand"
-        htmlEdit.Attributes.Add("contentType", contentType)
-        htmlEdit.Attributes.Add("mainId", MainID)
+		'htmlEdit.Attributes("style") &= "cursor:pointer;cursor:hand"
+		htmlEdit.Attributes.Add("contentType", contentType)
+		htmlEdit.Attributes.Add("mainId", MainID)
 		'      If ShowBorder Then
 		'          htmlEdit.ClientReady = "$($(this).parent()).css('border','none');" 'setPageCss($(this).get(0));"
 		'	htmlEdit.ClientDestroyed = "$($(this).parent()).css('border','2px dashed #777777');"
 		'End If
 
 		Dim clearDiv As New Panel
-        clearDiv.Attributes.Add("style", "clear:both;")
-        htmlEdit.Controls.Add(clearDiv)
-        MyHighslideHeader.isOuterFrame = True
+		clearDiv.Attributes.Add("style", "clear:both;")
+		htmlEdit.Controls.Add(clearDiv)
+		MyHighslideHeader.isOuterFrame = True
 
-    End Sub
+	End Sub
 
 #End Region
 
-    Private Sub EditPanel_typeFirstInitialized(ByVal t As System.Type) Handles Me.typeFirstInitialized
+	Private Sub EditPanel_typeFirstInitialized(ByVal t As System.Type) Handles Me.typeFirstInitialized
         Dim ds As New dsEditPanel
 		Dim mediaDs As New DTIMediaManager.dsMedia
 		Dim imageDs As New DTIImageManager.dsImageManager
