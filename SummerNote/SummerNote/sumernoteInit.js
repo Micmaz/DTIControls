@@ -1,6 +1,7 @@
 ﻿$(function () {
 	getHighestZ();
 	$(".dtiContentEdit, .summernote").click(function (e) { e.preventDefault(); activate(this); });
+	$(".dtiContentEdit, .summernote").on('dragenter', function (e) { activate(this); }); //Allows dragging images without having to click the edit area first.
 	$(document).keydown(function (e) {
 		if (e.which == 27) {
 			endEdit();
