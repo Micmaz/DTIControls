@@ -7,12 +7,23 @@
 			endEdit();
 		}
 	});
+
+	//Checks if there is a 301 redirect and sets the upload page accordingly. Image post data was not redirected. most other requests should be transparent.
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', uploadUrl, true);
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			uploadUrl = xhr.responseURL;
+		}
+	};
+	xhr.send();
+
 	//  $(document).on('click', ":not('.summernote')", function (e) {
 	//    dest(curreditor);
 	//    e.preventDefault();
 	//  });
 });
-
+var uploadUrl = "~/res/DTIContentManagement/Uploader.aspx";
 var curreditor;
 function addAtEnd(text) {
 	if (curreditor) {	
@@ -149,7 +160,7 @@ function sendFile(files, editor) {
 				$.ajax({
 					data: data,
 					type: "POST",
-					url: "~/res/DTIContentManagement/Uploader.aspx",
+					url: uploadUrl,
 					cache: false,
 					contentType: false,
 					processData: false,
@@ -166,7 +177,7 @@ function sendFile(files, editor) {
 			$.ajax({
 				data: data,
 				type: "POST",
-				url: "~/res/DTIContentManagement/Uploader.aspx",
+				url: uploadUrl,
 				cache: false,
 				contentType: false,
 				processData: false,
