@@ -1221,13 +1221,13 @@ Public Class TreeList
         MyBase.Render(writer)
         writer.Write("<input type=""hidden"" name=""" & Me.ClientID & "_hidden"" id=""" & Me.ClientID & "_hidden"" />")
         writer.Write("<input type=""hidden"" name=""" & Me.ClientID & "_deleted"" id=""" & Me.ClientID & "_deleted"" />")
-        writer.Write(myInsertScript)
-    End Sub
+		'writer.Write(myInsertScript)
+	End Sub
 
     Private Function myInsertScript() As String
-        Dim str As String = "<script type=""text/javascript"">" & vbCrLf
-        str &= "   $(function () { " & vbCrLf
-        str &= "		$(""#" & Me.ClientID & """).tree({" & vbCrLf
+		Dim str As String = "" '"<script type=""text/javascript"">" & vbCrLf
+		'str &= "   $(function () { " & vbCrLf
+		str &= "		$(""#" & Me.ClientID & """).tree({" & vbCrLf
         str &= "			opened : [" & openNodes & "], " & vbCrLf
         str &= "			ui : {" & vbCrLf
         str &= "				theme_name : """ & ThemeName & """," & vbCrLf
@@ -1350,9 +1350,9 @@ Public Class TreeList
         str = str.Substring(0, str.LastIndexOf(","))
         str &= "			}" & vbCrLf
         str &= "		});" & vbCrLf
-        str &= "	});" & vbCrLf
-        str &= "</script>"
-        Return str
+		'str &= "	});" & vbCrLf
+		'str &= "</script>"
+		Return str
     End Function
 #End Region
 
@@ -1382,88 +1382,92 @@ Public Class TreeList
         CustomContextMenuCollection.Add(New ContextMenuItem(label, icon, visibleFunction, actionFunction, separatorBefore))
     End Sub
 
-    Private Class ContextMenuItem
-        Private _label As String = ""
-        Public Property Label() As String
-            Get
-                Return _label
-            End Get
-            Set(ByVal value As String)
-                _label = value
-            End Set
-        End Property
+	Private Sub TreeList_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, myInsertScript())
+	End Sub
 
-        Private _icon As String = ""
-        Public Property Icon() As String
-            Get
-                Return _icon
-            End Get
-            Set(ByVal value As String)
-                _icon = value
-            End Set
-        End Property
+	Private Class ContextMenuItem
+		Private _label As String = ""
+		Public Property Label() As String
+			Get
+				Return _label
+			End Get
+			Set(ByVal value As String)
+				_label = value
+			End Set
+		End Property
 
-        Private _visibleFunction As String = ""
-        Public Property VisibleFunction() As String
-            Get
-                Return _visibleFunction
-            End Get
-            Set(ByVal value As String)
-                _visibleFunction = value
-            End Set
-        End Property
+		Private _icon As String = ""
+		Public Property Icon() As String
+			Get
+				Return _icon
+			End Get
+			Set(ByVal value As String)
+				_icon = value
+			End Set
+		End Property
 
-        Private _actionFunction As String = ""
-        Public Property ActionFunction() As String
-            Get
-                Return _actionFunction
-            End Get
-            Set(ByVal value As String)
-                _actionFunction = value
-            End Set
-        End Property
+		Private _visibleFunction As String = ""
+		Public Property VisibleFunction() As String
+			Get
+				Return _visibleFunction
+			End Get
+			Set(ByVal value As String)
+				_visibleFunction = value
+			End Set
+		End Property
 
-        Private _separatorBefore As Boolean = False
-        Public Property SeparatorBefore() As Boolean
-            Get
-                Return _separatorBefore
-            End Get
-            Set(ByVal value As Boolean)
-                _separatorBefore = value
-            End Set
-        End Property
+		Private _actionFunction As String = ""
+		Public Property ActionFunction() As String
+			Get
+				Return _actionFunction
+			End Get
+			Set(ByVal value As String)
+				_actionFunction = value
+			End Set
+		End Property
 
-        Public Sub New(ByVal lbl As String, ByVal icn As String, ByVal vFunct As String, ByVal aFunct As String, Optional ByVal sepBefore As Boolean = False)
-            Label = lbl
-            Icon = icn
-            VisibleFunction = vFunct
-            ActionFunction = aFunct
-            SeparatorBefore = sepBefore
-        End Sub
+		Private _separatorBefore As Boolean = False
+		Public Property SeparatorBefore() As Boolean
+			Get
+				Return _separatorBefore
+			End Get
+			Set(ByVal value As Boolean)
+				_separatorBefore = value
+			End Set
+		End Property
 
-        Public Sub New()
+		Public Sub New(ByVal lbl As String, ByVal icn As String, ByVal vFunct As String, ByVal aFunct As String, Optional ByVal sepBefore As Boolean = False)
+			Label = lbl
+			Icon = icn
+			VisibleFunction = vFunct
+			ActionFunction = aFunct
+			SeparatorBefore = sepBefore
+		End Sub
 
-        End Sub
+		Public Sub New()
 
-        Public Function renderMenuItem()
-            Dim str As String = ""
-            If Label <> "" AndAlso Not String.IsNullOrEmpty(ActionFunction) Then
-                Dim lbl As String = Regex.Replace(Label, "[^0-9a-zA-Z_\-]+?", "")
-                Dim vContext As String = ""
-                If String.IsNullOrEmpty(VisibleFunction) Then
-                    vContext = "function (NODE, TREE_OBJ) {return 1;}"
-                Else
-                    vContext = VisibleFunction
-                End If
-                str &= "				        " & lbl & ": { " & vbCrLf
-                str &= "				            label	: """ & New LiteralControl(Label).Text & """,  " & vbCrLf
-                str &= "						    icon	: """ & New LiteralControl(Icon).Text & """," & vbCrLf
-                str &= "						    visible	: " & New LiteralControl(vContext).Text & "," & vbCrLf
-                str &= "						    action	: " & New LiteralControl(ActionFunction).Text & "," & vbCrLf
-                str &= "						    separator_before : " & SeparatorBefore.ToString.ToLower & vbCrLf
-                str &= "				        }, " & vbCrLf
-            End If
-            Return str
-        End Function
-    End Class
+		End Sub
+
+		Public Function renderMenuItem()
+			Dim str As String = ""
+			If Label <> "" AndAlso Not String.IsNullOrEmpty(ActionFunction) Then
+				Dim lbl As String = Regex.Replace(Label, "[^0-9a-zA-Z_\-]+?", "")
+				Dim vContext As String = ""
+				If String.IsNullOrEmpty(VisibleFunction) Then
+					vContext = "function (NODE, TREE_OBJ) {return 1;}"
+				Else
+					vContext = VisibleFunction
+				End If
+				str &= "				        " & lbl & ": { " & vbCrLf
+				str &= "				            label	: """ & New LiteralControl(Label).Text & """,  " & vbCrLf
+				str &= "						    icon	: """ & New LiteralControl(Icon).Text & """," & vbCrLf
+				str &= "						    visible	: " & New LiteralControl(vContext).Text & "," & vbCrLf
+				str &= "						    action	: " & New LiteralControl(ActionFunction).Text & "," & vbCrLf
+				str &= "						    separator_before : " & SeparatorBefore.ToString.ToLower & vbCrLf
+				str &= "				        }, " & vbCrLf
+			End If
+			Return str
+		End Function
+	End Class
 End Class

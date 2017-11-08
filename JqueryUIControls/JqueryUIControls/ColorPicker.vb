@@ -80,7 +80,9 @@ Public Class ColorPicker
         Return outstr
     End Function
 
-    Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
+
+
+	Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
 		if miniPicker then Me.CssClass = "colorSelector colorSelectormini"
         Dim str As String = "<script type=""text/javascript"">$(function(){"
         Me.Controls.Add(New LiteralControl("<div style='background-color: " & colorValue & ";'></div>"))
@@ -105,5 +107,16 @@ Public Class ColorPicker
         Me.Controls.Add(hidVal)
         Me.CssClass = "colorSelector"
     End Sub
+
+	Private Sub ColorPicker_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+		If miniPicker Then Me.CssClass = "colorSelector colorSelectormini"
+		Dim str As String = ""
+
+		'str &= "$('#" & Me.ClientID & "').addClass('colorSelector');" & vbCrLf
+		str &= "var " & id & " = $('#" & Me.ClientID & "').ColorPicker({" & vbCrLf
+		str &= renderparams()
+		str &= "        });"
+		jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, str)
+	End Sub
 End Class
 

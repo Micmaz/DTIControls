@@ -17,8 +17,9 @@
             };
 
             function insertMedia(mediaHtml) {
-				if (parent.window.curreditor) {
-					parent.addContent(mediaHtml);
+				if (parent.window.DTISummernote.getCurreditor()) {
+					parent.window.DTISummernote.addContent(mediaHtml);
+					parent.window.DTISummernote.closeDialog();
 					// @param {Node} node
 					//$(parent.window.curreditor).summernote('insertNode', $(mediaHtml));
 					//parent.window.curreditor.insertHtml(mediaHtml);

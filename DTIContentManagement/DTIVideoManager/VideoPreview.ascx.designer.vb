@@ -146,7 +146,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
-	Protected WithEvents VideoThumb1 As VideoThumb
+	Protected WithEvents VideoThumb1 As Global.DTIVideoManager.VideoThumb
 
 	'''<summary>
 	'''pnlScreenShotEditor control.

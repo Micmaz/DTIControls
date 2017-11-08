@@ -457,29 +457,24 @@ Public Class DTIAdminPanel
     End Sub
 
     Private Sub DTIAdminPanelServer_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
+		If LoggedIn Then
+			Dim str As String = ""
+			str &= "$(document).ready(function() {" & vbCrLf
+			str &= "     $(""#" & Me.ClientID & """).fadeIn(600);" & vbCrLf
+			str &= "});" & vbCrLf
+			str &= "function __doPostBack(eventTarget, eventArgument) { " & vbCrLf
+			str &= "     if (!theForm.onsubmit || (theForm.onsubmit() != false)) { " & vbCrLf
+			str &= "          theForm.__EVENTTARGET.value = eventTarget; " & vbCrLf
+			str &= "          theForm.__EVENTARGUMENT.value = eventArgument; " & vbCrLf
+			str &= "          $(theForm).submit(); " & vbCrLf
+			str &= "      } " & vbCrLf
+			str &= "} " & vbCrLf
+			jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, str)
+		End If
+	End Sub
 
-    End Sub
 
-    Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
-        If LoggedIn Then
-            Dim str As String = "<script type=""text/javascript"">" & vbCrLf
-            str &= "$(document).ready(function() {" & vbCrLf
-            str &= "     $(""#" & Me.ClientID & """).fadeIn(600);" & vbCrLf
-            str &= "});" & vbCrLf
-            str &= "function __doPostBack(eventTarget, eventArgument) { " & vbCrLf
-            str &= "     if (!theForm.onsubmit || (theForm.onsubmit() != false)) { " & vbCrLf
-            str &= "          theForm.__EVENTTARGET.value = eventTarget; " & vbCrLf
-            str &= "          theForm.__EVENTARGUMENT.value = eventArgument; " & vbCrLf
-            str &= "          $(theForm).submit(); " & vbCrLf
-            str &= "      } " & vbCrLf
-            str &= "} " & vbCrLf
-            str &= "</script>" & vbCrLf
-            writer.Write(str)
-        End If
-        MyBase.Render(writer)
-    End Sub
-
-    Private Sub DTIAdminPanel_typeFirstInitialized(ByVal t As System.Type) Handles Me.typeFirstInitialized
+	Private Sub DTIAdminPanel_typeFirstInitialized(ByVal t As System.Type) Handles Me.typeFirstInitialized
         Dim ds As New dsDTIAdminPanel
         sqlhelper.checkAndCreateTable(ds.DTIDynamicPage)
         sqlhelper.checkAndCreateTable(ds.DTIPageHeiarchy)

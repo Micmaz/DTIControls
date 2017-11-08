@@ -541,11 +541,12 @@ Public MustInherit Class DTIServerBase
     End Sub
 
     Public Sub registerClientStartupScriptBlock(ByVal key As String, ByVal script As String, Optional ByVal addScriptTags As Boolean = False, Optional ByRef addPage As Page = Nothing)
-        If addPage Is Nothing Then addPage = mypage
-        If Not addPage.ClientScript.IsStartupScriptRegistered(key) Then
-            addPage.ClientScript.RegisterStartupScript(Me.GetType, key, script, addScriptTags)
-        End If
-    End Sub
+		If addPage Is Nothing Then addPage = mypage
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(mypage, script)
+		'If Not addPage.ClientScript.IsStartupScriptRegistered(key) Then
+		'    addPage.ClientScript.RegisterStartupScript(Me.GetType, key, script, addScriptTags)
+		'End If
+	End Sub
 
     Public Sub registerClientScriptFile(ByVal key As String, ByVal URL As String, Optional ByRef addPage As Page = Nothing)
         If addPage Is Nothing Then addPage = mypage

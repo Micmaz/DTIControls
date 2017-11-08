@@ -363,115 +363,122 @@ Public Class Calendar
             Dim firstOfmonth As Date = Me.SelectedDate.AddDays(-1 * Me.SelectedDate.Day + 1)
             RaiseEvent fetchEvents(Me, firstOfmonth, firstOfmonth.AddDays(Date.DaysInMonth(firstOfmonth.Year, firstOfmonth.Month) - 1))
         End If
-        Dim str As String = "<script type=""text/javascript"">"
-        Dim id As String = "" & Me.ID
-        If id = "" Then
-            id = ClientID
-        End If
 
-        str &= "var " & id & "; $(function(){" & id & " = $('#" & Me.ClientID & "').fullCalendar({" & vbCrLf
-        str &= renderparams()
-        str &= renderEvents()
-        str &= "        })"
-        If MonthViewLimit > 0 Then
-            str &= ".limitEvents(" & MonthViewLimit & ")"
-        End If
-        str &= "; });</script>"
-        writer.Write(str)
-
-        MyBase.Render(writer)
+		MyBase.Render(writer)
     End Sub
 
-    Public Class CalendarEvent
-        Public id As Integer = -1
-        Public title As String = ""
-        Public start As DateTime
-        Public allDay As Boolean = False
-        Public endDate As DateTime
-        Public className As String
-        Public editable As Boolean
-        Public url As String
-        Public color As System.Drawing.Color
-        Public backgroundColor As System.Drawing.Color
-        Public borderColor As System.Drawing.Color
-        Public textColor As System.Drawing.Color
-        Public otherContent As String
+	Public Function getScript() As String
+
+		Dim id As String = "" & Me.ID
+		If id = "" Then
+			id = ClientID
+		End If
+		Dim str As String = ""
+		str &= "var " & id & "; $(function(){" & id & " = $('#" & Me.ClientID & "').fullCalendar({" & vbCrLf
+		str &= renderparams()
+		str &= renderEvents()
+		str &= "        })"
+		If MonthViewLimit > 0 Then
+			str &= ".limitEvents(" & MonthViewLimit & ")"
+		End If
+		Str &= "; });"
+		Return str
+	End Function
+
+	Private Sub Calendar_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+		jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, getScript())
+	End Sub
+
+	Public Class CalendarEvent
+		Public id As Integer = -1
+		Public title As String = ""
+		Public start As DateTime
+		Public allDay As Boolean = False
+		Public endDate As DateTime
+		Public className As String
+		Public editable As Boolean
+		Public url As String
+		Public color As System.Drawing.Color
+		Public backgroundColor As System.Drawing.Color
+		Public borderColor As System.Drawing.Color
+		Public textColor As System.Drawing.Color
+		Public otherContent As String
 
 
-        Public Sub New(ByVal title As String, ByVal start As Date, Optional ByVal endDate As DateTime = Nothing, Optional ByVal id As Integer = -1, Optional ByVal allDay As Boolean = False, Optional ByVal className As String = Nothing, Optional ByVal editable As Boolean = False, Optional ByVal url As String = Nothing, Optional ByVal colorString As String = Nothing, Optional ByVal backgroundColorString As String = Nothing, Optional ByVal borderColorString As String = Nothing, Optional ByVal textColorString As String = Nothing)
-            Me.title = title
-            Me.start = start
-            Me.endDate = endDate
-            Me.id = id
-            Me.allDay = allDay
-            Me.className = className
-            Me.editable = editable
-            Me.url = url
-            If Not colorString Is Nothing Then _
-                Me.color = System.Drawing.ColorTranslator.FromHtml(colorString)
-            If Not backgroundColorString Is Nothing Then _
-                Me.backgroundColor = System.Drawing.ColorTranslator.FromHtml(backgroundColorString)
-            If Not borderColorString Is Nothing Then _
-                Me.borderColor = System.Drawing.ColorTranslator.FromHtml(borderColorString)
-            If Not textColorString Is Nothing Then _
-                Me.textColor = System.Drawing.ColorTranslator.FromHtml(textColorString)
-        End Sub
+		Public Sub New(ByVal title As String, ByVal start As Date, Optional ByVal endDate As DateTime = Nothing, Optional ByVal id As Integer = -1, Optional ByVal allDay As Boolean = False, Optional ByVal className As String = Nothing, Optional ByVal editable As Boolean = False, Optional ByVal url As String = Nothing, Optional ByVal colorString As String = Nothing, Optional ByVal backgroundColorString As String = Nothing, Optional ByVal borderColorString As String = Nothing, Optional ByVal textColorString As String = Nothing)
+			Me.title = title
+			Me.start = start
+			Me.endDate = endDate
+			Me.id = id
+			Me.allDay = allDay
+			Me.className = className
+			Me.editable = editable
+			Me.url = url
+			If Not colorString Is Nothing Then _
+				Me.color = System.Drawing.ColorTranslator.FromHtml(colorString)
+			If Not backgroundColorString Is Nothing Then _
+				Me.backgroundColor = System.Drawing.ColorTranslator.FromHtml(backgroundColorString)
+			If Not borderColorString Is Nothing Then _
+				Me.borderColor = System.Drawing.ColorTranslator.FromHtml(borderColorString)
+			If Not textColorString Is Nothing Then _
+				Me.textColor = System.Drawing.ColorTranslator.FromHtml(textColorString)
+		End Sub
 
-        Public Sub New()
+		Public Sub New()
 
-        End Sub
+		End Sub
 
-        Public Overrides Function toString() As String
-            Dim out As String = "{ "
-            out &= jsPropString("title", title)
-            out &= jsPropString("start", start)
-            If id > -1 Then out &= jsPropString("id", id)
-            out &= jsPropString("allDay", allDay)
-            out &= jsPropString("end", endDate)
-            out &= jsPropString("className", className)
-            out &= jsPropString("editable", editable)
-            out &= jsPropString("url", url)
-            out &= jsPropString("color", color)
-            out &= jsPropString("backgroundColor", backgroundColor)
-            out &= jsPropString("borderColor", borderColor)
-            out &= jsPropString("textColor", textColor)
-            out &= jsPropString("otherContent", otherContent)
-            out = out.Trim(",") & " }"
-            Return out
-        End Function
+		Public Overrides Function toString() As String
+			Dim out As String = "{ "
+			out &= jsPropString("title", title)
+			out &= jsPropString("start", start)
+			If id > -1 Then out &= jsPropString("id", id)
+			out &= jsPropString("allDay", allDay)
+			out &= jsPropString("end", endDate)
+			out &= jsPropString("className", className)
+			out &= jsPropString("editable", editable)
+			out &= jsPropString("url", url)
+			out &= jsPropString("color", color)
+			out &= jsPropString("backgroundColor", backgroundColor)
+			out &= jsPropString("borderColor", borderColor)
+			out &= jsPropString("textColor", textColor)
+			out &= jsPropString("otherContent", otherContent)
+			out = out.Trim(",") & " }"
+			Return out
+		End Function
 
-        Public Function toJsonString() As String
-            Dim out As String = "{ "
-            out &= jsonPropString("title", title)
-            out &= jsonPropString("start", start)
-            out &= jsonPropString("end", endDate)
-            If id > -1 Then out &= jsonPropString("id", id)
+		Public Function toJsonString() As String
+			Dim out As String = "{ "
+			out &= jsonPropString("title", title)
+			out &= jsonPropString("start", start)
+			out &= jsonPropString("end", endDate)
+			If id > -1 Then out &= jsonPropString("id", id)
 
-            out &= jsonPropString("className", className)
-            out &= jsonPropString("editable", IIf(editable, "true", ""))
-            out &= jsonPropString("allDay", IIf(allDay, "true", ""))
-            out &= jsonPropString("url", url)
-            out &= jsonPropString("color", color)
-            out &= jsonPropString("backgroundColor", backgroundColor)
-            out &= jsonPropString("borderColor", borderColor)
-            out &= jsonPropString("textColor", textColor)
-            out &= jsonPropString("otherContent", otherContent)
-            out = out.Trim(",") & " }"
-            Return out
-        End Function
+			out &= jsonPropString("className", className)
+			out &= jsonPropString("editable", IIf(editable, "true", ""))
+			out &= jsonPropString("allDay", IIf(allDay, "true", ""))
+			out &= jsonPropString("url", url)
+			out &= jsonPropString("color", color)
+			out &= jsonPropString("backgroundColor", backgroundColor)
+			out &= jsonPropString("borderColor", borderColor)
+			out &= jsonPropString("textColor", textColor)
+			out &= jsonPropString("otherContent", otherContent)
+			out = out.Trim(",") & " }"
+			Return out
+		End Function
 
-        Private Function propString(ByVal prop As String, ByVal value As Object) As String
-            If value Is Nothing Then Return ""
-            Dim out As String = """" & prop & """:"
-            If IsNumeric(value) Then
-                out &= value
-            Else
-                out &= """" & value.ToString & """"
-            End If
-            Return out & ","
-        End Function
+		Private Function propString(ByVal prop As String, ByVal value As Object) As String
+			If value Is Nothing Then Return ""
+			Dim out As String = """" & prop & """:"
+			If IsNumeric(value) Then
+				out &= value
+			Else
+				out &= """" & value.ToString & """"
+			End If
+			Return out & ","
+		End Function
 
-    End Class
+	End Class
 
 
 

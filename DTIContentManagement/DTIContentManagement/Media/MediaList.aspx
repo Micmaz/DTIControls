@@ -20,9 +20,9 @@
         
         function insertMedia(mediaHtml)
         {
-            if (parent.window.editor){
-                parent.window.editor.insertHtml(mediaHtml);
-                parent.window.CKEDITOR.dialog.getCurrent().hide();
+			if (parent.window.DTISummernote.getCurreditor()){
+				(parent.window.DTISummernote.getCurreditor()).addContent(mediaHtml);
+				parent.window.DTISummernote.closeDialog();
             }
         }
 

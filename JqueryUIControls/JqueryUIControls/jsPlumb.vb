@@ -2,27 +2,34 @@ Public Class jsPlumb
     Inherits Panel
 
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
-        Dim str As String = "<script type=""text/javascript"">$(function(){"
-        Dim id As String = "" & Me.ID
-        If id = "" Then id = ClientID
+		'Dim str As String = "<script type=""text/javascript"">$(function(){"
+		MyBase.Render(writer)
+	End Sub
 
-        str &= "var " & Me.ID & " = jsPlumb.getInstance();" & vbCrLf
-        str &= id & ".Defaults.Container = """ & Me.ClientID & """;"
-        For Each c As Connection In connections
-            str &= Me.ID & ".connect({ source:""" & c.sourceID & """, target:""" & c.destinationID & """ });" & vbCrLf
-        Next
-        str &= "});</script>"
-        writer.Write(str)
+	Private Sub Calendar_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+		jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, getScript())
+	End Sub
 
-        MyBase.Render(writer)
-    End Sub
+	Public Function getScript() As String
+		Dim str As String = ""
+		Dim id As String = "" & Me.ID
+		If id = "" Then id = ClientID
 
-    ''' <summary>
-    ''' Registers all necessary javascript and css files for this control to function on the page.
-    ''' </summary>
-    ''' <param name="page"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Registers all necessary javascript and css files for this control to function on the page.")> _
+		str &= "var " & Me.ID & " = jsPlumb.getInstance();" & vbCrLf
+		str &= id & ".Defaults.Container = """ & Me.ClientID & """;"
+		For Each c As Connection In connections
+			str &= Me.ID & ".connect({ source:""" & c.sourceID & """, target:""" & c.destinationID & """ });" & vbCrLf
+		Next
+		'str &= "});</script>"
+		Return str
+	End Function
+
+	''' <summary>
+	''' Registers all necessary javascript and css files for this control to function on the page.
+	''' </summary>
+	''' <param name="page"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Registers all necessary javascript and css files for this control to function on the page.")> _
     Public Shared Sub registerControl(ByVal page As Page)
         If Not page Is Nothing Then
             jQueryLibrary.jQueryInclude.RegisterJQueryUI(page)

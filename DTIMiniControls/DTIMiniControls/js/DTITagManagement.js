@@ -11,7 +11,7 @@ $(document).ready(function(){
     for (var popDivId in popularTagsArray) 
         for(var tag in popularTagsArray[popDivId]) 
             if(isInteger(tag)) addPopularTag(popularTagsArray[popDivId][tag], popDivId);
-    $("div[id$='DTICurrTags'] > * > .DTICancelButton").live("click", function(){
+    $("div[id$='DTICurrTags'] > * > .DTICancelButton").on("click", function(){
         var i = 0;
         for(i=0;i<currentTagsArray.length;i++) {
             if(currIdArray[i] == $(this).closest("div[id$='DTICurrTags']").attr("id")) {

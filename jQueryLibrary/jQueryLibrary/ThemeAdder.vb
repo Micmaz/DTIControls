@@ -372,9 +372,9 @@ Public Class ThemeAdder
         jQueryInclude.addScriptBlockPageLoad(Page, "$('button, input:submit, input:button, input:reset').button();", False, "ThemeButtons")
         jQueryInclude.addScriptBlockPageLoad(Page, "$('input[type=text],input[type=password],textarea,select').textbox();", False, "ThemeTextBoxes")
         jQueryInclude.addScriptBlockPageLoad(Page, "$('body').addClass('ui-widget');", False, "ThemeBody")
-        'jQueryInclude.addScriptBlock(page, "window.onerror=function(){if(document.body){document.body.style.display='block';}else{document.write(""<style type='text/css'>body{ display:block; }</style>"");}}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", False, , "bodyFadein")
-        jQueryInclude.addScriptBlock(Page, "window.onerror=function(){if(document.body)document.body.style.display='block';}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", False, , "bodyFadein")
-        jQueryInclude.addScriptBlockPageLoad(Page, "$('input:checkbox').checkbox();});$(function(){$('input:radio').radio();", False, "ThemeCheckBoxes")
+		'jQueryInclude.addScriptBlock(page, "window.onerror=function(){if(document.body){document.body.style.display='block';}else{document.write(""<style type='text/css'>body{ display:block; }</style>"");}}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", False, , "bodyFadein")
+		jQueryInclude.addScriptBlock(Page, "window.onerror=function(){if(document.body)document.body.style.display='block';}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", False, Nothing, "bodyFadein", Nothing)
+		jQueryInclude.addScriptBlockPageLoad(Page, "$('input:checkbox').checkbox();});$(function(){$('input:radio').radio();", False, "ThemeCheckBoxes")
 
         Dim header As jQueryInclude = jQueryInclude.getInitialInclude(Page)
         If Not themeButtons Then
@@ -412,9 +412,9 @@ Public Class ThemeAdder
         If themeBody Then
             bodyStr = "$('body').addClass('ui-widget-content ui-widget');"
         End If
-        jQueryInclude.addScriptBlock(Page, "window.onerror=function(){document.body.style.display='block';}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", False, , "bodyFadein")
-        'jQueryInclude.addScriptBlockPageLoad(page, "$('head').append(parent.$('#ui-theme').clone()); $('head').append(parent.$('#UI-sizeFix').clone()); " & bodyStr & " $('head').append(parent.$('#ThemeButtons').clone());$('head').append(parent.$('#ThemeTextBoxes').clone());$('head').append(parent.$('#ThemeCheckBoxes').clone());")
-        jQueryInclude.addScriptBlockPageLoad(page, "addFromParent('#ui-theme');addFromParent('#UI-sizeFix'); " & bodyStr & _
+		jQueryInclude.addScriptBlock(Page, "window.onerror=function(){document.body.style.display='block';}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", minify:=False, id:="bodyFadein", jQueryIncludeHeader:=Nothing)
+		'jQueryInclude.addScriptBlockPageLoad(page, "$('head').append(parent.$('#ui-theme').clone()); $('head').append(parent.$('#UI-sizeFix').clone()); " & bodyStr & " $('head').append(parent.$('#ThemeButtons').clone());$('head').append(parent.$('#ThemeTextBoxes').clone());$('head').append(parent.$('#ThemeCheckBoxes').clone());")
+		jQueryInclude.addScriptBlockPageLoad(page, "addFromParent('#ui-theme');addFromParent('#UI-sizeFix'); " & bodyStr & _
             " addFromParent('#ThemeButtons');addFromParent('#ThemeTextBoxes');addFromParent('#ThemeCheckBoxes'); ")
     End Sub
 

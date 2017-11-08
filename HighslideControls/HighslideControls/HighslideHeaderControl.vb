@@ -198,35 +198,35 @@ Public Class HighslideHeaderControl
                     returnValue &= vbCrLf
                 End If
                 jQueryLibrary.jQueryInclude.addScriptFile(myPage, "HighslideControls/highslide.css", "text/css")
-                'returnValue &= "<link rel=""stylesheet"" type=""text/css"" href=""" & baseURL & "highslide.css"" />"
-                returnValue &= vbCrLf
-                'returnValue &= "<script type=""text/javascript"">"
-                returnValue &= vbCrLf
-                returnValue &= registrationString
-                returnValue &= vbCrLf
-                returnValue &= HighslideVariablesString
-                returnValue &= vbCrLf
-                returnValue &= "hs.onActivate = function() {" & vbCrLf
-                If isInnerFrame Then
-                    returnValue &= "var theForm = parent.window.document.forms[0];" & vbCrLf
-                Else
-                    returnValue &= "var theForm = document.forms[0];" & vbCrLf
-                End If
-                returnValue &= "if (theForm) theForm.appendChild(hs.container);" & vbCrLf & "}" & vbCrLf
+			'returnValue &= "<link rel=""stylesheet"" type=""text/css"" href=""" & baseURL & "highslide.css"" />"
+			'returnValue &= vbCrLf
+			''returnValue &= "<script type=""text/javascript"">"
+			'returnValue &= vbCrLf
+			'returnValue &= registrationString
+			'returnValue &= vbCrLf
+			'returnValue &= HighslideVariablesString
+			'returnValue &= vbCrLf
+			'returnValue &= "hs.onActivate = function() {" & vbCrLf
+			'If isInnerFrame Then
+			'    returnValue &= "var theForm = parent.window.document.forms[0];" & vbCrLf
+			'Else
+			'    returnValue &= "var theForm = document.forms[0];" & vbCrLf
+			'End If
+			'returnValue &= "if (theForm) theForm.appendChild(hs.container);" & vbCrLf & "}" & vbCrLf
 
-                If isInnerFrame Then
-                    returnValue &= "addLoadEvent(function() {parent.window.iframe = getIframe();hs.updateAnchors();});"
-                    returnValue &= vbCrLf
-                End If
-                'returnValue &= "</script>"
+			'If isInnerFrame Then
+			'    returnValue &= "addLoadEvent(function() {parent.window.iframe = getIframe();hs.updateAnchors();});"
+			'    returnValue &= vbCrLf
+			'End If
+			''returnValue &= "</script>"
 
-                If isInnerFrame Then
-                    returnValue = returnValue.Replace("hs.", "parent.window.hs.")
-                End If
+			'If isInnerFrame Then
+			'    returnValue = returnValue.Replace("hs.", "parent.window.hs.")
+			'End If
 
-                jQueryLibrary.jQueryInclude.addScriptBlock(myPage, "try{" & returnValue & "}catch(err){}", False)
+			'jQueryLibrary.jQueryInclude.addScriptBlock(myPage, "try{" & returnValue & "}catch(err){}", False)
 
-                If isInnerFrame Then
+			If isInnerFrame Then
                     jQueryLibrary.jQueryInclude.addScriptFile(myPage, "HighslideControls/hsFixedInner.js")
                     'returnValue &= "<script type=""text/javascript"" src=""" & baseURL & "hsFixedInner.js""></script>"
                 Else

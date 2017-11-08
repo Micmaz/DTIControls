@@ -707,111 +707,114 @@ Public Class ToolTip
             End If
         End If
 
-        str &= "<script type=""text/javascript""> " & vbCrLf
-        str &= "    $(function(){ " & vbCrLf
-        If TargetControlID = "" Then
-            str &= "        $('#" & Me.ClientID & "_link').cluetip({ " & vbCrLf
-        Else
-            str &= "        $('#" & targetControl.ClientID & "').cluetip({ " & vbCrLf
-        End If
-        If Local Then
-            str &= "            local: true," & vbCrLf
-        End If
-        If Not HideLocal Then
-            str &= "            hideLocal: false," & vbCrLf
-        Else
-            str &= "            hideLocal: true," & vbCrLf
-        End If
-        If Not ShowTitle OrElse Title = "" Then
-            str &= "            showTitle: false," & vbCrLf
-        End If
-        If ZIndexToolTip <> 97 Then
-            str &= "            cluezIndex: " & ZIndexToolTip & "," & vbCrLf
-        End If
-        If TopOffset <> 15 Then
-            str &= "            topOffset: " & TopOffset & "," & vbCrLf
-        End If
-        If LeftOffset <> 15 Then
-            str &= "            leftOffset: " & LeftOffset & "," & vbCrLf
-        End If
-        If (ClickThrough AndAlso Local) OrElse (ClickThrough AndAlso targetControl IsNot Nothing) Then
-            str &= "            clickThrough: true," & vbCrLf
-        End If
-        If Sticky Then
-            str &= "            sticky: true," & vbCrLf
-        End If
-        If PositionTooltip <> PositionBy.auto Then
-            str &= "            positionBy: '" & getName(PositionTooltip) & "'," & vbCrLf
-        End If
-        If MouseOutClose Then
-            str &= "            mouseOutClose: true," & vbCrLf
-        End If
-        If ClosePosition <> Position.top Then
-            str &= "            closePosition: '" & getName(ClosePosition) & "'," & vbCrLf
-        End If
-        If CloseText <> "Close" Then
-            str &= "            closeText: '" & CloseText & "'," & vbCrLf
-        End If
-        If CssTheme <> "" Then
-            str &= "            cluetipClass: '" & CssTheme & "'," & vbCrLf
-        End If
-        If HoverClass <> "" Then
-            str &= "            hoverClass: '" & HoverClass & "'," & vbCrLf
-        End If
-        If Arrows Then
-            str &= "            arrows: true," & vbCrLf
-        End If
-        If Not DropShadow Then
-            str &= "            dropShadow: false," & vbCrLf
-        End If
-        If DropShadowSteps <> 6 Then
-            str &= "            dropShadowSteps: " & DropShadowSteps & "," & vbCrLf
-        End If
-        If Truncate <> 0 Then
-            str &= "            truncate: " & Truncate & "," & vbCrLf
-        End If
-        If Activation <> UserActivation.hover Then
-            str &= "            activation: '" & getName(Activation) & "'," & vbCrLf
-        End If
-        If DelayedClose <> 0 Then
-            str &= "            delayedClose: " & DelayedClose & "," & vbCrLf
-        End If
-        If Width.Value <> 275 Then
-            str &= "            width: " & Width.Value & "," & vbCrLf
-        End If
-        If Height.Value <> 0 Then
-            str &= "            height: '" & Height.ToString & "'," & vbCrLf
-        End If
-        If MouseTracking Then
-            str &= "            tracking: true," & vbCrLf
-        End If
-        If OpenEffect <> Open.show OrElse OpenSpeed <> 0 Then
-            str &= "            fx {" & vbCrLf
-            str &= "                        open: '" & getName(OpenEffect) & "'," & vbCrLf
-            str &= "                        openSpeed: '" & OpenSpeed & "'" & vbCrLf
-            str &= "            }," & vbCrLf
-        End If
-        If onActivate <> "" Then
-            str &= "            onActivate: " & onActivate & "," & vbCrLf
-        End If
-        If onShow <> "" Then
-            str &= "            onShow: " & onShow & "," & vbCrLf
-        End If
+		writer.Write(str)
 
-        str = str.Trim(vbLf).Trim(vbCr).Trim(",") & vbCrLf
-        str &= "        }); " & vbCrLf
-        str &= "    }); " & vbCrLf
-        str &= "    </script> " & vbCrLf
-
-
-
-        writer.Write(str)
-
-        If Local Then _
+		If Local Then _
             MyBase.Render(writer)
     End Sub
 
-    Private Function getName(ByVal enumeration As Object) As String
+	Public Function getScript() As String
+		Dim Str = ""
+		If TargetControlID = "" Then
+			Str &= "        $('#" & Me.ClientID & "_link').cluetip({ " & vbCrLf
+		Else
+			Str &= "        $('#" & targetControl.ClientID & "').cluetip({ " & vbCrLf
+		End If
+		If Local Then
+			Str &= "            local: true," & vbCrLf
+		End If
+		If Not HideLocal Then
+			Str &= "            hideLocal: false," & vbCrLf
+		Else
+			Str &= "            hideLocal: true," & vbCrLf
+		End If
+		If Not ShowTitle OrElse Title = "" Then
+			Str &= "            showTitle: false," & vbCrLf
+		End If
+		If ZIndexToolTip <> 97 Then
+			Str &= "            cluezIndex: " & ZIndexToolTip & "," & vbCrLf
+		End If
+		If TopOffset <> 15 Then
+			Str &= "            topOffset: " & TopOffset & "," & vbCrLf
+		End If
+		If LeftOffset <> 15 Then
+			Str &= "            leftOffset: " & LeftOffset & "," & vbCrLf
+		End If
+		If (ClickThrough AndAlso Local) OrElse (ClickThrough AndAlso targetControl IsNot Nothing) Then
+			Str &= "            clickThrough: true," & vbCrLf
+		End If
+		If Sticky Then
+			Str &= "            sticky: true," & vbCrLf
+		End If
+		If PositionTooltip <> PositionBy.auto Then
+			Str &= "            positionBy: '" & getName(PositionTooltip) & "'," & vbCrLf
+		End If
+		If MouseOutClose Then
+			Str &= "            mouseOutClose: true," & vbCrLf
+		End If
+		If ClosePosition <> Position.top Then
+			Str &= "            closePosition: '" & getName(ClosePosition) & "'," & vbCrLf
+		End If
+		If CloseText <> "Close" Then
+			Str &= "            closeText: '" & CloseText & "'," & vbCrLf
+		End If
+		If CssTheme <> "" Then
+			Str &= "            cluetipClass: '" & CssTheme & "'," & vbCrLf
+		End If
+		If HoverClass <> "" Then
+			Str &= "            hoverClass: '" & HoverClass & "'," & vbCrLf
+		End If
+		If Arrows Then
+			Str &= "            arrows: true," & vbCrLf
+		End If
+		If Not DropShadow Then
+			Str &= "            dropShadow: false," & vbCrLf
+		End If
+		If DropShadowSteps <> 6 Then
+			Str &= "            dropShadowSteps: " & DropShadowSteps & "," & vbCrLf
+		End If
+		If Truncate <> 0 Then
+			Str &= "            truncate: " & Truncate & "," & vbCrLf
+		End If
+		If Activation <> UserActivation.hover Then
+			Str &= "            activation: '" & getName(Activation) & "'," & vbCrLf
+		End If
+		If DelayedClose <> 0 Then
+			Str &= "            delayedClose: " & DelayedClose & "," & vbCrLf
+		End If
+		If Width.Value <> 275 Then
+			Str &= "            width: " & Width.Value & "," & vbCrLf
+		End If
+		If Height.Value <> 0 Then
+			Str &= "            height: '" & Height.ToString & "'," & vbCrLf
+		End If
+		If MouseTracking Then
+			Str &= "            tracking: true," & vbCrLf
+		End If
+		If OpenEffect <> Open.show OrElse OpenSpeed <> 0 Then
+			Str &= "            fx {" & vbCrLf
+			Str &= "                        open: '" & getName(OpenEffect) & "'," & vbCrLf
+			Str &= "                        openSpeed: '" & OpenSpeed & "'" & vbCrLf
+			Str &= "            }," & vbCrLf
+		End If
+		If onActivate <> "" Then
+			Str &= "            onActivate: " & onActivate & "," & vbCrLf
+		End If
+		If onShow <> "" Then
+			Str &= "            onShow: " & onShow & "," & vbCrLf
+		End If
+
+		Str = Str.Trim(vbLf).Trim(vbCr).Trim(",") & vbCrLf
+		Str &= "        }); " & vbCrLf
+		Return Str
+
+	End Function
+
+	Private Function getName(ByVal enumeration As Object) As String
         Return [Enum].GetName(enumeration.GetType, enumeration)
     End Function
+
+	Private Sub ToolTip_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, getScript)
+	End Sub
 End Class

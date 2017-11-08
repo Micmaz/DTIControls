@@ -144,10 +144,6 @@
       <Project>{cc9f78d0-b8da-4945-9b59-96bc05762f56}</Project>
       <Name>JqueryUIControls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Rotator\Rotator\Rotator\Rotator.vbproj">
-      <Project>{78831507-0930-4ed0-adda-79bfd1057c3c}</Project>
-      <Name>Rotator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SummerNote\SummerNote\SummerNote.vbproj">
       <Project>{4f287f0b-022d-43da-9941-291a957e0e7f}</Project>
       <Name>SummerNote</Name>

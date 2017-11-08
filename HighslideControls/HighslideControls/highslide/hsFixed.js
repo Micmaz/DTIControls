@@ -1,4 +1,17 @@
-﻿// Highslide fixed popup mod. Requires the "Events" component.
+﻿try {
+	//a13fe4e6f3a0bf746da103090dd47568
+	hs.outlineType = 'rounded-white';
+	hs.graphicsDir = '~/res/BaseClasses/Scripts.aspx?f=HighslideControls/';
+	hs.showCredits = false;
+	hs.wrapperClassName = 'draggable-header';
+	hs.zIndexCounter = 20000;
+
+	hs.onActivate = function () {
+		var theForm = document.forms[0];
+		if (theForm) theForm.appendChild(hs.container);
+	}
+} catch (err) { }
+// Highslide fixed popup mod. Requires the "Events" component.
 if (!hs.ie || hs.uaVersion > 6) hs.extend ( hs.Expander.prototype, {
 	fix: function (on) {
 		var index_highest = 0;

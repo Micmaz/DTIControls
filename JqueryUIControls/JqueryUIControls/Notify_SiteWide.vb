@@ -133,25 +133,24 @@ Public Class Notify_SiteWide
     End Function
 
 
-    Protected Overrides Function getInitialScript() As Object
-        Dim str As String = "<script type=""text/javascript"">"
-        str &= renderShowScriptFunction()
-        If Me.redisplayUnconfirmedValue Then
-            str &= "$(function(){"
-            For Each n As notification In notifications
-                str &= getRenderScript(n)
-            Next
-            str &= "        });"
-        End If
-        If checkInterval > 0 Then
-            str &= "$(function(){ setInterval( 'ajax_" & Me.ID & "()'," & Me.checkInterval & "); });"
-        End If
-        str &= "</script>"
-        Return str
-    End Function
+	Protected Overrides Function getInitialScript() As String
+		Dim str As String = ""
+		str &= renderShowScriptFunction()
+		If Me.redisplayUnconfirmedValue Then
+			str &= "$(function(){"
+			For Each n As notification In notifications
+				str &= getRenderScript(n)
+			Next
+			str &= "        });"
+		End If
+		If checkInterval > 0 Then
+			str &= "$(function(){ setInterval( 'ajax_" & Me.ID & "()'," & Me.checkInterval & "); });"
+		End If
+		Return str
+	End Function
 
 
-    Shared Sub sendNotification(ByVal notifyKey As String, ByVal message As String, Optional ByVal Title As String = Nothing, Optional ByVal expires As Integer = 0, Optional ByVal notifystyle As Notify.NotifyStyle = Nothing)
+	Shared Sub sendNotification(ByVal notifyKey As String, ByVal message As String, Optional ByVal Title As String = Nothing, Optional ByVal expires As Integer = 0, Optional ByVal notifystyle As Notify.NotifyStyle = Nothing)
         Dim notification As New notification
         notification.title = Title
         notification.text = message

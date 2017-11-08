@@ -42,7 +42,7 @@ Public Class SummerNote
 	Private WithEvents save As New Button
 	Private WithEvents cancel As New Button
 	Private htmlDiv As New Panel
-	Private scriptLit As New Literal
+	'Private scriptLit As New Literal
 
 #End Region
 
@@ -490,7 +490,7 @@ Public Class SummerNote
 		cancel.Style("display") = "none"
 
 		changeInnerControlIds()
-		Me.Controls.Add(scriptLit)
+		'Me.Controls.Add(scriptLit)
 		htmlDiv.Controls.Add(litHTML)
 		Me.Controls.Add(htmlDiv)
 		Me.Controls.Add(hfHTML)
@@ -546,21 +546,23 @@ Public Class SummerNote
 
 
 	Private Sub setScript()
-		scriptLit.Text = "<script>"
+		Dim out As String = ""
+		'out = "<script>"
 		'scriptLit.ScriptText &= vbCrLf & "$(function() { " & Me.ClientID & "= $('#" & Me.ClientID & "_HTML').summernote({" & getAttribs() & "})  });"
-		scriptLit.Text &= "  $(function(){" & vbCrLf
+		out &= "  $(function(){" & vbCrLf
 		If attribs.Count > 0 Then
-			scriptLit.Text &= "  setOptions($('#" & htmlDiv.ClientID & "'),{" & vbCrLf
-			scriptLit.Text &= "    " & getAttribs()
-			scriptLit.Text &= "});"
+			out &= "  DTISummernote.setOptions($('#" & htmlDiv.ClientID & "'),{" & vbCrLf
+			out &= "    " & getAttribs()
+			out &= "});"
 		End If
 		For Each iframdlg As IframeDialog In dialogList
-			scriptLit.Text &= iframdlg.getScript(Me)
+			out &= iframdlg.getScript(Me)
 		Next
-		scriptLit.Text &= "  addButton($('#" & htmlDiv.ClientID & "'),'<i class=""note-icon-save""/>','Save',function(){setHtmlEditorValues(); $('#" & save.ClientID & "').click();});"
+		out &= "  DTISummernote.addButton($('#" & htmlDiv.ClientID & "'),'<i class=""note-icon-save""/>','Save',function(){DTISummernote.setHtmlEditorValues(); $('#" & save.ClientID & "').click();});"
 		'scriptLit.ScriptText &= "  setOptions($('#" & Me.ClientID & "'),{toolbar: [['style', ['style', 'bold', 'italic', 'underline', 'clear']]]});"
-		scriptLit.Text &= "})" & vbCrLf
-		scriptLit.Text &= "</script>"
+		out &= "})" & vbCrLf
+		'out &= "</script>"
+		jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, out)
 	End Sub
 
 	Private Function getAttribs() As String
@@ -605,7 +607,7 @@ Public Class SummerNote
 			Me.buttonGroup = ButtonGroup
 		End Sub
 		Public Function getScript(editor As SummerNote) As String
-			Return "addIframeDialogButton($('#" & editor.htmlDiv.ClientID & "'),'<i class=""" & buttonClass & """/>','" & title & "','" & url & "');"
+			Return "DTISummernote.addIframeDialogButton($('#" & editor.htmlDiv.ClientID & "'),'<i class=""" & buttonClass & """/>','" & title & "','" & url & "');"
 		End Function
 	End Class
 

@@ -413,76 +413,75 @@ Public Class ImageCropper
             Return cropped
         End Function
 
-        Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
-            MyBase.Render(writer)
-            writer.Write("<input type=""hidden"" name=""" & Me.ID & "_hidden"" id=""" & Me.ID & "_hidden"" />")
-            writer.Write(myInsertScript)
-        End Sub
+	Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
+		MyBase.Render(writer)
+		writer.Write("<input type=""hidden"" name=""" & Me.ID & "_hidden"" id=""" & Me.ID & "_hidden"" />")
+	End Sub
 
-        Private Function myInsertScript() As String
-        Return "<script type=""text/javascript"">" & vbCrLf & _
-            "    jQuery(function() {" & vbCrLf & _
-"var img = $('#myCropper'); // Get my img elem " & vbCrLf & _
-"var pic_real_width, pic_real_height; " & vbCrLf & _
-"$(""<img/>"") // Make in memory copy of image to avoid css issues " & vbCrLf & _
-"    .attr(""src"", $(img).attr(""src"")) " & vbCrLf & _
-"    .load(function() { " & vbCrLf & _
-"        pic_real_width = this.width;   // Note: $(this).width() will not " & vbCrLf & _
-"        pic_real_height = this.height; // work for in memory images. " & vbCrLf & _
-"		$('#myCropper').Jcrop({ " & vbCrLf & _
-"				onSelect: doCropSelect,             " & vbCrLf & _
-"				bgColor: 'black', " & vbCrLf & _
-"				bgOpacity: .6, " & vbCrLf & _
-"				trueSize: [pic_real_width,pic_real_height] " & vbCrLf & _
-"		}); " & vbCrLf & _
-"	}); " & vbCrLf & _
-                "    });" & vbCrLf & _
-                "</script>"
-        End Function
+	Private Function myInsertScript() As String
+		Return "var img = $('#myCropper'); // Get my img elem " & vbCrLf &
+"var pic_real_width, pic_real_height; " & vbCrLf &
+"$(""<img/>"") // Make in memory copy of image to avoid css issues " & vbCrLf &
+"    .attr(""src"", $(img).attr(""src"")) " & vbCrLf &
+"    .load(function() { " & vbCrLf &
+"        pic_real_width = this.width;   // Note: $(this).width() will not " & vbCrLf &
+"        pic_real_height = this.height; // work for in memory images. " & vbCrLf &
+"		$('#myCropper').Jcrop({ " & vbCrLf &
+"				onSelect: doCropSelect,             " & vbCrLf &
+"				bgColor: 'black', " & vbCrLf &
+"				bgOpacity: .6, " & vbCrLf &
+"				trueSize: [pic_real_width,pic_real_height] " & vbCrLf &
+"		}); " & vbCrLf &
+"	}); " & vbCrLf
+	End Function
 
-        Private Class returnImage
-            Public img As Drawing.Image
-            Private _contentType As String
-            Public Property contentType() As String
-                Get
-                    Return _contentType
-                End Get
-                Set(ByVal value As String)
-                    _contentType = value
-                    setFormat()
-                End Set
-            End Property
+	Private Sub ImageCropper_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, myInsertScript)
+	End Sub
 
-            Private _format As System.Drawing.Imaging.ImageFormat
+	Private Class returnImage
+		Public img As Drawing.Image
+		Private _contentType As String
+		Public Property contentType() As String
+			Get
+				Return _contentType
+			End Get
+			Set(ByVal value As String)
+				_contentType = value
+				setFormat()
+			End Set
+		End Property
 
-            ''' <summary>
-            ''' Property to get the image format
-            ''' </summary>
-            ''' <returns>
-            ''' format returned by the get method
-            ''' </returns>
-            ''' <remarks></remarks>
-            <System.ComponentModel.Description("Property to get the image format")> _
-            Public ReadOnly Property format() As System.Drawing.Imaging.ImageFormat
-                Get
-                    Return _format
-                End Get
-            End Property
+		Private _format As System.Drawing.Imaging.ImageFormat
 
-            Private Sub setFormat()
-                Select Case _contentType
-                    Case "image/jpeg", "image/jpg"
-                        _format = System.Drawing.Imaging.ImageFormat.Jpeg
-                    Case "image/gif"
-                        _format = System.Drawing.Imaging.ImageFormat.Gif
-                    Case "image/png"
-                        _format = System.Drawing.Imaging.ImageFormat.Png
-                    Case "image/bmp"
-                        _format = System.Drawing.Imaging.ImageFormat.Png
-                        _contentType = "image/png"
-                    Case Else
-                        _format = System.Drawing.Imaging.ImageFormat.Png
-                End Select
-            End Sub
-        End Class
-    End Class
+		''' <summary>
+		''' Property to get the image format
+		''' </summary>
+		''' <returns>
+		''' format returned by the get method
+		''' </returns>
+		''' <remarks></remarks>
+		<System.ComponentModel.Description("Property to get the image format")>
+		Public ReadOnly Property format() As System.Drawing.Imaging.ImageFormat
+			Get
+				Return _format
+			End Get
+		End Property
+
+		Private Sub setFormat()
+			Select Case _contentType
+				Case "image/jpeg", "image/jpg"
+					_format = System.Drawing.Imaging.ImageFormat.Jpeg
+				Case "image/gif"
+					_format = System.Drawing.Imaging.ImageFormat.Gif
+				Case "image/png"
+					_format = System.Drawing.Imaging.ImageFormat.Png
+				Case "image/bmp"
+					_format = System.Drawing.Imaging.ImageFormat.Png
+					_contentType = "image/png"
+				Case Else
+					_format = System.Drawing.Imaging.ImageFormat.Png
+			End Select
+		End Sub
+	End Class
+End Class

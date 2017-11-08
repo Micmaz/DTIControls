@@ -5840,14 +5840,15 @@
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-    position: initial;
+  position: initial;
   }
-.bootstrap-iso .modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
+	.bootstrap-iso .modal.in .modal-dialog {
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0);
+		position: initial;
+	}
 .bootstrap-iso .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;

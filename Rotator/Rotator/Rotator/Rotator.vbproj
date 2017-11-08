@@ -50,9 +50,6 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -112,10 +109,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ckEditor\ckEditor\ckEditor.vbproj">
-      <Project>{a1849358-24dc-41d1-bb5a-4a41e5363d8d}</Project>
-      <Name>ckEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
       <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
       <Name>BaseClasses</Name>

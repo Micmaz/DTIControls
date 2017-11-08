@@ -291,25 +291,23 @@ Public Class Notify
         Return outstr
     End Function
 
-    Protected Overridable Function getInitialScript()
-        Dim str As String = "<script type=""text/javascript"">"
-        str &= renderShowScriptFunction()
-        If Me.showOnLoad Then
-            str &= "$(function(){"
-            str &= renderShowScript()
-            str &= "        });"
-        End If
-        If checkInterval > 0 Then
-            str &= "$(function(){ setInterval( 'ajax_" & Me.ID & "()'," & Me.checkInterval & "); });"
-        End If
-        str &= "</script>"
-        Return str
-    End Function
+	Protected Overridable Function getInitialScript() As String
+		Dim str As String = ""
+		str &= renderShowScriptFunction()
+		If Me.showOnLoad Then
+			str &= "$(function(){"
+			str &= renderShowScript()
+			str &= "        });"
+		End If
+		If checkInterval > 0 Then
+			str &= "$(function(){ setInterval( 'ajax_" & Me.ID & "()'," & Me.checkInterval & "); });"
+		End If
+		Return str
+	End Function
 
-    Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
-        writer.Write(getInitialScript)
-        MyBase.Render(writer)
-    End Sub
+	Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
+		MyBase.Render(writer)
+	End Sub
 
     Private Sub ajax_callBack(ByVal sender As AjaxCall, ByVal value As String) Handles ajax.callBack
         If value.StartsWith("clicked") Then
@@ -332,7 +330,8 @@ Public Class Notify
     End Sub
 
     Private Sub Notify_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
-        ajax.jsFunction = "ajax_" & Me.ID
-    End Sub
+		ajax.jsFunction = "ajax_" & Me.ID
+		jQueryLibrary.jQueryInclude.addScriptBlock(me.Page,getInitialScript)
+	End Sub
 End Class
 

@@ -9,9 +9,10 @@
 <!--
 
 	function Button1_onclick() {
-		if (parent.window.curreditor) {
-			parent.clearContent();
-			parent.addContent(document.getElementById("repcontent").innerHTML);
+		if (parent.window.DTISummernote.getCurreditor()) {
+			//parent.window.DTISummernote.clearContent();
+			parent.window.DTISummernote.replaceContent(document.getElementById("repcontent").innerHTML);
+			parent.window.DTISummernote.closeDialog();
 		}      
     }
 

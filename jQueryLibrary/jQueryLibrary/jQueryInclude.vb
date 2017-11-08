@@ -67,190 +67,185 @@ Public Class jQueryInclude
         javascript
     End Enum
 
-    ''' <summary>
-    ''' Adds the jQuery script block to the page.
-    ''' </summary>
-    ''' <param name="page">
-    ''' The page that the script block will be added to.
-    ''' </param>
-    ''' <param name="script">
-    ''' The script to be added
-    ''' </param>
-    ''' <param name="minify"></param>
-    ''' <param name="type"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds the jQuery script block to the page.")> _
-    Public Shared Sub addScriptBlock(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = True, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing)
-        Dim jQueryIncludeHeader As jQueryInclude = getInitialInclude(page)
-        Dim sf As New ScriptFile("", type)
-        If minify Then
-            Dim Str As New System.IO.MemoryStream(System.Text.ASCIIEncoding.ASCII.GetBytes(script))
-            sf.src = BaseClasses.JsMinimizer.SMinify(Str)
-        Else
-            sf.src = script
-        End If
-        sf.id = id
-        sf.isRawScript = True
-        jQueryIncludeHeader.addInclude(sf)
-    End Sub
+	''' <summary>
+	''' Adds the jQuery script block to the page.
+	''' </summary>
+	''' <param name="page">
+	''' The page that the script block will be added to.
+	''' </param>
+	''' <param name="script">
+	''' The script to be added
+	''' </param>
+	''' <param name="minify"></param>
+	''' <param name="type"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds the jQuery script block to the page.")>
+	Public Shared Sub addScriptBlock(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional jQueryIncludeHeader As jQueryInclude = Nothing)
+		If jQueryIncludeHeader Is Nothing Then jQueryIncludeHeader = getInitialInclude(page)
+		jQueryIncludeHeader.addScriptBlock(script, minify, type, id)
+	End Sub
 
-    ''' <summary>
-    ''' Adds a style block to the page.
-    ''' </summary>
-    ''' <param name="page">The page that the script block will be added to.</param>
-    ''' <param name="style">The Style to be Added</param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds a style block to the page.")> _
-    Public Shared Sub addStyleBlock(ByVal page As Page, ByVal style As String, Optional ByVal id As String = Nothing)
-        jQueryLibrary.jQueryInclude.addScriptBlock(page, style, False, "text/css", id)
-    End Sub
+	Private Sub addScriptBlock(ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional isolateJquery As Boolean = True)
+		Dim sf As New ScriptFile("", type)
+		If isolateJquery Then _
+			script = "(function($) {" & script & "})(jQuery);"
+		If minify Then
+			Dim Str As New System.IO.MemoryStream(System.Text.ASCIIEncoding.ASCII.GetBytes(script))
+			sf.src = BaseClasses.JsMinimizer.SMinify(Str)
+		Else
+			sf.src = script
+		End If
+		sf.id = id
+		sf.isRawScript = True
+		Me.addInclude(sf)
+	End Sub
 
-    ''' <summary>
-    ''' Adds the jQuery script block that executes after page load.
-    ''' </summary>
-    ''' <param name="page">
-    ''' The page that the script block will be added to.
-    ''' </param>
-    ''' <param name="script">
-    ''' The script to be added
-    ''' </param>
-    ''' <param name="minify"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds the jQuery script block that executes after page load.")> _
-    Public Shared Sub addScriptBlockPageLoad(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal id As String = "")
-        Dim jQueryIncludeHeader As jQueryInclude = getInitialInclude(page)
-        Dim sf As New ScriptFile("")
-        script = "$(function(){" & script & "});"
-        If minify Then
-            Dim Str As New System.IO.MemoryStream(System.Text.ASCIIEncoding.ASCII.GetBytes(script))
-            sf.src = BaseClasses.JsMinimizer.SMinify(Str)
-        Else
-            sf.src = script
-        End If
-        sf.id = id
-        sf.isRawScript = True
-        jQueryIncludeHeader.addInclude(sf)
-    End Sub
+	''' <summary>
+	''' Adds a style block to the page.
+	''' </summary>
+	''' <param name="page">The page that the script block will be added to.</param>
+	''' <param name="style">The Style to be Added</param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds a style block to the page.")>
+	Public Shared Sub addStyleBlock(ByVal page As Page, ByVal style As String, Optional ByVal id As String = Nothing)
+		jQueryLibrary.jQueryInclude.addScriptBlock(page, style, False, "text/css", id, Nothing)
+	End Sub
 
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="page"></param>
-    ''' <param name="scriptLocation"></param>
-    ''' <param name="type"></param>
-    ''' <param name="disableMinimize"></param>
-    ''' <param name="useFullPath"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("")> _
-    Public Shared Sub addScriptFile(ByVal page As Page, ByVal scriptLocation As String, Optional ByVal type As String = Nothing, Optional ByVal disableMinimize As Boolean = False, Optional ByVal useFullPath As Boolean = False, Optional ByVal id As String = "")
-        Dim jQueryIncludeHeader As jQueryInclude = getInitialInclude(page)
-        jQueryIncludeHeader.addInclude(scriptLocation, type, useFullPath, disableMinimize, id)
-    End Sub
+	''' <summary>
+	''' Adds the jQuery script block that executes after page load.
+	''' </summary>
+	''' <param name="page">
+	''' The page that the script block will be added to.
+	''' </param>
+	''' <param name="script">
+	''' The script to be added
+	''' </param>
+	''' <param name="minify"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds the jQuery script block that executes after page load.")>
+	Public Shared Sub addScriptBlockPageLoad(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal id As String = "")
+		addScriptBlock(page, "$(function(){" & script & "});", minify, id:=id)
+	End Sub
 
-    ''' <summary>
-    ''' removes a script file from the page.
-    ''' </summary>
-    ''' <param name="page"></param>
-    ''' <param name="scriptLocation"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("removes a script file from the page.")> _
-    Public Shared Sub deleteScriptFile(ByVal page As Page, ByVal scriptLocation As String)
-        Dim jQueryIncludeHeader As jQueryInclude = getInitialInclude(page)
-        jQueryIncludeHeader.deleteInclude(scriptLocation)
-    End Sub
+	''' <summary>
+	''' 
+	''' </summary>
+	''' <param name="page"></param>
+	''' <param name="scriptLocation"></param>
+	''' <param name="type"></param>
+	''' <param name="disableMinimize"></param>
+	''' <param name="useFullPath"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("")>
+	Public Shared Sub addScriptFile(ByVal page As Page, ByVal scriptLocation As String, Optional ByVal type As String = Nothing, Optional ByVal disableMinimize As Boolean = False, Optional ByVal useFullPath As Boolean = False, Optional ByVal id As String = "")
+		Dim jQueryIncludeHeader As jQueryInclude = getInitialInclude(page)
+		jQueryIncludeHeader.addInclude(scriptLocation, type, useFullPath, disableMinimize, id)
+	End Sub
 
-    ''' <summary>
-    ''' Gets the jQuery include on a given page
-    ''' </summary>
-    ''' <param name="page">
-    ''' The Page to get the include from
-    ''' </param>
-    ''' <returns>
-    ''' Returns the jQuery include as a jQueryInclude type
-    ''' </returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Gets the jQuery include on a given page")> _
-    Public Shared Function getInitialInclude(ByVal page As Page) As jQueryInclude
-        If page.Items.Item("jqueryInclude") Is Nothing Then
-            RegisterJQuery(page)
-        End If
-        Return page.Items.Item("jqueryInclude")
-    End Function
+	''' <summary>
+	''' removes a script file from the page.
+	''' </summary>
+	''' <param name="page"></param>
+	''' <param name="scriptLocation"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("removes a script file from the page.")>
+	Public Shared Sub deleteScriptFile(ByVal page As Page, ByVal scriptLocation As String)
+		Dim jQueryIncludeHeader As jQueryInclude = getInitialInclude(page)
+		jQueryIncludeHeader.deleteInclude(scriptLocation)
+	End Sub
 
-    ''' <summary>
-    '''  Adds the jQueryUI include header to a given page
-    ''' </summary>
-    ''' <param name="page">
-    ''' The page to add the header to
-    ''' </param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds the jQueryUI include header to a given page")> _
-    Public Shared Sub RegisterJQueryUI(ByRef page As Page, Optional ByVal jQueryVersion As String = Nothing)
-        If jQueryVersion Is Nothing Then
-            addScriptFile(page, "/jQueryLibrary/jquery-ui." & lastJqUI & ".min.js")
-        Else
-            Select Case jQueryVersion
-                Case "1.3.2"
-                    addScriptFile(page, "/jQueryLibrary/jquery-ui.1.7.3.min.js")
-                Case "1.4.1", "1.4.2", "1.8.1"
-                    addScriptFile(page, "/jQueryLibrary/jquery-ui.1.8.1.min.js")
-                Case Else
-                    addScriptFile(page, "/jQueryLibrary/jquery-ui." & lastJqUI & ".min.js")
-            End Select
-        End If
-        addScriptFile(page, "/jQueryLibrary/DTIjqUIFunctions.js")
-        ThemeAdder.AddTheme(page)
-    End Sub
+	''' <summary>
+	''' Gets the jQuery include on a given page
+	''' </summary>
+	''' <param name="page">
+	''' The Page to get the include from
+	''' </param>
+	''' <returns>
+	''' Returns the jQuery include as a jQueryInclude type
+	''' </returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Gets the jQuery include on a given page")>
+	Public Shared Function getInitialInclude(ByVal page As Page) As jQueryInclude
+		If page.Items.Item("jqueryInclude") Is Nothing Then
+			RegisterJQuery(page)
+		End If
+		Return page.Items.Item("jqueryInclude")
+	End Function
 
-    ''' <summary>
-    '''  Adds the jQueryUI include header to a given page
-    ''' </summary>
-    ''' <param name="page">
-    ''' The page to add the header to
-    ''' </param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds the jQueryUI include header to a given page")> _
-    Public Shared Sub RegisterJQueryUIThemed(ByRef page As Page, ByVal theme As ThemeAdder.themes, Optional ByVal jQueryVersion As String = Nothing, Optional ByVal ThemeButtons As Boolean = False)
-        RegisterJQueryUI(page, jQueryVersion)
-        ThemeAdder.AddTheme(page, theme, ThemeButtons)
-    End Sub
+	''' <summary>
+	'''  Adds the jQueryUI include header to a given page
+	''' </summary>
+	''' <param name="page">
+	''' The page to add the header to
+	''' </param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds the jQueryUI include header to a given page")>
+	Public Shared Sub RegisterJQueryUI(ByRef page As Page, Optional ByVal jQueryVersion As String = Nothing)
+		If jQueryVersion Is Nothing Then
+			addScriptFile(page, "/jQueryLibrary/jquery-ui." & lastJqUI & ".min.js")
+		Else
+			Select Case jQueryVersion
+				Case "1.3.2"
+					addScriptFile(page, "/jQueryLibrary/jquery-ui.1.7.3.min.js")
+				Case "1.4.1", "1.4.2", "1.8.1"
+					addScriptFile(page, "/jQueryLibrary/jquery-ui.1.8.1.min.js")
+				Case Else
+					addScriptFile(page, "/jQueryLibrary/jquery-ui." & lastJqUI & ".min.js")
+			End Select
+		End If
+		addScriptFile(page, "/jQueryLibrary/DTIjqUIFunctions.js")
+		ThemeAdder.AddTheme(page)
+	End Sub
 
-    ''' <summary>
-    '''  Adds the jQueryUI include header to a given page
-    ''' </summary>
-    ''' <param name="page">
-    ''' The page to add the header to
-    ''' </param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds the jQueryUI include header to a given page")> _
-    Public Shared Sub RegisterJQueryUIThemed(ByRef page As Page)
-        RegisterJQueryUI(page)
-        ThemeAdder.AddTheme(page, Nothing)
-    End Sub
+	''' <summary>
+	'''  Adds the jQueryUI include header to a given page
+	''' </summary>
+	''' <param name="page">
+	''' The page to add the header to
+	''' </param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds the jQueryUI include header to a given page")>
+	Public Shared Sub RegisterJQueryUIThemed(ByRef page As Page, ByVal theme As ThemeAdder.themes, Optional ByVal jQueryVersion As String = Nothing, Optional ByVal ThemeButtons As Boolean = False)
+		RegisterJQueryUI(page, jQueryVersion)
+		ThemeAdder.AddTheme(page, theme, ThemeButtons)
+	End Sub
 
-    ''' <summary>
-    '''  Adds the jQuery include header to a given page
-    ''' </summary>
-    ''' <param name="page">
-    ''' The page to add the header to
-    ''' </param>
-    ''' <param name="version"></param>
-    ''' <param name="asWebResource"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds the jQuery include header to a given page")> _
-    Public Shared Sub RegisterJQuery(ByRef page As Page, Optional ByVal version As String = Nothing, Optional ByVal asWebResource As Boolean = False)
-        Dim jQueryIncludeHeader As jQueryInclude = page.Items.Item("jqueryInclude")
-        If jQueryIncludeHeader Is Nothing Then
-            jQueryIncludeHeader = New jQueryInclude
-            Dim jsFile As String = "jquery-" & lastJq & ".min.js"
-            If version IsNot Nothing Then
-                jsFile = "jquery-" & version & ".min.js"
-            End If
-            If inDesigner Then asWebResource = True
-            If Not asWebResource Then
-                jQueryIncludeHeader.addInclude("/jQueryLibrary/" & jsFile)
-                'jQueryIncludeHeader.addInclude("/jQueryLibrary/jquery-ui.custom.min.js")
-                jQueryIncludeHeader.addInclude("/jQueryLibrary/DTIprototypes.js")
+	''' <summary>
+	'''  Adds the jQueryUI include header to a given page
+	''' </summary>
+	''' <param name="page">
+	''' The page to add the header to
+	''' </param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds the jQueryUI include header to a given page")>
+	Public Shared Sub RegisterJQueryUIThemed(ByRef page As Page)
+		RegisterJQueryUI(page)
+		ThemeAdder.AddTheme(page, Nothing)
+	End Sub
+
+	''' <summary>
+	'''  Adds the jQuery include header to a given page
+	''' </summary>
+	''' <param name="page">
+	''' The page to add the header to
+	''' </param>
+	''' <param name="version"></param>
+	''' <param name="asWebResource"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds the jQuery include header to a given page")>
+	Public Shared Sub RegisterJQuery(ByRef page As Page, Optional ByVal version As String = Nothing, Optional ByVal asWebResource As Boolean = False)
+		Dim jQueryIncludeHeader As jQueryInclude = page.Items.Item("jqueryInclude")
+		If jQueryIncludeHeader Is Nothing Then
+			jQueryIncludeHeader = New jQueryInclude
+			Dim jsFile As String = "jquery-" & lastJq & ".min.js"
+			If version IsNot Nothing Then
+				jsFile = "jquery-" & version & ".min.js"
+			End If
+			If inDesigner Then asWebResource = True
+			If Not asWebResource Then
+				jQueryIncludeHeader.addInclude("/jQueryLibrary/" & jsFile)
+				'jQueryIncludeHeader.addInclude("/jQueryLibrary/jquery-ui.custom.min.js")
+				jQueryIncludeHeader.addInclude("/jQueryLibrary/DTIprototypes.js")
             Else
                 jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary." & jsFile))
                 'jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary.jquery-ui.custom.min.js"))
@@ -306,8 +301,9 @@ Public Class jQueryInclude
                 For Each ctrl As Control In ctrlList
                     ControlsString = RenderControlToString(ctrl)
                 Next
-            writer.Write("<meta http-equiv=""X-UA-Compatible"" content=""IE=edge,chrome=1"">")
-            For Each sf As ScriptFile In jqueryIncludeList.Values
+			writer.Write("<meta http-equiv=""X-UA-Compatible"" content=""IE=edge,chrome=1"">")
+			Me.addScriptBlock("var $$=$.noConflict();$=$$;", isolateJquery:=False)
+			For Each sf As ScriptFile In jqueryIncludeList.Values
                 Dim idstring As String = ""
                 If sf.id <> sf.src Then
                     idstring = " id=""" & sf.id & """ "
@@ -316,8 +312,8 @@ Public Class jQueryInclude
                     If sf.type.EndsWith("css") Then
                         writer.Write("<style" & idstring & " type=""" & sf.type & """>" & sf.src & "</style>")
                     ElseIf sf.type.EndsWith("javascript") Then
-                        writer.Write("<script" & idstring & " type=""" & sf.type & """ language=""javascript"">//<![CDATA[" & vbCrLf & sf.src & vbCrLf & "//]]></script>")
-                    Else
+						writer.Write("<script" & idstring & " type=""" & sf.type & """ language=""javascript"">" & sf.src & "</script>")
+					Else
                         writer.Write("<script" & idstring & " type=""" & sf.type & """>" & sf.src & "</script>")
                     End If
 
@@ -425,28 +421,28 @@ Public Class jQueryInclude
         jqueryIncludeList(sf.id) = sf
     End Sub
 
-    ''' <summary>
-    ''' Creates an instance of ScriptFile in order to add it to the jQuery include list
-    ''' </summary>
-    ''' <param name="filename">
-    ''' Name of file to be added to ScriptFile instance
-    ''' </param>
-    ''' <param name="type">Type of script</param>
-    ''' <param name="suppressRes"></param>
-    ''' <param name="disableMinimize"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates an instance of ScriptFile in order to add it to the jQuery include list")> _
-    Public Sub addInclude(ByVal filename As String, Optional ByVal type As String = Nothing, Optional ByVal suppressRes As Boolean = False, Optional ByVal disableMinimize As Boolean = True, Optional ByVal id As String = "")
-        Dim sf As New ScriptFile(filename, type, suppressRes, disableMinimize, id)
-        jqueryIncludeList(sf.id) = sf
-    End Sub
+	''' <summary>
+	''' Creates an instance of ScriptFile in order to add it to the jQuery include list
+	''' </summary>
+	''' <param name="filename">
+	''' Name of file to be added to ScriptFile instance
+	''' </param>
+	''' <param name="type">Type of script</param>
+	''' <param name="suppressRes"></param>
+	''' <param name="disableMinimize"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates an instance of ScriptFile in order to add it to the jQuery include list")>
+	Public Sub addInclude(ByVal filename As String, Optional ByVal type As String = Nothing, Optional ByVal suppressRes As Boolean = False, Optional ByVal disableMinimize As Boolean = True, Optional ByVal id As String = "", Optional isRawScript As Boolean = False)
+		Dim sf As New ScriptFile(filename, type, suppressRes, disableMinimize, id, isRawScript)
+		jqueryIncludeList(sf.id) = sf
+	End Sub
 
-    ''' <summary>
-    ''' Removes filename
-    ''' </summary>
-    ''' <param name="filename"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Removes filename")> _
+	''' <summary>
+	''' Removes filename
+	''' </summary>
+	''' <param name="filename"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Removes filename")> _
     Public Sub deleteInclude(ByVal filename As String)
         Dim sf As New ScriptFile(filename)
         jqueryIncludeList.Remove(sf.id)
@@ -494,38 +490,39 @@ Public Class jQueryInclude
         End Property
         Private _id As String = ""
 
-        ''' <summary>
-        ''' Constructor for ScriptFile class
-        ''' </summary>
-        ''' <param name="src"></param>
-        ''' <param name="type">
-        ''' Type of script
-        ''' </param>
-        ''' <param name="suppressRes"></param>
-        ''' <param name="disableMinimize"></param>
-        ''' <remarks></remarks>
-        <System.ComponentModel.Description("Constructor for ScriptFile class")> _
-        Public Sub New(ByVal src As String, Optional ByVal type As String = Nothing, Optional ByVal suppressRes As Boolean = False, Optional ByVal disableMinimize As Boolean = False, Optional ByVal id As String = Nothing)
-            If Not type Is Nothing Then
-                If type.ToLower = "css" Then type = "text/css"
-                Me.type = type
-            Else
-                If src.ToLower.EndsWith(".js") Then
-                    Me.type = "text/javascript"
-                ElseIf src.ToLower.EndsWith(".css") Then
-                    Me.type = "text/css"
-                End If
-            End If
-            Me.id = id
-            If src.ToLower.Contains("http://") OrElse src.ToLower.Contains("https://") Then suppressRes = True
-            If suppressRes Then
-                Me.src = src
-            Else
-                Me.src = BaseClasses.Scripts.ScriptsURL(disableMinimize) & src
-            End If
-        End Sub
+		''' <summary>
+		''' Constructor for ScriptFile class
+		''' </summary>
+		''' <param name="src"></param>
+		''' <param name="type">
+		''' Type of script
+		''' </param>
+		''' <param name="suppressRes"></param>
+		''' <param name="disableMinimize"></param>
+		''' <remarks></remarks>
+		<System.ComponentModel.Description("Constructor for ScriptFile class")>
+		Public Sub New(ByVal src As String, Optional ByVal type As String = Nothing, Optional ByVal suppressRes As Boolean = False, Optional ByVal disableMinimize As Boolean = False, Optional ByVal id As String = Nothing, Optional isRawScript As Boolean = False)
+			Me.isRawScript = isRawScript
+			If Not type Is Nothing Then
+				If type.ToLower = "css" Then type = "text/css"
+				Me.type = type
+			Else
+				If src.ToLower.EndsWith(".js") Then
+					Me.type = "text/javascript"
+				ElseIf src.ToLower.EndsWith(".css") Then
+					Me.type = "text/css"
+				End If
+			End If
+			Me.id = id
+			If src.ToLower.Contains("http://") OrElse src.ToLower.Contains("https://") Then suppressRes = True
+			If suppressRes Then
+				Me.src = src
+			Else
+				Me.src = BaseClasses.Scripts.ScriptsURL(disableMinimize) & src
+			End If
+		End Sub
 
-    End Class
+	End Class
 
     Friend WithEvents mypage As Page
     Private Sub mypage_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles mypage.PreRender
@@ -557,4 +554,5 @@ Public Class jQueryInclude
     Public Shared Function getEnumName(ByVal enumeration As Object) As String
         Return [Enum].GetName(enumeration.GetType, enumeration)
     End Function
+
 End Class

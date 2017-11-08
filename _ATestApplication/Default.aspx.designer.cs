@@ -29,5 +29,41 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DTIContentManagement.EditPanel EditPanel1;
+        
+        /// <summary>
+        /// Autocomplete1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::JqueryUIControls.Autocomplete Autocomplete1;
+        
+        /// <summary>
+        /// Tagger1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DTIMiniControls.Tagger Tagger1;
+        
+        /// <summary>
+        /// StarRater1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DTIMiniControls.StarRater StarRater1;
+        
+        /// <summary>
+        /// LoginControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DTIAdminPanel.LoginControl LoginControl;
     }
 }
