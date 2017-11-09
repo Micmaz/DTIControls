@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DTIGrid.dll</id>
+    <version>1.0.1</version>
+    <authors>mmazarick</authors>
+    <owners>mmazarick</owners>
+	<iconUrl>http://www.digitaltadpole.com/favicon.ico</iconUrl>
+    <licenseUrl>https://github.com/Micmaz/DTIGrid/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Micmaz/DTIGrid</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.NET Data grid for fast editing. Add the grid, give it a table name and it will add/update/delete. Includes searching and paging. Uses free-jqgrid.</description>
+    <releaseNotes>Initial Realease</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Data Grid Datagrid jqgrid DataCentric WebForms Jquery JqueryUI DTI CRUD </tags>
+    <dependencies>
+		<dependency id="DTIControls.dll" version="1.0.3" />
+    </dependencies>
+  </metadata>
+</package>
