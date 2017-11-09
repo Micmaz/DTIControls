@@ -529,7 +529,7 @@ Public Class SummerNote
 
 	Public Shared Function Base64Decode(base64EncodedData As String) As String
 		Dim plainTextBytes As Byte() = System.Convert.FromBase64String(base64EncodedData)
-		Return System.Text.Encoding.UTF8.GetString(plainTextBytes)
+		Return System.Text.Encoding.Default.GetString(plainTextBytes)
 	End Function
 
 	Private Sub changeInnerControlIds()
