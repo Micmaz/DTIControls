@@ -52,31 +52,31 @@ Public Class HighslideHeaderControl
             End Set
         End Property
 
-        Private _regString As String = "//a13fe4e6f3a0bf746da103090dd47568"
+	'Private _regString As String = "//a13fe4e6f3a0bf746da103090dd47568"
 
-        ''' <summary>
-        ''' A unique string javascript comment that relays lisensing information for Highslide
-        ''' </summary>
-        ''' <remarks></remarks>
-        <System.ComponentModel.Description("A unique string javascript comment that relays lisensing information for Highslide")> _
-        Public Property registrationString() As String
-            Get
-                Return _regString
-            End Get
-            Set(ByVal value As String)
-                If Not _regString.StartsWith("//") Then
-                    _regString = "//" & _regString
-                End If
-            End Set
-        End Property
+	''' <summary>
+	''' A unique string javascript comment that relays lisensing information for Highslide
+	''' </summary>
+	''' <remarks></remarks>
+	'<System.ComponentModel.Description("A unique string javascript comment that relays lisensing information for Highslide")> _
+	'       Public Property registrationString() As String
+	'           Get
+	'               Return _regString
+	'           End Get
+	'           Set(ByVal value As String)
+	'               If Not _regString.StartsWith("//") Then
+	'                   _regString = "//" & _regString
+	'               End If
+	'           End Set
+	'       End Property
 
-        ''' <summary>
-        ''' Hashtable containing global highslide variables, see http://highslide.com/ref/
-        ''' </summary>
-        ''' <value></value>
-        ''' <returns></returns>
-        ''' <remarks></remarks>
-        <System.ComponentModel.Description("Hashtable containing global highslide variables, see http://highslide.com/ref/")> _
+	''' <summary>
+	''' Hashtable containing global highslide variables, see http://highslide.com/ref/
+	''' </summary>
+	''' <value></value>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Hashtable containing global highslide variables, see http://highslide.com/ref/")> _
         Public ReadOnly Property HighslideVariables() As Hashtable
             Get
                 If ViewState("HighslideVariables") Is Nothing Then
@@ -259,28 +259,28 @@ Public Class HighslideHeaderControl
                 End If
 
                 returnValue &= "<link rel=""stylesheet"" type=""text/css"" href=""" & baseURL & "highslide.css"" />"
-                returnValue &= vbCrLf
-                returnValue &= "<script type=""text/javascript"">"
-                returnValue &= vbCrLf
-                returnValue &= registrationString
-                returnValue &= vbCrLf
-                returnValue &= HighslideVariablesString
-                returnValue &= vbCrLf
-                returnValue &= "hs.onActivate = function() {" & vbCrLf
-                If isInnerFrame Then
-                    returnValue &= "var theForm = parent.window.document.forms[0];" & vbCrLf
-                Else
-                    returnValue &= "var theForm = document.forms[0];" & vbCrLf
-                End If
-                returnValue &= "if (theForm) theForm.appendChild(hs.container);" & vbCrLf & "}" & vbCrLf
+			'returnValue &= vbCrLf
+			'returnValue &= "<script type=""text/javascript"">"
+			'returnValue &= vbCrLf
+			'returnValue &= registrationString
+			'returnValue &= vbCrLf
+			'returnValue &= HighslideVariablesString
+			'returnValue &= vbCrLf
+			'returnValue &= "hs.onActivate = function() {" & vbCrLf
+			'If isInnerFrame Then
+			'    returnValue &= "var theForm = parent.window.document.forms[0];" & vbCrLf
+			'Else
+			'    returnValue &= "var theForm = document.forms[0];" & vbCrLf
+			'End If
+			'returnValue &= "if (theForm) theForm.appendChild(hs.container);" & vbCrLf & "}" & vbCrLf
 
-                If isInnerFrame Then
-                    returnValue &= "addLoadEvent(function() {parent.window.iframe = getIframe();hs.updateAnchors();});"
-                    returnValue &= vbCrLf
-                End If
-                returnValue &= "</script>"
+			'If isInnerFrame Then
+			'    returnValue &= "addLoadEvent(function() {parent.window.iframe = getIframe();hs.updateAnchors();});"
+			'    returnValue &= vbCrLf
+			'End If
+			'returnValue &= "</script>"
 
-                If isInnerFrame Then
+			If isInnerFrame Then
                     returnValue &= "<script type=""text/javascript"" src=""" & baseURL & "hsFixedInner.js""></script>"
                 Else
                     returnValue &= "<script type=""text/javascript"" src=""" & baseURL & "hsFixed.js""></script>"
@@ -288,10 +288,10 @@ Public Class HighslideHeaderControl
 
                 returnValue &= vbCrLf
 
-                If isInnerFrame Then
-                    returnValue = returnValue.Replace("hs.", "parent.window.hs.")
-                End If
-                Return returnValue
+			'If isInnerFrame Then
+			'    returnValue = returnValue.Replace("hs.", "parent.window.hs.")
+			'End If
+			Return returnValue
             End Get
         End Property
 

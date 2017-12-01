@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Imports System.Reflection
 Imports System.Web.Configuration.WebConfigurationManager
 
+
 ''' <summary>
 ''' Data accessor object. This class is subclassed and used to store data access and application-wide functions. 
 ''' It is cached in the session and exists on a per-session bassis.
@@ -424,55 +425,70 @@ Public Class DataBase
         [True] = 1
         [False] = 0
     End Enum
-	
-	    Public Sub mailhandler(ByVal body As String, ByVal toaddress As String, ByVal fromaddress As String, ByVal subject As String, _
-                        Optional ByVal ishtml As Boolean = True, Optional ByVal enableSSl As enableSSlMail = enableSSlMail.Auto, _
-                        Optional ByVal attachment As Net.Mail.Attachment = Nothing, Optional ByVal StrAttachment As String = Nothing, Optional ByVal StrAttachmentName As String = "")
 
-        Dim emailmsg As New Net.Mail.MailMessage()
-        With emailmsg
-			if not fromaddress is nothing then _
+	Public Sub mailhandler(ByVal body As String, ByVal toaddress As String, ByVal fromaddress As String, ByVal subject As String,
+						Optional ByVal ishtml As Boolean = True, Optional ByVal enableSSl As enableSSlMail = enableSSlMail.Auto,
+						Optional ByVal attachment As Net.Mail.Attachment = Nothing, Optional ByVal StrAttachment As String = Nothing, Optional ByVal StrAttachmentName As String = "", Optional requestRecipt As Boolean = False)
+
+
+
+
+		Dim emailmsg As New Net.Mail.MailMessage()
+
+		With emailmsg
+			If Not fromaddress Is Nothing Then _
 				.From = New Net.Mail.MailAddress(fromaddress)
-            .Subject = subject
-            .Body = body
-            .IsBodyHtml = ishtml
-        End With
+			.Subject = subject
+			.Body = body
+			.IsBodyHtml = ishtml
+		End With
 
-        Dim tos() As String = toaddress.Split(New Char() {";"}, System.StringSplitOptions.RemoveEmptyEntries)
-        For Each t As String In tos
-            emailmsg.To.Add(t)
-        Next
 
-        If attachment IsNot Nothing Then
-            emailmsg.Attachments.Add(attachment)
-        End If
 
-        If StrAttachment IsNot Nothing Then
-            Dim ms As New IO.MemoryStream()
-            Dim data As Byte() = Text.Encoding.ASCII.GetBytes(StrAttachment)
-            ms.Write(data, 0, data.Length)
-            If StrAttachmentName Is Nothing Then
-                StrAttachmentName = Now.ToFileTimeUtc
-            End If
-            ms.Position = 0
-            Dim attach As New Net.Mail.Attachment(ms, StrAttachmentName)
-            emailmsg.Attachments.Add(attach)
-        End If
+		Dim tos() As String = toaddress.Split(New Char() {";"}, System.StringSplitOptions.RemoveEmptyEntries)
+		For Each t As String In tos
+			emailmsg.To.Add(t)
+		Next
 
-        Dim client As New Net.Mail.SmtpClient
-        Select Case enableSSl
-            Case enableSSlMail.Auto
-                client.EnableSsl = client.Port = 465 OrElse client.Port = 587
-            Case Else
-                client.EnableSsl = Boolean.Parse(CType(enableSSl, Integer))
-        End Select
-        client.Send(emailmsg)
+		If attachment IsNot Nothing Then
+			emailmsg.Attachments.Add(attachment)
+		End If
 
-    End Sub
-	
+		If StrAttachment IsNot Nothing Then
+			Dim ms As New IO.MemoryStream()
+			Dim data As Byte() = Text.Encoding.ASCII.GetBytes(StrAttachment)
+			ms.Write(data, 0, data.Length)
+			If StrAttachmentName Is Nothing Then
+				StrAttachmentName = Now.ToFileTimeUtc
+			End If
+			ms.Position = 0
+			Dim attach As New Net.Mail.Attachment(ms, StrAttachmentName)
+			emailmsg.Attachments.Add(attach)
+		End If
+
+		Dim client As New Net.Mail.SmtpClient
+		If requestRecipt Then
+			Try
+				Dim smtpSec As System.Net.Configuration.SmtpSection = System.Web.Configuration.WebConfigurationManager.GetSection("system.net/mailSettings/smtp")
+				fromaddress = smtpSec.Network.UserName
+				emailmsg.Headers.Add("Disposition-Notification-To", "<" & fromaddress & ">")
+			Catch ex As Exception
+
+			End Try
+		End If
+		Select Case enableSSl
+			Case enableSSlMail.Auto
+				client.EnableSsl = client.Port = 465 OrElse client.Port = 587
+			Case Else
+				client.EnableSsl = Boolean.Parse(CType(enableSSl, Integer))
+		End Select
+		client.Send(emailmsg)
+
+	End Sub
+
 #Region "shared type helpers"
 
-    Public Shared Function getBaseClassType(ByVal classname As String, ByRef referenceObj As Object) As Type
+	Public Shared Function getBaseClassType(ByVal classname As String, ByRef referenceObj As Object) As Type
         Dim _currBaseClassType As Type
         _currBaseClassType = referenceObj.GetType
         Dim BaseSecurityPageType As Type = Type.GetType(classname)

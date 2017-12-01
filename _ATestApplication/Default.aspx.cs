@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BaseClasses;
 
 namespace _ATestApplication
 {
-	public partial class Default : System.Web.UI.Page
+	public partial class Default : BaseSecurityPage
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>DTIControls.dll</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <authors>mmazarick</authors>
     <owners>mmazarick</owners>
 	<iconUrl>http://www.digitaltadpole.com/favicon.ico</iconUrl>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Micmaz/DTIControls</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A content management system for WebForms. Bootstrap compatable, built in image manager and drag and drop image uploading. Includes jquery UI tools, data binding and data accessor layer. Can be used with SQL server, mySQL or SQLite. Uses SQLite by default.</description>
-    <releaseNotes>Allowed dragging images without having to click the edit area first.</releaseNotes>
+    <releaseNotes>Isolated jquery so content editing will work if earlier version is presant on the page.</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Content Management DataCentric WebForms Jquery JqueryUI DataBinding DTI Bootstrap</tags>
     <dependencies>

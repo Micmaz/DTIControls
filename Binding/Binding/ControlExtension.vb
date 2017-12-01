@@ -129,10 +129,10 @@ Public Module Extensions
             For Each ctrl As Control In getPageRowHash(c)(r)
                 If (Not isLabelized(c)) Then
                     If ctrl.Controls.Count > 0 Then
-                        errorList.AddRange(setRowValues(ctrl, r, False))
-                    Else
-                        errorList.AddRange(setRowValue(ctrl.Parent, ctrl, r))
-                    End If
+						errorList.AddRange(setRowValues(ctrl, r, showerrors))
+					Else
+						errorList.AddRange(setRowValue(ctrl.Parent, ctrl, r))
+					End If
                 End If
             Next
         Next
@@ -243,57 +243,86 @@ Public Module Extensions
     Private Function setRowValue(c As Control, ctrl As Control, r As DataRow) As List(Of ErrorSet)
         Dim errors As New List(Of ErrorSet)
         If ctrl Is Nothing Then Return errors
-        Dim ctrlid As String = ctrl.ID
-        If Not ctrl Is Nothing Then
-            Try
-                If r.Table.Columns.Contains(setControls(c)(ctrlid)) Then
-                    If GetType(JqueryUIControls.maskedTextbox).IsAssignableFrom(ctrl.GetType()) Then
-                        If r(setControls(c)(ctrlid)) Is DBNull.Value AndAlso CType(ctrl, TextBox).Text = "" Then
-                        Else
-                            setRowValueHelper(r, (setControls(c)(ctrlid)), CType(ctrl, JqueryUIControls.maskedTextbox).unMaskedText)
-                        End If
-                    ElseIf GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(ctrl.GetType()) Then
-                        Dim val As String = CType(ctrl, JqueryUIControls.Autocomplete).Value
-                        If val = "" Then
-                            val = CType(ctrl, TextBox).Text
-                        End If
-                        If r(setControls(c)(ctrlid)) Is DBNull.Value AndAlso val = "" Then
-                        Else
-                            setRowValueHelper(r, (setControls(c)(ctrlid)), val)
-                        End If
-                    ElseIf GetType(TextBox).IsAssignableFrom(ctrl.GetType()) Then
-                        If r(setControls(c)(ctrlid)) Is DBNull.Value AndAlso CType(ctrl, TextBox).Text = "" Then
-                        Else
-                            setRowValueHelper(r, (setControls(c)(ctrlid)), CType(ctrl, TextBox).Text)
-                        End If
-                    ElseIf GetType(CheckBox).IsAssignableFrom(ctrl.GetType()) Then
-                        If r(setControls(c)(ctrlid)) Is DBNull.Value AndAlso CType(ctrl, CheckBox).Checked = False Then
-                            setRowValueHelper(r, (setControls(c)(ctrlid)), 0)
-                        Else
-                            If CType(ctrl, CheckBox).Checked Then
-                                setRowValueHelper(r, (setControls(c)(ctrlid)), 1)
-                            Else
-                                setRowValueHelper(r, (setControls(c)(ctrlid)), 0)
-                            End If
-                        End If
-                    ElseIf GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
-                        Dim dd As DropDownList = CType(ctrl, DropDownList)
-                        If dd.SelectedValue = "NULL" Then
-                            setRowValueHelper(r, (setControls(c)(ctrlid)), DBNull.Value)
-                        Else
-                            setRowValueHelper(r, (setControls(c)(ctrlid)), dd.SelectedValue)
-                        End If
-                    End If
-                End If
-            Catch ex As Exception
-                Try
-                    errors.Add(New ErrorSet(ex, ctrl, setControls(c)(ctrlid)))
-                Catch ex1 As Exception
+		Dim ctrlid As String = ctrl.ID
+		Dim colname As String = setControls(c)(ctrlid)
+		If Not ctrl Is Nothing AndAlso Not String.IsNullOrEmpty(colname) Then
+			Try
+				If r.Table.Columns.Contains(colname) Then
+					If GetType(JqueryUIControls.maskedTextbox).IsAssignableFrom(ctrl.GetType()) Then
+						If r(colname) Is DBNull.Value AndAlso CType(ctrl, TextBox).Text = "" Then
+						Else
+							setRowValueHelper(r, (colname), CType(ctrl, JqueryUIControls.maskedTextbox).unMaskedText)
+						End If
+					ElseIf GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(ctrl.GetType()) Then
+						Dim val As String = CType(ctrl, JqueryUIControls.Autocomplete).Value
+						If val = "" Then
+							val = CType(ctrl, TextBox).Text
+						End If
+						If r(colname) Is DBNull.Value AndAlso val = "" Then
+						Else
+							setRowValueHelper(r, (colname), val)
+						End If
+					ElseIf GetType(TextBox).IsAssignableFrom(ctrl.GetType()) Then
+						If r(colname) Is DBNull.Value AndAlso CType(ctrl, TextBox).Text = "" Then
+						Else
+							setRowValueHelper(r, (colname), CType(ctrl, TextBox).Text)
+						End If
+					ElseIf GetType(CheckBox).IsAssignableFrom(ctrl.GetType()) Then
+						If r(colname) Is DBNull.Value AndAlso CType(ctrl, CheckBox).Checked = False Then
+							setRowValueHelper(r, (colname), 0)
+						Else
+							If CType(ctrl, CheckBox).Checked Then
+								setRowValueHelper(r, (colname), 1)
+							Else
+								setRowValueHelper(r, (colname), 0)
+							End If
+						End If
+					ElseIf GetType(RadioButton).IsAssignableFrom(ctrl.GetType()) Then
+						'Search for all radioButtons with the same group name
+						Dim rbIn As RadioButton = ctrl
+						Dim rbList = getMatchingRadioButtons(c, rbIn)
+						Dim found As Boolean = False
+						'If the columname starts after the 3rd character use the 3rd character to indicate T/F (ex rbFisAdmin would set the isadmin col to false if checked)
+						Dim setBooleanVal As Boolean = ctrlid.IndexOf(colname) > 2
+						For Each rb In rbList
+							If rb.Checked Then
+								If setBooleanVal Then
+									Dim thirdChar As Char = Char.ToUpper(rb.ID.Chars(2))
+									'of the found radio buttons, look for a T/F or Y/N in the second column
+									If thirdChar = "N" Or thirdChar = "F" Then
+										setRowValueHelper(r, (colname), 0)
+									End If
+									If thirdChar = "Y" Or thirdChar = "T" Then
+										setRowValueHelper(r, (colname), 1)
+									End If
+									found = True
+								End If
+							Else
+								setRowValueHelper(r, (colname), rb.Text)
+							End If
+						Next
+						If Not found Then
+							setRowValueHelper(r, (colname), DBNull.Value)
+						End If
 
-                End Try
-            End Try
-        End If
-        Return errors
+					ElseIf GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
+						Dim dd As DropDownList = CType(ctrl, DropDownList)
+						If dd.SelectedValue = "NULL" Then
+							setRowValueHelper(r, (colname), DBNull.Value)
+						Else
+							setRowValueHelper(r, (colname), dd.SelectedValue)
+						End If
+					End If
+				End If
+			Catch ex As Exception
+				Try
+					errors.Add(New ErrorSet(ex, ctrl, colname))
+				Catch ex1 As Exception
+
+				End Try
+			End Try
+		End If
+		Return errors
     End Function
 
     <Extension()> _
@@ -414,27 +443,37 @@ Public Module Extensions
                 End If
             End If
         Next
-        For Each cb As CheckBox In GetControlList(Of CheckBox)(c.Controls)
-            Dim colname As String = canbindCtrl(c, cb, row, errors)
-            If (Not colname Is Nothing) Then
-                If setValues Then
-                    setText(c, cb, row, colname)
-                Else
-                    setControls(c)(cb.ID) = colname
-                End If
-            End If
-        Next
-        For Each ddl As DropDownList In GetControlList(Of DropDownList)(c.Controls)
-            Dim colname As String = canbindCtrl(c, ddl, row, errors)
-            If (Not colname Is Nothing) Then
-                If setValues Then
-                    setText(c, ddl, row, colname)
-                Else
-                    setControls(c)(ddl.ID) = colname
-                End If
-            End If
-        Next
-        For Each lbl As Label In GetControlList(Of Label)(c.Controls)
+		For Each cb As CheckBox In GetControlList(Of CheckBox)(c.Controls)
+			Dim colname As String = canbindCtrl(c, cb, row, errors)
+			If (Not colname Is Nothing) Then
+				If setValues Then
+					setText(c, cb, row, colname)
+				Else
+					setControls(c)(cb.ID) = colname
+				End If
+			End If
+		Next
+		For Each rb As RadioButton In GetControlList(Of RadioButton)(c.Controls)
+			Dim colname As String = canbindCtrl(c, rb, row, errors)
+			If (Not colname Is Nothing) Then
+				If setValues Then
+					setText(c, rb, row, colname)
+				Else
+					setControls(c)(rb.ID) = colname
+				End If
+			End If
+		Next
+		For Each ddl As DropDownList In GetControlList(Of DropDownList)(c.Controls)
+				Dim colname As String = canbindCtrl(c, ddl, row, errors)
+				If (Not colname Is Nothing) Then
+					If setValues Then
+						setText(c, ddl, row, colname)
+					Else
+						setControls(c)(ddl.ID) = colname
+					End If
+				End If
+			Next
+			For Each lbl As Label In GetControlList(Of Label)(c.Controls)
             Dim colname As String = canbindCtrl(c, lbl, row, errors)
             If (Not colname Is Nothing) Then
                 If setValues Then
@@ -508,17 +547,19 @@ Public Module Extensions
 
     <Extension()> _
     Public Sub setText(ByVal c As Control, item As Control, row As DataRow, ByVal ParamArray columns As String())
-        If GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, JqueryUIControls.Autocomplete), row, columns)
-        ElseIf GetType(TextBox).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, TextBox), row, columns)
-        ElseIf GetType(Label).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, Label), row, columns)
-        ElseIf GetType(DropDownList).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, DropDownList), row, columns)
-        ElseIf GetType(CheckBox).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, CheckBox), row, columns)
-        Else
+		If GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(c.GetType()) Then
+			setText(c, CType(item, JqueryUIControls.Autocomplete), row, columns)
+		ElseIf GetType(TextBox).IsAssignableFrom(c.GetType()) Then
+			setText(c, CType(item, TextBox), row, columns)
+		ElseIf GetType(Label).IsAssignableFrom(c.GetType()) Then
+			setText(c, CType(item, Label), row, columns)
+		ElseIf GetType(DropDownList).IsAssignableFrom(c.GetType()) Then
+			setText(c, CType(item, DropDownList), row, columns)
+		ElseIf GetType(CheckBox).IsAssignableFrom(c.GetType()) Then
+			setText(c, CType(item, CheckBox), row, columns)
+		ElseIf GetType(RadioButton).IsAssignableFrom(c.GetType()) Then
+			setText(c, CType(item, RadioButton), row, columns)
+		Else
             Try
                 runM(item, "Text", New Object() {getValueString(row, columns)})
             Catch ex As Exception
@@ -596,15 +637,70 @@ Public Module Extensions
         End If
     End Sub
 
-    ''' <summary>
-    ''' If the value is not in the item list it is added automatically to the top of the list. The string "NULL" will set the db value to null.
-    ''' </summary>
-    ''' <param name="c"></param>
-    ''' <param name="dd"></param>
-    ''' <param name="row"></param>
-    ''' <param name="columns"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("If the value is not in the item list it is added automatically to the top of the list. The string ""NULL"" will set the db value to null."), Extension()> _
+	<Extension()>
+	Public Sub setText(ByVal c As Control, ByVal rb As RadioButton, ByVal row As DataRow, ByVal ParamArray columns As String())
+		If columns.Length = 0 Then
+			'columns = New String() {cb.ID}
+			columns = New String() {canbindCtrl(c, rb, row, New List(Of ErrorSet))}
+		End If
+		Dim val As String = getValueString(row, columns)
+		If columns.Length = 1 Then
+			setControls(c)(rb.ID) = columns(0)
+			Dim colname = columns(0)
+			Dim setBooleanVal As Boolean = rb.ID.IndexOf(colname) > 2
+			Dim b As Boolean = False
+			'Parse Boolean Val from the database
+			If Not Boolean.TryParse(val, b) Then
+				If val.Length > 0 Then
+					b = True
+					If val(0).ToString.ToLower = "n" OrElse val(0).ToString.ToLower = "f" OrElse val(0).ToString.ToLower = "0" Then
+						b = False
+					End If
+				End If
+			End If
+
+			Dim rbList = getMatchingRadioButtons(c, rb)
+
+			For Each rb1 As RadioButton In GetControlList(Of RadioButton)(c.Controls)
+				rb1.Checked = False
+				If setBooleanVal Then
+					Dim thirdChar As Char = Char.ToUpper(rb1.ID.Chars(2))
+					'of the found radio buttons, look for a T/F or Y/N in the second column
+					If Not b AndAlso (thirdChar = "N" Or thirdChar = "F") Then
+						rb1.Checked = True
+					End If
+					If b AndAlso (thirdChar = "Y" Or thirdChar = "T") Then
+						rb1.Checked = True
+					End If
+				Else
+					If rb1.Text = val Then rb1.Checked = True
+				End If
+			Next
+
+
+
+
+		End If
+
+	End Sub
+
+	Private Function getMatchingRadioButtons(ByVal c As Control, rb1 As RadioButton) As List(Of RadioButton)
+		Dim rbList As New List(Of RadioButton)
+		For Each rb As RadioButton In GetControlList(Of RadioButton)(c.Controls)
+			If rb.GroupName = rb1.GroupName Then rbList.Add(rb)
+		Next
+		Return rbList
+	End Function
+
+	''' <summary>
+	''' If the value is not in the item list it is added automatically to the top of the list. The string "NULL" will set the db value to null.
+	''' </summary>
+	''' <param name="c"></param>
+	''' <param name="dd"></param>
+	''' <param name="row"></param>
+	''' <param name="columns"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("If the value is not in the item list it is added automatically to the top of the list. The string ""NULL"" will set the db value to null."), Extension()> _
     Public Sub setText(ByVal c As Control, ByVal dd As DropDownList, ByVal row As DataRow, ByVal ParamArray columns As String())
         Dim col1 As String = Nothing
         If columns.Length > 0 Then col1 = columns(0)
@@ -790,24 +886,35 @@ Public Module Extensions
     Public Sub labelize(ByVal ctrl As Control, Optional ByVal defaultFormat As String = "<b>{0}</b>")
         If ctrl.Visible Then
             setControlCache(ctrl, "labelized", True)
-            If GetType(TextBox).IsAssignableFrom(ctrl.GetType()) Then
-                Dim t As TextBox = ctrl
-                replaceControl(t, String.Format(defaultFormat, t.Text))
-            ElseIf GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
-                Dim dd As DropDownList = CType(ctrl, DropDownList)
-                If dd.SelectedValue = "NULL" OrElse dd.SelectedValue Is Nothing Then
-                    replaceControl(dd, String.Format(defaultFormat, ""))
-                Else
-                    If dd.SelectedItem IsNot Nothing Then
-                        replaceControl(dd, String.Format(defaultFormat, dd.SelectedItem.Text))
-                    Else
-                        replaceControl(dd, String.Format(defaultFormat, ""))
-                    End If
-                End If
-            ElseIf GetType(Button).IsAssignableFrom(ctrl.GetType()) Then
-                replaceControl(ctrl, "")
-            ElseIf GetType(CheckBox).IsAssignableFrom(ctrl.GetType()) Then
-                Dim cb As CheckBox = ctrl
+			If GetType(TextBox).IsAssignableFrom(ctrl.GetType()) Then
+				Dim t As TextBox = ctrl
+				replaceControl(t, String.Format(defaultFormat, t.Text))
+			ElseIf GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
+				Dim dd As DropDownList = CType(ctrl, DropDownList)
+				If dd.SelectedValue = "NULL" OrElse dd.SelectedValue Is Nothing Then
+					replaceControl(dd, String.Format(defaultFormat, ""))
+				Else
+					If dd.SelectedItem IsNot Nothing Then
+						replaceControl(dd, String.Format(defaultFormat, dd.SelectedItem.Text))
+					Else
+						replaceControl(dd, String.Format(defaultFormat, ""))
+					End If
+				End If
+			ElseIf GetType(Button).IsAssignableFrom(ctrl.GetType()) Then
+				replaceControl(ctrl, "")
+			ElseIf GetType(RadioButton).IsAssignableFrom(ctrl.GetType()) Then
+				Dim rbIn As RadioButton = ctrl
+				If rbIn.Checked Then
+					If String.IsNullOrEmpty(rbIn.Text) Then
+						replaceControl(ctrl, "X")
+					Else
+						replaceControl(ctrl, rbIn.Text)
+					End If
+				Else
+					replaceControl(ctrl, "")
+				End If
+			ElseIf GetType(CheckBox).IsAssignableFrom(ctrl.GetType()) Then
+				Dim cb As CheckBox = ctrl
                 If cb.Checked Then
                     replaceControl(ctrl, "True")
                 Else

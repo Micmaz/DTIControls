@@ -87,14 +87,16 @@ Public Class jQueryInclude
 
 	Private Sub addScriptBlock(ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional isolateJquery As Boolean = True)
 		Dim sf As New ScriptFile("", type)
-		If isolateJquery Then _
+		sf.src = script
+		If type Is Nothing OrElse type.ToLower().EndsWith("javascript") Then
+			If isolateJquery Then _
 			script = "(function($) {" & script & "})(jQuery);"
-		If minify Then
-			Dim Str As New System.IO.MemoryStream(System.Text.ASCIIEncoding.ASCII.GetBytes(script))
-			sf.src = BaseClasses.JsMinimizer.SMinify(Str)
-		Else
-			sf.src = script
+			If minify Then
+				Dim Str As New System.IO.MemoryStream(System.Text.ASCIIEncoding.ASCII.GetBytes(script))
+				sf.src = BaseClasses.JsMinimizer.SMinify(Str)
+			End If
 		End If
+
 		sf.id = id
 		sf.isRawScript = True
 		Me.addInclude(sf)
@@ -181,6 +183,7 @@ Public Class jQueryInclude
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Adds the jQueryUI include header to a given page")>
 	Public Shared Sub RegisterJQueryUI(ByRef page As Page, Optional ByVal jQueryVersion As String = Nothing)
+		RegisterJQuery(page)
 		If jQueryVersion Is Nothing Then
 			addScriptFile(page, "/jQueryLibrary/jquery-ui." & lastJqUI & ".min.js")
 		Else
@@ -194,7 +197,7 @@ Public Class jQueryInclude
 			End Select
 		End If
 		addScriptFile(page, "/jQueryLibrary/DTIjqUIFunctions.js")
-		ThemeAdder.AddTheme(page)
+		'ThemeAdder.AddTheme(page)
 	End Sub
 
 	''' <summary>

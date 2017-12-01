@@ -267,8 +267,8 @@ Public Class ThemeAdder
         End Set
     End Property
 
-    Private _themeButtons As Boolean = True
-    Public Property themeButtons() As Boolean
+	Private _themeButtons As Boolean = True
+	Public Property themeButtons() As Boolean
         Get
             Return _themeButtons
         End Get
@@ -277,8 +277,8 @@ Public Class ThemeAdder
         End Set
     End Property
 
-    Private _themeBody As Boolean = True
-    Public Property themeBody() As Boolean
+	Private _themeBody As Boolean = False
+	Public Property themeBody() As Boolean
         Get
             Return _themeBody
         End Get

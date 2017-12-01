@@ -1,14 +1,14 @@
 ﻿try {
 	//a13fe4e6f3a0bf746da103090dd47568
-	hs.outlineType = 'rounded-white';
-	hs.graphicsDir = '~/res/BaseClasses/Scripts.aspx?f=HighslideControls/';
-	hs.showCredits = false;
-	hs.wrapperClassName = 'draggable-header';
-	hs.zIndexCounter = 20000;
+	parent.window.hs.outlineType = 'rounded-white';
+	parent.window.hs.graphicsDir = '~/res/BaseClasses/Scripts.aspx?f=HighslideControls/';
+	parent.window.hs.showCredits = false;
+	parent.window.hs.wrapperClassName = 'draggable-header';
+	parent.window.hs.zIndexCounter = 20000;
 
-	hs.onActivate = function () {
+	parent.window.hs.onActivate = function () {
 		var theForm = document.forms[0];
-		if (theForm) theForm.appendChild(hs.container);
+		if (theForm) theForm.appendChild(parent.window.hs.container);
 	}
 } catch (err) { }
 
