@@ -154,11 +154,49 @@ Public Class BaseVirtualPathProvider
         End Try
     End Sub
 
-    ''' <summary>
-    ''' Clears the current cache of all assemblies. Assemblies will be recached on next access.
-    ''' </summary>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Clears the current cache of all assemblies. Assemblies will be recached on next access.")> _
+
+	''' <summary>
+	''' Formats the filename of a requested file.
+	''' </summary>
+	''' <param name="_filename"></param>
+	''' <returns></returns>
+	Public Shared Function getFilename(_filename As String) As String
+		_filename = _filename.Replace("/./", "/")
+		If _filename.LastIndexOf("f=") > -1 Then
+			_filename = _filename.Substring(_filename.LastIndexOf("f=") + 2)
+		End If
+		_filename = _filename.Substring(_filename.LastIndexOf("~") + 1)
+		If _filename.IndexOf("/res/") > -1 Then
+			_filename = _filename.Replace("/res/", "")
+		ElseIf _filename.IndexOf("res/") > -1 Then
+			_filename = _filename.Replace("res/", "")
+		ElseIf _filename.IndexOf("/") = 0 Then
+			_filename = _filename.Substring(1)
+		End If
+		If _filename.Contains("?") Then
+			_filename = _filename.Substring(0, _filename.IndexOf("?"))
+		End If
+		If _filename.Contains("/../") Then
+			Dim pathparts As String() = _filename.Split("/")
+			_filename = ""
+			For Each foldername As String In pathparts
+				If foldername = ".." Then
+					_filename = _filename.Substring(0, _filename.LastIndexOf("/"))
+				Else
+					_filename &= "/" & foldername
+				End If
+			Next
+
+		End If
+		Return _filename
+	End Function
+
+
+	''' <summary>
+	''' Clears the current cache of all assemblies. Assemblies will be recached on next access.
+	''' </summary>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Clears the current cache of all assemblies. Assemblies will be recached on next access.")> _
     Public Shared Sub ClearResources()
         If Not resources Is Nothing Then resources.Clear()
         resources = Nothing

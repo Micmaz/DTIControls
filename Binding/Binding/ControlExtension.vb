@@ -876,10 +876,11 @@ Public Module Extensions
         Dim l As New LiteralControl
         l.Text = reptext
         ctrl.Visible = False
-        Try
-            ctrl.Parent.Controls.AddAt(i, l)
-        Catch ex As Exception
-        End Try
+		Try
+			ctrl.Parent.Controls.AddAt(i, l)
+		Catch ex As Exception
+			Throw ex
+		End Try
     End Sub
 
     <Extension()> _

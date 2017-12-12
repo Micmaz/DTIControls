@@ -40,33 +40,7 @@ Partial Public Class Scripts
 			If _filename Is Nothing Then
 				Try
 					_filename = Request.QueryString.Item("f")
-					_filename = _filename.Replace("/./", "/")
-					If _filename.LastIndexOf("f=") > -1 Then
-						_filename = _filename.Substring(_filename.LastIndexOf("f=") + 2)
-					End If
-					_filename = _filename.Substring(_filename.LastIndexOf("~") + 1)
-					If _filename.IndexOf("/res/") > -1 Then
-						_filename = _filename.Replace("/res/", "")
-					ElseIf _filename.IndexOf("res/") > -1 Then
-						_filename = _filename.Replace("res/", "")
-					ElseIf _filename.IndexOf("/") = 0 Then
-						_filename = _filename.Substring(1)
-					End If
-					If _filename.Contains("?") Then
-						_filename = _filename.Substring(0, _filename.IndexOf("?"))
-					End If
-					If _filename.Contains("/../") Then
-						Dim pathparts As String() = _filename.Split("/")
-						_filename = ""
-						For Each foldername As String In pathparts
-							If foldername = ".." Then
-								_filename = _filename.Substring(0, _filename.LastIndexOf("/"))
-							Else
-								_filename &= "/" & foldername
-							End If
-						Next
-
-					End If
+					_filename = BaseVirtualPathProvider.getFilename(_filename)
 				Catch ex As Exception
 					_filename = Nothing
 				End Try
@@ -75,13 +49,15 @@ Partial Public Class Scripts
 		End Get
 	End Property
 
-    ''' <summary>
-    ''' The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("The load event. If it makes it here the item Is either uncached on the client Or the app Is in debug mode.")> _
+
+
+	''' <summary>
+	''' The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.
+	''' </summary>
+	''' <param name="sender"></param>
+	''' <param name="e"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("The load event. If it makes it here the item Is either uncached on the client Or the app Is in debug mode.")> _
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 		'registerVirtualPathProvider()
 
