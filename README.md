@@ -1,6 +1,9 @@
 # DTIControls
 .NET control suite. Includes jquery UI controls and a lite content management suit.
 
+
+This component will create the tables in the database with the connection string named "ConnectionString". The content manager handels images and content history. If there is no connection string it will use SQLite and create a local folder called "Database"
+
 ```HTML
   <%@ Register Assembly="DTIControls" Namespace="DTIContentManagement" TagPrefix="DTIEdit" %>
   <DTIEdit:EditPanel ID="EditPanel1" runat="server">
