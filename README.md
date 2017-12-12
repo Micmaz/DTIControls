@@ -15,8 +15,8 @@ This component will create the tables in the database with the connection string
 
 Code behind:
 ```C#
-      protected void btnTurnEditOn_Click(object sender, EventArgs e)
-		  {
-			  DTIControls.Share.EditModeOn = !DTIControls.Share.EditModeOn;
-		  }
+	protected void btnTurnEditOn_Click(object sender, EventArgs e)
+	{
+		DTIControls.Share.EditModeOn = !DTIControls.Share.EditModeOn;
+	}
 ```
