@@ -1,8 +1,0 @@
-C:\tester\DTIControls\_ATestApplication\bin\ATestApplication.dll.config
-C:\tester\DTIControls\_ATestApplication\bin\ATestApplication.dll
-C:\tester\DTIControls\_ATestApplication\bin\ATestApplication.pdb
-C:\tester\DTIControls\_ATestApplication\bin\DTIControls.dll
-C:\tester\DTIControls\_ATestApplication\bin\DTIControls.pdb
-C:\tester\DTIControls\_ATestApplication\obj\Debug\_ATestApplication.csprojResolveAssemblyReference.cache
-C:\tester\DTIControls\_ATestApplication\obj\Debug\ATestApplication.dll
-C:\tester\DTIControls\_ATestApplication\obj\Debug\ATestApplication.pdb

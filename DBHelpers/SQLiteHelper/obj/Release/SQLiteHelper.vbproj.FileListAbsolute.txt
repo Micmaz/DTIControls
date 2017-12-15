@@ -1,7 +1,0 @@
-C:\components\_Output\DBHelpers\SQLiteHelper.dll
-C:\components\_Output\DBHelpers\SQLiteHelper.pdb
-C:\components\_Output\DBHelpers\SQLiteHelper.xml
-C:\components\DBHelpers\SQLiteHelper\obj\Release\SQLiteHelper.vbprojResolveAssemblyReference.cache
-C:\components\DBHelpers\SQLiteHelper\obj\Release\SQLiteHelper.dll
-C:\components\DBHelpers\SQLiteHelper\obj\Release\SQLiteHelper.xml
-C:\components\DBHelpers\SQLiteHelper\obj\Release\SQLiteHelper.pdb

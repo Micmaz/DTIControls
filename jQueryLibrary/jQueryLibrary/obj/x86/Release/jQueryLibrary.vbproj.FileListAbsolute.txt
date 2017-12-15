@@ -1,8 +1,0 @@
-C:\Components\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.dll
-C:\Components\jQueryLibrary\jQueryLibrary\bin\jQueryLibrary.pdb
-C:\Components\jQueryLibrary\jQueryLibrary\bin\BaseClasses.dll
-C:\Components\jQueryLibrary\jQueryLibrary\bin\BaseClasses.pdb
-C:\Components\jQueryLibrary\jQueryLibrary\bin\BaseClasses.xml
-C:\Components\jQueryLibrary\jQueryLibrary\obj\x86\Release\jQueryLibrary.vbprojResolveAssemblyReference.cache
-C:\Components\jQueryLibrary\jQueryLibrary\obj\x86\Release\jQueryLibrary.dll
-C:\Components\jQueryLibrary\jQueryLibrary\obj\x86\Release\jQueryLibrary.pdb

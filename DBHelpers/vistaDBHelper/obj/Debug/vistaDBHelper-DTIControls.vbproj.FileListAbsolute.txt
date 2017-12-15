@@ -1,4 +1,0 @@
-C:\components\DBHelpers\vistaDBHelper\obj\Debug\ResolveAssemblyReference.cache
-C:\components\DBHelpers\vistaDBHelper\obj\Debug\vistaDBHelper.dll
-C:\components\DBHelpers\vistaDBHelper\obj\Debug\vistaDBHelper.xml
-C:\components\DBHelpers\vistaDBHelper\obj\Debug\vistaDBHelper.pdb

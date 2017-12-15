@@ -1,3 +1,0 @@
-C:\components\DBHelpers\OracleHelper\obj\Release\ResolveAssemblyReference.cache
-C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.Resources.resources
-C:\components\DBHelpers\OracleHelper\obj\Release\OracleHelper.vbproj.GenerateResource.Cache

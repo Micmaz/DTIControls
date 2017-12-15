@@ -1,7 +1,0 @@
-C:\components\_Output\DBHelpers\mySQLHelper.dll
-C:\components\_Output\DBHelpers\mySQLHelper.pdb
-C:\components\_Output\DBHelpers\mySQLHelper.xml
-C:\components\DBHelpers\mySQLHelper\obj\Release\mySQLHelper.vbprojResolveAssemblyReference.cache
-C:\components\DBHelpers\mySQLHelper\obj\Release\mySQLHelper.dll
-C:\components\DBHelpers\mySQLHelper\obj\Release\mySQLHelper.xml
-C:\components\DBHelpers\mySQLHelper\obj\Release\mySQLHelper.pdb
