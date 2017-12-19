@@ -1495,14 +1495,6 @@ Auto-generated class.
  </param>
  <remarks></remarks>
 </member>
-<member name="T:DTIMiniControls.TagsUC">
-<summary>
-TagsUC class.
-</summary>
-<remarks>
-Auto-generated class.
-</remarks>
-</member>
 <member name="F:DTIMiniControls.TagsUC._lblCurrTags">
 <summary>
 lblCurrTags control.

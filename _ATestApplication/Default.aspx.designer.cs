@@ -31,6 +31,15 @@ namespace _ATestApplication {
         protected global::DTIContentManagement.EditPanel EditPanel1;
         
         /// <summary>
+        /// cpcolor1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::JqueryUIControls.ColorPicker cpcolor1;
+        
+        /// <summary>
         /// Autocomplete1 control.
         /// </summary>
         /// <remarks>

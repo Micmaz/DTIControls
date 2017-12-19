@@ -50,10 +50,8 @@ Public Class BaseSecurityPage
     Public Event DataReady()
 
     Public Sub New()
-        If Not BaseVirtualPathProvider.initialized Then
-            System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider(New BaseVirtualPathProvider())
-        End If
-    End Sub
+		BaseVirtualPathProvider.registerVirtualPathProvider()
+	End Sub
 
     ''' <summary>
     ''' Returns the current error handler for this application.

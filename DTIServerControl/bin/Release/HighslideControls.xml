@@ -12,12 +12,6 @@ HighslideControls
  </summary>
  <remarks></remarks>
 </member>
-<member name="P:HighslideControls.HighslideHeaderControl.registrationString">
- <summary>
- A unique string javascript comment that relays lisensing information for Highslide
- </summary>
- <remarks></remarks>
-</member>
 <member name="P:HighslideControls.HighslideHeaderControl.HighslideVariables">
  <summary>
  Hashtable containing global highslide variables, see http://highslide.com/ref/

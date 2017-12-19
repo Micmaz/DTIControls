@@ -14,7 +14,7 @@ DTIAjax
 </member>
 <member name="T:DTIAjax.jsonSeverConrol">
  <summary>
- A json enabled we control
+ A json enabled web control
  </summary>
  <remarks></remarks>
 </member>

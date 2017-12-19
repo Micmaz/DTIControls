@@ -60,7 +60,7 @@ Partial Public Class Scripts
 	<System.ComponentModel.Description("The load event. If it makes it here the item Is either uncached on the client Or the app Is in debug mode.")> _
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 		'registerVirtualPathProvider()
-
+		If responseEnded Then Return
 		Response.Clear()
 		Response.ContentType = "application/octet-stream"
 		If filename IsNot Nothing Then
@@ -81,7 +81,7 @@ Partial Public Class Scripts
 						End Using
 						minScripts.Add(filename, strOut)
 					End If
-					writeStringResponce(minScripts.Item(filename))
+					writeStringResponse(minScripts.Item(filename))
 				Catch ex As Exception
 					writeFileFromAssembly()
 				End Try
@@ -117,7 +117,7 @@ Partial Public Class Scripts
 					End If
 				End SyncLock
 				Try
-					writeStringResponce(fixedCssFiles.Item(filename))
+					writeStringResponse(fixedCssFiles.Item(filename))
 				Catch ex As Exception
 					writeFileFromAssembly()
 				End Try
@@ -134,7 +134,7 @@ Partial Public Class Scripts
     ''' <param name="str"></param>
     ''' <remarks></remarks>
         <System.ComponentModel.Description("Writes the string to the output stream.")> _
-        Private Sub writeStringResponce(ByRef str As String)
+        Private Sub writeStringResponse(ByRef str As String)
             Using writer As New StreamWriter(Response.OutputStream)
                 writer.Write(str)
             End Using
@@ -230,6 +230,7 @@ Partial Public Class Scripts
         Return True
     End Function
 
+	Private responseEnded As Boolean = False
 	''' <summary>
 	''' Handles the init event of the page. Will end the responce if the item is unmodified and therefore uses the client cache.
 	''' </summary>
@@ -239,7 +240,9 @@ Partial Public Class Scripts
 	<System.ComponentModel.Description("Handles the init event of the page. Will end the responce if the item is unmodified and therefore uses the client cache.")>
 	Private Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
 		If Request.Url.LocalPath.IndexOf("~/") <> Request.Url.LocalPath.LastIndexOf("~/") Then
-			Response.Redirect(Request.Url.LocalPath.Substring(Request.Url.LocalPath.LastIndexOf("~/")) & Request.Url.Query, True)
+			Response.Redirect(Request.Url.LocalPath.Substring(Request.Url.LocalPath.LastIndexOf("~/")) & Request.Url.Query, False)
+			responseEnded = True
+			Return
 		End If
 		If Not Request.QueryString.Item("reset") Is Nothing AndAlso Request.QueryString.Item("reset").ToLower = "y" Then
 			LastModified = Nothing
@@ -259,7 +262,8 @@ Partial Public Class Scripts
 			Response.AddHeader("Content-Length", "0")
 			'Response.Cache.SetCacheability(Web.HttpCacheability.Public)
 			'Response.Cache.SetLastModified(LastModified)
-			Response.End()
+			'Response.End()
+			responseEnded = True
 			Return
 		End If
 

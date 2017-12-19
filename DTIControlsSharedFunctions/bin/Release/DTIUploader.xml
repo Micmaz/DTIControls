@@ -91,14 +91,6 @@ JavaFileUploader class.
 Auto-generated class.
 </remarks>
 </member>
-<member name="T:DTIUploader.JSFileUploader">
-<summary>
-JSFileUploader class.
-</summary>
-<remarks>
-Auto-generated class.
-</remarks>
-</member>
 <member name="F:DTIUploader.JSFileUploader._uploaderContainer">
 <summary>
 uploaderContainer control.

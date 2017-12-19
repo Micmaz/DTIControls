@@ -55,9 +55,6 @@
     <Import Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="My Project\AssemblyInfo.vb" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="ILMerge.props" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -155,6 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILMergeOrder.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

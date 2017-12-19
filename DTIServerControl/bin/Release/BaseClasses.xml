@@ -1279,7 +1279,7 @@ BaseClasses
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:BaseClasses.BaseVirtualPathProvider.initialized">
+<member name="P:BaseClasses.BaseVirtualPathProvider.initialized">
  <summary>
  Returns weather the baseVirtualPathProvider has been initialized or not. 
  </summary>
@@ -1305,6 +1305,13 @@ BaseClasses
  </summary>
  <param name="asm"></param>
  <remarks></remarks>
+</member>
+<member name="M:BaseClasses.BaseVirtualPathProvider.getFilename(System.String)">
+ <summary>
+ Formats the filename of a requested file.
+ </summary>
+ <param name="_filename"></param>
+ <returns></returns>
 </member>
 <member name="M:BaseClasses.BaseVirtualPathProvider.ClearResources">
  <summary>
@@ -2081,7 +2088,7 @@ To modify move field declaration from designer file to code-behind file.
  <param name="e"></param>
  <remarks></remarks>
 </member>
-<member name="M:BaseClasses.Scripts.writeStringResponce(System.String@)">
+<member name="M:BaseClasses.Scripts.writeStringResponse(System.String@)">
  <summary>
  Writes the string to the output stream.
  </summary>

@@ -67,65 +67,70 @@ Public Class BaseVirtualPathProvider
         End Get
     End Property
 
-    ''' <summary>
-    ''' Returns weather the baseVirtualPathProvider has been initialized or not. 
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Returns weather the baseVirtualPathProvider has been initialized or not.")> _
-    Public Shared Function initialized() As Boolean
-        Return Not resources Is Nothing AndAlso resources.Count > 0
-    End Function
+	''' <summary>
+	''' Returns weather the baseVirtualPathProvider has been initialized or not. 
+	''' </summary>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Returns weather the baseVirtualPathProvider has been initialized or not.")>
+	Public Shared Property initialized As Boolean = False
+	'   Public Shared Function initialized() As Boolean
+	'	Return Not resources Is Nothing AndAlso resources.Count > 0
+	'End Function
 
-    ''' <summary>
-    ''' Registers the virtual path provider in the application. Ideally this call is added to the global.asax file on application start.
-    ''' </summary>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Registers the virtual path provider in the application. Ideally this call is added to the global.asax file on application start.")> _
-    Public Shared Sub registerVirtualPathProvider()
-        If Not BaseVirtualPathProvider.initialized Then
-            System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider(New BaseVirtualPathProvider())
-        End If
-    End Sub
+	''' <summary>
+	''' Registers the virtual path provider in the application. Ideally this call is added to the global.asax file on application start.
+	''' </summary>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Registers the virtual path provider in the application. Ideally this call is added to the global.asax file on application start.")>
+	Public Shared Sub registerVirtualPathProvider()
+		If Not BaseVirtualPathProvider.initialized Then
+			System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider(New BaseVirtualPathProvider())
+			Debug.WriteLine("Initialized virtual path provider.")
+			testVirtualPathProvider()
+		End If
+		Debug.WriteLine("Path Provider registered. all done.")
+	End Sub
 
-    ''' <summary>
-    ''' Spiders available dlls and caches all embedded resources for fast retrieval by a webserver. 
-    ''' </summary>
-    ''' <param name="assemblyname"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Spiders available dlls and caches all embedded resources for fast retrieval by a webserver.")> _
+	''' <summary>
+	''' Spiders available dlls and caches all embedded resources for fast retrieval by a webserver. 
+	''' </summary>
+	''' <param name="assemblyname"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Spiders available dlls and caches all embedded resources for fast retrieval by a webserver.")> _
     Public Shared Sub buildLocalResources(Optional ByVal assemblyname As String = "")
         If resources Is Nothing Then
             resources = New Hashtable
         End If
-        If assemblyname = "" Then
-            'For Each asm As System.Reflection.Assembly In Assembly.GetEntryAssembly().GetReferencedAssemblies
-            'Try
-            '    For Each dllfile As String In System.IO.Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath, "*.dll")
-            '        cacheAssembly(Assembly.LoadFile(dllfile))
-            '    Next
-            'Catch ex As Exception
+		If assemblyname = "" Then
+			'For Each asm As System.Reflection.Assembly In Assembly.GetEntryAssembly().GetReferencedAssemblies
+			'Try
+			'    For Each dllfile As String In System.IO.Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath, "*.dll")
+			'        cacheAssembly(Assembly.LoadFile(dllfile))
+			'    Next
+			'Catch ex As Exception
 
-            'End Try
-            For Each asm As System.Reflection.Assembly In AppDomain.CurrentDomain.GetAssemblies
-                cacheAssembly(asm)
-            Next
-        Else
-            Try
-                cacheAssembly(Assembly.Load(assemblyname))
-            Catch ex As Exception
-                Dim shortasmname As String = assemblyname.ToLower
-                If shortasmname.IndexOf(".") > -1 Then shortasmname = shortasmname.Substring(0, shortasmname.IndexOf("."))
-                Dim location As String = AppDomain.CurrentDomain.RelativeSearchPath
-                For Each dllfile As String In System.IO.Directory.GetFiles(location, "*.dll")
-                    Dim justfile As String = dllfile.Substring(location.Length).ToLower
-                    If justfile.Contains(shortasmname) Then
-                        cacheAssembly(Assembly.LoadFile(dllfile))
-                    End If
-                Next
-            End Try
-        End If
-    End Sub
+			'End Try
+			For Each asm As System.Reflection.Assembly In AppDomain.CurrentDomain.GetAssemblies
+				cacheAssembly(asm)
+			Next
+		Else
+			Try
+				cacheAssembly(Assembly.Load(assemblyname))
+			Catch ex As Exception
+				Dim shortasmname As String = assemblyname.ToLower
+				If shortasmname.IndexOf(".") > -1 Then shortasmname = shortasmname.Substring(0, shortasmname.IndexOf("."))
+				Dim location As String = AppDomain.CurrentDomain.RelativeSearchPath
+				For Each dllfile As String In System.IO.Directory.GetFiles(location, "*.dll")
+					Dim justfile As String = dllfile.Substring(location.Length).ToLower
+					If justfile.Contains(shortasmname) Then
+						cacheAssembly(Assembly.LoadFile(dllfile))
+					End If
+				Next
+			End Try
+		End If
+		Debug.WriteLine("Finished caching all assemblies.")
+	End Sub
 
     ''' <summary>
     ''' Adds assembly to the cache.
@@ -203,13 +208,50 @@ Public Class BaseVirtualPathProvider
         resources = New Hashtable
     End Sub
 
-    ''' <summary>
-    ''' Gets the file stream of an embedded resource.
-    ''' </summary>
-    ''' <param name="virtualPath"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Gets the file stream of an embedded resource.")> _
+	Public Shared Function testVirtualPathProvider() As Boolean
+		If Not BaseVirtualPathProvider.initialized Then
+			Dim loaded As Boolean = True
+			'Dim approot As String = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) & System.Web.VirtualPathUtility.ToAbsolute("~/")
+			Dim req As HttpRequest = nothing
+			Try
+				req = HttpContext.Current.Request
+			Catch ex As Exception
+
+			End Try
+			If HttpContext.Current IsNot Nothing AndAlso req IsNot Nothing Then
+				Dim page As System.Web.UI.Page = HttpContext.Current.Handler
+				loaded = False
+				If page IsNot Nothing Then
+					Dim count As Integer = 0
+
+					While Not loaded AndAlso count < 20
+						count += 1
+						Try
+							Dim i = page.LoadControl("~/res/BaseClasses/TestUC.ascx")
+							loaded = True
+						Catch ex As Exception
+							Threading.Thread.Sleep(500)
+						End Try
+					End While
+				End If
+				BaseVirtualPathProvider.initialized = loaded
+				'I hate doing this but the virtual path provider isn't active until the next load..
+				HttpContext.Current.Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri, False)
+			Else
+
+			End If
+		End If
+
+		Return BaseVirtualPathProvider.initialized
+	End Function
+
+	''' <summary>
+	''' Gets the file stream of an embedded resource.
+	''' </summary>
+	''' <param name="virtualPath"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Gets the file stream of an embedded resource.")> _
     Public Shared Function getResourceStream(ByVal virtualPath As String) As System.IO.Stream
         Dim itms As Object() = BaseVirtualPathProvider.getResourcesName(virtualPath)
         If itms Is Nothing Then Return Nothing
@@ -266,16 +308,17 @@ Public Class BaseVirtualPathProvider
     ''' <remarks></remarks>
     Friend Shared Sub rebuildresources()
         If lastrebuild = Nothing Then lastrebuild = Date.Today.AddDays(-1)
-        If lastrebuild.AddSeconds(rebuildWait) < Date.Now Then
-            lastrebuild = Date.Now
-            If resources Is Nothing Then resources = New Hashtable
-            resources.Clear()
-            assemblies.Clear()
-            _assemblyClassHash = Nothing
-            buildLocalResources()
-            lastrebuild = Date.Now
-        End If
-    End Sub
+		If lastrebuild.AddSeconds(rebuildWait) < Date.Now Then
+			BaseVirtualPathProvider.initialized = False
+			lastrebuild = Date.Now
+			If resources Is Nothing Then resources = New Hashtable
+			resources.Clear()
+			assemblies.Clear()
+			_assemblyClassHash = Nothing
+			buildLocalResources()
+			lastrebuild = Date.Now
+		End If
+	End Sub
 
 #End Region
 

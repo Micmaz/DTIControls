@@ -26,7 +26,7 @@ jQueryLibrary
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="M:jQueryLibrary.jQueryInclude.addScriptBlock(System.Web.UI.Page,System.String,System.Boolean,System.String,System.String)">
+<member name="M:jQueryLibrary.jQueryInclude.addScriptBlock(System.Web.UI.Page,System.String,System.Boolean,System.String,System.String,jQueryLibrary.jQueryInclude)">
  <summary>
  Adds the jQuery script block to the page.
  </summary>
@@ -163,7 +163,7 @@ jQueryLibrary
  </param>
  <remarks></remarks>
 </member>
-<member name="M:jQueryLibrary.jQueryInclude.addInclude(System.String,System.String,System.Boolean,System.Boolean,System.String)">
+<member name="M:jQueryLibrary.jQueryInclude.addInclude(System.String,System.String,System.Boolean,System.Boolean,System.String,System.Boolean)">
  <summary>
  Creates an instance of ScriptFile in order to add it to the jQuery include list
  </summary>
@@ -197,7 +197,7 @@ jQueryLibrary
  <param name="newcontents"></param>
  <remarks></remarks>
 </member>
-<member name="M:jQueryLibrary.jQueryInclude.ScriptFile.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.String)">
+<member name="M:jQueryLibrary.jQueryInclude.ScriptFile.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.String,System.Boolean)">
  <summary>
  Constructor for ScriptFile class
  </summary>

@@ -510,14 +510,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="T:DTIContentManagement.PreviewFiles">
-<summary>
-PreviewFiles class.
-</summary>
-<remarks>
-Auto-generated class.
-</remarks>
-</member>
 <member name="F:DTIContentManagement.PreviewFiles._form1">
 <summary>
 form1 control.
