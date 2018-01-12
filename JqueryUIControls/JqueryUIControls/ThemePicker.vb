@@ -62,10 +62,10 @@ Public Class ThemePicker
     End Property
 
     Public Property Hidden() As Boolean
-        Get
-            Return isHidden
-        End Get
-        Set(ByVal value As Boolean)
+		Get
+			Return isHidden
+		End Get
+		Set(ByVal value As Boolean)
             isHidden = value
             MyBase.Visible = True
         End Set
@@ -83,11 +83,9 @@ Public Class ThemePicker
 
     Private Sub Picker_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Me.DesignMode Then Return
-        Dim s As String = ""
-        s &= "$(function(){"
-        s &= "     $('#" & Me.ClientID & "').themeswitcher({" & renderparams() & "});"
-        s &= "});"
-        If Me.useCookie Then
+		Dim s As String = ""
+		s &= "     $('#" & Me.ClientID & "').themeswitcher({" & renderparams() & "});"
+		If Me.useCookie Then
             If Not Page.Request.Cookies("jquery-ui-theme") Is Nothing Then
                 'If Page.Items("currentJQUITheme") Is Nothing Then
                 Dim theme As String = Page.Request.Cookies("jquery-ui-theme").Value
@@ -112,8 +110,8 @@ Public Class ThemePicker
             End If
         End If
         If Not Hidden Then _
-            jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s)
-    End Sub
+			jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, s)
+	End Sub
 
 End Class
 

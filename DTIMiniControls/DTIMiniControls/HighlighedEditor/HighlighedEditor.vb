@@ -104,16 +104,16 @@ Public Class HighlighedEditor
         End If
 
 
-        Dim script As String = "editor_" & Me.ClientID & " = CodeMirror.fromTextArea(document.getElementById('" & Me.ClientID & "'), { " & vbCrLf & _
-        "        lineNumbers: " & IIf(lineNumbers, "true", "false") & ", " & vbCrLf & _
-        "        matchBrackets: " & IIf(matchBrackets, "true", "false") & ", " & vbCrLf & _
-        "        autoCloseTags: " & IIf(autoCloseTags, "true", "false") & ", " & vbCrLf & _
-        "        indentUnit: " & indentSpaces & ", " & vbCrLf & _
-        "        theme: '" & getName(theme) & "', " & vbCrLf & _
-        "        mode: " & mode & "," & vbCrLf & _
-        "        lineWrapping: " & IIf(Wrap, "true", "false") & "," & vbCrLf & _
-        "        onKeyEvent: function(i, e) {" & IIf(Me.autocomplete, "autoComplete_" & Me.ClientID & ".Complete(i,e);", "") & "} " & vbCrLf & _
-        "      }); " & vbCrLf
+		Dim script As String = "window.editor_" & Me.ClientID & " = CodeMirror.fromTextArea(document.getElementById('" & Me.ClientID & "'), { " & vbCrLf &
+		"        lineNumbers: " & IIf(lineNumbers, "true", "false") & ", " & vbCrLf &
+		"        matchBrackets: " & IIf(matchBrackets, "true", "false") & ", " & vbCrLf &
+		"        autoCloseTags: " & IIf(autoCloseTags, "true", "false") & ", " & vbCrLf &
+		"        indentUnit: " & indentSpaces & ", " & vbCrLf &
+		"        theme: '" & getName(theme) & "', " & vbCrLf &
+		"        mode: " & mode & "," & vbCrLf &
+		"        lineWrapping: " & IIf(Wrap, "true", "false") & "," & vbCrLf &
+		"        onKeyEvent: function(i, e) {" & IIf(Me.autocomplete, "autoComplete_" & Me.ClientID & ".Complete(i,e);", "") & "} " & vbCrLf &
+		"      }); " & vbCrLf
 		script &= "if(window.jQuery){$('#" & Me.ClientID & "').data('editor', editor_" & Me.ClientID & ");}"
         jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIMiniControls/" & getScriptName(Me.language))
         'jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIMiniControls/" & getName(Me.language) & ".css")
@@ -127,9 +127,9 @@ Public Class HighlighedEditor
 
         If autocomplete Then
             jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIMiniControls/complete.js")
-            script &= "var autoComplete_" & Me.ClientID & " = new autoComplete;" & vbCrLf & _
-            "autoComplete_" & Me.ClientID & ".setEditor(editor_" & Me.ClientID & ");" & vbCrLf
-            If language = languageEnum.html Or language = languageEnum.plsql Or language = languageEnum.css Or language = languageEnum.xml Then
+			script &= "window.autoComplete_" & Me.ClientID & " = new autoComplete;" & vbCrLf &
+			"autoComplete_" & Me.ClientID & ".setEditor(editor_" & Me.ClientID & ");" & vbCrLf
+			If language = languageEnum.html Or language = languageEnum.plsql Or language = languageEnum.css Or language = languageEnum.xml Then
                 script &= "autoComplete_" & Me.ClientID & ".checkcase(false);" & vbCrLf
             End If
             If Not additionalAutocomp Is Nothing AndAlso additionalAutocomp.Count > 0 Then
@@ -143,14 +143,14 @@ Public Class HighlighedEditor
 
         End If
         jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, "var editor_" & Me.ClientID & ";", False)
-        'Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType, Me.ClientID, _
-        '"editor_" & Me.ClientID & ".setValue($.urlEncode(editor_" & Me.ClientID & ".getValue()));")
-        Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType, Me.ClientID, _
-        "$('#hidden_" & Me.ClientID & "').val($.urlEncode(editor_" & Me.ClientID & ".getValue()));editor_" & Me.ClientID & ".setValue('')")
+		'Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType, Me.ClientID, _
+		'"editor_" & Me.ClientID & ".setValue($.urlEncode(editor_" & Me.ClientID & ".getValue()));")
+		Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType, Me.ClientID,
+		jQueryLibrary.jQueryInclude.jqueryVar & "('#hidden_" & Me.ClientID & "').val(" & jQueryLibrary.jQueryInclude.jqueryVar & ".urlEncode(editor_" & Me.ClientID & ".getValue()));editor_" & Me.ClientID & ".setValue('')")
 
-        jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, script, False)
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, script)
 
-        If autoGrow Then
+		If autoGrow Then
             jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIMiniControls/autoGrow.css")
         End If
 

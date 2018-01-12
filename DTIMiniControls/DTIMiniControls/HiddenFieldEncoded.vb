@@ -55,15 +55,16 @@ Public Class HiddenFieldEncoded
             Else
                 setEncodedScript = "$.urlAddWatch('" & Me.ReferenceId & "', '" & Me.ClientID & "');"
             End If
-            script.ScriptText = _
-                "        $(document).ready(function() {  " & vbCrLf & _
-                "          " & setEncodedScript & vbCrLf & _
-                "        });  " & vbCrLf
-            '    "          $('form').submit(function() {  " & vbCrLf & _
-            '    "            $.base64EncodePairs(); " & vbCrLf & _
-            '    "            return true;  " & vbCrLf & _
-            '    "          }); " & vbCrLf & _
-            script.RenderControl(writer)
+		script.ScriptText = jQueryLibrary.jQueryInclude.isolateJqueryLoad(setEncodedScript)
+		'    "        $(document).ready(function() {  " & vbCrLf & _
+		'    "          " & setEncodedScript & vbCrLf & _
+		'    "        });  " & vbCrLf
+
+		'    "          $('form').submit(function() {  " & vbCrLf & _
+		'    "            $.base64EncodePairs(); " & vbCrLf & _
+		'    "            return true;  " & vbCrLf & _
+		'    "          }); " & vbCrLf & _
+		script.RenderControl(writer)
         End Sub
 
         Protected Overrides Function LoadPostData(ByVal postDataKey As String, ByVal postCollection As System.Collections.Specialized.NameValueCollection) As Boolean
@@ -86,6 +87,6 @@ Public Class HiddenFieldEncoded
         End Sub
 
         Private Sub HiddenFieldEncoded_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
-            Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType(), "hiddenfield", "$.urlEncodePairs();")
-        End Sub
+		Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType(), "hiddenfield", jQueryLibrary.jQueryInclude.jqueryVar & ".urlEncodePairs();")
+	End Sub
     End Class

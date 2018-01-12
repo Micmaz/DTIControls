@@ -12,132 +12,132 @@ Option Explicit On
 
 
 Partial Public Class VideoPreview
-    
-    '''<summary>
-    '''JsonSeverConrol1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents JsonSeverConrol1 As Global.DTIAjax.jsonSeverConrol
-    
-    '''<summary>
-    '''checkConversionScript control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents checkConversionScript As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''lblRawFile control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblRawFile As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblRawFileValue control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblRawFileValue As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblTime control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblTime As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblTimeValue control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblTimeValue As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblDimensions control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblDimensions As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblDimensionsValue control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblDimensionsValue As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblStatus control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblStatus As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblStatusValue control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblStatusValue As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''imgStatus control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents imgStatus As Global.System.Web.UI.WebControls.Image
-    
-    '''<summary>
-    '''pnlScreenshot control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlScreenshot As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''imgScreenshot control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents imgScreenshot As Global.System.Web.UI.WebControls.Image
-    
-    '''<summary>
-    '''videoHolder control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents videoHolder As Global.System.Web.UI.WebControls.Panel
+
+	'''<summary>
+	'''JsonSeverConrol1 control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents JsonSeverConrol1 As Global.DTIAjax.jsonSeverConrol
+
+	'''<summary>
+	'''checkConversionScript control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents checkConversionScript As Global.System.Web.UI.WebControls.Panel
+
+	'''<summary>
+	'''lblRawFile control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblRawFile As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblRawFileValue control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblRawFileValue As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblTime control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblTime As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblTimeValue control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblTimeValue As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblDimensions control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblDimensions As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblDimensionsValue control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblDimensionsValue As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblStatus control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblStatus As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblStatusValue control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblStatusValue As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''imgStatus control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents imgStatus As Global.System.Web.UI.WebControls.Image
+
+	'''<summary>
+	'''pnlScreenshot control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents pnlScreenshot As Global.System.Web.UI.WebControls.Panel
+
+	'''<summary>
+	'''imgScreenshot control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents imgScreenshot As Global.System.Web.UI.WebControls.Image
+
+	'''<summary>
+	'''videoHolder control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents videoHolder As Global.System.Web.UI.WebControls.Panel
 
 	'''<summary>
 	'''VideoThumb1 control.
@@ -156,40 +156,40 @@ Partial Public Class VideoPreview
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
 	Protected WithEvents pnlScreenShotEditor As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''changeThumbNailDiv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents changeThumbNailDiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
-    '''<summary>
-    '''lblZero control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblZero As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lblMax control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblMax As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''videoSlider control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents videoSlider As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+	'''<summary>
+	'''changeThumbNailDiv control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents changeThumbNailDiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+	'''<summary>
+	'''lblZero control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblZero As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''lblMax control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents lblMax As Global.System.Web.UI.WebControls.Label
+
+	'''<summary>
+	'''videoSlider control.
+	'''</summary>
+	'''<remarks>
+	'''Auto-generated field.
+	'''To modify move field declaration from designer file to code-behind file.
+	'''</remarks>
+	Protected WithEvents videoSlider As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

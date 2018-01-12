@@ -185,8 +185,8 @@ Public Class DTIGoogleCal
             'googleCalEditControl.ControlId = Me.ClientID
 
             jQueryLibrary.jQueryInclude.RegisterJQuery(Me.Page)
-            jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, "$(document).ready(function() { $.query = { prefix: false }; });")
-            jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "jQueryLibrary/jquery.query.js")
+			jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, "$.query = { prefix: false };")
+			jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "jQueryLibrary/jquery.query.js")
             jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "/DTIGoogleCalendar/dsGoogleCal.js")
             'registerClientScriptBlock("queryInit", "$.query = { prefix: false };", True)
             'registerClientScriptFile("JQQ", BaseClasses.Scripts.ScriptsURL(True) & _

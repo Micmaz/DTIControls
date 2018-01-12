@@ -275,8 +275,8 @@ Public Class Dialog
     End Function
 
     Public Function OpenerJavascript() As String
-        Return "$('#" & Me.ClientID & "').dialog( 'open' );"
-    End Function
+		Return "$$('#" & Me.ClientID & "').dialog( 'open' );"
+	End Function
 
     Public Sub addButton(ByRef button As Button, Optional ByVal CloseDialog As Boolean = True, Optional ByVal BeforeClickJavascript As String = "", Optional ByVal AfterClickJavascript As String = "")
         'Javascript = Javascript.TrimEnd(";") & ";"
@@ -289,16 +289,16 @@ Public Class Dialog
         Me.Buttons.Add(New DialogButton(name, javascript, CloseDialog))
     End Sub
 
-    Public Sub addButtonFromIframe(ByVal ButtonID As String, ByVal ButtonName As String, Optional ByVal CloseDialog As Boolean = True, Optional ByVal javascript As String = "", Optional ByVal IframeName As String = "")
-        If IframeName = "" Then
-            IframeName = Me.ClientID & "_iframe"
-        End If
-        javascript &= ";$('#" & IframeName & "').contents().find('#" & ButtonID & "').click()"
-        Me.onOpenCallback = "$('#" & IframeName & "').load(function(){$('#" & IframeName & "').contents().find('#" & ButtonID & "').css('display','none');});"
-        Me.Buttons.Add(New DialogButton(ButtonName, javascript, CloseDialog))
-    End Sub
+	'Public Sub addButtonFromIframe(ByVal ButtonID As String, ByVal ButtonName As String, Optional ByVal CloseDialog As Boolean = True, Optional ByVal javascript As String = "", Optional ByVal IframeName As String = "")
+	'    If IframeName = "" Then
+	'        IframeName = Me.ClientID & "_iframe"
+	'    End If
+	'    javascript &= ";$('#" & IframeName & "').contents().find('#" & ButtonID & "').click()"
+	'    Me.onOpenCallback = "$('#" & IframeName & "').load(function(){$('#" & IframeName & "').contents().find('#" & ButtonID & "').css('display','none');});"
+	'    Me.Buttons.Add(New DialogButton(ButtonName, javascript, CloseDialog))
+	'End Sub
 
-    Public Sub addOKButton(Optional ByVal closeDialog As Boolean = True, Optional ByVal javascript As String = "")
+	Public Sub addOKButton(Optional ByVal closeDialog As Boolean = True, Optional ByVal javascript As String = "")
         Me.Buttons.Add(New DialogButton("Ok", javascript, closeDialog))
     End Sub
 
@@ -310,15 +310,13 @@ Public Class Dialog
         If Title IsNot Nothing AndAlso Title <> "" Then
             Me.Attributes.Add("Title", Title)
         End If
-        Dim s As String = ""
-        s &= "$(function(){"
-        s &= "     $('#" & Me.ClientID & "').dialog({"
+		Dim s As String = ""
+		s &= "     $('#" & Me.ClientID & "').dialog({"
         s &= renderparams()
         s &= "      })" & renderparamsExtended() & ";"
-        s &= "     $('#" & Me.ClientID & "').parent().appendTo($('form:first'));"
-        s &= "});"
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s, False)
-    End Sub
+		s &= "     $('#" & Me.ClientID & "').parent().appendTo($('form:first'));"
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, s, False)
+	End Sub
 
     Shared Function CreateDialogueUrl(ByVal url As String, ByVal linktext As String, Optional ByVal openType As DialogOpener = DialogOpener.Link, Optional ByVal width As Integer = 0, Optional ByVal height As Integer = 0, Optional ByVal openerAdditionalText As String = "") As Dialog
         Dim dlg As New Dialog

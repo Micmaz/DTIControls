@@ -196,18 +196,18 @@ Public Class Uploader
             camString = "accept=""" & FileTypes & """"
         End If
 
-        writer.Write( _
-            "        <link href=""~/res/BaseClasses/Scripts.aspx?f=JqueryUIControls/style.css"" rel=""stylesheet"" /> " & vbCrLf & _
-"        <div id=""upload"" style=""" & style & """ class=""uploadPanel""><div id=""currentfiles"" style=""display:none"">" & getListString() & "</div> " & vbCrLf & _
-"			<div id=""drop"">" & dropAreaText & "<br/><a>" & buttonText & "</a> " & vbCrLf & _
-"                <input type=""file"" name=""upl"" " & camString & " multiple /> " & vbCrLf & _
-"            </div> " & vbCrLf & _
-"			<ul></ul> " & vbCrLf & _
-"        <script src=""~/res/BaseClasses/Scripts.aspx?f=JqueryUIControls/jquery.knob.js""></script> " & vbCrLf & _
-"		<script src=""~/res/BaseClasses/Scripts.aspx?f=JqueryUIControls/jquery.iframe-transport.js""></script> " & vbCrLf & _
-"		<script src=""~/res/BaseClasses/Scripts.aspx?f=JqueryUIControls/jquery.fileupload.js""></script> " & vbCrLf & _
-"		<script src=""~/res/BaseClasses/Scripts.aspx?f=JqueryUIControls/UploaderScript.js""></script> " & vbCrLf & _
+		writer.Write(
+			"        <link href=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/style.css"" rel=""stylesheet"" /> " & vbCrLf &
+"        <div id=""upload"" style=""" & style & """ class=""uploadPanel""><div id=""currentfiles"" style=""display:none"">" & getListString() & "</div> " & vbCrLf &
+"			<div id=""drop"">" & dropAreaText & "<br/><a>" & buttonText & "</a> " & vbCrLf &
+"                <input type=""file"" name=""upl"" " & camString & " multiple /> " & vbCrLf &
+"            </div> " & vbCrLf &
+"			<ul></ul> " & vbCrLf &
+"        <script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/jquery.knob.js""></script> " & vbCrLf &
+"		<script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/jquery.iframe-transport.js""></script> " & vbCrLf &
+"		<script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/jquery.fileupload.js""></script> " & vbCrLf &
+"		<script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/UploaderScript.js""></script> " & vbCrLf &
 "		</div> " & vbCrLf)
-    End Sub
+	End Sub
 
 End Class

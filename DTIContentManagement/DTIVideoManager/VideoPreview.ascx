@@ -1,6 +1,5 @@
 <%@ Control Language="vb" AutoEventWireup="false" CodeBehind="VideoPreview.ascx.vb" Inherits="DTIVideoManager.VideoPreview" %>
-<%@ Register Assembly="DTIControls" Namespace="DTIVideoManager" TagPrefix="cc2" %>
-<%@ Register Assembly="DTIControls" Namespace="DTIMiniControls" TagPrefix="cc2" %>
+<%@ Register Assembly="DTIControls" Namespace="DTIVideoManager" TagPrefix="cc3" %>
 <%@ Register Assembly="DTIControls" Namespace="DTIAjax" TagPrefix="cc1" %>
 <cc1:jsonSeverConrol jsCompleteFunc="done" ajaxReturn="html" ID="JsonSeverConrol1" runat="server" workerclass="DTIVideoManager.VideoPreviewHelper" >
 </cc1:jsonSeverConrol>
@@ -56,7 +55,7 @@
         <td>
             
             <asp:Label ID="lblStatusValue" runat="server"></asp:Label>
-            <asp:Image runat="Server" ID="imgStatus" ImageUrl="~/res/BaseClasses/Scripts.aspx?f=DTIVideoManager/videoStatusIndicator.gif" />
+            <asp:Image runat="Server" ID="imgStatus" ImageUrl="<%=BaseClasses.Scripts.ScriptsURL()%>DTIVideoManager/videoStatusIndicator.gif" />
                 
         </td>
     </tr>
@@ -67,7 +66,7 @@
                         <asp:Image ID="imgScreenshot" runat="server" />
                         
                         <asp:Panel runat="server" ID="videoHolder">
-                            <cc2:VideoThumb ID="VideoThumb1" runat="server"></cc2:VideoThumb>
+                            <cc3:VideoThumb ID="VideoThumb1" runat="server"></cc3:VideoThumb>
                         </asp:Panel>
                         
                         <asp:Panel runat="server" ID="pnlScreenShotEditor" style="display:none;">

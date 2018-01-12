@@ -311,23 +311,24 @@ Public Class AjaxCall
 
         'src+=parmName+"="+$("#"+elementID).val();
         Dim s As String = ""
-        s = "function " & Me.jsFunction & "(input){ " & vbCrLf & _
-        " var str=escapestr(input); " & vbCrLf & _
-        " var src=" & Source & "+str; " & vbCrLf & _
-        ctrlList & _
-        " $.ajax({ " & vbCrLf & _
-        "   url: src, " & vbCrLf & _
-        "   cache: false, " & vbCrLf & _
-        asyncStr & _
-        "   success:  function(msg){ " & completeFunction & "; }" & vbCrLf & _
-        "  }); " & vbCrLf & _
-        "} " & vbCrLf
-        If javascriptCallTimerValue > 0 Then
+		s = "window." & Me.jsFunction & " = function(input){ " & vbCrLf &
+		" var str=escapestr(input); " & vbCrLf &
+		" var src=" & Source & "+str; " & vbCrLf &
+		ctrlList &
+		" $.ajax({ " & vbCrLf &
+		"   url: src, " & vbCrLf &
+		"   cache: false, " & vbCrLf &
+		asyncStr &
+		"   success:  function(msg){ " & completeFunction & "; }" & vbCrLf &
+		"  }); " & vbCrLf &
+		"} " & vbCrLf
+		jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s)
+		If javascriptCallTimerValue > 0 Then
             If javascriptCallTimerValue < 1000 Then javascriptCallTimerValue = 1000
-            s &= "$(function(){ setInterval( '" & Me.jsFunction & "()'," & Me.javascriptCallTimerValue & "); });" & vbCrLf
-        End If
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s, False)
-    End Sub
+			jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, "setInterval( '" & Me.jsFunction & "()'," & Me.javascriptCallTimerValue & "); ")
+		End If
+
+	End Sub
 
     ''' <summary>
     ''' Decodes a given string from URL encoding 
@@ -356,8 +357,8 @@ Public Class AjaxCall
 
             For Each ctrl As Control In Me.watchedControlList
                 If Not ctrl Is Nothing Then
-                    javascript &= "$('#" & ctrl.ClientID & "').replaceWith(unescape('" & BaseClasses.BaseSecurityPage.JavaScriptEncode(RenderControltoString(ctrl)) & "'));"
-                End If
+					javascript &= jQueryLibrary.jQueryInclude.jqueryVar & "('#" & ctrl.ClientID & "').replaceWith(unescape('" & BaseClasses.BaseSecurityPage.JavaScriptEncode(RenderControltoString(ctrl)) & "'));"
+				End If
             Next
             'returnValue = ret
         End If

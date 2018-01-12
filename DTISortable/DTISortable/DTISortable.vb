@@ -773,8 +773,8 @@ Public Class DTISortable
                 SortableList.Controls.Add(New LiteralControl("<div id=""DTISortItem_" & item.Key & """ class=""DTISortableItem-" & cssTheme & """>" & vbCrLf))
                 If hasHandle Then
                     SortableList.Controls.Add(New LiteralControl("     <div class=""DTIItemHandle-" & cssTheme & """>" & vbCrLf))
-                    SortableList.Controls.Add(New LiteralControl("          <img id=""imgelem" & item.Key & """ style=""cursor:hand;right:2px;float:left;"" src=""~/res/BaseClasses/Scripts.aspx?f=DTISortable/collapse.jpg"" onclick=""ToggleDisplay(" & item.Key & ")"" />&nbsp;" & vbCrLf))
-                    SortableList.Controls.Add(New LiteralControl("          <span style=""float:left;"">&nbsp;" & HandleText & " - " & sName & "</span>" & vbCrLf))
+					SortableList.Controls.Add(New LiteralControl("          <img id=""imgelem" & item.Key & """ style=""cursor:hand;right:2px;float:left;"" src=""" & BaseClasses.Scripts.ScriptsURL() & "DTISortable/collapse.jpg"" onclick=""ToggleDisplay(" & item.Key & ")"" />&nbsp;" & vbCrLf))
+					SortableList.Controls.Add(New LiteralControl("          <span style=""float:left;"">&nbsp;" & HandleText & " - " & sName & "</span>" & vbCrLf))
                     'End If
                     If isRecyclable Then
                         SortableList.Controls.Add(New LiteralControl("          <span style=""cursor:pointer;float:right"" onclick=""DeleteRecycledBinItem('DTISortItem_" & item.Key & "')"">" & DeleteText & "</span>" & vbCrLf))

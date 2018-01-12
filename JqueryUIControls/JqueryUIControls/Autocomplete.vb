@@ -467,9 +467,9 @@ End Property
     Private Sub Autocomplete_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
         Dim id As String = "" & Me.ID
         If id = "" Then id = ClientID
-        Dim s As String = "var " & id & ";"
+		Dim s As String = ""
 
-        If EnableCategories Then
+		If EnableCategories Then
             s &= "$.widget( 'custom.catcomplete', $.ui.autocomplete, {"
             s &= "     _renderMenu: function( ul, items ) {"
             s &= "          var that = this, currentCategory = '';"
@@ -484,18 +484,16 @@ End Property
             s &= "});"
         End If
 
-        s &= "$(function(){"
-        If Not EnableCategories Then
-            s &= "     " & id & "=$('#" & Me.ClientID & "').autocomplete("
-        Else
-            s &= "     " & id & "=$('#" & Me.ClientID & "').catcomplete("
-        End If
+		If Not EnableCategories Then
+			s &= "window." & id & " = $('#" & Me.ClientID & "').autocomplete("
+		Else
+			s &= "window." & id & " = $('#" & Me.ClientID & "').catcomplete("
+		End If
         s &= renderparams()
         s &= "      );"
-        s &= "});"
-        
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s, False)
-    End Sub
+
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, s)
+	End Sub
 
     ''' <summary>
     ''' Text to display matching the users current query

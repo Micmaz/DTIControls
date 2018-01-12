@@ -141,13 +141,13 @@ Public Class ImageManipulator
 
             myHTMLTable.Style("font-size") = "small"
 
-            btnImgRotateLeft.ImageUrl = "~/res/BaseClasses/Scripts.aspx?f=DTIImageManager/rotateImage_left.jpg"
-            btnImgRotateLeft.Width = 25
+		btnImgRotateLeft.ImageUrl = BaseClasses.Scripts.ScriptsURL() & "DTIImageManager/rotateImage_left.jpg"
+		btnImgRotateLeft.Width = 25
             btnImgRotateLeft.Height = 25
             btnRotateLeft.Text = "Rotate Left"
 
-            btnImgRotateRight.ImageUrl = "~/res/BaseClasses/Scripts.aspx?f=DTIImageManager/rotateImage_right.jpg"
-            btnImgRotateRight.Width = 25
+		btnImgRotateRight.ImageUrl = BaseClasses.Scripts.ScriptsURL() & "DTIImageManager/rotateImage_right.jpg"
+		btnImgRotateRight.Width = 25
             btnImgRotateRight.Height = 25
             btnRotateRight.Text = "Rotate Right"
 

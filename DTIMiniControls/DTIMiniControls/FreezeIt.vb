@@ -206,9 +206,8 @@ Public Class FreezeIt
     End Function
 
     Private Sub freezeit()
-        Page.ClientScript.RegisterStartupScript(Me.GetType, "freezeOnStartupScript" & Me.ClientID, _
-            "$(document).ready(function(){FreezeIt" & Me.ClientID & "();});", True)
-    End Sub
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Page, "FreezeIt" & Me.ClientID & "();")
+	End Sub
 
     Public Shared Sub addFreezitScript(ByVal page As Web.UI.Page)
         jQueryLibrary.jQueryInclude.addScriptFile(page, "DTIMiniControls/FreezeIt.js", , True)

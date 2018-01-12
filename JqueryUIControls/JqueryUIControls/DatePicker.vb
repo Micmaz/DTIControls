@@ -442,14 +442,12 @@ Public Class DatePicker
         If id = "" Then
             id = ClientID
         End If
-        Dim s As String = "var " & id & ";"
-        s &= "$(function(){"
-        s &= "     " & id & " = $('#" & Me.ClientID & "').datepicker("
-        s &= renderparams()
-        s &= "      );"
-        s &= "});"
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s)
-    End Sub
+		Dim s As String = ""
+		s &= "window." & id & " = $('#" & Me.ClientID & "').datepicker("
+		s &= renderparams()
+		s &= "      );"
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, s)
+	End Sub
 
     Public Shared Function getEnumName(ByVal enumeration As Object) As String
         Return [Enum].GetName(enumeration.GetType, enumeration)

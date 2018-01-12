@@ -79,8 +79,8 @@ Public Class ucVideo
         End If
         LazyImgLoad1.ImageUrl = ""
         LazyImgLoad1.ID = "LazyLoad_" & ImageID
-        LazyImgLoad1.Container = "$("".innerdiv"")"
-        If _VideoType = VideoTypes.youtube Then
+		LazyImgLoad1.Container = jQueryLibrary.jQueryInclude.jqueryVar & "("".innerdiv"")"
+		If _VideoType = VideoTypes.youtube Then
             lkImage.HRef = "http://www.youtube.com/embed/" & ImageID.Substring(1) & "?autoplay=1"
         Else
             lkImage.HRef = "http://player.vimeo.com/video/" & ImageID.Substring(1) & "?autoplay=1"

@@ -125,9 +125,8 @@ Public Class AutocompleteDropDown
         If url Is Nothing OrElse url.Length = 0 Then
             url = Page.Request.Url.PathAndQuery
         End If
-        Dim s As String = ""
-        s &= "$(function(){" & vbCrLf
-        s &= "     $('#" & Me.ClientID & "').autocomplete(" & vbCrLf
+		Dim s As String = ""
+		s &= "     $('#" & Me.ClientID & "').autocomplete(" & vbCrLf
         s &= "          '" & url & "',{" & vbCrLf
         s &= "               " & renderparms() & vbCrLf
         s &= "               onItemSelect : function(li){" & vbCrLf
@@ -137,10 +136,9 @@ Public Class AutocompleteDropDown
         s &= "               extraParams :{" & vbCrLf
         s &= "                    ctrl:'" & Me.ID & "'" & vbCrLf
         s &= "               }" & vbCrLf
-        s &= "      });" & vbCrLf
-        s &= "});" & vbCrLf
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s)
-    End Sub
+		s &= "      });" & vbCrLf
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, s)
+	End Sub
 
     Public Sub respond(ByVal dt As DataTable, ByVal nameColumn As String, Optional ByVal valuecolumn As String = Nothing)
         Dim outstr As String = ""

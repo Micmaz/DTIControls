@@ -21,9 +21,10 @@ Public Class TextBoxEncoded
 #End If
 
         Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
-            MyBase.Render(writer)
-            writer.Write("<script language='javaScript' type='text/javascript'>$.urlAddWatch('" & Me.ClientID & "', '" & Me.ClientID & "');</script>")
-        End Sub
+		MyBase.Render(writer)
+
+		writer.Write(jQueryLibrary.jQueryInclude.isolateJquery("$.urlAddWatch('" & Me.ClientID & "', '" & Me.ClientID & "');", True))
+	End Sub
 
         Protected Overrides Function LoadPostData(ByVal postDataKey As String, ByVal postCollection As System.Collections.Specialized.NameValueCollection) As Boolean
             MyBase.LoadPostData(postDataKey, postCollection)
@@ -67,7 +68,7 @@ Public Class TextBoxEncoded
         End Sub
 
         Private Sub Event_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
-            Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType(), "hiddenfield", "$.urlEncodePairs();")
-        End Sub
+		Me.Page.ClientScript.RegisterOnSubmitStatement(Me.GetType(), "hiddenfield", jQueryLibrary.jQueryInclude.jqueryVar & ".urlEncodePairs();")
+	End Sub
 
     End Class

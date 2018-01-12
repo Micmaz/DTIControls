@@ -21,51 +21,51 @@ Public Class jQueryInclude
 	'Private Shared lastJqUI As String = "1.8.13"
 	Private Shared lastJq As String = "3.2.1"
 	Private Shared lastJqUI As String = "1.12.1"
-
+	Public Shared jqueryVar As String = "$$"
 	''' <summary>
 	''' determines if the include has been added already.
 	''' </summary>
 	''' <remarks></remarks>
-    <System.ComponentModel.Description("determines if the include has been added already.")> _
-    Public isinitial As Boolean = False
-    Protected Overrides ReadOnly Property TagKey() _
-        As HtmlTextWriterTag
-        Get
-            Return HtmlTextWriterTag.Script
-        End Get
-    End Property
+	<System.ComponentModel.Description("determines if the include has been added already.")>
+	Public isinitial As Boolean = False
+	Protected Overrides ReadOnly Property TagKey() _
+		As HtmlTextWriterTag
+		Get
+			Return HtmlTextWriterTag.Script
+		End Get
+	End Property
 
-    Private _ctrlList As New Generic.List(Of Control)
+	Private _ctrlList As New Generic.List(Of Control)
 
-    ''' <summary>
-    ''' Lists all controls in the page head
-    ''' </summary>
-    ''' <value></value>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Lists all controls in the page head")> _
-    Public Property ctrlList() As Generic.List(Of Control)
-        Get
-            Return _ctrlList
-        End Get
-        Set(ByVal value As Generic.List(Of Control))
-            _ctrlList = value
-        End Set
-    End Property
+	''' <summary>
+	''' Lists all controls in the page head
+	''' </summary>
+	''' <value></value>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Lists all controls in the page head")>
+	Public Property ctrlList() As Generic.List(Of Control)
+		Get
+			Return _ctrlList
+		End Get
+		Set(ByVal value As Generic.List(Of Control))
+			_ctrlList = value
+		End Set
+	End Property
 
-    Friend Shared ReadOnly Property inDesigner() As Boolean
-        Get
-            Dim process As System.Diagnostics.Process = System.Diagnostics.Process.GetCurrentProcess()
-            Dim ret As Boolean = process.ProcessName.ToLower().Trim() = "devenv"
-            process.Dispose()
-            Return ret
-        End Get
-    End Property
+	Friend Shared ReadOnly Property inDesigner() As Boolean
+		Get
+			Dim process As System.Diagnostics.Process = System.Diagnostics.Process.GetCurrentProcess()
+			Dim ret As Boolean = process.ProcessName.ToLower().Trim() = "devenv"
+			process.Dispose()
+			Return ret
+		End Get
+	End Property
 
-    Public Enum scriptType
-        css
-        javascript
-    End Enum
+	Public Enum scriptType
+		css
+		javascript
+	End Enum
 
 	''' <summary>
 	''' Adds the jQuery script block to the page.
@@ -80,17 +80,43 @@ Public Class jQueryInclude
 	''' <param name="type"></param>
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Adds the jQuery script block to the page.")>
-	Public Shared Sub addScriptBlock(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional jQueryIncludeHeader As jQueryInclude = Nothing)
+	Public Shared Sub addScriptBlock(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional jQueryIncludeHeader As jQueryInclude = Nothing, Optional isolateJquery As Boolean = True)
 		If jQueryIncludeHeader Is Nothing Then jQueryIncludeHeader = getInitialInclude(page)
-		jQueryIncludeHeader.addScriptBlock(script, minify, type, id)
+		jQueryIncludeHeader.addScriptBlock(script, minify, type, id, isolateJquery)
 	End Sub
+
+	Public Shared Function isolateJquery(script As String, Optional addscriptTags As Boolean = False) As String
+		If script.StartsWith("(function($)") Then Return script
+		script = "(function($) {" & script & "})(" & jqueryVar & ");"
+		If addscriptTags Then
+			If Not script.StartsWith("<script") Then
+				script = "<script type=""text/javascript"">" & script & "</script>"
+			End If
+		End If
+		Return script
+	End Function
+
+	Public Shared Function isolateJqueryLoad(script As String, Optional addscriptTags As Boolean = False) As String
+		If Not script.StartsWith(jqueryVar & "( document ).ready(function( $ ) {") Then
+			script = jqueryVar & "( document ).ready(function( $ ) {" & script & "});"
+		End If
+		If addscriptTags Then
+			If Not script.StartsWith("<script") Then
+				script = "<script type=""text/javascript"">" & script & "</script>"
+			End If
+		End If
+		Return script
+	End Function
 
 	Private Sub addScriptBlock(ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional isolateJquery As Boolean = True)
 		Dim sf As New ScriptFile("", type)
 		sf.src = script
 		If type Is Nothing OrElse type.ToLower().EndsWith("javascript") Then
-			If isolateJquery Then _
-			script = "(function($) {" & script & "})(jQuery);"
+			If isolateJquery Then
+				sf.src = jQueryInclude.isolateJquery(script)
+			Else
+				sf.src = script
+			End If
 			If minify Then
 				Dim Str As New System.IO.MemoryStream(System.Text.ASCIIEncoding.ASCII.GetBytes(script))
 				sf.src = BaseClasses.JsMinimizer.SMinify(Str)
@@ -125,8 +151,13 @@ Public Class jQueryInclude
 	''' <param name="minify"></param>
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Adds the jQuery script block that executes after page load.")>
-	Public Shared Sub addScriptBlockPageLoad(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal id As String = "")
-		addScriptBlock(page, "$(function(){" & script & "});", minify, id:=id)
+	Public Shared Sub addScriptBlockPageLoad(ByVal page As Page, ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal id As String = "", Optional isolateJquery As Boolean = True)
+		If isolateJquery Then
+			addScriptBlock(page, isolateJqueryLoad(script), minify, id:=id, isolateJquery:=False)
+		Else
+			addScriptBlock(page, "$(function(){" & script & "});", minify, id:=id, isolateJquery:=False)
+		End If
+
 	End Sub
 
 	''' <summary>
@@ -247,12 +278,14 @@ Public Class jQueryInclude
 			If inDesigner Then asWebResource = True
 			If Not asWebResource Then
 				jQueryIncludeHeader.addInclude("/jQueryLibrary/" & jsFile)
+				jQueryIncludeHeader.addScriptBlock("var " & jqueryVar & "=$.noConflict();$=" & jqueryVar & ";", isolateJquery:=False)
 				'jQueryIncludeHeader.addInclude("/jQueryLibrary/jquery-ui.custom.min.js")
 				jQueryIncludeHeader.addInclude("/jQueryLibrary/DTIprototypes.js")
-            Else
-                jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary." & jsFile))
-                'jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary.jquery-ui.custom.min.js"))
-                jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary.DTIprototypes.js"))
+			Else
+				jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary." & jsFile))
+				jQueryIncludeHeader.addScriptBlock("var " & jqueryVar & "=$.noConflict();$=" & jqueryVar & ";", isolateJquery:=False)
+				'jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary.jquery-ui.custom.min.js"))
+				jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary.DTIprototypes.js"))
             End If
             jQueryIncludeHeader.isinitial = True
             page.Items.Item("jqueryInclude") = jQueryIncludeHeader
@@ -305,37 +338,38 @@ Public Class jQueryInclude
                     ControlsString = RenderControlToString(ctrl)
                 Next
 			writer.Write("<meta http-equiv=""X-UA-Compatible"" content=""IE=edge,chrome=1"">")
-			Me.addScriptBlock("var $$=$.noConflict();$=$$;", isolateJquery:=False)
+			'Me.addScriptBlock("var " & jqueryVar & "=$.noConflict();$=" & jqueryVar & ";", isolateJquery:=False)
 			For Each sf As ScriptFile In jqueryIncludeList.Values
-                Dim idstring As String = ""
-                If sf.id <> sf.src Then
-                    idstring = " id=""" & sf.id & """ "
-                End If
-                If sf.isRawScript Then
-                    If sf.type.EndsWith("css") Then
-                        writer.Write("<style" & idstring & " type=""" & sf.type & """>" & sf.src & "</style>")
-                    ElseIf sf.type.EndsWith("javascript") Then
+				Dim idstring As String = ""
+				If sf.id <> sf.src Then
+					idstring = " id=""" & sf.id & """ "
+				End If
+				If sf.isRawScript Then
+					If sf.type.EndsWith("css") Then
+						writer.Write("<style" & idstring & " type=""" & sf.type & """>" & sf.src & "</style>")
+					ElseIf sf.type.EndsWith("javascript") Then
 						writer.Write("<script" & idstring & " type=""" & sf.type & """ language=""javascript"">" & sf.src & "</script>")
 					Else
-                        writer.Write("<script" & idstring & " type=""" & sf.type & """>" & sf.src & "</script>")
-                    End If
+						writer.Write("<script" & idstring & " type=""" & sf.type & """>" & sf.src & "</script>")
+					End If
 
-                Else
-                    If sf.type.EndsWith("css") Then
-                        writer.Write("<link" & idstring & " rel=""stylesheet"" type=""" & sf.type & """ href=""" & sf.src & """ />")
-                    ElseIf sf.type.EndsWith("javascript") Then
-                        writer.Write("<script" & idstring & " type=""" & sf.type & """ src=""" & sf.src & """ language=""javascript""></script>")
-                    Else
-                        writer.Write("<script" & idstring & " type=""" & sf.type & """ src=""" & sf.src & """></script>")
-                    End If
-                End If
- 
-                writer.Write(ControlsString)
-                writer.Write(vbCrLf)
+				Else
+					If sf.type.EndsWith("css") Then
+						writer.Write("<link" & idstring & " rel=""stylesheet"" type=""" & sf.type & """ href=""" & sf.src & """ />")
+					ElseIf sf.type.EndsWith("javascript") Then
+						writer.Write("<script" & idstring & " type=""" & sf.type & """ src=""" & sf.src & """ language=""javascript""></script>")
 
-            Next
+					Else
+						writer.Write("<script" & idstring & " type=""" & sf.type & """ src=""" & sf.src & """></script>")
+					End If
+				End If
 
-        End If
+				writer.Write(ControlsString)
+				writer.Write(vbCrLf)
+
+			Next
+
+		End If
     End Sub
 
     Private jqtype As String = Nothing

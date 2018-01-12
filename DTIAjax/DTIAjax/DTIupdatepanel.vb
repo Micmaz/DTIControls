@@ -52,26 +52,24 @@ Public Class DTIupdatepanel
 
                 MyBase.Render(writer)
                 Dim script As New DTIMiniControls.ScriptBlock
-                script.ScriptText = "var options" & Me.ClientID & " = {target: '#" & Me.ClientID & "',success: function() { $('#" & Me.ClientID & "').fadeIn('slow');  } "
-                For Each key As String In ht.Keys
+			script.ScriptText = "var options" & Me.ClientID & " = {target: '#" & Me.ClientID & "',success: function() { " & jQueryLibrary.jQueryInclude.jqueryVar & "('#" & Me.ClientID & "').fadeIn('slow');  } "
+			For Each key As String In ht.Keys
                     script.ScriptText = "," & key & ":" & ht(key)
                 Next
-                script.ScriptText &= "}" & vbCrLf
+			script.ScriptText &= "}" & vbCrLf
 
-                Dim setEncodedScript As String = ""
-                script.ScriptText &= _
-                    "        $(document).ready(function() {  " & vbCrLf & _
-                    "            $('form').ajaxForm(options" & Me.ClientID & ");  " & vbCrLf & _
-                    "        });  " & vbCrLf
-                script.ScriptText &= _
-                    "       function __doPostBack(eventTarget, eventArgument) { " & vbCrLf & _
-                    "        if (!theForm.onsubmit || (theForm.onsubmit() != false)) { " & vbCrLf & _
-                    "        theForm.__EVENTTARGET.value = eventTarget; " & vbCrLf & _
-                    "        theForm.__EVENTARGUMENT.value = eventArgument; " & vbCrLf & _
-                    "        $('form').ajaxSubmit(options" & Me.ClientID & "); " & vbCrLf & _
-                    "        } " & vbCrLf & _
-                    "       }  " & vbCrLf
-                script.RenderControl(writer)
+			Dim setEncodedScript As String = ""
+			script.ScriptText &= jQueryLibrary.jQueryInclude.isolateJqueryLoad("$('form').ajaxForm(options" & Me.ClientID & ");")
+
+			script.ScriptText &=
+					"       function __doPostBack(eventTarget, eventArgument) { " & vbCrLf &
+					"        if (!theForm.onsubmit || (theForm.onsubmit() != false)) { " & vbCrLf &
+					"        theForm.__EVENTTARGET.value = eventTarget; " & vbCrLf &
+					"        theForm.__EVENTARGUMENT.value = eventArgument; " & vbCrLf &
+					"        " & jQueryLibrary.jQueryInclude.jqueryVar & "('form').ajaxSubmit(options" & Me.ClientID & "); " & vbCrLf &
+					"        } " & vbCrLf &
+					"       }  " & vbCrLf
+			script.RenderControl(writer)
             End If
 
         End Sub

@@ -38,9 +38,7 @@ Public Class PasswordStrength
     End Sub
 
     Private Sub PasswordStrength_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
-        Dim str As String = "$(function(){"
-        str &= "ChronoStrengthGo('" & PasswordTextBoxId & "','" & Me.CssClass & "');"
-        str &= "     });" & vbCrLf
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, str)
-    End Sub
+		Dim str As String = "ChronoStrengthGo('" & PasswordTextBoxId & "','" & Me.CssClass & "');"
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, str)
+	End Sub
 End Class

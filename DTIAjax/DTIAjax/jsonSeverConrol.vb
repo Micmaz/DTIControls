@@ -22,17 +22,17 @@ Public Class jsonSeverConrol
 
 
         Private Sub jsonSeverConrol_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-            jQueryLibrary.jQueryInclude.addScriptBlock(Page, _
-                "function " & jsCallFunc & "(action1,datainput,successFunction){" & vbCrLf & _
-                "if(!successFunction){successFunction=" & jsCompleteFunc & ";} " & vbCrLf & _
-                "$.ajax({ " & vbCrLf & _
-                "  url: '" & postURL & "', " & vbCrLf & _
-                "  type: ""POST"", " & vbCrLf & _
-                "  dataType: """ & System.Enum.GetName(ajaxReturn.[GetType], ajaxReturn) & """, " & vbCrLf & _
-                "  data: {action: action1,id:'" & ajaxId & "',input:datainput}, " & vbCrLf & _
-                "  success: successFunction " & vbCrLf & _
-                "} );}" & vbCrLf, False)
-            Page.Session(ajaxId) = workerclass
+		jQueryLibrary.jQueryInclude.addScriptBlock(Page,
+				"window." & jsCallFunc & " = function(action1,datainput,successFunction){" & vbCrLf &
+				"if(!successFunction){successFunction=" & jsCompleteFunc & ";} " & vbCrLf &
+				"$.ajax({ " & vbCrLf &
+				"  url: '" & postURL & "', " & vbCrLf &
+				"  type: ""POST"", " & vbCrLf &
+				"  dataType: """ & System.Enum.GetName(ajaxReturn.[GetType], ajaxReturn) & """, " & vbCrLf &
+				"  data: {action: action1,id:'" & ajaxId & "',input:datainput}, " & vbCrLf &
+				"  success: successFunction " & vbCrLf &
+				"} );}" & vbCrLf, isolateJquery:=True)
+		Page.Session(ajaxId) = workerclass
         End Sub
 
         Private _workerclass As String = "DTIAjax.jsonWorker"

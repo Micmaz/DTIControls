@@ -49,7 +49,11 @@ Partial Public Class Scripts
 		End Get
 	End Property
 
-
+	Public ReadOnly Property fileExtension As String
+		Get
+			Return filename.Substring(filename.LastIndexOf(".")).ToLower()
+		End Get
+	End Property
 
 	''' <summary>
 	''' The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.
@@ -65,12 +69,12 @@ Partial Public Class Scripts
 		Response.ContentType = "application/octet-stream"
 		If filename IsNot Nothing Then
 
-			If filename.Substring(filename.LastIndexOf(".")).ToLower().EndsWith("js") Then
+			If fileExtension.EndsWith("js") Then
 				Response.ContentType = "application/x-javascript"
-			ElseIf filename.Substring(filename.LastIndexOf(".")).ToLower().EndsWith("css") Then
+			ElseIf fileExtension.EndsWith("css") Then
 				Response.ContentType = "text/css"
 			Else
-				Response.ContentType = MimeType(filename.Substring(filename.LastIndexOf(".")))
+				Response.ContentType = MimeType(fileExtension)
 			End If
 			If Response.ContentType = "application/x-javascript" Then
 				Try
@@ -79,9 +83,15 @@ Partial Public Class Scripts
 						Using scriptReader As New StreamReader(BaseVirtualPathProvider.getResourceStream("/res/" & filename))
 							strOut = scriptReader.ReadToEnd
 						End Using
+						'If filename.ToLower().StartsWith("jQueryLibrary/jquery-3.2.1.min.js".ToLower()) Then
 						minScripts.Add(filename, strOut)
+						'Else
+						'	minScripts.Add(filename, "(function( $ ) {" & vbCrLf & strOut & vbCrLf & "})(jQuery);")
+						'End If
+
+
 					End If
-					writeStringResponse(minScripts.Item(filename))
+						writeStringResponse(minScripts.Item(filename))
 				Catch ex As Exception
 					writeFileFromAssembly()
 				End Try
@@ -170,27 +180,26 @@ Partial Public Class Scripts
             Return JsMinimizer.SMinify(jsFile)
         End Function
 
-    ''' <summary>
-    ''' Returns the url to the scripts.aspx page. (e.g. "~/res/BaseClasses/Scripts.aspx?f=baseclasses/TestResource.jpg")
-    ''' </summary>
-    ''' <param name="debug">optional set to true to prevent compression of js files</param>
-    ''' <returns>The string to prepend to urls to utilize the Scripts.aspx resource</returns>
-    ''' <remarks></remarks>
-        <System.ComponentModel.Description("Returns the url to the scripts.aspx page. (e.g. ""~/res/BaseClasses/Scripts.aspx?f="")")> _
-        Shared Function ScriptsURL(Optional ByVal debug As Boolean = False) As String
-            If debug Then
-                Return "~/res/BaseClasses/Scripts.aspx?d=&f="
-            Else
-                Return "~/res/BaseClasses/Scripts.aspx?f="
-            End If
-        End Function
+	''' <summary>
+	''' Returns the url to the scripts.aspx page. (e.g. "~/res/BaseClasses/Scripts.aspx?f=baseclasses/TestResource.jpg")
+	''' </summary>
+	''' <param name="debug">optional set to true to prevent compression of js files</param>
+	''' <returns>The string to prepend to urls to utilize the Scripts.aspx resource</returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Returns the url to the scripts.aspx page. (e.g. ""~/res/BaseClasses/Scripts.aspx?f="")")>
+	Shared Function ScriptsURL(Optional ByVal debug As Boolean = False) As String
+		If scriptsURLHolder Is Nothing Then Return "~/res/BaseClasses/Scripts.aspx?f="
+		Return scriptsURLHolder
+	End Function
+	Private Shared scriptsURLHolder As String = Nothing
 
-    ''' <summary>
-    ''' Determins weather resource should be gzipped on return. 
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-        <System.ComponentModel.Description("Determins weather resource should be gzipped on return.")> _
+
+	''' <summary>
+	''' Determins weather resource should be gzipped on return. 
+	''' </summary>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Determins weather resource should be gzipped on return.")> _
         Public Shared Function GZipSupported() As Boolean
 			try
 				Dim AcceptEncoding As String = System.Web.HttpContext.Current.Request.Headers("Accept-Encoding")
@@ -239,6 +248,9 @@ Partial Public Class Scripts
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Handles the init event of the page. Will end the responce if the item is unmodified and therefore uses the client cache.")>
 	Private Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
+		If scriptsURLHolder Is Nothing Then
+			scriptsURLHolder = Request.Url.AbsolutePath & "?f="
+		End If
 		If Request.Url.LocalPath.IndexOf("~/") <> Request.Url.LocalPath.LastIndexOf("~/") Then
 			Response.Redirect(Request.Url.LocalPath.Substring(Request.Url.LocalPath.LastIndexOf("~/")) & Request.Url.Query, False)
 			responseEnded = True

@@ -1,14 +1,14 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="ucImageSelector.ascx.vb" Inherits="DTIContentManagement.ucImageSelector" %>
 <%@ Register Assembly="DTIControls" Namespace="JqueryUIControls" TagPrefix="cc1" %>
-<script type="text/javascript" src="~/res/BaseClasses/Scripts.aspx?f=HighslideControls/hsinnerframe.js" language="javascript"></script>
-<link rel="stylesheet" type="text/css" href="~/res/BaseClasses/Scripts.aspx?f=HighslideControls/highslide.css" />
+<script type="text/javascript" src="<%=BaseClasses.Scripts.ScriptsURL()%>HighslideControls/hsinnerframe.js" language="javascript"></script>
+<link rel="stylesheet" type="text/css" href="<%=BaseClasses.Scripts.ScriptsURL()%>HighslideControls/highslide.css" />
 <script type="text/javascript" language="javascript">//<![CDATA[
     try {
 
 
         //a13fe4e6f3a0bf746da103090dd47568
         parent.window.hs.outlineType = 'rounded-white';
-        parent.window.hs.graphicsDir = '~/res/BaseClasses/Scripts.aspx?f=HighslideControls/';
+        parent.window.hs.graphicsDir = '<%=BaseClasses.Scripts.ScriptsURL()%>HighslideControls/';
         parent.window.hs.showCredits = false;
         parent.window.hs.wrapperClassName = 'draggable-header';
         var found = false;
@@ -36,7 +36,7 @@
         addLoadEvent(function () { parent.window.iframe = getIframe(); parent.window.hs.updateAnchors(); });
     } catch (err) { }
 //]]></script>
-<script type="text/javascript" src="~/res/BaseClasses/Scripts.aspx?f=HighslideControls/hsFixedInner.js" language="javascript"></script>
+<script type="text/javascript" src="<%=BaseClasses.Scripts.ScriptsURL()%>HighslideControls/hsFixedInner.js" language="javascript"></script>
 
 
     <script type="text/javascript">
@@ -142,7 +142,7 @@
 <asp:Literal ID="litVimeoThumbScript" runat="server"></asp:Literal>
 <style type="text/css">
 span.roll,span.roll2 {
-    background:url(~/res/BaseClasses/Scripts.aspx?d=&f=DTIContentManagement/magsm.png) center center no-repeat;
+    background:url(<%=BaseClasses.Scripts.ScriptsURL()%>DTIContentManagement/magsm.png) center center no-repeat;
     position: absolute;
     z-index: 10;	
 	height:30px;
@@ -150,11 +150,11 @@ span.roll,span.roll2 {
 	bottom: 55px;
 }
 span.roll{
-    background:url(~/res/BaseClasses/Scripts.aspx?d=&f=DTIContentManagement/magsm.png) center center no-repeat;
+    background:url(<%=BaseClasses.Scripts.ScriptsURL()%>DTIContentManagement/magsm.png) center center no-repeat;
     right: 3px;
 }
 span.roll2{
-    background:url(~/res/BaseClasses/Scripts.aspx?d=&f=DTIContentManagement/editsm.png) center center no-repeat;
+    background:url(<%=BaseClasses.Scripts.ScriptsURL()%>DTIContentManagement/editsm.png) center center no-repeat;
     left: 3px;
 }  
 </style> 

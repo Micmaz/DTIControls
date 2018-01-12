@@ -259,10 +259,10 @@ Public Class TabSlider
                 HandleCssClass = "DTITabSliderHandle-" & Me.CssClass
             End If
             If ImageUrl Is Nothing AndAlso (TabLocation = Position.top OrElse TabLocation = Position.bottom) Then
-                ImageUrl = "~/res/BaseClasses/Scripts.aspx?f=DTIMiniControls/SlideHorz.png"
-            ElseIf ImageUrl Is Nothing AndAlso (TabLocation = Position.left OrElse TabLocation = Position.right) Then
-                ImageUrl = "~/res/BaseClasses/Scripts.aspx?f=DTIMiniControls/SlideVert.png"
-            End If
+			ImageUrl = BaseClasses.Scripts.ScriptsURL() & "DTIMiniControls/SlideHorz.png"
+		ElseIf ImageUrl Is Nothing AndAlso (TabLocation = Position.left OrElse TabLocation = Position.right) Then
+			ImageUrl = BaseClasses.Scripts.ScriptsURL() & "DTIMiniControls/SlideVert.png"
+		End If
             If Speed = 0 Then
                 Speed = 300
             End If

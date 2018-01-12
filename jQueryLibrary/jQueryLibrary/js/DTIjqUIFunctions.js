@@ -1,4 +1,6 @@
-﻿function jqalert(msg, t, m){
+﻿var DTI = (function ($) {
+
+function jqalert(msg, t, m) {
     if (m == null)
         m = true;
     if (t == null)
@@ -427,6 +429,62 @@ function rethemeBody() {
     themeObjectOverridable('ui-widget', 'body', 'bodyOverride');
     //themeObjectOverridable(cssClassName, objectSelector, styleId, excludeAttribs)
 }
+
+window.jqalert = jqalert;
+window.getMaxZ = getMaxZ;
+window.jqconfrimConfirmedWanttoMakeitLongSonoConfusion = jqconfrimConfirmedWanttoMakeitLongSonoConfusion;
+window.jqconfirm = jqconfirm;
+window.reThemePage = reThemePage;
+window.loadWaitScreen = loadWaitScreen;
+window.unLoadWaitScreen = unLoadWaitScreen;
+window.getTagIndex = getTagIndex;
+window.ShowAjaxError = ShowAjaxError;
+window.ajaxSubmitButton = ajaxSubmitButton;
+window.refreshPage = refreshPage;
+window.setAnimation = setAnimation;
+window.setHideAnimation = setHideAnimation;
+window.createAnimation = createAnimation;
+window.doRefresh = doRefresh;
+window.updateAreas = updateAreas;
+window.ajaxSubmitButtonSearchString = ajaxSubmitButtonSearchString;
+window.refreshArea = refreshArea;
+window.makePageAjaxy = makePageAjaxy;
+window.addCSSRule = addCSSRule;
+window.themeObjectOverridable = themeObjectOverridable;
+window.css2json = css2json;
+window.rethemeBody = rethemeBody;
+
+	return {
+		jqalert: jqalert,
+		getMaxZ: getMaxZ,
+		jqconfrimConfirmedWanttoMakeitLongSonoConfusion: jqconfrimConfirmedWanttoMakeitLongSonoConfusion,
+		jqconfirm: jqconfirm,
+		reThemePage: reThemePage,
+		loadWaitScreen: loadWaitScreen,
+		unLoadWaitScreen: unLoadWaitScreen,
+		getTagIndex: getTagIndex,
+		ShowAjaxError: ShowAjaxError,
+		ajaxSubmitButton: ajaxSubmitButton,
+		refreshPage: refreshPage,
+		setAnimation: setAnimation,
+		setHideAnimation: setHideAnimation,
+		createAnimation: createAnimation,
+		doRefresh: doRefresh,
+		updateAreas: updateAreas,
+		ajaxSubmitButtonSearchString: ajaxSubmitButtonSearchString,
+		refreshArea: refreshArea,
+		makePageAjaxy: makePageAjaxy,
+		addCSSRule: addCSSRule,
+		themeObjectOverridable: themeObjectOverridable,
+		css2json: css2json,
+		rethemeBody: rethemeBody,
+}
+
+
+
+})(jQuery);
+
+
 
 //For ie, the console is used in jquery without a check. this should fix that.
 if (!window.console) console = {log: function() {}}; 

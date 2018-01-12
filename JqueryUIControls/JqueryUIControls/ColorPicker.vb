@@ -84,21 +84,21 @@ Public Class ColorPicker
 
 	Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
 		if miniPicker then Me.CssClass = "colorSelector colorSelectormini"
-        Dim str As String = "<script type=""text/javascript"">$(function(){"
-        Me.Controls.Add(New LiteralControl("<div style='background-color: " & colorValue & ";'></div>"))
+		Dim script As String = ""
+		Me.Controls.Add(New LiteralControl("<div style='background-color: " & colorValue & ";'></div>"))
         'str &= "$('#" & Me.ClientID & "').append(""<div style='background-color: " & colorValue & ";'></div>"");" & vbCrLf
         Dim id As String = "" & Me.ID
         If id = "" Then
             id = ClientID
         End If
 
-        'str &= "$('#" & Me.ClientID & "').addClass('colorSelector');" & vbCrLf
-        str &= "var " & id & " = $('#" & Me.ClientID & "').ColorPicker({" & vbCrLf
-        str &= renderparams()
-        str &= "        }); });</script>"
-        writer.Write(str)
+		'str &= "$('#" & Me.ClientID & "').addClass('colorSelector');" & vbCrLf
+		script &= "window." & id & " = $('#" & Me.ClientID & "').ColorPicker({" & vbCrLf
+		script &= renderparams()
+		script &= "        }); "
+		writer.Write(jQueryLibrary.jQueryInclude.isolateJqueryLoad(script, True))
 
-        MyBase.Render(writer)
+		MyBase.Render(writer)
 
     End Sub
 
@@ -110,13 +110,13 @@ Public Class ColorPicker
 
 	Private Sub ColorPicker_PreRender(sender As Object, e As EventArgs) Handles Me.PreRender
 		If miniPicker Then Me.CssClass = "colorSelector colorSelectormini"
-		Dim str As String = ""
+		'Dim str As String = ""
 
-		'str &= "$('#" & Me.ClientID & "').addClass('colorSelector');" & vbCrLf
-		str &= "var " & id & " = $('#" & Me.ClientID & "').ColorPicker({" & vbCrLf
-		str &= renderparams()
-		str &= "        });"
-		jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, str)
+		''str &= "$('#" & Me.ClientID & "').addClass('colorSelector');" & vbCrLf
+		'str &= "window." & ID & " = $('#" & Me.ClientID & "').ColorPicker({" & vbCrLf
+		'str &= renderparams()
+		'str &= "        });"
+		'jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, str)
 	End Sub
 End Class
 

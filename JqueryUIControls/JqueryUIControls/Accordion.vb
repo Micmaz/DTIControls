@@ -320,13 +320,11 @@ Public Class Accordion
 
     Private Sub Accordion_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
         Dim s As String = ""
-        s &= "$(function(){"
-        s &= "     $('#" & Me.ClientID & "').accordion("
-        s &= renderparams()
+		s &= "     $('#" & Me.ClientID & "').accordion("
+		s &= renderparams()
         s &= "      );"
-        s &= "});"
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s)
-    End Sub
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, s)
+	End Sub
 
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         writer.Write("<input type=""hidden"" id=""" & Me.ClientID & "_hidden"" name=""" & Me.ClientID & "_hidden"" />")

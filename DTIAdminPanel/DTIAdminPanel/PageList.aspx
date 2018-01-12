@@ -7,9 +7,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Untitled Page</title>
-    <link rel="stylesheet" type="text/css" href="~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/iframe-default.css" />
-    <link rel="stylesheet" type="text/css" href="~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/DTIAdminPanel.css" />
-    <script type="text/javascript" src="~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/pagelist.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/iframe-default.css" />
+    <link rel="stylesheet" type="text/css" href="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/DTIAdminPanel.css" />
+    <script type="text/javascript" src="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/pagelist.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,7 +20,7 @@
         <div>
 	        <table style="width:100%">
                 <tr>
-                <td colspan="2"style="background: url('~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/Gradiant2.jpg') repeat-y ;">
+                <td colspan="2"style="background: url('<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/Gradiant2.jpg') repeat-y ;">
                     <h2 style="margin-top: 0px; margin-bottom: 0px;"><span style="float:left; ">Page List</span></h2>
                     <span style="float:left"><label style="padding-left:50px;" id="lblurl" runat="server"></label></span>               
                     <span style="float:right"></span>
@@ -33,12 +33,12 @@
                 <tr>
                     <td >
                         Menu Items 
-                        <cc1:ToolTip ID="tooltip2" runat="server" DropShadow="true" HtmlTag="span" Text="<img alt='info' src='~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/textbubble.png' />" >
+                        <cc1:ToolTip ID="tooltip2" runat="server" DropShadow="true" HtmlTag="span" Text="<img alt='info' src='<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/textbubble.png' />" >
                         This tree represents how your menu will look and behave
                         </cc1:ToolTip></td>
                     <td>
                         Pages 
-                        <cc1:ToolTip ID="tooltip1" runat="server" DropShadow="true" HtmlTag="span" Text="<img alt='info' src='~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/textbubble.png' />" >
+                        <cc1:ToolTip ID="tooltip1" runat="server" DropShadow="true" HtmlTag="span" Text="<img alt='info' src='<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/textbubble.png' />" >
                         This tree represents all the available pages in the site.  To add a page to the menu
                         simply drag the page and drop it into
                         the Menu Items tree</cc1:ToolTip></td>
@@ -52,12 +52,12 @@
                 </tr>
                 <tr>
                     <td >
-                        <img alt="expand" style="cursor:pointer" src="~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/add.png" onclick="$.tree.reference('tlMenuItems').open_all();" />
-                        <img alt="collapse" style="cursor:pointer" src="~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/remove.png" onclick="$.tree.reference('tlMenuItems').close_all();" />            
+                        <img alt="expand" style="cursor:pointer" src="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/add.png" onclick="$.tree.reference('tlMenuItems').open_all();" />
+                        <img alt="collapse" style="cursor:pointer" src="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/remove.png" onclick="$.tree.reference('tlMenuItems').close_all();" />            
                     </td>
                     <td style="vertical-align:top;">
-                        <img alt="expand" style="cursor:pointer" src="~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/add.png" onclick="$.tree.reference('tlPages').open_all();" />
-                        <img alt="collapse" style="cursor:pointer" src="~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/remove.png" onclick="$.tree.reference('tlPages').close_all();" />            
+                        <img alt="expand" style="cursor:pointer" src="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/add.png" onclick="$.tree.reference('tlPages').open_all();" />
+                        <img alt="collapse" style="cursor:pointer" src="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/remove.png" onclick="$.tree.reference('tlPages').close_all();" />            
                     </td>
                     <td valign="top">
                     </td>
@@ -65,7 +65,7 @@
                     </td>
                 </tr>
 	            <tr>
-	                <td style="background: url('~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/Gradiant1.jpg') repeat-x ;" valign="top">
+	                <td style="background: url('<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/Gradiant1.jpg') repeat-x ;" valign="top">
 	                    <div style="height:310px; overflow: auto">
 	                     <cc1:TreeList ID="tlMenuItems" runat="server" CssClass="demo" 
                                 CheckStyle="None"  MultiTreeEnabled="true" OnSelectCallBack="showMenuLink"
@@ -76,7 +76,7 @@
 
                         </div>
                     </td>                        
-	                <td style="background: url('~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/Gradiant1.jpg') repeat-x ;" valign="top" rowspan="3">                       
+	                <td style="background: url('<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/Gradiant1.jpg') repeat-x ;" valign="top" rowspan="3">                       
                         <div style="height:310px; overflow: auto">
                             <cc1:TreeList ID="tlPages" runat="server" CssClass="demo" 
                                 CheckStyle="None" MultiTreeEnabled="false"
@@ -88,7 +88,7 @@
                         <asp:Button ID="btnAddStatic" runat="server" Text="Button" />                        
                     </td>              
                     <td rowspan="3" style="height: 200px; text-align: left;" valign="top">
-                        <table style="background: url('~/res/BaseClasses/Scripts.aspx?f=/res/DTIAdminPanel/Gradiant2.jpg') repeat-y ;">
+                        <table style="background: url('<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/Gradiant2.jpg') repeat-y ;">
                            <%-- <tr>
                                 <td colspan="2">
                                     <asp:RadioButtonList ID="rblTemplate" runat="server" RepeatDirection="Horizontal">

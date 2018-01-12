@@ -53,7 +53,7 @@
         .imgdelete{position: absolute;top: 0;right: 0;}   
         .selected{border-color:#0000FF;}   
     </style> 
-    <script type="text/javascript" src="~/res/BaseClasses/Scripts.aspx?d=&f=DTIContentManagement/jquery.lightbox-0.5.min.js"></script>
+    <script type="text/javascript" src="<%=BaseClasses.Scripts.ScriptsURL()%>DTIContentManagement/jquery.lightbox-0.5.min.js"></script>
     <script type="text/javascript"> 
         function imgSelected(imageid, func, name) {
             func(imageid, name);

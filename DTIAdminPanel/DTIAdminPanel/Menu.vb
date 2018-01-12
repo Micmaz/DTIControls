@@ -282,15 +282,15 @@ Public Class Menu
                     TemplateControls = templateCon.Controls
                     jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "~/res/DTIAdminPanel/jquery.dtimenu.js", Nothing, True, False)
                     jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "~/res/DTIAdminPanel/jquery.hoverIntent.js", Nothing, True, False)
-                    jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, "$(function(){$('.verticalmenu').dtimenu();});", False, Nothing)
-                Case TemplateType.JqueryUIHorizontal
+					jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, "$('.verticalmenu').dtimenu();", False, Nothing)
+				Case TemplateType.JqueryUIHorizontal
                     Dim templatecon As New JqueryUI
                     templatecon = Me.Page.LoadControl("~/res/DTIAdminPanel/JqueryUI.ascx")
                     Me.Controls.Add(templatecon)
                     jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "/res/DTIAdminPanel/jquery.ui.potato.menu.js", Nothing, True, False)
                     jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIAdminPanel/jquery.ui.potato.menu.css", "text/css")
-                    jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, "$(function(){$('.JqueryUIHorizontal').ptMenu();});", False, Nothing)
-                    jQueryLibrary.ThemeAdder.AddTheme(Me.Page)
+					jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, "$('.JqueryUIHorizontal').ptMenu();", False, Nothing)
+					jQueryLibrary.ThemeAdder.AddTheme(Me.Page)
                     TemplateControls = templatecon.Controls
                 Case Else
                     Dim templatecon As New Control

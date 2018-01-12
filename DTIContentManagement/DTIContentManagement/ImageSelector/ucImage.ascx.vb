@@ -72,8 +72,8 @@ Public Class ucImage
                 "<label id=""lbl_" & ImageID & """ for=""b_" & ImageID & """ title=""" & Name & """>" & Name & "</label>"
         End If
         LazyImgLoad1.ImageUrl = "~/res/DTIImageManager/ViewImage.aspx?maxHeight=100&maxWidth=100&id=" & ImageID
-        LazyImgLoad1.Container = "$("".innerdiv"")"
-        LazyImgLoad1.ID = "LazyLoad_" & ImageID
+		LazyImgLoad1.Container = jQueryLibrary.jQueryInclude.jqueryVar & "("".innerdiv"")"
+		LazyImgLoad1.ID = "LazyLoad_" & ImageID
         lkImage.HRef = "~/res/DTIImageManager/ManipulateImage.aspx?Id=" & ImageID & "&f=" & Name
         lkImage.Title = Name
         LazyImgLoad1.SkipInvisible = False

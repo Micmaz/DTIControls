@@ -459,14 +459,12 @@ Public Class DTIAdminPanel
     Private Sub DTIAdminPanelServer_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
 		If LoggedIn Then
 			Dim str As String = ""
-			str &= "$(document).ready(function() {" & vbCrLf
-			str &= "     $(""#" & Me.ClientID & """).fadeIn(600);" & vbCrLf
-			str &= "});" & vbCrLf
+			jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, "$(""#" & Me.ClientID & """).fadeIn(600);")
 			str &= "function __doPostBack(eventTarget, eventArgument) { " & vbCrLf
 			str &= "     if (!theForm.onsubmit || (theForm.onsubmit() != false)) { " & vbCrLf
 			str &= "          theForm.__EVENTTARGET.value = eventTarget; " & vbCrLf
 			str &= "          theForm.__EVENTARGUMENT.value = eventArgument; " & vbCrLf
-			str &= "          $(theForm).submit(); " & vbCrLf
+			str &= "          " & jQueryLibrary.jQueryInclude.jqueryVar & "(theForm).submit(); " & vbCrLf
 			str &= "      } " & vbCrLf
 			str &= "} " & vbCrLf
 			jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, str)

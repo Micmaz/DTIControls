@@ -212,8 +212,8 @@ Partial Public Class LoginUserControl
         bscript &= "if (clPass)"
         bscript &= "smPass = compareField('" & tbpass2.ClientID & "','" & tbConfirm.ClientID & "','spConfirm');"
         bscript &= "if (clUser && clEmail && clPass && vlEmail && smPass){"
-        Dim ascript As String = "$(this).dialog('close');}"
-        diAdminSetup.Visible = False
+		Dim ascript As String = jQueryLibrary.jQueryInclude.jqueryVar & "(this).dialog('close');}"
+		diAdminSetup.Visible = False
         diAdminSetup.AutoOpen = False
         diAdminSetup.addButton(btnSubmit, False, bscript, ascript)
 

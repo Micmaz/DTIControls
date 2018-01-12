@@ -18,9 +18,7 @@ Public Class ComboBox
         If id = "" Then id = ClientID
 
         Dim s As String = ""
-        s &= "$(function(){"
-        s &= "     $('#" & Me.ClientID & "').combobox();"
-        s &= "});"
-        jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, s)
-    End Sub
+		s &= "     $('#" & Me.ClientID & "').combobox();"
+		jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, s)
+	End Sub
 End Class

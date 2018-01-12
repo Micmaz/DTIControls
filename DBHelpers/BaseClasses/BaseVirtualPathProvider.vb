@@ -149,10 +149,11 @@ Public Class BaseVirtualPathProvider
         Try
             Dim loc As String = asm.CodeBase.Replace("\", "/").ToLower
             If loc.Contains(localpath) Then
-                For Each rname As String In asm.GetManifestResourceNames
-                    resources.Add(rname.ToLower.Replace("_", ""), New Object() {asm, rname})
-                Next
-            End If
+				For Each rname As String In asm.GetManifestResourceNames
+					resources(rname.ToLower.Replace("_", "")) = New Object() {asm, rname}
+					'resources.Add(rname.ToLower.Replace("_", ""), New Object() {asm, rname})
+				Next
+			End If
         Catch ex As Exception
             Dim x As Integer
             x = 2

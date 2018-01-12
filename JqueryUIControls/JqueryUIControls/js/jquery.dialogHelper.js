@@ -1,4 +1,5 @@
-function openDialogHelper(item, elementID, URL) {
+var dialog = (function ($) {
+	var openDialogHelper = function(item, elementID, URL) {
     item.html($("<iframe id='" + elementID + "_iframe' name='" + elementID + "_iframe' frameborder='0' " +
     "marginWidth='0' marginHeight='0' ALLOWTRANSPARENCY='true' scrolling='auto' " +
     "width='100%' height='100%' background='transparent' style='display:none;' " +
@@ -15,7 +16,7 @@ function openDialogHelper(item, elementID, URL) {
     });
 }
 
-function createDialogURL(URL, height, width, id, title, modal) {
+	var createDialogURL = function(URL, height, width, id, title, modal) {
     return createDlg(URL, title, height, width, modal, id);
 }
 
@@ -30,7 +31,7 @@ String.prototype.hashCode = function() {
     return hash;
 }
 
-function setDlgIcon(imageUrl,dlg) {
+	var setDlgIcon = function(imageUrl,dlg) {
     if (window != window.top) {
         return parent.setDlgIcon(imageUrl,getCurrentIframe().parent());
     }
@@ -42,127 +43,146 @@ function setDlgIcon(imageUrl,dlg) {
     return null;
 }
 
-function getCurrentIframe() {
+	var getCurrentIframe = function() {
 		var iframe = null;
 		if (top === self)
 			return false; // Not in an iframe
-    $('iframe', parent.document).each(function (value) {
-        if ($(this).prop('src').indexOf(document.domain) > -1) {
-            if ($(this).contents().find('body').html() == $(document).contents().find('body').html()) {
-                iframe = $(this);
-            }
-        }
-    });
-    return iframe;
-}
+		$('iframe', parent.document).each(function (value) {
+			if ($(this).prop('src').indexOf(document.domain) > -1) {
+				if ($(this).contents().find('body').html() == $(document).contents().find('body').html()) {
+					iframe = $(this);
+				}
+			}
+		});
+		return iframe;
+	}
 
-function addButtons(dlg, Buttons) {
-    dlg = $(dlg);
-    var iframe = dlg.find('iframe');
-    var newbuttons = [];
-    if (Buttons != null)
-        jQuery.each(Buttons, function(key, value) {
+	var addButtons = function(dlg, Buttons) {
+		dlg = $(dlg);
+		var iframe = dlg.find('iframe');
+		var newbuttons = [];
+		if (Buttons != null)
+			jQuery.each(Buttons, function(key, value) {
 
-            if (jQuery.isPlainObject(value)) {
-                for (var akey in value)
-                    key = akey;
+				if (jQuery.isPlainObject(value)) {
+					for (var akey in value)
+						key = akey;
 
-                value = Buttons[index][key];
-            }
-            var buttonName = key;
-            var isSelector = false;
-            if (key.indexOf("#") != 0 && key.indexOf(".") != 0)
-                key = "#" + key;
-            else
-                isSelector = true;
-            var frameButton = iframe.contents().find(key);
-            if (frameButton.length > 0) {
-                buttonName = frameButton.attr("value");
-                frameButton.css('display', 'none');
-            }
-            if (frameButton.length > 0 || !isSelector) {
-                newbuttons.push({
-                    text: buttonName,
-                    click: function() {
-                        var retval = true;
-                        if (jQuery.isFunction(value)) retval = !value();
-                        frameButton.click()
-                        if (retval) $(this).dialog("close");
-                    }
-                });
-            }
-        });
-    var options = { buttons: newbuttons };
-    dlg.dialog('option', options);
-}
+					value = Buttons[index][key];
+				}
+				var buttonName = key;
+				var isSelector = false;
+				if (key.indexOf("#") != 0 && key.indexOf(".") != 0)
+					key = "#" + key;
+				else
+					isSelector = true;
+				var frameButton = iframe.contents().find(key);
+				if (frameButton.length > 0) {
+					buttonName = frameButton.attr("value");
+					frameButton.css('display', 'none');
+				}
+				if (frameButton.length > 0 || !isSelector) {
+					newbuttons.push({
+						text: buttonName,
+						click: function() {
+							var retval = true;
+							if (jQuery.isFunction(value)) retval = !value();
+							frameButton.click()
+							if (retval) $(this).dialog("close");
+						}
+					});
+				}
+			});
+		var options = { buttons: newbuttons };
+		dlg.dialog('option', options);
+	}
 
-function createDlg(URL, title, height, width, modal, id, Buttons) {
-    if (window != window.top) {
-        return parent.createDlg(URL, title, height, width, modal, id, Buttons);
-    }
-    if (!title) title = "";
-    if (!width) width = 400;
-    if (!height) height = 400;
-    if (!id) id = "dynamicDiv_" + URL.hashCode();
+	var createDlg = function(URL, title, height, width, modal, id, Buttons) {
+		if (window != window.top) {
+			return parent.dialog.createDlg(URL, title, height, width, modal, id, Buttons);
+		}
+		if (!title) title = "";
+		if (!width) width = 400;
+		if (!height) height = 400;
+		if (!id) id = "dynamicDiv_" + URL.hashCode();
 
-    if ($('#' + id).length == 0) {
-        var dlgDiv = $("<div id='" + id + "' Title='" + title + "' style='height:" + height + "px;width:" + width + "px; overflow: hidden;'></div>")
-        $($('form')[0]).append(dlgDiv);
-        dlgDiv.dialog({
-            autoOpen: false,
-            open: function (event, ui) {
-                dlgDiv.parent().hide();
-                $('body').first().css('overflow', 'hidden');
-                $('#' + id + '_iframe').load(function() { addButtons($('#' + id), Buttons); });
-                dlgDiv.parent().fadeIn(10); //I'm doing a fade-in so you don't see the parent reposition itself.
-                openDialogHelper($(this), id, URL);
-				$('.ui-widget-overlay').css('z-index', getMaxZ("*") + 1);
-				$('.ui-dialog').css('z-index', getMaxZ("*") + 1);
-            },
-            close: function (event, ui) {
-                $('body').first().css('overflow', '');
-            },
-            buttons: {},
-            modal: modal,
-            width: width,
-            height: height,
-            hide: "fade"
-        }).dialogExtend({ 'dblclick': 'maximize' });
-    }
-    //$('#' + id).appendTo($('form:first'));
-    $('#' + id).dialog('open');
-	return $('#' + id);
-}
+		if ($('#' + id).length == 0) {
+			var dlgDiv = $("<div id='" + id + "' Title='" + title + "' style='height:" + height + "px;width:" + width + "px; overflow: hidden;'></div>")
+			$($('form')[0]).append(dlgDiv);
+			dlgDiv.dialog({
+				autoOpen: false,
+				open: function (event, ui) {
+					dlgDiv.parent().hide();
+					$('body').first().css('overflow', 'hidden');
+					$('#' + id + '_iframe').load(function() { addButtons($('#' + id), Buttons); });
+					dlgDiv.parent().fadeIn(10); //I'm doing a fade-in so you don't see the parent reposition itself.
+					dialog.openDialogHelper($(this), id, URL);
+					$('.ui-widget-overlay').css('z-index', getMaxZ("*") + 1);
+					$('.ui-dialog').css('z-index', getMaxZ("*") + 1);
+				},
+				close: function (event, ui) {
+					$('body').first().css('overflow', '');
+				},
+				buttons: {},
+				modal: modal,
+				width: width,
+				height: height,
+				hide: "fade"
+			}).dialogExtend({ 'dblclick': 'maximize' });
+		}
+		//$('#' + id).appendTo($('form:first'));
+		$('#' + id).dialog('open');
+		return $('#' + id);
+	}
 
-function addButtonsOnLoad(dlg, Buttons) {
-    dlg = $(dlg);
-    var iframe = dlg.find('iframe');
-    iframe.load(function() { addButtons(dlg, Buttons); });
-}
+	var addButtonsOnLoad = function(dlg, Buttons) {
+		dlg = $(dlg);
+		var iframe = dlg.find('iframe');
+		iframe.load(function() { addButtons(dlg, Buttons); });
+	}
 
-function closeCurrentDlg() {
-    var iframe = getCurrentDlg();
-    if(iframe)
-        window.parent.closeAll($(iframe).parent().parent().find('.ui-dialog-content').attr('id'));
-}
+	var closeCurrentDlg = function() {
+		var iframe = dialog.getCurrentDlg();
+		if(iframe)
+			window.parent.closeAll($(iframe).parent().parent().find('.ui-dialog-content').attr('id'));
+	}
 
-function getCurrentDlg(){
-      if (top === self) 
-        return false; // Not in an iframe   
-    var iframe = getCurrentIframe();
-    if(!iframe) return false; //Can't find the iframe.. 
-    if (iframe.parent().hasClass("ui-dialog-content")){ //is it in a dialog  
-        return iframe;
-    }
-    return false;
-}
+	var getCurrentDlg = function(){
+			if (top === self) 
+				return false; // Not in an iframe   
+			var iframe = getCurrentIframe();
+			if(!iframe) return false; //Can't find the iframe.. 
+			if (iframe.parent().hasClass("ui-dialog-content")){ //is it in a dialog  
+				return iframe;
+			}
+		return false;
+	}
 
-function addButtonsFromFrame(Buttons) {  
-    var iframe = getCurrentDlg();
-    if(!iframe) return false; //Can't find the iframe or dialog.. 
-    parent.addButtons($(iframe.parent()), Buttons);
-    parent.addButtonsOnLoad($(iframe.parent()), Buttons);
+	var addButtonsFromFrame = function(Buttons) {  
+		var iframe = getCurrentDlg();
+		if(!iframe) return false; //Can't find the iframe or dialog.. 
+		parent.addButtons($(iframe.parent()), Buttons);
+		parent.addButtonsOnLoad($(iframe.parent()), Buttons);
     
-}
+	}
 
-    
+	window.openDialogHelper = openDialogHelper;
+	window.createDialogURL = createDialogURL;
+	window.setDlgIcon = setDlgIcon;
+	window.getCurrentIframe = getCurrentIframe;
+	window.addButtons = addButtons;
+	window.createDlg = createDlg;
+	window.addButtonsOnLoad = addButtonsOnLoad;
+	window.closeCurrentDlg = closeCurrentDlg;
+	window.getCurrentDlg = getCurrentDlg;
+	window.addButtonsFromFrame = addButtonsFromFrame;
+
+	return {
+		openDialogHelper: openDialogHelper, createDialogURL: createDialogURL, setDlgIcon: setDlgIcon, getCurrentIframe: getCurrentIframe, addButtons: addButtons, createDlg: createDlg,
+		addButtonsOnLoad: addButtonsOnLoad, closeCurrentDlg: closeCurrentDlg, getCurrentDlg: getCurrentDlg, addButtonsFromFrame: addButtonsFromFrame
+	}
+
+
+
+})(jQuery);
+

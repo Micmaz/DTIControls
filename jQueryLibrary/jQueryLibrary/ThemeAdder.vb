@@ -369,14 +369,14 @@ Public Class ThemeAdder
             jQueryInclude.addScriptFile(Page, customThemePath, , , True, "ui-theme")
         End If
         jQueryInclude.addStyleBlock(Page, bodyCssFix, "UI-sizeFix")
-        jQueryInclude.addScriptBlockPageLoad(Page, "$('button, input:submit, input:button, input:reset').button();", False, "ThemeButtons")
-        jQueryInclude.addScriptBlockPageLoad(Page, "$('input[type=text],input[type=password],textarea,select').textbox();", False, "ThemeTextBoxes")
-        jQueryInclude.addScriptBlockPageLoad(Page, "$('body').addClass('ui-widget');", False, "ThemeBody")
+		jQueryInclude.addScriptBlockPageLoad(Page, "$('button, input:submit, input:button, input:reset').button();", False, "ThemeButtons")
+		jQueryInclude.addScriptBlockPageLoad(Page, "$('input[type=text],input[type=password],textarea,select').textbox();", False, "ThemeTextBoxes")
+		jQueryInclude.addScriptBlockPageLoad(Page, "$('body').addClass('ui-widget');", False, "ThemeBody")
 		'jQueryInclude.addScriptBlock(page, "window.onerror=function(){if(document.body){document.body.style.display='block';}else{document.write(""<style type='text/css'>body{ display:block; }</style>"");}}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", False, , "bodyFadein")
 		jQueryInclude.addScriptBlock(Page, "window.onerror=function(){if(document.body)document.body.style.display='block';}; document.write(""<style type='text/css'>body{ display:none; }</style>""); $(function(){document.body.style.display='block';$('body').hide().fadeIn(500,function(){}); });", False, Nothing, "bodyFadein", Nothing)
-		jQueryInclude.addScriptBlockPageLoad(Page, "$('input:checkbox').checkbox();});$(function(){$('input:radio').radio();", False, "ThemeCheckBoxes")
-
-        Dim header As jQueryInclude = jQueryInclude.getInitialInclude(Page)
+		jQueryInclude.addScriptBlockPageLoad(Page, "$('input:checkbox').checkbox();", False, "ThemeCheckBoxes")
+		jQueryInclude.addScriptBlockPageLoad(Page, "$('input:radio').radio();", False, "ThemeRadioButtons")
+		Dim header As jQueryInclude = jQueryInclude.getInitialInclude(Page)
         If Not themeButtons Then
             header.replaceIncludeByID("ThemeButtons", "")
         End If
