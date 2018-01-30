@@ -286,21 +286,12 @@ Public Class jQueryInclude
 				jQueryIncludeHeader.addScriptBlock("var " & jqueryVar & "=$.noConflict();$=" & jqueryVar & ";", isolateJquery:=False)
 				'jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary.jquery-ui.custom.min.js"))
 				jQueryIncludeHeader.addInclude(page.ClientScript.GetWebResourceUrl(GetType(jQueryInclude), "jQueryLibrary.DTIprototypes.js"))
-            End If
-            jQueryIncludeHeader.isinitial = True
-            page.Items.Item("jqueryInclude") = jQueryIncludeHeader
-            Try
-                page.Header.Controls.AddAt(0, jQueryIncludeHeader)
-            Catch ex As Exception
-                'Try
-                addJQueryToHead(page, jQueryIncludeHeader)
-
-                'Catch ex2 As Exception
-
-                'End Try
-            End Try
-        ElseIf version IsNot Nothing Then
-            Dim jsFile As String = BaseClasses.Scripts.ScriptsURL(True) & "jQueryLibrary/jquery-" & version & ".min.js"
+			End If
+			jQueryIncludeHeader.isinitial = True
+			page.Items.Item("jqueryInclude") = jQueryIncludeHeader
+			addJQueryToHead(page, jQueryIncludeHeader)
+		ElseIf version IsNot Nothing Then
+			Dim jsFile As String = BaseClasses.Scripts.ScriptsURL(True) & "jQueryLibrary/jquery-" & version & ".min.js"
             For Each include As ScriptFile In jQueryIncludeHeader.jqueryIncludeList.Values
                 If Regex.IsMatch(include.src, "jquery-\d+\.\d+\.\d+") Then
                     include.src = jsFile
@@ -404,56 +395,98 @@ Public Class jQueryInclude
         End Get
     End Property
 
-    ''' <summary>
-    ''' Adds the JQueryIncludeHeader to the head tag
-    ''' </summary>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds the JQueryIncludeHeader to the head tag")> _
-    Private Shared Sub addJQueryToHead(ByVal page As Page, ByVal header As jQueryInclude)
-        Dim headLitCon As LiteralControl = Nothing
-        Dim litctrls As Generic.List(Of Control) = BaseClasses.Spider.spiderPageforAllOfType(page, GetType(LiteralControl))
-        Dim head As New Regex("\<\s*head.*\>")
-        Dim headstring As String = ""
-        For Each lit As LiteralControl In litctrls
-            If head.Matches(CType(lit, LiteralControl).Text).Count > 0 Then
-                headstring = head.Matches(CType(lit, LiteralControl).Text)(0).Value
-                headLitCon = lit
-                Exit For
-            End If
-        Next
-        Try
+	''' <summary>
+	''' Adds the JQueryIncludeHeader to the head tag
+	''' </summary>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds the JQueryIncludeHeader to the head tag")>
+	Private Shared Sub addJQueryToHead(ByVal page As Page, ByVal header As jQueryInclude, Optional throwerror As Boolean = False)
+		Try
+			page.Header.Controls.AddAt(0, header)
+		Catch exCouldntadd As Exception
 
-            If headLitCon IsNot Nothing Then
-                Dim splitResults() As String
+			'If page.Header Is Nothing Then
+			'	Dim headLitCon As LiteralControl = Nothing
+			'	Dim litctrls As Generic.List(Of Control) = BaseClasses.Spider.spiderPageforAllOfType(page, GetType(LiteralControl))
+			'	Dim head As New Regex("\<\s*head.*\>")
+			'	Dim headstring As String = ""
+			'	For Each lit As LiteralControl In litctrls
+			'		If head.Matches(CType(lit, LiteralControl).Text).Count > 0 Then
+			'			headstring = head.Matches(CType(lit, LiteralControl).Text)(0).Value
+			'			headLitCon = lit
+			'			Exit For
+			'		End If
+			'	Next
+			'	If headLitCon IsNot Nothing Then
+			'		Try
+			'			Dim splitResults() As String
 
-                splitResults = head.Split(CType(headLitCon, LiteralControl).Text)
-                Dim startLitCon As New LiteralControl(splitResults(0) & headstring)
+			'			splitResults = head.Split(CType(headLitCon, LiteralControl).Text)
+			'			Dim startLitCon As New LiteralControl(splitResults(0) & headstring)
 
-                'page.Controls.RemoveAt(0)
-                Dim index As Integer = headLitCon.Parent.Controls.IndexOf(headLitCon)
-                headLitCon.Parent.Controls.AddAt(index, header)
-                headLitCon.Parent.Controls.AddAt(index, startLitCon)
-                headLitCon.Text = splitResults(1)
-            End If
-        Catch ex As Exception
-            header.erroradding = True
-            header.mypage = page
-            If Not inDesigner Then
-                Throw New Exception("Please add runat=""server"" to the <head> tag of your page." & vbCrLf & "The head tag should look like: " & vbCrLf & "<head runat=""server"">")
-            End If
-        End Try
+			'			'page.Controls.RemoveAt(0)
+			'			Dim index As Integer = headLitCon.Parent.Controls.IndexOf(headLitCon)
+			'			headLitCon.Parent.Controls.AddAt(index, header)
+			'			headLitCon.Parent.Controls.AddAt(index, startLitCon)
+			'			headLitCon.Text = splitResults(1)
+			'		Catch ex As Exception
+			'			header.erroradding = True
+			'			header.mypage = page
+			'			'If Not inDesigner Then
+			'			'	Throw New Exception("Please add runat=""server"" to the <head> tag of your page." & vbCrLf & "The head tag should look like: " & vbCrLf & "<head runat=""server"">")
+			'			'End If
+			'		End Try
+
+			'	End If
+			'End If
+			'Ok, well just add the control to the page directly.
+			Dim added As Boolean = False
+			Try
+				page.Form.Controls.AddAt(0, header)
+				added = True
+			Catch ex As Exception
+
+			End Try
+			If added Then Return
+			Try
+				page.Controls.AddAt(0, header)
+				added = True
+			Catch ex As Exception
+
+			End Try
+			If added Then Return
+
+			For Each c As Control In page.Controls
+				Try
+					c.Controls.Add(header)
+					added = True
+					Exit For
+				Catch ex As Exception
+					Dim x
+					x = 2
+
+				End Try
+			Next
+
+			If Not added Then
+				header.erroradding = True
+				header.mypage = page
+			End If
+			If Not added AndAlso throwerror Then Throw New Exception("Could not add needed script files to page. make sure there are is a head tag with runat='server'")
+		End Try
 
 
-    End Sub
 
-    ''' <summary>
-    ''' Adds a script file to the jQuery include list
-    ''' </summary>
-    ''' <param name="sf">
-    ''' Script file to be included
-    ''' </param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds a script file to the jQuery include list")> _
+	End Sub
+
+	''' <summary>
+	''' Adds a script file to the jQuery include list
+	''' </summary>
+	''' <param name="sf">
+	''' Script file to be included
+	''' </param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Adds a script file to the jQuery include list")> _
     Public Sub addInclude(ByVal sf As ScriptFile)
         jqueryIncludeList(sf.id) = sf
     End Sub
@@ -564,8 +597,8 @@ Public Class jQueryInclude
     Friend WithEvents mypage As Page
     Private Sub mypage_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles mypage.PreRender
         If erroradding Then
-            addJQueryToHead(mypage, Me)
-        End If
+			addJQueryToHead(mypage, Me, True)
+		End If
 
     End Sub
 

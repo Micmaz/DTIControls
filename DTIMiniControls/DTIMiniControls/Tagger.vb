@@ -251,33 +251,29 @@ Public Class Tagger
                 End Get
             End Property
 
-            ''' <summary>
-            ''' Registers javascript on a given page
-            ''' </summary>
-            ''' <param name="page">
-            ''' The page that the javascript is to be registered on
-            ''' </param>
-            ''' <remarks></remarks>
-            <System.ComponentModel.Description("Registers javascript on a given page")> _
-            Public Shared Sub RegisterJs(ByRef page As Page)
-                Dim jQueryIncludeHeader As TaggerInclude = BaseClasses.Spider.spiderPageforType(page, GetType(TaggerInclude))
-                If jQueryIncludeHeader Is Nothing Then
-                    BaseClasses.BaseVirtualPathProvider.registerVirtualPathProvider()
-                    page.Header.Controls.Add(New TaggerInclude("text/javascript", "DTITagManagement.js"))
-                End If
-            End Sub
+		''' <summary>
+		''' Registers javascript on a given page
+		''' </summary>
+		''' <param name="page">
+		''' The page that the javascript is to be registered on
+		''' </param>
+		''' <remarks></remarks>
+		<System.ComponentModel.Description("Registers javascript on a given page")>
+		Public Shared Sub RegisterJs(ByRef page As Page)
+			jQueryLibrary.jQueryInclude.addScriptFile(page, "DtiminiControls/DTITagManagement.js", id:="tagger")
+		End Sub
 
-            ''' <summary>
-            ''' Constructor for Tagger class
-            ''' </summary>
-            ''' <param name="type">
-            ''' Type of script
-            ''' </param>
-            ''' <param name="filename"
-            ''' Filename of script
-            ''' ></param>
-            ''' <remarks></remarks>
-            <System.ComponentModel.Description("Constructor for Tagger class")> _
+		''' <summary>
+		''' Constructor for Tagger class
+		''' </summary>
+		''' <param name="type">
+		''' Type of script
+		''' </param>
+		''' <param name="filename"
+		''' Filename of script
+		''' ></param>
+		''' <remarks></remarks>
+		<System.ComponentModel.Description("Constructor for Tagger class")> _
             Public Sub New(ByVal type As String, ByVal filename As String)
                 Me.Attributes.Add("type", type)
                 Me.Attributes.Add("src", BaseClasses.Scripts.ScriptsURL(True) & "DTIMiniControls/" & filename)

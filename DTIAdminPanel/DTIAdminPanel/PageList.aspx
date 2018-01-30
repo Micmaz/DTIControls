@@ -1,18 +1,16 @@
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="PageList.aspx.vb" Inherits="DTIAdminPanel.PageList" %>
-
 <%@ Register Assembly="DTIControls" Namespace="DTIMiniControls" TagPrefix="cc1" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Untitled Page</title>
-    <link rel="stylesheet" type="text/css" href="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/iframe-default.css" />
-    <link rel="stylesheet" type="text/css" href="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/DTIAdminPanel.css" />
+    <title>Page List</title>
     <script type="text/javascript" src="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/pagelist.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
+		    <script type="text/javascript" src="<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/pagelist.js"></script>
+	<link rel="stylesheet" type="text/css" href='<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/iframe-default.css' />
+    <link rel="stylesheet" type="text/css" href='<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/DTIAdminPanel.css' />
         <asp:HiddenField ID="HiddenField1" runat="server" /> 
         <asp:HiddenField ID="hfMenus" runat="server" />
         <asp:HiddenField ID="hfPages" runat="server" />
@@ -33,12 +31,12 @@
                 <tr>
                     <td >
                         Menu Items 
-                        <cc1:ToolTip ID="tooltip2" runat="server" DropShadow="true" HtmlTag="span" Text="<img alt='info' src='<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/textbubble.png' />" >
+                        <cc1:ToolTip ID="tooltip2" runat="server" DropShadow="true" HtmlTag="span" Text="" >
                         This tree represents how your menu will look and behave
                         </cc1:ToolTip></td>
                     <td>
                         Pages 
-                        <cc1:ToolTip ID="tooltip1" runat="server" DropShadow="true" HtmlTag="span" Text="<img alt='info' src='<%=BaseClasses.Scripts.ScriptsURL()%>/DTIAdminPanel/textbubble.png' />" >
+                        <cc1:ToolTip ID="tooltip1" runat="server" DropShadow="true" HtmlTag="span" Text="" >
                         This tree represents all the available pages in the site.  To add a page to the menu
                         simply drag the page and drop it into
                         the Menu Items tree</cc1:ToolTip></td>

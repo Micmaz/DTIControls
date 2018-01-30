@@ -18,6 +18,10 @@ namespace _ATestApplication
 		{
 			DTIControls.Share.EditModeOn = !DTIControls.Share.EditModeOn;
 		}
+		protected void btnTurnAdminOn_Click(object sender, EventArgs e)
+		{
+			DTIControls.Share.AdminPanelOn = !DTIControls.Share.AdminPanelOn;
+		}
 
 	}
 }

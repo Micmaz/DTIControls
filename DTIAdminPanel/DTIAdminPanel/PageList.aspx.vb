@@ -79,29 +79,31 @@ Partial Public Class PageList
             End If
         End Sub
 
-        Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-            Try
-                MainID = DTISharedVariables.MasterMainId
-            Catch ex As Exception
-                MainID = 0
-            End Try
+	Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+		tooltip1.Text = "<img alt='info' src='" & BaseClasses.Scripts.ScriptsURL() & "/DTIAdminPanel/textbubble.png' />"
+		tooltip2.Text = "<img alt='info' src='" & BaseClasses.Scripts.ScriptsURL() & "/DTIAdminPanel/textbubble.png' />"
+		Try
+		MainID = DTISharedVariables.MasterMainId
+		Catch ex As Exception
+			MainID = 0
+		End Try
 
-            tlMenuItems.NodeTypes.Add(New TreeNodeType("link", True, True, True, True, True, -1, -1, "[""link"", ""page"", ""item"", ""hidden""]", New NodeImageIcon(BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/Page.png")))
-            tlMenuItems.NodeTypes.Add(New TreeNodeType("item", False, True, True, True, True, -1, -1, "[""link"", ""page"", ""item"", ""hidden""]"))
-            tlMenuItems.NodeTypes.Add(New TreeNodeType("hidden", True, False, True, False, True, -1, -1, "[""link"", ""page"", ""hidden""]", New NodeImageIcon(BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/HPage.png")))
-            'tlMenuItems.ValidChildren = "[""link"", ""page"", ""item"", ""hidden""]"
-            tlMenuItems.addCustomContextMenu("Show/Hide link", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/doc_cancel.png", "ShowHideVisible", "HideUnhide", True)
+		tlMenuItems.NodeTypes.Add(New TreeNodeType("link", True, True, True, True, True, -1, -1, "[""link"", ""page"", ""item"", ""hidden""]", New NodeImageIcon(BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/Page.png")))
+		tlMenuItems.NodeTypes.Add(New TreeNodeType("item", False, True, True, True, True, -1, -1, "[""link"", ""page"", ""item"", ""hidden""]"))
+		tlMenuItems.NodeTypes.Add(New TreeNodeType("hidden", True, False, True, False, True, -1, -1, "[""link"", ""page"", ""hidden""]", New NodeImageIcon(BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/HPage.png")))
+		'tlMenuItems.ValidChildren = "[""link"", ""page"", ""item"", ""hidden""]"
+		tlMenuItems.addCustomContextMenu("Show/Hide link", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/doc_cancel.png", "ShowHideVisible", "HideUnhide", True)
 
-            tlPages.NodeTypes.Add(New TreeNodeType("page", True, True, True, True, True, -1, -1, "folder", New NodeImageIcon(BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/Page.png")))
-            tlPages.NodeTypes.Add(New TreeNodeType("folder", False, True, True, True, True, -1, -1, "page"))
-            tlPages.addCustomContextMenu("Go To Page", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/doc_next.png", "pageVisibility", "gotoPage", True)
-            tlPages.addCustomContextMenu("Edit Properties", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/edit.png", "pageVisibility", "editPage", False)
-            tlPages.addCustomContextMenu("Duplicate", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/copy.png", "pageVisibility", "dup", True)
-            bindTrees()
-        End Sub
+		tlPages.NodeTypes.Add(New TreeNodeType("page", True, True, True, True, True, -1, -1, "folder", New NodeImageIcon(BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/Page.png")))
+		tlPages.NodeTypes.Add(New TreeNodeType("folder", False, True, True, True, True, -1, -1, "page"))
+		tlPages.addCustomContextMenu("Go To Page", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/doc_next.png", "pageVisibility", "gotoPage", True)
+		tlPages.addCustomContextMenu("Edit Properties", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/edit.png", "pageVisibility", "editPage", False)
+		tlPages.addCustomContextMenu("Duplicate", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/copy.png", "pageVisibility", "dup", True)
+		bindTrees()
+	End Sub
 
 #Region "Menu Items Tree events"
-        Private Sub tlMenuItems_NodeBound(ByRef node As DTIMiniControls.TreeListItem, ByVal isRoot As Boolean, ByVal hasChildren As Boolean) Handles tlMenuItems.NodeBound
+	Private Sub tlMenuItems_NodeBound(ByRef node As DTIMiniControls.TreeListItem, ByVal isRoot As Boolean, ByVal hasChildren As Boolean) Handles tlMenuItems.NodeBound
             Dim phRow As dsDTIAdminPanel.DTIPageHeiarchyRow = ds.DTIPageHeiarchy.FindByid(node.Value)
             If Not phRow.IsDTIDynamicPageNull Then
                 If Not phRow.isHidden Then
