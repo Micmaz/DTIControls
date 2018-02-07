@@ -19,18 +19,33 @@ Designer(GetType(DTIServerBaseDesigner)), ViewStateModeById()> _
 Public MustInherit Class DTIServerControl
     Inherits DTIServerBase
 
-    Protected Friend setupPanel As Panel
+	''' <summary>
+	''' just a rename of the property cssClass to make it easier to switch between static and dynamic objects
+	''' </summary>
+	''' <value>
+	''' The class list.
+	''' </value>
+	Public Property [class] As String
+		Get
+			Return Me.CssClass
+		End Get
+		Set(value As String)
+			Me.CssClass = value
+		End Set
+	End Property
 
-    Public Enum modes
-        Read = 1
-        Write = 2
-    End Enum
+	Protected Friend setupPanel As Panel
 
-    ''' <summary>
-    ''' Fired when a control goes from read mode to write or layout mode.
-    ''' </summary>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fired when a control goes from read mode to write or layout mode.")> _
+	Public Enum modes
+		Read = 1
+		Write = 2
+	End Enum
+
+	''' <summary>
+	''' Fired when a control goes from read mode to write or layout mode.
+	''' </summary>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Fired when a control goes from read mode to write or layout mode.")> _
     Public Event ModeChanged()
 
     Public Event LoadControls(ByVal modeChanged As Boolean)

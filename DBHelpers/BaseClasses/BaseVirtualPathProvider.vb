@@ -70,10 +70,9 @@ Public Class BaseVirtualPathProvider
 	''' <summary>
 	''' Returns weather the baseVirtualPathProvider has been initialized or not. 
 	''' </summary>
-	''' <returns></returns>
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Returns weather the baseVirtualPathProvider has been initialized or not.")>
-	Public Shared Property initialized As Boolean = False
+	Public Shared initialized As Boolean = False
 	'   Public Shared Function initialized() As Boolean
 	'	Return Not resources Is Nothing AndAlso resources.Count > 0
 	'End Function
@@ -88,6 +87,7 @@ Public Class BaseVirtualPathProvider
 			System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider(New BaseVirtualPathProvider())
 			Debug.WriteLine("Initialized virtual path provider.")
 			testVirtualPathProvider()
+			'BaseVirtualPathProvider.initialized = True
 		End If
 		Debug.WriteLine("Path Provider registered. all done.")
 	End Sub
@@ -213,34 +213,35 @@ Public Class BaseVirtualPathProvider
 		If Not BaseVirtualPathProvider.initialized Then
 			Dim loaded As Boolean = True
 			'Dim approot As String = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) & System.Web.VirtualPathUtility.ToAbsolute("~/")
-			Dim req As HttpRequest = nothing
+			Dim req As HttpRequest = Nothing
 			Try
 				req = HttpContext.Current.Request
 			Catch ex As Exception
 
 			End Try
-			If HttpContext.Current IsNot Nothing AndAlso req IsNot Nothing Then
-				Dim page As System.Web.UI.Page = HttpContext.Current.Handler
-				loaded = False
-				If page IsNot Nothing Then
-					Dim count As Integer = 0
+			BaseVirtualPathProvider.initialized = HostingEnvironment.VirtualPathProvider.FileExists("~/res/BaseClasses/TestUC.ascx")
+			'If HttpContext.Current IsNot Nothing AndAlso req IsNot Nothing Then
+			'	Dim page As System.Web.UI.Page = HttpContext.Current.Handler
+			'	loaded = False
+			'	If page IsNot Nothing Then
+			'		Dim count As Integer = 0
 
-					While Not loaded AndAlso count < 20
-						count += 1
-						Try
-							Dim i = page.LoadControl("~/res/BaseClasses/TestUC.ascx")
-							loaded = True
-						Catch ex As Exception
-							Threading.Thread.Sleep(500)
-						End Try
-					End While
-				End If
-				BaseVirtualPathProvider.initialized = loaded
-				'I hate doing this but the virtual path provider isn't active until the next load..
-				HttpContext.Current.Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri, False)
-			Else
+			'		While Not loaded AndAlso count < 20
+			'			count += 1
+			'			Try
+			'				Dim i = page.LoadControl("~/res/BaseClasses/TestUC.ascx")
+			'				loaded = True
+			'			Catch ex As Exception
+			'				Threading.Thread.Sleep(500)
+			'			End Try
+			'		End While
+			'	End If
+			'	BaseVirtualPathProvider.initialized = loaded
+			'	'I hate doing this but the virtual path provider isn't active until the next load..
+			'	HttpContext.Current.Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri, False)
+			'Else
 
-			End If
+			'End If
 		End If
 
 		Return BaseVirtualPathProvider.initialized
