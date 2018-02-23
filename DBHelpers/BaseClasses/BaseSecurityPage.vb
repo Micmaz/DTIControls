@@ -883,71 +883,84 @@ Public Class BaseSecurityPage
         Response.End()
     End Sub
 
-    ''' <summary>
-    ''' Converts a datatable to excel format and writes csv data out to the responce stream.
-    ''' </summary>
-    ''' <param name="dt"></param>
-    ''' <param name="colNames"></param>
-    ''' <param name="asAttachment"></param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Converts a datatable to excel format and writes csv data out to the responce stream.")> _
-    Public Sub writeexcel(ByVal dt As DataTable, Optional ByVal colNames() As String = Nothing, Optional ByVal asAttachment As Boolean = True, Optional ByVal filename as String="Document.xls")
-        Response.Clear()
-        Response.ClearHeaders()
-        Response.Buffer = True
-        'Response.Charset = Text.Encoding.UTF8.WebName
-        'Response.ContentType = "application/vnd.ms-excel"
-        'Response.ContentType = "application/ms-excel; charset=utf-8"
-        'Response.ContentType = "application/ms-excel"
-        'Response.ContentType = "application/xls"
-        If Not asAttachment Then
-            Response.AddHeader("content-disposition", "inline; filename=" & filename)
-        Else
-            Response.AddHeader("content-disposition", "attachment; filename=" & filename)
-        End If
-        Response.Write("<!DOCTYPE html PUBLIC " & Chr(34) & "-//W3C//DTD XHTML 1.0 Transitional//EN" & Chr(34) & " " & Chr(34) & _
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" & Chr(34) & ">" & vbCrLf & _
-       "<html xmlns=" & Chr(34) & "http://www.w3.org/1999/xhtml" & Chr(34) & ">" & vbCrLf & _
-       "<head>" & vbCrLf & _
-       "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>" & vbCrLf & _
-       "</head><body>")
+	''' <summary>
+	''' Converts a datatable to excel format and writes csv data out to the responce stream.
+	''' </summary>
+	''' <param name="dt"></param>
+	''' <param name="colNames"></param>
+	''' <param name="asAttachment"></param>
+	''' <remarks></remarks>
+	Public Sub writeexcel(ByVal dt As DataTable, Optional ByVal colNames() As String = Nothing, Optional ByVal asAttachment As Boolean = True, Optional ByVal filename As String = "Document.xls")
+		Me.EnableViewState = False
+		excelExport(dt, colNames, asAttachment, filename)
+	End Sub
 
-        Me.EnableViewState = False
-        Response.Write("<table><tr>")
-        If colNames Is Nothing Then
-            For Each col As DataColumn In dt.Columns
-                Response.Write("<td>" & col.ColumnName & "</td>")
-            Next
-            Response.Write("</tr>")
-            For Each row As DataRow In dt.Rows
-                Response.Write("<tr>")
-                For Each Val As Object In row.ItemArray
-                    Response.Write("<td>" & Val & "</td>")
-                    'Response.Write("<td>" & Val.ToString & "</td>")
-                Next
-                Response.Write("</tr>")
-            Next
-        Else
-            For i As Integer = 0 To colNames.Length - 1
-                Response.Write("<td>" & colNames(i) & "</td>")
-            Next
-            Response.Write("</tr>")
-            For Each row As DataRow In dt.Rows
-                Response.Write("<tr>")
-                For i As Integer = 0 To colNames.Length - 1
-                    Response.Write("<td>" & row.Item(colNames(i)) & "</td>")
-                    'Response.Write("<td>" & row.Item(colNames(i)).ToString & "</td>")
-                Next
-                Response.Write("</tr>")
-            Next
-        End If
-        Response.Write("</table></body></html>")
-        Response.End()
-    End Sub
-	
+	''' <summary>
+	''' Converts a datatable to excel format and writes csv data out to the responce stream.
+	''' </summary>
+	''' <param name="dt"></param>
+	''' <param name="colNames"></param>
+	''' <param name="asAttachment"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Converts a datatable to excel format and writes csv data out to the responce stream.")>
+	Public Shared Sub excelExport(ByVal dt As DataTable, Optional ByVal colNames() As String = Nothing, Optional ByVal asAttachment As Boolean = True, Optional ByVal filename As String = "Document.xls")
+		Dim response As Web.HttpResponse = Web.HttpContext.Current.Response
+		response.Clear()
+		response.ClearHeaders()
+		response.Buffer = True
+		'Response.Charset = Text.Encoding.UTF8.WebName
+		'Response.ContentType = "application/vnd.ms-excel"
+		'Response.ContentType = "application/ms-excel; charset=utf-8"
+		'Response.ContentType = "application/ms-excel"
+		'Response.ContentType = "application/xls"
+		If Not asAttachment Then
+			response.AddHeader("content-disposition", "inline; filename=" & filename)
+		Else
+			response.AddHeader("content-disposition", "attachment; filename=" & filename)
+		End If
+		response.Write("<!DOCTYPE html PUBLIC " & Chr(34) & "-//W3C//DTD XHTML 1.0 Transitional//EN" & Chr(34) & " " & Chr(34) &
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" & Chr(34) & ">" & vbCrLf &
+	   "<html xmlns=" & Chr(34) & "http://www.w3.org/1999/xhtml" & Chr(34) & ">" & vbCrLf &
+	   "<head>" & vbCrLf &
+	   "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>" & vbCrLf &
+	   "</head><body>")
+
+		'Me.EnableViewState = False
+		response.Write("<table><tr>")
+		If colNames Is Nothing Then
+			For Each col As DataColumn In dt.Columns
+				response.Write("<td>" & col.ColumnName & "</td>")
+			Next
+			response.Write("</tr>")
+			For Each row As DataRow In dt.Rows
+				response.Write("<tr>")
+				For Each Val As Object In row.ItemArray
+					response.Write("<td>" & Val & "</td>")
+					'Response.Write("<td>" & Val.ToString & "</td>")
+				Next
+				response.Write("</tr>")
+			Next
+		Else
+			For i As Integer = 0 To colNames.Length - 1
+				response.Write("<td>" & colNames(i) & "</td>")
+			Next
+			response.Write("</tr>")
+			For Each row As DataRow In dt.Rows
+				response.Write("<tr>")
+				For i As Integer = 0 To colNames.Length - 1
+					response.Write("<td>" & row.Item(colNames(i)) & "</td>")
+					'Response.Write("<td>" & row.Item(colNames(i)).ToString & "</td>")
+				Next
+				response.Write("</tr>")
+			Next
+		End If
+		response.Write("</table></body></html>")
+		response.End()
+	End Sub
 
 
-    Public Sub mailhandler(ByVal body As String, ByVal toaddress As String, ByVal fromaddress As String, ByVal subject As String, _
+
+	Public Sub mailhandler(ByVal body As String, ByVal toaddress As String, ByVal fromaddress As String, ByVal subject As String, _
                         Optional ByVal ishtml As Boolean = True, Optional ByVal enableSSl As DataBase.enableSSlMail = DataBase.enableSSlMail.Auto, _
                         Optional ByVal attachment As Net.Mail.Attachment = Nothing, Optional ByVal StrAttachment As String = Nothing, Optional ByVal StrAttachmentName As String = "")
 		data.mailhandler(body ,  toaddress ,  fromaddress ,  subject ,ishtml ,  enableSSl ,  attachment ,  StrAttachment ,  StrAttachmentName)

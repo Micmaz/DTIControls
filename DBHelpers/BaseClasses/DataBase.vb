@@ -316,12 +316,27 @@ Public Class DataBase
         End Set
     End Property
 
-    Public Shared Function defaultSqliteConnection() As System.Data.Common.DbConnection
-        Dim tmpHelper As BaseHelper = createHelper("SQLiteHelper", False)
-        Return tmpHelper.createConnection(defaultSqliteString)
-    End Function
+	Public Shared Function defaultSqliteConnection() As System.Data.Common.DbConnection
+		Dim tmpHelper As BaseHelper = createHelper("SQLiteHelper", False)
+		Return tmpHelper.createConnection(defaultSqliteString)
+	End Function
 
-    Public Shared Function createHelper(ByVal connection As System.Data.Common.DbConnection) As BaseHelper
+	Public Shared Function createHelperFromConnectionName(ConnectionName As String) As BaseHelper
+		Dim helper As BaseHelper = Nothing
+		If ConnectionStrings(ConnectionName) IsNot Nothing Then
+			helper = createHelper(ConnectionStrings(ConnectionName).ProviderName)
+			helper.defaultConnection = helper.createConnectionFromConfig(ConnectionName)
+		Else
+			helper = getHelper()
+		End If
+		Return helper
+	End Function
+
+	Public Shared Function getConnectionFromConnectionName(ConnectionName As String) As System.Data.Common.DbConnection
+		Return createHelperFromConnectionName(ConnectionName).defaultConnection
+	End Function
+
+	Public Shared Function createHelper(ByVal connection As System.Data.Common.DbConnection) As BaseHelper
         Dim helper As BaseHelper = createHelper(connection.GetType.Name.ToLower.Replace("connection", "") & "helper")
         helper.defaultConnection = helper.createConnection(connection.ConnectionString)
         Return helper
@@ -394,7 +409,13 @@ Public Class DataBase
         End Set
     End Property
 
-    Public Shared Property defaultConnectionSessionWide() As System.Data.Common.DbConnection
+	Public Shared ReadOnly Property connection(connectionName As String)
+		Get
+
+		End Get
+	End Property
+
+	Public Shared Property defaultConnectionSessionWide() As System.Data.Common.DbConnection
         Get
             Return getHelper.defaultConnection
         End Get
