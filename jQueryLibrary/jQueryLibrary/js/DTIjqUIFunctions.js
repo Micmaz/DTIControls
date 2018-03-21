@@ -236,8 +236,8 @@ function refreshPage(selectorList, updateViewstate, data, executeScript, returnS
     dataobj = null;
 }
    
-var showAnimation = null;
-var hideAnimation = null;
+window.showAnimation = null;
+window.hideAnimation = null;
 function setAnimation(name, speed, optionalParms) {
     setShowAnimation(name, speed, optionalParms);
     setHideAnimation(name, speed, optionalParms);

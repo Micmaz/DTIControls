@@ -274,8 +274,8 @@ Public Class Notify
         Dim positionStr As String = ""
         If Me.alignH = alignHlocation.left Then positionStr &= "left: 0pt;"
         If Me.alignV = alignVlocation.bottom Then positionStr &= "bottom: 0pt;"
-        Dim outstr As String = vbCrLf & "function " & Me.ID & "(inTitle,inText,theme,showChromeNotify){" & vbCrLf
-        outstr &= "appendNotifyContainer('container_" & Me.ID & "','" & positionStr & "');" & vbCrLf
+		Dim outstr As String = vbCrLf & "window." & Me.ID & " =function(inTitle,inText,theme,showChromeNotify){" & vbCrLf
+		outstr &= "appendNotifyContainer('container_" & Me.ID & "','" & positionStr & "');" & vbCrLf
         outstr &= "$('#container_" & Me.ID & "').notify('create', theme+'-notifytemplate', { title: inTitle, text: inText }, { " & vbCrLf
         outstr &= jsPropString("expires", expires)
         outstr &= jsPropString("speed", speed)
@@ -331,7 +331,7 @@ Public Class Notify
 
     Private Sub Notify_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
 		ajax.jsFunction = "ajax_" & Me.ID
-		jQueryLibrary.jQueryInclude.addScriptBlock(me.Page,getInitialScript)
+		jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, getInitialScript, id:="js_" & Me.ID)
 	End Sub
 End Class
 
