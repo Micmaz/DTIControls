@@ -20,6 +20,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("JsonSeverConrol1 control.")> _
 	Protected WithEvents JsonSeverConrol1 As Global.DTIAjax.jsonSeverConrol
 
 	'''<summary>
@@ -29,6 +30,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("checkConversionScript control.")> _
 	Protected WithEvents checkConversionScript As Global.System.Web.UI.WebControls.Panel
 
 	'''<summary>
@@ -38,6 +40,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblRawFile control.")> _
 	Protected WithEvents lblRawFile As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -47,6 +50,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblRawFileValue control.")> _
 	Protected WithEvents lblRawFileValue As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -56,6 +60,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblTime control.")> _
 	Protected WithEvents lblTime As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -65,6 +70,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblTimeValue control.")> _
 	Protected WithEvents lblTimeValue As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -74,6 +80,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblDimensions control.")> _
 	Protected WithEvents lblDimensions As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -83,6 +90,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblDimensionsValue control.")> _
 	Protected WithEvents lblDimensionsValue As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -92,6 +100,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblStatus control.")> _
 	Protected WithEvents lblStatus As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -101,6 +110,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblStatusValue control.")> _
 	Protected WithEvents lblStatusValue As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -110,6 +120,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("imgStatus control.")> _
 	Protected WithEvents imgStatus As Global.System.Web.UI.WebControls.Image
 
 	'''<summary>
@@ -119,6 +130,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("pnlScreenshot control.")> _
 	Protected WithEvents pnlScreenshot As Global.System.Web.UI.WebControls.Panel
 
 	'''<summary>
@@ -128,6 +140,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("imgScreenshot control.")> _
 	Protected WithEvents imgScreenshot As Global.System.Web.UI.WebControls.Image
 
 	'''<summary>
@@ -137,6 +150,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("videoHolder control.")> _
 	Protected WithEvents videoHolder As Global.System.Web.UI.WebControls.Panel
 
 	'''<summary>
@@ -146,6 +160,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("VideoThumb1 control.")> _
 	Protected WithEvents VideoThumb1 As Global.DTIVideoManager.VideoThumb
 
 	'''<summary>
@@ -155,6 +170,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("pnlScreenShotEditor control.")> _
 	Protected WithEvents pnlScreenShotEditor As Global.System.Web.UI.WebControls.Panel
 
 	'''<summary>
@@ -164,6 +180,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("changeThumbNailDiv control.")> _
 	Protected WithEvents changeThumbNailDiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
 	'''<summary>
@@ -173,6 +190,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblZero control.")> _
 	Protected WithEvents lblZero As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -182,6 +200,7 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("lblMax control.")> _
 	Protected WithEvents lblMax As Global.System.Web.UI.WebControls.Label
 
 	'''<summary>
@@ -191,5 +210,6 @@ Partial Public Class VideoPreview
 	'''Auto-generated field.
 	'''To modify move field declaration from designer file to code-behind file.
 	'''</remarks>
+<System.ComponentModel.Description("videoSlider control.")> _
 	Protected WithEvents videoSlider As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

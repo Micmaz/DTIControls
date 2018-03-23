@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class History
+
     
     '''<summary>
     '''Head1 control.
@@ -20,7 +21,9 @@ Partial Public Class History
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Head1 control.")> _
     Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
+
     
     '''<summary>
     '''form1 control.
@@ -29,7 +32,9 @@ Partial Public Class History
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("form1 control.")> _
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
     
     '''<summary>
     '''pnlRedirectPg control.
@@ -38,7 +43,9 @@ Partial Public Class History
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("pnlRedirectPg control.")> _
     Protected WithEvents pnlRedirectPg As Global.System.Web.UI.WebControls.Panel
+
     
     '''<summary>
     '''DropDownList1 control.
@@ -47,7 +54,9 @@ Partial Public Class History
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("DropDownList1 control.")> _
     Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+
     
     '''<summary>
     '''Literal1 control.
@@ -56,5 +65,6 @@ Partial Public Class History
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Literal1 control.")> _
     Protected WithEvents Literal1 As Global.System.Web.UI.WebControls.Literal
 End Class

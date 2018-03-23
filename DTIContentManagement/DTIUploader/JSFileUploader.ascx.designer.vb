@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class JSFileUploader
+
     
     '''<summary>
     '''uploaderContainer control.
@@ -20,7 +21,9 @@ Partial Public Class JSFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("uploaderContainer control.")> _
     Protected WithEvents uploaderContainer As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     
     '''<summary>
     '''uploaderOverlay control.
@@ -29,7 +32,9 @@ Partial Public Class JSFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("uploaderOverlay control.")> _
     Protected WithEvents uploaderOverlay As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     
     '''<summary>
     '''selectFilesLink control.
@@ -38,7 +43,9 @@ Partial Public Class JSFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("selectFilesLink control.")> _
     Protected WithEvents selectFilesLink As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     
     '''<summary>
     '''selectLink control.
@@ -47,7 +54,9 @@ Partial Public Class JSFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("selectLink control.")> _
     Protected WithEvents selectLink As Global.System.Web.UI.HtmlControls.HtmlInputButton
+
     
     '''<summary>
     '''dataTableContainer control.
@@ -56,7 +65,9 @@ Partial Public Class JSFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("dataTableContainer control.")> _
     Protected WithEvents dataTableContainer As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     
     '''<summary>
     '''uploadLink control.
@@ -65,7 +76,9 @@ Partial Public Class JSFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("uploadLink control.")> _
     Protected WithEvents uploadLink As Global.System.Web.UI.HtmlControls.HtmlInputButton
+
     
     '''<summary>
     '''clearLink control.
@@ -74,5 +87,6 @@ Partial Public Class JSFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("clearLink control.")> _
     Protected WithEvents clearLink As Global.System.Web.UI.HtmlControls.HtmlInputButton
 End Class

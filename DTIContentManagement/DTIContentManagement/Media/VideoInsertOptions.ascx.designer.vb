@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class VideoInsertOptions
+
     
     '''<summary>
     '''hlInsertVideo control.
@@ -20,7 +21,9 @@ Partial Public Class VideoInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hlInsertVideo control.")> _
     Protected WithEvents hlInsertVideo As Global.System.Web.UI.WebControls.HyperLink
+
     
     '''<summary>
     '''hlInsertVideoThumb control.
@@ -29,7 +32,9 @@ Partial Public Class VideoInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hlInsertVideoThumb control.")> _
     Protected WithEvents hlInsertVideoThumb As Global.System.Web.UI.WebControls.HyperLink
+
     
     '''<summary>
     '''hlDeleteVideo control.
@@ -38,7 +43,9 @@ Partial Public Class VideoInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hlDeleteVideo control.")> _
     Protected WithEvents hlDeleteVideo As Global.System.Web.UI.WebControls.HyperLink
+
     
     '''<summary>
     '''hsEdit control.
@@ -47,5 +54,6 @@ Partial Public Class VideoInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hsEdit control.")> _
     Protected WithEvents hsEdit As Global.HighslideControls.Highslider
 End Class

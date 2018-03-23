@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ucVideo
+
     
     '''<summary>
     '''lbDelete control.
@@ -20,7 +21,9 @@ Partial Public Class ucVideo
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lbDelete control.")> _
     Protected WithEvents lbDelete As Global.System.Web.UI.WebControls.Button
+
     
     '''<summary>
     '''divImg control.
@@ -29,7 +32,9 @@ Partial Public Class ucVideo
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("divImg control.")> _
     Protected WithEvents divImg As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     
     '''<summary>
     '''lkImage control.
@@ -38,7 +43,9 @@ Partial Public Class ucVideo
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lkImage control.")> _
     Protected WithEvents lkImage As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
     
     '''<summary>
     '''LazyImgLoad1 control.
@@ -47,7 +54,9 @@ Partial Public Class ucVideo
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("LazyImgLoad1 control.")> _
     Protected WithEvents LazyImgLoad1 As Global.JqueryUIControls.LazyImgLoad
+
     
     '''<summary>
     '''litButtons control.
@@ -56,5 +65,6 @@ Partial Public Class ucVideo
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("litButtons control.")> _
     Protected WithEvents litButtons As Global.System.Web.UI.WebControls.Literal
 End Class

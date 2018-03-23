@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class TagsUC
+
     
     '''<summary>
     '''lblCurrTags control.
@@ -20,7 +21,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblCurrTags control.")> _
     Protected WithEvents lblCurrTags As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''DTICurrTags control.
@@ -29,7 +32,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("DTICurrTags control.")> _
     Protected WithEvents DTICurrTags As Global.System.Web.UI.WebControls.Panel
+
     
     '''<summary>
     '''hfTags control.
@@ -38,7 +43,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hfTags control.")> _
     Protected WithEvents hfTags As Global.System.Web.UI.WebControls.HiddenField
+
     
     '''<summary>
     '''DTIPopularTagHolder control.
@@ -47,7 +54,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("DTIPopularTagHolder control.")> _
     Protected WithEvents DTIPopularTagHolder As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     
     '''<summary>
     '''lblPopularTags control.
@@ -56,7 +65,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblPopularTags control.")> _
     Protected WithEvents lblPopularTags As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''DTIPopularTags control.
@@ -65,7 +76,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("DTIPopularTags control.")> _
     Protected WithEvents DTIPopularTags As Global.System.Web.UI.WebControls.Panel
+
     
     '''<summary>
     '''lblAddTags control.
@@ -74,7 +87,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblAddTags control.")> _
     Protected WithEvents lblAddTags As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbNewTags control.
@@ -83,7 +98,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbNewTags control.")> _
     Protected WithEvents tbNewTags As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''btnAdd control.
@@ -92,7 +109,9 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnAdd control.")> _
     Protected WithEvents btnAdd As Global.System.Web.UI.HtmlControls.HtmlInputButton
+
     
     '''<summary>
     '''btnSubmit control.
@@ -101,5 +120,6 @@ Partial Public Class TagsUC
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnSubmit control.")> _
     Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
 End Class

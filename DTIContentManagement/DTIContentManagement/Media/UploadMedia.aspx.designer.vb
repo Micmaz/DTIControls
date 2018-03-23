@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class UploadMedia
+
     
     '''<summary>
     '''form1 control.
@@ -20,7 +21,9 @@ Partial Public Class UploadMedia
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("form1 control.")> _
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
     
     '''<summary>
     '''MediaUploader1 control.
@@ -29,5 +32,6 @@ Partial Public Class UploadMedia
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("MediaUploader1 control.")> _
     Protected WithEvents MediaUploader1 As Global.DTIMediaManager.MediaUploader
 End Class

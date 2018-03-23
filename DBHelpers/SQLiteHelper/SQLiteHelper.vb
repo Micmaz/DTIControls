@@ -12,7 +12,7 @@ Public Class SQLiteHelper
 	''' <param name="connection">optional connection object. If ommited it uses the helper's default connection.</param>
 	''' <returns>a SQLiteDataAdapter typed to the base helper</returns>
 	''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-	<System.ComponentModel.Description("Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.")> _
+    <System.ComponentModel.Description("Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.")> _
     Public Overrides Function createAdaptor(Optional ByVal command As String = Nothing, Optional ByVal connection As System.Data.Common.DbConnection = Nothing) As System.Data.Common.DbDataAdapter
 		If command Is Nothing Then Return New SQLiteDataAdapter()
 		Return New SQLiteDataAdapter(command, connection)

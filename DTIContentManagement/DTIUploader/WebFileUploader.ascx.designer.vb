@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WebFileUploader
+
     
     '''<summary>
     '''pnlFilesHolder control.
@@ -20,7 +21,9 @@ Partial Public Class WebFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("pnlFilesHolder control.")> _
     Protected WithEvents pnlFilesHolder As Global.System.Web.UI.WebControls.Panel
+
     
     '''<summary>
     '''Tagger1 control.
@@ -29,7 +32,9 @@ Partial Public Class WebFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Tagger1 control.")> _
     Protected WithEvents Tagger1 As Global.DTIMiniControls.Tagger
+
     
     '''<summary>
     '''btnUpload control.
@@ -38,5 +43,6 @@ Partial Public Class WebFileUploader
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnUpload control.")> _
     Protected WithEvents btnUpload As Global.System.Web.UI.WebControls.Button
 End Class

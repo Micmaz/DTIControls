@@ -700,7 +700,7 @@ Public Module Extensions
 	''' <param name="row"></param>
 	''' <param name="columns"></param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("If the value is not in the item list it is added automatically to the top of the list. The string ""NULL"" will set the db value to null."), Extension()> _
+    <System.ComponentModel.Description("If the value is not in the item list it is added automatically to the top of the list. The string ""NULL"" will set the db value to null."), Extension()> _
     Public Sub setText(ByVal c As Control, ByVal dd As DropDownList, ByVal row As DataRow, ByVal ParamArray columns As String())
         Dim col1 As String = Nothing
         If columns.Length > 0 Then col1 = columns(0)

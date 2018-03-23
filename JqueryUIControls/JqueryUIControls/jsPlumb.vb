@@ -29,7 +29,7 @@ Public Class jsPlumb
 	''' </summary>
 	''' <param name="page"></param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Registers all necessary javascript and css files for this control to function on the page.")> _
+    <System.ComponentModel.Description("Registers all necessary javascript and css files for this control to function on the page.")> _
     Public Shared Sub registerControl(ByVal page As Page)
         If Not page Is Nothing Then
             jQueryLibrary.jQueryInclude.RegisterJQueryUI(page)

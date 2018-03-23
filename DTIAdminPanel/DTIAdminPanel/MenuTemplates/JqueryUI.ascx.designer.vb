@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class JqueryUI
+
     
     '''<summary>
     '''MenuItem1 control.
@@ -20,7 +21,9 @@ Partial Public Class JqueryUI
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("MenuItem1 control.")> _
     Protected WithEvents MenuItem1 As Global.DTIAdminPanel.MenuItem
+
     
     '''<summary>
     '''MenuItem2 control.
@@ -29,5 +32,6 @@ Partial Public Class JqueryUI
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("MenuItem2 control.")> _
     Protected WithEvents MenuItem2 As Global.DTIAdminPanel.MenuItem
 End Class

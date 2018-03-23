@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class VerticalMenu
+
     
     '''<summary>
     '''menuitem1 control.
@@ -20,7 +21,9 @@ Partial Public Class VerticalMenu
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("menuitem1 control.")> _
     Protected WithEvents menuitem1 As Global.DTIAdminPanel.MenuItem
+
     
     '''<summary>
     '''menuitem2 control.
@@ -29,5 +32,6 @@ Partial Public Class VerticalMenu
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("menuitem2 control.")> _
     Protected WithEvents menuitem2 As Global.DTIAdminPanel.MenuItem
 End Class

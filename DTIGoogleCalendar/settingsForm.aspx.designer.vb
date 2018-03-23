@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class settingsForm
+
     
     '''<summary>
     '''form1 control.
@@ -20,7 +21,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("form1 control.")> _
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
     
     '''<summary>
     '''ph1 control.
@@ -29,7 +32,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("ph1 control.")> _
     Protected WithEvents ph1 As Global.System.Web.UI.WebControls.PlaceHolder
+
     
     '''<summary>
     '''pnl1 control.
@@ -38,7 +43,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("pnl1 control.")> _
     Protected WithEvents pnl1 As Global.System.Web.UI.WebControls.Panel
+
     
     '''<summary>
     '''cbAllowTransparency control.
@@ -47,7 +54,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbAllowTransparency control.")> _
     Protected WithEvents cbAllowTransparency As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''tbFrameBorder control.
@@ -56,7 +65,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbFrameBorder control.")> _
     Protected WithEvents tbFrameBorder As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''cbScrolling control.
@@ -65,7 +76,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbScrolling control.")> _
     Protected WithEvents cbScrolling As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''tbBGColor control.
@@ -74,7 +87,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbBGColor control.")> _
     Protected WithEvents tbBGColor As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''tbBorderWidth control.
@@ -83,7 +98,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbBorderWidth control.")> _
     Protected WithEvents tbBorderWidth As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''tbSrc control.
@@ -92,7 +109,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbSrc control.")> _
     Protected WithEvents tbSrc As Global.DTIMiniControls.TextBoxEncoded
+
     
     '''<summary>
     '''lblSrcError control.
@@ -101,7 +120,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblSrcError control.")> _
     Protected WithEvents lblSrcError As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbWidth control.
@@ -110,7 +131,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbWidth control.")> _
     Protected WithEvents tbWidth As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''tbHeight control.
@@ -119,5 +142,6 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbHeight control.")> _
     Protected WithEvents tbHeight As Global.System.Web.UI.WebControls.TextBox
 End Class

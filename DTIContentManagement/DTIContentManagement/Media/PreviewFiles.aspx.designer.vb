@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class PreviewFiles
+
     
     '''<summary>
     '''form1 control.
@@ -20,7 +21,9 @@ Partial Public Class PreviewFiles
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("form1 control.")> _
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
     
     '''<summary>
     '''phFilePreview control.
@@ -29,7 +32,9 @@ Partial Public Class PreviewFiles
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("phFilePreview control.")> _
     Protected WithEvents phFilePreview As Global.System.Web.UI.WebControls.PlaceHolder
+
     
     '''<summary>
     '''btnSave control.
@@ -38,5 +43,6 @@ Partial Public Class PreviewFiles
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnSave control.")> _
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
 End Class

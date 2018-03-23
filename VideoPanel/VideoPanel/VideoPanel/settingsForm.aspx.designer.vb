@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class settingsForm
+
     
     '''<summary>
     '''form1 control.
@@ -20,7 +21,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("form1 control.")> _
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
     
     '''<summary>
     '''lbUpload control.
@@ -29,7 +32,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lbUpload control.")> _
     Protected WithEvents lbUpload As Global.System.Web.UI.WebControls.LinkButton
+
     
     '''<summary>
     '''ph1 control.
@@ -38,7 +43,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("ph1 control.")> _
     Protected WithEvents ph1 As Global.System.Web.UI.WebControls.PlaceHolder
+
     
     '''<summary>
     '''tbWidth control.
@@ -47,7 +54,9 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbWidth control.")> _
     Protected WithEvents tbWidth As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''tbHeight control.
@@ -56,5 +65,6 @@ Partial Public Class settingsForm
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbHeight control.")> _
     Protected WithEvents tbHeight As Global.System.Web.UI.WebControls.TextBox
 End Class

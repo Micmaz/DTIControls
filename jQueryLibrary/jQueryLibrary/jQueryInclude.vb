@@ -486,7 +486,7 @@ Public Class jQueryInclude
 	''' Script file to be included
 	''' </param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Adds a script file to the jQuery include list")> _
+    <System.ComponentModel.Description("Adds a script file to the jQuery include list")> _
     Public Sub addInclude(ByVal sf As ScriptFile)
         jqueryIncludeList(sf.id) = sf
     End Sub
@@ -512,7 +512,7 @@ Public Class jQueryInclude
 	''' </summary>
 	''' <param name="filename"></param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Removes filename")> _
+    <System.ComponentModel.Description("Removes filename")> _
     Public Sub deleteInclude(ByVal filename As String)
         Dim sf As New ScriptFile(filename)
         jqueryIncludeList.Remove(sf.id)

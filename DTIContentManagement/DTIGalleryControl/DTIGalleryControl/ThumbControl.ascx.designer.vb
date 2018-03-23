@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ThumbControl
+
     
     '''<summary>
     '''lblThumb control.
@@ -20,7 +21,9 @@ Partial Public Class ThumbControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblThumb control.")> _
     Protected WithEvents lblThumb As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''phThumbControls control.
@@ -29,5 +32,6 @@ Partial Public Class ThumbControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("phThumbControls control.")> _
     Protected WithEvents phThumbControls As Global.System.Web.UI.WebControls.PlaceHolder
 End Class

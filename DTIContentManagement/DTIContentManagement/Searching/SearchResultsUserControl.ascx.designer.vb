@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class SearchResultsUserControl
+
     
     '''<summary>
     '''buttonHolder control.
@@ -20,7 +21,9 @@ Partial Public Class SearchResultsUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("buttonHolder control.")> _
     Protected WithEvents buttonHolder As Global.System.Web.UI.WebControls.Panel
+
     
     '''<summary>
     '''btnPages control.
@@ -29,7 +32,9 @@ Partial Public Class SearchResultsUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnPages control.")> _
     Protected WithEvents btnPages As Global.System.Web.UI.WebControls.LinkButton
+
     
     '''<summary>
     '''btnMedia control.
@@ -38,7 +43,9 @@ Partial Public Class SearchResultsUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnMedia control.")> _
     Protected WithEvents btnMedia As Global.System.Web.UI.WebControls.LinkButton
+
     
     '''<summary>
     '''gallPages control.
@@ -47,7 +54,9 @@ Partial Public Class SearchResultsUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("gallPages control.")> _
     Protected WithEvents gallPages As Global.DTIContentManagement.SearchResultGallery
+
     
     '''<summary>
     '''gallMedia control.
@@ -56,5 +65,6 @@ Partial Public Class SearchResultsUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("gallMedia control.")> _
     Protected WithEvents gallMedia As Global.DTIGallery.DTISlideGallery
 End Class

@@ -273,7 +273,7 @@ Public Class Tagger
 		''' Filename of script
 		''' ></param>
 		''' <remarks></remarks>
-		<System.ComponentModel.Description("Constructor for Tagger class")> _
+            <System.ComponentModel.Description("Constructor for Tagger class")> _
             Public Sub New(ByVal type As String, ByVal filename As String)
                 Me.Attributes.Add("type", type)
                 Me.Attributes.Add("src", BaseClasses.Scripts.ScriptsURL(True) & "DTIMiniControls/" & filename)

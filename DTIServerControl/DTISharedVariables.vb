@@ -41,7 +41,7 @@ Public Class DTISharedVariables
 	''' <value></value>
 	''' <returns></returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("The default mainID.")> _
+    <System.ComponentModel.Description("The default mainID.")> _
     Public Shared Property MasterMainId() As Long
         Get
             If Session(siteMainID) Is Nothing Then Session(siteMainID) = 0

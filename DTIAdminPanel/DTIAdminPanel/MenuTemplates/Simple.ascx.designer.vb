@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Simple
+
     
     '''<summary>
     '''menuitem1 control.
@@ -20,7 +21,9 @@ Partial Public Class Simple
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("menuitem1 control.")> _
     Protected WithEvents menuitem1 As Global.DTIAdminPanel.MenuItem
+
     
     '''<summary>
     '''menuitem2 control.
@@ -29,7 +32,9 @@ Partial Public Class Simple
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("menuitem2 control.")> _
     Protected WithEvents menuitem2 As Global.DTIAdminPanel.MenuItem
+
     
     '''<summary>
     '''menuitem3 control.
@@ -38,7 +43,9 @@ Partial Public Class Simple
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("menuitem3 control.")> _
     Protected WithEvents menuitem3 As Global.DTIAdminPanel.MenuItem
+
     
     '''<summary>
     '''menuitem4 control.
@@ -47,7 +54,9 @@ Partial Public Class Simple
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("menuitem4 control.")> _
     Protected WithEvents menuitem4 As Global.DTIAdminPanel.MenuItem
+
     
     '''<summary>
     '''menuitem5 control.
@@ -56,5 +65,6 @@ Partial Public Class Simple
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("menuitem5 control.")> _
     Protected WithEvents menuitem5 As Global.DTIAdminPanel.MenuItem
 End Class

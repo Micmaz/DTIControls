@@ -4,7 +4,6 @@ Imports System.Data.SqlClient
 Imports System.Reflection
 Imports System.Web.Configuration.WebConfigurationManager
 
-
 ''' <summary>
 ''' Data accessor object. This class is subclassed and used to store data access and application-wide functions. 
 ''' It is cached in the session and exists on a per-session bassis.

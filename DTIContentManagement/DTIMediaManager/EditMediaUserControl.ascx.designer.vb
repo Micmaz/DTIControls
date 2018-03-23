@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class EditMediaUserControl
+
     
     '''<summary>
     '''lblDateAdded control.
@@ -20,7 +21,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblDateAdded control.")> _
     Protected WithEvents lblDateAdded As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''lblDateAddedValue control.
@@ -29,7 +32,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblDateAddedValue control.")> _
     Protected WithEvents lblDateAddedValue As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tdTitle control.
@@ -38,7 +43,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tdTitle control.")> _
     Protected WithEvents tdTitle As Global.System.Web.UI.HtmlControls.HtmlTableCell
+
     
     '''<summary>
     '''lblTitle control.
@@ -47,7 +54,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblTitle control.")> _
     Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbTitle control.
@@ -56,7 +65,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbTitle control.")> _
     Protected WithEvents tbTitle As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''phContentEditor control.
@@ -65,7 +76,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("phContentEditor control.")> _
     Protected WithEvents phContentEditor As Global.System.Web.UI.WebControls.PlaceHolder
+
     
     '''<summary>
     '''lblDescription control.
@@ -74,7 +87,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblDescription control.")> _
     Protected WithEvents lblDescription As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbDesc control.
@@ -83,7 +98,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbDesc control.")> _
     Protected WithEvents tbDesc As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label1 control.
@@ -92,7 +109,9 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label1 control.")> _
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tagger control.
@@ -101,5 +120,6 @@ Partial Public Class EditMediaUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tagger control.")> _
     Protected WithEvents tagger As Global.DTITagManager.TagManager
 End Class

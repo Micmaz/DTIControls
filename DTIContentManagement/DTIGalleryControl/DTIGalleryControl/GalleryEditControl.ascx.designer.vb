@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class GalleryEditControl
+
     
     '''<summary>
     '''Label1 control.
@@ -20,7 +21,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label1 control.")> _
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbItemsPerPage control.
@@ -29,7 +32,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbItemsPerPage control.")> _
     Protected WithEvents tbItemsPerPage As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label2 control.
@@ -38,7 +43,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label2 control.")> _
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbGalleryWidth control.
@@ -47,7 +54,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbGalleryWidth control.")> _
     Protected WithEvents tbGalleryWidth As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label5 control.
@@ -56,7 +65,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label5 control.")> _
     Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbGalleryHeight control.
@@ -65,7 +76,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbGalleryHeight control.")> _
     Protected WithEvents tbGalleryHeight As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label3 control.
@@ -74,7 +87,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label3 control.")> _
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbThumbWidth control.
@@ -83,7 +98,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbThumbWidth control.")> _
     Protected WithEvents tbThumbWidth As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label4 control.
@@ -92,7 +109,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label4 control.")> _
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbThumbHeight control.
@@ -101,7 +120,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbThumbHeight control.")> _
     Protected WithEvents tbThumbHeight As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label8 control.
@@ -110,7 +131,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label8 control.")> _
     Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbSpanWidth control.
@@ -119,7 +142,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbSpanWidth control.")> _
     Protected WithEvents tbSpanWidth As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label9 control.
@@ -128,7 +153,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label9 control.")> _
     Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbSpanHeight control.
@@ -137,7 +164,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbSpanHeight control.")> _
     Protected WithEvents tbSpanHeight As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''Label10 control.
@@ -146,7 +175,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label10 control.")> _
     Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbFirstAndLast control.
@@ -155,7 +186,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbFirstAndLast control.")> _
     Protected WithEvents cbFirstAndLast As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label11 control.
@@ -164,7 +197,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label11 control.")> _
     Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbPaging control.
@@ -173,7 +208,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbPaging control.")> _
     Protected WithEvents cbPaging As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label12 control.
@@ -182,7 +219,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label12 control.")> _
     Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbSearching control.
@@ -191,7 +230,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbSearching control.")> _
     Protected WithEvents cbSearching As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label13 control.
@@ -200,7 +241,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label13 control.")> _
     Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbUpload control.
@@ -209,7 +252,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbUpload control.")> _
     Protected WithEvents cbUpload As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label14 control.
@@ -218,7 +263,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label14 control.")> _
     Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowThumbInfo control.
@@ -227,7 +274,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowThumbInfo control.")> _
     Protected WithEvents cbShowThumbInfo As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label15 control.
@@ -236,7 +285,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label15 control.")> _
     Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowPubDateOnThumbnail control.
@@ -245,7 +296,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowPubDateOnThumbnail control.")> _
     Protected WithEvents cbShowPubDateOnThumbnail As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label16 control.
@@ -254,7 +307,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label16 control.")> _
     Protected WithEvents Label16 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowAuthorOnThumbnail control.
@@ -263,7 +318,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowAuthorOnThumbnail control.")> _
     Protected WithEvents cbShowAuthorOnThumbnail As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label17 control.
@@ -272,7 +329,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label17 control.")> _
     Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowRatingOnThumbnail control.
@@ -281,7 +340,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowRatingOnThumbnail control.")> _
     Protected WithEvents cbShowRatingOnThumbnail As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label18 control.
@@ -290,7 +351,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label18 control.")> _
     Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowPubDateOnCaption control.
@@ -299,7 +362,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowPubDateOnCaption control.")> _
     Protected WithEvents cbShowPubDateOnCaption As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label19 control.
@@ -308,7 +373,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label19 control.")> _
     Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowAuthorOnCaption control.
@@ -317,7 +384,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowAuthorOnCaption control.")> _
     Protected WithEvents cbShowAuthorOnCaption As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label20 control.
@@ -326,7 +395,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label20 control.")> _
     Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowRatingOnCaption control.
@@ -335,7 +406,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowRatingOnCaption control.")> _
     Protected WithEvents cbShowRatingOnCaption As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label21 control.
@@ -344,7 +417,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label21 control.")> _
     Protected WithEvents Label21 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''cbShowSharingOnCaption control.
@@ -353,7 +428,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("cbShowSharingOnCaption control.")> _
     Protected WithEvents cbShowSharingOnCaption As Global.System.Web.UI.WebControls.CheckBox
+
     
     '''<summary>
     '''Label6 control.
@@ -362,7 +439,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label6 control.")> _
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''Label7 control.
@@ -371,7 +450,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Label7 control.")> _
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbCompType control.
@@ -380,7 +461,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbCompType control.")> _
     Protected WithEvents tbCompType As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''hsUpload control.
@@ -389,7 +472,9 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hsUpload control.")> _
     Protected WithEvents hsUpload As Global.HighslideControls.Highslider
+
     
     '''<summary>
     '''btnSave control.
@@ -398,5 +483,6 @@ Partial Public Class GalleryEditControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnSave control.")> _
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
 End Class

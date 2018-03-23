@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ucImageSelector
+
     
     '''<summary>
     '''litVimeoThumbScript control.
@@ -20,7 +21,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("litVimeoThumbScript control.")> _
     Protected WithEvents litVimeoThumbScript As Global.System.Web.UI.WebControls.Literal
+
     
     '''<summary>
     '''FileUpload1 control.
@@ -29,7 +32,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("FileUpload1 control.")> _
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+
     
     '''<summary>
     '''btnUpload control.
@@ -38,7 +43,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnUpload control.")> _
     Protected WithEvents btnUpload As Global.System.Web.UI.WebControls.Button
+
     
     '''<summary>
     '''tbLink control.
@@ -47,7 +54,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbLink control.")> _
     Protected WithEvents tbLink As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''btnEmbed control.
@@ -56,7 +65,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnEmbed control.")> _
     Protected WithEvents btnEmbed As Global.System.Web.UI.WebControls.Button
+
     
     '''<summary>
     '''divUploadLink control.
@@ -65,7 +76,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("divUploadLink control.")> _
     Protected WithEvents divUploadLink As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
     
     '''<summary>
     '''Tabs1 control.
@@ -74,7 +87,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("Tabs1 control.")> _
     Protected WithEvents Tabs1 As Global.JqueryUIControls.Tabs
+
     
     '''<summary>
     '''btnSelect control.
@@ -83,7 +98,9 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnSelect control.")> _
     Protected WithEvents btnSelect As Global.System.Web.UI.WebControls.Button
+
     
     '''<summary>
     '''HiddenField1 control.
@@ -92,5 +109,6 @@ Partial Public Class ucImageSelector
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("HiddenField1 control.")> _
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
 End Class

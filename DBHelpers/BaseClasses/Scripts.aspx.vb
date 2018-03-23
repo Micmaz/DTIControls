@@ -28,13 +28,14 @@ Partial Public Class Scripts
     Private Shared LastModified As Date = Nothing
 
 	Private _filename As String = Nothing
+
 	''' <summary>
 	''' Filename read from query string. uses f=[resourceName]
 	''' </summary>
 	''' <value></value>
 	''' <returns></returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Filename read from query string. uses f=[resourceName]")> _
+        <System.ComponentModel.Description("Filename read from query string. uses f=[resourceName]")> _
         Private ReadOnly Property filename() As String
 		Get
 			If _filename Is Nothing Then
@@ -61,7 +62,7 @@ Partial Public Class Scripts
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("The load event. If it makes it here the item Is either uncached on the client Or the app Is in debug mode.")> _
+    <System.ComponentModel.Description("The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.")> _
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 		'registerVirtualPathProvider()
 		If responseEnded Then Return
@@ -193,13 +194,12 @@ Partial Public Class Scripts
 	End Function
 	Private Shared scriptsURLHolder As String = Nothing
 
-
 	''' <summary>
 	''' Determins weather resource should be gzipped on return. 
 	''' </summary>
 	''' <returns></returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Determins weather resource should be gzipped on return.")> _
+        <System.ComponentModel.Description("Determins weather resource should be gzipped on return.")> _
         Public Shared Function GZipSupported() As Boolean
 			try
 				Dim AcceptEncoding As String = System.Web.HttpContext.Current.Request.Headers("Accept-Encoding")
@@ -299,7 +299,7 @@ Partial Public Class Scripts
 	''' <param name="input">String to hash</param>
 	''' <returns>MD5 hash of String</returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Generates a MD5 hash of a given input string")> _
+        <System.ComponentModel.Description("Generates a MD5 hash of a given input string")> _
         Public Shared Function GenerateHash(ByVal input As String) As String
             Dim md5Hasher As New System.Security.Cryptography.MD5CryptoServiceProvider()
             Dim hashedBytes As Byte()

@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class SearchUserControl
+
     
     '''<summary>
     '''tbSearch control.
@@ -20,7 +21,9 @@ Partial Public Class SearchUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbSearch control.")> _
     Protected WithEvents tbSearch As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''hsSearch control.
@@ -29,5 +32,6 @@ Partial Public Class SearchUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hsSearch control.")> _
     Protected WithEvents hsSearch As Global.HighslideControls.Highslider
 End Class

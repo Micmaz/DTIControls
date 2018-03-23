@@ -890,6 +890,7 @@ Public Class BaseSecurityPage
 	''' <param name="colNames"></param>
 	''' <param name="asAttachment"></param>
 	''' <remarks></remarks>
+<System.ComponentModel.Description("Converts a datatable to excel format and writes csv data out to the responce stream.")> _
 	Public Sub writeexcel(ByVal dt As DataTable, Optional ByVal colNames() As String = Nothing, Optional ByVal asAttachment As Boolean = True, Optional ByVal filename As String = "Document.xls")
 		Me.EnableViewState = False
 		excelExport(dt, colNames, asAttachment, filename)

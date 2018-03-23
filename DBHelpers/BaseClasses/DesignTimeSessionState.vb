@@ -1,4 +1,4 @@
-﻿Imports System.Web
+Imports System.Web
 
 Public Class DesignTimeSessionState
 

@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ImageInsertOptions
+
     
     '''<summary>
     '''hlInsertImage control.
@@ -20,7 +21,9 @@ Partial Public Class ImageInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hlInsertImage control.")> _
     Protected WithEvents hlInsertImage As Global.System.Web.UI.WebControls.HyperLink
+
     
     '''<summary>
     '''hlInsertImageThumb control.
@@ -29,7 +32,9 @@ Partial Public Class ImageInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hlInsertImageThumb control.")> _
     Protected WithEvents hlInsertImageThumb As Global.System.Web.UI.WebControls.HyperLink
+
     
     '''<summary>
     '''btnDeleteImage control.
@@ -38,7 +43,9 @@ Partial Public Class ImageInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnDeleteImage control.")> _
     Protected WithEvents btnDeleteImage As Global.System.Web.UI.WebControls.HyperLink
+
     
     '''<summary>
     '''hsEdit control.
@@ -47,5 +54,6 @@ Partial Public Class ImageInsertOptions
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("hsEdit control.")> _
     Protected WithEvents hsEdit As Global.HighslideControls.Highslider
 End Class

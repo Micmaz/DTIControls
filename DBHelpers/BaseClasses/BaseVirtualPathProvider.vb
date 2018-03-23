@@ -97,7 +97,7 @@ Public Class BaseVirtualPathProvider
 	''' </summary>
 	''' <param name="assemblyname"></param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Spiders available dlls and caches all embedded resources for fast retrieval by a webserver.")> _
+    <System.ComponentModel.Description("Spiders available dlls and caches all embedded resources for fast retrieval by a webserver.")> _
     Public Shared Sub buildLocalResources(Optional ByVal assemblyname As String = "")
         If resources Is Nothing Then
             resources = New Hashtable
@@ -160,12 +160,12 @@ Public Class BaseVirtualPathProvider
         End Try
     End Sub
 
-
 	''' <summary>
 	''' Formats the filename of a requested file.
 	''' </summary>
 	''' <param name="_filename"></param>
 	''' <returns></returns>
+<System.ComponentModel.Description("Formats the filename of a requested file.")> _
 	Public Shared Function getFilename(_filename As String) As String
 		_filename = _filename.Replace("/./", "/")
 		If _filename.LastIndexOf("f=") > -1 Then
@@ -197,12 +197,11 @@ Public Class BaseVirtualPathProvider
 		Return _filename
 	End Function
 
-
 	''' <summary>
 	''' Clears the current cache of all assemblies. Assemblies will be recached on next access.
 	''' </summary>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Clears the current cache of all assemblies. Assemblies will be recached on next access.")> _
+    <System.ComponentModel.Description("Clears the current cache of all assemblies. Assemblies will be recached on next access.")> _
     Public Shared Sub ClearResources()
         If Not resources Is Nothing Then resources.Clear()
         resources = Nothing
@@ -253,7 +252,7 @@ Public Class BaseVirtualPathProvider
 	''' <param name="virtualPath"></param>
 	''' <returns></returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Gets the file stream of an embedded resource.")> _
+    <System.ComponentModel.Description("Gets the file stream of an embedded resource.")> _
     Public Shared Function getResourceStream(ByVal virtualPath As String) As System.IO.Stream
         Dim itms As Object() = BaseVirtualPathProvider.getResourcesName(virtualPath)
         If itms Is Nothing Then Return Nothing

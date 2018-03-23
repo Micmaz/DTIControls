@@ -76,7 +76,7 @@ Public Class HighslideHeaderControl
 	''' <value></value>
 	''' <returns></returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Hashtable containing global highslide variables, see http://highslide.com/ref/")> _
+        <System.ComponentModel.Description("Hashtable containing global highslide variables, see http://highslide.com/ref/")> _
         Public ReadOnly Property HighslideVariables() As Hashtable
             Get
                 If ViewState("HighslideVariables") Is Nothing Then

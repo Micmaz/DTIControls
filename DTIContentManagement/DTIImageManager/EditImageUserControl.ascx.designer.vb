@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class EditImageUserControl
+
     
     '''<summary>
     '''pnlEdit control.
@@ -20,7 +21,9 @@ Partial Public Class EditImageUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("pnlEdit control.")> _
     Protected WithEvents pnlEdit As Global.System.Web.UI.WebControls.Panel
+
     
     '''<summary>
     '''imgPreviewEdit control.
@@ -29,7 +32,9 @@ Partial Public Class EditImageUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("imgPreviewEdit control.")> _
     Protected WithEvents imgPreviewEdit As Global.HighslideControls.Highslider
+
     
     '''<summary>
     '''lblSize control.
@@ -38,5 +43,6 @@ Partial Public Class EditImageUserControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblSize control.")> _
     Protected WithEvents lblSize As Global.System.Web.UI.WebControls.Label
 End Class

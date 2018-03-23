@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class EditItem
+
     
     '''<summary>
     '''form1 control.
@@ -20,7 +21,9 @@ Partial Public Class EditItem
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("form1 control.")> _
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
     
     '''<summary>
     '''editMedia1 control.
@@ -29,7 +32,9 @@ Partial Public Class EditItem
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("editMedia1 control.")> _
     Protected WithEvents editMedia1 As Global.DTIMediaManager.EditMediaControl
+
     
     '''<summary>
     '''btnCancel control.
@@ -38,7 +43,9 @@ Partial Public Class EditItem
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnCancel control.")> _
     Protected WithEvents btnCancel As Global.System.Web.UI.WebControls.Button
+
     
     '''<summary>
     '''btnSave control.
@@ -47,5 +54,6 @@ Partial Public Class EditItem
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnSave control.")> _
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
 End Class

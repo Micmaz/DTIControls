@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ChangePasswordControl
+
     
     '''<summary>
     '''tbpass control.
@@ -20,7 +21,9 @@ Partial Public Class ChangePasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbpass control.")> _
     Protected WithEvents tbpass As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''valReq control.
@@ -29,7 +32,9 @@ Partial Public Class ChangePasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("valReq control.")> _
     Protected WithEvents valReq As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
     
     '''<summary>
     '''tbConfirm control.
@@ -38,7 +43,9 @@ Partial Public Class ChangePasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbConfirm control.")> _
     Protected WithEvents tbConfirm As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''valComp control.
@@ -47,7 +54,9 @@ Partial Public Class ChangePasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("valComp control.")> _
     Protected WithEvents valComp As Global.System.Web.UI.WebControls.CompareValidator
+
     
     '''<summary>
     '''btnChange control.
@@ -56,7 +65,9 @@ Partial Public Class ChangePasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnChange control.")> _
     Protected WithEvents btnChange As Global.System.Web.UI.WebControls.Button
+
     
     '''<summary>
     '''InfoDiv1 control.
@@ -65,5 +76,6 @@ Partial Public Class ChangePasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("InfoDiv1 control.")> _
     Protected WithEvents InfoDiv1 As Global.JqueryUIControls.InfoDiv
 End Class

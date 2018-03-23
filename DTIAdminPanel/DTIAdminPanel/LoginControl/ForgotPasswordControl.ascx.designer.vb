@@ -12,6 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ForgotPasswordControl
+
     
     '''<summary>
     '''lblMessage control.
@@ -20,7 +21,9 @@ Partial Public Class ForgotPasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblMessage control.")> _
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''lblText control.
@@ -29,7 +32,9 @@ Partial Public Class ForgotPasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("lblText control.")> _
     Protected WithEvents lblText As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''tbEmailRecovery control.
@@ -38,7 +43,9 @@ Partial Public Class ForgotPasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("tbEmailRecovery control.")> _
     Protected WithEvents tbEmailRecovery As Global.System.Web.UI.WebControls.TextBox
+
     
     '''<summary>
     '''idSent control.
@@ -47,7 +54,9 @@ Partial Public Class ForgotPasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("idSent control.")> _
     Protected WithEvents idSent As Global.JqueryUIControls.InfoDiv
+
     
     '''<summary>
     '''idEmailError control.
@@ -56,7 +65,9 @@ Partial Public Class ForgotPasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("idEmailError control.")> _
     Protected WithEvents idEmailError As Global.JqueryUIControls.InfoDiv
+
     
     '''<summary>
     '''btnSendEmail control.
@@ -65,5 +76,6 @@ Partial Public Class ForgotPasswordControl
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
+    <System.ComponentModel.Description("btnSendEmail control.")> _
     Protected WithEvents btnSendEmail As Global.System.Web.UI.WebControls.Button
 End Class

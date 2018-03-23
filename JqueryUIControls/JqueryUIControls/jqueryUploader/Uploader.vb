@@ -19,7 +19,6 @@ Public Class Uploader
     <System.ComponentModel.Description("Path can either be a relative path such as: ""/uploads/""   Or it can be a fully qualified path such as: C:\website\uploads   The iis user must have write access to the folder for this to work.   savePath and uploadPath both change the same internal value.")> _
     Public Property savePath As String = "/uploads/"
 
-
     ''' <summary>
     ''' Path can either be a relative path such as: "/uploads/"
     ''' Or it can be a fully qualified path such as: C:\website\uploads

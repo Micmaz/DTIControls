@@ -25,6 +25,7 @@ Public MustInherit Class DTIServerControl
 	''' <value>
 	''' The class list.
 	''' </value>
+<System.ComponentModel.Description("just a rename of the property cssClass to make it easier to switch between static and dynamic objects")> _
 	Public Property [class] As String
 		Get
 			Return Me.CssClass
@@ -45,7 +46,7 @@ Public MustInherit Class DTIServerControl
 	''' Fired when a control goes from read mode to write or layout mode.
 	''' </summary>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Fired when a control goes from read mode to write or layout mode.")> _
+    <System.ComponentModel.Description("Fired when a control goes from read mode to write or layout mode.")> _
     Public Event ModeChanged()
 
     Public Event LoadControls(ByVal modeChanged As Boolean)

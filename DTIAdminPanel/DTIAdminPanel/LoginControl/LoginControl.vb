@@ -388,7 +388,7 @@ Public Class LoginControl
 	''' fires after logout is pressed
 	''' </summary>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("fires after logout is pressed")> _
+    <System.ComponentModel.Description("fires after logout is pressed")> _
     Public Event LoggedOut()
 
     ''' <summary>
