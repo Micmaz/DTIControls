@@ -10,8 +10,8 @@ Public Class Spider
 ''' Used to search a page or cotrol for contents. Spiders all sub controls in most cases.
 ''' </summary>
 ''' <remarks></remarks>
-    <System.ComponentModel.Description("Used to search a page or cotrol for contents. Spiders all sub controls in most cases."),ComponentModel.EditorBrowsable(ComponentModel.EditorBrowsableState.Never), ComponentModel.ToolboxItem(False)> _
-    Public Class Spider
+<System.ComponentModel.Description("Used to search a page or cotrol for contents. Spiders all sub controls in most cases."), ComponentModel.ToolboxItem(False)>
+Public Class Spider
 #End If
 
 #Region "Spidering Functions"

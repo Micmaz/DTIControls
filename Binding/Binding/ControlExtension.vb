@@ -325,7 +325,14 @@ Public Module Extensions
 		Return errors
     End Function
 
-    <Extension()> _
+	''' <summary>
+	''' Sets the values from the bound controlls back into the row.
+	''' </summary>
+	''' <param name="c"></param>
+	''' <param name="r"></param>
+	''' <param name="showerrors"></param>
+	''' <returns></returns>
+	<Extension()> _
     Public Function setRowValues(ByVal c As Control, Optional ByVal r As DataRow = Nothing, Optional ByVal showerrors As Boolean = False) As List(Of ErrorSet)
         If r Is Nothing Then r = getRow(c) Else setRow(c, r)
         Dim errors As New List(Of ErrorSet)
@@ -385,7 +392,15 @@ Public Module Extensions
         Return errors
     End Function
 
-    <Extension()> _
+	''' <summary>
+	''' Puts all errors encountered in binding next to the controll that threw the error.
+	''' </summary>
+	''' <param name="c"></param>
+	''' <param name="errors"></param>
+	''' <param name="addToControl"></param>
+	''' <param name="appendFormat"></param>
+	''' <returns></returns>
+	<Extension()> _
     Public Function showErrorList(ByVal c As Control, errors As List(Of ErrorSet), Optional addToControl As Boolean = False, Optional appendFormat As String = "<b>Control:</b> {0}  <b>Col:</b> {1} <br/><b>Error: </b> {2}<br/>") As JqueryUIControls.InfoDiv
         Dim foundErrors As Boolean = False
         Dim errordiv As New JqueryUIControls.InfoDiv
@@ -401,8 +416,15 @@ Public Module Extensions
     End Function
 
 
-
-    <Extension()> _
+	''' <summary>
+	''' Sets the values of all controlls in this one to the values in row. ID is used and the first 2 and 3 characters are ignored. For example, a textbox with id = tbLastName  will be set to the "LastName" column of row.
+	''' </summary>
+	''' <param name="c"></param>
+	''' <param name="row"></param>
+	''' <param name="setValues"></param>
+	''' <param name="doNothingIfPostback"></param>
+	''' <returns>A list of errors encountered when setting form values.</returns>
+	<Extension()> _
     Public Function autoBind(ByVal c As Control, Optional row As DataRow = Nothing, Optional setValues As Boolean = True, Optional doNothingIfPostback As Boolean = True) As List(Of ErrorSet)
         If row Is Nothing Then row = getRow(c) Else setRow(c, row)
         If doNothingIfPostback AndAlso c.Page.IsPostBack Then

@@ -105,14 +105,6 @@
       <Project>{e1fb0ede-26fc-4b16-97f8-c7bb2cf193ec}</Project>
       <Name>DTIControlsSharedFunctions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DTIGoogleCalendar\DTIGoogleCalendar.vbproj">
-      <Project>{0aea4ad2-5997-4485-a867-cef26c8a3780}</Project>
-      <Name>DTIGoogleCalendar</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTIMapControl\DTIMapControl\DTIMapControl.vbproj">
-      <Project>{988af3b8-05f5-4091-826b-f0e6ca0cf765}</Project>
-      <Name>DTIMapControl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
       <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
       <Name>DTIMiniControls</Name>
@@ -144,10 +136,6 @@
     <ProjectReference Include="..\SummerNote\SummerNote\SummerNote.vbproj">
       <Project>{4f287f0b-022d-43da-9941-291a957e0e7f}</Project>
       <Name>SummerNote</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VideoPanel\VideoPanel\VideoPanel\VideoPanel.vbproj">
-      <Project>{a820b67a-d404-4db1-aa99-18adb90678f7}</Project>
-      <Name>VideoPanel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

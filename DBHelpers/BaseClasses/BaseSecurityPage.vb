@@ -936,7 +936,7 @@ Public Class BaseSecurityPage
 			For Each row As DataRow In dt.Rows
 				response.Write("<tr>")
 				For Each Val As Object In row.ItemArray
-					response.Write("<td>" & Val & "</td>")
+					response.Write("<td>" & Val.ToString() & "</td>")
 					'Response.Write("<td>" & Val.ToString & "</td>")
 				Next
 				response.Write("</tr>")
@@ -949,7 +949,7 @@ Public Class BaseSecurityPage
 			For Each row As DataRow In dt.Rows
 				response.Write("<tr>")
 				For i As Integer = 0 To colNames.Length - 1
-					response.Write("<td>" & row.Item(colNames(i)) & "</td>")
+					response.Write("<td>" & row.Item(colNames(i)).ToString() & "</td>")
 					'Response.Write("<td>" & row.Item(colNames(i)).ToString & "</td>")
 				Next
 				response.Write("</tr>")

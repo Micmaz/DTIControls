@@ -410,7 +410,7 @@ Public Class DataBase
 
 	Public Shared ReadOnly Property connection(connectionName As String)
 		Get
-
+			Return getConnectionFromConnectionName(connectionName)
 		End Get
 	End Property
 

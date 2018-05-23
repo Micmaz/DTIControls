@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="jsonpg.aspx">
+      <SubType>ASPXCodeBehind</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

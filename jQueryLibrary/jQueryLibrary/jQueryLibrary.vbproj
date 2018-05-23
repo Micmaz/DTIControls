@@ -77,22 +77,14 @@
     <EmbeddedResource Include="js\DTIprototypes.js" />
     <EmbeddedResource Include="js\jquery.center.js" />
     <EmbeddedResource Include="js\jquery.contextMenu.js" />
-    <EmbeddedResource Include="js\jquery-1.3.2.min.js" />
     <EmbeddedResource Include="js\jquery.query.js" />
-    <None Include="js\jquery-1.4.1.min.js" />
     <EmbeddedResource Include="js\jquery.truncator.js" />
-    <None Include="js\jquery-1.4.2.min.js" />
     <EmbeddedResource Include="css\jquery.ui.selectmenu.css" />
     <EmbeddedResource Include="themes\Base.css" />
-    <None Include="js\jquery-ui.1.8.13.min.js" />
     <EmbeddedResource Include="js\jquery.formThemes.js" />
-    <None Include="js\jquery-1.6.2.min.js" />
     <EmbeddedResource Include="themes\aristo\aristo.aristo.css" />
     <EmbeddedResource Include="js\DTIjqUIFunctions.js" />
     <EmbeddedResource Include="imgs\loading16.gif" />
-    <None Include="js\jquery-1.10.2.js" />
-    <None Include="js\jquery-1.10.2.min.js" />
-    <None Include="js\jquery-ui.1.10.3.min.js" />
     <EmbeddedResource Include="themes\aristo\aristo.jquery.ui.theme.css" />
     <EmbeddedResource Include="themes\aristo\images\aristo.images.bg_fallback.png" />
     <EmbeddedResource Include="themes\aristo\images\aristo.images.icon_sprite.png" />
@@ -607,9 +599,6 @@
     <Compile Include="plugins\query.vb" />
     <Compile Include="plugins\TimePicker.vb" />
     <Compile Include="ThemeAdder.vb" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="js\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">

@@ -1250,212 +1250,136 @@ Public MustInherit Class BaseHelper
 
 #Region "Get Sorted Page"
 
-    '''' <summary>
-    '''' Returns a paged result for a given table with a seperate query.
-    '''' </summary>
-    '''' <param name="tablename"></param>
-    '''' <param name="itemsPerPage"></param>
-    '''' <param name="pageNum"></param>
-    '''' <param name="primaryKey"></param>
-    '''' <param name="sort"></param>
-    '''' <param name="query"></param>
-    '''' <param name="ds"></param>
-    '''' <param name="connection"></param>
-    '''' <returns></returns>
-    '''' <remarks></remarks>
-    '<System.ComponentModel.Description("Returns a paged result for a given table with a seperate query."), Obsolete("use GetSortedPAge instead. This method is not safe.")> _
-    'Protected Overridable Function SafeGetSortedPageWrapper( _
-    '    ByVal tablename As String, _
-    '    ByVal itemsPerPage As Integer, _
-    '    ByVal pageNum As Integer, _
-    '    Optional ByVal primaryKey As String = "Id", _
-    '    Optional ByVal sort As String = "", _
-    '    Optional ByVal query As String = "", _
-    '    Optional ByRef ds As DataSet = Nothing, _
-    '    Optional ByVal connection As DbConnection = Nothing) As Integer
+	''' <summary>
+	''' Returns a paged result for a given table with a seperate query. Paramters are NOT SQL parameters. It is not safe to open them up to a variable set by the request.
+	''' </summary>
+	''' <param name="dt"></param>
+	''' <param name="tablename"></param>
+	''' <param name="itemsPerPage"></param>
+	''' <param name="pageNum"></param>
+	''' <param name="primaryKey"></param>
+	''' <param name="sort"></param>
+	''' <param name="query"></param>
+	''' <param name="parmValueArray"></param>
+	''' <param name="connection"></param>
+	''' <returns></returns>
+	<System.ComponentModel.Description("Returns a paged result for a given table with a seperate query.")>
+	Public Overridable Function GetSortedPage(
+		ByRef dt As DataTable,
+		Optional ByVal tablename As String = Nothing,
+		Optional ByVal itemsPerPage As Integer = 15,
+		Optional ByVal pageNum As Integer = 1,
+		Optional ByVal primaryKey As String = Nothing,
+		Optional ByVal sort As String = "",
+		Optional ByVal query As String = "",
+		Optional ByRef parmValueArray As Object() = Nothing,
+		Optional ByVal connection As DbConnection = Nothing) As Integer
+		'sort = BaseSecurityPage.RemoveSpecialCharacters(sort, "\s_\,")
+		Dim pagecountTable As String = "DTIPageCount1"
+		Dim ds As DataSet = dt.DataSet
+		If ds Is Nothing Then
+			ds = New DataSet
+			ds.Tables.Add(dt)
+		End If
+		If Not ds.Tables.Contains(pagecountTable) Then
+			ds.Tables.Add(pagecountTable)
+			ds.Tables(pagecountTable).Columns.Add(pagecountTable)
+		End If
+		ds.Tables(pagecountTable).Clear()
+		If tablename Is Nothing Then tablename = dt.TableName
+		If Not tablename.ToLower.Contains("select ") Then
+			If Not tablename.Contains("(") Then
+				If Not tablename.StartsWith("[") Then
+					tablename = "[" & tablename & "]"
+				End If
+			End If
+		End If
+		If pageNum < 1 Then
+			pageNum = 1
+		End If
+		Dim SizeString As Integer = itemsPerPage
+		Dim PrevString As Integer = itemsPerPage * (pageNum - 1)
+		Dim sortdirection As String = "DESC"
+		If primaryKey Is Nothing Then
+			If Not dt.PrimaryKey Is Nothing AndAlso dt.PrimaryKey.Length > 0 Then
+				If dt.PrimaryKey.Length > 1 Then
+					Throw New Exception("Get Sorted page needs a primary key specified for a table with a multi-column primary key.")
+				End If
+				primaryKey = dt.PrimaryKey(0).ColumnName
+			Else
+				primaryKey = "Id"
+			End If
+		End If
+		If String.IsNullOrEmpty(sort) Then
+			sort = primaryKey
+		End If
+		If String.IsNullOrEmpty(query) Then
+			query = "1=1"
+		End If
+		query = "(" & query & ")"
+		Dim ret As Integer = 0
+		'tablename = stripDBNameOfDanger(tablename)
+		Dim searchStr As String = "SELECT TOP " & SizeString & " * FROM " & tablename & " WHERE " & primaryKey & " IN" &
+		"(SELECT TOP " & SizeString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " AND " & primaryKey & " NOT IN" &
+		"(SELECT TOP " & PrevString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " ORDER BY " & sort & ")" &
+		"ORDER BY " & sort & ")" &
+		"ORDER BY " & sort
+		Dim pageStr As String = "SELECT (COUNT(*) - 1)/" & SizeString & " + 1 AS " & pagecountTable & " FROM " & tablename & " WHERE " & query
+		SafeFillDataSetMultiSelect(searchStr & ";" & pageStr, ds, New String() {dt.TableName, pagecountTable}, parmValueArray, connection)
+		ret = ds.Tables(pagecountTable).Rows(0).Item(0)
+		ds.Tables.Remove(pagecountTable)
+		Return ret
 
-    '    If ds Is Nothing Then
-    '        ds = New DataSet
-    '    End If
-    '    If Not ds.Tables.Contains("PageCount") Then
-    '        ds.Tables.Add("PageCount")
-    '        ds.Tables("PageCount").Columns.Add("PageCount")
-    '    End If
-    '    ds.Tables("PageCount").Clear()
-
-    '    If pageNum < 1 Then
-    '        pageNum = 1
-    '    End If
-    '    Dim SizeString As Integer = itemsPerPage
-    '    Dim PrevString As Integer = itemsPerPage * (pageNum - 1)
-    '    Dim sortdirection As String = "DESC"
-
-    '    If String.IsNullOrEmpty(sort) Then
-    '        sort = primaryKey
-    '    End If
-    '    If String.IsNullOrEmpty(query) Then
-    '        query = "1=1"
-    '    End If
-    '    Dim ret As Integer = 0
-    '    'tablename = stripDBNameOfDanger(tablename)
-    '    Dim searchStr As String = "SELECT TOP " & SizeString & " * FROM " & tablename & " WHERE " & primaryKey & " IN" & _
-    '    "(SELECT TOP " & SizeString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " AND " & primaryKey & " NOT IN" & _
-    '    "(SELECT TOP " & PrevString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " ORDER BY " & sort & ")" & _
-    '    "ORDER BY " & sort & ")" & _
-    '    "ORDER BY " & sort
-    '    Dim pageStr As String = "SELECT (COUNT(*) - 1)/" & SizeString & " + 1 AS PageCount FROM " & tablename & " WHERE " & query
-    '    SafeFillDataSetMultiSelect(searchStr & ";" & pageStr, ds, New String() {tablename, "PageCount"}, New Object() {primaryKey, itemsPerPage, pageNum, sort, query})
-    '    ret = ds.Tables("PageCount").Rows(0).Item(0)
-    '    Return ret
-    'End Function
-
-    <System.ComponentModel.Description("Returns a paged result for a given table with a seperate query.")> _
-    Public Overridable Function GetSortedPage( _
-        ByRef dt As DataTable, _
-        Optional ByVal tablename As String = Nothing, _
-        Optional ByVal itemsPerPage As Integer = 15, _
-        Optional ByVal pageNum As Integer = 1, _
-        Optional ByVal primaryKey As String = Nothing, _
-        Optional ByVal sort As String = "", _
-        Optional ByVal query As String = "", _
-        Optional ByRef parmValueArray As Object() = Nothing, _
-        Optional ByVal connection As DbConnection = Nothing) As Integer
-        'sort = BaseSecurityPage.RemoveSpecialCharacters(sort, "\s_\,")
-        Dim pagecountTable As String = "DTIPageCount1"
-        Dim ds As DataSet = dt.DataSet
-        If ds Is Nothing Then
-            ds = New DataSet
-            ds.Tables.Add(dt)
-        End If
-        If Not ds.Tables.Contains(pagecountTable) Then
-            ds.Tables.Add(pagecountTable)
-            ds.Tables(pagecountTable).Columns.Add(pagecountTable)
-        End If
-        ds.Tables(pagecountTable).Clear()
-        If tablename Is Nothing Then tablename = dt.TableName
-        If Not tablename.ToLower.Contains("select ") Then
-            If Not tablename.Contains("(") Then
-                If Not tablename.StartsWith("[") Then
-                    tablename = "[" & tablename & "]"
-                End If
-            End If
-        End If
-        If pageNum < 1 Then
-            pageNum = 1
-        End If
-        Dim SizeString As Integer = itemsPerPage
-        Dim PrevString As Integer = itemsPerPage * (pageNum - 1)
-        Dim sortdirection As String = "DESC"
-        If primaryKey Is Nothing Then
-            If Not dt.PrimaryKey Is Nothing AndAlso dt.PrimaryKey.Length > 0 Then
-                If dt.PrimaryKey.Length > 1 Then
-                    Throw New Exception("Get Sorted page needs a primary key specified for a table with a multi-column primary key.")
-                End If
-                primaryKey = dt.PrimaryKey(0).ColumnName
-            Else
-                primaryKey = "Id"
-            End If
-        End If
-        If String.IsNullOrEmpty(sort) Then
-            sort = primaryKey
-        End If
-        If String.IsNullOrEmpty(query) Then
-            query = "1=1"
-        End If
-        query = "(" & query & ")"
-        Dim ret As Integer = 0
-        'tablename = stripDBNameOfDanger(tablename)
-        Dim searchStr As String = "SELECT TOP " & SizeString & " * FROM " & tablename & " WHERE " & primaryKey & " IN" & _
-        "(SELECT TOP " & SizeString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " AND " & primaryKey & " NOT IN" & _
-        "(SELECT TOP " & PrevString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " ORDER BY " & sort & ")" & _
-        "ORDER BY " & sort & ")" & _
-        "ORDER BY " & sort
-        Dim pageStr As String = "SELECT (COUNT(*) - 1)/" & SizeString & " + 1 AS " & pagecountTable & " FROM " & tablename & " WHERE " & query
-        SafeFillDataSetMultiSelect(searchStr & ";" & pageStr, ds, New String() {dt.TableName, pagecountTable}, parmValueArray, connection)
-        ret = ds.Tables(pagecountTable).Rows(0).Item(0)
-        ds.Tables.Remove(pagecountTable)
-        Return ret
-
-    End Function
-
-    ''' <summary>
-    ''' A preventatie mesure to make sure getSortedPage is not vulnerable to sql injection.
-    ''' </summary>
-    ''' <param name="tablename"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("A preventatie mesure to make sure getSortedPage is not vulnerable to sql injection.")> _
-    Private Function stripSQLStringOfDanger(ByVal tablename As String) As String
-        Return tablename.Replace(" ", "").Replace(",", "").Replace("(", "").Replace(")", "").Replace("'", "").Replace("""", "").Replace("{", "").Replace("}", "")
-    End Function
-
-
-    '''' <summary>
-    ''''  Returns a paged result for a given table with a seperate query.
-    '''' </summary>
-    '''' <param name="tablename"></param>
-    '''' <param name="itemsPerPage"></param>
-    '''' <param name="pageNum"></param>
-    '''' <param name="primaryKey"></param>
-    '''' <param name="sort"></param>
-    '''' <param name="query"></param>
-    '''' <param name="ds"></param>
-    '''' <param name="connection"></param>
-    '''' <returns></returns>
-    '''' <remarks></remarks>
-    '<System.ComponentModel.Description("Returns a paged result for a given table with a seperate query.")> _
-    'Private Function SafeGetSortedPage(ByVal tablename As String, ByVal itemsPerPage As Integer, ByVal pageNum As Integer, Optional ByVal primaryKey As String = "Id", Optional ByVal sort As String = "", Optional ByVal query As String = "", Optional ByRef ds As DataSet = Nothing, Optional ByVal connection As DbConnection = Nothing) As Integer
-    '    Return SafeGetSortedPageWrapper(tablename, itemsPerPage, pageNum, primaryKey, sort, query, ds, connection)
-    'End Function
+	End Function
 
 #End Region
 
 #Region "Import Data"
 
-    'Public Overridable Sub importTableData(ByVal SourceDt As DataTable, Optional ByVal createIfMissing As Boolean = True, Optional ByVal connection As DbConnection = Nothing)
-    '    If connection Is Nothing Then connection = defaultConnection
-    '    If createIfMissing Then checkAndCreateTable(SourceDt)
-    '    Dim dt As DataTable = SourceDt.Clone
-    '    For Each row As DataRow In dt.Rows
-    '        row.SetAdded()
-    '    Next
-    '    Dim da As DbDataAdapter = cloneSQLAdaptor(createAdaptor("select * from [" & dt.TableName & "]"), connection)
-    '    da.InsertCommand.Parameters.Clear()
-    '    Dim command As String = "insert into [" & dt.TableName & "] ("
-    '    Dim vals As String = " VALUES ("
-    '    Dim i As Integer = 1
-    '    For Each col As DataColumn In dt.Columns
-    '        command &= "[" & col.ColumnName & "],"
-    '        Dim parm As DbParameter = Me.createParameter(col.ColumnName)
-    '        parm.ParameterName = "parm" & i
-    '        parm.SourceColumn = col.ColumnName
-    '        parm.SourceVersion = DataRowVersion.Current
-    '        da.InsertCommand.Parameters.Item("parm" & i) = parm
-    '        vals += "@parm" & i & ","
-    '        i += 1
-    '    Next
-    '    command = command.Trim(",")
-    '    vals = vals.Trim(",")
-    '    da.InsertCommand.CommandText = command & ") " & vals & ")"
-    '    da.Update(dt)
-    'End Sub
+	'Public Overridable Sub importTableData(ByVal SourceDt As DataTable, Optional ByVal createIfMissing As Boolean = True, Optional ByVal connection As DbConnection = Nothing)
+	'    If connection Is Nothing Then connection = defaultConnection
+	'    If createIfMissing Then checkAndCreateTable(SourceDt)
+	'    Dim dt As DataTable = SourceDt.Clone
+	'    For Each row As DataRow In dt.Rows
+	'        row.SetAdded()
+	'    Next
+	'    Dim da As DbDataAdapter = cloneSQLAdaptor(createAdaptor("select * from [" & dt.TableName & "]"), connection)
+	'    da.InsertCommand.Parameters.Clear()
+	'    Dim command As String = "insert into [" & dt.TableName & "] ("
+	'    Dim vals As String = " VALUES ("
+	'    Dim i As Integer = 1
+	'    For Each col As DataColumn In dt.Columns
+	'        command &= "[" & col.ColumnName & "],"
+	'        Dim parm As DbParameter = Me.createParameter(col.ColumnName)
+	'        parm.ParameterName = "parm" & i
+	'        parm.SourceColumn = col.ColumnName
+	'        parm.SourceVersion = DataRowVersion.Current
+	'        da.InsertCommand.Parameters.Item("parm" & i) = parm
+	'        vals += "@parm" & i & ","
+	'        i += 1
+	'    Next
+	'    command = command.Trim(",")
+	'    vals = vals.Trim(",")
+	'    da.InsertCommand.CommandText = command & ") " & vals & ")"
+	'    da.Update(dt)
+	'End Sub
 
-    'Public Overridable Sub importDataSet(ByVal ds As DataSet, Optional ByVal createIfMissing As Boolean = True, Optional ByVal SourceConnection As DbConnection = Nothing, Optional ByVal DestinationConnection As DbConnection = Nothing)
-    '    Dim c As New Collection
-    '    For Each t As DataTable In ds.Tables
-    '        c.Add(t, t.TableName)
-    '    Next
-    '    For Each r As DataRelation In ds.Relations
-    '        c.Remove(r.ChildTable.TableName)
-    '        c.Add(r.ChildTable, r.ChildTable.TableName, , c(r.ParentTable))
-    '    Next
-    '    For Each t As DataTable In c
-    '        importTableData(t, True)
-    '    Next
+	'Public Overridable Sub importDataSet(ByVal ds As DataSet, Optional ByVal createIfMissing As Boolean = True, Optional ByVal SourceConnection As DbConnection = Nothing, Optional ByVal DestinationConnection As DbConnection = Nothing)
+	'    Dim c As New Collection
+	'    For Each t As DataTable In ds.Tables
+	'        c.Add(t, t.TableName)
+	'    Next
+	'    For Each r As DataRelation In ds.Relations
+	'        c.Remove(r.ChildTable.TableName)
+	'        c.Add(r.ChildTable, r.ChildTable.TableName, , c(r.ParentTable))
+	'    Next
+	'    For Each t As DataTable In c
+	'        importTableData(t, True)
+	'    Next
 
-    'End Sub
+	'End Sub
 
-    Public Overridable Sub ExportData(ByVal ds As DataSet, ByVal DestinationConnection As DbConnection, Optional ByVal autofilldataset As Boolean = True)
+	Public Overridable Sub ExportData(ByVal ds As DataSet, ByVal DestinationConnection As DbConnection, Optional ByVal autofilldataset As Boolean = True)
         Dim destHelper As BaseHelper = DataBase.createHelper(DestinationConnection)
         ExportData(ds, destHelper, autofilldataset)
     End Sub

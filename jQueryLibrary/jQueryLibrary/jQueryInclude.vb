@@ -109,6 +109,10 @@ Public Class jQueryInclude
 	End Function
 
 	Private Sub addScriptBlock(ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional isolateJquery As Boolean = True)
+		Me.addInclude(makeRawScriptFile(script, minify, type, id, isolateJquery))
+	End Sub
+
+	Public Shared Function makeRawScriptFile(ByVal script As String, Optional ByVal minify As Boolean = False, Optional ByVal type As String = Nothing, Optional ByVal id As String = Nothing, Optional isolateJquery As Boolean = True) As ScriptFile
 		Dim sf As New ScriptFile("", type)
 		sf.src = script
 		If type Is Nothing OrElse type.ToLower().EndsWith("javascript") Then
@@ -125,8 +129,8 @@ Public Class jQueryInclude
 
 		sf.id = id
 		sf.isRawScript = True
-		Me.addInclude(sf)
-	End Sub
+		Return sf
+	End Function
 
 	''' <summary>
 	''' Adds a style block to the page.
@@ -174,6 +178,11 @@ Public Class jQueryInclude
 		Dim jQueryIncludeHeader As jQueryInclude = getInitialInclude(page)
 		jQueryIncludeHeader.addInclude(scriptLocation, type, useFullPath, disableMinimize, id)
 	End Sub
+
+	Public Shared Function getScriptFile(ByVal scriptLocation As String, Optional ByVal type As String = Nothing, Optional ByVal disableMinimize As Boolean = False, Optional ByVal useFullPath As Boolean = False, Optional ByVal id As String = "", Optional isRawScript As Boolean = False) As String
+		Return New ScriptFile(scriptLocation, type, useFullPath, disableMinimize, id, isRawScript).renderScript()
+	End Function
+
 
 	''' <summary>
 	''' removes a script file from the page.
@@ -331,30 +340,7 @@ Public Class jQueryInclude
 			writer.Write("<meta http-equiv=""X-UA-Compatible"" content=""IE=edge,chrome=1"">")
 			'Me.addScriptBlock("var " & jqueryVar & "=$.noConflict();$=" & jqueryVar & ";", isolateJquery:=False)
 			For Each sf As ScriptFile In jqueryIncludeList.Values
-				Dim idstring As String = ""
-				If sf.id <> sf.src Then
-					idstring = " id=""" & sf.id & """ "
-				End If
-				If sf.isRawScript Then
-					If sf.type.EndsWith("css") Then
-						writer.Write("<style" & idstring & " type=""" & sf.type & """>" & sf.src & "</style>")
-					ElseIf sf.type.EndsWith("javascript") Then
-						writer.Write("<script" & idstring & " type=""" & sf.type & """ language=""javascript"">" & sf.src & "</script>")
-					Else
-						writer.Write("<script" & idstring & " type=""" & sf.type & """>" & sf.src & "</script>")
-					End If
-
-				Else
-					If sf.type.EndsWith("css") Then
-						writer.Write("<link" & idstring & " rel=""stylesheet"" type=""" & sf.type & """ href=""" & sf.src & """ />")
-					ElseIf sf.type.EndsWith("javascript") Then
-						writer.Write("<script" & idstring & " type=""" & sf.type & """ src=""" & sf.src & """ language=""javascript""></script>")
-
-					Else
-						writer.Write("<script" & idstring & " type=""" & sf.type & """ src=""" & sf.src & """></script>")
-					End If
-				End If
-
+				writer.Write(sf.renderScript)
 				writer.Write(ControlsString)
 				writer.Write(vbCrLf)
 
@@ -507,12 +493,14 @@ Public Class jQueryInclude
 		jqueryIncludeList(sf.id) = sf
 	End Sub
 
+
+
 	''' <summary>
 	''' Removes filename
 	''' </summary>
 	''' <param name="filename"></param>
 	''' <remarks></remarks>
-    <System.ComponentModel.Description("Removes filename")> _
+	<System.ComponentModel.Description("Removes filename")> _
     Public Sub deleteInclude(ByVal filename As String)
         Dim sf As New ScriptFile(filename)
         jqueryIncludeList.Remove(sf.id)
@@ -591,6 +579,32 @@ Public Class jQueryInclude
 				Me.src = BaseClasses.Scripts.ScriptsURL(disableMinimize) & src
 			End If
 		End Sub
+
+		Public Function renderScript() As String
+			Dim idstring As String = ""
+			If id <> src Then
+				idstring = " id=""" & id & """ "
+			End If
+			If isRawScript Then
+				If type.EndsWith("css") Then
+					Return "<style" & idstring & " type=""" & type & """>" & src & "</style>"
+				ElseIf type.EndsWith("javascript") Then
+					Return "<script" & idstring & " type=""" & type & """ language=""javascript"">" & src & "</script>"
+				Else
+					Return "<script" & idstring & " type=""" & type & """>" & src & "</script>"
+				End If
+
+			Else
+				If type.EndsWith("css") Then
+					Return "<link" & idstring & " rel=""stylesheet"" type=""" & type & """ href=""" & src & """ />"
+				ElseIf type.EndsWith("javascript") Then
+					Return "<script" & idstring & " type=""" & type & """ src=""" & src & """ language=""javascript""></script>"
+
+				Else
+					Return "<script" & idstring & " type=""" & type & """ src=""" & src & """></script>"
+				End If
+			End If
+		End Function
 
 	End Class
 
