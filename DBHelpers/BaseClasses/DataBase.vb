@@ -235,7 +235,13 @@ Public Class DataBase
 	' from being called on every new session. 
 	'Private Shared asmhashtable As Hashtable
 	'This is where the helper object for any component, master component or controll is set
-	Private Shared Function createHelper(ByVal ProviderName As String, Optional ByVal isretry As Boolean = False) As BaseHelper
+	''' <summary>
+	''' create a helper from the type name. Like "sqlhelper", "SqliteHelper" or mysqlHelper. the Dll for that class must be accesable by this assembly (ie in the same folder or the GAC). 
+	''' </summary>
+	''' <param name="ProviderName"></param>
+	''' <param name="isretry"></param>
+	''' <returns></returns>
+	Public Shared Function createHelper(ByVal ProviderName As String, Optional ByVal isretry As Boolean = False) As BaseHelper
 
 		ProviderName = ProviderName.ToLower.Replace("system.data.", "")
 		ProviderName = ProviderName.Replace("client", "helper").Trim
@@ -448,7 +454,7 @@ Public Class DataBase
 
 	Public Sub mailhandler(ByVal body As String, ByVal toaddress As String, ByVal fromaddress As String, ByVal subject As String,
 						Optional ByVal ishtml As Boolean = True, Optional ByVal enableSSl As enableSSlMail = enableSSlMail.Auto,
-						Optional ByVal attachment As Net.Mail.Attachment = Nothing, Optional ByVal StrAttachment As String = Nothing, Optional ByVal StrAttachmentName As String = "", Optional requestRecipt As Boolean = False)
+						Optional ByVal attachment As Net.Mail.Attachment = Nothing, Optional ByVal StrAttachment As String = Nothing, Optional ByVal StrAttachmentName As String = "", Optional requestRecipt As Boolean = False, Optional CC As String = "", Optional BCC As String = "")
 
 
 
@@ -456,7 +462,7 @@ Public Class DataBase
 		Dim emailmsg As New Net.Mail.MailMessage()
 
 		With emailmsg
-			If Not fromaddress Is Nothing Then _
+			If Not String.IsNullOrEmpty( fromaddress) Then _
 				.From = New Net.Mail.MailAddress(fromaddress)
 			.Subject = subject
 			.Body = body
@@ -465,10 +471,21 @@ Public Class DataBase
 
 
 
-		Dim tos() As String = toaddress.Split(New Char() {";"}, System.StringSplitOptions.RemoveEmptyEntries)
+		Dim tos() As String = toaddress.Split(New Char() {";", ","}, System.StringSplitOptions.RemoveEmptyEntries)
 		For Each t As String In tos
 			emailmsg.To.Add(t)
 		Next
+
+		Dim ccs() As String = CC.Split(New Char() {";", ","}, System.StringSplitOptions.RemoveEmptyEntries)
+		For Each t As String In ccs
+			emailmsg.CC.Add(t)
+		Next
+
+		Dim bccs() As String = BCC.Split(New Char() {";", ","}, System.StringSplitOptions.RemoveEmptyEntries)
+		For Each t As String In bccs
+			emailmsg.Bcc.Add(t)
+		Next
+
 
 		If attachment IsNot Nothing Then
 			emailmsg.Attachments.Add(attachment)

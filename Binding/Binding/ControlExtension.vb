@@ -140,25 +140,25 @@ Public Module Extensions
         Return errorList
     End Function
 
-    <Extension()> _
-    Public Function saveAllRows(ByVal c As Control, Optional ByVal showerrors As Boolean = False, Optional connection As IDbConnection = Nothing) As List(Of ErrorSet)
-        Dim errorList As List(Of ErrorSet) = setAllRowValues(c, False)
+	<Extension()>
+	Public Function saveAllRows(ByVal c As Control, Optional ByVal showerrors As Boolean = False, Optional connection As Common.DbConnection = Nothing) As List(Of ErrorSet)
+		Dim errorList As List(Of ErrorSet) = setAllRowValues(c, False)
 
-        Dim h As BaseClasses.BaseHelper = Nothing
-        If connection IsNot Nothing Then h = BaseClasses.DataBase.createHelper(connection)
-        If h Is Nothing Then h = BaseClasses.DataBase.getHelper()
+		Dim h As BaseClasses.BaseHelper = Nothing
+		If connection IsNot Nothing Then h = BaseClasses.DataBase.createHelper(connection)
+		If h Is Nothing Then h = BaseClasses.DataBase.getHelper()
 
-        For Each t As DataTable In getPageTables(c)
-            h.Update(t)
-            'Try
-            '    h.Update(t)
-            'Catch ex As Exception
-            '    l.Add(New ErrorSet(ex, c, "Table Save"))
-            'End Try
-        Next
-        If showerrors Then showErrorList(c, errorList, True)
-        Return errorList
-    End Function
+		For Each t As DataTable In getPageTables(c)
+			h.Update(t)
+			'Try
+			'    h.Update(t)
+			'Catch ex As Exception
+			'    l.Add(New ErrorSet(ex, c, "Table Save"))
+			'End Try
+		Next
+		If showerrors Then showErrorList(c, errorList, True)
+		Return errorList
+	End Function
 
 #End Region
 

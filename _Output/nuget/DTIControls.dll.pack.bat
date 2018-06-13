@@ -1,7 +1,7 @@
 copy /Y ..\DTIControls.dll DTIControlls\lib
 copy /Y ..\DBHelpers\SQLiteHelper.dll DTIControlls\lib
 copy /Y ..\..\readme.md DTIControlls\readme.txt
-SET ver=1.0.16
+SET ver=1.0.17
 
 powershell -Command "(gc DTIControlls\DTIControls.dll.nuspec) -replace '1.0.11', '%ver%' | Out-File DTIControlls\DTIControls.dll.nuspec"
 powershell -Command "(gc DTIGrid\DTIGrid.dll.nuspec)      -replace '1.0.11', '%ver%' | Out-File DTIGrid\DTIGrid.dll.nuspec"

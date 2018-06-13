@@ -39,6 +39,9 @@
     <NoWarn>42353,42354,42355</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DTIControls">
+      <HintPath>..\..\_Output\DTIControls.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -60,12 +63,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\_DTIControls\_DTIControls.vbproj">
-      <Project>{13bdefd8-8a9a-4fa9-9e76-420d45237f85}</Project>
-      <Name>_DTIControls</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

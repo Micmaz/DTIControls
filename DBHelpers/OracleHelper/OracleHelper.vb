@@ -1,4 +1,4 @@
-Imports Oracle.DataAccess.Client
+Imports Oracle.ManagedDataAccess.Client
 Imports System.Data.Common
 Imports System.Text.RegularExpressions
 #If DEBUG Then

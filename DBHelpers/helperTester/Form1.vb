@@ -42,10 +42,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnExe_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExe.Click
-        Dim ds As New DataSet
-        Dim pagecount As Integer = sqlhelper.SafeGetSortedPage("Customers", 2, 1, "CustomerID", , , ds)
-        Me.DataGridView1.DataSource = ds.Tables("Customers")
-        MsgBox(pagecount)
+		Dim dt As New DataTable
+		Dim pagecount As Integer = sqlhelper.GetSortedPage(dt, "Customers", 2, 1, "CustomerID")
+		Me.DataGridView1.DataSource = dt
+		MsgBox(pagecount)
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click

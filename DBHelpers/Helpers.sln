@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SQLiteHelper-DTIControls", "SQLiteHelper\SQLiteHelper-DTIControls.vbproj", "{3066E943-F5A1-42D2-A7AF-C68A870CAB18}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SQLiteHelper", "SQLiteHelper\SQLiteHelper.vbproj", "{3066E943-F5A1-42D2-A7AF-C68A870CAB18}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mySQLHelper-DTIControls", "mySQLHelper\mySQLHelper-DTIControls.vbproj", "{220797E1-E2A4-4023-A374-FCB2DAC540F3}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mySQLHelper", "mySQLHelper\mySQLHelper.vbproj", "{2324BF09-7FA5-466B-BE17-3DEC640EBB6E}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "vistaDBHelper-DTIControls", "vistaDBHelper\vistaDBHelper-DTIControls.vbproj", "{90AC2333-CA17-4C7A-982B-819DB12C6E7A}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OracleHelper", "OracleHelper\OracleHelper.vbproj", "{8A8B6FED-D777-4F62-A52F-4CEFAABC82E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{3066E943-F5A1-42D2-A7AF-C68A870CAB18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3066E943-F5A1-42D2-A7AF-C68A870CAB18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3066E943-F5A1-42D2-A7AF-C68A870CAB18}.Release|Any CPU.Build.0 = Release|Any CPU
-		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{220797E1-E2A4-4023-A374-FCB2DAC540F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90AC2333-CA17-4C7A-982B-819DB12C6E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90AC2333-CA17-4C7A-982B-819DB12C6E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90AC2333-CA17-4C7A-982B-819DB12C6E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90AC2333-CA17-4C7A-982B-819DB12C6E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2324BF09-7FA5-466B-BE17-3DEC640EBB6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2324BF09-7FA5-466B-BE17-3DEC640EBB6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2324BF09-7FA5-466B-BE17-3DEC640EBB6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2324BF09-7FA5-466B-BE17-3DEC640EBB6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A8B6FED-D777-4F62-A52F-4CEFAABC82E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8B6FED-D777-4F62-A52F-4CEFAABC82E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8B6FED-D777-4F62-A52F-4CEFAABC82E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8B6FED-D777-4F62-A52F-4CEFAABC82E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
