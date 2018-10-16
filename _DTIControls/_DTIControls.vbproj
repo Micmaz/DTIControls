@@ -40,6 +40,12 @@
     <NoWarn>42353,42354,42355</NoWarn>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DTIControls.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -55,6 +61,7 @@
     <Import Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DTIControls.snk" />
     <None Include="ILMerge.props" />
     <None Include="packages.config">
       <SubType>Designer</SubType>

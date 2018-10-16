@@ -118,7 +118,7 @@
         } catch (err) { }
     }
     var radiolistchangeFunction = function() {
-        $(":radio[name=" + $(this).attr("name") + "]").each(function() {
+        $(":radio[name='" + $(this).attr("name") + "']").each(function() {
             setrb($($(this).next().children()[0]), this.checked);
         });
     };
