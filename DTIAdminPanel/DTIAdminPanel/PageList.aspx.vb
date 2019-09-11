@@ -99,8 +99,16 @@ Partial Public Class PageList
 		tlPages.addCustomContextMenu("Go To Page", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/doc_next.png", "pageVisibility", "gotoPage", True)
 		tlPages.addCustomContextMenu("Edit Properties", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/edit.png", "pageVisibility", "editPage", False)
 		tlPages.addCustomContextMenu("Duplicate", BaseClasses.Scripts.ScriptsURL & "DTIAdminPanel/copy.png", "pageVisibility", "dup", True)
-		bindTrees()
-	End Sub
+        bindTrees()
+        Dim x As jQueryLibrary.jQueryInclude = jQueryLibrary.jQueryInclude.getInitialInclude(Me)
+        Dim jqKEy As String = ""
+        For Each k As String In x.jqueryIncludeList.Keys
+            If k.ToLower().Contains("jquery-") Then
+                jqKEy = k
+            End If
+        Next
+        x.jqueryIncludeList.Remove(jqKEy)
+    End Sub
 
 #Region "Menu Items Tree events"
 	Private Sub tlMenuItems_NodeBound(ByRef node As DTIMiniControls.TreeListItem, ByVal isRoot As Boolean, ByVal hasChildren As Boolean) Handles tlMenuItems.NodeBound

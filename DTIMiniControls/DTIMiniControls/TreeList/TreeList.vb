@@ -884,7 +884,7 @@ Public Class TreeList
 #End Region
 
     Private Sub TreeList_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        jQueryLibrary.jQueryInclude.RegisterJQuery(Page, "1.3.2")
+        'jQueryLibrary.jQueryInclude.RegisterJQuery(Page, "1.3.2")
         jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIMiniControls/jquery.tree.js", , True)
         jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIMiniControls/jquery.tree.checkbox.js", , True)
         jQueryLibrary.jQueryInclude.addScriptFile(Me.Page, "DTIMiniControls/jquery.tree.contextmenu.js", , True)

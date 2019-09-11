@@ -12,7 +12,6 @@ Option Explicit On
 
 
 Partial Public Class PageList
-
     
     '''<summary>
     '''form1 control.
@@ -21,9 +20,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("form1 control.")> _
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
     
     '''<summary>
     '''HiddenField1 control.
@@ -32,9 +29,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("HiddenField1 control.")> _
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
     
     '''<summary>
     '''hfMenus control.
@@ -43,9 +38,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("hfMenus control.")> _
     Protected WithEvents hfMenus As Global.System.Web.UI.WebControls.HiddenField
-
     
     '''<summary>
     '''hfPages control.
@@ -54,9 +47,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("hfPages control.")> _
     Protected WithEvents hfPages As Global.System.Web.UI.WebControls.HiddenField
-
     
     '''<summary>
     '''hfRefresh control.
@@ -65,9 +56,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("hfRefresh control.")> _
     Protected WithEvents hfRefresh As Global.System.Web.UI.WebControls.HiddenField
-
     
     '''<summary>
     '''lblurl control.
@@ -76,9 +65,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("lblurl control.")> _
     Protected WithEvents lblurl As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
     
     '''<summary>
     '''btnSave control.
@@ -87,9 +74,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("btnSave control.")> _
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
-
     
     '''<summary>
     '''tooltip2 control.
@@ -98,9 +83,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("tooltip2 control.")> _
     Protected WithEvents tooltip2 As Global.DTIMiniControls.ToolTip
-
     
     '''<summary>
     '''tooltip1 control.
@@ -109,9 +92,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("tooltip1 control.")> _
     Protected WithEvents tooltip1 As Global.DTIMiniControls.ToolTip
-
     
     '''<summary>
     '''tlMenuItems control.
@@ -120,9 +101,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("tlMenuItems control.")> _
     Protected WithEvents tlMenuItems As Global.DTIMiniControls.TreeList
-
     
     '''<summary>
     '''tlPages control.
@@ -131,9 +110,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("tlPages control.")> _
     Protected WithEvents tlPages As Global.DTIMiniControls.TreeList
-
     
     '''<summary>
     '''btnAddStatic control.
@@ -142,9 +119,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("btnAddStatic control.")> _
     Protected WithEvents btnAddStatic As Global.System.Web.UI.WebControls.Button
-
     
     '''<summary>
     '''tbPageName control.
@@ -153,9 +128,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("tbPageName control.")> _
     Protected WithEvents tbPageName As Global.System.Web.UI.WebControls.TextBox
-
     
     '''<summary>
     '''ddlMasterPage control.
@@ -164,9 +137,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("ddlMasterPage control.")> _
     Protected WithEvents ddlMasterPage As Global.System.Web.UI.WebControls.DropDownList
-
     
     '''<summary>
     '''lblError control.
@@ -175,9 +146,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("lblError control.")> _
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
-
     
     '''<summary>
     '''btnAdd control.
@@ -186,9 +155,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("btnAdd control.")> _
     Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
-
     
     '''<summary>
     '''lbl control.
@@ -197,9 +164,7 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("lbl control.")> _
     Protected WithEvents lbl As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
     
     '''<summary>
     '''btnDuplicate control.
@@ -208,6 +173,5 @@ Partial Public Class PageList
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    <System.ComponentModel.Description("btnDuplicate control.")> _
     Protected WithEvents btnDuplicate As Global.System.Web.UI.WebControls.Button
 End Class
