@@ -30,8 +30,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
-<Assembly: WebResource("DTISortable.jquery-1.3.2.min.js", "text/js")> 
-<Assembly: WebResource("DTISortable.jquery-ui-1.7.2.custom.min.js", "text/js")> 
-<Assembly: WebResource("DTISortable.JScript1.js", "text/js")> 
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

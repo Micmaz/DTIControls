@@ -105,7 +105,7 @@ String.prototype.hashCode = function() {
 		if (!width) width = 400;
 		if (!height) height = 400;
 		if (!id) id = "dynamicDiv_" + URL.hashCode();
-
+		$('#' + id).remove(); //Maybe we should hid the id.. maybe I should create a new ID each time a dialog is created.. 
 		if ($('#' + id).length == 0) {
 			var dlgDiv = $("<div id='" + id + "' Title='" + title + "' style='height:" + height + "px;width:" + width + "px; overflow: hidden;'></div>")
 			$($('form')[0]).append(dlgDiv);

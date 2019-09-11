@@ -32,7 +32,7 @@ SQLiteHelper
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="M:SQLiteHelper.SQLiteHelper.createConnection(System.String@)">
+<member name="M:SQLiteHelper.SQLiteHelper.createConnection(System.String)">
  <summary>
  Creates a typed connection from a string.
  </summary>

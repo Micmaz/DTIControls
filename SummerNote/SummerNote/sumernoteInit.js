@@ -92,11 +92,13 @@ function setHtmlEditorValues() {
 	endEdit();
 	$(".dtiContentEdit").each(function () {
 		var $parent = $(this).parent();
-		$parent.find("#" + $parent.attr("id") + "_Hidden").val($.base64.encode($(this).html()));
+		//This strips all non-ascii characters from the HTML. Other language support may not work. poss user encodeURIComponent(str) as well.
+		var html = $(this).html();
+		html = html.replace(/[^\x00-\x7F]/g,"");
+		$parent.find("#" + $parent.attr("id") + "_Hidden").val($.base64.encode(html));
 	})
 	return true;
 }
-
 function activate(item) {
 	dest(curreditor);
 	curreditor = item;

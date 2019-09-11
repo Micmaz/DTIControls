@@ -94,33 +94,33 @@ Public Class DataBase
         End Set
     End Property
 
-	
-	
+
+
     ''' <summary>
     ''' A helper method to create a dummy session for winforms applications and design-time use.
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("A helper method to create a dummy session for winforms applications and design-time use.")> _
-    Public Shared Function createSession() As HttpSessionState
-        If Not httpSession Is Nothing Then Return httpSession
+    <System.ComponentModel.Description("A helper method to create a dummy session for winforms applications and design-time use.")>
+    Public Shared Function createSession(Optional createNew As Boolean = False) As HttpSessionState
+        If Not createNew AndAlso Not httpSession Is Nothing Then Return httpSession
         Dim container As New HttpSessionStateContainer(Guid.NewGuid.ToString("N"), New SessionStateItemCollection(), New HttpStaticObjectsCollection(), 5, True, HttpCookieMode.AutoDetect, SessionStateMode.InProc, False)
-        Dim state As HttpSessionState = Activator.CreateInstance(GetType(HttpSessionState), _
-            BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance Or BindingFlags.CreateInstance, _
-            Nothing, _
-            New Object() {container}, _
-            System.Globalization.CultureInfo.CurrentCulture _
+        Dim state As HttpSessionState = Activator.CreateInstance(GetType(HttpSessionState),
+            BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.Instance Or BindingFlags.CreateInstance,
+            Nothing,
+            New Object() {container},
+            System.Globalization.CultureInfo.CurrentCulture
         )
         Return state
     End Function
 
-	''' <summary>
-	''' The http session.
-	''' </summary>
-	''' <value></value>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("The http session.")>
+    ''' <summary>
+    ''' The http session.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("The http session.")>
 	Public Shared ReadOnly Property httpSession() As System.Web.SessionState.HttpSessionState
 		Get
 			If Not HttpContext.Current Is Nothing Then

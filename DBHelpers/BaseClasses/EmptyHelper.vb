@@ -46,7 +46,7 @@ Public Class EmptyHelper
 	''' <returns></returns>
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Creates a typed connection from a string.")>
-	Public Overrides Function createConnection(ByRef ConnectionString As String) As System.Data.Common.DbConnection
+	Public Overrides Function createConnection(ByVal ConnectionString As String) As System.Data.Common.DbConnection
 		Return New System.Data.SqlClient.SqlConnection()
 	End Function
 

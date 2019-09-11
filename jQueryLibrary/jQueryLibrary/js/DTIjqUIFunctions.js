@@ -122,11 +122,11 @@ function ShowAjaxError(responce) {
     return false;
 }
 
-function ajaxSubmitButton(updateAreaList, button) {
+    function ajaxSubmitButton(updateAreaList, button, funcAfterInsert) {
     $(button).unbind('click');
     $(button).click(function() {
         var options = {// Make submits hidden. and cool.
-            success: function(data) { refreshPage(updateAreaList, true, data, true); },
+            success: function(data) { refreshPage(updateAreaList, true, data, true,null,funcAfterInsert); },
             error: ShowAjaxError,
             beforeSubmit: function(formData, jqForm, options) {
                 formData.push({ name: $(button).attr("name"), type: "submit", required: false, value: $(button).attr("value") });
@@ -138,7 +138,7 @@ function ajaxSubmitButton(updateAreaList, button) {
     });
 }
 
-function refreshPage(selectorList, updateViewstate, data, executeScript, returnSubstring) {
+function refreshPage(selectorList, updateViewstate, data, executeScript, returnSubstring, funcAfterInsert) {
     var fullResp = data;
     if (!returnSubstring) {
         //data = data.substring(getTagIndex(data, data.indexOf("<" + "body"))); //Concatinate the search so that the string is not found in this script block
@@ -159,59 +159,73 @@ function refreshPage(selectorList, updateViewstate, data, executeScript, returnS
     for (i = 0; i < selectors.length; i++) {
         var selector = selectors[i];
         var endIndex = 0;
-        $(selector).each(function() {  //for each item in this selector (Slided in new objects and slides out old ones)
-            var old = $(this).clone();
-            var newElem = $(selector, data);
-            $(this).outerHTML(newElem.outerHTML());
-            //$(this).html(newElem.html());
-            newElem = $(this);
-            $(this).find('input:checkbox').checkbox();
-            $(this).find('input:radio').radio();
-            $(this).find('button, input:submit, input:button, input:reset').button();
-            $(this).find('input[type=text],input[type=password],textarea,select').textbox();
-            //$.each($(newElem)[0].attributes, function(i, attrib) {
-            //    $(this).attr(attrib.name, attrib.value);
-            //});
+        // $(selector).each(function () {  //for each item in this selector (Slided in new objects and slides out old ones)
 
-            if (showAnimation && showAnimation.name == 'none') { } else {
-                $(this).children().each(function() {  //Slide in new objects
-                    if ($(this).attr("id") && $(old).find("#" + $(this).attr("id")).length == 0) {
-                        //$(this).hide().show("explode", {}, 300);
-                        if (!showAnimation) {
-                            $(this).hide().slideDown("slow");
-                        } else {
-                            $(this).hide().show(showAnimation.name, showAnimation.parms, showAnimation.speed);
-                            //$(this).hide().show(showAnimation.name, showAnimation.parms, showAnimation.speed);
-                        }
-                    }
-                });
-                var lastmatch = null;
-                $(old).children().each(function() {  //Slide out old missing objects
-                    if ($(this).attr("id"))
-                        if ($(newElem).find("#" + $(this).attr("id")).length == 0) {
+        var old = $(selector).clone();
+        var newElem = $(selector, data);
+        var tmpshow = $("<div>").hide();
+        $("body").append(tmpshow);
+        tmpshow.append(newElem);
+
+        newElem.find('input:checkbox').checkbox();
+        newElem.find('input:radio').radio();
+        newElem.find('button, input:submit, input:button, input:reset').button();
+        newElem.find('input[type=text],input[type=password],textarea,select').textbox();
+
+        if (funcAfterInsert) {
+            funcAfterInsert(newElem, old);
+        }
+        tmpshow.remove();
+
+        $(selector).outerHTML(newElem.outerHTML());
+
+        //$(this).html(newElem.html());
+        newElem = $(selector);
+        //$.each($(newElem)[0].attributes, function(i, attrib) {
+        //    $(this).attr(attrib.name, attrib.value);
+        //});
+
+        if (!showAnimation || showAnimation.name == 'none') { } else {
+            newElem.children().each(function () {  //Slide in new objects
+                var child = $(this);
+                if (child.attr("id") && $(old).find("#" + child.attr("id")).length == 0) {
+                    //$(this).hide().show("explode", {}, 300);
+                    //if (showAnimation) {
+                    child.hide().slideDown("slow");
+                    //} else {
+                    //    $(this).hide().show(showAnimation.name, showAnimation.parms, showAnimation.speed);
+                    //$(this).hide().show(showAnimation.name, showAnimation.parms, showAnimation.speed);
+                    //}
+                }
+            });
+            var lastmatch = null;
+            $(old).children().each(function () {  //Slide out old missing objects
+                var child = $(this);
+                if (child.attr("id"))
+                    if ($(newElem).find("#" + child.attr("id")).length == 0) {
                         if (lastmatch == null) {
                             $(newElem).prepend($(this));
                         } else { lastmatch.after($(this)) }
                         lastmatch = $(this);
                         //$(this).hide("explode", {}, 300, function() { $(this).remove(); });
                         if (!hideAnimation) {
-                            $(this).slideUp("slow", function() { $(this).remove(); });
+                            $(this).slideUp("slow", function () { $(this).remove(); });
                         } else {
-                            $(this).hide(hideAnimation.name, hideAnimation.parms, hideAnimation.speed, function() { $(this).remove(); });
+                            $(this).hide(hideAnimation.name, hideAnimation.parms, hideAnimation.speed, function () { $(this).remove(); });
                             //$(this).hide(hideAnimation.name, hideAnimation.parms, hideAnimation.speed, function() { $(this).remove(); });
                         }
                     } else {
                         lastmatch = $(newElem).find("#" + $(this).attr("id"));
                     }
-                });
-            }
-        });
+            });
+        }
+        // });
         var skipfirst = 0;
         if (executeScript) {
 
-            var loadAllScript = function() {
+            var loadAllScript = function () {
                 var pb = __doPostBack;
-                $(fullResp).filter("script").each(function() {
+                $(fullResp).filter("script").each(function () {
                     if (!$(this).attr("src")) {
                         //if ($(this).attr("id") && $("#" + $(this).attr("id")).length == 0)
                         if ($(this).attr("id") != "thiscode" && $(this).attr("id") != "bodyFadein")
@@ -222,9 +236,9 @@ function refreshPage(selectorList, updateViewstate, data, executeScript, returnS
                 jQuery.ready();
             };
             var loaded = false;
-            $(fullResp).filter("script").each(function() {
+            $(fullResp).filter("script").each(function () {
                 if ($(this).attr("src") && $("script[src='" + $(this).attr("src") + "']").length == 0) {
-                    $.getScript($(this).attr("src"), function() { loadAllScript(); });
+                    $.getScript($(this).attr("src"), function () { loadAllScript(); });
                     loaded = true;
                 }
             });
@@ -235,7 +249,7 @@ function refreshPage(selectorList, updateViewstate, data, executeScript, returnS
     }
     dataobj = null;
 }
-   
+  
 window.showAnimation = null;
 window.hideAnimation = null;
 function setAnimation(name, speed, optionalParms) {
@@ -258,25 +272,25 @@ function createAnimation(aname, aspeed, optionalParms) {
 
 
 var latch = true;
-function doRefresh(selectorList, updateViewstate) {
+    function doRefresh(selectorList, updateViewstate, funcAfterInsert) {
     if (updateViewstate == null) updateViewstate = true;
     //var re = /<\s*([a-z]+)\b[^>]*>([\S\s]*?)<\s*\/\s*\1\s*>|<[^>]*>/;
     if ($('.ui-dialog:visible').length == 0 && latch) {   //Don't do a page update if a dialog is open. That could get messy.
         latch = false
         $.get(window.location.href + "?&ajaxUniqueDate=" + new Date().getTime(), function(data) {
-            refreshPage(selectorList, updateViewstate, data);
+            refreshPage(selectorList, updateViewstate, data, null, null , funcAfterInsert);
         });
         latch = true;
     }    
 }
 
-function updateAreas(filterList, delay) {
+    function updateAreas(filterList, delay, funcAfterInsert) {
     if (delay == null) {
-        doRefresh(filterList);
+        doRefresh(filterList,null , funcAfterInsert);
     } else {
         if (delay < 10000)
             delay = 10000;
-        setInterval("doRefresh('" + filterList + "');", delay);
+        setInterval(function () { doRefresh(filterList,null , funcAfterInsert); }, delay);
     }
 }
 
@@ -345,9 +359,9 @@ function updateAreas(filterList, delay) {
         dataobj = null;
     } 
 
-function makePageAjaxy(updateAreaList,executeScript) {
+    function makePageAjaxy(updateAreaList, executeScript, funcAfterInsert) {
     var options = {// Make submits hidden. and cool.
-        success: function(data) { refreshPage(updateAreaList, true, data, executeScript); },
+        success: function (data) { refreshPage(updateAreaList, true, data, executeScript,null , funcAfterInsert); },
         error: ShowAjaxError
     };
     addCSSRule(".ui-effects-wrapper", "display", "inline");
@@ -429,6 +443,10 @@ function rethemeBody() {
     themeObjectOverridable('ui-widget', 'body', 'bodyOverride');
     //themeObjectOverridable(cssClassName, objectSelector, styleId, excludeAttribs)
 }
+function enableRefresh(val) {
+    latch = val;
+    if (!val) latch = false;
+}
 
 window.jqalert = jqalert;
 window.getMaxZ = getMaxZ;
@@ -453,7 +471,7 @@ window.addCSSRule = addCSSRule;
 window.themeObjectOverridable = themeObjectOverridable;
 window.css2json = css2json;
 window.rethemeBody = rethemeBody;
-
+window.enableRefresh = enableRefresh;
 	return {
 		jqalert: jqalert,
 		getMaxZ: getMaxZ,
@@ -477,7 +495,8 @@ window.rethemeBody = rethemeBody;
 		addCSSRule: addCSSRule,
 		themeObjectOverridable: themeObjectOverridable,
 		css2json: css2json,
-		rethemeBody: rethemeBody,
+        rethemeBody: rethemeBody,
+        enableRefresh: enableRefresh
 }
 
 

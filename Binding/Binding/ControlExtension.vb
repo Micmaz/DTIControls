@@ -179,7 +179,7 @@ Public Module Extensions
         Dim ret As String = ""
         If row Is Nothing OrElse columns Is Nothing Then Return ""
         For Each col As String In columns
-            If row(col) IsNot DBNull.Value Then
+            If col IsNot Nothing AndAlso row(col) IsNot DBNull.Value Then
                 ret &= row(col) & dilimiter
             End If
         Next
@@ -509,6 +509,12 @@ Public Module Extensions
         Return errors
     End Function
 
+    Private Function canbindCtrlRetArray(mainctrl As Control, ctrl As Control, row As DataRow, errors As List(Of ErrorSet)) As String()
+        Dim ret As String = canbindCtrl(mainctrl, ctrl, row, errors)
+        If ret Is Nothing Then Return New String() {}
+        Return New String() {ret}
+    End Function
+
     Private Function canbindCtrl(mainctrl As Control, ctrl As Control, row As DataRow, errors As List(Of ErrorSet)) As String
         If Not setControls(mainctrl).ContainsKey(ctrl.ID) Then
             Dim colname As String = ctrl.ID
@@ -546,7 +552,7 @@ Public Module Extensions
     End Function
 
 
-    <Extension()> _
+    <Extension()>
     Private Function setControls(ByVal c As Control) As Hashtable
         If getControlCache(c, "setControls") Is Nothing Then
             setControlCache(c, "setControls", New Hashtable)
@@ -554,7 +560,7 @@ Public Module Extensions
         Return getControlCache(c, "setControls")
     End Function
 
-    <Extension()> _
+    <Extension()>
     Public Sub setText(ByVal c As Control, row As DataRow, ByVal ParamArray columns As String())
         setRow(c, row)
         If Not c.Page.IsPostBack Then
@@ -567,21 +573,21 @@ Public Module Extensions
         End If
     End Sub
 
-    <Extension()> _
+    <Extension()>
     Public Sub setText(ByVal c As Control, item As Control, row As DataRow, ByVal ParamArray columns As String())
-		If GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(c.GetType()) Then
-			setText(c, CType(item, JqueryUIControls.Autocomplete), row, columns)
-		ElseIf GetType(TextBox).IsAssignableFrom(c.GetType()) Then
-			setText(c, CType(item, TextBox), row, columns)
-		ElseIf GetType(Label).IsAssignableFrom(c.GetType()) Then
-			setText(c, CType(item, Label), row, columns)
-		ElseIf GetType(DropDownList).IsAssignableFrom(c.GetType()) Then
-			setText(c, CType(item, DropDownList), row, columns)
-		ElseIf GetType(CheckBox).IsAssignableFrom(c.GetType()) Then
-			setText(c, CType(item, CheckBox), row, columns)
-		ElseIf GetType(RadioButton).IsAssignableFrom(c.GetType()) Then
-			setText(c, CType(item, RadioButton), row, columns)
-		Else
+        If GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(c.GetType()) Then
+            setText(c, CType(item, JqueryUIControls.Autocomplete), row, columns)
+        ElseIf GetType(TextBox).IsAssignableFrom(c.GetType()) Then
+            setText(c, CType(item, TextBox), row, columns)
+        ElseIf GetType(Label).IsAssignableFrom(c.GetType()) Then
+            setText(c, CType(item, Label), row, columns)
+        ElseIf GetType(DropDownList).IsAssignableFrom(c.GetType()) Then
+            setText(c, CType(item, DropDownList), row, columns)
+        ElseIf GetType(CheckBox).IsAssignableFrom(c.GetType()) Then
+            setText(c, CType(item, CheckBox), row, columns)
+        ElseIf GetType(RadioButton).IsAssignableFrom(c.GetType()) Then
+            setText(c, CType(item, RadioButton), row, columns)
+        Else
             Try
                 runM(item, "Text", New Object() {getValueString(row, columns)})
             Catch ex As Exception
@@ -596,11 +602,11 @@ Public Module Extensions
 
     End Sub
 
-    <Extension()> _
+    <Extension()>
     Public Sub setText(ByVal c As Control, ByVal ac As JqueryUIControls.Autocomplete, ByVal row As DataRow, ByVal ParamArray columns As String())
         If columns.Length = 0 Then
             'columns = New String() {ac.ID}
-            columns = New String() {canbindCtrl(c, ac, row, New List(Of ErrorSet))}
+            columns = canbindCtrlRetArray(c, ac, row, New List(Of ErrorSet))
         End If
         ac.Text = getValueString(row, columns)
         If columns.Length = 1 Then
@@ -612,23 +618,23 @@ Public Module Extensions
         End If
     End Sub
 
-    <Extension()> _
+    <Extension()>
     Public Sub setText(ByVal c As Control, ByVal lbl As Label, ByVal row As DataRow, ByVal ParamArray columns As String())
         If columns.Length = 0 Then
             'columns = New String() {lbl.ID}
-            columns = New String() {canbindCtrl(c, lbl, row, New List(Of ErrorSet))}
+            columns = canbindCtrlRetArray(c, lbl, row, New List(Of ErrorSet))
         End If
         lbl.Text = getValueString(row, columns)
     End Sub
 
-    <Extension()> _
+    <Extension()>
     Public Sub setText(ByVal c As Control, ByVal tb As TextBox, ByVal row As DataRow, ByVal ParamArray columns As String())
         If columns.Length = 0 Then
             'columns = New String() {tb.ID}
-            columns = New String() {canbindCtrl(c, tb, row, New List(Of ErrorSet))}
+            columns = canbindCtrlRetArray(c, tb, row, New List(Of ErrorSet))
         End If
         tb.Text = getValueString(row, columns)
-        If columns.Length = 1 Then
+        If columns IsNot Nothing AndAlso columns.Length = 1 Then
             If row.Table.Columns(columns(0)).MaxLength > 0 Then
                 tb.MaxLength = row.Table.Columns(columns(0)).MaxLength
             End If
@@ -636,11 +642,11 @@ Public Module Extensions
         End If
     End Sub
 
-    <Extension()> _
+    <Extension()>
     Public Sub setText(ByVal c As Control, ByVal cb As CheckBox, ByVal row As DataRow, ByVal ParamArray columns As String())
         If columns.Length = 0 Then
             'columns = New String() {cb.ID}
-            columns = New String() {canbindCtrl(c, cb, row, New List(Of ErrorSet))}
+            columns = canbindCtrlRetArray(c, cb, row, New List(Of ErrorSet))
         End If
         Dim val As String = getValueString(row, columns)
         Dim b As Boolean = False
@@ -659,13 +665,13 @@ Public Module Extensions
         End If
     End Sub
 
-	<Extension()>
-	Public Sub setText(ByVal c As Control, ByVal rb As RadioButton, ByVal row As DataRow, ByVal ParamArray columns As String())
-		If columns.Length = 0 Then
-			'columns = New String() {cb.ID}
-			columns = New String() {canbindCtrl(c, rb, row, New List(Of ErrorSet))}
-		End If
-		Dim val As String = getValueString(row, columns)
+    <Extension()>
+    Public Sub setText(ByVal c As Control, ByVal rb As RadioButton, ByVal row As DataRow, ByVal ParamArray columns As String())
+        If columns.Length = 0 Then
+            'columns = New String() {cb.ID}
+            columns = canbindCtrlRetArray(c, rb, row, New List(Of ErrorSet))
+        End If
+        Dim val As String = getValueString(row, columns)
 		If columns.Length = 1 Then
 			setControls(c)(rb.ID) = columns(0)
 			Dim colname = columns(0)

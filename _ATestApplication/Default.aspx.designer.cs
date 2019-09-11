@@ -83,5 +83,50 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DTIAdminPanel.LoginControl LoginControl;
+        
+        /// <summary>
+        /// tlMenuItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DTIMiniControls.TreeList tlMenuItems;
+        
+        /// <summary>
+        /// tlPages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DTIMiniControls.TreeList tlPages;
+        
+        /// <summary>
+        /// ul1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DTIMiniControls.TreeListUL ul1;
+        
+        /// <summary>
+        /// TreeListItem1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DTIMiniControls.TreeListItem TreeListItem1;
+        
+        /// <summary>
+        /// btnAddStatic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddStatic;
     }
 }

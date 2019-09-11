@@ -29,6 +29,7 @@
     <OutputPath>..\_Output\</OutputPath>
     <DocumentationFile>DTIControls.xml</DocumentationFile>
     <NoWarn>42353,42354,42355</NoWarn>
+    <WarningLevel>1</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -39,12 +40,16 @@
     <DocumentationFile>DTIControls.xml</DocumentationFile>
     <NoWarn>42353,42354,42355</NoWarn>
     <DebugSymbols>true</DebugSymbols>
+    <WarningLevel>1</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>DTIControls.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

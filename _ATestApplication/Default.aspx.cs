@@ -14,7 +14,8 @@ namespace _ATestApplication
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			Hashtable f = new Hashtable();
+            DTIControls.Share.AdminPanelOn = true;
+            Hashtable f = new Hashtable();
 			Regex c;
 			//for(var f in System.IO.DirectoryInfo("C:"))
 		}

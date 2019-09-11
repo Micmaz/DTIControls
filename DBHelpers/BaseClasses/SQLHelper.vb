@@ -47,26 +47,27 @@ Public Class SQLHelper
         Return New SqlCommandBuilder(adaptor)
     End Function
 
-    ''' <summary>
-    ''' Creates a typed connection from a string.
-    ''' </summary>
-    ''' <param name="ConnectionString"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed connection from a string.")> _
-    Public Overrides Function createConnection(ByRef ConnectionString As String) As System.Data.Common.DbConnection
-        Dim cs As String = Regex.Replace(ConnectionString, "persist\s*security\s*info\s*\=\s*(true|false)", "")
-        Return New SqlConnection(cs & ";Persist Security Info=True;")
-    End Function
+	''' <summary>
+	''' Creates a typed connection from a string.
+	''' </summary>
+	''' <param name="ConnectionString"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed connection from a string.")>
+	Public Overrides Function createConnection(ByVal ConnectionString As String) As System.Data.Common.DbConnection
+		Dim cs As String = ConnectionString.Clone()
+		cs = Regex.Replace(cs, "persist\s*security\s*info\s*\=\s*(true|false)", "")
+		Return New SqlConnection(cs & ";Persist Security Info=True;")
+	End Function
 
-    ''' <summary>
-    ''' Creates a typed dbParameter from a name and value
-    ''' </summary>
-    ''' <param name="name">the parm name.</param>
-    ''' <param name="value">the parm value.</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed dbParameter from a name and value")> _
+	''' <summary>
+	''' Creates a typed dbParameter from a name and value
+	''' </summary>
+	''' <param name="name">the parm name.</param>
+	''' <param name="value">the parm value.</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed dbParameter from a name and value")> _
     Public Overloads Overrides Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As System.Data.Common.DbParameter
         If name Is Nothing Then Return New SqlParameter()
         Return New SqlParameter(name, value)

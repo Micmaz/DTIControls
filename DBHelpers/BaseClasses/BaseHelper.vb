@@ -114,198 +114,198 @@ Public MustInherit Class BaseHelper
 
 #Region "Mustinherit"
 
-    ''' <summary>
-    ''' Creates a typed connection from a string.
-    ''' </summary>
-    ''' <param name="ConnectionString"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed connection from a string.")> _
-    Public MustOverride Function createConnection(ByRef ConnectionString As String) As DbConnection
+	''' <summary>
+	''' Creates a typed connection from a string.
+	''' </summary>
+	''' <param name="ConnectionString"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed connection from a string.")>
+	Public MustOverride Function createConnection(ByVal ConnectionString As String) As DbConnection
 
-    ''' <summary>
-    ''' Creates a DbDataAdapter from a command string.
-    ''' </summary>
-    ''' <param name="SQLcommand">Select command used to generate the DbDataAdapter</param>
-    ''' <param name="connection">optional dBConnection that will override the default conection.</param>
-    ''' <returns>a DbCommand typed to the base helper type.</returns>
-    ''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-    <System.ComponentModel.Description("Creates a DbDataAdapter from a command string.")> _
-    Public MustOverride Function createAdaptor(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbDataAdapter
+	''' <summary>
+	''' Creates a DbDataAdapter from a command string.
+	''' </summary>
+	''' <param name="SQLcommand">Select command used to generate the DbDataAdapter</param>
+	''' <param name="connection">optional dBConnection that will override the default conection.</param>
+	''' <returns>a DbCommand typed to the base helper type.</returns>
+	''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
+	<System.ComponentModel.Description("Creates a DbDataAdapter from a command string.")>
+	Public MustOverride Function createAdaptor(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbDataAdapter
 
-    ''' <summary>
-    ''' Creates a DbCommand from a command string.
-    ''' </summary>
-    ''' <param name="SQLcommand">Select command used to generate the DbCommand</param>
-    ''' <param name="connection">optional dBConnection that will override the default conection.</param>
-    ''' <returns>a DbCommand typed to the base helper type.</returns>
-    ''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-    <System.ComponentModel.Description("Creates a DbCommand from a command string.")> _
-    Public MustOverride Function createCommand(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbCommand
+	''' <summary>
+	''' Creates a DbCommand from a command string.
+	''' </summary>
+	''' <param name="SQLcommand">Select command used to generate the DbCommand</param>
+	''' <param name="connection">optional dBConnection that will override the default conection.</param>
+	''' <returns>a DbCommand typed to the base helper type.</returns>
+	''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
+	<System.ComponentModel.Description("Creates a DbCommand from a command string.")>
+	Public MustOverride Function createCommand(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbCommand
 
-    ''' <summary>
-    ''' Creates a typed dbParameter from a name and value
-    ''' </summary>
-    ''' <param name="name">the parm name.</param>
-    ''' <param name="value">the parm value.</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed dbParameter from a name and value")> _
-    Public MustOverride Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As DbParameter
+	''' <summary>
+	''' Creates a typed dbParameter from a name and value
+	''' </summary>
+	''' <param name="name">the parm name.</param>
+	''' <param name="value">the parm value.</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed dbParameter from a name and value")>
+	Public MustOverride Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As DbParameter
 
-    ''' <summary>
-    ''' Creates a typed parameter from a genric DbParameter
-    ''' </summary>
-    ''' <param name="parameter">the DbParameter</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed parameter from a genric DbParameter")> _
-    Public MustOverride Function createParameter(ByRef parameter As DbParameter) As DbParameter
+	''' <summary>
+	''' Creates a typed parameter from a genric DbParameter
+	''' </summary>
+	''' <param name="parameter">the DbParameter</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed parameter from a genric DbParameter")>
+	Public MustOverride Function createParameter(ByRef parameter As DbParameter) As DbParameter
 
-    ''' <summary>
-    ''' Creates a typed DbCommandBuilder
-    ''' </summary>
-    ''' <param name="adaptor">The typed DbDataAdapter </param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed DbCommandBuilder")> _
-    Public MustOverride Function createCommandBuilder(ByRef adaptor As DbDataAdapter) As DbCommandBuilder
+	''' <summary>
+	''' Creates a typed DbCommandBuilder
+	''' </summary>
+	''' <param name="adaptor">The typed DbDataAdapter </param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed DbCommandBuilder")>
+	Public MustOverride Function createCommandBuilder(ByRef adaptor As DbDataAdapter) As DbCommandBuilder
 
-    ''' <summary>
-    ''' Checks if a datatable exists in a database.
-    ''' </summary>
-    ''' <param name="tablename">The name of the table that may eexist in the database.</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Checks if a datatable exists in a database.")> _
-    Public MustOverride Function checkDBObjectExists(ByVal tablename As String) As Boolean
+	''' <summary>
+	''' Checks if a datatable exists in a database.
+	''' </summary>
+	''' <param name="tablename">The name of the table that may eexist in the database.</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Checks if a datatable exists in a database.")>
+	Public MustOverride Function checkDBObjectExists(ByVal tablename As String) As Boolean
 
-    ''' <summary>
-    ''' Creates a table in the database based on the schema of the datatable passed in.
-    ''' </summary>
-    ''' <param name="dt">The datatable that is usedto createthe table in the database. Only schema is used, data is ignored.</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a table in the database based on the schema of the datatable passed in.")> _
-    Public Function createTable(ByVal dt As DataTable) As Boolean
-        Try
-            Dim createstr As String = getCreateTableString(dt)
-            ExecuteNonQuery(createstr)
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
+	''' <summary>
+	''' Creates a table in the database based on the schema of the datatable passed in.
+	''' </summary>
+	''' <param name="dt">The datatable that is usedto createthe table in the database. Only schema is used, data is ignored.</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a table in the database based on the schema of the datatable passed in.")>
+	Public Function createTable(ByVal dt As DataTable) As Boolean
+		Try
+			Dim createstr As String = getCreateTableString(dt)
+			ExecuteNonQuery(createstr)
+		Catch ex As Exception
+			Return False
+		End Try
+	End Function
 
-    ''' <summary>
-    ''' Builds a create script for a table in the database based on the schema of the datatable passed in.
-    ''' </summary>
-    ''' <param name="dt">The datatable that is usedto build the create String. Only schema is used, data is ignored.</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Builds a create script for a table in the database based on the schema of the datatable passed in.")> _
-    Public MustOverride Function getCreateTableString(ByVal dt As DataTable) As String
+	''' <summary>
+	''' Builds a create script for a table in the database based on the schema of the datatable passed in.
+	''' </summary>
+	''' <param name="dt">The datatable that is usedto build the create String. Only schema is used, data is ignored.</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Builds a create script for a table in the database based on the schema of the datatable passed in.")>
+	Public MustOverride Function getCreateTableString(ByVal dt As DataTable) As String
 
 #End Region
 
 #Region "Generic Methods"
 
-    ''' <summary>
-    ''' Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.
-    ''' </summary>
-    ''' <param name="connectionString">The ConnectionString as a string.</param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.")> _
-    Public Sub setDefaultConnectionString(ByVal connectionString As String)
-        adaptorHash = Nothing
-        defaultConnection_p = createConnection(connectionString)
-    End Sub
+	''' <summary>
+	''' Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.
+	''' </summary>
+	''' <param name="connectionString">The ConnectionString as a string.</param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.")>
+	Public Sub setDefaultConnectionString(ByVal connectionString As String)
+		adaptorHash = Nothing
+		defaultConnection_p = createConnection(connectionString)
+	End Sub
 
-    ''' <summary>
-    ''' Shared function to return the current stored baseHelper used in a web application.
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Shared function to return the current stored baseHelper used in a web application.")> _
-    Public Shared Function getHelper() As BaseHelper
-        Return DataBase.getHelper()
-    End Function
+	''' <summary>
+	''' Shared function to return the current stored baseHelper used in a web application.
+	''' </summary>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Shared function to return the current stored baseHelper used in a web application.")>
+	Public Shared Function getHelper() As BaseHelper
+		Return DataBase.getHelper()
+	End Function
 
-    ''' <summary>
-    ''' creates a typed connection from a config vaue.
-    ''' </summary>
-    ''' <param name="ConfigValueName">The name of the config value</param>
-    ''' <returns>a typed DbConnection</returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("creates a typed connection from a config vaue.")> _
-    Public Function createConnectionFromConfig(ByVal ConfigValueName As String) As DbConnection
-        Return Me.createConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings(ConfigValueName).ConnectionString)
-    End Function
+	''' <summary>
+	''' creates a typed connection from a config vaue.
+	''' </summary>
+	''' <param name="ConfigValueName">The name of the config value</param>
+	''' <returns>a typed DbConnection</returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("creates a typed connection from a config vaue.")>
+	Public Function createConnectionFromConfig(ByVal ConfigValueName As String) As DbConnection
+		Return Me.createConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings(ConfigValueName).ConnectionString)
+	End Function
 
-    ''' <summary>
-    ''' Parse an integer from a string value. 
-    ''' </summary>
-    ''' <param name="input"></param>
-    ''' <returns>Return the int value, or -1 if it fails.</returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Parse an integer from a string value.")> _
-    Public Shared Function parseID(ByVal input As String) As Integer
-        Try
-            Return Integer.Parse(input)
-        Catch ex As Exception
-            Return -1
-        End Try
-    End Function
+	''' <summary>
+	''' Parse an integer from a string value. 
+	''' </summary>
+	''' <param name="input"></param>
+	''' <returns>Return the int value, or -1 if it fails.</returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Parse an integer from a string value.")>
+	Public Shared Function parseID(ByVal input As String) As Integer
+		Try
+			Return Integer.Parse(input)
+		Catch ex As Exception
+			Return -1
+		End Try
+	End Function
 
-    ''' <summary>
-    ''' Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.
-    ''' </summary>
-    ''' <param name="selectStmt">Sql Command Text</param>
-    ''' <param name="AdditionalStmts">A collection of strings</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.")> _
-    Public Function getSQLStatement(ByVal selectStmt As String, ByVal AdditionalStmts As Collection) As String
-        If Not AdditionalStmts Is Nothing AndAlso AdditionalStmts.Count > 0 Then
-            selectStmt = selectStmt.Trim
-            If selectStmt.ToLower.IndexOf("where") = -1 Then
-                selectStmt &= " where "
-            Else
-                selectStmt &= " AND"
-            End If
-            For Each stmt As String In AdditionalStmts
-                If Not stmt.Trim = "" Then selectStmt &= " " & stmt & " AND"
-            Next
-            If selectStmt.EndsWith("AND") Then
-                selectStmt = selectStmt.Substring(0, selectStmt.Length - 3)
-            End If
-        End If
-        Return selectStmt
-    End Function
+	''' <summary>
+	''' Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.
+	''' </summary>
+	''' <param name="selectStmt">Sql Command Text</param>
+	''' <param name="AdditionalStmts">A collection of strings</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.")>
+	Public Function getSQLStatement(ByVal selectStmt As String, ByVal AdditionalStmts As Collection) As String
+		If Not AdditionalStmts Is Nothing AndAlso AdditionalStmts.Count > 0 Then
+			selectStmt = selectStmt.Trim
+			If selectStmt.ToLower.IndexOf("where") = -1 Then
+				selectStmt &= " where "
+			Else
+				selectStmt &= " AND"
+			End If
+			For Each stmt As String In AdditionalStmts
+				If Not stmt.Trim = "" Then selectStmt &= " " & stmt & " AND"
+			Next
+			If selectStmt.EndsWith("AND") Then
+				selectStmt = selectStmt.Substring(0, selectStmt.Length - 3)
+			End If
+		End If
+		Return selectStmt
+	End Function
 
-    ''' <summary>
-    ''' Fills a specific table in a dataset. Pass parms to command like the following:
-    ''' FillDataSet("Select * from products where typeName =@type",ds,"products","Toys")
-    ''' </summary>
-    ''' <param name="SQLcommand">Sql Command Text</param>
-    ''' <param name="ds"></param>
-    ''' <param name="tableName"></param>
-    ''' <param name="parms">Parameter values added to the SQLCommand.</param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fills a specific table in a dataset. Pass parms to command like the following:   FillDataSet(""Select * from products where typeName =@type"",ds,""products"",""Toys"")")> _
-    Public Sub FillDataSet(ByVal SQLcommand As String, ByRef ds As DataSet, ByVal tableName As String, ByVal ParamArray parms As Object())
-        SafeFillDataSet(SQLcommand, ds, tableName, parms)
-    End Sub
+	''' <summary>
+	''' Fills a specific table in a dataset. Pass parms to command like the following:
+	''' FillDataSet("Select * from products where typeName =@type",ds,"products","Toys")
+	''' </summary>
+	''' <param name="SQLcommand">Sql Command Text</param>
+	''' <param name="ds"></param>
+	''' <param name="tableName"></param>
+	''' <param name="parms">Parameter values added to the SQLCommand.</param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Fills a specific table in a dataset. Pass parms to command like the following:   FillDataSet(""Select * from products where typeName =@type"",ds,""products"",""Toys"")")>
+	Public Sub FillDataSet(ByVal SQLcommand As String, ByVal ds As DataSet, ByVal tableName As String, ByVal ParamArray parms As Object())
+		SafeFillDataSet(SQLcommand, ds, tableName, parms)
+	End Sub
 
-    ''' <summary>
-    ''' Fill multiple tables in a dataset. Example as following:
-    ''' FillDataSetMultiSelect("Select * from products where typeName =@type; Select * from catagories where name = @catname",ds, new String (){"products","catagories"},"Toys","Childrens products")
-    ''' </summary>
-    ''' <param name="SQLcommand">Sql Command Text</param>
-    ''' <param name="ds"></param>
-    ''' <param name="tblNames"></param>
-    ''' <param name="parms">Parameter values added to the SQLCommand.</param>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   FillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},""Toys"",""Childrens products"")")> _
+	''' <summary>
+	''' Fill multiple tables in a dataset. Example as following:
+	''' FillDataSetMultiSelect("Select * from products where typeName =@type; Select * from catagories where name = @catname",ds, new String (){"products","catagories"},"Toys","Childrens products")
+	''' </summary>
+	''' <param name="SQLcommand">Sql Command Text</param>
+	''' <param name="ds"></param>
+	''' <param name="tblNames"></param>
+	''' <param name="parms">Parameter values added to the SQLCommand.</param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   FillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},""Toys"",""Childrens products"")")> _
     Public Function FillDataSetMultiSelect(ByVal SQLcommand As String, ByRef ds As DataSet, ByVal tblNames As String(), ByVal ParamArray parms As Object()) As DataSet
         Return SafeFillDataSetMultiSelect(SQLcommand, ds, tblNames, parms)
     End Function

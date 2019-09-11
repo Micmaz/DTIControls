@@ -12,7 +12,7 @@ Public Class SQLiteHelper
 	''' <param name="connection">optional connection object. If ommited it uses the helper's default connection.</param>
 	''' <returns>a SQLiteDataAdapter typed to the base helper</returns>
 	''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-    <System.ComponentModel.Description("Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.")> _
+	<System.ComponentModel.Description("Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.")> _
     Public Overrides Function createAdaptor(Optional ByVal command As String = Nothing, Optional ByVal connection As System.Data.Common.DbConnection = Nothing) As System.Data.Common.DbDataAdapter
 		If command Is Nothing Then Return New SQLiteDataAdapter()
 		Return New SQLiteDataAdapter(command, connection)
@@ -43,93 +43,93 @@ Public Class SQLiteHelper
         Return New SQLiteCommandBuilder(adaptor)
     End Function
 
-    ''' <summary>
-    ''' Creates a typed connection from a string.
-    ''' </summary>
-    ''' <param name="ConnectionString"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed connection from a string.")> _
-    Public Overrides Function createConnection(ByRef ConnectionString As String) As System.Data.Common.DbConnection
-        Dim vars() As String = ConnectionString.Split(";")
-        Dim dslash As String = "\"
-        If BaseClasses.Platform.isMono Then dslash = "/"
-        Dim filename As String = ""
-        For Each var As String In vars
-            If var.ToLower.StartsWith("data source", StringComparison.OrdinalIgnoreCase) Then
-                Dim keyval() As String = var.Split("=")
-                If keyval.Length = 2 Then
-                    filename = keyval(1).Replace("/", dslash)
-                    Dim makelocal As Boolean = False
-                    If filename.Contains(dslash) Then
-                        If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
-                            If filename.Contains(":") Then
-                                System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
-                            Else
-                                makelocal = True
-                            End If
-                        End If
-                    Else
-                        makelocal = True
-                    End If
-                    If makelocal Then
-                        filename = AppDomain.CurrentDomain.BaseDirectory & filename.Replace("/", dslash).Trim(dslash)
-                        If Not System.IO.File.Exists(filename) Then
-                            Dim e As Exception = Nothing
-                            If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
-                                Try
-                                    System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
-                                Catch ex As Exception
-                                    e = ex
-                                    'Throw New Exception("There was an error creating the directory: " & filename.Substring(0, filename.LastIndexOf(dslash)) & ". This directory is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder.", ex)
-                                End Try
-                            Else
-                                Try
-                                    Dim str As System.IO.Stream = System.IO.File.Create(filename)
-                                    str.Close()
-                                Catch ex As Exception
-                                    e = ex
-                                End Try
-                            End If
-                            If Not e Is Nothing Then
-                                Throw New Exception("There was an error creating the file: " & filename & ". This file is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder." & vbCrLf & "The error that occured was: " & e.Message)
-                            End If
-                        End If
+	''' <summary>
+	''' Creates a typed connection from a string.
+	''' </summary>
+	''' <param name="ConnectionString"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed connection from a string.")>
+	Public Overrides Function createConnection(ByVal ConnectionString As String) As System.Data.Common.DbConnection
+		Dim vars() As String = ConnectionString.Split(";")
+		Dim dslash As String = "\"
+		If BaseClasses.Platform.isMono Then dslash = "/"
+		Dim filename As String = ""
+		For Each var As String In vars
+			If var.ToLower.StartsWith("data source", StringComparison.OrdinalIgnoreCase) Then
+				Dim keyval() As String = var.Split("=")
+				If keyval.Length = 2 Then
+					filename = keyval(1).Replace("/", dslash)
+					Dim makelocal As Boolean = False
+					If filename.Contains(dslash) Then
+						If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
+							If filename.Contains(":") Then
+								System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
+							Else
+								makelocal = True
+							End If
+						End If
+					Else
+						makelocal = True
+					End If
+					If makelocal Then
+						filename = AppDomain.CurrentDomain.BaseDirectory & filename.Replace("/", dslash).Trim(dslash)
+						If Not System.IO.File.Exists(filename) Then
+							Dim e As Exception = Nothing
+							If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
+								Try
+									System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
+								Catch ex As Exception
+									e = ex
+									'Throw New Exception("There was an error creating the directory: " & filename.Substring(0, filename.LastIndexOf(dslash)) & ". This directory is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder.", ex)
+								End Try
+							Else
+								Try
+									Dim str As System.IO.Stream = System.IO.File.Create(filename)
+									str.Close()
+								Catch ex As Exception
+									e = ex
+								End Try
+							End If
+							If Not e Is Nothing Then
+								Throw New Exception("There was an error creating the file: " & filename & ". This file is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder." & vbCrLf & "The error that occured was: " & e.Message)
+							End If
+						End If
 
-                        ConnectionString = ConnectionString.Replace(keyval(1), filename)
-                    End If
-                    Exit For
-                End If
-            End If
-        Next
-        'If checkConnection = Nothing OrElse DateDiff(DateInterval.Minute, checkConnection, Date.Now) > 5 Then
-        '    checkConnection = Date.Now
-        '    Dim connection As New SQLiteConnection(ConnectionString)
-        '    If (connection.State <> ConnectionState.Open) Then
-        '        connection.Open()
-        '        connection.Close()
-        '    End If
-        '    Return connection
-        'Else
-        Return New SQLiteConnection(ConnectionString)
-        'End If
+						ConnectionString = ConnectionString.Replace(keyval(1), filename)
+					End If
+					Exit For
+				End If
+			End If
+		Next
+		'If checkConnection = Nothing OrElse DateDiff(DateInterval.Minute, checkConnection, Date.Now) > 5 Then
+		'    checkConnection = Date.Now
+		'    Dim connection As New SQLiteConnection(ConnectionString)
+		'    If (connection.State <> ConnectionState.Open) Then
+		'        connection.Open()
+		'        connection.Close()
+		'    End If
+		'    Return connection
+		'Else
+		Return New SQLiteConnection(ConnectionString)
+		'End If
 
-    End Function
+	End Function
 
-    '''' <summary>
-    '''' 
-    '''' </summary>
-    '''' <remarks></remarks>
-    'Public Shared checkConnection As Date = Nothing
+	'''' <summary>
+	'''' 
+	'''' </summary>
+	'''' <remarks></remarks>
+	'Public Shared checkConnection As Date = Nothing
 
-    ''' <summary>
-    ''' Creates a typed dbParameter from a name and value
-    ''' </summary>
-    ''' <param name="name">the parm name.</param>
-    ''' <param name="value">the parm value.</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed dbParameter from a name and value")> _
+	''' <summary>
+	''' Creates a typed dbParameter from a name and value
+	''' </summary>
+	''' <param name="name">the parm name.</param>
+	''' <param name="value">the parm value.</param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Creates a typed dbParameter from a name and value")> _
     Public Overloads Overrides Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As System.Data.Common.DbParameter
         If name Is Nothing Then Return New SQLiteParameter()
         Return New SQLiteParameter(name, value)

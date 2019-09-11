@@ -20,7 +20,7 @@ Public Class vistaDBHelper
         Return New VistaDBCommandBuilder(adaptor)
     End Function
 
-    Public Overrides Function createConnection(ByRef ConnectionString As String) As System.Data.Common.DbConnection
+    Public Overrides Function createConnection(ConnectionString As String) As System.Data.Common.DbConnection
         Return New VistaDBConnection(ConnectionString)
     End Function
 
