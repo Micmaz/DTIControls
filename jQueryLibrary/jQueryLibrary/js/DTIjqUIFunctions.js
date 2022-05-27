@@ -271,18 +271,23 @@ function createAnimation(aname, aspeed, optionalParms) {
 }
 
 
-var latch = true;
-    function doRefresh(selectorList, updateViewstate, funcAfterInsert) {
-    if (updateViewstate == null) updateViewstate = true;
-    //var re = /<\s*([a-z]+)\b[^>]*>([\S\s]*?)<\s*\/\s*\1\s*>|<[^>]*>/;
-    if ($('.ui-dialog:visible').length == 0 && latch) {   //Don't do a page update if a dialog is open. That could get messy.
-        latch = false
-        $.get(window.location.href + "?&ajaxUniqueDate=" + new Date().getTime(), function(data) {
-            refreshPage(selectorList, updateViewstate, data, null, null , funcAfterInsert);
-        });
-        latch = true;
-    }    
-}
+        var latch = true;
+        function doRefresh(selectorList, updateViewstate, funcAfterInsert) {
+            if (updateViewstate == null) updateViewstate = true;
+            //var re = /<\s*([a-z]+)\b[^>]*>([\S\s]*?)<\s*\/\s*\1\s*>|<[^>]*>/;
+            if ($('.ui-dialog:visible').length == 0 && latch) {   //Don't do a page update if a dialog is open. That could get messy.
+                latch = false
+                var url = window.location.href;
+                if (url.indexOf("?") > -1)
+                    url = url + "&";
+                else
+                    url = url + "?";
+                $.get(url + "ajaxUniqueDate=" + new Date().getTime(), function (data) {
+                    refreshPage(selectorList, updateViewstate, data, null, null, funcAfterInsert);
+                });
+                latch = true;
+            }
+        }
 
     function updateAreas(filterList, delay, funcAfterInsert) {
     if (delay == null) {

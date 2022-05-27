@@ -4,4 +4,4 @@ cd DTIGrid
 nuget  pack DTIGrid.dll.nuspec
 mv *.nupkg ..\
 cd ..
-rem pause
+pause

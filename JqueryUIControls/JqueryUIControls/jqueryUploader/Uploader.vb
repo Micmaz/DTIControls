@@ -173,21 +173,38 @@ Public Class Uploader
     End Sub
 
 	Public Function getUniqueFilename(filename As String) As String
-		If System.IO.File.Exists(filename) Then
-			Dim ext As String = filename.Substring(filename.LastIndexOf("."))
-			Dim fileNameDate As String = filename.Substring(0, filename.LastIndexOf(".")) & "_" & DateTime.Now.ToString("yyyyMMdd_HH_mm_ss")
-			filename = fileNameDate & ext
+        'If System.IO.File.Exists(filename) Then
+
+        Dim ext As String = filename.Substring(filename.LastIndexOf("."))
+        Dim fileNameDate As String = filename.Substring(0, filename.LastIndexOf("."))
+        If fileNameDate.Length > 150 Then fileNameDate = fileNameDate.Substring(0, 150)
+        If ext.Length > 10 Then ext = ext.Substring(0, 10)
+        'Max file name len ~185 chars.
+        fileNameDate = fileNameDate & "_" & DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") & "_" & GenerateRandomString(8)
+        filename = fileNameDate & ext
 
 			Dim i As Integer = 1
 			While System.IO.File.Exists(filename)
 				filename = fileNameDate & " (" & i & ")" & ext
 				i += 1
 			End While
-		End If
-		Return filename
+        'End If
+        Return filename
 	End Function
 
-	Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
+    Public Shared Function GenerateRandomString(Optional length As Integer = 16) As String
+        Const src As String = "abcdefghijklmnopqrstuvwxyz0123456789"
+        Dim sb As New StringBuilder()
+        Dim RNG As Random = New Random()
+        For i As Integer = 0 To length - 1
+            Dim c As Char = src(RNG.[Next](0, src.Length))
+            sb.Append(c)
+        Next
+
+        Return sb.ToString()
+    End Function
+
+    Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         Dim camString As String = ""
         If cameraUpload Then
             camString = "accept=""image/*;capture=camera"" capture=""camera"" "

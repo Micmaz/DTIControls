@@ -901,7 +901,7 @@ Public Class DTISortable
                         If ass Is Nothing Then Throw New Exception
                     Catch ex As Exception
                         Try
-                            assName = "DTIControls" & assName.Substring(assName.IndexOf(","))
+                            assName = "DTIControls"
                             ass = Assembly.Load(assName)
                             If ass Is Nothing Then Throw New Exception
                         Catch ex1 As Exception
@@ -911,7 +911,7 @@ Public Class DTISortable
                                 Try
                                     ass = Assembly.Load(assType(1).Substring(0, assType(1).IndexOf(".")))
                                 Catch ex3 As Exception
-
+                                    ass = Assembly.Load(assType(1))
                                 End Try
                             End Try
                         End Try

@@ -899,61 +899,77 @@ Public Module Extensions
 
 #Region "Labelize"
 
-    Private Sub replaceControl(ByVal ctrl As Control, ByVal reptext As String)
+    Private Sub replaceControl(ByVal ctrl As Control, ByVal reptext As String, Optional useLabel As Boolean = False)
         Dim i As Integer = ctrl.Parent.Controls.IndexOf(ctrl)
-        Dim l As New LiteralControl
-        l.Text = reptext
+        Dim l As Control
+        If useLabel Then
+            Dim l1 As New Label
+            l1.Text = reptext
+            If GetType(WebControl).IsAssignableFrom(ctrl.GetType()) Then
+                Dim w As WebControl = ctrl
+                For Each key In w.Attributes.Keys
+                    l1.Attributes(key) = w.Attributes(key)
+                Next
+                l1.CssClass = w.CssClass
+                l = l1
+            End If
+        Else
+            Dim l1 As New LiteralControl
+            l1.Text = reptext
+            l = l1
+        End If
+
         ctrl.Visible = False
-		Try
-			ctrl.Parent.Controls.AddAt(i, l)
-		Catch ex As Exception
-			Throw ex
-		End Try
+        Try
+            ctrl.Parent.Controls.AddAt(i, l)
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
-    <Extension()> _
-    Public Sub labelize(ByVal ctrl As Control, Optional ByVal defaultFormat As String = "<b>{0}</b>")
+    <Extension()>
+    Public Sub labelize(ByVal ctrl As Control, Optional ByVal defaultFormat As String = "<b>{0}</b>", Optional useLabel As Boolean = False)
         If ctrl.Visible Then
             setControlCache(ctrl, "labelized", True)
-			If GetType(TextBox).IsAssignableFrom(ctrl.GetType()) Then
-				Dim t As TextBox = ctrl
-				replaceControl(t, String.Format(defaultFormat, t.Text))
-			ElseIf GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
-				Dim dd As DropDownList = CType(ctrl, DropDownList)
-				If dd.SelectedValue = "NULL" OrElse dd.SelectedValue Is Nothing Then
-					replaceControl(dd, String.Format(defaultFormat, ""))
-				Else
-					If dd.SelectedItem IsNot Nothing Then
-						replaceControl(dd, String.Format(defaultFormat, dd.SelectedItem.Text))
-					Else
-						replaceControl(dd, String.Format(defaultFormat, ""))
-					End If
-				End If
-			ElseIf GetType(Button).IsAssignableFrom(ctrl.GetType()) Then
-				replaceControl(ctrl, "")
-			ElseIf GetType(RadioButton).IsAssignableFrom(ctrl.GetType()) Then
-				Dim rbIn As RadioButton = ctrl
-				If rbIn.Checked Then
-					If String.IsNullOrEmpty(rbIn.Text) Then
-						replaceControl(ctrl, "X")
-					Else
-						replaceControl(ctrl, rbIn.Text)
-					End If
-				Else
-					replaceControl(ctrl, "")
-				End If
-			ElseIf GetType(CheckBox).IsAssignableFrom(ctrl.GetType()) Then
-				Dim cb As CheckBox = ctrl
-                If cb.Checked Then
-                    replaceControl(ctrl, "True")
+            If GetType(TextBox).IsAssignableFrom(ctrl.GetType()) Then
+                Dim t As TextBox = ctrl
+                replaceControl(t, String.Format(defaultFormat, t.Text), useLabel)
+            ElseIf GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
+                Dim dd As DropDownList = CType(ctrl, DropDownList)
+                If dd.SelectedValue = "NULL" OrElse dd.SelectedValue Is Nothing Then
+                    replaceControl(dd, String.Format(defaultFormat, ""), useLabel)
                 Else
-                    replaceControl(ctrl, "False")
+                    If dd.SelectedItem IsNot Nothing Then
+                        replaceControl(dd, String.Format(defaultFormat, dd.SelectedItem.Text), useLabel)
+                    Else
+                        replaceControl(dd, String.Format(defaultFormat, ""), useLabel)
+                    End If
                 End If
-                replaceControl(ctrl, "")
+            ElseIf GetType(Button).IsAssignableFrom(ctrl.GetType()) Then
+                replaceControl(ctrl, "", useLabel)
+            ElseIf GetType(RadioButton).IsAssignableFrom(ctrl.GetType()) Then
+                Dim rbIn As RadioButton = ctrl
+                If rbIn.Checked Then
+                    If String.IsNullOrEmpty(rbIn.Text) Then
+                        replaceControl(ctrl, "X", useLabel)
+                    Else
+                        replaceControl(ctrl, rbIn.Text, useLabel)
+                    End If
+                Else
+                    replaceControl(ctrl, "", useLabel)
+                End If
+            ElseIf GetType(CheckBox).IsAssignableFrom(ctrl.GetType()) Then
+                Dim cb As CheckBox = ctrl
+                If cb.Checked Then
+                    replaceControl(ctrl, "True", useLabel)
+                Else
+                    replaceControl(ctrl, "False", useLabel)
+                End If
+                replaceControl(ctrl, "", useLabel)
             Else
                 Dim i As Integer = 0
                 While i < ctrl.Controls.Count
-                    labelize(ctrl.Controls(i))
+                    labelize(ctrl.Controls(i), defaultFormat, useLabel)
                     i += 1
                 End While
                 'For Each subctrl As Control In ctrl.Controls
