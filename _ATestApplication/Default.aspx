@@ -28,6 +28,8 @@
 	<br />
 	<admin:LoginControl ID="LoginControl" runat="server"></admin:LoginControl>
 
+	<jqueryUI:Uploader ID="ulCtrl" runat="server"></jqueryUI:Uploader>
+
 
 
 

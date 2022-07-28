@@ -87,12 +87,62 @@ Public Class Uploader
 	End Property
 	Public ReadOnly Property continueLastFile As Boolean
 		Get
-			Return lastFileSize = 512000
-		End Get
+            Return startByte > 0
+        End Get
 	End Property
 
+    Public ReadOnly Property isEndOfFile As Boolean
+        Get
+            Return totalByte = -1 OrElse endByte + 1 = totalByte
+        End Get
+    End Property
 
-	Public Property fileTypes As String = ""
+
+
+    Private _startByte As Integer = -1
+    Public ReadOnly Property startByte As Integer
+        Get
+            parseHeader()
+            Return _startByte
+        End Get
+    End Property
+
+    Private _endByte As Integer = -1
+    Public ReadOnly Property endByte As Integer
+        Get
+            parseHeader()
+            Return _endByte
+        End Get
+    End Property
+
+    Private _totalByte As Integer = -1
+    Public ReadOnly Property totalByte As Integer
+        Get
+            parseHeader()
+            Return _totalByte
+        End Get
+    End Property
+
+    Private headerParse As Regex = New Regex("bytes\s(?<startByte>\d+)-(?<endByte>\d+)/(?<totalByte>\d+)", RegexOptions.CultureInvariant Or RegexOptions.Compiled)
+    Private Function parseHeader() As Boolean
+        If Page.Request.Headers("Content-Range") Is Nothing Then Return True
+        If (_startByte > -1) Then Return True
+        Dim m As Match = headerParse.Match(Page.Request.Headers("Content-Range"))
+        If m IsNot Nothing Then
+            _startByte = 0
+            Integer.TryParse(m.Groups("startByte").Value, _startByte)
+            _endByte = 0
+            Integer.TryParse(m.Groups("endByte").Value, _endByte)
+            _totalByte = 0
+            Integer.TryParse(m.Groups("totalByte").Value, _totalByte)
+        Else Return False
+        End If
+
+        Return True
+    End Function
+
+
+    Public Property fileTypes As String = ""
 
     Private ReadOnly Property Session As HttpSessionState
         Get
@@ -130,8 +180,8 @@ Public Class Uploader
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Page.Request.Params("doRemove") = "true" Then
-            If fileList.Contains(Page.Request.Params("removeFile")) Then
-                System.IO.File.Delete(getFormattedPath() & Page.Request.Params("removeFile"))
+            If fileList.Contains(Session("ULFilename.done." & Page.Request.Params("removeFile"))) Then
+                System.IO.File.Delete(getFormattedPath() & Session("ULFilename.done." & Page.Request.Params("removeFile")))
                 fileList.Remove(Page.Request.Params("removeFile"))
                 Page.Response.Clear()
                 Page.Response.Write("OK")
@@ -142,29 +192,35 @@ Public Class Uploader
         If Page.Request.Files.Count > 0 Then
             For Each f As String In Page.Request.Files
                 Dim file As HttpPostedFile = Page.Request.Files(f)
-                Dim localfilename As String = getFormattedPath() & file.FileName
-				'If System.IO.File.Exists(localfilename) AndAlso Not fileList.Contains(file.FileName) Then
-				'    System.IO.File.Delete(localfilename)
-				'End If
-				If System.IO.File.Exists(lastFileName) AndAlso continueLastFile Then
-					If fileList.Contains(localfilename.Substring(localfilename.LastIndexOf("/") + 1)) Then
-						Dim fs As New FileStream(lastFileName, FileMode.Append, FileAccess.Write, FileShare.None)
-						With fs
-							Dim buffer(file.InputStream.Length - 1) As Byte
-							lastFileSize = file.InputStream.Length
-							file.InputStream.Read(buffer, 0, file.InputStream.Length)
-							fs.Write(buffer, 0, buffer.Length)
-							fs.Close()
-						End With
-					End If
-				Else
-					localfilename = getUniqueFilename(localfilename)
-					lastFileName = localfilename
-					file.SaveAs(localfilename)
-					lastFileSize = file.InputStream.Length
-					fileList.Add(localfilename.Substring(localfilename.LastIndexOf("/") + 1))
-				End If
+                Dim uniqueFilename = getUniqueFilename(file.FileName)
+                Dim localfilename As String = getFormattedPath() & uniqueFilename
+                'If System.IO.File.Exists(localfilename) AndAlso Not fileList.Contains(file.FileName) Then
+                '    System.IO.File.Delete(localfilename)
+                'End If
+                If System.IO.File.Exists(lastFileName) AndAlso continueLastFile Then
+                    If fileList.Contains(localfilename.Substring(localfilename.LastIndexOf("/") + 1)) Then
+                        Dim fs As New FileStream(lastFileName, FileMode.Append, FileAccess.Write, FileShare.None)
+                        With fs
+                            Dim buffer(file.InputStream.Length - 1) As Byte
+                            lastFileSize = file.InputStream.Length
+                            file.InputStream.Read(buffer, 0, file.InputStream.Length)
+                            fs.Write(buffer, 0, buffer.Length)
+                            fs.Close()
+                        End With
+                    End If
+                Else
+                    'localfilename = getUniqueFilename(localfilename)
+                    lastFileName = localfilename
+                    file.SaveAs(localfilename)
+                    lastFileSize = file.InputStream.Length
+                    fileList.Add(localfilename.Substring(localfilename.LastIndexOf("/") + 1))
+                End If
+                If isEndOfFile Then
+                    Session.Remove("ULFilename." & file.FileName)
+                    Session("ULFilename.done." & file.FileName) = uniqueFilename
+                End If
             Next
+
             Page.Response.Clear()
             Page.Response.Write("{""status"":""success""}")
             Page.Response.End()
@@ -172,9 +228,14 @@ Public Class Uploader
         jQueryLibrary.jQueryInclude.RegisterJQueryUI(Page)
     End Sub
 
-	Public Function getUniqueFilename(filename As String) As String
+
+    Public Function getUniqueFilename(filename As String) As String
         'If System.IO.File.Exists(filename) Then
 
+        If Session("ULFilename." & filename) IsNot Nothing Then
+            Return Session("ULFilename." & filename)
+        End If
+        Dim origFilename = filename
         Dim ext As String = filename.Substring(filename.LastIndexOf("."))
         Dim fileNameDate As String = filename.Substring(0, filename.LastIndexOf("."))
         If fileNameDate.Length > 150 Then fileNameDate = fileNameDate.Substring(0, 150)
@@ -189,6 +250,7 @@ Public Class Uploader
 				i += 1
 			End While
         'End If
+        Session("ULFilename." & origFilename) = filename
         Return filename
 	End Function
 

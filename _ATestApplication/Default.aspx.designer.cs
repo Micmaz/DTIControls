@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _ATestApplication {
-    
-    
-    public partial class Default {
-        
+namespace _ATestApplication
+{
+
+
+    public partial class Default
+    {
+
         /// <summary>
         /// btnTurnEditOn control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnTurnEditOn;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// EditPanel1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DTIContentManagement.EditPanel EditPanel1;
-        
+
         /// <summary>
         /// cpcolor1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::JqueryUIControls.ColorPicker cpcolor1;
-        
+
         /// <summary>
         /// Autocomplete1 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::JqueryUIControls.Autocomplete Autocomplete1;
-        
+
         /// <summary>
         /// Tagger1 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DTIMiniControls.Tagger Tagger1;
-        
+
         /// <summary>
         /// StarRater1 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DTIMiniControls.StarRater StarRater1;
-        
+
         /// <summary>
         /// LoginControl control.
         /// </summary>
@@ -83,5 +85,14 @@ namespace _ATestApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DTIAdminPanel.LoginControl LoginControl;
+
+        /// <summary>
+        /// ulCtrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::JqueryUIControls.Uploader ulCtrl;
     }
 }
