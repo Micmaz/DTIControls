@@ -516,6 +516,7 @@ Public Module Extensions
     End Function
 
     Private Function canbindCtrl(mainctrl As Control, ctrl As Control, row As DataRow, errors As List(Of ErrorSet)) As String
+        If ctrl.ID Is Nothing Then Return Nothing
         If Not setControls(mainctrl).ContainsKey(ctrl.ID) Then
             Dim colname As String = ctrl.ID
             If (Not row.Table.Columns.Contains(colname)) Then
@@ -756,7 +757,7 @@ Public Module Extensions
             If SourceRow(sourceColumn) Is DBNull.Value Then
                 value = NullValue
             Else
-                value = SourceRow(sourceColumn)
+                value = SourceRow(sourceColumn).ToString()
             End If
 
             If addIfMissing Then
@@ -764,7 +765,7 @@ Public Module Extensions
                     li.Selected = False
                 Next
                 For Each li As ListItem In dd.Items
-                    If li.Value = value Then
+                    If li.Value.ToString() = value Then
                         li.Selected = True
                         found = True
                         Exit For
@@ -788,7 +789,7 @@ Public Module Extensions
         setDDRow(c, dd.Text, dt, displaycolumn, valueColumn, SourceRow, sourceColumn, NullValue)
     End Sub
 
-    <Extension()> _
+    <Extension()>
     Public Sub setDDRow(ByVal c As Control, ByRef text As String, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal SourceRow As DataRow = Nothing, Optional ByVal sourceColumn As String = Nothing, Optional ByVal NullValue As String = "NULL")
         If valueColumn Is Nothing Then valueColumn = displaycolumn
         If dt IsNot Nothing Then
@@ -797,7 +798,7 @@ Public Module Extensions
                 Dim value As String = NullValue
                 If Not row(displaycolumn) Is DBNull.Value Then display = row(displaycolumn)
                 If Not row(valueColumn) Is DBNull.Value Then value = row(valueColumn)
-                If (SourceRow(sourceColumn) Is DBNull.Value AndAlso row(valueColumn) Is DBNull.Value) OrElse _
+                If (SourceRow(sourceColumn) Is DBNull.Value AndAlso row(valueColumn) Is DBNull.Value) OrElse
                   SourceRow(sourceColumn).ToString = row(valueColumn).ToString Then
                     text = display
                     Exit For

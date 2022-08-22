@@ -653,7 +653,7 @@ Public Class BaseSecurityPage
         Str = Replace(Str, Chr(12), "\f")
         Str = Replace(Str, Chr(13), "\n")
 
-        Return Str
+        Return Str + ""
 
     End Function
 
