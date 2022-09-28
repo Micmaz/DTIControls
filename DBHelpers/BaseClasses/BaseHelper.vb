@@ -398,6 +398,18 @@ Public MustInherit Class BaseHelper
     End Function
 
     ''' <summary>
+    ''' Executes a Sql command string that does not return tabular data. 
+    ''' </summary>
+    ''' <param name="SQLcommand">Sql command string</param>
+    ''' <param name="parms">Parameter values added to the SQLCommand.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Executes a Sql command string that does not return tabular data.")>
+    Public Function ExecuteNonQuery(ByVal SQLcommand As String, ByVal ParamArray parms As Object()) As Integer
+        SafeExecuteNonQuery(SQLcommand, parms)
+    End Function
+
+    ''' <summary>
     ''' Fills a dataTable from a select string. Pass parms to command like the following:
     ''' FillDataTable("Select * from products where typeName=@type and department=@dept",dt,"Toys","children")
     ''' </summary>
@@ -1215,7 +1227,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="ContinueUpdateOnError"></param>
     ''' <param name="connection"></param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Performs all inserts,updates and deletes on a database froma provided datatable. Uses the table name from the dataTable and pushes the changes to the table in the database with the same name.")> _
+    <System.ComponentModel.Description("Performs all inserts,updates and deletes on a database froma provided datatable. Uses the table name from the dataTable and pushes the changes to the table in the database with the same name. Input table must have all the columns of the containing table (additonal ones are ok).")>
     Public Sub Update(ByRef dt As DataTable, ByVal TableName As String, Optional ByVal ContinueUpdateOnError As Boolean = False, Optional ByRef connection As DbConnection = Nothing)
         connection = IIf(connection Is Nothing, defaultConnection, connection)
         TableName = IIf(TableName Is Nothing, dt.TableName, TableName)
