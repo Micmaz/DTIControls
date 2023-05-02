@@ -220,10 +220,6 @@ Public Class EditPanel
 	End Property
 
 
-
-
-
-
 	'''' <summary>
 	'''' The media row that controls the layout of the panel instance.
 	'''' </summary>

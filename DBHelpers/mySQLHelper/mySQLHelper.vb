@@ -21,7 +21,7 @@ Public Class mySQLHelper
         Return New MySqlCommandBuilder(adaptor)
     End Function
 
-    Public Overrides Function createConnection(ByRef ConnectionString As String) As System.Data.Common.DbConnection
+    Public Overrides Function createConnection(ByVal ConnectionString As String) As System.Data.Common.DbConnection
         If Not ConnectionString.ToLower.Contains("allow zero datetime") Then
             ConnectionString &= ";Allow Zero Datetime=True;"
         End If

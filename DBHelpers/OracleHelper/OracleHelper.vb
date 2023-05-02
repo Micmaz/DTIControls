@@ -25,11 +25,11 @@ Public Class OracleHelper
             Return New OracleCommandBuilder(adaptor)
         End Function
 
-        Public Overrides Function createConnection(ByRef ConnectionString As String) As System.Data.Common.DbConnection
-            Return New OracleConnection(ConnectionString)
-        End Function
+    Public Overrides Function createConnection(ByVal ConnectionString As String) As System.Data.Common.DbConnection
+        Return New OracleConnection(ConnectionString)
+    End Function
 
-        Public Overloads Overrides Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As System.Data.Common.DbParameter
+    Public Overloads Overrides Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As System.Data.Common.DbParameter
             If name Is Nothing Then Return New OracleParameter()
             Return New OracleParameter(name, value)
         End Function
