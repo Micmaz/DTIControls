@@ -28,18 +28,18 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\_Output\</OutputPath>
     <DocumentationFile>DTIControls.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningLevel>1</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
     <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
+    <DefineTrace>false</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>..\_Output\</OutputPath>
     <DocumentationFile>DTIControls.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <DebugSymbols>true</DebugSymbols>
     <WarningLevel>1</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -53,6 +53,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

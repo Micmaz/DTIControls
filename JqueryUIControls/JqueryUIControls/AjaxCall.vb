@@ -225,10 +225,12 @@ Public Class AjaxCall
 
     Public Sub addControlsToWatchList(ByVal ParamArray controls As Control())
         For Each ctrl As Control In controls
-            Me.watchedControlList.Add(ctrl)
-            For Each innerctl As Control In ctrl.Controls
-                addControlsToWatchList(innerctl)
-            Next
+            If ctrl IsNot Nothing Then
+                Me.watchedControlList.Add(ctrl)
+                For Each innerctl As Control In ctrl.Controls
+                    addControlsToWatchList(innerctl)
+                Next
+            End If
         Next
     End Sub
 
@@ -246,29 +248,32 @@ Public Class AjaxCall
                     Me.returnedParms.Add(key, val)
                     Try
                         Dim ctrl As Control = Me.FindControl(key)
-                        watchedControlList.Add(ctrl)
-                        If ctrl.GetType().GetProperty("Text") IsNot Nothing Then
-                            ctrl.GetType().GetProperty("Text").SetValue(ctrl, val, Nothing)
+                        If ctrl IsNot Nothing Then
+                            watchedControlList.Add(ctrl)
+                            If ctrl.GetType().GetProperty("Text") IsNot Nothing Then
+                                ctrl.GetType().GetProperty("Text").SetValue(ctrl, val, Nothing)
+                            End If
+                            If ctrl.GetType().GetProperty("Value") IsNot Nothing Then
+                                ctrl.GetType().GetProperty("Value").SetValue(ctrl, val, Nothing)
+                            End If
+                            If ctrl.GetType().GetProperty("SelectedValue") IsNot Nothing Then
+                                ctrl.GetType().GetProperty("SelectedValue").SetValue(ctrl, val, Nothing)
+                            End If
+                            If ctrl.GetType().GetProperty("Checked") IsNot Nothing Then
+                                ctrl.GetType().GetProperty("Checked").SetValue(ctrl, Boolean.Parse(val), Nothing)
+                            End If
+                            If GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
+                                Dim ctrl1 As DropDownList = ctrl
+                                ctrl1.Items.Add(val)
+                                ctrl1.SelectedValue = val
+                            ElseIf GetType(Autocomplete).IsAssignableFrom(ctrl.GetType()) Then
+                                Dim ctrl1 As Autocomplete = ctrl
+                                ctrl1.Value = DecodeString(Me.Page.Request.QueryString(key & "_hidden"))
+                            End If
+                            'Dim ctrl As Control = Me.Page.GetType().GetMember(key).GetValue(Nothing, Nothing)
+                            'ctrl.GetType().GetMember("text").SetValue(Me.Page.Request.QueryString(key), 0)
                         End If
-                        If ctrl.GetType().GetProperty("Value") IsNot Nothing Then
-                            ctrl.GetType().GetProperty("Value").SetValue(ctrl, val, Nothing)
-                        End If
-                        If ctrl.GetType().GetProperty("SelectedValue") IsNot Nothing Then
-                            ctrl.GetType().GetProperty("SelectedValue").SetValue(ctrl, val, Nothing)
-                        End If
-                        If ctrl.GetType().GetProperty("Checked") IsNot Nothing Then
-                            ctrl.GetType().GetProperty("Checked").SetValue(ctrl, Boolean.Parse(val), Nothing)
-                        End If
-                        If GetType(DropDownList).IsAssignableFrom(ctrl.GetType()) Then
-                            Dim ctrl1 As DropDownList = ctrl
-                            ctrl1.Items.Add(val)
-                            ctrl1.SelectedValue = val
-                        ElseIf GetType(Autocomplete).IsAssignableFrom(ctrl.GetType()) Then
-                            Dim ctrl1 As Autocomplete = ctrl
-                            ctrl1.Value = DecodeString(Me.Page.Request.QueryString(key & "_hidden"))
-                        End If
-                        'Dim ctrl As Control = Me.Page.GetType().GetMember(key).GetValue(Nothing, Nothing)
-                        'ctrl.GetType().GetMember("text").SetValue(Me.Page.Request.QueryString(key), 0)
+
                     Catch ex As Exception
 
                     End Try
