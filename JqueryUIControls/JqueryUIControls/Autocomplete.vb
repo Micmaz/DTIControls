@@ -377,22 +377,25 @@ End Property
                     Me.returnedParms.Add(key, Me.Page.Request.QueryString(key))
                     Try
                         Dim ctrl As Control = Me.FindControl(key)
-                        If ctrl.GetType().GetProperty("Text") IsNot Nothing Then
-                            ctrl.GetType().GetProperty("Text").SetValue(ctrl, Me.Page.Request.QueryString(key), Nothing)
+                        If ctrl IsNot Nothing Then
+                            If ctrl.GetType().GetProperty("Text") IsNot Nothing Then
+                                ctrl.GetType().GetProperty("Text").SetValue(ctrl, Me.Page.Request.QueryString(key), Nothing)
+                            End If
+                            If ctrl.GetType().GetProperty("Value") IsNot Nothing Then
+                                ctrl.GetType().GetProperty("Value").SetValue(ctrl, Me.Page.Request.QueryString(key), Nothing)
+                            End If
+                            If ctrl.GetType().GetProperty("SelectedValue") IsNot Nothing Then
+                                ctrl.GetType().GetProperty("SelectedValue").SetValue(ctrl, Me.Page.Request.QueryString(key), Nothing)
+                            End If
+                            If TypeOf ctrl Is DropDownList Then
+                                Dim ctrl1 As DropDownList = ctrl
+                                ctrl1.Items.Add(Me.Page.Request.QueryString(key))
+                                ctrl1.SelectedValue = Me.Page.Request.QueryString(key)
+                            End If
+                            'Dim ctrl As Control = Me.Page.GetType().GetMember(key).GetValue(Nothing, Nothing)
+                            'ctrl.GetType().GetMember("text").SetValue(Me.Page.Request.QueryString(key), 0)
                         End If
-                        If ctrl.GetType().GetProperty("Value") IsNot Nothing Then
-                            ctrl.GetType().GetProperty("Value").SetValue(ctrl, Me.Page.Request.QueryString(key), Nothing)
-                        End If
-                        If ctrl.GetType().GetProperty("SelectedValue") IsNot Nothing Then
-                            ctrl.GetType().GetProperty("SelectedValue").SetValue(ctrl, Me.Page.Request.QueryString(key), Nothing)
-                        End If
-                        If TypeOf ctrl Is DropDownList Then
-                            Dim ctrl1 As DropDownList = ctrl
-                            ctrl1.Items.Add(Me.Page.Request.QueryString(key))
-                            ctrl1.SelectedValue = Me.Page.Request.QueryString(key)
-                        End If
-                        'Dim ctrl As Control = Me.Page.GetType().GetMember(key).GetValue(Nothing, Nothing)
-                        'ctrl.GetType().GetMember("text").SetValue(Me.Page.Request.QueryString(key), 0)
+
                     Catch ex As Exception
 
                     End Try

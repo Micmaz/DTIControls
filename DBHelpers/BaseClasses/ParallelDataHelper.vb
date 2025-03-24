@@ -269,40 +269,7 @@ Public Class ParallelDataHelper
             Next
 
 			sqlHelper.SafeFillDataSetMultiSelect(stmt, ds, tableNames, params.ToArray, conn)
-			Try
-				'sqlHelper.SafeFillDataSetMultiSelect(stmt, ds, tableNames, params.ToArray, conn)
-			Catch ex As Exception
-                'If TypeOf ex.InnerException Is SqlClient.SqlException Then
-                '    If ex.InnerException.Message = "Could not find stored procedure 'getsortedpage'." Then
-                '        sqlHelper.createGetSortedPage()
-                '    ElseIf ex.InnerException.Message.Contains("Invalid object name") Then
-                '        Dim keys As ICollection = myDBTableManager.Keys
-                '        For Each table As DataTable In keys
-                '            Dim commManager As ParallelCallStatementManager = myDBTableManager.Item(table)
-                '            Dim copy As DataTable = table.Copy
-                '            Dim statement As ParallelCallStatement = commManager.StatementManager(0)
-                '            Dim mtc As MatchCollection = sqlHelper.tableFromSelect.Matches(statement.queryCommand)
-                '            If mtc.Count > 0 Then
-                '                If Not mtc(0).Groups("table") Is Nothing Then
-                '                    Dim tblname As String = mtc(0).Groups("table").Value
-                '                    If tblname.Contains(".") Then tblname = tblname.Substring(tblname.LastIndexOf("."))
-                '                    copy.TableName = tblname
-                '                End If
-                '            End If
 
-                '            If commManager.createTableOnError Then
-                '                sqlHelper.checkAndCreateTable(copy)
-                '            Else
-                '                RaiseEvent handleInvalidObject(copy)
-                '            End If
-                '        Next
-                '    Else : Throw ex
-                '    End If
-                '    sqlHelper.SafeFillDataSetMultiSelect(stmt, ds, tableNames, params.ToArray, conn)
-                'Else
-                dbError = ex
-                'End If
-            End Try
 
             For Each table As DataTable In table_keys
                 Dim commandManager As ParallelCallStatementManager = myDBTableManager.Item(table)

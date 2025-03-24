@@ -1,11 +1,12 @@
 Imports System.Text.RegularExpressions
 Imports System.Data.Common
+Imports System.Collections.Generic
 
 ''' <summary>
 ''' A generic data access layer. This is subclassed for different database types. MSSql and SQLLite included in the base dll. 
 ''' </summary>
 ''' <remarks></remarks>
-<System.ComponentModel.Description("A generic data access layer. This is subclassed for different database types. MSSql and SQLLite included in the base dll.")> _
+<System.ComponentModel.Description("A generic data access layer. This is subclassed for different database types. MSSql and SQLLite included in the base dll.")>
 Public MustInherit Class BaseHelper
     Inherits System.ComponentModel.Component
 
@@ -16,7 +17,7 @@ Public MustInherit Class BaseHelper
     ''' </summary>
     ''' <param name="connection">The default connection object used for the life of the object.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("This is a template constructor for derived classes. It is inherited by subclasses.")> _
+    <System.ComponentModel.Description("This is a template constructor for derived classes. It is inherited by subclasses.")>
     Public Sub New(Optional ByRef connection As DbConnection = Nothing)
         MyBase.New()
         If Platform.isMono Then
@@ -32,7 +33,7 @@ Public MustInherit Class BaseHelper
     ''' </summary>
     ''' <param name="ConnectionString">The default connection String used for the life of the object.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("This is a template constructor for derived classes. It is inherited by subclasses.")> _
+    <System.ComponentModel.Description("This is a template constructor for derived classes. It is inherited by subclasses.")>
     Public Sub New(ByVal ConnectionString As String)
         MyBase.New()
         If Not ConnectionString Is Nothing Then defaultConnection = createConnection(ConnectionString)
@@ -48,7 +49,7 @@ Public MustInherit Class BaseHelper
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Sets the default connection used by any dataHelper object that is not explicitly set.    This overrides any setting in the .config file.")> _
+    <System.ComponentModel.Description("Sets the default connection used by any dataHelper object that is not explicitly set.    This overrides any setting in the .config file.")>
     Public Shared Property defaultConnectionAppWide() As System.Data.Common.DbConnection
         Get
             Return DataBase.defaultConnectionAppWide
@@ -64,7 +65,7 @@ Public MustInherit Class BaseHelper
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("The Connection used for all database comunication for the life of the object.")> _
+    <System.ComponentModel.Description("The Connection used for all database comunication for the life of the object.")>
     Public Overridable Property defaultConnection() As DbConnection
         Get
             Return defaultConnection_p
@@ -81,7 +82,7 @@ Public MustInherit Class BaseHelper
     ''' When performing an update should errors be thrown in a constraint excepetion occures. 
     ''' </summary>
     ''' <remarks>Sets enforceconstraints=False if an error is encountered.</remarks>
-    <System.ComponentModel.Description("When performing an update should errors be thrown in a constraint excepetion occures.")> _
+    <System.ComponentModel.Description("When performing an update should errors be thrown in a constraint excepetion occures.")>
     Private _enforceConstraints As Boolean = False
     Public Property enforceConstraints() As Boolean
         Get
@@ -100,7 +101,7 @@ Public MustInherit Class BaseHelper
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Should update and delete methods be added to adaptors if there is no primary key information.")> _
+    <System.ComponentModel.Description("Should update and delete methods be added to adaptors if there is no primary key information.")>
     Public Property createAdaptorsWithoutPrimaryKeys() As Boolean
         Get
             Return _createAdaptorsWithoutPrimaryKeys
@@ -114,198 +115,198 @@ Public MustInherit Class BaseHelper
 
 #Region "Mustinherit"
 
-	''' <summary>
-	''' Creates a typed connection from a string.
-	''' </summary>
-	''' <param name="ConnectionString"></param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Creates a typed connection from a string.")>
-	Public MustOverride Function createConnection(ByVal ConnectionString As String) As DbConnection
+    ''' <summary>
+    ''' Creates a typed connection from a string.
+    ''' </summary>
+    ''' <param name="ConnectionString"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Creates a typed connection from a string.")>
+    Public MustOverride Function createConnection(ByVal ConnectionString As String) As DbConnection
 
-	''' <summary>
-	''' Creates a DbDataAdapter from a command string.
-	''' </summary>
-	''' <param name="SQLcommand">Select command used to generate the DbDataAdapter</param>
-	''' <param name="connection">optional dBConnection that will override the default conection.</param>
-	''' <returns>a DbCommand typed to the base helper type.</returns>
-	''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-	<System.ComponentModel.Description("Creates a DbDataAdapter from a command string.")>
-	Public MustOverride Function createAdaptor(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbDataAdapter
+    ''' <summary>
+    ''' Creates a DbDataAdapter from a command string.
+    ''' </summary>
+    ''' <param name="SQLcommand">Select command used to generate the DbDataAdapter</param>
+    ''' <param name="connection">optional dBConnection that will override the default conection.</param>
+    ''' <returns>a DbCommand typed to the base helper type.</returns>
+    ''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
+    <System.ComponentModel.Description("Creates a DbDataAdapter from a command string.")>
+    Public MustOverride Function createAdaptor(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbDataAdapter
 
-	''' <summary>
-	''' Creates a DbCommand from a command string.
-	''' </summary>
-	''' <param name="SQLcommand">Select command used to generate the DbCommand</param>
-	''' <param name="connection">optional dBConnection that will override the default conection.</param>
-	''' <returns>a DbCommand typed to the base helper type.</returns>
-	''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-	<System.ComponentModel.Description("Creates a DbCommand from a command string.")>
-	Public MustOverride Function createCommand(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbCommand
+    ''' <summary>
+    ''' Creates a DbCommand from a command string.
+    ''' </summary>
+    ''' <param name="SQLcommand">Select command used to generate the DbCommand</param>
+    ''' <param name="connection">optional dBConnection that will override the default conection.</param>
+    ''' <returns>a DbCommand typed to the base helper type.</returns>
+    ''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
+    <System.ComponentModel.Description("Creates a DbCommand from a command string.")>
+    Public MustOverride Function createCommand(Optional ByVal SQLcommand As String = Nothing, Optional ByVal connection As DbConnection = Nothing) As DbCommand
 
-	''' <summary>
-	''' Creates a typed dbParameter from a name and value
-	''' </summary>
-	''' <param name="name">the parm name.</param>
-	''' <param name="value">the parm value.</param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Creates a typed dbParameter from a name and value")>
-	Public MustOverride Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As DbParameter
+    ''' <summary>
+    ''' Creates a typed dbParameter from a name and value
+    ''' </summary>
+    ''' <param name="name">the parm name.</param>
+    ''' <param name="value">the parm value.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Creates a typed dbParameter from a name and value")>
+    Public MustOverride Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As DbParameter
 
-	''' <summary>
-	''' Creates a typed parameter from a genric DbParameter
-	''' </summary>
-	''' <param name="parameter">the DbParameter</param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Creates a typed parameter from a genric DbParameter")>
-	Public MustOverride Function createParameter(ByRef parameter As DbParameter) As DbParameter
+    ''' <summary>
+    ''' Creates a typed parameter from a genric DbParameter
+    ''' </summary>
+    ''' <param name="parameter">the DbParameter</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Creates a typed parameter from a genric DbParameter")>
+    Public MustOverride Function createParameter(ByRef parameter As DbParameter) As DbParameter
 
-	''' <summary>
-	''' Creates a typed DbCommandBuilder
-	''' </summary>
-	''' <param name="adaptor">The typed DbDataAdapter </param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Creates a typed DbCommandBuilder")>
-	Public MustOverride Function createCommandBuilder(ByRef adaptor As DbDataAdapter) As DbCommandBuilder
+    ''' <summary>
+    ''' Creates a typed DbCommandBuilder
+    ''' </summary>
+    ''' <param name="adaptor">The typed DbDataAdapter </param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Creates a typed DbCommandBuilder")>
+    Public MustOverride Function createCommandBuilder(ByRef adaptor As DbDataAdapter) As DbCommandBuilder
 
-	''' <summary>
-	''' Checks if a datatable exists in a database.
-	''' </summary>
-	''' <param name="tablename">The name of the table that may eexist in the database.</param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Checks if a datatable exists in a database.")>
-	Public MustOverride Function checkDBObjectExists(ByVal tablename As String) As Boolean
+    ''' <summary>
+    ''' Checks if a datatable exists in a database.
+    ''' </summary>
+    ''' <param name="tablename">The name of the table that may eexist in the database.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Checks if a datatable exists in a database.")>
+    Public MustOverride Function checkDBObjectExists(ByVal tablename As String) As Boolean
 
-	''' <summary>
-	''' Creates a table in the database based on the schema of the datatable passed in.
-	''' </summary>
-	''' <param name="dt">The datatable that is usedto createthe table in the database. Only schema is used, data is ignored.</param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Creates a table in the database based on the schema of the datatable passed in.")>
-	Public Function createTable(ByVal dt As DataTable) As Boolean
-		Try
-			Dim createstr As String = getCreateTableString(dt)
-			ExecuteNonQuery(createstr)
-		Catch ex As Exception
-			Return False
-		End Try
-	End Function
+    ''' <summary>
+    ''' Creates a table in the database based on the schema of the datatable passed in.
+    ''' </summary>
+    ''' <param name="dt">The datatable that is usedto createthe table in the database. Only schema is used, data is ignored.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Creates a table in the database based on the schema of the datatable passed in.")>
+    Public Function createTable(ByVal dt As DataTable) As Boolean
+        Try
+            Dim createstr As String = getCreateTableString(dt)
+            ExecuteNonQuery(createstr)
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
-	''' <summary>
-	''' Builds a create script for a table in the database based on the schema of the datatable passed in.
-	''' </summary>
-	''' <param name="dt">The datatable that is usedto build the create String. Only schema is used, data is ignored.</param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Builds a create script for a table in the database based on the schema of the datatable passed in.")>
-	Public MustOverride Function getCreateTableString(ByVal dt As DataTable) As String
+    ''' <summary>
+    ''' Builds a create script for a table in the database based on the schema of the datatable passed in.
+    ''' </summary>
+    ''' <param name="dt">The datatable that is usedto build the create String. Only schema is used, data is ignored.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Builds a create script for a table in the database based on the schema of the datatable passed in.")>
+    Public MustOverride Function getCreateTableString(ByVal dt As DataTable) As String
 
 #End Region
 
 #Region "Generic Methods"
 
-	''' <summary>
-	''' Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.
-	''' </summary>
-	''' <param name="connectionString">The ConnectionString as a string.</param>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.")>
-	Public Sub setDefaultConnectionString(ByVal connectionString As String)
-		adaptorHash = Nothing
-		defaultConnection_p = createConnection(connectionString)
-	End Sub
+    ''' <summary>
+    ''' Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.
+    ''' </summary>
+    ''' <param name="connectionString">The ConnectionString as a string.</param>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Calls createConnection and using the supplied string and sets a new default connection. Also clears cached adaptors.")>
+    Public Sub setDefaultConnectionString(ByVal connectionString As String)
+        adaptorHash = Nothing
+        defaultConnection_p = createConnection(connectionString)
+    End Sub
 
-	''' <summary>
-	''' Shared function to return the current stored baseHelper used in a web application.
-	''' </summary>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Shared function to return the current stored baseHelper used in a web application.")>
-	Public Shared Function getHelper() As BaseHelper
-		Return DataBase.getHelper()
-	End Function
+    ''' <summary>
+    ''' Shared function to return the current stored baseHelper used in a web application.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Shared function to return the current stored baseHelper used in a web application.")>
+    Public Shared Function getHelper() As BaseHelper
+        Return DataBase.getHelper()
+    End Function
 
-	''' <summary>
-	''' creates a typed connection from a config vaue.
-	''' </summary>
-	''' <param name="ConfigValueName">The name of the config value</param>
-	''' <returns>a typed DbConnection</returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("creates a typed connection from a config vaue.")>
-	Public Function createConnectionFromConfig(ByVal ConfigValueName As String) As DbConnection
-		Return Me.createConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings(ConfigValueName).ConnectionString)
-	End Function
+    ''' <summary>
+    ''' creates a typed connection from a config vaue.
+    ''' </summary>
+    ''' <param name="ConfigValueName">The name of the config value</param>
+    ''' <returns>a typed DbConnection</returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("creates a typed connection from a config vaue.")>
+    Public Function createConnectionFromConfig(ByVal ConfigValueName As String) As DbConnection
+        Return Me.createConnection(System.Web.Configuration.WebConfigurationManager.ConnectionStrings(ConfigValueName).ConnectionString)
+    End Function
 
-	''' <summary>
-	''' Parse an integer from a string value. 
-	''' </summary>
-	''' <param name="input"></param>
-	''' <returns>Return the int value, or -1 if it fails.</returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Parse an integer from a string value.")>
-	Public Shared Function parseID(ByVal input As String) As Integer
-		Try
-			Return Integer.Parse(input)
-		Catch ex As Exception
-			Return -1
-		End Try
-	End Function
+    ''' <summary>
+    ''' Parse an integer from a string value. 
+    ''' </summary>
+    ''' <param name="input"></param>
+    ''' <returns>Return the int value, or -1 if it fails.</returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Parse an integer from a string value.")>
+    Public Shared Function parseID(ByVal input As String) As Integer
+        Try
+            Return Integer.Parse(input)
+        Catch ex As Exception
+            Return -1
+        End Try
+    End Function
 
-	''' <summary>
-	''' Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.
-	''' </summary>
-	''' <param name="selectStmt">Sql Command Text</param>
-	''' <param name="AdditionalStmts">A collection of strings</param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.")>
-	Public Function getSQLStatement(ByVal selectStmt As String, ByVal AdditionalStmts As Collection) As String
-		If Not AdditionalStmts Is Nothing AndAlso AdditionalStmts.Count > 0 Then
-			selectStmt = selectStmt.Trim
-			If selectStmt.ToLower.IndexOf("where") = -1 Then
-				selectStmt &= " where "
-			Else
-				selectStmt &= " AND"
-			End If
-			For Each stmt As String In AdditionalStmts
-				If Not stmt.Trim = "" Then selectStmt &= " " & stmt & " AND"
-			Next
-			If selectStmt.EndsWith("AND") Then
-				selectStmt = selectStmt.Substring(0, selectStmt.Length - 3)
-			End If
-		End If
-		Return selectStmt
-	End Function
+    ''' <summary>
+    ''' Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.
+    ''' </summary>
+    ''' <param name="selectStmt">Sql Command Text</param>
+    ''' <param name="AdditionalStmts">A collection of strings</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Generates complete sql statement from a base statement and a collection additional strings. Statements are and-ed together.")>
+    Public Function getSQLStatement(ByVal selectStmt As String, ByVal AdditionalStmts As Collection) As String
+        If Not AdditionalStmts Is Nothing AndAlso AdditionalStmts.Count > 0 Then
+            selectStmt = selectStmt.Trim
+            If selectStmt.ToLower.IndexOf("where") = -1 Then
+                selectStmt &= " where "
+            Else
+                selectStmt &= " AND"
+            End If
+            For Each stmt As String In AdditionalStmts
+                If Not stmt.Trim = "" Then selectStmt &= " " & stmt & " AND"
+            Next
+            If selectStmt.EndsWith("AND") Then
+                selectStmt = selectStmt.Substring(0, selectStmt.Length - 3)
+            End If
+        End If
+        Return selectStmt
+    End Function
 
-	''' <summary>
-	''' Fills a specific table in a dataset. Pass parms to command like the following:
-	''' FillDataSet("Select * from products where typeName =@type",ds,"products","Toys")
-	''' </summary>
-	''' <param name="SQLcommand">Sql Command Text</param>
-	''' <param name="ds"></param>
-	''' <param name="tableName"></param>
-	''' <param name="parms">Parameter values added to the SQLCommand.</param>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Fills a specific table in a dataset. Pass parms to command like the following:   FillDataSet(""Select * from products where typeName =@type"",ds,""products"",""Toys"")")>
-	Public Sub FillDataSet(ByVal SQLcommand As String, ByVal ds As DataSet, ByVal tableName As String, ByVal ParamArray parms As Object())
-		SafeFillDataSet(SQLcommand, ds, tableName, parms)
-	End Sub
+    ''' <summary>
+    ''' Fills a specific table in a dataset. Pass parms to command like the following:
+    ''' FillDataSet("Select * from products where typeName =@type",ds,"products","Toys")
+    ''' </summary>
+    ''' <param name="SQLcommand">Sql Command Text</param>
+    ''' <param name="ds"></param>
+    ''' <param name="tableName"></param>
+    ''' <param name="parms">Parameter values added to the SQLCommand.</param>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Fills a specific table in a dataset. Pass parms to command like the following:   FillDataSet(""Select * from products where typeName =@type"",ds,""products"",""Toys"")")>
+    Public Sub FillDataSet(ByVal SQLcommand As String, ByVal ds As DataSet, ByVal tableName As String, ByVal ParamArray parms As Object())
+        SafeFillDataSet(SQLcommand, ds, tableName, parms)
+    End Sub
 
-	''' <summary>
-	''' Fill multiple tables in a dataset. Example as following:
-	''' FillDataSetMultiSelect("Select * from products where typeName =@type; Select * from catagories where name = @catname",ds, new String (){"products","catagories"},"Toys","Childrens products")
-	''' </summary>
-	''' <param name="SQLcommand">Sql Command Text</param>
-	''' <param name="ds"></param>
-	''' <param name="tblNames"></param>
-	''' <param name="parms">Parameter values added to the SQLCommand.</param>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   FillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},""Toys"",""Childrens products"")")> _
+    ''' <summary>
+    ''' Fill multiple tables in a dataset. Example as following:
+    ''' FillDataSetMultiSelect("Select * from products where typeName =@type; Select * from catagories where name = @catname",ds, new String (){"products","catagories"},"Toys","Childrens products")
+    ''' </summary>
+    ''' <param name="SQLcommand">Sql Command Text</param>
+    ''' <param name="ds"></param>
+    ''' <param name="tblNames"></param>
+    ''' <param name="parms">Parameter values added to the SQLCommand.</param>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   FillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},""Toys"",""Childrens products"")")>
     Public Function FillDataSetMultiSelect(ByVal SQLcommand As String, ByRef ds As DataSet, ByVal tblNames As String(), ByVal ParamArray parms As Object()) As DataSet
         Return SafeFillDataSetMultiSelect(SQLcommand, ds, tblNames, parms)
     End Function
@@ -321,7 +322,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="commandParameters"></param>
     ''' <param name="mustCloseConnection"></param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Opens a DbCommand and waits for the connection execute.")> _
+    <System.ComponentModel.Description("Opens a DbCommand and waits for the connection execute.")>
     Protected Shared Sub PrepareCommand(ByVal command As DbCommand, ByVal connection As DbConnection, ByVal transaction As DbTransaction, ByVal commandType As CommandType, ByVal commandText As String, ByVal commandParameters As DbParameter(), ByRef mustCloseConnection As Boolean)
         If (command Is Nothing) Then
             Throw New ArgumentNullException("command")
@@ -355,7 +356,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="command"></param>
     ''' <param name="commandParameters"></param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Adds paramters to a command.")> _
+    <System.ComponentModel.Description("Adds paramters to a command.")>
     Protected Shared Sub AttachParameters(ByVal command As DbCommand, ByVal commandParameters As DbParameter())
         If (command Is Nothing) Then
             Throw New ArgumentNullException("command")
@@ -380,7 +381,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Executes a Sql command string that does not return tabular data.")> _
+    <System.ComponentModel.Description("Executes a Sql command string that does not return tabular data.")>
     Public Function ExecuteNonQuery(ByVal SQLcommand As String, Optional ByVal connection As DbConnection = Nothing) As Integer
         If connection Is Nothing Then connection = defaultConnection
         Dim command As DbCommand = createCommand()
@@ -418,7 +419,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="parms">Parameter values added to the SQLCommand.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fills a dataTable from a select string. Pass parms to command like the following:   FillDataTable(""Select * from products where typeName=@type and department=@dept"",dt,""Toys"",""children"")")> _
+    <System.ComponentModel.Description("Fills a dataTable from a select string. Pass parms to command like the following:   FillDataTable(""Select * from products where typeName=@type and department=@dept"",dt,""Toys"",""children"")")>
     Public Function FillDataTable(ByVal SQLcommand As String, ByRef table As DataTable, ByVal ParamArray parms As Object()) As DataTable
         Return SafeFillTable(SQLcommand, table, parms)
     End Function
@@ -431,7 +432,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="table"></param>
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fills a dataTable from a select string. Pass parms to command like the following:   FillDataTable(""Select * from products where typeName=@type and department=@dept"",dt,""Toys"",""children"")")> _
+    <System.ComponentModel.Description("Fills a dataTable from a select string. Pass parms to command like the following:   FillDataTable(""Select * from products where typeName=@type and department=@dept"",dt,""Toys"",""children"")")>
     Public Sub FillDataTable(ByVal SQLcommand As String, ByRef table As DataTable, ByRef connection As DbConnection)
         SafeFillTable(SQLcommand, table, , connection)
     End Sub
@@ -444,7 +445,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="parms">Parameter values added to the SQLCommand.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fills a dataTable from a select string. Pass parms to command like the following:   FillDataTable(""Select * from products where typeName=@type and department=@dept"",dt,""Toys"",""children"")")> _
+    <System.ComponentModel.Description("Fills a dataTable from a select string. Pass parms to command like the following:   FillDataTable(""Select * from products where typeName=@type and department=@dept"",dt,""Toys"",""children"")")>
     Public Function FillDataTable(ByVal SQLcommand As String, ByVal ParamArray parms As Object()) As DataTable
         Return SafeFillTable(SQLcommand, , parms)
     End Function
@@ -462,7 +463,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="additionalString"></param>
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fill a datatable with a value for each listed column. statements are anded together.")> _
+    <System.ComponentModel.Description("Fill a datatable with a value for each listed column. statements are anded together.")>
     Public Sub ColumnFilterFillDataTable(ByVal SQLcommand As String, ByRef table As DataTable, ByVal colmnNames As Collection, ByVal Values As Collection, Optional ByVal additionalString As String = Nothing, Optional ByVal connection As DbConnection = Nothing)
         Dim cols(colmnNames.Count - 1) As String
         Dim vals(Values.Count - 1) As Object
@@ -482,7 +483,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="AdditionalStmts"></param>
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fill a datatable with a value for each listed column. statements are anded together.")> _
+    <System.ComponentModel.Description("Fill a datatable with a value for each listed column. statements are anded together.")>
     Public Sub ColumnFilterFillDataTable(ByVal SQLcommand As String, ByRef table As DataTable, ByVal AdditionalStmts As Collection, Optional ByVal connection As DbConnection = Nothing)
         SQLcommand = getSQLStatement(SQLcommand, AdditionalStmts)
         SafeFillTable(SQLcommand, table, Nothing, connection)
@@ -498,7 +499,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="additionalString"></param>
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fill a datatable with a value for each listed column. statements are anded together.")> _
+    <System.ComponentModel.Description("Fill a datatable with a value for each listed column. statements are anded together.")>
     Public Sub ColumnFilterFillDataTable(ByVal SQLcommand As String, ByRef table As DataTable, ByVal colmnNames As String(), ByVal Values As Object(), Optional ByVal additionalString As String = Nothing, Optional ByVal connection As DbConnection = Nothing)
         If colmnNames Is Nothing Then
             ColumnFilterFillDataTable(SQLcommand, table, New String() {}, New Object() {}, additionalString, connection)
@@ -549,7 +550,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="pararray"></param>
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Execute a stored procedure.")> _
+    <System.ComponentModel.Description("Execute a stored procedure.")>
     Public Sub ExecuteSproc(ByVal SQLcommand As String, ByRef ds As DataSet, Optional ByRef pararray As DbParameter() = Nothing, Optional ByVal connection As DbConnection = Nothing)
         If isUsingDifferentHelperType(pararray, connection) Then
             getHelperExternalHelper(pararray, connection).ExecuteSproc(SQLcommand, ds, pararray, connection)
@@ -568,7 +569,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fetches a single value from a datastore.")> _
+    <System.ComponentModel.Description("Fetches a single value from a datastore.")>
     Public Function FetchSingleValue(ByVal SQLcommand As String, Optional ByVal connection As DbConnection = Nothing) As String
         Return SafeFetchSingleValue(SQLcommand, Nothing, connection)
     End Function
@@ -580,7 +581,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="parms">optional parameters to pass to the select statement. Last one may be a connection.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fetches a single value from a datastore.")> _
+    <System.ComponentModel.Description("Fetches a single value from a datastore.")>
     Public Function FetchSingleValue(ByVal SQLcommand As String, ByVal ParamArray parms() As Object) As String
         If parms.Length = 0 OrElse Not TypeOf parms.GetValue(parms.Length - 1) Is DbConnection Then
             Return SafeFetchSingleValue(SQLcommand, parms)
@@ -604,7 +605,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection">optional dBConnection that will override the default conection.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fetches a single value from a database.")> _
+    <System.ComponentModel.Description("Fetches a single value from a database.")>
     Public Function SafeFetchSingleValue(ByVal SQLcommand As String, Optional ByVal parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing) As String
         Dim dt As New DataTable
         SafeFillTable(SQLcommand, dt, parmValueArray, connection)
@@ -622,7 +623,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="parmValueArray">Array or parameters</param>
     ''' <param name="connection">dBConnection that will override the default conection.</param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Executes a Sql command string that does not return tabular data. Takes a parm list as arguments.   SafeExecuteNonQuery(""delete from useres where id = @id"",7)")> _
+    <System.ComponentModel.Description("Executes a Sql command string that does not return tabular data. Takes a parm list as arguments.   SafeExecuteNonQuery(""delete from useres where id = @id"",7)")>
     Public Sub SafeExecuteNonQuery(ByVal SQLcommand As String, Optional ByVal parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing)
         If isUsingDifferentHelperType(parmValueArray, connection) Then
             getHelperExternalHelper(parmValueArray, connection).SafeExecuteNonQuery(SQLcommand, parmValueArray, connection)
@@ -645,7 +646,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="da"></param>
     ''' <param name="ds"></param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Protected error catcher that will send the select command up to error stack for easier debugging.")> _
+    <System.ComponentModel.Description("Protected error catcher that will send the select command up to error stack for easier debugging.")>
     Protected Sub SafeFillErrorCatcher(ByRef da As DbDataAdapter, ByRef ds As DataSet)
         If ds Is Nothing Then ds = New DataSet
         If ds.Tables.Count = 0 Then ds.Tables.Add()
@@ -681,7 +682,7 @@ Public MustInherit Class BaseHelper
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("If connection are qued this will return the next available one.")> _
+    <System.ComponentModel.Description("If connection are qued this will return the next available one.")>
     Private ReadOnly Property connectionFromStack(ByVal connection As DbConnection) As DbConnection
         Get
             If Not _connectionHash.ContainsKey(connection.ConnectionString) Then
@@ -709,7 +710,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("An overidable method for subclasses to add formatting and utility code to derived classes")> _
+    <System.ComponentModel.Description("An overidable method for subclasses to add formatting and utility code to derived classes")>
     Public Function prepareAdaptor(ByVal SQLcommand As String, Optional ByRef connection As DbConnection = Nothing) As DbDataAdapter
         If connection Is Nothing Then
             connection = defaultConnection
@@ -727,7 +728,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="SQLcommand"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("An overidable method for subclasses to add formatting and utility code to derived classes")> _
+    <System.ComponentModel.Description("An overidable method for subclasses to add formatting and utility code to derived classes")>
     Protected Overridable Function processSelectCommand(ByVal SQLcommand As String) As String
         Return SQLcommand
     End Function
@@ -740,7 +741,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates an adaptor froma sql string")> _
+    <System.ComponentModel.Description("Creates an adaptor froma sql string")>
     Public Function prepareSafeFillAdaptor(ByVal SQLcommand As String, Optional ByVal parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing) As System.Data.Common.DbDataAdapter
         If Not parmValueArray Is Nothing AndAlso parmValueArray.Length > 0 AndAlso TypeOf parmValueArray.GetValue(parmValueArray.Length - 1) Is DbConnection Then
             Dim newparms(parmValueArray.Length - 2) As Object
@@ -748,11 +749,22 @@ Public MustInherit Class BaseHelper
             connection = parmValueArray.GetValue(parmValueArray.Length - 1)
             parmValueArray = newparms
         End If
+        Dim regex1 As Regex = New Regex("\x40\w+", RegexOptions.IgnoreCase Or RegexOptions.CultureInvariant _
+            Or RegexOptions.IgnorePatternWhitespace Or RegexOptions.Compiled)
+        Dim hasList = False
+        If Not parmValueArray Is Nothing AndAlso parmValueArray.Length > 0 Then
+            For Each obj As Object In parmValueArray
+                If TypeOf obj Is System.Collections.IList OrElse obj.GetType().IsArray Then
+                    hasList = True
+                End If
+            Next
+        End If
+        If hasList Then
+            ExpandParameters(SQLcommand, parmValueArray)
+        End If
         SQLcommand = processSelectCommand(SQLcommand)
         Dim da As DbDataAdapter = prepareAdaptor(SQLcommand, connection)
         If Not parmValueArray Is Nothing AndAlso parmValueArray.Length > 0 Then
-            Dim regex1 As Regex = New Regex("\x40\w+", RegexOptions.IgnoreCase Or RegexOptions.CultureInvariant _
-            Or RegexOptions.IgnorePatternWhitespace Or RegexOptions.Compiled)
             Dim i As Integer = 0
             For Each singleMatch As Match In regex1.Matches(SQLcommand)
                 If Not da.SelectCommand.Parameters.Contains(singleMatch.ToString) Then
@@ -765,7 +777,90 @@ Public MustInherit Class BaseHelper
                 End If
             Next
         End If
+
+
         Return da
+    End Function
+
+    Public Function ExpandParameters(ByRef SQLcommand As String, ByRef parmValueArray As Object()) As Boolean
+        If parmValueArray Is Nothing Then
+            Return False ' Handle null parameter array
+        End If
+
+        Dim regex As Regex = New Regex("\x40\w+", RegexOptions.IgnoreCase Or RegexOptions.CultureInvariant _
+            Or RegexOptions.IgnorePatternWhitespace Or RegexOptions.Compiled)
+        Dim matches As MatchCollection = regex.Matches(SQLcommand)
+
+        If matches.Count = 0 Then
+            Return False ' No parameters found
+        End If
+
+        Dim newParmValueArray As New List(Of Object)()
+        Dim offset As Integer = 0 ' Keep track of how many parameters we've added
+        Dim originalParmIndex As Integer = 0 ' Index for the original parmValueArray
+
+        For Each match As Match In matches
+            Dim paramName As String = match.Value
+            Dim paramNameWithoutAt As String = paramName.Substring(1)
+
+            ' Get the corresponding value from the original parmValueArray, adjusted for the offset
+            Dim currentValue As Object
+            If originalParmIndex < parmValueArray.Length Then
+                currentValue = parmValueArray(originalParmIndex)
+            Else
+                ' Handle the case where there are more parameters in the SQL than values in the array
+                Return False ' Or throw an exception, depending on your error handling policy
+            End If
+
+
+            If TypeOf currentValue Is System.Collections.IList OrElse currentValue.GetType().IsArray Then
+                ' It's a list or array, so expand it
+                Dim listOrArray As System.Collections.IEnumerable = DirectCast(currentValue, System.Collections.IEnumerable)
+                Dim itemCount As Integer = 0
+
+                If TypeOf currentValue Is System.Collections.IList Then
+                    itemCount = DirectCast(currentValue, System.Collections.IList).Count
+                Else
+                    itemCount = DirectCast(currentValue, Array).Length
+                End If
+
+                Dim newParams As String = "("
+                For i As Integer = 0 To itemCount - 1
+                    Dim itemValue As Object
+
+                    If TypeOf listOrArray Is System.Collections.IList Then
+                        itemValue = DirectCast(listOrArray, System.Collections.IList)(i)
+                    Else
+                        itemValue = DirectCast(listOrArray, Array).GetValue(i)
+                    End If
+
+                    Dim newParamName = "@" & paramNameWithoutAt & "_" & (i + 1).ToString()
+                    newParams &= newParamName
+                    newParmValueArray.Add(itemValue) ' Add the item value to the new array
+
+                    If i < itemCount - 1 Then
+                        newParams &= ","
+                    End If
+                Next
+                newParams &= ")"
+
+                ' Replace the original parameter with the expanded list
+                ' Check if the parameter is already within parentheses
+                Dim pattern = If(SQLcommand.IndexOf("(" & paramName & ")") > -1, "(" & paramName & ")", paramName)
+                SQLcommand = SQLcommand.Replace(pattern, newParams)
+
+                offset += itemCount - 1 ' Update the offset
+            Else
+                ' It's a single value, so just add it to the new array
+                newParmValueArray.Add(currentValue)
+            End If
+
+            originalParmIndex += 1 ' Move to the next parameter in the *original* array
+        Next
+
+        ' Replace the original parmValueArray with the new, expanded one
+        parmValueArray = newParmValueArray.ToArray()
+        Return True
     End Function
 
     ''' <summary>
@@ -779,7 +874,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   FillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},""Toys"",""Childrens products"")")> _
+    <System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   FillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},""Toys"",""Childrens products"")")>
     Public Function SafeFillDataSetMultiSelect(ByVal SQLcommand As String, ByRef ds As DataSet, ByVal tblNames As String(), Optional ByRef parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing) As DataSet
         If isUsingDifferentHelperType(parmValueArray, connection) Then
             Return getHelperExternalHelper(parmValueArray, connection).SafeFillDataSetMultiSelect(SQLcommand, ds, tblNames, parmValueArray, connection)
@@ -831,12 +926,12 @@ Public MustInherit Class BaseHelper
         Return False
     End Function
 
-    Public tableFromSelect As Regex = New Regex( _
-        "select.*?\s+?from\s+?(?<table>([a-zA-Z]|[0-9]|\x2E|\x2D|\x5F)+?)(\s+?|$)", _
+    Public tableFromSelect As Regex = New Regex(
+        "select.*?\s+?from\s+?(?<table>([a-zA-Z]|[0-9]|\x2E|\x2D|\x5F)+?)(\s+?|$)",
         RegexOptions.IgnoreCase _
         Or RegexOptions.CultureInvariant _
         Or RegexOptions.IgnorePatternWhitespace _
-        Or RegexOptions.Compiled _
+        Or RegexOptions.Compiled
         )
 
     ''' <summary>
@@ -848,7 +943,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("")> _
+    <System.ComponentModel.Description("")>
     Public Function SafeFillTable(ByVal SQLcommand As String, Optional ByRef dt As DataTable = Nothing, Optional ByRef parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing) As DataTable
         If dt Is Nothing Then dt = New DataTable
         If Not parmValueArray Is Nothing AndAlso parmValueArray.Length > 0 AndAlso TypeOf parmValueArray.GetValue(0) Is DataTable Then
@@ -887,7 +982,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   SafeFillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},new Object(){""Toys"",""Childrens products""})")> _
+    <System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   SafeFillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},new Object(){""Toys"",""Childrens products""})")>
     Public Function SafeFillDataSet(ByVal SQLcommand As String, Optional ByRef ds As DataSet = Nothing, Optional ByVal tablename As String = Nothing, Optional ByRef parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing) As DataSet
         Return SafeFillDataSetMultiSelect(SQLcommand, ds, Nothing, parmValueArray, connection)
     End Function
@@ -902,7 +997,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="dt">Datatable schema to create in the database.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Checks for and creates a datatable if one does not exist in the database.")> _
+    <System.ComponentModel.Description("Checks for and creates a datatable if one does not exist in the database.")>
     Public Function checkAndCreateTable(ByVal dt As DataTable) As Boolean
         If Not checkDBObjectExists(dt.TableName) Then
             Dim retval As Boolean = False
@@ -935,7 +1030,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="ds">The dataSet to add to the current database.</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Cheacks and createsevery dataTable in a dataSet.")> _
+    <System.ComponentModel.Description("Cheacks and createsevery dataTable in a dataSet.")>
     Public Function checkAndCreateAllTables(ByVal ds As DataSet) As Boolean
         Dim retval As Boolean = True
         For Each tbl As DataTable In ds.Tables
@@ -954,7 +1049,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="dt"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Called on creation of a new DbAdaptor")> _
+    <System.ComponentModel.Description("Called on creation of a new DbAdaptor")>
     Protected Overridable Function ProcessDataAdaptor(ByRef da As DbDataAdapter, ByVal TableName As String, Optional ByVal dt As DataTable = Nothing) As DbDataAdapter
         If Not dt Is Nothing Then
             If Not dt.PrimaryKey Is Nothing AndAlso dt.PrimaryKey.Length = 1 AndAlso dt.PrimaryKey(0).AutoIncrement Then
@@ -984,7 +1079,7 @@ Public MustInherit Class BaseHelper
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Property that returns a data adaptor for the passed in tale name. Caches the adaptor after the first call for the life of this object.")> _
+    <System.ComponentModel.Description("Property that returns a data adaptor for the passed in tale name. Caches the adaptor after the first call for the life of this object.")>
     Public ReadOnly Property Adaptor(ByVal TableName As String, Optional ByVal connection As DbConnection = Nothing, Optional ByVal dt As DataTable = Nothing) As DbDataAdapter
         Get
             'Dim d As Date = Date.Now
@@ -1126,7 +1221,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="connection"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Utility function to create a deep copy of a DbDataAdapter object.")> _
+    <System.ComponentModel.Description("Utility function to create a deep copy of a DbDataAdapter object.")>
     Protected Function cloneSQLAdaptor(ByVal da As DbDataAdapter, ByVal connection As DbConnection) As DbDataAdapter
         Dim newConn As DbConnection = createConnection(connection.ConnectionString)
         Dim da1 As DbDataAdapter = createAdaptor(, newConn)
@@ -1150,7 +1245,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="dc"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Utility function to create a deep copy of a DbCommand object.")> _
+    <System.ComponentModel.Description("Utility function to create a deep copy of a DbCommand object.")>
     Protected Function cloneDbCommand(ByVal dc As DbCommand) As DbCommand
         Dim dcnew As DbCommand = createCommand(dc.CommandText, createConnection(dc.Connection.ConnectionString))
         dcnew.CommandType = dc.CommandType
@@ -1171,7 +1266,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="ContinueUpdateOnError"></param>
     ''' <param name="connection"></param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Update a given datatable, and create it if it dosen't exist in the database.")> _
+    <System.ComponentModel.Description("Update a given datatable, and create it if it dosen't exist in the database.")>
     Public Sub UpdateCreateDB(ByRef dt As DataTable, Optional ByVal TableName As String = Nothing, Optional ByVal ContinueUpdateOnError As Boolean = False, Optional ByRef connection As DbConnection = Nothing)
         Try
             Update(dt, TableName, ContinueUpdateOnError, connection)
@@ -1192,7 +1287,7 @@ Public MustInherit Class BaseHelper
     ''' </summary>
     ''' <param name="dt"></param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Performs all inserts,updates and deletes on a database froma provided datatable. Uses the table name from the dataTable and pushes the changes to the table in the database with the same name.")> _
+    <System.ComponentModel.Description("Performs all inserts,updates and deletes on a database froma provided datatable. Uses the table name from the dataTable and pushes the changes to the table in the database with the same name.")>
     Public Sub Update(ByRef dt As DataTable)
         Update(dt, Nothing)
     End Sub
@@ -1202,7 +1297,7 @@ Public MustInherit Class BaseHelper
     ''' </summary>
     ''' <param name="dt"></param>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Performs all inserts,updates and deletes on a database froma provided datatable. Uses the table name from the dataTable and pushes the changes to the table in the database with the same name.")> _
+    <System.ComponentModel.Description("Performs all inserts,updates and deletes on a database froma provided datatable. Uses the table name from the dataTable and pushes the changes to the table in the database with the same name.")>
     Public Sub Update(dt As Object)
         Update(dt, Nothing)
     End Sub
@@ -1213,7 +1308,7 @@ Public MustInherit Class BaseHelper
     ''' <param name="dt"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("The same as Update, only the table does not need to be passed byref and is returned by the call. Helps passing in C#")> _
+    <System.ComponentModel.Description("The same as Update, only the table does not need to be passed byref and is returned by the call. Helps passing in C#")>
     Public Function UpdateAndReturn(ByVal dt As DataTable) As DataTable
         Update(dt, Nothing)
         Return dt
@@ -1262,136 +1357,165 @@ Public MustInherit Class BaseHelper
 
 #Region "Get Sorted Page"
 
-	''' <summary>
-	''' Returns a paged result for a given table with a seperate query. Paramters are NOT SQL parameters. It is not safe to open them up to a variable set by the request.
-	''' </summary>
-	''' <param name="dt"></param>
-	''' <param name="tablename"></param>
-	''' <param name="itemsPerPage"></param>
-	''' <param name="pageNum"></param>
-	''' <param name="primaryKey"></param>
-	''' <param name="sort"></param>
-	''' <param name="query"></param>
-	''' <param name="parmValueArray"></param>
-	''' <param name="connection"></param>
-	''' <returns></returns>
-	<System.ComponentModel.Description("Returns a paged result for a given table with a seperate query.")>
-	Public Overridable Function GetSortedPage(
-		ByRef dt As DataTable,
-		Optional ByVal tablename As String = Nothing,
-		Optional ByVal itemsPerPage As Integer = 15,
-		Optional ByVal pageNum As Integer = 1,
-		Optional ByVal primaryKey As String = Nothing,
-		Optional ByVal sort As String = "",
-		Optional ByVal query As String = "",
-		Optional ByRef parmValueArray As Object() = Nothing,
-		Optional ByVal connection As DbConnection = Nothing) As Integer
-		'sort = BaseSecurityPage.RemoveSpecialCharacters(sort, "\s_\,")
-		Dim pagecountTable As String = "DTIPageCount1"
-		Dim ds As DataSet = dt.DataSet
-		If ds Is Nothing Then
-			ds = New DataSet
-			ds.Tables.Add(dt)
-		End If
-		If Not ds.Tables.Contains(pagecountTable) Then
-			ds.Tables.Add(pagecountTable)
-			ds.Tables(pagecountTable).Columns.Add(pagecountTable)
-		End If
-		ds.Tables(pagecountTable).Clear()
-		If tablename Is Nothing Then tablename = dt.TableName
-		If Not tablename.ToLower.Contains("select ") Then
-			If Not tablename.Contains("(") Then
-				If Not tablename.StartsWith("[") Then
-					tablename = "[" & tablename & "]"
-				End If
-			End If
-		End If
-		If pageNum < 1 Then
-			pageNum = 1
-		End If
-		Dim SizeString As Integer = itemsPerPage
-		Dim PrevString As Integer = itemsPerPage * (pageNum - 1)
-		Dim sortdirection As String = "DESC"
-		If primaryKey Is Nothing Then
-			If Not dt.PrimaryKey Is Nothing AndAlso dt.PrimaryKey.Length > 0 Then
-				If dt.PrimaryKey.Length > 1 Then
-					Throw New Exception("Get Sorted page needs a primary key specified for a table with a multi-column primary key.")
-				End If
-				primaryKey = dt.PrimaryKey(0).ColumnName
-			Else
-				primaryKey = "Id"
-			End If
-		End If
-		If String.IsNullOrEmpty(sort) Then
-			sort = primaryKey
-		End If
-		If String.IsNullOrEmpty(query) Then
-			query = "1=1"
-		End If
-		query = "(" & query & ")"
-		Dim ret As Integer = 0
-		'tablename = stripDBNameOfDanger(tablename)
-		Dim searchStr As String = "SELECT TOP " & SizeString & " * FROM " & tablename & " WHERE " & primaryKey & " IN" &
-		"(SELECT TOP " & SizeString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " AND " & primaryKey & " NOT IN" &
-		"(SELECT TOP " & PrevString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " ORDER BY " & sort & ")" &
-		"ORDER BY " & sort & ")" &
-		"ORDER BY " & sort
-		Dim pageStr As String = "SELECT (COUNT(*) - 1)/" & SizeString & " + 1 AS " & pagecountTable & " FROM " & tablename & " WHERE " & query
-		SafeFillDataSetMultiSelect(searchStr & ";" & pageStr, ds, New String() {dt.TableName, pagecountTable}, parmValueArray, connection)
-		ret = ds.Tables(pagecountTable).Rows(0).Item(0)
-		ds.Tables.Remove(pagecountTable)
-		Return ret
+    ''' <summary>
+    ''' Returns a paged result for a given table with a seperate query. Paramters are NOT SQL parameters. It is not safe to open them up to a variable set by the request.
+    ''' </summary>
+    ''' <param name="dt"></param>
+    ''' <param name="tablename"></param>
+    ''' <param name="itemsPerPage"></param>
+    ''' <param name="pageNum"></param>
+    ''' <param name="primaryKey"></param>
+    ''' <param name="sort"></param>
+    ''' <param name="query"></param>
+    ''' <param name="parmValueArray"></param>
+    ''' <param name="connection"></param>
+    ''' <returns></returns>
+    <System.ComponentModel.Description("Returns a paged result for a given table with a seperate query.")>
+    Public Overridable Function GetSorted(
+        ByVal dt As DataTable,
+        Optional ByVal tablename As String = Nothing,
+        Optional ByVal itemsPerPage As Integer = 15,
+        Optional ByVal pageNum As Integer = 1,
+        Optional ByVal primaryKey As String = Nothing,
+        Optional ByVal sort As String = "",
+        Optional ByVal query As String = "",
+        Optional ByVal parmValueArray As Object() = Nothing,
+        Optional ByVal connection As DbConnection = Nothing) As Integer
+        Dim dt1 As DataTable = dt
+        Dim pa As Object() = parmValueArray
+        Return GetSortedPage(dt1, tablename, itemsPerPage, pageNum, primaryKey, sort, query, pa, connection)
+    End Function
 
-	End Function
+    ''' <summary>
+    ''' Returns a paged result for a given table with a seperate query. Paramters are NOT SQL parameters. It is not safe to open them up to a variable set by the request.
+    ''' </summary>
+    ''' <param name="dt"></param>
+    ''' <param name="tablename"></param>
+    ''' <param name="itemsPerPage"></param>
+    ''' <param name="pageNum"></param>
+    ''' <param name="primaryKey"></param>
+    ''' <param name="sort"></param>
+    ''' <param name="query"></param>
+    ''' <param name="parmValueArray"></param>
+    ''' <param name="connection"></param>
+    ''' <returns></returns>
+    <System.ComponentModel.Description("Returns a paged result for a given table with a seperate query.")>
+    Public Overridable Function GetSortedPage(
+        ByRef dt As DataTable,
+        Optional ByVal tablename As String = Nothing,
+        Optional ByVal itemsPerPage As Integer = 15,
+        Optional ByVal pageNum As Integer = 1,
+        Optional ByVal primaryKey As String = Nothing,
+        Optional ByVal sort As String = "",
+        Optional ByVal query As String = "",
+        Optional ByRef parmValueArray As Object() = Nothing,
+        Optional ByVal connection As DbConnection = Nothing) As Integer
+        'sort = BaseSecurityPage.RemoveSpecialCharacters(sort, "\s_\,")
+        Dim pagecountTable As String = "DTIPageCount1"
+        Dim ds As DataSet = dt.DataSet
+        If ds Is Nothing Then
+            ds = New DataSet
+            ds.Tables.Add(dt)
+        End If
+        If Not ds.Tables.Contains(pagecountTable) Then
+            ds.Tables.Add(pagecountTable)
+            ds.Tables(pagecountTable).Columns.Add(pagecountTable)
+        End If
+        ds.Tables(pagecountTable).Clear()
+        If tablename Is Nothing Then tablename = dt.TableName
+        If Not tablename.ToLower.Contains("select ") Then
+            If Not tablename.Contains("(") Then
+                If Not tablename.StartsWith("[") Then
+                    tablename = "[" & tablename & "]"
+                End If
+            End If
+        End If
+        If pageNum < 1 Then
+            pageNum = 1
+        End If
+        Dim SizeString As Integer = itemsPerPage
+        Dim PrevString As Integer = itemsPerPage * (pageNum - 1)
+        Dim sortdirection As String = "DESC"
+        If primaryKey Is Nothing Then
+            If Not dt.PrimaryKey Is Nothing AndAlso dt.PrimaryKey.Length > 0 Then
+                If dt.PrimaryKey.Length > 1 Then
+                    Throw New Exception("Get Sorted page needs a primary key specified for a table with a multi-column primary key.")
+                End If
+                primaryKey = dt.PrimaryKey(0).ColumnName
+            Else
+                primaryKey = "Id"
+            End If
+        End If
+        If String.IsNullOrEmpty(sort) Then
+            sort = primaryKey
+        End If
+        If String.IsNullOrEmpty(query) Then
+            query = "1=1"
+        End If
+        query = "(" & query & ")"
+        Dim ret As Integer = 0
+        'tablename = stripDBNameOfDanger(tablename)
+        Dim searchStr As String = "SELECT TOP " & SizeString & " * FROM " & tablename & " WHERE " & primaryKey & " IN" &
+        "(SELECT TOP " & SizeString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " AND " & primaryKey & " NOT IN" &
+        "(SELECT TOP " & PrevString & " " & primaryKey & " FROM " & tablename & " WHERE " & query & " ORDER BY " & sort & ")" &
+        "ORDER BY " & sort & ")" &
+        "ORDER BY " & sort
+        Dim pageStr As String = "SELECT (COUNT(*) - 1)/" & SizeString & " + 1 AS " & pagecountTable & " FROM " & tablename & " WHERE " & query
+        SafeFillDataSetMultiSelect(searchStr & ";" & pageStr, ds, New String() {dt.TableName, pagecountTable}, parmValueArray, connection)
+        ret = ds.Tables(pagecountTable).Rows(0).Item(0)
+        ds.Tables.Remove(pagecountTable)
+        Return ret
+
+    End Function
 
 #End Region
 
 #Region "Import Data"
 
-	'Public Overridable Sub importTableData(ByVal SourceDt As DataTable, Optional ByVal createIfMissing As Boolean = True, Optional ByVal connection As DbConnection = Nothing)
-	'    If connection Is Nothing Then connection = defaultConnection
-	'    If createIfMissing Then checkAndCreateTable(SourceDt)
-	'    Dim dt As DataTable = SourceDt.Clone
-	'    For Each row As DataRow In dt.Rows
-	'        row.SetAdded()
-	'    Next
-	'    Dim da As DbDataAdapter = cloneSQLAdaptor(createAdaptor("select * from [" & dt.TableName & "]"), connection)
-	'    da.InsertCommand.Parameters.Clear()
-	'    Dim command As String = "insert into [" & dt.TableName & "] ("
-	'    Dim vals As String = " VALUES ("
-	'    Dim i As Integer = 1
-	'    For Each col As DataColumn In dt.Columns
-	'        command &= "[" & col.ColumnName & "],"
-	'        Dim parm As DbParameter = Me.createParameter(col.ColumnName)
-	'        parm.ParameterName = "parm" & i
-	'        parm.SourceColumn = col.ColumnName
-	'        parm.SourceVersion = DataRowVersion.Current
-	'        da.InsertCommand.Parameters.Item("parm" & i) = parm
-	'        vals += "@parm" & i & ","
-	'        i += 1
-	'    Next
-	'    command = command.Trim(",")
-	'    vals = vals.Trim(",")
-	'    da.InsertCommand.CommandText = command & ") " & vals & ")"
-	'    da.Update(dt)
-	'End Sub
+    'Public Overridable Sub importTableData(ByVal SourceDt As DataTable, Optional ByVal createIfMissing As Boolean = True, Optional ByVal connection As DbConnection = Nothing)
+    '    If connection Is Nothing Then connection = defaultConnection
+    '    If createIfMissing Then checkAndCreateTable(SourceDt)
+    '    Dim dt As DataTable = SourceDt.Clone
+    '    For Each row As DataRow In dt.Rows
+    '        row.SetAdded()
+    '    Next
+    '    Dim da As DbDataAdapter = cloneSQLAdaptor(createAdaptor("select * from [" & dt.TableName & "]"), connection)
+    '    da.InsertCommand.Parameters.Clear()
+    '    Dim command As String = "insert into [" & dt.TableName & "] ("
+    '    Dim vals As String = " VALUES ("
+    '    Dim i As Integer = 1
+    '    For Each col As DataColumn In dt.Columns
+    '        command &= "[" & col.ColumnName & "],"
+    '        Dim parm As DbParameter = Me.createParameter(col.ColumnName)
+    '        parm.ParameterName = "parm" & i
+    '        parm.SourceColumn = col.ColumnName
+    '        parm.SourceVersion = DataRowVersion.Current
+    '        da.InsertCommand.Parameters.Item("parm" & i) = parm
+    '        vals += "@parm" & i & ","
+    '        i += 1
+    '    Next
+    '    command = command.Trim(",")
+    '    vals = vals.Trim(",")
+    '    da.InsertCommand.CommandText = command & ") " & vals & ")"
+    '    da.Update(dt)
+    'End Sub
 
-	'Public Overridable Sub importDataSet(ByVal ds As DataSet, Optional ByVal createIfMissing As Boolean = True, Optional ByVal SourceConnection As DbConnection = Nothing, Optional ByVal DestinationConnection As DbConnection = Nothing)
-	'    Dim c As New Collection
-	'    For Each t As DataTable In ds.Tables
-	'        c.Add(t, t.TableName)
-	'    Next
-	'    For Each r As DataRelation In ds.Relations
-	'        c.Remove(r.ChildTable.TableName)
-	'        c.Add(r.ChildTable, r.ChildTable.TableName, , c(r.ParentTable))
-	'    Next
-	'    For Each t As DataTable In c
-	'        importTableData(t, True)
-	'    Next
+    'Public Overridable Sub importDataSet(ByVal ds As DataSet, Optional ByVal createIfMissing As Boolean = True, Optional ByVal SourceConnection As DbConnection = Nothing, Optional ByVal DestinationConnection As DbConnection = Nothing)
+    '    Dim c As New Collection
+    '    For Each t As DataTable In ds.Tables
+    '        c.Add(t, t.TableName)
+    '    Next
+    '    For Each r As DataRelation In ds.Relations
+    '        c.Remove(r.ChildTable.TableName)
+    '        c.Add(r.ChildTable, r.ChildTable.TableName, , c(r.ParentTable))
+    '    Next
+    '    For Each t As DataTable In c
+    '        importTableData(t, True)
+    '    Next
 
-	'End Sub
+    'End Sub
 
-	Public Overridable Sub ExportData(ByVal ds As DataSet, ByVal DestinationConnection As DbConnection, Optional ByVal autofilldataset As Boolean = True)
+    Public Overridable Sub ExportData(ByVal ds As DataSet, ByVal DestinationConnection As DbConnection, Optional ByVal autofilldataset As Boolean = True)
         Dim destHelper As BaseHelper = DataBase.createHelper(DestinationConnection)
         ExportData(ds, destHelper, autofilldataset)
     End Sub
@@ -1448,6 +1572,113 @@ Public MustInherit Class BaseHelper
         Next
     End Sub
 
+    ''' <summary>
+    ''' example Descriptor is: "Name[50], Age(int), Country | John, 30, USA | Jane, 25, UK";
+    ''' </summary>
+    ''' <param name="descriptor"></param>
+    ''' <returns></returns>
+    Public Function CreateDataTableFromDescriptor(descriptor As String) As DataTable
+        Dim tableName As String = "Table1" ' Default table name if not provided
+        Dim parts() As String
+
+        ' Check if a table name is specified
+        If descriptor.Contains(":") Then
+            Dim tableSplit() As String = descriptor.Split(":")
+            tableName = tableSplit(0).Trim()
+            descriptor = tableSplit(1).Trim()
+        End If
+
+        ' Split the descriptor into columns and rows
+        parts = descriptor.Split("|"c)
+        Dim columnDefinitions() As String = parts(0).Split(","c)
+
+        ' Create the DataTable and set the table name
+        Dim table As New DataTable With {.TableName = tableName}
+
+        ' Add an Id column if not already present
+        Dim idColumnIncluded As Boolean = False
+        For Each colDef As String In columnDefinitions
+            If colDef.ToLower().Trim() = "id" Then
+                idColumnIncluded = True
+                Exit For
+            End If
+        Next
+        If Not idColumnIncluded Then
+            Dim tempList As New List(Of String)(columnDefinitions)
+            tempList.Insert(0, "ID(id)")
+            columnDefinitions = tempList.ToArray()
+        End If
+
+        ' Add columns with their respective types and optional max size for strings
+        For Each colDef As String In columnDefinitions
+            Dim colParts() As String = colDef.Trim().Split("("c)
+            Dim columnName As String = colParts(0).Trim()
+            Dim columnType As Type = GetType(String) ' Default to string
+            Dim maxLength As Integer? = Nothing ' No max length by default
+
+            ' Check if a max length is specified for strings
+            If columnName.Contains("["c) Then
+                Dim startIndex As Integer = columnName.IndexOf("["c)
+                Dim endIndex As Integer = columnName.IndexOf("]"c)
+                If startIndex > 0 AndAlso endIndex > startIndex Then
+                    Dim lengthStr As String = columnName.Substring(startIndex + 1, endIndex - startIndex - 1)
+                    If Integer.TryParse(lengthStr, maxLength) Then
+                        columnName = columnName.Substring(0, startIndex).Trim() ' Remove the length part
+                    End If
+                End If
+            End If
+
+            Dim isID As Boolean = False
+            If colParts.Length > 1 Then ' If a type is specified
+                Dim typeString As String = colParts(1).Replace(")", "").Trim().ToLower()
+                Select Case typeString
+                    Case "int"
+                        columnType = GetType(Integer)
+                    Case "double"
+                        columnType = GetType(Double)
+                    Case "bool"
+                        columnType = GetType(Boolean)
+                    Case "datetime"
+                        columnType = GetType(DateTime)
+                    Case "id"
+                        columnType = GetType(Integer)
+                        isID = True
+                    Case Else
+                        columnType = GetType(String) ' Default to string if unknown
+                End Select
+            End If
+
+            ' Add the column to the DataTable
+            Dim column As New DataColumn(columnName, columnType)
+            If maxLength.HasValue AndAlso columnType Is GetType(String) Then
+                column.MaxLength = maxLength.Value
+            End If
+            table.Columns.Add(column)
+            If isID Then
+                column.AutoIncrementSeed = -1
+                column.AutoIncrementStep = -1
+                column.AutoIncrement = True
+                table.PrimaryKey = {column}
+            End If
+        Next
+
+        ' Add rows
+        For i As Integer = 1 To parts.Length - 1
+            Dim rowData() As String = parts(i).Split(","c)
+            Dim row As DataRow = table.NewRow()
+            Dim addj As Integer = If(Not idColumnIncluded, 1, 0)
+
+            For j As Integer = 0 To rowData.Length - 1
+                row(j + addj) = Convert.ChangeType(rowData(j).Trim(), table.Columns(j + addj).DataType)
+            Next
+
+            table.Rows.Add(row)
+        Next
+
+        Return table
+    End Function
+
+
 #End Region
 
 #Region "Exception Class"
@@ -1456,7 +1687,7 @@ Public MustInherit Class BaseHelper
     ''' An exception class used to give more complete information when database errors occure. It will proved all SQL commands plus all parameters that were provided. Use caution as this can expose SQL statements to the end user.
     ''' </summary>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("An exception class used to give more complete information when database errors occure. It will proved all SQL commands plus all parameters that were provided. Use caution as this can expose SQL statements to the end user.")> _
+    <System.ComponentModel.Description("An exception class used to give more complete information when database errors occure. It will proved all SQL commands plus all parameters that were provided. Use caution as this can expose SQL statements to the end user.")>
     Public Class SQLHelperException
         Inherits Exception
 
@@ -1467,7 +1698,7 @@ Public MustInherit Class BaseHelper
         ''' <param name="innerException"></param>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        <System.ComponentModel.Description("SQL Exception helper classes")> _
+        <System.ComponentModel.Description("SQL Exception helper classes")>
         Public Shared Function sqlEx(ByVal cmd As DbCommand, ByVal innerException As Exception) As Exception
             Dim errorStr As String = innerException.Message & vbCrLf & cmd.CommandText() & " "
             For Each parm As DbParameter In cmd.Parameters
@@ -1484,7 +1715,7 @@ Public MustInherit Class BaseHelper
         ''' <param name="innerException"></param>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        <System.ComponentModel.Description("SQL Exception helper classes")> _
+        <System.ComponentModel.Description("SQL Exception helper classes")>
         Public Shared Function sqlEx(ByVal adaptor As DbDataAdapter, ByVal dt As DataTable, ByVal innerException As Exception) As Exception
             Dim errorStr As String = innerException.Message & vbCrLf & "Insert: " & adaptor.InsertCommand.CommandText() & " " & vbCrLf
             errorStr &= "Update: " & adaptor.UpdateCommand.CommandText() & " " & vbCrLf
@@ -1513,14 +1744,14 @@ Public MustInherit Class BaseHelper
         ''' <param name="innerException"></param>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        <System.ComponentModel.Description("SQL Exception helper classes")> _
+        <System.ComponentModel.Description("SQL Exception helper classes")>
         Public Shared Function sqlEx(ByVal slqString As String, ByVal innerException As Exception) As Exception
             Dim errorStr As String = innerException.Message & vbCrLf & vbCrLf & "SQL command : """ & slqString
             Return New Exception(errorStr, innerException)
         End Function
 
         Public Sub New(ByVal errorMessage As String, ByVal innerException As Exception)
-            MyBase.new(errorMessage, innerException)
+            MyBase.New(errorMessage, innerException)
 
         End Sub
     End Class

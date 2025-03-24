@@ -460,19 +460,19 @@ Public Class DTIAdminPanel
 		If LoggedIn Then
 			Dim str As String = ""
 			jQueryLibrary.jQueryInclude.addScriptBlockPageLoad(Me.Page, "$(""#" & Me.ClientID & """).fadeIn(600);")
-			str &= "function __doPostBack(eventTarget, eventArgument) { " & vbCrLf
-			str &= "     if (!theForm.onsubmit || (theForm.onsubmit() != false)) { " & vbCrLf
-			str &= "          theForm.__EVENTTARGET.value = eventTarget; " & vbCrLf
-			str &= "          theForm.__EVENTARGUMENT.value = eventArgument; " & vbCrLf
-			str &= "          " & jQueryLibrary.jQueryInclude.jqueryVar & "(theForm).submit(); " & vbCrLf
-			str &= "      } " & vbCrLf
-			str &= "} " & vbCrLf
+            str &= "
+            function __doPostBack(eventTarget, eventArgument) { 
+                    if (!theForm.onsubmit || (theForm.onsubmit() != false)) { 
+                        theForm.__EVENTTARGET.value = eventTarget; 
+                        theForm.__EVENTARGUMENT.value = eventArgument; 
+                        " & jQueryLibrary.jQueryInclude.jqueryVar & "(theForm).submit(); 
+                    } 
+            } " & vbCrLf
 			jQueryLibrary.jQueryInclude.addScriptBlock(Me.Page, str)
 		End If
 	End Sub
 
-
-	Private Sub DTIAdminPanel_typeFirstInitialized(ByVal t As System.Type) Handles Me.typeFirstInitialized
+    Private Sub DTIAdminPanel_typeFirstInitialized(ByVal t As System.Type) Handles Me.typeFirstInitialized
         Dim ds As New dsDTIAdminPanel
         sqlhelper.checkAndCreateTable(ds.DTIDynamicPage)
         sqlhelper.checkAndCreateTable(ds.DTIPageHeiarchy)

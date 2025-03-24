@@ -369,7 +369,8 @@ function createAnimation(aname, aspeed, optionalParms) {
         success: function (data) { refreshPage(updateAreaList, true, data, executeScript,null , funcAfterInsert); },
         error: ShowAjaxError
     };
-    addCSSRule(".ui-effects-wrapper", "display", "inline");
+        addCSSRule(".ui-effects-wrapper", "display", "inline");
+        var theForm = document.forms[0];
     $(theForm).ajaxForm(options);
     __doPostBack = function(eventTarget, eventArgument) {
         if (!theForm.onsubmit || (theForm.onsubmit() != false)) {

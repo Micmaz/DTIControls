@@ -14,6 +14,12 @@ namespace _ATestApplication
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			var i = new List<int>();
+			i.Add(1);
+            i.Add(3);
+            i.Add(4);
+            var dt= sqlHelper.FillDataTable("select * from DTIContentManagerhistory where id in (@ids) and areaName = @area and id not in @notInid", new int[] { 2,3,4,5,6 }, "default_EditPanel1", i);
+
             DTIControls.Share.AdminPanelOn = true;
             Hashtable f = new Hashtable();
 			Regex c;

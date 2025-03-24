@@ -13,19 +13,15 @@ Imports System.Collections.Generic
 ''' Format is: http://localhost/res/Baseclasses/Scripts.aspx?f=baseclasses.TestResource.jpg
 ''' </summary>
 ''' <remarks></remarks>
-#If DEBUG Then
+<ComponentModel.EditorBrowsable(ComponentModel.EditorBrowsableState.Never), ComponentModel.ToolboxItem(False)>
 Partial Public Class Scripts
-    Inherits System.Web.UI.Page
-#Else
-    <ComponentModel.EditorBrowsable(ComponentModel.EditorBrowsableState.Never), ComponentModel.ToolboxItem(False)> _
-    Partial Public Class Scripts
-        Inherits System.Web.UI.Page
-#End If
+	Inherits System.Web.UI.Page
 
-    Private Shared minScripts As New Hashtable
-    Private Shared fixedCssFiles As New Hashtable
-    Private Shared etags As New Hashtable
-    Private Shared LastModified As Date = Nothing
+
+	Private Shared minScripts As New Hashtable
+	Private Shared fixedCssFiles As New Hashtable
+	Private Shared etags As New Hashtable
+	Private Shared LastModified As Date = Nothing
 
 	Private _filename As String = Nothing
 
@@ -35,8 +31,8 @@ Partial Public Class Scripts
 	''' <value></value>
 	''' <returns></returns>
 	''' <remarks></remarks>
-        <System.ComponentModel.Description("Filename read from query string. uses f=[resourceName]")> _
-        Private ReadOnly Property filename() As String
+	<System.ComponentModel.Description("Filename read from query string. uses f=[resourceName]")>
+	Private ReadOnly Property filename() As String
 		Get
 			If _filename Is Nothing Then
 				Try
@@ -62,8 +58,8 @@ Partial Public Class Scripts
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
 	''' <remarks></remarks>
-    <System.ComponentModel.Description("The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.")> _
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+	<System.ComponentModel.Description("The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.")>
+	Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 		'registerVirtualPathProvider()
 		If responseEnded Then Return
 		Response.Clear()
@@ -92,7 +88,7 @@ Partial Public Class Scripts
 
 
 					End If
-						writeStringResponse(minScripts.Item(filename))
+					writeStringResponse(minScripts.Item(filename))
 				Catch ex As Exception
 					writeFileFromAssembly()
 				End Try
@@ -112,7 +108,7 @@ Partial Public Class Scripts
 							'insert that into the css
 							Dim replaced As New List(Of String)
 							Dim findUrl As Regex = New Regex("url\(['""]?(?<filename>[^')""]*)['""]?\)", RegexOptions.IgnoreCase)
-					For Each res As Match In findUrl.Matches(strOut)
+							For Each res As Match In findUrl.Matches(strOut)
 								'find and ignore the crazy data:image/gif,base64 construct
 								If res.Groups("filename").Value.IndexOf("data:") = -1 AndAlso Not replaced.Contains(res.Groups("filename").Value) Then
 									replaced.Add(res.Groups("filename").Value)
@@ -139,47 +135,47 @@ Partial Public Class Scripts
 
 	End Sub
 
-    ''' <summary>
-    ''' Writes the string to the output stream.
-    ''' </summary>
-    ''' <param name="str"></param>
-    ''' <remarks></remarks>
-        <System.ComponentModel.Description("Writes the string to the output stream.")> _
-        Private Sub writeStringResponse(ByRef str As String)
-            Using writer As New StreamWriter(Response.OutputStream)
-                writer.Write(str)
-            End Using
-        End Sub
+	''' <summary>
+	''' Writes the string to the output stream.
+	''' </summary>
+	''' <param name="str"></param>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Writes the string to the output stream.")>
+	Private Sub writeStringResponse(ByRef str As String)
+		Using writer As New StreamWriter(Response.OutputStream)
+			writer.Write(str)
+		End Using
+	End Sub
 
-    ''' <summary>
-    ''' Writes the file to the output stream.
-    ''' </summary>
-    ''' <remarks></remarks>
-        <System.ComponentModel.Description("Writes the file to the output stream.")> _
-        Private Sub writeFileFromAssembly()
-            Try
-                Dim strm As Stream = BaseVirtualPathProvider.getResourceStream("/res/" & filename)
-                Dim buff(strm.Length) As Byte
-                Using strm
-                    strm.Read(buff, 0, strm.Length)
-                End Using
-                Response.OutputStream.Write(buff, 0, buff.Length - 1)
-                strm.Close()
-            Catch ex As Exception
+	''' <summary>
+	''' Writes the file to the output stream.
+	''' </summary>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Writes the file to the output stream.")>
+	Private Sub writeFileFromAssembly()
+		Try
+			Dim strm As Stream = BaseVirtualPathProvider.getResourceStream("/res/" & filename)
+			Dim buff(strm.Length) As Byte
+			Using strm
+				strm.Read(buff, 0, strm.Length)
+			End Using
+			Response.OutputStream.Write(buff, 0, buff.Length - 1)
+			strm.Close()
+		Catch ex As Exception
 
-            End Try
-        End Sub
+		End Try
+	End Sub
 
-    ''' <summary>
-    ''' Minimizes a stream of javascript
-    ''' </summary>
-    ''' <param name="jsFile"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-        <System.ComponentModel.Description("Minimizes a stream of javascript")> _
-        Private Function minimizeFile(ByRef jsFile As Stream) As String
-            Return JsMinimizer.SMinify(jsFile)
-        End Function
+	''' <summary>
+	''' Minimizes a stream of javascript
+	''' </summary>
+	''' <param name="jsFile"></param>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Minimizes a stream of javascript")>
+	Private Function minimizeFile(ByRef jsFile As Stream) As String
+		Return JsMinimizer.SMinify(jsFile)
+	End Function
 
 	''' <summary>
 	''' Returns the url to the scripts.aspx page. (e.g. "~/res/BaseClasses/Scripts.aspx?f=baseclasses/TestResource.jpg")
@@ -199,45 +195,45 @@ Partial Public Class Scripts
 	''' </summary>
 	''' <returns></returns>
 	''' <remarks></remarks>
-        <System.ComponentModel.Description("Determins weather resource should be gzipped on return.")> _
-        Public Shared Function GZipSupported() As Boolean
-			try
-				Dim AcceptEncoding As String = System.Web.HttpContext.Current.Request.Headers("Accept-Encoding")
-				If Not String.IsNullOrEmpty(AcceptEncoding) And (AcceptEncoding.Contains("gzip") Or AcceptEncoding.Contains("deflate")) Then
-					Return True
-				End If
-            Catch ex As Exception
-                Return False
-            End Try				
-            Return False
-        End Function
+	<System.ComponentModel.Description("Determins weather resource should be gzipped on return.")>
+	Public Shared Function GZipSupported() As Boolean
+		Try
+			Dim AcceptEncoding As String = System.Web.HttpContext.Current.Request.Headers("Accept-Encoding")
+			If Not String.IsNullOrEmpty(AcceptEncoding) And (AcceptEncoding.Contains("gzip") Or AcceptEncoding.Contains("deflate")) Then
+				Return True
+			End If
+		Catch ex As Exception
+			Return False
+		End Try
+		Return False
+	End Function
 
-    ''' <summary>
-    ''' Determins weather requested item has been modified since it's last request. 
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    <System.ComponentModel.Description("Determins weather requested item has been modified since it's last request.")> _
-    Public Function isModified() As Boolean
-        'Return True
+	''' <summary>
+	''' Determins weather requested item has been modified since it's last request. 
+	''' </summary>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Determins weather requested item has been modified since it's last request.")>
+	Public Function isModified() As Boolean
+		'Return True
 #If DEBUG Then
-        Return True
+		Return True
 #End If
-        Dim modSince As DateTime
-        If Not String.IsNullOrEmpty(Request.Headers("If-None-Match")) Then
-            If Request.Headers("If-None-Match") = etag Then Return False Else Return True
-        End If
-        If Not String.IsNullOrEmpty(("If-Modified-Since")) Then
-            If Date.TryParse(Request.Headers("If-Modified-Since"), modSince) Then
-                If LastModified.AddSeconds(-1) > modSince Then
-                    Return True
-                Else
-                    Return False
-                End If
-            End If
-        End If
-        Return True
-    End Function
+		Dim modSince As DateTime
+		If Not String.IsNullOrEmpty(Request.Headers("If-None-Match")) Then
+			If Request.Headers("If-None-Match") = etag Then Return False Else Return True
+		End If
+		If Not String.IsNullOrEmpty(("If-Modified-Since")) Then
+			If Date.TryParse(Request.Headers("If-Modified-Since"), modSince) Then
+				If LastModified.AddSeconds(-1) > modSince Then
+					Return True
+				Else
+					Return False
+				End If
+			End If
+		End If
+		Return True
+	End Function
 
 	Private responseEnded As Boolean = False
 	''' <summary>
@@ -299,36 +295,36 @@ Partial Public Class Scripts
 	''' <param name="input">String to hash</param>
 	''' <returns>MD5 hash of String</returns>
 	''' <remarks></remarks>
-        <System.ComponentModel.Description("Generates a MD5 hash of a given input string")> _
-        Public Shared Function GenerateHash(ByVal input As String) As String
-            Dim md5Hasher As New System.Security.Cryptography.MD5CryptoServiceProvider()
-            Dim hashedBytes As Byte()
-            Dim encoder As New System.Text.UTF8Encoding()
+	<System.ComponentModel.Description("Generates a MD5 hash of a given input string")>
+	Public Shared Function GenerateHash(ByVal input As String) As String
+		Dim md5Hasher As New System.Security.Cryptography.MD5CryptoServiceProvider()
+		Dim hashedBytes As Byte()
+		Dim encoder As New System.Text.UTF8Encoding()
 
-            hashedBytes = md5Hasher.ComputeHash(encoder.GetBytes(input))
+		hashedBytes = md5Hasher.ComputeHash(encoder.GetBytes(input))
 
-            Dim strOutput As New System.Text.StringBuilder(hashedBytes.Length)
+		Dim strOutput As New System.Text.StringBuilder(hashedBytes.Length)
 
-            For i As Integer = 0 To hashedBytes.Length - 1
-                strOutput.Append(hashedBytes(i).ToString("X2"))
-            Next
+		For i As Integer = 0 To hashedBytes.Length - 1
+			strOutput.Append(hashedBytes(i).ToString("X2"))
+		Next
 
-            Return strOutput.ToString()
-        End Function
+		Return strOutput.ToString()
+	End Function
 
-    ''' <summary>
-    ''' Gets an etag for client caching control based on the date a resource was last read from the hard disk.
-    ''' </summary>
-    ''' <value></value>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-        <System.ComponentModel.Description("Gets an etag for client caching control based on the date a resource was last read from the hard disk.")> _
-        Public ReadOnly Property etag() As String
-            Get
-                'Return GenerateHash(filename & LastModified).Replace("-", "")
-                Return """" & GenerateHash(filename & LastModified).Replace("-", "") & """"
-            End Get
-        End Property
+	''' <summary>
+	''' Gets an etag for client caching control based on the date a resource was last read from the hard disk.
+	''' </summary>
+	''' <value></value>
+	''' <returns></returns>
+	''' <remarks></remarks>
+	<System.ComponentModel.Description("Gets an etag for client caching control based on the date a resource was last read from the hard disk.")>
+	Public ReadOnly Property etag() As String
+		Get
+			'Return GenerateHash(filename & LastModified).Replace("-", "")
+			Return """" & GenerateHash(filename & LastModified).Replace("-", "") & """"
+		End Get
+	End Property
 
 
-    End Class
+End Class

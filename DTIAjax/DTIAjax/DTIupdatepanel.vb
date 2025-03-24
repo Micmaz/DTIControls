@@ -61,15 +61,16 @@ Public Class DTIupdatepanel
 			Dim setEncodedScript As String = ""
 			script.ScriptText &= jQueryLibrary.jQueryInclude.isolateJqueryLoad("$('form').ajaxForm(options" & Me.ClientID & ");")
 
-			script.ScriptText &=
-					"       function __doPostBack(eventTarget, eventArgument) { " & vbCrLf &
-					"        if (!theForm.onsubmit || (theForm.onsubmit() != false)) { " & vbCrLf &
-					"        theForm.__EVENTTARGET.value = eventTarget; " & vbCrLf &
-					"        theForm.__EVENTARGUMENT.value = eventArgument; " & vbCrLf &
-					"        " & jQueryLibrary.jQueryInclude.jqueryVar & "('form').ajaxSubmit(options" & Me.ClientID & "); " & vbCrLf &
-					"        } " & vbCrLf &
-					"       }  " & vbCrLf
-			script.RenderControl(writer)
+            script.ScriptText &=
+                    " var theForm = document.forms[0];
+                    function __doPostBack(eventTarget, eventArgument) { 
+                        if (!theForm.onsubmit || (theForm.onsubmit() != false)) { 
+                        theForm.__EVENTTARGET.value = eventTarget; 
+                        theForm.__EVENTARGUMENT.value = eventArgument; 
+                        " & jQueryLibrary.jQueryInclude.jqueryVar & "('form').ajaxSubmit(options" & Me.ClientID & "); 
+                        } 
+                    }  " & vbCrLf
+            script.RenderControl(writer)
             End If
 
         End Sub

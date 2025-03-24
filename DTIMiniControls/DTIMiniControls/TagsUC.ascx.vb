@@ -87,14 +87,16 @@ Partial Public Class TagsUC
             Get
                 If _newTagsList Is Nothing Then
                     _newTagsList = New List(Of String)
-                    Try
+                Try
+                    If Request.Params(hfTags.UniqueID) IsNot Nothing Then
                         For Each str As String In Request.Params(hfTags.UniqueID).Split(SeparatorCharacter)
                             If _newTagsList.IndexOf(str) < 0 AndAlso str.Trim <> "" Then
                                 _newTagsList.Add(str)
                             End If
                         Next
-                    Catch ex As Exception
-                    End Try
+                    End If
+                Catch ex As Exception
+                End Try
                 End If
                 Return _newTagsList
             End Get
