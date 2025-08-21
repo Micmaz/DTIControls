@@ -18,7 +18,16 @@ namespace _ATestApplication
 			i.Add(1);
             i.Add(3);
             i.Add(4);
-            var dt= sqlHelper.FillDataTable("select * from DTIContentManagerhistory where id in (@ids) and areaName = @area and id not in @notInid", new int[] { 2,3,4,5,6 }, "default_EditPanel1", i);
+			var idlist = new List<int>();
+            idlist.Add(1);
+            idlist.Add(2);
+            idlist.Add(3);
+			idlist.ToArray();
+            var dt= sqlHelper.FillDataTable(@"
+select * from DTIContentManagerhistory 
+where id in (@ids) 
+and areaName = @area and id not in @notInid"
+, new int[] { 2,3,4,5,6 }, "default_EditPanel1", i);
 
             DTIControls.Share.AdminPanelOn = true;
             Hashtable f = new Hashtable();

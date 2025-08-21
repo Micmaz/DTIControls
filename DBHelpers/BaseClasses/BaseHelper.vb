@@ -754,8 +754,10 @@ Public MustInherit Class BaseHelper
         Dim hasList = False
         If Not parmValueArray Is Nothing AndAlso parmValueArray.Length > 0 Then
             For Each obj As Object In parmValueArray
-                If TypeOf obj Is System.Collections.IList OrElse obj.GetType().IsArray Then
-                    hasList = True
+                If obj IsNot Nothing Then
+                    If TypeOf obj Is System.Collections.IList OrElse obj.GetType().IsArray Then
+                        hasList = True
+                    End If
                 End If
             Next
         End If
