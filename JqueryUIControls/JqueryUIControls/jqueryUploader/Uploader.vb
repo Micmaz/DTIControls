@@ -54,42 +54,51 @@ Public Class Uploader
     <System.ComponentModel.Description("Sets weather the camera on a smartphone can be used as an upload source.")> _
     Public Property cameraUpload As Boolean = True
 
+    ''' <summary>
+    ''' Sets weather to use the default styling for the upload
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Sets weather to use the default styling for the upload.")>
+    Public Property IncludeStyling As Boolean = True
+
     Public ReadOnly Property fileList As List(Of String)
-		Get
-			If DesignMode Then Return New List(Of String)
-			If Session("uploadFiles") Is Nothing Then Session("uploadFiles") = New List(Of String)
-			Return Session("uploadFiles")
-		End Get
-	End Property
+        Get
+            If DesignMode Then Return New List(Of String)
+            If Session("uploadFiles") Is Nothing Then Session("uploadFiles") = New List(Of String)
+            Return Session("uploadFiles")
+        End Get
+    End Property
 
-	Public Property lastFileSize As Int32
-		Get
-			If DesignMode Then Return 0
-			If Session("lastFileSize") Is Nothing Then Session("lastFileSize") = 0
-			Return Session("lastFileSize")
-		End Get
-		Set(value As Int32)
-			If DesignMode Then Return
-			Session("lastFileSize") = value
-		End Set
-	End Property
+    Public Property lastFileSize As Int32
+        Get
+            If DesignMode Then Return 0
+            If Session("lastFileSize") Is Nothing Then Session("lastFileSize") = 0
+            Return Session("lastFileSize")
+        End Get
+        Set(value As Int32)
+            If DesignMode Then Return
+            Session("lastFileSize") = value
+        End Set
+    End Property
 
-	Public Property lastFileName As String
-		Get
-			If DesignMode Then Return ""
-			If Session("lastFileName") Is Nothing Then Session("lastFileName") = 0
-			Return Session("lastFileName")
-		End Get
-		Set(value As String)
-			If DesignMode Then Return
-			Session("lastFileName") = value
-		End Set
-	End Property
-	Public ReadOnly Property continueLastFile As Boolean
-		Get
+    Public Property lastFileName As String
+        Get
+            If DesignMode Then Return ""
+            If Session("lastFileName") Is Nothing Then Session("lastFileName") = 0
+            Return Session("lastFileName")
+        End Get
+        Set(value As String)
+            If DesignMode Then Return
+            Session("lastFileName") = value
+        End Set
+    End Property
+    Public ReadOnly Property continueLastFile As Boolean
+        Get
             Return startByte > 0
         End Get
-	End Property
+    End Property
 
     Public ReadOnly Property isEndOfFile As Boolean
         Get
@@ -153,28 +162,28 @@ Public Class Uploader
     Private Function getFormattedPath() As String
         Dim path As String = savePath
         If Not path.Contains(":") Then path = Page.Server.MapPath("~/") & "/" & savePath.Trim("/") & "/"
-            If Not Directory.Exists(path) Then
-                Try
-                    Directory.CreateDirectory(path)
-                Catch ex As Exception
+        If Not Directory.Exists(path) Then
+            Try
+                Directory.CreateDirectory(path)
+            Catch ex As Exception
 
-                End Try
-            End If
-            Return path
+            End Try
+        End If
+        Return path
     End Function
 
     Private Function getListString() As String
         Dim ret As String
-            For Each filename As String In fileList.ToArray
-                Dim filepath As String = getFormattedPath() & filename
-                If File.Exists(filepath) Then
-                    ret &= filename & "," & New FileInfo(filepath).Length & "#"
-                Else
+        For Each filename As String In fileList.ToArray
+            Dim filepath As String = getFormattedPath() & filename
+            If File.Exists(filepath) Then
+                ret &= filename & "," & New FileInfo(filepath).Length & "#"
+            Else
                 fileList.Remove(filename)
-                End If
-            Next
+            End If
+        Next
 
-            Return ret
+        Return ret
     End Function
 
 
@@ -244,15 +253,15 @@ Public Class Uploader
         fileNameDate = fileNameDate & "_" & DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") & "_" & GenerateRandomString(8)
         filename = fileNameDate & ext
 
-			Dim i As Integer = 1
-			While System.IO.File.Exists(filename)
-				filename = fileNameDate & " (" & i & ")" & ext
-				i += 1
-			End While
+        Dim i As Integer = 1
+        While System.IO.File.Exists(filename)
+            filename = fileNameDate & " (" & i & ")" & ext
+            i += 1
+        End While
         'End If
         Session("ULFilename." & origFilename) = filename
         Return filename
-	End Function
+    End Function
 
     Public Shared Function GenerateRandomString(Optional length As Integer = 16) As String
         Const src As String = "abcdefghijklmnopqrstuvwxyz0123456789"
@@ -266,26 +275,31 @@ Public Class Uploader
         Return sb.ToString()
     End Function
 
+
+
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         Dim camString As String = ""
         If cameraUpload Then
             camString = "accept=""image/*;capture=camera"" capture=""camera"" "
-        ElseIf Not FileTypes.Trim = "" Then
-            camString = "accept=""" & FileTypes & """"
+        ElseIf Not fileTypes.Trim = "" Then
+            camString = "accept=""" & fileTypes & """"
         End If
 
-		writer.Write(
-			"        <link href=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/style.css"" rel=""stylesheet"" /> " & vbCrLf &
+        Dim styleString = "        <link href=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/style.css"" rel=""stylesheet"" /> " & vbCrLf
+        If Not IncludeStyling Then styleString = ""
+
+        writer.Write(
+        styleString &
 "        <div id=""upload"" style=""" & style & """ class=""uploadPanel""><div id=""currentfiles"" style=""display:none"">" & getListString() & "</div> " & vbCrLf &
 "			<div id=""drop"">" & dropAreaText & "<br/><a>" & buttonText & "</a> " & vbCrLf &
 "                <input type=""file"" name=""upl"" " & camString & " multiple /> " & vbCrLf &
 "            </div> " & vbCrLf &
 "			<ul></ul> " & vbCrLf &
-"        <script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/jquery.knob.js""></script> " & vbCrLf &
+"       <script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/jquery.knob.js""></script> " & vbCrLf &
 "		<script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/jquery.iframe-transport.js""></script> " & vbCrLf &
 "		<script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/jquery.fileupload.js""></script> " & vbCrLf &
 "		<script src=""" & BaseClasses.Scripts.ScriptsURL() & "JqueryUIControls/UploaderScript.js""></script> " & vbCrLf &
 "		</div> " & vbCrLf)
-	End Sub
+    End Sub
 
 End Class

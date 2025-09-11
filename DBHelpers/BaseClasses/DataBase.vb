@@ -242,9 +242,8 @@ Public Class DataBase
 	''' <param name="isretry"></param>
 	''' <returns></returns>
 	Public Shared Function createHelper(ByVal ProviderName As String, Optional ByVal isretry As Boolean = False) As BaseHelper
-
-		ProviderName = ProviderName.ToLower.Replace("system.data.", "")
-		ProviderName = ProviderName.Replace("client", "helper").Trim
+        ProviderName = ProviderName.ToLower.Replace("system.data.", "")
+        ProviderName = ProviderName.Replace("client", "helper").Trim
 		If ProviderName.ToLower = "sqlhelper" OrElse ProviderName = "" Then
 			Return New SQLHelper
 		End If

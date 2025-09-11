@@ -65,6 +65,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SQLHelper.Standard.2.0">
+      <HintPath>..\..\..\Visual Studio Projects\DTIComponentsMigrate\DBHelpers\DBHelperTest.SQLHelper\bin\Debug\netstandard2.0\SQLHelper.Standard.2.0.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -93,9 +96,6 @@
   <ItemGroup>
     <Compile Include="AssemblyLoader.vb">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseHelper.vb">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BaseSecurityPage.vb">
       <SubType>ASPXCodeBehind</SubType>
@@ -154,21 +154,11 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Spider.vb" />
-    <Compile Include="SQLHelper.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="EmptyHelper.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <EmbeddedResource Include="ListResources.aspx">
     </EmbeddedResource>
     <EmbeddedResource Include="TestResource.jpg" />
     <EmbeddedResource Include="DataBase.resx">
       <DependentUpon>DataBase.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SQLHelper.resx">
-      <DependentUpon>SQLHelper.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

@@ -190,6 +190,26 @@ Or RegexOptions.Compiled _
         Return cmd
     End Function
 
+    Private Shared regOpts As RegexOptions = RegexOptions.Compiled Or RegexOptions.IgnoreCase Or RegexOptions.Multiline Or RegexOptions.Singleline
+    Private Const OuterApplyPattern As String = "(?ims)^(?<i>[ \t]*)OUTER\s+APPLY\s*\(\s*SELECT\s+(?<sel>.*?)\s+FROM\s+(?<from>\S+)\s+WHERE\s+(?<fk>\S+)\s*=\s*(?<outer>\S+)\s*\)\s*(?<a>\w+)"
+    Shared ReadOnly OuterApplyRegex As Regex = New Regex(OuterApplyPattern, regOpts)
+
+    Public Shared Function RewriteOuterApplyToLeftJoin(ByVal sql As String) As String
+        If String.IsNullOrEmpty(sql) Then Return sql
+        Return OuterApplyRegex.Replace(sql, Function(m)
+                                                Dim i = m.Groups("i").Value
+                                                Dim sel = m.Groups("sel").Value.Trim()
+                                                Dim src = m.Groups("from").Value.Trim()
+                                                Dim fk = m.Groups("fk").Value.Trim()
+                                                Dim outer = m.Groups("outer").Value.Trim()
+                                                Dim a = m.Groups("a").Value.Trim()
+                                                Dim nl = Environment.NewLine
+                                                Return i & "LEFT JOIN (" + nl + i & "    SELECT " + sel & ", " + fk + nl + i & "    FROM " + src + nl + i & "    GROUP BY " + fk + nl + i & ") " + a & " ON " + fk & " = " + outer
+                                            End Function)
+    End Function
+
+    Private Shared IsNullSmartPattern As String = "(?i)(?<str>'(?:''|[^'])*')|(?<line>--[^\r\n]*)|(?<block>/\*.*?\*/)|(?<isnull>\bISNULL\s*\()"
+    Private Shared IsNullRegex As Regex = New Regex(IsNullSmartPattern, regOpts)
     ''' <summary>
     ''' Converts select from TSQL to SQLite. Top and isnull are made SQLite compliant.
     ''' </summary>
@@ -199,8 +219,10 @@ Or RegexOptions.Compiled _
     <System.ComponentModel.Description("Converts select from TSQL to SQLite. Top and isnull are made SQLite compliant.")> _
     Protected Overrides Function processSelectCommand(ByVal commandString As String) As String
         Dim outstr As String = ""
-        commandString = commandString.Replace(" isnull(", " ifnull(")
+        commandString = IsNullRegex.Replace(commandString, Function(m) If(m.Groups("isnull").Success, "IFNULL(", m.Value))
+        commandString = commandString.Replace("getdate()", "datetime('now','localtime')")
         For Each command As String In commandString.Split(";")
+            command = RewriteOuterApplyToLeftJoin(command)
             Dim m As Match = topregex.Match(command)
             While m.Success
                 command = moveToptoEnd(command, topregex.Match(command).Value, m.Groups("num").Value)
@@ -208,11 +230,11 @@ Or RegexOptions.Compiled _
             End While
             outstr &= command & ";"
         Next
-
-
         Return outstr
 
     End Function
+
+
 
 #End Region
 
