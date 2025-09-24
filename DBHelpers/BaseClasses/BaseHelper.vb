@@ -1,6 +1,7 @@
-Imports System.Text.RegularExpressions
-Imports System.Data.Common
 Imports System.Collections.Generic
+Imports System.Data.Common
+Imports System.Text
+Imports System.Text.RegularExpressions
 
 ''' <summary>
 ''' A generic data access layer. This is subclassed for different database types. MSSql and SQLLite included in the base dll. 
@@ -764,6 +765,7 @@ Public MustInherit Class BaseHelper
         If hasList Then
             ExpandParameters(SQLcommand, parmValueArray)
         End If
+        SQLcommand = RemoveSqlComments(SQLcommand)
         SQLcommand = processSelectCommand(SQLcommand)
         Dim da As DbDataAdapter = prepareAdaptor(SQLcommand, connection)
         If Not parmValueArray Is Nothing AndAlso parmValueArray.Length > 0 Then
@@ -987,6 +989,178 @@ Public MustInherit Class BaseHelper
     <System.ComponentModel.Description("Fill multiple tables in a dataset. Example as following:   SafeFillDataSetMultiSelect(""Select * from products where typeName =@type; Select * from catagories where name = @catname"",ds, new String (){""products"",""catagories""},new Object(){""Toys"",""Childrens products""})")>
     Public Function SafeFillDataSet(ByVal SQLcommand As String, Optional ByRef ds As DataSet = Nothing, Optional ByVal tablename As String = Nothing, Optional ByRef parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing) As DataSet
         Return SafeFillDataSetMultiSelect(SQLcommand, ds, Nothing, parmValueArray, connection)
+    End Function
+
+    Private Function RemoveSqlComments(ByVal sql As String) As String
+        If sql Is Nothing Then Return String.Empty
+        If sql.Length = 0 Then Return sql
+        Dim sb = New StringBuilder(sql.Length)
+        Dim i As Integer = 0, n As Integer = sql.Length
+        Dim inSingle As Boolean = False
+        Dim inDouble As Boolean = False
+        Dim inBracket As Boolean = False
+        Dim inLineComment As Boolean = False
+        Dim inBlockComment As Boolean = False
+
+        While i < n
+
+            If Not inSingle AndAlso Not inDouble AndAlso Not inBracket AndAlso Not inLineComment AndAlso Not inBlockComment Then
+
+                If i + 1 < n Then
+                    Dim c As Char = sql(i)
+                    Dim [next] As Char = sql(i + 1)
+
+                    If c = "-"c AndAlso [next] = "-"c Then
+                        inLineComment = True
+                        i += 2
+                        Continue While
+                    End If
+
+                    If c = "/"c AndAlso [next] = "*"c Then
+                        inBlockComment = True
+                        i += 2
+                        Continue While
+                    End If
+                End If
+
+                Dim ch As Char = sql(i)
+
+                If ch = "'"c Then
+                    inSingle = True
+                    sb.Append(ch)
+                    i += 1
+                    Continue While
+                End If
+
+                If ch = """"c Then
+                    inDouble = True
+                    sb.Append(ch)
+                    i += 1
+                    Continue While
+                End If
+
+                If ch = "["c Then
+                    inBracket = True
+                    sb.Append(ch)
+                    i += 1
+                    Continue While
+                End If
+
+                sb.Append(ch)
+                i += 1
+                Continue While
+            End If
+
+            If inSingle Then
+                sb.Append(sql(i))
+
+                If sql(i) = "'"c Then
+
+                    If i + 1 < n AndAlso sql(i + 1) = "'"c Then
+                        sb.Append(sql(i + 1))
+                        i += 2
+                        Continue While
+                    End If
+
+                    inSingle = False
+                End If
+
+                i += 1
+                Continue While
+            End If
+
+            If inDouble Then
+                sb.Append(sql(i))
+
+                If sql(i) = """"c Then
+
+                    If i + 1 < n AndAlso sql(i + 1) = """"c Then
+                        sb.Append(sql(i + 1))
+                        i += 2
+                        Continue While
+                    End If
+
+                    inDouble = False
+                End If
+
+                i += 1
+                Continue While
+            End If
+
+            If inBracket Then
+                sb.Append(sql(i))
+
+                If sql(i) = "]"c Then
+
+                    If i + 1 < n AndAlso sql(i + 1) = "]"c Then
+                        sb.Append(sql(i + 1))
+                        i += 2
+                        Continue While
+                    End If
+
+                    inBracket = False
+                End If
+
+                i += 1
+                Continue While
+            End If
+
+            If inLineComment Then
+
+                If sql(i) = vbCr Then
+                    inLineComment = False
+                    sb.Append(vbCr)
+
+                    If i + 1 < n AndAlso sql(i + 1) = vbLf Then
+                        sb.Append(vbLf)
+                        i += 2
+                    Else
+                        i += 1
+                    End If
+
+                    Continue While
+                End If
+
+                If sql(i) = vbLf Then
+                    inLineComment = False
+                    sb.Append(vbLf)
+                    i += 1
+                    Continue While
+                End If
+
+                i += 1
+                Continue While
+            End If
+
+            If inBlockComment Then
+
+                If i + 1 < n AndAlso sql(i) = "*"c AndAlso sql(i + 1) = "/"c Then
+                    inBlockComment = False
+                    i += 2
+                    Continue While
+                End If
+
+                If sql(i) = vbCr Then
+                    sb.Append(vbCr)
+
+                    If i + 1 < n AndAlso sql(i + 1) = vbLf Then
+                        sb.Append(vbLf)
+                        i += 2
+                    Else
+                        i += 1
+                    End If
+                ElseIf sql(i) = vbLf Then
+                    sb.Append(vbLf)
+                    i += 1
+                Else
+                    i += 1
+                End If
+
+                Continue While
+            End If
+        End While
+
+        Return sb.ToString()
     End Function
 
 #End Region
