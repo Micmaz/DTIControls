@@ -92,45 +92,44 @@ Public Class BaseVirtualPathProvider
 		Debug.WriteLine("Path Provider registered. all done.")
 	End Sub
 
-	''' <summary>
-	''' Spiders available dlls and caches all embedded resources for fast retrieval by a webserver. 
-	''' </summary>
-	''' <param name="assemblyname"></param>
-	''' <remarks></remarks>
-    <System.ComponentModel.Description("Spiders available dlls and caches all embedded resources for fast retrieval by a webserver.")> _
+    ''' <summary>
+    ''' Spiders available dlls and caches all embedded resources for fast retrieval by a webserver. 
+    ''' </summary>
+    ''' <param name="assemblyname"></param>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Spiders available dlls and caches all embedded resources for fast retrieval by a webserver.")>
     Public Shared Sub buildLocalResources(Optional ByVal assemblyname As String = "")
         If resources Is Nothing Then
             resources = New Hashtable
         End If
-		If assemblyname = "" Then
-			'For Each asm As System.Reflection.Assembly In Assembly.GetEntryAssembly().GetReferencedAssemblies
-			'Try
-			'    For Each dllfile As String In System.IO.Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath, "*.dll")
-			'        cacheAssembly(Assembly.LoadFile(dllfile))
-			'    Next
-			'Catch ex As Exception
+        If assemblyname = "" Then
+            'For Each asm As System.Reflection.Assembly In Assembly.GetEntryAssembly().GetReferencedAssemblies
+            'Try
+            '    For Each dllfile As String In System.IO.Directory.GetFiles(AppDomain.CurrentDomain.RelativeSearchPath, "*.dll")
+            '        cacheAssembly(Assembly.LoadFile(dllfile))
+            '    Next
+            'Catch ex As Exception
 
-			'End Try
-			For Each asm As System.Reflection.Assembly In AppDomain.CurrentDomain.GetAssemblies
-				cacheAssembly(asm)
-			Next
-		Else
-			Try
-				cacheAssembly(Assembly.Load(assemblyname))
-			Catch ex As Exception
-				Dim shortasmname As String = assemblyname.ToLower
-				If shortasmname.IndexOf(".") > -1 Then shortasmname = shortasmname.Substring(0, shortasmname.IndexOf("."))
-				Dim location As String = AppDomain.CurrentDomain.RelativeSearchPath
-				For Each dllfile As String In System.IO.Directory.GetFiles(location, "*.dll")
-					Dim justfile As String = dllfile.Substring(location.Length).ToLower
-					If justfile.Contains(shortasmname) Then
-						cacheAssembly(Assembly.LoadFile(dllfile))
-					End If
-				Next
-			End Try
-		End If
-		Debug.WriteLine("Finished caching all assemblies.")
-	End Sub
+            'End Try
+            For Each asm As System.Reflection.Assembly In AppDomain.CurrentDomain.GetAssemblies
+                cacheAssembly(asm)
+            Next
+        Else
+            Try
+                cacheAssembly(Assembly.Load(assemblyname))
+            Catch ex As Exception
+                Dim shortasmname As String = assemblyname.ToLower
+                If shortasmname.IndexOf(".") > -1 Then shortasmname = shortasmname.Substring(0, shortasmname.IndexOf("."))
+                Dim location As String = AppDomain.CurrentDomain.RelativeSearchPath
+                For Each dllfile As String In System.IO.Directory.GetFiles(location, "*.dll")
+                    Dim justfile As String = dllfile.Substring(location.Length).ToLower
+                    If justfile.Contains(shortasmname) Then
+                        cacheAssembly(Assembly.LoadFile(dllfile))
+                    End If
+                Next
+            End Try
+        End If
+    End Sub
 
     ''' <summary>
     ''' Adds assembly to the cache.

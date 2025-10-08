@@ -1,21 +1,22 @@
-Imports System.Data.SQLite
 Imports System.Data.Common
+Imports System.Data.SQLite
+Imports System.Text
 Imports System.Text.RegularExpressions
 
 Public Class SQLiteHelper
-	Inherits BaseClasses.BaseHelper
+    Inherits BaseClasses.BaseHelper
 
-	''' <summary>
-	''' Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.
-	''' </summary>
-	''' <param name="command">Select command used to generate Adaptor</param>
-	''' <param name="connection">optional connection object. If ommited it uses the helper's default connection.</param>
-	''' <returns>a SQLiteDataAdapter typed to the base helper</returns>
-	''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-	<System.ComponentModel.Description("Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.")> _
+    ''' <summary>
+    ''' Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.
+    ''' </summary>
+    ''' <param name="command">Select command used to generate Adaptor</param>
+    ''' <param name="connection">optional connection object. If ommited it uses the helper's default connection.</param>
+    ''' <returns>a SQLiteDataAdapter typed to the base helper</returns>
+    ''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
+    <System.ComponentModel.Description("Creates a SQLiteDataAdapter from a select command. This adaptor is for filling a datatable and may not contain insert,update, or delete commands.")>
     Public Overrides Function createAdaptor(Optional ByVal command As String = Nothing, Optional ByVal connection As System.Data.Common.DbConnection = Nothing) As System.Data.Common.DbDataAdapter
-		If command Is Nothing Then Return New SQLiteDataAdapter()
-		Return New SQLiteDataAdapter(command, connection)
+        If command Is Nothing Then Return New SQLiteDataAdapter()
+        Return New SQLiteDataAdapter(command, connection)
     End Function
 
     ''' <summary>
@@ -25,7 +26,7 @@ Public Class SQLiteHelper
     ''' <param name="connection">optional connection object. If ommited it uses the helper's default connection.</param>
     ''' <returns>a SQLiteCommand typed to the base helper</returns>
     ''' <remarks>The default connection uses web config connection string named 'DTIConnection' or 'ConnectionString'</remarks>
-    <System.ComponentModel.Description("Creates a SQLiteCommand from a sqlite command string.")> _
+    <System.ComponentModel.Description("Creates a SQLiteCommand from a sqlite command string.")>
     Public Overrides Function createCommand(Optional ByVal command As String = Nothing, Optional ByVal connection As System.Data.Common.DbConnection = Nothing) As System.Data.Common.DbCommand
         If command Is Nothing Then Return New SQLiteCommand()
         If connection Is Nothing Then Return New SQLiteCommand(command)
@@ -38,98 +39,98 @@ Public Class SQLiteHelper
     ''' <param name="adaptor">The typed DbDataAdapter </param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed DbCommandBuilder")> _
+    <System.ComponentModel.Description("Creates a typed DbCommandBuilder")>
     Public Overrides Function createCommandBuilder(ByRef adaptor As System.Data.Common.DbDataAdapter) As System.Data.Common.DbCommandBuilder
         Return New SQLiteCommandBuilder(adaptor)
     End Function
 
-	''' <summary>
-	''' Creates a typed connection from a string.
-	''' </summary>
-	''' <param name="ConnectionString"></param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Creates a typed connection from a string.")>
-	Public Overrides Function createConnection(ByVal ConnectionString As String) As System.Data.Common.DbConnection
-		Dim vars() As String = ConnectionString.Split(";")
-		Dim dslash As String = "\"
-		If BaseClasses.Platform.isMono Then dslash = "/"
-		Dim filename As String = ""
-		For Each var As String In vars
-			If var.ToLower.StartsWith("data source", StringComparison.OrdinalIgnoreCase) Then
-				Dim keyval() As String = var.Split("=")
-				If keyval.Length = 2 Then
-					filename = keyval(1).Replace("/", dslash)
-					Dim makelocal As Boolean = False
-					If filename.Contains(dslash) Then
-						If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
-							If filename.Contains(":") Then
-								System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
-							Else
-								makelocal = True
-							End If
-						End If
-					Else
-						makelocal = True
-					End If
-					If makelocal Then
-						filename = AppDomain.CurrentDomain.BaseDirectory & filename.Replace("/", dslash).Trim(dslash)
-						If Not System.IO.File.Exists(filename) Then
-							Dim e As Exception = Nothing
-							If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
-								Try
-									System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
-								Catch ex As Exception
-									e = ex
-									'Throw New Exception("There was an error creating the directory: " & filename.Substring(0, filename.LastIndexOf(dslash)) & ". This directory is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder.", ex)
-								End Try
-							Else
-								Try
-									Dim str As System.IO.Stream = System.IO.File.Create(filename)
-									str.Close()
-								Catch ex As Exception
-									e = ex
-								End Try
-							End If
-							If Not e Is Nothing Then
-								Throw New Exception("There was an error creating the file: " & filename & ". This file is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder." & vbCrLf & "The error that occured was: " & e.Message)
-							End If
-						End If
+    ''' <summary>
+    ''' Creates a typed connection from a string.
+    ''' </summary>
+    ''' <param name="ConnectionString"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Creates a typed connection from a string.")>
+    Public Overrides Function createConnection(ByVal ConnectionString As String) As System.Data.Common.DbConnection
+        Dim vars() As String = ConnectionString.Split(";")
+        Dim dslash As String = "\"
+        If BaseClasses.Platform.isMono Then dslash = "/"
+        Dim filename As String = ""
+        For Each var As String In vars
+            If var.ToLower.StartsWith("data source", StringComparison.OrdinalIgnoreCase) Then
+                Dim keyval() As String = var.Split("=")
+                If keyval.Length = 2 Then
+                    filename = keyval(1).Replace("/", dslash)
+                    Dim makelocal As Boolean = False
+                    If filename.Contains(dslash) Then
+                        If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
+                            If filename.Contains(":") Then
+                                System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
+                            Else
+                                makelocal = True
+                            End If
+                        End If
+                    Else
+                        makelocal = True
+                    End If
+                    If makelocal Then
+                        filename = AppDomain.CurrentDomain.BaseDirectory & filename.Replace("/", dslash).Trim(dslash)
+                        If Not System.IO.File.Exists(filename) Then
+                            Dim e As Exception = Nothing
+                            If Not System.IO.Directory.Exists(filename.Substring(0, filename.LastIndexOf(dslash))) Then
+                                Try
+                                    System.IO.Directory.CreateDirectory(filename.Substring(0, filename.LastIndexOf(dslash)))
+                                Catch ex As Exception
+                                    e = ex
+                                    'Throw New Exception("There was an error creating the directory: " & filename.Substring(0, filename.LastIndexOf(dslash)) & ". This directory is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder.", ex)
+                                End Try
+                            Else
+                                Try
+                                    Dim str As System.IO.Stream = System.IO.File.Create(filename)
+                                    str.Close()
+                                Catch ex As Exception
+                                    e = ex
+                                End Try
+                            End If
+                            If Not e Is Nothing Then
+                                Throw New Exception("There was an error creating the file: " & filename & ". This file is needed for the SQLite database. Please be sure it exists and the user: " & System.Threading.Thread.CurrentPrincipal.Identity.Name & " has full access to that folder." & vbCrLf & "The error that occured was: " & e.Message)
+                            End If
+                        End If
 
-						ConnectionString = ConnectionString.Replace(keyval(1), filename)
-					End If
-					Exit For
-				End If
-			End If
-		Next
-		'If checkConnection = Nothing OrElse DateDiff(DateInterval.Minute, checkConnection, Date.Now) > 5 Then
-		'    checkConnection = Date.Now
-		'    Dim connection As New SQLiteConnection(ConnectionString)
-		'    If (connection.State <> ConnectionState.Open) Then
-		'        connection.Open()
-		'        connection.Close()
-		'    End If
-		'    Return connection
-		'Else
-		Return New SQLiteConnection(ConnectionString)
-		'End If
+                        ConnectionString = ConnectionString.Replace(keyval(1), filename)
+                    End If
+                    Exit For
+                End If
+            End If
+        Next
+        'If checkConnection = Nothing OrElse DateDiff(DateInterval.Minute, checkConnection, Date.Now) > 5 Then
+        '    checkConnection = Date.Now
+        '    Dim connection As New SQLiteConnection(ConnectionString)
+        '    If (connection.State <> ConnectionState.Open) Then
+        '        connection.Open()
+        '        connection.Close()
+        '    End If
+        '    Return connection
+        'Else
+        Return New SQLiteConnection(ConnectionString)
+        'End If
 
-	End Function
+    End Function
 
-	'''' <summary>
-	'''' 
-	'''' </summary>
-	'''' <remarks></remarks>
-	'Public Shared checkConnection As Date = Nothing
+    '''' <summary>
+    '''' 
+    '''' </summary>
+    '''' <remarks></remarks>
+    'Public Shared checkConnection As Date = Nothing
 
-	''' <summary>
-	''' Creates a typed dbParameter from a name and value
-	''' </summary>
-	''' <param name="name">the parm name.</param>
-	''' <param name="value">the parm value.</param>
-	''' <returns></returns>
-	''' <remarks></remarks>
-	<System.ComponentModel.Description("Creates a typed dbParameter from a name and value")> _
+    ''' <summary>
+    ''' Creates a typed dbParameter from a name and value
+    ''' </summary>
+    ''' <param name="name">the parm name.</param>
+    ''' <param name="value">the parm value.</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("Creates a typed dbParameter from a name and value")>
     Public Overloads Overrides Function createParameter(Optional ByVal name As String = Nothing, Optional ByVal value As Object = Nothing) As System.Data.Common.DbParameter
         If name Is Nothing Then Return New SQLiteParameter()
         Return New SQLiteParameter(name, value)
@@ -141,7 +142,7 @@ Public Class SQLiteHelper
     ''' <param name="parameter">the DbParameter</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Creates a typed parameter from a genric DbParameter")> _
+    <System.ComponentModel.Description("Creates a typed parameter from a genric DbParameter")>
     Public Overloads Overrides Function createParameter(ByRef parameter As System.Data.Common.DbParameter) As System.Data.Common.DbParameter
         Dim parm As SQLiteParameter = parameter
         Return New SQLiteParameter(parm.ParameterName, parm.DbType, parm.Size, parm.Direction, parm.IsNullable, Byte.MaxValue, Byte.MaxValue, parm.SourceColumn, parm.SourceVersion, parm.Value)
@@ -162,12 +163,85 @@ Public Class SQLiteHelper
 
 #Region "Convert from T-SQL"
 
-    Private topregex As Regex = New Regex( _
-  "top\s+(?<num>\d+)", _
+    Private topregex As Regex = New Regex(
+  "top\s+(?<num>\d+)",
 RegexOptions.IgnoreCase _
 Or RegexOptions.CultureInvariant _
 Or RegexOptions.IgnorePatternWhitespace _
-Or RegexOptions.Compiled _
+Or RegexOptions.Compiled
+)
+
+    ' CAST conversions - MS SQL to SQLite type mapping
+    Private castDateRegex As Regex = New Regex(
+  "CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+DATE\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private castDateTimeRegex As Regex = New Regex(
+  "CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+DATETIME\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private castIntRegex As Regex = New Regex(
+  "CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+(?:INT|INTEGER|BIGINT|SMALLINT|TINYINT)\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private castDecimalRegex As Regex = New Regex(
+  "CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+(?:DECIMAL|NUMERIC|FLOAT|REAL|MONEY|SMALLMONEY)\s*(?:\([^)]+\))?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private castVarcharRegex As Regex = New Regex(
+  "CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+(?:VARCHAR|NVARCHAR|CHAR|NCHAR|TEXT|NTEXT)\s*(?:\([^)]+\))?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    ' CONVERT conversions - MS SQL to SQLite
+    ' CONVERT has syntax: CONVERT(data_type, expression [, style])
+    Private convertDateRegex As Regex = New Regex(
+  "CONVERT\s*\(\s*DATE\s*,\s*(?<expr>[^,)]+)(?:\s*,\s*\d+)?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private convertDateTimeRegex As Regex = New Regex(
+  "CONVERT\s*\(\s*(?:DATETIME|DATETIME2|SMALLDATETIME)\s*,\s*(?<expr>[^,)]+)(?:\s*,\s*\d+)?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private convertIntRegex As Regex = New Regex(
+  "CONVERT\s*\(\s*(?:INT|INTEGER|BIGINT|SMALLINT|TINYINT)\s*,\s*(?<expr>[^,)]+)(?:\s*,\s*\d+)?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private convertDecimalRegex As Regex = New Regex(
+  "CONVERT\s*\(\s*(?:DECIMAL|NUMERIC|FLOAT|REAL|MONEY|SMALLMONEY)\s*(?:\([^)]+\))?\s*,\s*(?<expr>[^,)]+)(?:\s*,\s*\d+)?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private convertVarcharRegex As Regex = New Regex(
+  "CONVERT\s*\(\s*(?:VARCHAR|NVARCHAR|CHAR|NCHAR|TEXT|NTEXT)\s*(?:\([^)]+\))?\s*,\s*(?<expr>[^,)]+)(?:\s*,\s*\d+)?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
 )
 
     Private Function moveToptoEnd(ByVal cmd As String, ByVal top As String, ByVal topnum As String) As String
@@ -208,19 +282,89 @@ Or RegexOptions.Compiled _
                                             End Function)
     End Function
 
+
+    Private Shared StuffPattern As String = "(?is)\bSTUFF\s*\(\s*\(\s*SELECT\s+(?<select_list>.+?)\s+FROM\s+(?<from_where>.+?)\s*FOR\s+XML\s+PATH\(\s*''\s*\)\s*,\s*TYPE\)\s*\.value\(\s*'\.'\s*,\s*'N?VARCHAR\(\s*(MAX|\d*)?\s*\)'\s*\)\s*,\s*\d+\s*,\s*\d+\s*,\s*''\s*\)\s*(?:AS\s+(?<alias>\w+))"
+    Private Shared StuffRegex As Regex = New Regex(StuffPattern, regOpts)
+    Private Shared StuffRegexReplacement As String = "GROUP_CONCAT(" + vbCrLf + "${select_list}" + vbCrLf + ")" + vbCrLf + "FROM ${from_where}" + vbCrLf + ""
+
     Private Shared IsNullSmartPattern As String = "(?i)(?<str>'(?:''|[^'])*')|(?<line>--[^\r\n]*)|(?<block>/\*.*?\*/)|(?<isnull>\bISNULL\s*\()"
     Private Shared IsNullRegex As Regex = New Regex(IsNullSmartPattern, regOpts)
     ''' <summary>
-    ''' Converts select from TSQL to SQLite. Top and isnull are made SQLite compliant.
+    ''' Converts select from TSQL to SQLite. Top, isnull, cast, convert, and other MS SQL syntax are made SQLite compliant.
     ''' </summary>
     ''' <param name="commandString"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    <System.ComponentModel.Description("Converts select from TSQL to SQLite. Top and isnull are made SQLite compliant.")> _
+    <System.ComponentModel.Description("Converts select from TSQL to SQLite. Top, isnull, cast, convert, and other MS SQL syntax are made SQLite compliant.")>
     Protected Overrides Function processSelectCommand(ByVal commandString As String) As String
         Dim outstr As String = ""
-        commandString = IsNullRegex.Replace(commandString, Function(m) If(m.Groups("isnull").Success, "IFNULL(", m.Value))
-        commandString = commandString.Replace("getdate()", "datetime('now','localtime')")
+        'commandString = IsNullRegex.Replace(commandString, Function(m) If(m.Groups("isnull").Success, "IFNULL(", m.Value))
+        commandString = Replace(commandString, "isnull(", "ifnull(")
+        commandString = Replace(commandString, "getdate()", "datetime('now','localtime')")
+
+        ' Convert STUFF function to SQLite syntax
+        commandString = StuffRegex.Replace(commandString, StuffRegexReplacement)
+
+        ' Convert CAST to DATE - SQLite uses DATE() function
+        commandString = castDateRegex.Replace(commandString, Function(m)
+                                                                 Dim expr = m.Groups("expr").Value.Trim()
+                                                                 Return "DATE(" & expr & ")"
+                                                             End Function)
+
+        ' Convert CAST to DATETIME - SQLite uses DATETIME() function
+        commandString = castDateTimeRegex.Replace(commandString, Function(m)
+                                                                     Dim expr = m.Groups("expr").Value.Trim()
+                                                                     Return "DATETIME(" & expr & ")"
+                                                                 End Function)
+
+        ' Convert CAST to INT/INTEGER types - SQLite uses CAST(expr AS INTEGER)
+        commandString = castIntRegex.Replace(commandString, Function(m)
+                                                                Dim expr = m.Groups("expr").Value.Trim()
+                                                                Return "CAST(" & expr & " AS INTEGER)"
+                                                            End Function)
+
+        ' Convert CAST to DECIMAL/NUMERIC/FLOAT types - SQLite uses CAST(expr AS REAL)
+        commandString = castDecimalRegex.Replace(commandString, Function(m)
+                                                                    Dim expr = m.Groups("expr").Value.Trim()
+                                                                    Return "CAST(" & expr & " AS REAL)"
+                                                                End Function)
+
+        ' Convert CAST to VARCHAR/CHAR types - SQLite uses CAST(expr AS TEXT)
+        commandString = castVarcharRegex.Replace(commandString, Function(m)
+                                                                    Dim expr = m.Groups("expr").Value.Trim()
+                                                                    Return "CAST(" & expr & " AS TEXT)"
+                                                                End Function)
+
+        ' Convert CONVERT to DATE - SQLite uses DATE() function
+        commandString = convertDateRegex.Replace(commandString, Function(m)
+                                                                    Dim expr = m.Groups("expr").Value.Trim()
+                                                                    Return "DATE(" & expr & ")"
+                                                                End Function)
+
+        ' Convert CONVERT to DATETIME - SQLite uses DATETIME() function
+        commandString = convertDateTimeRegex.Replace(commandString, Function(m)
+                                                                        Dim expr = m.Groups("expr").Value.Trim()
+                                                                        Return "DATETIME(" & expr & ")"
+                                                                    End Function)
+
+        ' Convert CONVERT to INT/INTEGER types - SQLite uses CAST(expr AS INTEGER)
+        commandString = convertIntRegex.Replace(commandString, Function(m)
+                                                                   Dim expr = m.Groups("expr").Value.Trim()
+                                                                   Return "CAST(" & expr & " AS INTEGER)"
+                                                               End Function)
+
+        ' Convert CONVERT to DECIMAL/NUMERIC/FLOAT types - SQLite uses CAST(expr AS REAL)
+        commandString = convertDecimalRegex.Replace(commandString, Function(m)
+                                                                       Dim expr = m.Groups("expr").Value.Trim()
+                                                                       Return "CAST(" & expr & " AS REAL)"
+                                                                   End Function)
+
+        ' Convert CONVERT to VARCHAR/CHAR types - SQLite uses CAST(expr AS TEXT)
+        commandString = convertVarcharRegex.Replace(commandString, Function(m)
+                                                                       Dim expr = m.Groups("expr").Value.Trim()
+                                                                       Return "CAST(" & expr & " AS TEXT)"
+                                                                   End Function)
+
         For Each command As String In commandString.Split(";")
             command = RewriteOuterApplyToLeftJoin(command)
             Dim m As Match = topregex.Match(command)
@@ -233,8 +377,6 @@ Or RegexOptions.Compiled _
         Return outstr
 
     End Function
-
-
 
 #End Region
 

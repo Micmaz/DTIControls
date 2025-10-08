@@ -155,12 +155,14 @@ Partial Public Class Scripts
 	Private Sub writeFileFromAssembly()
 		Try
 			Dim strm As Stream = BaseVirtualPathProvider.getResourceStream("/res/" & filename)
-			Dim buff(strm.Length) As Byte
-			Using strm
-				strm.Read(buff, 0, strm.Length)
-			End Using
-			Response.OutputStream.Write(buff, 0, buff.Length - 1)
-			strm.Close()
+			If strm IsNot Nothing Then
+				Dim buff(strm.Length) As Byte
+				Using strm
+					strm.Read(buff, 0, strm.Length)
+				End Using
+				Response.OutputStream.Write(buff, 0, buff.Length - 1)
+				strm.Close()
+			End If
 		Catch ex As Exception
 
 		End Try

@@ -1,3 +1,4 @@
+Imports System
 Imports System.Collections.Generic
 Imports System.Data.Common
 Imports System.Text
@@ -990,6 +991,27 @@ Public MustInherit Class BaseHelper
     Public Function SafeFillDataSet(ByVal SQLcommand As String, Optional ByRef ds As DataSet = Nothing, Optional ByVal tablename As String = Nothing, Optional ByRef parmValueArray As Object() = Nothing, Optional ByVal connection As DbConnection = Nothing) As DataSet
         Return SafeFillDataSetMultiSelect(SQLcommand, ds, Nothing, parmValueArray, connection)
     End Function
+
+    Protected Function Replace(ByVal source As String, ByVal oldValue As String, ByVal newValue As String, Optional ByVal comparisonType As StringComparison = StringComparison.CurrentCultureIgnoreCase) As String
+        If source Is Nothing Then Return Nothing
+        If oldValue Is Nothing OrElse oldValue.Length = 0 Then Return source
+
+        If newValue Is Nothing Then newValue = ""
+        Dim sb As New StringBuilder(source.Length)
+        Dim prevIndex As Integer = 0
+        Dim idx As Integer = source.IndexOf(oldValue, prevIndex, comparisonType)
+
+        While idx >= 0
+            sb.Append(source, prevIndex, idx - prevIndex)
+            sb.Append(newValue)
+            prevIndex = idx + oldValue.Length
+            idx = source.IndexOf(oldValue, prevIndex, comparisonType)
+        End While
+
+        sb.Append(source, prevIndex, source.Length - prevIndex)
+        Return sb.ToString()
+    End Function
+
 
     Private Function RemoveSqlComments(ByVal sql As String) As String
         If sql Is Nothing Then Return String.Empty
