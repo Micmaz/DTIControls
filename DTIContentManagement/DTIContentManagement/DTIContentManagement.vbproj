@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DTIContentManagement</RootNamespace>
     <AssemblyName>DTIContentManagement</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -294,6 +294,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="dsCreatedTables.xsc">
       <DependentUpon>dsCreatedTables.xsd</DependentUpon>
     </None>
@@ -345,6 +346,10 @@
     <EmbeddedResource Include="ImageSelector\editsm.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Visual Studio Projects\DTIComponentsMigrate\DBHelpers\SQLHelper\SQLHelper.Framework.SDK.csproj">
+      <Project>{49b23410-101c-5110-c7f1-cac5d7ddedf7}</Project>
+      <Name>SQLHelper.Framework.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
       <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
       <Name>BaseClasses</Name>

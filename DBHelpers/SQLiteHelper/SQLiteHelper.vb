@@ -207,6 +207,42 @@ Or RegexOptions.CultureInvariant _
 Or RegexOptions.Compiled
 )
 
+    ' TRY_CAST conversions - MS SQL to SQLite type mapping (TRY_CAST behaves like CAST in SQLite)
+    Private tryCastDateRegex As Regex = New Regex(
+  "TRY_CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+DATE\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private tryCastDateTimeRegex As Regex = New Regex(
+  "TRY_CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+DATETIME\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private tryCastIntRegex As Regex = New Regex(
+  "TRY_CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+(?:INT|INTEGER|BIGINT|SMALLINT|TINYINT)\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private tryCastDecimalRegex As Regex = New Regex(
+  "TRY_CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+(?:DECIMAL|NUMERIC|FLOAT|REAL|MONEY|SMALLMONEY)\s*(?:\([^)]+\))?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    Private tryCastVarcharRegex As Regex = New Regex(
+  "TRY_CAST\s*\(\s*(?<expr>[^)]+)\s+AS\s+(?:VARCHAR|NVARCHAR|CHAR|NCHAR|TEXT|NTEXT)\s*(?:\([^)]+\))?\s*\)",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
     ' CONVERT conversions - MS SQL to SQLite
     ' CONVERT has syntax: CONVERT(data_type, expression [, style])
     Private convertDateRegex As Regex = New Regex(
@@ -243,6 +279,49 @@ RegexOptions.IgnoreCase _
 Or RegexOptions.CultureInvariant _
 Or RegexOptions.Compiled
 )
+
+    ' Pattern to find UNION followed by opening paren
+    Private unionParenRegex As Regex = New Regex(
+  "\bUNION\s*\(",
+RegexOptions.IgnoreCase _
+Or RegexOptions.CultureInvariant _
+Or RegexOptions.Compiled
+)
+
+    ''' <summary>
+    ''' Removes parentheses around UNION clauses by counting balanced parens
+    ''' </summary>
+    Private Function RemoveUnionParentheses(ByVal commandString As String) As String
+        Dim m As Match = unionParenRegex.Match(commandString)
+        While m.Success
+            ' Found "UNION (" - now find the matching closing paren
+            Dim startPos As Integer = m.Index + m.Length  ' Position after "UNION ("
+            Dim parenCount As Integer = 1
+            Dim i As Integer = startPos
+
+            While i < commandString.Length AndAlso parenCount > 0
+                If commandString(i) = "("c Then
+                    parenCount += 1
+                ElseIf commandString(i) = ")"c Then
+                    parenCount -= 1
+                End If
+                i += 1
+            End While
+
+            ' If we found the matching paren, remove the outer parens
+            If parenCount = 0 Then
+                Dim content As String = commandString.Substring(startPos, i - startPos - 1).Trim()
+                Dim beforeUnion As String = commandString.Substring(0, m.Index)
+                Dim afterCloseParen As String = If(i < commandString.Length, commandString.Substring(i), "")
+                commandString = beforeUnion & "UNION " & content & afterCloseParen
+            End If
+
+            ' Look for next match
+            m = unionParenRegex.Match(commandString, m.Index + 1)
+        End While
+
+        Return commandString
+    End Function
 
     Private Function moveToptoEnd(ByVal cmd As String, ByVal top As String, ByVal topnum As String) As String
         Dim ndx As Integer = cmd.IndexOf(top)
@@ -335,6 +414,36 @@ Or RegexOptions.Compiled
                                                                     Return "CAST(" & expr & " AS TEXT)"
                                                                 End Function)
 
+        ' Convert TRY_CAST to DATE - SQLite uses DATE() function
+        commandString = tryCastDateRegex.Replace(commandString, Function(m)
+                                                                     Dim expr = m.Groups("expr").Value.Trim()
+                                                                     Return "DATE(" & expr & ")"
+                                                                 End Function)
+
+        ' Convert TRY_CAST to DATETIME - SQLite uses DATETIME() function
+        commandString = tryCastDateTimeRegex.Replace(commandString, Function(m)
+                                                                        Dim expr = m.Groups("expr").Value.Trim()
+                                                                        Return "DATETIME(" & expr & ")"
+                                                                    End Function)
+
+        ' Convert TRY_CAST to INT/INTEGER types - SQLite uses CAST(expr AS INTEGER)
+        commandString = tryCastIntRegex.Replace(commandString, Function(m)
+                                                                   Dim expr = m.Groups("expr").Value.Trim()
+                                                                   Return "CAST(" & expr & " AS INTEGER)"
+                                                               End Function)
+
+        ' Convert TRY_CAST to DECIMAL/NUMERIC/FLOAT types - SQLite uses CAST(expr AS REAL)
+        commandString = tryCastDecimalRegex.Replace(commandString, Function(m)
+                                                                       Dim expr = m.Groups("expr").Value.Trim()
+                                                                       Return "CAST(" & expr & " AS REAL)"
+                                                                   End Function)
+
+        ' Convert TRY_CAST to VARCHAR/CHAR types - SQLite uses CAST(expr AS TEXT)
+        commandString = tryCastVarcharRegex.Replace(commandString, Function(m)
+                                                                       Dim expr = m.Groups("expr").Value.Trim()
+                                                                       Return "CAST(" & expr & " AS TEXT)"
+                                                                   End Function)
+
         ' Convert CONVERT to DATE - SQLite uses DATE() function
         commandString = convertDateRegex.Replace(commandString, Function(m)
                                                                     Dim expr = m.Groups("expr").Value.Trim()
@@ -364,6 +473,9 @@ Or RegexOptions.Compiled
                                                                        Dim expr = m.Groups("expr").Value.Trim()
                                                                        Return "CAST(" & expr & " AS TEXT)"
                                                                    End Function)
+
+        ' Remove parentheses around UNION clauses (handles nested SELECT statements)
+        commandString = RemoveUnionParentheses(commandString)
 
         For Each command As String In commandString.Split(";")
             command = RewriteOuterApplyToLeftJoin(command)

@@ -10,7 +10,7 @@
     <AssemblyName>DTIControlsSharedFunctions</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -72,12 +72,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Visual Studio Projects\DTIComponentsMigrate\DBHelpers\SQLHelper\SQLHelper.Framework.SDK.csproj">
+      <Project>{49b23410-101c-5110-c7f1-cac5d7ddedf7}</Project>
+      <Name>SQLHelper.Framework.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DBHelpers\BaseClasses\BaseClasses.vbproj">
       <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
       <Name>BaseClasses</Name>

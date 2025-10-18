@@ -15,7 +15,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OutputPath>bin\</OutputPath>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <ProjectGuid>{CC9F78D0-B8DA-4945-9B59-96BC05762F56}</ProjectGuid>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -262,6 +262,7 @@
     <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -274,6 +275,10 @@
     <EmbeddedResource Include="jqueryUploader\style.css" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Visual Studio Projects\DTIComponentsMigrate\DBHelpers\SQLHelper\SQLHelper.Framework.SDK.csproj">
+      <Project>{49b23410-101c-5110-c7f1-cac5d7ddedf7}</Project>
+      <Name>SQLHelper.Framework.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
       <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
       <Name>BaseClasses</Name>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Enable/disable ILRepack merging -->
+		<ILRepackEnabled Condition="'$(ILRepackEnabled)'==''">true</ILRepackEnabled>
+
+		<!-- Internalize types from merged assemblies (makes them internal to prevent conflicts) -->
+		<ILRepackInternalize Condition="'$(ILRepackInternalize)'==''">false</ILRepackInternalize>
+
+		<!-- System assemblies and resource DLLs to exclude from merging -->
+		<ILRepackExcludeFiles Condition="'$(ILRepackExcludeFiles)'==''">mscorlib.dll;System.dll;System.*.dll;Microsoft.*.dll;netstandard.dll;*.resources.dll</ILRepackExcludeFiles>
+
+		<!-- Temporary output file for merged assembly - use temp folder with correct assembly name -->
+		<ILRepackOutputFile>$(TargetDir)temp_ilrepack\$(AssemblyName).dll</ILRepackOutputFile>
+	</PropertyGroup>
+
+	<!-- Main ILRepack merge target - runs after build completes -->
+	<Target Name="ILRepackMerge"
+			AfterTargets="Build"
+			DependsOnTargets="ResolveReferences"
+			Condition="'$(ILRepackEnabled)'=='true' and '$(IsCrossTargetingBuild)'!='true' and '$(TargetFrameworkIdentifier)'=='.NETFramework' and Exists('$(TargetPath)')">
+
+		<!-- Locate .NET Framework reference assemblies directory -->
+		<PropertyGroup>
+			<_FxDir Condition="'$(TargetFrameworkRootPath)' != ''">$(TargetFrameworkRootPath)\.NETFramework\$(TargetFrameworkVersion)</_FxDir>
+			<_FxDir Condition="'$(_FxDir)' == '' and Exists('$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETFramework\$(TargetFrameworkVersion)')">$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETFramework\$(TargetFrameworkVersion)</_FxDir>
+			<_RuntimeDir>$(MSBuildFrameworkToolsPath)\..</_RuntimeDir>
+		</PropertyGroup>
+
+		<!-- Build library search paths for ILRepack -->
+		<ItemGroup>
+			<!-- Include output directory -->
+			<_LibPaths Include="$(TargetDir)" Condition="'$(TargetDir)' != ''" />
+
+			<!-- Include .NET Framework reference assemblies -->
+			<_LibPaths Include="$(_FxDir)" Condition="'$(_FxDir)' != '' and Exists('$(_FxDir)')" />
+			<_LibPaths Include="$(_FxDir)\Facades" Condition="'$(_FxDir)' != '' and Exists('$(_FxDir)\Facades')" />
+
+			<!-- Include .NET Framework runtime directory -->
+			<_LibPaths Include="$(_RuntimeDir)" Condition="'$(_RuntimeDir)' != '' and Exists('$(_RuntimeDir)')" />
+
+			<!-- Collect unique paths from all references -->
+			<_LibPathFromRefs Include="@(ReferencePath->'%(RootDir)%(Directory)')" Condition="'%(RootDir)%(Directory)' != ''" />
+		</ItemGroup>
+
+		<!-- Remove duplicate library paths -->
+		<RemoveDuplicates Inputs="@(_LibPathFromRefs)">
+			<Output TaskParameter="Filtered" ItemName="_LibPathFromRefsU"/>
+		</RemoveDuplicates>
+
+		<ItemGroup>
+			<_LibPaths Include="@(_LibPathFromRefsU)" Condition="'%(Identity)' != ''" />
+		</ItemGroup>
+
+		<!-- Collect all assemblies to merge -->
+		<ItemGroup>
+			<!-- Start with the primary output assembly (DTIControls.dll) -->
+			<_InputCandidates Include="$(TargetPath)" />
+
+			<!-- Add all referenced assemblies that are copied to output (ProjectReferences and CopyLocal=true) -->
+			<_InputCandidates Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)'=='.dll'"/>
+		</ItemGroup>
+
+		<!-- Remove duplicate assemblies -->
+		<RemoveDuplicates Inputs="@(_InputCandidates)">
+			<Output TaskParameter="Filtered" ItemName="_ToMergeRaw"/>
+		</RemoveDuplicates>
+
+		<!-- Filter out system assemblies, resource DLLs, and database-specific helpers (but keep SQLHelper.dll) -->
+		<ItemGroup>
+			<_ToMergeFiltered Include="@(_ToMergeRaw)"
+					  Exclude="**\*.resources.dll;
+							   **\mscorlib.dll;
+							   **\System.*.dll;
+							   **\Microsoft.*.dll;
+							   **\FxResources.*.dll;
+							   **\netstandard.dll;
+							   **\SQLiteHelper.dll;
+							   **\System.Data.SQLite.dll;
+							   **\System.Data.SQLite.*.dll;
+							   **\Oracle.*.dll;
+							   **\MySql.*.dll;
+							   **\mySQLHelper.dll;
+							   **\OracleHelper.dll;
+							   $(ILRepackExcludeFiles)"/>
+
+			<!-- Additional filtering: exclude by filename prefix and database-specific helpers (but keep SQLHelper.dll) -->
+			<_ToMerge Include="@(_ToMergeFiltered)"
+					  Condition="Exists('%(FullPath)')
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('System.'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Microsoft.'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('FxResources.'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('SQLite'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Oracle'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('MySql'))
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'SQLiteHelper.dll'
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'mySQLHelper.dll'
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'OracleHelper.dll'" />
+		</ItemGroup>
+
+		<!-- Ensure output file has absolute path -->
+		<PropertyGroup>
+			<_ILRepackOutputFileAbsolute>$([System.IO.Path]::GetFullPath('$(ILRepackOutputFile)'))</_ILRepackOutputFileAbsolute>
+			<_ILRepackTempDir>$([System.IO.Path]::GetDirectoryName('$(_ILRepackOutputFileAbsolute)'))</_ILRepackTempDir>
+		</PropertyGroup>
+
+		<!-- Create temp directory for ILRepack output -->
+		<MakeDir Directories="$(_ILRepackTempDir)" Condition="!Exists('$(_ILRepackTempDir)')" />
+
+		<!-- Display what we're merging (for debugging) -->
+		<Message Text="ILRepack: Merging @(_ToMerge->Count()) assemblies into $(AssemblyName).dll" Importance="high" />
+		<Message Text="ILRepack: Including: %0d%0a  @(_ToMerge, '%0d%0a  ')" Importance="high" Condition="'@(_ToMerge)' != ''" />
+		<Message Text="ILRepack: OutputFile=$(_ILRepackOutputFileAbsolute)" Importance="high" />
+		<Message Text="ILRepack: LibraryPaths=%0d%0a  @(_LibPaths, '%0d%0a  ')" Importance="high" />
+
+		<!-- Execute ILRepack to merge assemblies -->
+		<ILRepack
+			InputAssemblies="@(_ToMerge)"
+			OutputFile="$(_ILRepackOutputFileAbsolute)"
+			TargetKind="Dll"
+			Internalize="$(ILRepackInternalize)"
+			XmlDocumentation="true"
+			DebugInfo="true"
+			LibraryPath="@(_LibPaths)"
+			Wildcards="false"
+			Parallel="true"
+			Verbose="true" />
+
+		<!-- Determine file paths for PDB and XML documentation -->
+		<PropertyGroup>
+			<_MergedPdb>$([System.IO.Path]::ChangeExtension('$(_ILRepackOutputFileAbsolute)', '.pdb'))</_MergedPdb>
+			<_MergedXml>$([System.IO.Path]::ChangeExtension('$(_ILRepackOutputFileAbsolute)', '.xml'))</_MergedXml>
+			<_TargetPdb>$([System.IO.Path]::ChangeExtension('$(TargetPath)', '.pdb'))</_TargetPdb>
+			<_TargetXml>$([System.IO.Path]::ChangeExtension('$(TargetPath)', '.xml'))</_TargetXml>
+		</PropertyGroup>
+
+		<!-- Replace original files with merged versions -->
+		<Copy SourceFiles="$(_ILRepackOutputFileAbsolute)" DestinationFiles="$(TargetPath)" OverwriteReadOnlyFiles="true" />
+		<Copy Condition="Exists('$(_MergedPdb)')" SourceFiles="$(_MergedPdb)" DestinationFiles="$(_TargetPdb)" OverwriteReadOnlyFiles="true" />
+		<Copy Condition="Exists('$(_MergedXml)')" SourceFiles="$(_MergedXml)" DestinationFiles="$(_TargetXml)" OverwriteReadOnlyFiles="true" />
+
+		<!-- Clean up temporary merged files and directory -->
+		<Delete Files="$(_ILRepackOutputFileAbsolute)" />
+		<Delete Files="$(_MergedPdb)" Condition="Exists('$(_MergedPdb)')" />
+		<Delete Files="$(_MergedXml)" Condition="Exists('$(_MergedXml)')" />
+		<RemoveDir Directories="$(_ILRepackTempDir)" Condition="Exists('$(_ILRepackTempDir)')" />
+
+		<Message Text="ILRepack: Successfully merged assemblies into $(TargetPath)" Importance="high" />
+	</Target>
+</Project>

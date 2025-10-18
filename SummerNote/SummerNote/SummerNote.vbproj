@@ -13,7 +13,7 @@
     <StartupObject>
     </StartupObject>
     <SignAssembly>false</SignAssembly>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -104,6 +104,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <EmbeddedResource Include="SummerNoteJs\font.summernote.ttf" />
     <EmbeddedResource Include="SummerNoteJs\font.summernote.woff" />

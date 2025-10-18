@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ATestApplication</RootNamespace>
     <AssemblyName>ATestApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -43,15 +43,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="SQLiteHelper">
-      <HintPath>..\_Output\SQLiteHelper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\_Output\System.Data.SQLite.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -111,6 +105,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Visual Studio Projects\DTIComponentsMigrate\DBHelpers\SQLiteHelper\SQLiteHelper.Framework.SDK.csproj">
+      <Project>{08a561ea-a2d4-43a6-3393-1c751ff4e568}</Project>
+      <Name>SQLiteHelper.Framework.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\_DTIControls\_DTIControls.vbproj">
       <Project>{13bdefd8-8a9a-4fa9-9e76-420d45237f85}</Project>
       <Name>_DTIControls</Name>

@@ -13,7 +13,7 @@
     <AssemblyName>Binding</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Empty</MyType>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -70,6 +70,10 @@
     <Compile Include="My Project\AssemblyInfo.vb" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Visual Studio Projects\DTIComponentsMigrate\DBHelpers\SQLHelper\SQLHelper.Framework.SDK.csproj">
+      <Project>{49b23410-101c-5110-c7f1-cac5d7ddedf7}</Project>
+      <Name>SQLHelper.Framework.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DBHelpers\BaseClasses\BaseClasses.vbproj">
       <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
       <Name>BaseClasses</Name>
@@ -78,6 +82,9 @@
       <Project>{cc9f78d0-b8da-4945-9b59-96bc05762f56}</Project>
       <Name>JqueryUIControls</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
