@@ -25,7 +25,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>..\_Output\</OutputPath>
     <DocumentationFile>DTIControls.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningLevel>1</WarningLevel>
@@ -81,88 +81,110 @@
   </ItemGroup>
   <Import Project="ILRepack.targets" Condition="Exists('ILRepack.targets')" />
   <ItemGroup>
+    <!-- Private=False prevents copying DLLs to output (they're merged by ILRepack) -->
     <ProjectReference Include="..\Binding\Binding\Binding.vbproj">
       <Project>{e606e1df-3f67-406a-a1cf-b691143763d8}</Project>
       <Name>Binding</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DBHelpers\BaseClasses\BaseClasses.vbproj">
       <Project>{23b1e7af-2e58-477e-a15a-862090201b21}</Project>
       <Name>BaseClasses</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIAdminPanel\DTIAdminPanel\DTIAdminPanel.vbproj">
       <Project>{74009bbf-5539-4a38-8532-d9d5880d273d}</Project>
       <Name>DTIAdminPanel</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIAjax\DTIAjax\DTIAjax.vbproj">
       <Project>{ad7d65c9-79da-4c04-9bbf-36fd51de19f2}</Project>
       <Name>DTIAjax</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIContentManagement\DTIContentManagement\DTIContentManagement.vbproj">
       <Project>{45be892a-4e37-47f1-9fd1-54cdeb8ddc6b}</Project>
       <Name>DTIContentManagement</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIContentManagement\DTIGalleryControl\DTIGalleryControl\DTIGallery.vbproj">
       <Project>{434854f6-331d-41e1-bb5e-d23fb44098ec}</Project>
       <Name>DTIGallery</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIContentManagement\DTIImageManager\DTIImageManager.vbproj">
       <Project>{f7332f7e-7883-4da9-a8bd-97e5f7266321}</Project>
       <Name>DTIImageManager</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIContentManagement\DTIMediaManager\DTIMediaManager.vbproj">
       <Project>{82f81992-98b3-435b-bf07-e3aad8eff929}</Project>
       <Name>DTIMediaManager</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIContentManagement\DTIUploader\DTIUploader.vbproj">
       <Project>{09114331-3f81-47b3-819f-ed110f2be7ec}</Project>
       <Name>DTIUploader</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIContentManagement\DTIVideoManager\DTIVideoManager.vbproj">
       <Project>{723064cc-6c30-422b-8927-19fe9592901c}</Project>
       <Name>DTIVideoManager</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIControlsSharedFunctions\DTIControlsSharedFunctions.vbproj">
       <Project>{e1fb0ede-26fc-4b16-97f8-c7bb2cf193ec}</Project>
       <Name>DTIControlsSharedFunctions</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIMiniControls\DTIMiniControls\DTIMiniControls.vbproj">
       <Project>{99a7012d-ce00-4f37-b578-7af15c5a3d1c}</Project>
       <Name>DTIMiniControls</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTIServerControl\DTIServerControls.vbproj">
       <Project>{48529821-dd5a-47e2-8444-a91143140ea6}</Project>
       <Name>DTIServerControls</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTISortable\DTISortable\DTISortable.vbproj">
       <Project>{453d33ff-37ba-4eec-b7da-b117d85041ad}</Project>
       <Name>DTISortable</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DTITagManager\DTITagManager.vbproj">
       <Project>{610fb933-5858-486d-b2c8-6b7132754e06}</Project>
       <Name>DTITagManager</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\HighslideControls\HighslideControls\HighslideControls.vbproj">
       <Project>{f26e8251-f511-4889-a31d-384d1f497a2b}</Project>
       <Name>HighslideControls</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\jQueryLibrary\jQueryLibrary\jQueryLibrary.vbproj">
       <Project>{29ab90a7-f4eb-4619-bd62-05acebd19fec}</Project>
       <Name>jQueryLibrary</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\JqueryUIControls\JqueryUIControls\JqueryUIControls.vbproj">
       <Project>{cc9f78d0-b8da-4945-9b59-96bc05762f56}</Project>
       <Name>JqueryUIControls</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\SummerNote\SummerNote\SummerNote.vbproj">
       <Project>{4f287f0b-022d-43da-9941-291a957e0e7f}</Project>
       <Name>SummerNote</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Visual Studio Projects\DTIComponentsMigrate\DBHelpers\SQLHelper\SQLHelper.Framework.SDK.csproj">
+      <Project>{49b23410-101c-5110-c7f1-cac5d7ddedf7}</Project>
+      <Name>SQLHelper.Framework.SDK</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ILRepack">

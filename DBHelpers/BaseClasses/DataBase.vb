@@ -231,66 +231,28 @@ Public Class DataBase
 
 #Region "Data Methods"
 
-	'This assembly hash was put in place to prevent the Reflection.Assembly.LoadFrom call
-	' from being called on every new session. 
-	'Private Shared asmhashtable As Hashtable
-	'This is where the helper object for any component, master component or controll is set
-	''' <summary>
-	''' create a helper from the type name. Like "sqlhelper", "SqliteHelper" or mysqlHelper. the Dll for that class must be accesable by this assembly (ie in the same folder or the GAC). 
-	''' </summary>
-	''' <param name="ProviderName"></param>
-	''' <param name="isretry"></param>
-	''' <returns></returns>
-	Public Shared Function createHelper(ByVal ProviderName As String, Optional ByVal isretry As Boolean = False) As BaseHelper
-        ProviderName = ProviderName.ToLower.Replace("system.data.", "")
-        ProviderName = ProviderName.Replace("client", "helper").Trim
-		If ProviderName.ToLower = "sqlhelper" OrElse ProviderName = "" Then
-			Return New SQLHelper
-		End If
-		Dim helper As BaseHelper = Nothing
-		'Try
+    'This assembly hash was put in place to prevent the Reflection.Assembly.LoadFrom call
+    ' from being called on every new session. 
+    'Private Shared asmhashtable As Hashtable
+    'This is where the helper object for any component, master component or controll is set
+    ''' <summary>
+    ''' create a helper from the type name. Like "sqlhelper", "SqliteHelper" or mysqlHelper. the Dll for that class must be accesable by this assembly (ie in the same folder or the GAC). 
+    ''' </summary>
+    ''' <param name="ProviderName"></param>
+    ''' <param name="isretry"></param>
+    ''' <returns></returns>
+    Public Shared Function createHelper(Optional ProviderName As String = Nothing, Optional ByVal isretry As Boolean = False) As BaseHelper
+        If ProviderName IsNot Nothing Then _
+            ProviderName = ProviderName.ToLower.Replace("system.data.", "").Replace("client", "helper").Trim()
+        'ProviderName = ProviderName.Replace("client", "helper").Trim
+        'If ProviderName.ToLower = "sqlhelper" OrElse ProviderName = "" Then
+        '    Return New SQLHelper
+        'End If
+        'Try
+        Return BaseHelper.createHelper(ProviderName)
+    End Function
 
-		'BaseClasses.BaseVirtualPathProvider.registerVirtualPathProvider()
-		Dim helpertype As Type = Nothing
-		For Each t As Type In [Assembly].GetExecutingAssembly().GetTypes
-			If t.Name = "BaseHelper" Then
-				helpertype = t
-				Exit For
-			End If
-		Next
-		helper = AssemblyLoader.CreateInstance(ProviderName & "." & ProviderName, , helpertype)
-		'if helper is nothing then
-		'helper = AssemblyLoader.CreateInstance(ProviderName, , helpertype)
-		'end if
-
-		'If asmhashtable Is Nothing Then asmhashtable = New Hashtable
-		'Dim asm As Reflection.Assembly
-		'If Not asmhashtable.ContainsKey(ProviderName) Then
-		'    asm = Assembly.Load(ProviderName & ", Version=0.0.0.0, PublicKeyToken=null,Culture=neutral")
-		'    If Not asm Is Nothing Then asmhashtable.Add(ProviderName, asm)
-		'End If
-		'asm = asmhashtable(ProviderName)
-		'Return asm.CreateInstance(ProviderName & "." & ProviderName, True)
-		'Catch ex As Exception
-		'    Throw New Exception("Could not initialize helper: " & ProviderName & ex.Message, ex)
-		'    Return Nothing
-		'End Try
-
-		If helper Is Nothing Then
-			If Not isretry Then
-				BaseVirtualPathProvider.lastrebuild = Date.Today.AddMinutes(-60)
-				BaseVirtualPathProvider.rebuildresources()
-				Return createHelper(ProviderName, True)
-			End If
-			Dim empty As New EmptyHelper()
-			empty.errorMessage = "Could not initialize helper: " & ProviderName & vbCrLf & "Please make sure the file: " & ProviderName & ".dll is referenced in your project or copied to your /bin folder."
-			Return empty
-			Throw New Exception("Could not initialize helper: " & ProviderName & vbCrLf & "Please make sure the file: " & ProviderName & ".dll is referenced in your project or copied to your /bin folder.")
-		End If
-		Return helper
-	End Function
-
-	Public ReadOnly Property sqlHelper() As BaseHelper
+    Public ReadOnly Property sqlHelper() As BaseHelper
         Get
             If session("sqlHelper") Is Nothing Then
                 session("sqlHelper") = getHelper()

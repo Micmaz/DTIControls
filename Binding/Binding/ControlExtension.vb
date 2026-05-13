@@ -575,19 +575,19 @@ Public Module Extensions
     End Sub
 
     <Extension()>
-    Public Sub setText(ByVal c As Control, item As Control, row As DataRow, ByVal ParamArray columns As String())
-        If GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, JqueryUIControls.Autocomplete), row, columns)
-        ElseIf GetType(TextBox).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, TextBox), row, columns)
-        ElseIf GetType(Label).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, Label), row, columns)
-        ElseIf GetType(DropDownList).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, DropDownList), row, columns)
-        ElseIf GetType(CheckBox).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, CheckBox), row, columns)
-        ElseIf GetType(RadioButton).IsAssignableFrom(c.GetType()) Then
-            setText(c, CType(item, RadioButton), row, columns)
+    Public Sub setText(ByVal parentControl As Control, item As Control, row As DataRow, ByVal ParamArray columns As String())
+        If GetType(JqueryUIControls.Autocomplete).IsAssignableFrom(item.GetType()) Then
+            setText(parentControl, CType(item, JqueryUIControls.Autocomplete), row, columns)
+        ElseIf GetType(TextBox).IsAssignableFrom(item.GetType()) Then
+            setText(parentControl, CType(item, TextBox), row, columns)
+        ElseIf GetType(Label).IsAssignableFrom(item.GetType()) Then
+            setText(parentControl, CType(item, Label), row, columns)
+        ElseIf GetType(DropDownList).IsAssignableFrom(item.GetType()) Then
+            setText(parentControl, CType(item, DropDownList), row, columns)
+        ElseIf GetType(CheckBox).IsAssignableFrom(item.GetType()) Then
+            setText(parentControl, CType(item, CheckBox), row, columns)
+        ElseIf GetType(RadioButton).IsAssignableFrom(item.GetType()) Then
+            setText(parentControl, CType(item, RadioButton), row, columns)
         Else
             Try
                 runM(item, "Text", New Object() {getValueString(row, columns)})
@@ -673,72 +673,72 @@ Public Module Extensions
             columns = canbindCtrlRetArray(c, rb, row, New List(Of ErrorSet))
         End If
         Dim val As String = getValueString(row, columns)
-		If columns.Length = 1 Then
-			setControls(c)(rb.ID) = columns(0)
-			Dim colname = columns(0)
-			Dim setBooleanVal As Boolean = rb.ID.IndexOf(colname) > 2
-			Dim b As Boolean = False
-			'Parse Boolean Val from the database
-			If Not Boolean.TryParse(val, b) Then
-				If val.Length > 0 Then
-					b = True
-					If val(0).ToString.ToLower = "n" OrElse val(0).ToString.ToLower = "f" OrElse val(0).ToString.ToLower = "0" Then
-						b = False
-					End If
-				End If
-			End If
+        If columns.Length = 1 Then
+            setControls(c)(rb.ID) = columns(0)
+            Dim colname = columns(0)
+            Dim setBooleanVal As Boolean = rb.ID.IndexOf(colname) > 2
+            Dim b As Boolean = False
+            'Parse Boolean Val from the database
+            If Not Boolean.TryParse(val, b) Then
+                If val.Length > 0 Then
+                    b = True
+                    If val(0).ToString.ToLower = "n" OrElse val(0).ToString.ToLower = "f" OrElse val(0).ToString.ToLower = "0" Then
+                        b = False
+                    End If
+                End If
+            End If
 
-			Dim rbList = getMatchingRadioButtons(c, rb)
+            Dim rbList = getMatchingRadioButtons(c, rb)
 
-			For Each rb1 As RadioButton In GetControlList(Of RadioButton)(c.Controls)
-				rb1.Checked = False
-				If setBooleanVal Then
-					Dim thirdChar As Char = Char.ToUpper(rb1.ID.Chars(2))
-					'of the found radio buttons, look for a T/F or Y/N in the second column
-					If Not b AndAlso (thirdChar = "N" Or thirdChar = "F") Then
-						rb1.Checked = True
-					End If
-					If b AndAlso (thirdChar = "Y" Or thirdChar = "T") Then
-						rb1.Checked = True
-					End If
-				Else
-					If rb1.Text = val Then rb1.Checked = True
-				End If
-			Next
-
-
+            For Each rb1 As RadioButton In GetControlList(Of RadioButton)(c.Controls)
+                rb1.Checked = False
+                If setBooleanVal Then
+                    Dim thirdChar As Char = Char.ToUpper(rb1.ID.Chars(2))
+                    'of the found radio buttons, look for a T/F or Y/N in the second column
+                    If Not b AndAlso (thirdChar = "N" Or thirdChar = "F") Then
+                        rb1.Checked = True
+                    End If
+                    If b AndAlso (thirdChar = "Y" Or thirdChar = "T") Then
+                        rb1.Checked = True
+                    End If
+                Else
+                    If rb1.Text = val Then rb1.Checked = True
+                End If
+            Next
 
 
-		End If
 
-	End Sub
 
-	Private Function getMatchingRadioButtons(ByVal c As Control, rb1 As RadioButton) As List(Of RadioButton)
-		Dim rbList As New List(Of RadioButton)
-		For Each rb As RadioButton In GetControlList(Of RadioButton)(c.Controls)
-			If rb.GroupName = rb1.GroupName Then rbList.Add(rb)
-		Next
-		Return rbList
-	End Function
+        End If
 
-	''' <summary>
-	''' If the value is not in the item list it is added automatically to the top of the list. The string "NULL" will set the db value to null.
-	''' </summary>
-	''' <param name="c"></param>
-	''' <param name="dd"></param>
-	''' <param name="row"></param>
-	''' <param name="columns"></param>
-	''' <remarks></remarks>
-    <System.ComponentModel.Description("If the value is not in the item list it is added automatically to the top of the list. The string ""NULL"" will set the db value to null."), Extension()> _
-    Public Sub setText(ByVal c As Control, ByVal dd As DropDownList, ByVal row As DataRow, ByVal ParamArray columns As String())
-        Dim col1 As String = Nothing
-        If columns.Length > 0 Then col1 = columns(0)
-        If col1 Is Nothing Then col1 = canbindCtrl(c, dd, row, New List(Of ErrorSet))
-        setDDRow(c, dd, Nothing, Nothing, Nothing, row, col1, "NULL", True)
     End Sub
 
-    <Extension()> _
-    Public Sub setDDRow(ByVal c As Control, ByVal dd As DropDownList, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal SourceRow As DataRow = Nothing, Optional ByVal sourceColumn As String = Nothing, Optional ByVal NullValue As String = "NULL", Optional addIfMissing As Boolean = False)
+    Private Function getMatchingRadioButtons(ByVal c As Control, rb1 As RadioButton) As List(Of RadioButton)
+        Dim rbList As New List(Of RadioButton)
+        For Each rb As RadioButton In GetControlList(Of RadioButton)(c.Controls)
+            If rb.GroupName = rb1.GroupName Then rbList.Add(rb)
+        Next
+        Return rbList
+    End Function
+
+    ''' <summary>
+    ''' If the value is not in the item list it is added automatically to the top of the list. The string "NULL" will set the db value to null.
+    ''' </summary>
+    ''' <param name="c"></param>
+    ''' <param name="dd"></param>
+    ''' <param name="row"></param>
+    ''' <param name="columns"></param>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Description("If the value is not in the item list it is added automatically to the top of the list. The string ""NULL"" will set the db value to null."), Extension()>
+    Public Sub setText(ByVal parentControl As Control, ByVal dd As DropDownList, ByVal row As DataRow, ByVal ParamArray columns As String())
+        Dim col1 As String = Nothing
+        If columns.Length > 0 Then col1 = columns(0)
+        If col1 Is Nothing Then col1 = canbindCtrl(parentControl, dd, row, New List(Of ErrorSet))
+        setDDRow(parentControl, dd, Nothing, Nothing, Nothing, row, col1, "NULL", True)
+    End Sub
+
+    <Extension()>
+    Public Sub setDDRow(ByVal parentControl As Control, ByVal dd As DropDownList, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal SourceRow As DataRow = Nothing, Optional ByVal sourceColumn As String = Nothing, Optional ByVal NullValue As String = "NULL", Optional addIfMissing As Boolean = False)
         If valueColumn Is Nothing Then valueColumn = displaycolumn
         If dt IsNot Nothing Then
             For Each row As DataRow In dt.Rows
@@ -779,18 +779,18 @@ Public Module Extensions
                 dd.SelectedValue = value
             End If
 
-            setControls(c)(dd.ID) = sourceColumn
+            setControls(parentControl)(dd.ID) = sourceColumn
             'setControls(c).Add(dd.ID, sourceColumn)
         End If
     End Sub
 
-    <Extension()> _
-    Public Sub setDDRow(ByVal c As Control, ByVal dd As Label, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal SourceRow As DataRow = Nothing, Optional ByVal sourceColumn As String = Nothing, Optional ByVal NullValue As String = "NULL")
-        setDDRow(c, dd.Text, dt, displaycolumn, valueColumn, SourceRow, sourceColumn, NullValue)
+    <Extension()>
+    Public Sub setDDRow(ByVal parentControl As Control, ByVal dd As Label, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal SourceRow As DataRow = Nothing, Optional ByVal sourceColumn As String = Nothing, Optional ByVal NullValue As String = "NULL")
+        setDDRow(parentControl, dd.Text, dt, displaycolumn, valueColumn, SourceRow, sourceColumn, NullValue)
     End Sub
 
     <Extension()>
-    Public Sub setDDRow(ByVal c As Control, ByRef text As String, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal SourceRow As DataRow = Nothing, Optional ByVal sourceColumn As String = Nothing, Optional ByVal NullValue As String = "NULL")
+    Public Sub setDDRow(ByVal parentControl As Control, ByRef text As String, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal SourceRow As DataRow = Nothing, Optional ByVal sourceColumn As String = Nothing, Optional ByVal NullValue As String = "NULL")
         If valueColumn Is Nothing Then valueColumn = displaycolumn
         If dt IsNot Nothing Then
             For Each row As DataRow In dt.Rows
@@ -809,15 +809,15 @@ Public Module Extensions
         End If
     End Sub
 
-    <Extension()> _
-    Public Sub setDD(ByVal c As Control, ByVal dd As DropDownList, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal selectedVal As Object = Nothing)
-		If valueColumn Is Nothing Then valueColumn = displaycolumn
-		Dim val = ""
-		Dim display = ""
-		For Each row As DataRow In dt.Rows
-			dd.Items.Add(New ListItem(getRowValue(row, displaycolumn), getRowValue(row, valueColumn)))
-		Next
-		If selectedVal IsNot Nothing Then
+    <Extension()>
+    Public Sub setDD(ByVal parentControl As Control, ByVal dd As DropDownList, ByVal dt As DataTable, ByVal displaycolumn As String, Optional ByVal valueColumn As String = Nothing, Optional ByVal selectedVal As Object = Nothing)
+        If valueColumn Is Nothing Then valueColumn = displaycolumn
+        Dim val = ""
+        Dim display = ""
+        For Each row As DataRow In dt.Rows
+            dd.Items.Add(New ListItem(getRowValue(row, displaycolumn), getRowValue(row, valueColumn)))
+        Next
+        If selectedVal IsNot Nothing Then
             Try
                 dd.SelectedValue = selectedVal
             Catch ex As Exception

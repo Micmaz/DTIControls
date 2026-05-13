@@ -218,9 +218,9 @@ Partial Public Class Scripts
 	<System.ComponentModel.Description("Determins weather requested item has been modified since it's last request.")>
 	Public Function isModified() As Boolean
 		'Return True
-#If DEBUG Then
-		Return True
-#End If
+		'#If DEBUG Then
+		'		Return True
+		'#End If
 		Dim modSince As DateTime
 		If Not String.IsNullOrEmpty(Request.Headers("If-None-Match")) Then
 			If Request.Headers("If-None-Match") = etag Then Return False Else Return True
@@ -258,11 +258,17 @@ Partial Public Class Scripts
 			LastModified = Nothing
 			ClearResources()
 		End If
-		If LastModified = Nothing Then LastModified = Date.Now
-		Response.Cache.SetCacheability(Web.HttpCacheability.ServerAndPrivate)
-		Response.Cache.SetLastModified(LastModified)
-		Response.AppendHeader("Vary", "Content-Encoding")
-		Response.Cache.SetETag(etag)
+		If LastModified = Nothing Then
+			Try
+				LastModified = System.IO.File.GetLastWriteTime(GetType(Scripts).Assembly.Location)
+			Catch ex As Exception
+				LastModified = Date.Now
+			End Try
+		End If
+		'Response.Cache.SetCacheability(Web.HttpCacheability.ServerAndPrivate)
+		'Response.Cache.SetLastModified(LastModified)
+		'Response.AppendHeader("Vary", "Content-Encoding")
+		'Response.Cache.SetETag(etag)
 
 		If Not isModified() Then
 			Response.Clear()
@@ -272,10 +278,18 @@ Partial Public Class Scripts
 			Response.AddHeader("Content-Length", "0")
 			'Response.Cache.SetCacheability(Web.HttpCacheability.Public)
 			'Response.Cache.SetLastModified(LastModified)
-			'Response.End()
+			Response.End()
 			responseEnded = True
 			Return
 		End If
+
+		Response.Cache.SetCacheability(Web.HttpCacheability.Public)
+		Response.Cache.SetMaxAge(TimeSpan.FromDays(7))
+		Response.Cache.SetExpires(DateTime.UtcNow.AddDays(7))
+		Response.Cache.SetValidUntilExpires(True)
+		Response.Cache.SetLastModified(LastModified)
+		Response.AppendHeader("Vary", "Content-Encoding")
+		Response.Cache.SetETag(etag)
 
 		If GZipSupported() Then
 			Dim AcceptEncoding As String = System.Web.HttpContext.Current.Request.Headers("Accept-Encoding")
@@ -320,11 +334,11 @@ Partial Public Class Scripts
 	''' <value></value>
 	''' <returns></returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Gets an etag for client caching control based on the date a resource was last read from the hard disk.")>
+	<System.ComponentModel.Description("Gets an etag for client caching control based on assembly version for stable caching.")>
 	Public ReadOnly Property etag() As String
 		Get
-			'Return GenerateHash(filename & LastModified).Replace("-", "")
-			Return """" & GenerateHash(filename & LastModified).Replace("-", "") & """"
+			Dim version As String = GetType(Scripts).Assembly.GetName().Version.ToString()
+			Return """" & GenerateHash(filename & version).Replace("-", "") & """"
 		End Get
 	End Property
 

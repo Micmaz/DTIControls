@@ -8,7 +8,7 @@
 		<ILRepackInternalize Condition="'$(ILRepackInternalize)'==''">false</ILRepackInternalize>
 
 		<!-- System assemblies and resource DLLs to exclude from merging -->
-		<ILRepackExcludeFiles Condition="'$(ILRepackExcludeFiles)'==''">mscorlib.dll;System.dll;System.*.dll;Microsoft.*.dll;netstandard.dll;*.resources.dll</ILRepackExcludeFiles>
+		<ILRepackExcludeFiles Condition="'$(ILRepackExcludeFiles)'==''">mscorlib.dll;System.dll;System.*.dll;netstandard.dll;*.resources.dll</ILRepackExcludeFiles>
 
 		<!-- Temporary output file for merged assembly - use temp folder with correct assembly name -->
 		<ILRepackOutputFile>$(TargetDir)temp_ilrepack\$(AssemblyName).dll</ILRepackOutputFile>
@@ -57,8 +57,8 @@
 			<!-- Start with the primary output assembly (DTIControls.dll) -->
 			<_InputCandidates Include="$(TargetPath)" />
 
-			<!-- Add all referenced assemblies that are copied to output (ProjectReferences and CopyLocal=true) -->
-			<_InputCandidates Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)'=='.dll'"/>
+			<!-- Add all referenced assemblies from ReferencePath (includes Private=False references) -->
+			<_InputCandidates Include="@(ReferencePath)" Condition="'%(ReferencePath.Extension)'=='.dll'"/>
 		</ItemGroup>
 
 		<!-- Remove duplicate assemblies -->
@@ -72,9 +72,15 @@
 					  Exclude="**\*.resources.dll;
 							   **\mscorlib.dll;
 							   **\System.*.dll;
-							   **\Microsoft.*.dll;
 							   **\FxResources.*.dll;
 							   **\netstandard.dll;
+							   **\WindowsBase.dll;
+							   **\PresentationCore.dll;
+							   **\PresentationFramework.dll;
+							   **\Microsoft.VisualBasic.dll;
+							   **\Microsoft.CSharp.dll;
+							   **\Microsoft.Build.*.dll;
+							   **\Microsoft.Win32.*.dll;
 							   **\SQLiteHelper.dll;
 							   **\System.Data.SQLite.dll;
 							   **\System.Data.SQLite.*.dll;
@@ -84,15 +90,21 @@
 							   **\OracleHelper.dll;
 							   $(ILRepackExcludeFiles)"/>
 
-			<!-- Additional filtering: exclude by filename prefix and database-specific helpers (but keep SQLHelper.dll) -->
+			<!-- Additional filtering: exclude framework assemblies but INCLUDE NuGet Microsoft.* packages and System.ValueTuple.dll -->
 			<_ToMerge Include="@(_ToMergeFiltered)"
 					  Condition="Exists('%(FullPath)')
-					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('System.'))
-					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Microsoft.'))
+					  and (!$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('System.')) or $([System.IO.Path]::GetFileName('%(FullPath)')) == 'System.ValueTuple.dll')
 					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('FxResources.'))
 					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('SQLite'))
 					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Oracle'))
 					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('MySql'))
+					  and !$([System.IO.Path]::GetDirectoryName('%(FullPath)').Contains('Reference Assemblies'))
+					  and !$([System.IO.Path]::GetDirectoryName('%(FullPath)').Contains('Microsoft.NET\Framework'))
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'mscorlib.dll'
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'netstandard.dll'
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'WindowsBase.dll'
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'Microsoft.VisualBasic.dll'
+					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'Microsoft.CSharp.dll'
 					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'SQLiteHelper.dll'
 					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'mySQLHelper.dll'
 					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'OracleHelper.dll'" />
