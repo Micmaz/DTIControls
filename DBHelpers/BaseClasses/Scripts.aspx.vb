@@ -180,15 +180,54 @@ Partial Public Class Scripts
 	End Function
 
 	''' <summary>
-	''' Returns the url to the scripts.aspx page. (e.g. "~/res/BaseClasses/Scripts.aspx?f=baseclasses/TestResource.jpg")
+	''' web.config appSettings key used to opt out of root-relative resource URLs.
+	''' Set &lt;add key="DTIScriptsRootRelative" value="false"/&gt; for apps NOT hosted at a site root
+	''' where a root-relative ("/~/res/...") URL would resolve outside the application.
+	''' </summary>
+	Private Const RootRelativeSettingKey As String = "DTIScriptsRootRelative"
+
+	''' <summary>
+	''' Returns the url to the scripts.aspx page. (e.g. "/~/res/BaseClasses/Scripts.aspx?f=baseclasses/TestResource.jpg")
+	''' The prefix is root-relative so the browser caches each resource once across every page in the site
+	''' (the leading "~" is stripped server-side by BaseVirtualPathProvider.getFilename).
 	''' </summary>
 	''' <param name="debug">optional set to true to prevent compression of js files</param>
 	''' <returns>The string to prepend to urls to utilize the Scripts.aspx resource</returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Returns the url to the scripts.aspx page. (e.g. ""~/res/BaseClasses/Scripts.aspx?f="")")>
+	<System.ComponentModel.Description("Returns the url to the scripts.aspx page. (e.g. ""/~/res/BaseClasses/Scripts.aspx?f="")")>
 	Shared Function ScriptsURL(Optional ByVal debug As Boolean = False) As String
-		If scriptsURLHolder Is Nothing Then Return "~/res/BaseClasses/Scripts.aspx?f="
+		If scriptsURLHolder IsNot Nothing Then Return scriptsURLHolder
+		scriptsURLHolder = buildScriptsURL()
 		Return scriptsURLHolder
+	End Function
+
+	''' <summary>
+	''' Builds the resource-url prefix. Root-relative and application-aware so the emitted &lt;script&gt;/&lt;link&gt;/img
+	''' urls are identical on every page (enabling cross-page client caching), and correct for sub-applications.
+	''' </summary>
+	''' <remarks></remarks>
+	Private Shared Function buildScriptsURL() As String
+		' Opt-out for odd hosting (reverse proxy, externally-handled nested vdir, etc.): keep legacy app-relative behavior.
+		Try
+			Dim cfg As String = System.Configuration.ConfigurationManager.AppSettings(RootRelativeSettingKey)
+			If cfg IsNot Nothing AndAlso cfg.Trim().ToLower() = "false" Then
+				Return "~/res/BaseClasses/Scripts.aspx?f="
+			End If
+		Catch ex As Exception
+		End Try
+
+		' Auto-detect the application's virtual root so sub-apps work without config:
+		'   root app  -> ""        -> "/~/res/..."
+		'   "/myapp"  -> "/myapp"  -> "/myapp/~/res/..."
+		Dim appPath As String = ""
+		Try
+			appPath = System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath
+		Catch ex As Exception
+		End Try
+		If appPath Is Nothing OrElse appPath = "/" Then appPath = ""
+		If appPath.EndsWith("/") Then appPath = appPath.Substring(0, appPath.Length - 1)
+
+		Return appPath & "/~/res/BaseClasses/Scripts.aspx?f="
 	End Function
 	Private Shared scriptsURLHolder As String = Nothing
 
@@ -246,8 +285,11 @@ Partial Public Class Scripts
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Handles the init event of the page. Will end the responce if the item is unmodified and therefore uses the client cache.")>
 	Private Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
+		' Note: the resource-url prefix is now built deterministically (root-relative, app-aware) by
+		' ScriptsURL()/buildScriptsURL(), so we no longer seed scriptsURLHolder from the (folder-dependent,
+		' non-deterministic) request path here.
 		If scriptsURLHolder Is Nothing Then
-			scriptsURLHolder = Request.Url.AbsolutePath & "?f="
+			scriptsURLHolder = ScriptsURL()
 		End If
 		If Request.Url.LocalPath.IndexOf("~/") <> Request.Url.LocalPath.LastIndexOf("~/") Then
 			Response.Redirect(Request.Url.LocalPath.Substring(Request.Url.LocalPath.LastIndexOf("~/")) & Request.Url.Query, False)

@@ -66,7 +66,12 @@
 			<Output TaskParameter="Filtered" ItemName="_ToMergeRaw"/>
 		</RemoveDuplicates>
 
-		<!-- Filter out system assemblies, resource DLLs, and database-specific helpers (but keep SQLHelper.dll) -->
+		<!-- Filter out system assemblies, resource DLLs, and database-specific helpers (but keep SQLHelper.dll).
+		     Microsoft.Data.SqlClient and its AAD/identity dependency closure (Azure.*, Microsoft.Identity*,
+		     Microsoft.IdentityModel.*, Microsoft.Bcl.AsyncInterfaces) are also excluded: on .NET Framework the
+		     ILMerged provider loses internal static state and throws NullReferenceException from inside
+		     SqlConnection.get_ConnectionString() and SqlDataAdapter update commands. They deploy side-by-side
+		     from _Output instead. -->
 		<ItemGroup>
 			<_ToMergeFiltered Include="@(_ToMergeRaw)"
 					  Exclude="**\*.resources.dll;
@@ -88,6 +93,13 @@
 							   **\MySql.*.dll;
 							   **\mySQLHelper.dll;
 							   **\OracleHelper.dll;
+								   **\Microsoft.Data.SqlClient.dll;
+								   **\Microsoft.Data.SqlClient.*.dll;
+								   **\Azure.*.dll;
+								   **\Microsoft.Identity.Client.dll;
+								   **\Microsoft.Identity.Client.*.dll;
+								   **\Microsoft.IdentityModel.*.dll;
+								   **\Microsoft.Bcl.AsyncInterfaces.dll;
 							   $(ILRepackExcludeFiles)"/>
 
 			<!-- Additional filtering: exclude framework assemblies but INCLUDE NuGet Microsoft.* packages and System.ValueTuple.dll -->
@@ -98,6 +110,10 @@
 					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('SQLite'))
 					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Oracle'))
 					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('MySql'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Microsoft.Data.SqlClient'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Azure.'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Microsoft.Identity'))
+					  and !$([System.IO.Path]::GetFileName('%(FullPath)').StartsWith('Microsoft.Bcl.'))
 					  and !$([System.IO.Path]::GetDirectoryName('%(FullPath)').Contains('Reference Assemblies'))
 					  and !$([System.IO.Path]::GetDirectoryName('%(FullPath)').Contains('Microsoft.NET\Framework'))
 					  and $([System.IO.Path]::GetFileName('%(FullPath)')) != 'mscorlib.dll'

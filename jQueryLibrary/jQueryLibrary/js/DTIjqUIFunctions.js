@@ -147,9 +147,11 @@ function refreshPage(selectorList, updateViewstate, data, executeScript, returnS
         data = data.substring(data.indexOf(returnSubstring) + returnSubstring.length); //Concatinate the search so that the string is not found in this script block
         data = data.substring(0, data.indexOf(returnSubstring)); //Concatinate the search so that the string is not found in this script block
     }
-    if (updateViewstate) {    //Fix the viewstate and event validation.
-        $("#__VIEWSTATE").val($("#__VIEWSTATE", data).val());
-        $("#__EVENTVALIDATION").val($("#__EVENTVALIDATION", data).val());
+    if (updateViewstate) {    //Fix the viewstate and event validation (guarded so a failed lookup never blanks the live fields -> MAC error).
+        var vsMatch = fullResp && (fullResp.match(/id="__VIEWSTATE"[^>]*?value="([^"]*)"/) || fullResp.match(/value="([^"]*)"[^>]*?id="__VIEWSTATE"/));
+        if (vsMatch) $("#__VIEWSTATE").val(vsMatch[1]);
+        var evMatch = fullResp && (fullResp.match(/id="__EVENTVALIDATION"[^>]*?value="([^"]*)"/) || fullResp.match(/value="([^"]*)"[^>]*?id="__EVENTVALIDATION"/));
+        if (evMatch) $("#__EVENTVALIDATION").val(evMatch[1]);
     }
     if (!selectorList) {
         makePageAjaxy();
@@ -317,9 +319,11 @@ function createAnimation(aname, aspeed, optionalParms) {
 
     function refreshArea(selector, updateViewstate, data, executeScript, searchString,doneCallback) {
         //var fullResp = data;
-        if (updateViewstate) { //Fix the viewstate and event validation.
-            $("#__VIEWSTATE").val($("#__VIEWSTATE", data).val());
-            $("#__EVENTVALIDATION").val($("#__EVENTVALIDATION", data).val());
+        if (updateViewstate) { //Fix the viewstate and event validation (guarded so a failed lookup never blanks the live fields -> MAC error).
+            var vsMatch = data && (data.match(/id="__VIEWSTATE"[^>]*?value="([^"]*)"/) || data.match(/value="([^"]*)"[^>]*?id="__VIEWSTATE"/));
+            if (vsMatch) $("#__VIEWSTATE").val(vsMatch[1]);
+            var evMatch = data && (data.match(/id="__EVENTVALIDATION"[^>]*?value="([^"]*)"/) || data.match(/value="([^"]*)"[^>]*?id="__EVENTVALIDATION"/));
+            if (evMatch) $("#__EVENTVALIDATION").val(evMatch[1]);
         }
         if (!searchString) {
             data = data.substring(getTagIndex(data, data.indexOf("<" + "body"))); //Concatinate the search so that the string is not found in this script block
