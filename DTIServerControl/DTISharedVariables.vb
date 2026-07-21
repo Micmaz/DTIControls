@@ -275,6 +275,8 @@ Public Class DTISharedVariables
 				designProperty.Remove(name)
 			Else
 				httpSession.Remove(name)
+				Dim cache As System.Collections.Generic.Dictionary(Of String, Object) = requestCache()
+				If cache IsNot Nothing Then cache.Remove(name)
 			End If
 		End Sub
 
@@ -320,12 +322,38 @@ Public Class DTISharedVariables
 			End Set
 		End Property
 
+		Private Const RequestCacheKey As String = "DTISharedVariables.SessionItemCache"
+
+		''' <summary>
+		''' Per-request, write-through cache of session values (stored in HttpContext.Items) so repeated reads of
+		''' the same key within one request — e.g. AdminOn/LoggedIn/MainID hit many times per control via Mode —
+		''' don't re-resolve HttpContext.Current.Session each time. Returns Nothing when there is no web context
+		''' (the design-time path doesn't use this). Coherent because every write goes through the Item setter
+		''' (all DTISharedVariables property setters write via Session(key)=...).
+		''' </summary>
+		Private Shared Function requestCache() As System.Collections.Generic.Dictionary(Of String, Object)
+			Dim ctx As HttpContext = HttpContext.Current
+			If ctx Is Nothing Then Return Nothing
+			Dim cache As System.Collections.Generic.Dictionary(Of String, Object) = TryCast(ctx.Items(RequestCacheKey), System.Collections.Generic.Dictionary(Of String, Object))
+			If cache Is Nothing Then
+				cache = New System.Collections.Generic.Dictionary(Of String, Object)
+				ctx.Items(RequestCacheKey) = cache
+			End If
+			Return cache
+		End Function
+
 		Default Public Property Item(ByVal name As String) As Object
 			Get
 				If isdesign Then
 					Return designProperty(name)
 				Else
-					Return httpSession(name)
+					Dim cache As System.Collections.Generic.Dictionary(Of String, Object) = requestCache()
+					If cache Is Nothing Then Return httpSession(name)
+					Dim cachedVal As Object = Nothing
+					If cache.TryGetValue(name, cachedVal) Then Return cachedVal
+					cachedVal = httpSession(name)
+					cache(name) = cachedVal
+					Return cachedVal
 				End If
 			End Get
 			Set(ByVal value As Object)
@@ -333,6 +361,8 @@ Public Class DTISharedVariables
 					designProperty(name) = value
 				Else
 					httpSession(name) = value
+					Dim cache As System.Collections.Generic.Dictionary(Of String, Object) = requestCache()
+					If cache IsNot Nothing Then cache(name) = value
 				End If
 			End Set
 		End Property

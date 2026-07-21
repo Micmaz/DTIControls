@@ -47,28 +47,12 @@ Public Module Extensions
         Return runM(c, "ViewState")
     End Function
 
+    ''' <summary>
+    ''' Invokes a method, or gets/sets a property, by name via reflection. Delegates to the shared, maintained
+    ''' BaseClasses.AssemblyLoader.runM (which also handles AmbiguousMatchException) rather than duplicating it.
+    ''' </summary>
     Public Function runM(ByVal o As Object, ByVal methodname As String, ByVal ParamArray args() As Object) As Object
-        Dim method As System.Reflection.MethodInfo = o.GetType().GetMethod(methodname, BindingFlags.Instance Or BindingFlags.NonPublic Or BindingFlags.Public Or BindingFlags.IgnoreCase)
-        If Not method Is Nothing Then
-            Return method.Invoke(o, args)
-        Else
-            Dim prop As System.Reflection.PropertyInfo = o.GetType().GetProperty(methodname, BindingFlags.Instance Or BindingFlags.NonPublic Or BindingFlags.Public Or BindingFlags.IgnoreCase)
-            If Not prop Is Nothing Then
-                If args.Length = prop.GetIndexParameters().Length Then
-                    Return prop.GetValue(o, args)
-                Else
-                    Dim args2() As Object = New Object() {}
-                    If args.Length > 1 Then
-                        args.CopyTo(args2, 1)
-                    Else
-                        args2 = Nothing
-                    End If
-                    prop.SetValue(o, args(0), args2)
-                    Return Nothing
-                End If
-            End If
-        End If
-        Return Nothing
+        Return BaseClasses.AssemblyLoader.runM(o, methodname, args)
     End Function
 
     <Extension()>

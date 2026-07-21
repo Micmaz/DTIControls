@@ -1,6 +1,7 @@
 Imports System.IO
 Imports System.Drawing
 Imports System.Drawing.Imaging
+Imports System.Web
 Imports BaseClasses
 Imports BaseClasses.MimeDecoder
 Imports BaseClasses.BaseVirtualPathProvider
@@ -8,20 +9,56 @@ Imports System.Text.RegularExpressions
 Imports System.Collections.Generic
 
 ''' <summary>
-''' A helper page to load any images or javascript files from the virtual path provider.  Removes the need to alter a web config to view images and js files as embedded resources. 
-''' Also Fixes path problems in css files as well as add client side caching.
-''' Format is: http://localhost/res/Baseclasses/Scripts.aspx?f=baseclasses.TestResource.jpg
+''' A lightweight IHttpHandler that loads any images / javascript / css files from the virtual path provider.
+''' Removes the need to alter a web.config to view embedded resources, fixes path problems in css files, and
+''' adds client side caching. Served (drop-in, via BaseVirtualPathProvider) at:
+'''   http://localhost/~/res/BaseClasses/Scripts.ashx?f=baseclasses/TestResource.jpg
+''' Was a System.Web.UI.Page; converted to a handler so each asset request no longer pays the full page
+''' lifecycle. The legacy "Scripts.aspx" URL still works via ScriptsLegacyPage (below) for back-compat.
 ''' </summary>
 ''' <remarks></remarks>
 <ComponentModel.EditorBrowsable(ComponentModel.EditorBrowsableState.Never), ComponentModel.ToolboxItem(False)>
-Partial Public Class Scripts
-	Inherits System.Web.UI.Page
-
+Public Class Scripts
+	Implements System.Web.IHttpHandler
 
 	Private Shared minScripts As New Hashtable
 	Private Shared fixedCssFiles As New Hashtable
-	Private Shared etags As New Hashtable
 	Private Shared LastModified As Date = Nothing
+
+	' Per-request state. IsReusable = False, so a fresh instance is created per request (matches the old Page).
+	Private _context As HttpContext
+	Private responseEnded As Boolean = False
+
+	Private ReadOnly Property Request() As HttpRequest
+		Get
+			Return _context.Request
+		End Get
+	End Property
+
+	Private ReadOnly Property Response() As HttpResponse
+		Get
+			Return _context.Response
+		End Get
+	End Property
+
+	Public ReadOnly Property IsReusable() As Boolean Implements System.Web.IHttpHandler.IsReusable
+		Get
+			Return False
+		End Get
+	End Property
+
+	''' <summary>
+	''' Handler entry point. Runs the header/caching logic (formerly Page_Init), then streams the resource
+	''' (formerly Page_Load) unless the request already completed (304 / redirect).
+	''' </summary>
+	''' <param name="context"></param>
+	''' <remarks></remarks>
+	Public Sub ProcessRequest(ByVal context As HttpContext) Implements System.Web.IHttpHandler.ProcessRequest
+		_context = context
+		prepareResponse()
+		If responseEnded Then Return
+		writeResource()
+	End Sub
 
 	Private _filename As String = Nothing
 
@@ -53,15 +90,12 @@ Partial Public Class Scripts
 	End Property
 
 	''' <summary>
-	''' The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.
+	''' Streams the requested resource. If we get here the item is either uncached on the client or the app is
+	''' in debug mode. (Formerly Page_Load.)
 	''' </summary>
-	''' <param name="sender"></param>
-	''' <param name="e"></param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.")>
-	Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-		'registerVirtualPathProvider()
-		If responseEnded Then Return
+	<System.ComponentModel.Description("Streams the requested resource to the client.")>
+	Private Sub writeResource()
 		Response.Clear()
 		Response.ContentType = "application/octet-stream"
 		If filename IsNot Nothing Then
@@ -75,19 +109,15 @@ Partial Public Class Scripts
 			End If
 			If Response.ContentType = "application/x-javascript" Then
 				Try
+					SyncLock minScripts
 					If Not minScripts.Contains(filename) Then
 						Dim strOut As String
 						Using scriptReader As New StreamReader(BaseVirtualPathProvider.getResourceStream("/res/" & filename))
 							strOut = scriptReader.ReadToEnd
 						End Using
-						'If filename.ToLower().StartsWith("jQueryLibrary/jquery-3.2.1.min.js".ToLower()) Then
 						minScripts.Add(filename, strOut)
-						'Else
-						'	minScripts.Add(filename, "(function( $ ) {" & vbCrLf & strOut & vbCrLf & "})(jQuery);")
-						'End If
-
-
 					End If
+					End SyncLock
 					writeStringResponse(minScripts.Item(filename))
 				Catch ex As Exception
 					writeFileFromAssembly()
@@ -187,14 +217,14 @@ Partial Public Class Scripts
 	Private Const RootRelativeSettingKey As String = "DTIScriptsRootRelative"
 
 	''' <summary>
-	''' Returns the url to the scripts.aspx page. (e.g. "/~/res/BaseClasses/Scripts.aspx?f=baseclasses/TestResource.jpg")
+	''' Returns the url to the scripts handler. (e.g. "/~/res/BaseClasses/Scripts.ashx?f=baseclasses/TestResource.jpg")
 	''' The prefix is root-relative so the browser caches each resource once across every page in the site
 	''' (the leading "~" is stripped server-side by BaseVirtualPathProvider.getFilename).
 	''' </summary>
 	''' <param name="debug">optional set to true to prevent compression of js files</param>
-	''' <returns>The string to prepend to urls to utilize the Scripts.aspx resource</returns>
+	''' <returns>The string to prepend to urls to utilize the Scripts handler resource</returns>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Returns the url to the scripts.aspx page. (e.g. ""/~/res/BaseClasses/Scripts.aspx?f="")")>
+	<System.ComponentModel.Description("Returns the url to the scripts handler. (e.g. ""/~/res/BaseClasses/Scripts.ashx?f="")")>
 	Shared Function ScriptsURL(Optional ByVal debug As Boolean = False) As String
 		If scriptsURLHolder IsNot Nothing Then Return scriptsURLHolder
 		scriptsURLHolder = buildScriptsURL()
@@ -211,7 +241,7 @@ Partial Public Class Scripts
 		Try
 			Dim cfg As String = System.Configuration.ConfigurationManager.AppSettings(RootRelativeSettingKey)
 			If cfg IsNot Nothing AndAlso cfg.Trim().ToLower() = "false" Then
-				Return "~/res/BaseClasses/Scripts.aspx?f="
+				Return "~/res/BaseClasses/Scripts.ashx?f="
 			End If
 		Catch ex As Exception
 		End Try
@@ -227,12 +257,12 @@ Partial Public Class Scripts
 		If appPath Is Nothing OrElse appPath = "/" Then appPath = ""
 		If appPath.EndsWith("/") Then appPath = appPath.Substring(0, appPath.Length - 1)
 
-		Return appPath & "/~/res/BaseClasses/Scripts.aspx?f="
+		Return appPath & "/~/res/BaseClasses/Scripts.ashx?f="
 	End Function
 	Private Shared scriptsURLHolder As String = Nothing
 
 	''' <summary>
-	''' Determins weather resource should be gzipped on return. 
+	''' Determins weather resource should be gzipped on return.
 	''' </summary>
 	''' <returns></returns>
 	''' <remarks></remarks>
@@ -250,16 +280,12 @@ Partial Public Class Scripts
 	End Function
 
 	''' <summary>
-	''' Determins weather requested item has been modified since it's last request. 
+	''' Determins weather requested item has been modified since it's last request.
 	''' </summary>
 	''' <returns></returns>
 	''' <remarks></remarks>
 	<System.ComponentModel.Description("Determins weather requested item has been modified since it's last request.")>
 	Public Function isModified() As Boolean
-		'Return True
-		'#If DEBUG Then
-		'		Return True
-		'#End If
 		Dim modSince As DateTime
 		If Not String.IsNullOrEmpty(Request.Headers("If-None-Match")) Then
 			If Request.Headers("If-None-Match") = etag Then Return False Else Return True
@@ -276,21 +302,13 @@ Partial Public Class Scripts
 		Return True
 	End Function
 
-	Private responseEnded As Boolean = False
 	''' <summary>
-	''' Handles the init event of the page. Will end the responce if the item is unmodified and therefore uses the client cache.
+	''' Sets caching headers and handles 304 / redirect short-circuits. (Formerly Page_Init.)
+	''' Sets responseEnded = True when the request is already complete.
 	''' </summary>
-	''' <param name="sender"></param>
-	''' <param name="e"></param>
 	''' <remarks></remarks>
-	<System.ComponentModel.Description("Handles the init event of the page. Will end the responce if the item is unmodified and therefore uses the client cache.")>
-	Private Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
-		' Note: the resource-url prefix is now built deterministically (root-relative, app-aware) by
-		' ScriptsURL()/buildScriptsURL(), so we no longer seed scriptsURLHolder from the (folder-dependent,
-		' non-deterministic) request path here.
-		If scriptsURLHolder Is Nothing Then
-			scriptsURLHolder = ScriptsURL()
-		End If
+	<System.ComponentModel.Description("Sets caching headers and handles 304 / redirect short-circuits.")>
+	Private Sub prepareResponse()
 		If Request.Url.LocalPath.IndexOf("~/") <> Request.Url.LocalPath.LastIndexOf("~/") Then
 			Response.Redirect(Request.Url.LocalPath.Substring(Request.Url.LocalPath.LastIndexOf("~/")) & Request.Url.Query, False)
 			responseEnded = True
@@ -307,10 +325,6 @@ Partial Public Class Scripts
 				LastModified = Date.Now
 			End Try
 		End If
-		'Response.Cache.SetCacheability(Web.HttpCacheability.ServerAndPrivate)
-		'Response.Cache.SetLastModified(LastModified)
-		'Response.AppendHeader("Vary", "Content-Encoding")
-		'Response.Cache.SetETag(etag)
 
 		If Not isModified() Then
 			Response.Clear()
@@ -318,9 +332,6 @@ Partial Public Class Scripts
 			Response.ContentType = Nothing
 			Response.StatusDescription = "Not Modified"
 			Response.AddHeader("Content-Length", "0")
-			'Response.Cache.SetCacheability(Web.HttpCacheability.Public)
-			'Response.Cache.SetLastModified(LastModified)
-			Response.End()
 			responseEnded = True
 			Return
 		End If
@@ -371,7 +382,7 @@ Partial Public Class Scripts
 	End Function
 
 	''' <summary>
-	''' Gets an etag for client caching control based on the date a resource was last read from the hard disk.
+	''' Gets an etag for client caching control based on the requested file and the assembly version.
 	''' </summary>
 	''' <value></value>
 	''' <returns></returns>
@@ -384,5 +395,20 @@ Partial Public Class Scripts
 		End Get
 	End Property
 
+End Class
 
+''' <summary>
+''' Backward-compatibility shim for the legacy "~/res/BaseClasses/Scripts.aspx?f=..." URL. New code emits the
+''' lighter-weight ".ashx" handler via Scripts.ScriptsURL(); this Page just delegates to that handler so any
+''' previously-rendered / hard-coded ".aspx" links keep working.
+''' </summary>
+''' <remarks></remarks>
+<ComponentModel.EditorBrowsable(ComponentModel.EditorBrowsableState.Never), ComponentModel.ToolboxItem(False)>
+Public Class ScriptsLegacyPage
+	Inherits System.Web.UI.Page
+
+	Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+		Dim handler As New Scripts()
+		handler.ProcessRequest(Me.Context)
+	End Sub
 End Class

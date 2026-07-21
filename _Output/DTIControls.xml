@@ -1513,6 +1513,14 @@ To modify move field declaration from designer file to code-behind file.
             <returns />
             <remarks />
         </member>
+        <member name="M:BaseClasses.Scripts.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+ Handler entry point. Runs the header/caching logic (formerly Page_Init), then streams the resource
+ (formerly Page_Load) unless the request already completed (304 / redirect).
+ </summary>
+            <param name="context" />
+            <remarks />
+        </member>
         <member name="P:BaseClasses.Scripts.filename">
             <summary>
  Filename read from query string. uses f=[resourceName]
@@ -1521,12 +1529,11 @@ To modify move field declaration from designer file to code-behind file.
             <returns />
             <remarks />
         </member>
-        <member name="M:BaseClasses.Scripts.Page_Load(System.Object,System.EventArgs)">
+        <member name="M:BaseClasses.Scripts.writeResource">
             <summary>
- The load event. If it makes it here the item is either uncached on the client or the app is in debug mode.
+ Streams the requested resource. If we get here the item is either uncached on the client or the app is
+ in debug mode. (Formerly Page_Load.)
  </summary>
-            <param name="sender" />
-            <param name="e" />
             <remarks />
         </member>
         <member name="M:BaseClasses.Scripts.writeStringResponse(System.String@)">
@@ -1559,12 +1566,12 @@ To modify move field declaration from designer file to code-behind file.
         </member>
         <member name="M:BaseClasses.Scripts.ScriptsURL(System.Boolean)">
             <summary>
- Returns the url to the scripts.aspx page. (e.g. "/~/res/BaseClasses/Scripts.aspx?f=baseclasses/TestResource.jpg")
+ Returns the url to the scripts handler. (e.g. "/~/res/BaseClasses/Scripts.ashx?f=baseclasses/TestResource.jpg")
  The prefix is root-relative so the browser caches each resource once across every page in the site
  (the leading "~" is stripped server-side by BaseVirtualPathProvider.getFilename).
  </summary>
             <param name="debug">optional set to true to prevent compression of js files</param>
-            <returns>The string to prepend to urls to utilize the Scripts.aspx resource</returns>
+            <returns>The string to prepend to urls to utilize the Scripts handler resource</returns>
             <remarks />
         </member>
         <member name="M:BaseClasses.Scripts.buildScriptsURL">
@@ -1576,24 +1583,23 @@ To modify move field declaration from designer file to code-behind file.
         </member>
         <member name="M:BaseClasses.Scripts.GZipSupported">
             <summary>
- Determins weather resource should be gzipped on return. 
+ Determins weather resource should be gzipped on return.
  </summary>
             <returns />
             <remarks />
         </member>
         <member name="M:BaseClasses.Scripts.isModified">
             <summary>
- Determins weather requested item has been modified since it's last request. 
+ Determins weather requested item has been modified since it's last request.
  </summary>
             <returns />
             <remarks />
         </member>
-        <member name="M:BaseClasses.Scripts.Page_Init(System.Object,System.EventArgs)">
+        <member name="M:BaseClasses.Scripts.prepareResponse">
             <summary>
- Handles the init event of the page. Will end the responce if the item is unmodified and therefore uses the client cache.
+ Sets caching headers and handles 304 / redirect short-circuits. (Formerly Page_Init.)
+ Sets responseEnded = True when the request is already complete.
  </summary>
-            <param name="sender" />
-            <param name="e" />
             <remarks />
         </member>
         <member name="M:BaseClasses.Scripts.GenerateHash(System.String)">
@@ -1606,10 +1612,24 @@ To modify move field declaration from designer file to code-behind file.
         </member>
         <member name="P:BaseClasses.Scripts.etag">
             <summary>
- Gets an etag for client caching control based on the date a resource was last read from the hard disk.
+ Gets an etag for client caching control based on the requested file and the assembly version.
  </summary>
             <value />
             <returns />
+            <remarks />
+        </member>
+        <member name="T:BaseClasses.ScriptsLegacyPage">
+            <summary>
+ Backward-compatibility shim for the legacy "~/res/BaseClasses/Scripts.aspx?f=..." URL. New code emits the
+ lighter-weight ".ashx" handler via Scripts.ScriptsURL(); this Page just delegates to that handler so any
+ previously-rendered / hard-coded ".aspx" links keep working.
+ </summary>
+            <remarks />
+        </member>
+        <member name="T:BaseClasses.Spider">
+            <summary>
+ Used to search a page or cotrol for contents. Spiders all sub controls in most cases.
+ </summary>
             <remarks />
         </member>
         <member name="M:BaseClasses.Spider.spiderRemoveLiterals(System.Web.UI.Page)">
@@ -1712,6 +1732,12 @@ To modify move field declaration from designer file to code-behind file.
             <param name="tp" />
             <returns />
             <remarks />
+        </member>
+        <member name="M:Binding.Extensions.runM(System.Object,System.String,System.Object[])">
+            <summary>
+ Invokes a method, or gets/sets a property, by name via reflection. Delegates to the shared, maintained
+ BaseClasses.AssemblyLoader.runM (which also handles AmbiguousMatchException) rather than duplicating it.
+ </summary>
         </member>
         <member name="M:Binding.Extensions.setRowValues(System.Web.UI.Control,System.Data.DataRow,System.Boolean)">
             <summary>
@@ -7825,6 +7851,15 @@ Row event argument class
             <value>"/uploads/"</value>
             <returns>The currently selected upload folder.</returns>
             <remarks />
+        </member>
+        <member name="M:DTIServerControls.DTISharedVariables.HttpSessionState.requestCache">
+            <summary>
+ Per-request, write-through cache of session values (stored in HttpContext.Items) so repeated reads of
+ the same key within one request — e.g. AdminOn/LoggedIn/MainID hit many times per control via Mode —
+ don't re-resolve HttpContext.Current.Session each time. Returns Nothing when there is no web context
+ (the design-time path doesn't use this). Coherent because every write goes through the Item setter
+ (all DTISharedVariables property setters write via Session(key)=...).
+ </summary>
         </member>
         <member name="M:DTIServerControls.PropertyCreator.GetType(System.Type,System.String)">
             <summary> 

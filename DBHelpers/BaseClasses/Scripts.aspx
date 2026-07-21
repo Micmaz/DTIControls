@@ -1,1 +1,1 @@
-<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Scripts.aspx.vb" Inherits="BaseClasses.Scripts" %>
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Scripts.aspx.vb" Inherits="BaseClasses.ScriptsLegacyPage" %>

@@ -250,7 +250,8 @@ Public Module Share
     ''' <remarks></remarks>
 <System.ComponentModel.Description("Returns a default value if the item is not an app property in the application config. 	 Usefull for overideable propertys EX: 	 Public Property redirectURL As String = vmDbOperations.getDefaultValue(""redirectURL"", ""www.google.com"")")> _
 	Public Function getDefaultValue(configName As String, defaultValue As String) As String
-        If Not Configuration.ConfigurationManager.AppSettings(configName) Is Nothing Then Return Configuration.ConfigurationManager.AppSettings(configName)
+        Dim configValue As String = Configuration.ConfigurationManager.AppSettings(configName)
+        If configValue IsNot Nothing Then Return configValue
         Return defaultValue
     End Function
 

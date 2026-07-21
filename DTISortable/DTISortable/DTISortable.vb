@@ -867,7 +867,6 @@ Public Class DTISortable
             For Each row As DataRowView In dvSortableItem
                 Dim assType() As String = CType(row.Item("Assembly_Name"), String).Split("#")
                 Dim assName As String = assType(0)
-                Dim ass As Assembly
                 If assName = "DTIClient" Then
                     Dim ctrlID As String = assType(1)
                     Dim panTheMan As Panel = Nothing
@@ -896,27 +895,10 @@ Public Class DTISortable
 
                     End Try
                 Else
-                    Try
-                        ass = Assembly.Load(assName)
-                        If ass Is Nothing Then Throw New Exception
-                    Catch ex As Exception
-                        Try
-                            assName = "DTIControls"
-                            ass = Assembly.Load(assName)
-                            If ass Is Nothing Then Throw New Exception
-                        Catch ex1 As Exception
-                            Try
-                                ass = Assembly.Load(assType(1) & assName.Substring(assName.IndexOf(",")))
-                            Catch ex2 As Exception
-                                Try
-                                    ass = Assembly.Load(assType(1).Substring(0, assType(1).IndexOf(".")))
-                                Catch ex3 As Exception
-                                    ass = Assembly.Load(assType(1))
-                                End Try
-                            End Try
-                        End Try
-                    End Try
-                    Dim servCont As DTIServerControls.DTIServerControl = ass.CreateInstance(assType(1))
+                    'Resolve + instantiate the control type by name via the cached, maintained loader.
+                    'AssemblyCache.TypeToAssemblyCache memoizes the resolving assembly, replacing the old
+                    'nested Assembly.Load fallback chain.
+                    Dim servCont As DTIServerControls.DTIServerControl = BaseClasses.AssemblyLoader.CreateInstance(assType(1))
                     If servCont IsNot Nothing Then
                         servCont.contentType = row.Item("Content_Type")
                         servCont.ID = Me.ClientID & "_Subcontrol_" & row.Item("Id")

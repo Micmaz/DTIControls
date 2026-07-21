@@ -326,7 +326,8 @@ Public Class DTIWidgetMenu
             'ds.WidgetMenuTemp.Clear()
             ControlList.Clear()
             Dim location As String = AppDomain.CurrentDomain.RelativeSearchPath
-            For Each asm As Assembly In AppDomain.CurrentDomain.GetAssemblies()
+            'Reuse the cached, maintained assembly list instead of re-enumerating the AppDomain each load.
+            For Each asm As Assembly In BaseClasses.AssemblyCache.Assemblies
                 addassembly(asm)
             Next
             For Each dllfile As String In System.IO.Directory.GetFiles(location, "*.dll")
