@@ -287,25 +287,16 @@ Public Class DataBase
 		Return tmpHelper.createConnection(defaultSqliteString)
 	End Function
 
-	Public Shared Function createHelperFromConnectionName(ConnectionName As String) As BaseHelper
-		Dim helper As BaseHelper = Nothing
-		If ConnectionStrings(ConnectionName) IsNot Nothing Then
-			helper = createHelper(ConnectionStrings(ConnectionName).ProviderName)
-			helper.defaultConnection = helper.createConnectionFromConfig(ConnectionName)
-		Else
-			helper = getHelper()
-		End If
-		Return helper
-	End Function
+    Public Shared Function createHelperFromConnectionName(ConnectionName As String) As BaseHelper
+        Return BaseHelper.createHelperFromConnectionName(ConnectionName)
+    End Function
 
 	Public Shared Function getConnectionFromConnectionName(ConnectionName As String) As System.Data.Common.DbConnection
 		Return createHelperFromConnectionName(ConnectionName).defaultConnection
 	End Function
 
-	Public Shared Function createHelper(ByVal connection As System.Data.Common.DbConnection) As BaseHelper
-        Dim helper As BaseHelper = createHelper(connection.GetType.Name.ToLower.Replace("connection", "") & "helper")
-        helper.defaultConnection = helper.createConnection(connection.ConnectionString)
-        Return helper
+    Public Shared Function createHelper(ByVal connection As System.Data.Common.DbConnection) As BaseHelper
+        Return BaseHelper.createHelper(connection)
     End Function
 
     Public Overridable Function getHelperOverridale() As BaseHelper

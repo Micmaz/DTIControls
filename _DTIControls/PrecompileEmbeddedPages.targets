@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!--
+		Opt-in build hook for PrecompileEmbeddedPages.ps1: precompiles the embedded
+		.aspx/.ascx/.ashx/.Master resources into _Output\PrecompiledResources so
+		EnableUpdateable=false (non-updatable precompiled) sites can serve them.
+
+		Off by default because aspnet_compiler adds ~30s to the build. Enable with:
+			msbuild DTIControls.sln /p:Configuration=Release /p:PrecompileEmbeddedPages=true
+		or run the script directly after any build:
+			.\_DTIControls\PrecompileEmbeddedPages.ps1
+	-->
+	<Target Name="PrecompileEmbeddedPages"
+			AfterTargets="ILRepackMerge"
+			Condition="'$(PrecompileEmbeddedPages)'=='true'">
+		<Message Text="PrecompileEmbeddedPages: precompiling embedded page resources" Importance="high" />
+		<Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)PrecompileEmbeddedPages.ps1&quot;" />
+	</Target>
+</Project>

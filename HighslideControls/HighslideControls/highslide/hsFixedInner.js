@@ -1,7 +1,7 @@
 ﻿try {
 	//a13fe4e6f3a0bf746da103090dd47568
 	parent.window.hs.outlineType = 'rounded-white';
-	parent.window.hs.graphicsDir = '~/res/BaseClasses/Scripts.aspx?f=HighslideControls/';
+	parent.window.hs.graphicsDir = '~/res/BaseClasses/Scripts.ashx?f=HighslideControls/';
 	parent.window.hs.showCredits = false;
 	parent.window.hs.wrapperClassName = 'draggable-header';
 	parent.window.hs.zIndexCounter = 20000;

@@ -77,9 +77,12 @@
     <None Include="app.config" />
     <None Include="ILMerge.props" />
     <None Include="ILRepack.targets" />
+    <None Include="PrecompileEmbeddedPages.ps1" />
+    <None Include="PrecompileEmbeddedPages.targets" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="ILRepack.targets" Condition="Exists('ILRepack.targets')" />
+  <Import Project="PrecompileEmbeddedPages.targets" Condition="Exists('PrecompileEmbeddedPages.targets')" />
   <ItemGroup>
     <!-- Private=False prevents copying DLLs to output (they're merged by ILRepack) -->
     <ProjectReference Include="..\Binding\Binding\Binding.vbproj">

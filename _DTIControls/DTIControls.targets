@@ -1,0 +1,32 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+    DTIControls.targets — native dependency flow for the Lib-drop distribution model.
+
+    Microsoft.Data.SqlClient's SNI libraries (Microsoft.Data.SqlClient.SNI.x64/x86.dll) are
+    NATIVE. They are not listed in any managed assembly's reference table, so MSBuild's
+    reference resolver cannot see them — a plain reference to DTIControls.dll (or to
+    Microsoft.Data.SqlClient.dll) will copy the MANAGED closure to a dependent's bin but will
+    NEVER copy these natives. Without them, connection.Open() fails at runtime on .NET Framework.
+
+    This file lives in the Lib folder next to the DLLs. Import it ONCE per dependent project
+    (or once in a repo-root Directory.Build.targets to cover every project automatically):
+
+        <Import Project="..\Lib\DTIControls.targets" />
+
+    Adjust the relative path to wherever Lib sits relative to the project. After that single
+    edit the flow is transparent: drop refreshed DLLs/SNI into Lib and every dependent picks
+    them up on its next build — no project changes, no version bumps. The wildcard means new
+    or updated SNI files are picked up automatically.
+
+    The managed assemblies (Microsoft.Data.SqlClient.dll, Azure.*, Microsoft.Identity*, etc.)
+    flow on their own via the DLL reference graph as long as they sit in Lib — only the
+    natives need to be handled here.
+  -->
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Microsoft.Data.SqlClient.SNI.*.dll">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+</Project>

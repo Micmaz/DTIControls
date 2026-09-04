@@ -19,7 +19,7 @@ Partial Public Class ListResources
             addCell(Table1, "<b>searchPath: " & AppDomain.CurrentDomain.RelativeSearchPath & "</b>", 2, Drawing.Color.Gray)
             Me.Table1.Rows.Add(New Web.UI.WebControls.TableRow)
 
-            If Not BaseClasses.BaseVirtualPathProvider.initialized Then BaseClasses.BaseVirtualPathProvider.buildLocalResources()
+            If Not BaseClasses.BaseVirtualPathProvider.initialized OrElse BaseClasses.BaseVirtualPathProvider.resources Is Nothing OrElse BaseClasses.BaseVirtualPathProvider.resources.Count = 0 Then BaseClasses.BaseVirtualPathProvider.buildLocalResources()
             Dim keys(BaseClasses.BaseVirtualPathProvider.resources.Keys.Count - 1) As String
             BaseClasses.BaseVirtualPathProvider.resources.Keys.CopyTo(keys, 0)
             Array.Sort(keys)

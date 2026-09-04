@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UploadUserControl.ascx.vb" Inherits="JqueryUIControls.UploadUserControl" %>
-<link href="~/res/BaseClasses/Scripts.aspx?f=JqueryUIControls/style.css" rel="stylesheet" />
+<link href="/~/res/BaseClasses/Scripts.ashx?f=JqueryUIControls/style.css" rel="stylesheet" />
         <div id="upload" class="uploadPanel"><div id="currentfiles" style="display:none"><%=fileList %></div>
        <%-- <form id="Form1" method="post" action="upload.php" enctype="multipart/form-data">--%>
 			<div id="drop">

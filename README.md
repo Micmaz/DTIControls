@@ -21,3 +21,12 @@ Code behind:
 		DTIControls.Share.EditModeOn = !DTIControls.Share.EditModeOn;
 	}
 ```
+
+## Precompiled sites (EnableUpdateable=false)
+
+The suite's admin pages and user controls are embedded resources served at `~/res/<Assembly>/<File>` and compiled at runtime. A site precompiled as non-updatable (`aspnet_compiler` without `-u`) can't compile them at runtime, so they must be precompiled ahead of time:
+
+1. Build the solution, then run `.\_DTIControls\PrecompileEmbeddedPages.ps1` (or build with `/p:PrecompileEmbeddedPages=true`).
+2. Copy the `*.dll` and `*.compiled` files from `_Output\PrecompiledResources\` into your precompiled site's `bin\` folder — plus the matching subfolder for each satellite assembly you deploy (Reporting, Chart.js, ...). See the generated `README.txt` there for details.
+
+Non-precompiled sites need none of this; the virtual path provider keeps serving the embedded resources directly.

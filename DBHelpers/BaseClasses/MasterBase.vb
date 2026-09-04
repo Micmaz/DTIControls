@@ -701,7 +701,7 @@ Public Class MasterBase
 #End Region
 
         Public Sub New()
-            If Not BaseVirtualPathProvider.initialized Then
+            If Not BaseVirtualPathProvider.initialized AndAlso Not BaseVirtualPathProvider.isPrecompiledApp Then
                 System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider(New BaseVirtualPathProvider())
             End If
         End Sub
